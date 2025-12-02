@@ -5,7 +5,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LanguageSwitcher />} />
+        <Route path="/" element={<HomePage />} />
        
       </Routes>
     </BrowserRouter>

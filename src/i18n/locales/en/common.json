@@ -1,0 +1,12 @@
+{
+     "nav": {
+    "accueil": "Home",
+    "entreprise": "Company",
+    "solutions": "Solutions",
+    "projets": "Projects",
+    "filiales": "Subsidiaries",
+    "blog": "Blog",
+    "carriere": "Career",
+    "contacts": "Contacts"
+  }
+}

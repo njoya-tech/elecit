@@ -1,17 +1,12 @@
 {
-  "articles": {
-    "title": "Nos Articles",
-    "loading": "Chargement...",
-    "noArticles": "Aucun article disponible",
-    "readMore": "Lire la suite",
-    "publishedOn": "Publié le"
-  },
-  "language": {
-    "french": "Français",
-    "english": "English",
-    "german": "Deutsch"
-  },
-  "intro": {
-    "paragraph": "Bienvenue sur notre site. Découvrez nos derniers articles ci-dessous."
+ "nav": {
+    "accueil": "Accueil",
+    "entreprise": "L'entreprise",
+    "solutions": "Solutions",
+    "projets": "Projets",
+    "filiales": "Filiales",
+    "blog": "Blog",
+    "carriere": "Carrière",
+    "contacts": "Contacts"
   }
 }

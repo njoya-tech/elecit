@@ -1,5 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { MY_COLORS } from '../../utils/colors';
+// CORRECTION: Utiliser ../../assets/ au lieu de ../assets/
+import en from '../../assets/en.png';
+import fr from '../../assets/fr.png';
+import all from '../../assets/all.png';
 
 const LanguageSwitcher = ({ onLanguageChange }) => {
   const { i18n } = useTranslation();
@@ -13,13 +18,16 @@ const LanguageSwitcher = ({ onLanguageChange }) => {
   };
 
   const languages = [
-    { code: 'fr', flag: '🇫🇷', label: 'Français' },
-    { code: 'en', flag: '🇬🇧', label: 'English' },
-    { code: 'de', flag: '🇩🇪', label: 'Deutsch' }
+    { code: 'fr', label: 'Français', flag: fr },
+    { code: 'en', label: 'English', flag: en },
+    { code: 'de', label: 'Deutsch', flag: all }
   ];
 
   return (
-    <div className="w-full bg-slate-900 flex items-center justify-end pr-20 h-20">
+    <div 
+      className="w-full flex items-center justify-end pr-20 h-20" 
+      style={{ backgroundColor: MY_COLORS.black }}
+    >
       <div className="flex items-center gap-4">
         {languages.map(lang => (
           <button
@@ -30,14 +38,16 @@ const LanguageSwitcher = ({ onLanguageChange }) => {
               transition-all duration-200
               ${i18n.language === lang.code 
                 ? 'bg-white text-slate-600 shadow-lg' 
-                : 'bg-slate-500 text-white hover:bg-slate-400'
+                : ' text-white hover:bg-slate-400'
               }
             `}
             title={lang.label}
           >
-            <span className="text-xl">{lang.flag}</span>
-            <span className="font-medium">{lang.code.toUpperCase()}</span>
-            
+            <img 
+              src={lang.flag} 
+              alt={lang.label} 
+              className="w-6 h-6 rounded-full object-cover" 
+            />
           </button>
         ))}
       </div>
