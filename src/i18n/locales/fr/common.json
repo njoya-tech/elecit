@@ -8,5 +8,49 @@
     "blog": "Blog",
     "carriere": "Carrière",
     "contacts": "Contacts"
+  },
+
+  "submenus": {
+    "solutions": {
+      "smartBuilding": "Smart Building",
+      "mechanicalFabrication": "Fabrication Mécanique",
+      "gpsTracking": "GPS & Tracking",
+      "itDataProcessing": "IT & Data Processing",
+      "accessControlSecurity": "Contrôle d'accès & Sécurité",
+      "designOffice": "Bureau d'étude",
+      "afterSalesService": "SAV"
+    },
+    "subsidiaries": {
+      "foczou": "FOCZOU",
+      "mangoSmart": "MANGO SMART",
+      "moreThanTrack": "MORE THAN TRACK"
+    }
+  },
+
+  
+   "hero": {
+    "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+    "submitProject": "Soumettre un projet",
+    "slide1": {
+      "title": "Tout notre potentiel",
+      "highlighted": "technique",
+      "title2": "et",
+      "highlighted2": "technologique",
+      "title3": "au service de votre imagination"
+    },
+    "slide2": {
+      "title": "Innovation et",
+      "highlighted": "expertise",
+      "title2": "pour vos",
+      "highlighted2": "projets",
+      "title3": "les plus ambitieux"
+    },
+    "slide3": {
+      "title": "Des solutions",
+      "highlighted": "intelligentes",
+      "title2": "et",
+      "highlighted2": "durables",
+      "title3": "pour votre avenir"
+    }
   }
 }
