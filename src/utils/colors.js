@@ -4,7 +4,7 @@ export const MY_COLORS = {
     green: '#7EA72E',
     red: '#E30613',
     black: '#00121C',
-    white: '#FFFFF'
+    white: '#FFFFFF'
 
 }
 

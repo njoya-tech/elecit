@@ -52,5 +52,27 @@
       "highlighted2": "durables",
       "title3": "pour votre avenir"
     }
+  },
+
+  "keySolutions": {
+    "bannerTitle": "Des solutions clés pour des besoins spécifiques",
+    "viewMore": "Voir plus",
+    "items": [
+      {
+        "title": "Bâtiments intelligents & automatisation",
+        "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
+        "imagePlaceholderText": "Smart Building"
+      },
+      {
+        "title": "Conception, Fabrication mécanique & métallique",
+        "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
+        "imagePlaceholderText": "Fabrication Mécanique"
+      },
+      {
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
+        "imagePlaceholderText": "GPS Tracking"
+      }
+    ]
   }
 }

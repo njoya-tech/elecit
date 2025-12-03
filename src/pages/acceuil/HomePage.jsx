@@ -6,7 +6,18 @@ import HeroSection from '../../components/HomePage/HeroSection'
 import slide1_home from '../../assets/slide1_home.jpg';
 import slide2_home from '../../assets/slide2_home.jpg';
 import slide3_home from '../../assets/slide3_home.jpg';
+
+
+import SolutionsSection from '../../components/HomePage/SolutionsSection'
+
+
+
+
+
+
 const HomePage = () => {
+
+
 
 
   const heroSlides = [
@@ -47,8 +58,11 @@ const HomePage = () => {
 
      <NavBar/>
 
- <HeroSection slides={heroSlides} />
-
+     <HeroSection slides={heroSlides} />
+      <br/>
+      <br/>
+     <SolutionsSection
+      />
 
 
  

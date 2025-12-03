@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import fond_sombre from '../../assets/fond_sombre.png';
 import design_x from '../../assets/design_x.png';
-
 import vid from '../../assets/vid.png';
 import fleche from '../../assets/fleche.png';
 
@@ -44,7 +43,7 @@ const HeroSection = ({ slides }) => {
 
       {/* Overlay fond_sombre.png avec opacité 80% */}
       <div 
-        className="absolute inset-y-0 left-4 right-4 sm:left-8 sm:right-8 md:left-16 md:right-16 lg:left-24 lg:right-24"
+        className="absolute inset-y-0 left-4 right-4 sm:left-8 sm:right-8 md:left-16 md:right-45 lg:left-24 lg:right-24"
         style={{ 
           backgroundImage: `url(${fond_sombre})`,
           backgroundSize: 'cover',
@@ -54,7 +53,7 @@ const HeroSection = ({ slides }) => {
       />
 
       {/* Design X à droite - Masqué sur mobile */}
-      <div className="absolute right-4 md:right-16 lg:right-24 top-0 h-full w-1/2 justify-end pr-0 hidden md:flex items-center">
+      <div className="absolute right-4 md:right-16 lg:right-37 top-0 h-full w-1/2 justify-end pr-0 hidden md:flex items-center">
         <img 
           src={design_x} 
           alt="Design X" 
@@ -63,7 +62,7 @@ const HeroSection = ({ slides }) => {
         </div>
 
       {/* Contenu principal */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center pt-8 md:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:left-14  sm:px-6 lg:px-8 h-full flex items-center pt-8 md:pt-0">
         <div className="w-full md:w-2/3 lg:w-1/2">
           {/* Sous-titre avec icône */}
           <div className="flex items-center gap-3 mb-4">
@@ -78,7 +77,7 @@ const HeroSection = ({ slides }) => {
 
           {/* Titre principal avec transition et min-height responsive */}
           <div className="transition-all duration-700 ease-in-out min-h-[140px] md:min-h-[180px]"> 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug sm:leading-tight mb-6 md:mb-8">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-snug sm:leading-tight mb-6 md:mb-8">
               {t(slides[currentSlide].title)}{' '}
               <span className="" style={{color: MY_COLORS.secondaryGreen}}>{t(slides[currentSlide].highlighted)}</span>
               <br />
