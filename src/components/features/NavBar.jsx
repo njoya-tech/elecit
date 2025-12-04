@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.svg';
 import { MY_COLORS } from '../../utils/colors';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const NavBar = () => {
   const { t } = useTranslation();
@@ -20,6 +21,10 @@ const NavBar = () => {
   ];
 
   return (
+
+       <>
+
+       <LanguageSwitcher/>
     <nav className="shadow-sm p-3" style={{background: MY_COLORS.white}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -95,6 +100,7 @@ const NavBar = () => {
         </div>
       )}
     </nav>
+    </>
   );
 };
 

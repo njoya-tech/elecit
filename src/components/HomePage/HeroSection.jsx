@@ -22,10 +22,10 @@ const HeroSection = ({ slides }) => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden">
         
       {/* Images de fond et Overlay */}
-      <div className="absolute inset-y-0 left-4 right-4 sm:left-8 sm:right-8 md:left-16 md:right-16 lg:left-24 lg:right-24">
+       <div className="absolute inset-y-0 left-4 right-4 sm:left-8 sm:right-8 md:left-16 md:right-16 lg:left-24 lg:right-24">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -156,7 +156,7 @@ const HeroSection = ({ slides }) => {
             className=  {`
               w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300
               ${currentSlide === index ? 'scale-125' : ''}
-            `}
+            `}     
             aria-label={`Slide ${index + 1}`}
           />
         ))}

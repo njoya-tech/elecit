@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import c1 from '../../assets/c1.jpg'
 import c2 from '../../assets/c2.jpg'
-import c3 from '../../assets/c3.jpg'
+import s3 from '../../assets/s3.jpg'
 import cercle_interomp from '../../assets/cercle_interomp.svg'
 
 import { motion } from 'framer-motion'
@@ -20,37 +20,39 @@ const MY_COLORS = {
 const t = (key) => {
     // Les données sont ici en français car c'est la langue demandée pour le contenu
     const data = {
-        "bannerTitle": "Des solutions",
-        "bannerHighlight": "clés pour des",
-        "bannerTitle2": "besoins spécifiques",
-        "viewMore": "Voir plus",
-        "items": [
-            {
-                "title": "Bâtiments intelligents & automatisation",
-                "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
-                "imagePlaceholderText": "Bâtiments",
-                "imageName": c1 // Simule c1.jpg
-            },
-            {
-                "title": "Conception, Fabrication mécanique & métallique",
-                "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
-                "imagePlaceholderText": "Fabrication",
-                "imageName": c2 // Simule c2.jpg
-            },
-            {
-                "title": "GPS & Tracking (More Than Track)",
-                "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
-                "imagePlaceholderText": "GPS Tracking",
-                "imageName": c3 // Simule c3.jpg
-            }
-        ]
+ "serviceOffer": {
+            "title": "Une offre de",
+            "titleHighlight": "service",
+            "title2": "diversifiée",
+            "title3": ", adaptée à vos besoins",
+            "viewMore": "Voir plus",
+            "services": [
+                {
+                    "title": "Services informatiques & DATA Processing",
+                    "description": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+                    "imageName": s3
+    },
+    {
+      "title": "Bureau d'étude: conception & ingénierie",
+      "description": "Conception, optimisation et réalisation de vos projets techniques. Analyse des besoins et mise en œuvre des solutions sur mesure.       ",
+      "imageName": s3
+    },
+    {
+      "title": "Service après vente disponible 24/7",
+      "description": "Des prestations techniques pour garantir la fiabilité, la durabilité et la performance optimale des équipements après leur mise en service.",
+      "imageName": s3
+    }
+  ]
+}
     };
-
-    if (key === 'bannerTitle') return data.bannerTitle;
-    if (key === 'bannerHighlight') return data.bannerHighlight;
-    if (key === 'bannerTitle2') return data.bannerTitle2;
-    if (key === 'viewMore') return data.viewMore;
-    return data.items;
+ // ✅ Accès correct aux données
+    if (key === 'serviceOffer.title') return data.serviceOffer.title;
+    if (key === 'serviceOffer.titleHighlight') return data.serviceOffer.titleHighlight;
+    if (key === 'serviceOffer.title2') return data.serviceOffer.title2;
+    if (key === 'serviceOffer.title3') return data.serviceOffer.title3;
+    if (key === 'serviceOffer.viewMore') return data.serviceOffer.viewMore;
+    if (key === 'serviceOffer.services') return data.serviceOffer.services;
+    return null;
 };
 
 
@@ -163,7 +165,8 @@ const SolutionCard = ({ solution, onSeeMore }) => {
                     transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
                 }}
             >
-                {t('viewMore')}
+               {t('serviceOffer.viewMore')}
+
                 {/* <ChevronRight 
                     size={20} 
                     className="transition-transform duration-300 group-hover:translate-x-1"
@@ -175,16 +178,19 @@ const SolutionCard = ({ solution, onSeeMore }) => {
 
 
 // --- Composant Principal de la Section (SolutionsSection) ---
-const SolutionsSection = () => {
+const ServicesSection = () => {
     // Récupération des données de traduction
-    const bannerTitle = t('bannerTitle');
-    const bannerHighlight = t('bannerHighlight');
-    const bannerTitle2 = t('bannerTitle2');
-    const solutions = t('items'); 
+  const bannerTitle = t('serviceOffer.title');
+    const bannerHighlight = t('serviceOffer.titleHighlight');
+    const bannerTitle2 = t('serviceOffer.title2');
+    const bannerTitle3 = t('serviceOffer.title3');
+    const viewMoreText = t('serviceOffer.viewMore');
+    const solutions = t('serviceOffer.services');
 
-    const handleSeeMore = (solutionTitle) => {
+        const handleSeeMore = (solutionTitle) => {
         console.log(`Navigation vers la solution: ${solutionTitle}`);
     };
+
 
     return (
         <section 
@@ -196,13 +202,14 @@ const SolutionsSection = () => {
             <div 
                 className="absolute top-0 left-0 w-full h-60" // Hauteur de 12rem (192px)
                 style={{ backgroundColor: MY_COLORS.black }} 
-            >center
-                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-">
+            >
+                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
                     <h2 className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight">
-                        <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
-                        <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight}</span>
-                        <span style={{ color: MY_COLORS.white }}> {bannerTitle2}</span>
-                    </h2>
+                               <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
+                    <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight} </span>
+                    <span style={{ color: MY_COLORS.white }}>{bannerTitle2}</span>
+                    <span style={{ color: MY_COLORS.white }}>{bannerTitle3}</span>
+               </h2>
                 </div>
             </div>
             
@@ -222,4 +229,4 @@ const SolutionsSection = () => {
         </section>
     );
 };
-export default SolutionsSection
+export default ServicesSection
