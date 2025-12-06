@@ -226,9 +226,9 @@ const EntrepriseTeam = () => {
       </div>
 
       {/* 🟢 GREEN DASHED LINE SEPARATOR */}
-      <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-16 mt-16">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-16 mt-26 lg:pt-1">
         <div
-          className="w-full h-[2px]"
+          className="w-full h-[2px] -top-10"
           style={{
             backgroundImage: `repeating-linear-gradient(
         to right,
@@ -236,7 +236,7 @@ const EntrepriseTeam = () => {
         ${MY_COLORS.green} 9px,
         transparent 1px,
         transparent 12px
-      )`,
+            )`,
           }}
         />
       </div>

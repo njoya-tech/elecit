@@ -37,32 +37,33 @@ const EntrepriseAcc = () => {
 
   return (
     <section
-      className="w-full py-16 px-4"
+      className="w-full pt-10 pb-16 px-14"
       style={{ backgroundColor: MY_COLORS.gray }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* LEFT BLOCK - FAQ */}
-          <div className="space-y-8">
+          <div className="space-y-8 relative">
             {/* Hard Hat Icon */}
-            <div className="w-16 h-16">
+            <div className="absolute w-32 h-32 -top-20 -left-24">
               <img
                 src={ICONS.Casque}
                 alt="Casque"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain animate-bounce"
               />
             </div>
 
             {/* Title */}
             <h2
-              className="text-3xl md:text-4xl font-bold"
+              className="text-3xl md:text-4xl font-bold lg:mt-10"
               style={{ color: MY_COLORS.black }}
             >
-              Questions fréquemment posées
+              Questions fréquemment <br />
+              posées
             </h2>
 
             {/* FAQ Accordion */}
-            <div className="space-y-4">
+            <div className="space-y-4 lg:space-y-6 lg:mt-40">
               {faqData.map((item, index) => (
                 <div
                   key={index}
@@ -120,51 +121,99 @@ const EntrepriseAcc = () => {
           </div>
 
           {/* RIGHT BLOCK - Contact Card */}
-          {/* RIGHT BLOCK - Contact Card */}
-          {/* RIGHT BLOCK - Contact Card */}
-<div className="relative">
-  
-  {/* Simple Rounded Green Container */}
-  <div 
-    className="rounded-3xl p-8 mb-8"
-    style={{ 
-      backgroundColor: MY_COLORS.green
-    }}
-  >
-    
-    {/* Title & Subtitle */}
-    <div className="text-center">
-      <h3 
-        className="text-2xl md:text-3xl font-bold mb-4"
-        style={{ color: MY_COLORS.black }}
-      >
-        Obtenez d'autres<br />informations
-      </h3>
-      <p 
-        className="text-base"
-        style={{ color: MY_COLORS.black }}
-      >
-        Nous serons heureux d'apporter des<br />réponses à vos questions.
-      </p>
-    </div>
+          <div className="relative">
+            {/* Green Text Block - MIDDLE LAYER */}
+            <div
+              className="rounded-3xl p-8 relative z-20 mb-8"
+              style={{
+                backgroundColor: MY_COLORS.green,
+              }}
+            >
+              {/* Title & Subtitle */}
+              <div className="text-center">
+                <h3
+                  className="text-2xl md:text-3xl font-bold mb-4"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  Obtenez d'autres
+                  <br />
+                  informations
+                </h3>
+                <p className="text-base" style={{ color: MY_COLORS.black }}>
+                  Nous serons heureux d'apporter des
+                  <br />
+                  réponses à vos questions.
+                </p>
+              </div>
+            </div>
 
-  </div>
+            {/* Border Container - BOTTOM LAYER */}
+            <div className="px-4 -mt-16 relative z-10">
+              {/* Green Border (Outer Layer) */}
+              <div
+                className="rounded-3xl p-0.5 relative z-10"
+                style={{ backgroundColor: MY_COLORS.green }}
+              >
+                {/* Space Layer */}
+                <div
+                  className="rounded-3xl p-1 relative z-10"
+                  style={{ backgroundColor: MY_COLORS.gray }}
+                >
+                  {/* Image - TOP LAYER */}
+                  <img
+                    src={IMAGES.IMG4}
+                    alt="Technicien électrique"
+                    className="rounded-2xl w-full h-[480px] object-cover relative z-30"
+                  />
+                </div>
+              </div>
+            </div>
 
-  {/* BRICK 3: Image BELOW Green Block with Transparent Border */}
-  <div className="px-4">
-    <div 
-      className="rounded-3xl"
-      style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }} // transparent white border
-    >
-      <img
-        src={IMAGES.IMG4 }
-        alt="Technicien électrique"
-        className="rounded-2xl w-full h-89 object-cover"
-      />
-    </div>
-  </div>
+            {/* CTA Section: Arrow + Button + Gears */}
+            <div className="px-4 mt-8 flex items-center justify-between">
+              {/* Left Side: Arrow + Button */}
+              <div className="flex items-center gap-4">
+                {/* Curved Arrow Icon */}
+                <div className="w-16 h-16">
+                  <img
+                    src={ICONS.FlecheVerte}
+                    alt="Arrow"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
 
-</div>
+                {/* CTA Button - Outlined */}
+                <button
+                  className="px-6 py-2.5 rounded-full font-medium border-2 transition-all hover:bg-opacity-10"
+                  style={{
+                    borderColor: MY_COLORS.green,
+                    color: MY_COLORS.green,
+                    backgroundColor: "transparent",
+                  }}
+                >
+                  Nous joindre
+                </button>
+              </div>
+
+              {/* Right Side: Gear Icons */}
+              <div className=" relative flex gap-3 ">
+                <div className="w-[100px] h-[100px]">
+                  <img
+                    src={ICONS.Engrenage_plan}
+                    alt="Gear"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="w-[150px] h-[180px]">
+                  <img
+                    src={ICONS.Engrenage_plan}
+                    alt="Gear"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

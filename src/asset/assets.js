@@ -37,6 +37,30 @@ import IMG14 from "./images/image_14.jpg";
 import IMG15 from "./images/image_15.JPG";
 import IMG16 from "./images/image_16.jpg";
 
+//========== PARTNERS IMAGES ==========
+
+import partner1 from "./images/partner_1.png";
+import partner2 from "./images/partner_2.png";
+import partner3 from "./images/partner_3.png";
+import partner4 from "./images/partner_4.png";
+import partner5 from "./images/partner_5.png";
+import partner6 from "./images/partner_6.png";
+import partner7 from "./images/partner_7.png";
+import partner8 from "./images/partner_8.png";
+import partner9 from "./images/partner_9.png";
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Export organized assets
 export const HERO = {
   blog: heroBlog,
@@ -77,9 +101,22 @@ export const IMAGES = {
   IMG16: IMG16,
 };
 
+ export const PARTNERS = {
+  partner1: partner1,
+  partner2: partner2,
+  partner3: partner3,
+  partner4: partner4,
+  partner5: partner5,
+  partner6: partner6,
+  partner7: partner7,
+  partner8: partner8,
+  partner9: partner9,
+};
+
 // Global default export
 export default {
   HERO,
   ICONS,
   IMAGES,
+  PARTNERS,
 };
