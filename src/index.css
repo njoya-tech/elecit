@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 /* @import url("static/fonts/Montserrat/fonts/ttf/Montserrat.css"); */
 
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+}
+
+@layer base {
+  html, body, #root {
+    font-family: 'Montserrat', sans-serif;
+  }
 }

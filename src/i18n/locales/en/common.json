@@ -1,0 +1,39 @@
+{
+     "nav": {
+    "accueil": "Home",
+    "entreprise": "Company",
+    "solutions": "Solutions",
+    "projets": "Projects",
+    "filiales": "Subsidiaries",
+    "blog": "Blog",
+    "carriere": "Career",
+    "contacts": "Contacts"
+  },
+    "hero": {
+    "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+    "submitProject": "Submit a project",
+    "slide1": {
+      "title": "All our",
+      "highlighted": "technical",
+      "title2": "and",
+      "highlighted2": "technological",
+      "title3": "potential at the service of your imagination"
+    },
+    "slide2": {
+      "title": "Innovation and",
+      "highlighted": "expertise",
+      "title2": "for your",
+      "highlighted2": "most ambitious",
+      "title3": "projects"
+    },
+    "slide3": {
+      "title": "Smart and",
+      "highlighted": "sustainable",
+      "title2": "solutions",
+      "highlighted2": "",
+      "title3": "for your future"
+    }
+  }
+  
+
+}
