@@ -120,15 +120,36 @@ const EntrepriseAcc = () => {
             </div>
           </div>
 
+          
           {/* RIGHT BLOCK - Contact Card */}
           <div className="relative">
-            {/* Green Text Block - MIDDLE LAYER */}
+            {/* Border Container - BACK LAYER (z-10) */}
+            <div className="absolute top-32 left-0 right-0 z-10">
+              <div className="px-4">
+                <div
+                  className="rounded-3xl p-0.5"
+                  style={{ backgroundColor: MY_COLORS.green ,
+                    marginTop:"42px"
+                  }}
+                >
+                  <div
+                    className="rounded-3xl p-1"
+                    style={{ backgroundColor: MY_COLORS.gray }}
+                  >
+                    <div className="h-[480px] rounded-2xl" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Green Text Block - MIDDLE LAYER (z-20) */}
             <div
-              className="rounded-3xl p-8 relative z-20 mb-8"
+              className="rounded-3xl p-8 relative z-20  "
               style={{
                 backgroundColor: MY_COLORS.green,
+                
               }}
-            >
+             >
               {/* Title & Subtitle */}
               <div className="text-center">
                 <h3
@@ -139,7 +160,10 @@ const EntrepriseAcc = () => {
                   <br />
                   informations
                 </h3>
-                <p className="text-base" style={{ color: MY_COLORS.black }}>
+                <p className="text-base" style={{ color: MY_COLORS.black,
+                  lineHeight: "1.75rem",
+                  marginBottom:"18px"
+                 }}>
                   Nous serons heureux d'apporter des
                   <br />
                   réponses à vos questions.
@@ -147,26 +171,18 @@ const EntrepriseAcc = () => {
               </div>
             </div>
 
-            {/* Border Container - BOTTOM LAYER */}
-            <div className="px-4 -mt-16 relative z-10">
-              {/* Green Border (Outer Layer) */}
-              <div
-                className="rounded-3xl p-0.5 relative z-10"
-                style={{ backgroundColor: MY_COLORS.green }}
-              >
-                {/* Space Layer */}
-                <div
-                  className="rounded-3xl p-1 relative z-10"
-                  style={{ backgroundColor: MY_COLORS.gray }}
-                >
-                  {/* Image - TOP LAYER */}
-                  <img
-                    src={IMAGES.IMG4}
-                    alt="Technicien électrique"
-                    className="rounded-2xl w-full h-[480px] object-cover relative z-30"
-                  />
-                </div>
-              </div>
+            {/* Image - FRONT LAYER (z-30) */}
+            <div className="px-4 -mt-16 relative z-30">
+              <img
+                src={IMAGES.IMG4}
+                alt="Technicien électrique"
+                className="rounded-2xl w-full h-[480px] object-cover"
+                style={{height:"480px",
+                  width:"95%",
+                  marginLeft:"15px",
+                  marginTop:"10px"
+                }}
+              />
             </div>
 
             {/* CTA Section: Arrow + Button + Gears */}
@@ -182,32 +198,61 @@ const EntrepriseAcc = () => {
                   />
                 </div>
 
-                {/* CTA Button - Outlined */}
+                {/* CTA Button - With Hover Fill Animation */}
                 <button
-                  className="px-6 py-2.5 rounded-full font-medium border-2 transition-all hover:bg-opacity-10"
+                  className="px-8 py-3 rounded-full font-medium border-2 transition-all duration-500 ease-in-out"
                   style={{
                     borderColor: MY_COLORS.green,
                     color: MY_COLORS.green,
                     backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = MY_COLORS.green;
+                    e.currentTarget.style.color = "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = MY_COLORS.green;
                   }}
                 >
                   Nous joindre
                 </button>
               </div>
 
-              {/* Right Side: Gear Icons */}
-              <div className=" relative flex gap-3 ">
-                <div className="w-[100px] h-[100px]">
+              {/* Right Side: Animated Gear Icons - Diagonal Layout */}
+              <div className="relative w-48 h-48">
+                {/* Small Gear (Top) */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "-10%",
+                    right: "-9%",
+                    width: "100px",
+                    height: "100px",
+                    animation: "rotateClockwise 20s linear infinite",
+                  }}
+                >
                   <img
                     src={ICONS.Engrenage_plan}
-                    alt="Gear"
+                    alt="Small Gear"
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="w-[150px] h-[180px]">
+
+                {/* Large Gear (Bottom) - Diagonal Position */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: "18%",
+                    right: "-50%",
+                    width: "150px",
+                    height: "150px",
+                    animation: "rotateClockwise 25s linear infinite",
+                  }}
+                >
                   <img
                     src={ICONS.Engrenage_plan}
-                    alt="Gear"
+                    alt="Large Gear"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -216,6 +261,18 @@ const EntrepriseAcc = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS Animation Keyframes */}
+      <style jsx>{`
+        @keyframes rotateClockwise {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </section>
   );
 };
