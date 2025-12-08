@@ -17,6 +17,7 @@ import innovation from "./icons/innovation.svg";
 import transformation from "./icons/transformation.svg";
 import excellence from "./icons/excellence.svg";
 import cercle from "./icons/cercle.svg";
+import formePlan from "./icons/form_plan.svg";
 
 //==========IMAGES==================
 
@@ -80,7 +81,7 @@ export const ICONS = {
   transformation: transformation,
   excellence: excellence,
   cercle: cercle,
-};
+  formePlan: formePlan,};
 
 export const IMAGES = {
   IMG1: IMG1,

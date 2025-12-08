@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { Plus, Minus } from "lucide-react";
+import CTAButton from "../CTA/CTAButton.jsx";
 
 const EntrepriseAcc = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -120,7 +121,6 @@ const EntrepriseAcc = () => {
             </div>
           </div>
 
-          
           {/* RIGHT BLOCK - Contact Card */}
           <div className="relative">
             {/* Border Container - BACK LAYER (z-10) */}
@@ -128,8 +128,9 @@ const EntrepriseAcc = () => {
               <div className="px-4">
                 <div
                   className="rounded-3xl p-0.5"
-                  style={{ backgroundColor: MY_COLORS.green ,
-                    marginTop:"42px"
+                  style={{
+                    backgroundColor: MY_COLORS.green,
+                    marginTop: "42px",
                   }}
                 >
                   <div
@@ -147,9 +148,8 @@ const EntrepriseAcc = () => {
               className="rounded-3xl p-8 relative z-20  "
               style={{
                 backgroundColor: MY_COLORS.green,
-                
               }}
-             >
+            >
               {/* Title & Subtitle */}
               <div className="text-center">
                 <h3
@@ -160,10 +160,14 @@ const EntrepriseAcc = () => {
                   <br />
                   informations
                 </h3>
-                <p className="text-base" style={{ color: MY_COLORS.black,
-                  lineHeight: "1.75rem",
-                  marginBottom:"18px"
-                 }}>
+                <p
+                  className="text-base"
+                  style={{
+                    color: MY_COLORS.black,
+                    lineHeight: "1.75rem",
+                    marginBottom: "18px",
+                  }}
+                >
                   Nous serons heureux d'apporter des
                   <br />
                   réponses à vos questions.
@@ -177,10 +181,11 @@ const EntrepriseAcc = () => {
                 src={IMAGES.IMG4}
                 alt="Technicien électrique"
                 className="rounded-2xl w-full h-[480px] object-cover"
-                style={{height:"480px",
-                  width:"95%",
-                  marginLeft:"15px",
-                  marginTop:"10px"
+                style={{
+                  height: "480px",
+                  width: "95%",
+                  marginLeft: "15px",
+                  marginTop: "10px",
                 }}
               />
             </div>
@@ -199,24 +204,9 @@ const EntrepriseAcc = () => {
                 </div>
 
                 {/* CTA Button - With Hover Fill Animation */}
-                <button
-                  className="px-8 py-3 rounded-full font-medium border-2 transition-all duration-500 ease-in-out"
-                  style={{
-                    borderColor: MY_COLORS.green,
-                    color: MY_COLORS.green,
-                    backgroundColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = MY_COLORS.green;
-                    e.currentTarget.style.color = "white";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = MY_COLORS.green;
-                  }}
-                >
+                <CTAButton onClick={() => alert("Video clicked!")}>
                   Nous joindre
-                </button>
+                </CTAButton>
               </div>
 
               {/* Right Side: Animated Gear Icons - Diagonal Layout */}

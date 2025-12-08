@@ -1,5 +1,5 @@
 {
- "nav": {
+  "nav": {
     "accueil": "Accueil",
     "entreprise": "L'entreprise",
     "solutions": "Solutions",
@@ -27,8 +27,7 @@
     }
   },
 
-  
-   "hero": {
+  "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Soumettre un projet",
     "slide1": {
@@ -74,5 +73,57 @@
         "imagePlaceholderText": "GPS Tracking"
       }
     ]
+  },
+
+  "entreprise": {
+    "hero": {
+      "title": "",
+      "subtitle": "",
+      "button": ""
+    },
+    "elecITCarouselCard": {
+      "items": [
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    "entrepriseCards": {
+      "items": [
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    "entrepriseTeam": {
+      "title": "",
+      "members": [
+        {
+          "name": "",
+          "role": "",
+          "bio": ""
+        }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "",
+      "items": [
+        {
+          "question": "",
+          "answer": ""
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "",
+      "partners": [
+        {
+          "name": "",
+          "logo": ""
+        }
+      ]
+    }
   }
 }
