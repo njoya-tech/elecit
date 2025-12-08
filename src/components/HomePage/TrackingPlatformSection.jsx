@@ -176,7 +176,7 @@ const TrackingPlatformSection = ({ title, buttonText, images }) => {
       </div>
 
     </div>
-
+   
   );
 };
 

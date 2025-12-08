@@ -108,11 +108,8 @@ const { t } = useTranslation();
     <div className='min-h-screen'>
                   <header className='fixed top-0 left-0 right-0 z-50'>
 
-                 
-    
-
-     <NavBar/>
- </header>
+                         <NavBar/>
+                  </header>
 
  <main className='pt-46'>
 
@@ -195,9 +192,7 @@ const { t } = useTranslation();
 
  </main>
 
- <Footer>
-  
-</Footer>
+ <Footer/> 
  
     </div>
 

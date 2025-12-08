@@ -287,4 +287,4 @@ const TestimonialsCarousel = () => {
   );
 };
 
-export default TestimonialsCarousel;
+export default TestimonialsCarousel;                                              

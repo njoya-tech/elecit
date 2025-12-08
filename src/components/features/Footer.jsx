@@ -333,7 +333,7 @@ const Footer = () => {
 
     
 
-      <ContactPopup></ContactPopup>
+      <ContactPopup></ContactPopup>                        
     </footer>
   );
 };

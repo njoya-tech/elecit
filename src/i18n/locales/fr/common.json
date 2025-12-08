@@ -137,5 +137,11 @@
         "imagePlaceholderText": "GPS Tracking"
       }
     ]
+  },
+  "projets": {
+    "title": "Nos Realisations",
+    "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",
+    "buttonText": "livre blanc"
+
   }
 }
