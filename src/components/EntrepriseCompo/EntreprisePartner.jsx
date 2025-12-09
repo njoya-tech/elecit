@@ -287,7 +287,14 @@ const EnterprisePartners = () => {
               src={ICONS.formePlan}
               alt=""
               aria-hidden="true"
-              className="w-full h-auto"
+              className="w-full "
+              style={{
+                height:"50%",
+                width:"100%",
+                objectFit:"cover",
+                
+
+              }}
             />
 
             {/* CONTENT OVERLAY - Positioned absolutely on top of PNG */}
@@ -301,19 +308,16 @@ const EnterprisePartners = () => {
                 src={ICONS.formTech}
                 alt=""
                 aria-hidden="true"
-                className="
-    absolute z-0 pointer-events-none opacity-30
-    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-    w-[150%] md:w-[100%] lg:w-[180%]
-    h-auto
-  "
+                className="absolute z-0 pointer-events-none opacity-30 
+             top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em]  // Use Tailwind transform
+             w-[150%] md:w-[100%] lg:w-[180%] h-auto"
               />
 
               {/* TEXT */}
               <h3
                 className="relative z-20 text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8 md:mb-12"
                 style={{ color: MY_COLORS.white,
-                  top:"-19%"
+                  top:"-25%"
                  }}
               >
                 Vous avez une idée ?<br />
@@ -322,9 +326,11 @@ const EnterprisePartners = () => {
               </h3>
 
               {/* BUTTON */}
-              <CTAButton onClick={() => alert("Video clicked!")}>
-          Contactez Nous
-        </CTAButton>
+              <CTAButton
+              className=" absolute -top-40 "
+               onClick={() => alert("Video clicked!")}>
+              Contactez Nous
+             </CTAButton>
             </div>
 
             {/* ROTATING GEAR - Top priority overlay */}
@@ -332,12 +338,12 @@ const EnterprisePartners = () => {
               className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-50"
               style={{
                 animation: "rotateClockwise 8s linear infinite",
-                top: "60%",
+                top: "40%",
                 right: "1%",
 
               }}
               aria-hidden="true"
-            >
+             >
               <img
                 src={ICONS.Engrenage_plan}
                 alt=""
@@ -353,7 +359,7 @@ const EnterprisePartners = () => {
                 left: "7%",
               }}
               aria-hidden="true"
-            >
+             >
               <img
                 src={ICONS.Engrenage_plan}
                 alt=""
