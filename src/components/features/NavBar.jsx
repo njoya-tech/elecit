@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.svg';
 import { MY_COLORS } from '../../utils/colors';
 import LanguageSwitcher from './LanguageSwitcher';
-
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -110,22 +110,22 @@ const NavBar = () => {
                         {openDropdown === item.key && (
                           <div className="absolute top-full left-0 mt-2 w-56 xl:w-64 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-100">
                             {item.dropdown.map(subItem => (
-                              <a
+                              <Link
                                 key={subItem.key}
-                                href={subItem.path}
+                                to={subItem.path}
                                 className="block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat"
                                 onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
                                 onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
                               >
                                 {t(subItem.key)}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <a 
-                        href={item.path}
+                      <Link 
+                        to={item.path}
                         className="font-semibold transition-colors duration-200 text-xs lg:text-sm xl:text-base font-montserrat whitespace-nowrap"
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
@@ -135,7 +135,7 @@ const NavBar = () => {
                         }}
                       >
                         {t(item.key)}
-                      </a>
+                      </Link>
                     )}
                   </div>
                 ))}
@@ -179,22 +179,22 @@ const NavBar = () => {
                         {openDropdown === item.key && (
                           <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-100">
                             {item.dropdown.map(subItem => (
-                              <a
+                              <Link
                                 key={subItem.key}
-                                href={subItem.path}
+                                to={subItem.path}
                                 className="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat"
                                 onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
                                 onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
                               >
                                 {t(subItem.key)}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <a 
-                        href={item.path}
+                      <Link 
+                        to={item.path}
                         className="font-semibold transition-colors duration-200 text-xs font-montserrat whitespace-nowrap px-1"
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
@@ -204,7 +204,7 @@ const NavBar = () => {
                         }}
                       >
                         {t(item.key)}
-                      </a>
+                      </Link>
                     )}
                   </div>
                 ))}
@@ -260,26 +260,26 @@ const NavBar = () => {
                       {mobileDropdowns[item.key] && (
                         <div className="pl-4 space-y-1 bg-gray-50 rounded-md mt-1 py-1">
                           {item.dropdown.map(subItem => (
-                            <a
+                            <Link
                               key={subItem.key}
-                              href={subItem.path}
+                              to={subItem.path}
                               className="block px-3 py-2 rounded-md text-xs sm:text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-white transition-colors duration-200"
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {t(subItem.key)}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       )}
                     </>
                   ) : (
-                    <a 
-                      href={item.path}
+                    <Link 
+                      to={item.path}
                       className="block px-3 py-2 rounded-md text-sm sm:text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors duration-200"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t(item.key)}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}

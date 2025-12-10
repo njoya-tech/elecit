@@ -117,9 +117,12 @@ const { t } = useTranslation();
      <HeroSection slides={heroSlides} />
       <br/>
       <br/>
-     <SolutionsSection
+      <div>
+                <SolutionsSection
       />
 
+      </div>
+   
     <TrackingPlatformSection 
       title={t('trackingPlatform.title')}
       buttonText={t('trackingPlatform.buttonText')}

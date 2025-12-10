@@ -197,7 +197,7 @@ const SolutionsSection = () => {
                 className="absolute top-0 left-0 w-full h-60" // Hauteur de 12rem (192px)
                 style={{ backgroundColor: MY_COLORS.black }} 
             >center
-                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-">
+                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
                     <h2 className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight">
                         <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
                         <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight}</span>
@@ -208,8 +208,8 @@ const SolutionsSection = () => {
             
             {/* 2. Grille de solutions (Premier plan, superposée) */}
             {/* Le padding-top est ajusté pour placer le centre de la carte au niveau de la coupure de la bannière */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-65"> 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-65 "> 
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
                     {solutions.map((solution, index) => (
                         <SolutionCard
                             key={index}

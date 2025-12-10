@@ -141,7 +141,90 @@
   "projets": {
     "title": "Nos Realisations",
     "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",
-    "buttonText": "livre blanc"
+    "buttonText": "livre blanc",
+    "titleRound1":  " Un ",
+    "titleRound2": " en tête",
+    "titleRound3": " projet",
+    "subtitleRound": "Bâtissons-le ensemble des aujourd'hui",
+    "buttonRound": "Contactez-nous"
 
-  }
+  },
+
+  "jobOffers": {
+    "title": "Toutes les offres d'emplois",
+    "filterTitle": "Filtrer les offres",
+    "filterPoste": "Poste",
+    "filterPostePlaceholder": "Ex: Ingénieur, Technicien...",
+    "filterLocation": "Lieu",
+    "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
+    "filterDateFrom": "Date de début",
+    "filterDateTo": "Date de fin",
+    "resetFilters": "Réinitialiser les filtres",
+    "viewButton": "Voir tout",
+    "noResults": "Aucune offre ne correspond à vos critères de recherche",
+    "modal": {
+      "typePoste": "Type de poste:",
+      "lieuPoste": "Lieu du poste:",
+      "datePublication": "Date de publication:",
+      "validJusquau": "Valide jusqu'au:",
+      "description": "Description",
+      "responsibilities": "Responsabilités",
+      "activities": "Activités :",
+      "profile": "Profil recherché",
+      "applyButton": "Postuler maintenant"
+    }
+  },
+   "recruitment": {
+    "titleRound": "Pas d'offres pour le moment",
+    "subtitleRound": "Vous souhaitez rejoindre ElecIT Engineering mais aucune offre actuelle ne correspond à votre profil ",
+    "buttonText":"Déposez ici",
+    "heroTitle1": "Pour les chercheurs d'emploi,",
+    "heroTitle2": "nous recrutons",
+    "heroSubtitle": "Rejoignez une équipe jeune et talentueuse et contribuez par votre savoir-faire à une vision axée vers l'innovation technologique, le professionnalisme et le progrès.",
+    "processTitle": "Processus de recrutement",
+    "step1Title": "Les pièces jointes",
+    "step1Description": "Nous évaluons la conformité de vos CV (en français et en anglais), lettre de motivation et diplômes.",
+    "step2Title": "1er Entretien",
+    "step2Description": "Un entretien téléphonique est au préalable effectué avec vous afin de mieux vous connaître.",
+    "step3Title": "2ème Entretien",
+    "step3Description": "Un entretien en présentiel se déroulera entre les responsables et vous sur divers sujets.",
+    "step4Title": "Cas pratique",
+    "step4Description": "Un éventuel test est soumis aux candidats pour mesurer leurs compétences techniques.",
+    "step5Title": "Prise de décision",
+    "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour signer son contrat de travail."
+  },
+   "smartBuilding": {
+    "title": "SMART BUILDING",
+    "subtitle": "Des solutions sur mesure pour les habitations, les bureaux, les hôtels et les espaces commerciaux. Confort, sécurité, performance énergétique et connectivité réunis dans une architecture intelligente.",
+    "buttonText": "Visitez le showroom",
+    "tabs": {
+      "smartHome": "Smart home",
+      "smartHotel": "Smart hotel",
+      "smartOffice": "Smart office",
+      "smartCommercial": "Smart commercial",
+      "smartEvents": "Smart events"
+    }
+  },
+  "smartHome": {
+    "title": "La maison qui s'adapte à vous",
+    "featureTitle": "Gestion automatisée",
+    "featureDescription": "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
+    "buttonText": "Un projet en tête?"
+  },
+
+  "interfaceCommande": {
+  "title": "Interfaces de commande",
+  "featureTitle": "Le pilotage centralisé",
+  "featureDescription": "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
+  "buttonText": "Visitez la boutique",
+  "slides": [
+    "/images/interface1.jpg",
+    "/images/interface2.jpg",
+    "/images/interface3.jpg"
+  ]
+}
+ 
+  
+
+  
 }

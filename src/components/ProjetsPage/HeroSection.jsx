@@ -25,7 +25,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-[1800px] translate-x-15 h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden">
+    <div className="relative md:w-[800px] lg:w-[1800px] translate-x-15 h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden " style={{backgroundColor: MY_COLORS.white}}>
       {/* Image de fond */}
       
        <div className='flex items-center justify-center '>
@@ -48,7 +48,7 @@ const HeroSection = () => {
       />
      
       {/* Contenu principal */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:left-14 sm:px-6 lg:px-8 h-full flex items-center pt-8 md:pt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-4  sm:px-6 lg:px-8 h-full flex items-center pt-8 md:pt-0">
         <div className="w-full">
           {/* Titre */}
           <div className="flex items-center justify-center gap-3 mb-4">

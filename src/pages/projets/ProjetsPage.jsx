@@ -1,9 +1,9 @@
 import React from 'react'
 import NavBar from '../../components/features/NavBar'
 import HeroSection from '../../components/ProjetsPage/HeroSection'
-
-
-
+import ProjectsSection from '../../components/ProjetsPage/ProjectsSection'
+import FormRound from '../../components/ProjetsPage/FormRound'
+import Footer from '../../components/features/Footer'
 
 
 const ProjetsPage = () => {
@@ -19,9 +19,19 @@ const ProjetsPage = () => {
               <div>
                 <HeroSection></HeroSection>
               </div>
+
+              <div className='mb-130'>
+                <ProjectsSection></ProjectsSection>
+              </div>
+
+              <div>
+                <FormRound></FormRound>
+              </div>
+
         </main>
     
     
+ <Footer/> 
     
     </div>
   )

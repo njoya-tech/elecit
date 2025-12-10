@@ -25,7 +25,7 @@ const SolutionsSection = ({
           className="text-center mb-16 py-12 w-full flex items-center justify-center"
           style={{ backgroundColor: MY_COLORS.black }}
         >
-          <h2 className="text-3 xl md:text-4xl font-bold px-4 md:w-140">
+          <h2 className="text-3 flex items-center justify-center xl md:text-4xl font-bold px-4 md:w-140">
             <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
             <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight}</span>
             <span style={{ color: MY_COLORS.white }}> {bannerTitle2}</span>
