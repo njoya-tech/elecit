@@ -4,6 +4,7 @@ import logo from '../../assets/logo.svg';
 import { MY_COLORS } from '../../utils/colors';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Link } from 'react-router-dom';
+
 const NavBar = () => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ const NavBar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
   const dropdownRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
 
   const solutionsItems = [
     { key: 'submenus.solutions.smartBuilding', path: '/solutions/smart-building' },
@@ -47,8 +49,36 @@ const NavBar = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
   }, []);
+
+  const handleMouseEnter = (index, key) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    setHoveredIndex(index);
+    setOpenDropdown(key);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setHoveredIndex(null);
+      setOpenDropdown(null);
+    }, 150);
+  };
+
+  const handleDropdownClick = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    setOpenDropdown(null);
+    setHoveredIndex(null);
+  };
 
   const toggleMobileDropdown = (key) => {
     setMobileDropdowns(prev => ({
@@ -80,14 +110,8 @@ const NavBar = () => {
                   <div key={item.key} className="relative">
                     {item.dropdown ? (
                       <div
-                        onMouseEnter={() => {
-                          setHoveredIndex(index);
-                          setOpenDropdown(item.key);
-                        }}
-                        onMouseLeave={() => {
-                          setHoveredIndex(null);
-                          setOpenDropdown(null);
-                        }}
+                        onMouseEnter={() => handleMouseEnter(index, item.key)}
+                        onMouseLeave={handleMouseLeave}
                       >
                         <button
                           className="font-semibold transition-colors duration-200 text-xs lg:text-sm xl:text-base font-montserrat flex items-center gap-1 whitespace-nowrap"
@@ -116,6 +140,7 @@ const NavBar = () => {
                                 className="block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat"
                                 onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
                                 onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
+                                onClick={handleDropdownClick}
                               >
                                 {t(subItem.key)}
                               </Link>
@@ -149,14 +174,8 @@ const NavBar = () => {
                   <div key={item.key} className="relative">
                     {item.dropdown ? (
                       <div
-                        onMouseEnter={() => {
-                          setHoveredIndex(index);
-                          setOpenDropdown(item.key);
-                        }}
-                        onMouseLeave={() => {
-                          setHoveredIndex(null);
-                          setOpenDropdown(null);
-                        }}
+                        onMouseEnter={() => handleMouseEnter(index, item.key)}
+                        onMouseLeave={handleMouseLeave}
                       >
                         <button
                           className="font-semibold transition-colors duration-200 text-xs font-montserrat flex items-center gap-1 whitespace-nowrap px-1"
@@ -185,6 +204,7 @@ const NavBar = () => {
                                 className="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat"
                                 onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
                                 onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
+                                onClick={handleDropdownClick}
                               >
                                 {t(subItem.key)}
                               </Link>

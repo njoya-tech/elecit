@@ -1,9 +1,10 @@
 // JobOffersList.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 import { motion } from 'framer-motion';
 import rail from '../../assets/rail.svg'
+import JobOfferModal from './jobOfferModal'
 
 const JobOffersList = ({ offers }) => {
   const { t } = useTranslation();
@@ -32,6 +33,8 @@ const JobOffersList = ({ offers }) => {
     });
   };
 
+
+
   const resetFilters = () => {
     setFilters({
       poste: '',
@@ -40,6 +43,16 @@ const JobOffersList = ({ offers }) => {
       dateTo: ''
     });
   };
+
+  const uniqueTitles = [
+    '', // Option "Tout" ou "Sélectionner"
+    ...new Set(offers.map(offer => offer.title))
+  ];
+
+  const uniqueLocations = [
+    '', // Option "Tout" ou "Sélectionner"
+    ...new Set(offers.map(offer => offer.location))
+  ];
 
   return (
     <div className="w-full py-16 px-4 bg-gray-50">
@@ -77,33 +90,43 @@ const JobOffersList = ({ offers }) => {
             {t('jobOffers.filterTitle')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-2 text-gray-700">
-                {t('jobOffers.filterPoste')}
-              </label>
-              <input
-                type="text"
-                name="poste"
-                value={filters.poste}
-                onChange={handleFilterChange}
-                placeholder={t('jobOffers.filterPostePlaceholder')}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
-                style={{ focusRing: MY_COLORS.primaryBlue }}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2 text-gray-700">
-                {t('jobOffers.filterLocation')}
-              </label>
-              <input
-                type="text"
-                name="location"
-                value={filters.location}
-                onChange={handleFilterChange}
-                placeholder={t('jobOffers.filterLocationPlaceholder')}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
-              />
-            </div>
+<div>
+        <label className="block text-sm font-medium mb-2 text-gray-700">
+          {t('jobOffers.filterPoste')}
+        </label>
+        <select
+          name="poste"
+          value={filters.poste}
+          onChange={handleFilterChange}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
+          style={{ focusRing: MY_COLORS.primaryBlue }}
+        >
+          {uniqueTitles.map((title, index) => (
+            <option key={index} value={title}>
+              {title === '' ? 'Tous': title}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* 📍 Filtre par Lieu */}
+      <div>
+        <label className="block text-sm font-medium mb-2 text-gray-700">
+          {t('jobOffers.filterLocation')}
+        </label>
+        <select
+          name="location"
+          value={filters.location}
+          onChange={handleFilterChange}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
+        >
+          {uniqueLocations.map((location, index) => (
+            <option key={index} value={location}>
+              {location === '' ? 'Tous' : location}
+            </option>
+          ))}
+        </select>
+      </div>
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
                 {t('jobOffers.filterDateFrom')}
@@ -203,179 +226,4 @@ const JobOffersList = ({ offers }) => {
     </div>
   );
 };
-
-// JobOfferModal.jsx
-const JobOfferModal = ({ offer, onClose }) => {
-  const { t } = useTranslation();
-
-  return (
-    <div 
-      className="fixed inset-0 bg-transaparent backdrop-blur-xl bg-opacity-50 flex items-center justify-center z-50 p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        className="bg-white rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* En-tête du modal */}
-        <div 
-          className="p-6 border-b flex items-start justify-between"
-          style={{ backgroundColor: MY_COLORS.primaryBlue }}
-        >
-          <div className="flex items-center gap-4">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ 
-                duration: 6, 
-                ease: "linear", 
-                repeat: Infinity 
-              }}
-            >
-              <svg width="60" height="60" viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="25" stroke={MY_COLORS.secondaryGreen} strokeWidth="3" fill="none"/>
-                {[...Array(12)].map((_, i) => (
-                  <rect
-                    key={i}
-                    x="48"
-                    y="10"
-                    width="4"
-                    height="15"
-                    fill={MY_COLORS.secondaryGreen}
-                    transform={`rotate(${i * 30} 50 50)`}
-                  />
-                ))}
-              </svg>
-            </motion.div>
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-2">
-                {offer.title}
-              </h2>
-              <p className="text-white opacity-90">{offer.subtitle}</p>
-            </div>
-          </div>
-          <button
-            onClick={onClose}
-            className="text-white text-3xl hover:opacity-70 transition-opacity"
-          >
-            ×
-          </button>
-        </div>
-
-        {/* Contenu du modal */}
-        <div className="p-8">
-          {/* Informations clés */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div>
-              <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
-                {t('jobOffers.modal.typePoste')}
-              </p>
-              <p className="text-gray-800">{offer.type}</p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
-                {t('jobOffers.modal.lieuPoste')}
-              </p>
-              <p className="text-gray-800">{offer.location}</p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
-                {t('jobOffers.modal.datePublication')}
-              </p>
-              <p className="text-gray-800">{offer.publicationDate}</p>
-            </div>
-            <div>
-              <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
-                {t('jobOffers.modal.validJusquau')}
-              </p>
-              <p className="text-gray-800">{offer.validUntil}</p>
-            </div>
-          </div>
-
-          {/* Description */}
-          <div className="mb-8">
-            <h3 
-              className="text-xl font-bold mb-4"
-              style={{ color: MY_COLORS.black }}
-            >
-              {t('jobOffers.modal.description')}
-            </h3>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {offer.description}
-            </p>
-          </div>
-
-          {/* Responsabilités */}
-          {offer.responsibilities && (
-            <div className="mb-8">
-              <h3 
-                className="text-xl font-bold mb-4"
-                style={{ color: MY_COLORS.black }}
-              >
-                {t('jobOffers.modal.responsibilities')}
-              </h3>
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                {offer.responsibilities}
-              </p>
-            </div>
-          )}
-
-          {/* Activités */}
-          {offer.activities && (
-            <div className="mb-8">
-              <h3 
-                className="text-xl font-bold mb-4"
-                style={{ color: MY_COLORS.black }}
-              >
-                {t('jobOffers.modal.activities')}
-              </h3>
-              <ul className="space-y-2">
-                {offer.activities.map((activity, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span style={{ color: MY_COLORS.secondaryGreen }}>•</span>
-                    <span className="text-gray-700">{activity}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Profil recherché */}
-          {offer.profile && (
-            <div className="mb-8">
-              <h3 
-                className="text-xl font-bold mb-4"
-                style={{ color: MY_COLORS.black }}
-              >
-                {t('jobOffers.modal.profile')}
-              </h3>
-              <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-                {offer.profile}
-              </p>
-            </div>
-          )}
-
-          {/* Bouton de candidature */}
-          <div className="flex justify-center mt-8">
-            <button
-              className="px-12 py-4 rounded-full text-white font-bold text-lg transition-all"
-              style={{ backgroundColor: MY_COLORS.secondaryGreen }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = MY_COLORS.primaryBlue;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
-              }}
-            >
-              {t('jobOffers.modal.applyButton')}
-            </button>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
-
 export default JobOffersList;

@@ -7,6 +7,7 @@ import bgImage from '../../assets/bgImage.jpg'
 import JobOffersList from '../../components/Carriere/jobOffersList';
 import FormRoundCar from '../../components/Carriere/formRoundCar';
 
+
 const Carriere = () => {
 
     const jobOffersData = [

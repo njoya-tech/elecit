@@ -171,7 +171,31 @@
       "responsibilities": "Responsabilités",
       "activities": "Activités :",
       "profile": "Profil recherché",
-      "applyButton": "Postuler maintenant"
+      "applyButton": "Postuler maintenant",
+
+      "formTitle": "POSTULEZ EN LIGNE",
+      "name": "Nom ",
+      "namePlaceholder": "Saisissez votre prénom",
+      "lastName": "Prénom ",
+      "lastNamePlaceholder": "Saisissez votre nom de famille",
+      "email": "Email *",
+      "emailPlaceholder": "Saisissez votre e-mail",
+      "phone": "Téléphone *",
+      "phonePlaceholder": "Saisissez votre n...",
+      "sex": "Sexe *",
+      "male": "Masculin",
+      "female": "Féminin",
+      "dateOfBirth": "Date de naissance *",
+      "day": "Jour",
+      "month": "Mois",
+      "year": "Année",
+      "position": "Poste *",
+      "positionPlaceholder": "Saisissez le nom du poste demandé",
+      "motivation": "Pourquoi pensez-vous avoir le profil le plus indiqué? *",
+      "motivationPlaceholder": "Tapez votre message",
+      "joinCV": "Joindre votre CV *",
+      "addFile": "Ajouter un fichier",
+      "sendApplication": "Envoyer la candidature"
     }
   },
    "recruitment": {
@@ -211,6 +235,16 @@
     "featureDescription": "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
     "buttonText": "Un projet en tête?"
   },
+  "smartVilla": {
+    "tilte1": "PROJET:",
+    "title2": "VILLA 2 YASSA",
+    "subtitle": "installation système domotique pour le contrôle centralisé de l'ensemble des équipements de l'habitat." ,
+    "buttonText": "Plus de projets",
+    "titleRound": "Construisons ensemble votre",
+    "titleRound2": "Smart Building",
+    "descriptionRound": "Vous avez une maison,  un hotel , un bureau ou un espace commercial, une salle de fêtes à transformer ? Parlons-en.",
+    "buttonRound": "Contactez-nous"
+  },
 
   "interfaceCommande": {
   "title": "Interfaces de commande",
@@ -222,7 +256,116 @@
     "/images/interface2.jpg",
     "/images/interface3.jpg"
   ]
-}
+},
+
+ "prestations": {
+    "title": "Prestations associées",
+    "description": "Ces services accompagnent chaque étape du projet, depuis l'audit initial jusqu'à la supervision en temps réel, pour transformer les infrastructures traditionnelles en environnements intelligents, sécurisés et écoénergétiques.",
+    "buttonText": "Visitez FOCZOU",
+    "services": {
+      "audit": {
+        "title": "Audit & diagnostic des infrastructures",
+        "description": "Évaluation des systèmes existants (électriques, CVC, sécurité, etc.); Analyse énergétique et identification des leviers d'optimisation."
+      },
+      "conception": {
+        "title": "Conception & ingénierie de solutions intelligentes",
+        "description": "Étude technique et modélisation; Intégration de capteurs, automates, et systèmes de régulation."
+      },
+      "automatisation": {
+        "title": "Automatisation des systèmes du bâtiment",
+        "description": "Gestion technique centralisée: éclairage, chauffage, ventilation, sécurité; programmation de scénarios intelligents"
+      },
+      "securite": {
+        "title": "Sécurité & contrôle d'accès intelligents",
+        "description": "Vidéosurveillance intelligente, alarme connectée, biométrie; Traçabilité et gestion des flux de personnes"
+      },
+      "supervision": {
+        "title": "Supervision à distance & maintenance prédictive",
+        "description": "Plateformes cloud pour le monitoring 24/7; Détection précoce des anomalies et maintenance préventive."
+      },
+      "formation": {
+        "title": "Formation à l'utilisation",
+        "description": "Formation des équipes à l'exploitation du système;Documentation et support technique dédié."
+      },
+      "evolution": {
+        "title": "Évolution & évolutivité des systèmes",
+        "description": "Possibilité d'ajouter de nouvelles fonctionnalités (modularité); Mises à jour logicielles et adaptation aux nouveaux besoins."
+      }
+    }
+  },
+  "FabriMeca": {
+    "heroTitle1":"CONCEPTION, FABRICATION MECANIQUE & METALLIQUE",
+    "heroSubtitle": " Notre atelier concoit des appareils et machines standards ou personnalisés selon les spécifications de vos besoins",
+    "heroSubtitle2": "Cliquez sur le bouton pour consultez le site dedié à l'atelier mécanique",
+    "heroButtonText":"Visitez MATOA"
+  },
+
+  "expertise": {
+    "title": "Nos domaines d'expertise",
+    "subtitle": "Nous offrons des solutions globales pour la conception, la fabrication et l'assemblage de pièces métalliques et mécaniques, ainsi que d'engins roulants et de contenants, alliant qualité et précision.",
+    "expertises": [
+      {
+        "title": "Engins roulants",
+        "description": "Conception et fabrication de chariots, remorques, plateformes motorisées ou manuelles.",
+        "imagePosition": "right"
+      },
+      {
+        "title": "Machines",
+        "description": "Machines industrielles, sanitaires et commerciales, conçues selon vos besoins spécifiques",
+        "imagePosition": "left"
+      },
+      {
+        "title": "Infrastructures & Pièces métalliques",
+        "description": "Structures métalliques, escaliers, garde-corps, pièces mécaniques usinées ou soudées.",
+        "imagePosition": "right"
+      }
+    ]
+  },
+ "prestations": {
+    "title": "Prestations associées",
+    "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
+    "prestations": [
+      {
+        "number": "1",
+        "title": "Conception &\nBureau d'études",
+        "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+      },
+      {
+        "number": "2",
+        "title": "Fabrication &\nAssemblage",
+        "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+      },
+      {
+        "number": "3",
+        "title": "Traitements\n& Finitions",
+        "description": "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
+      }
+    ]
+  },
+  "production": {
+    "title": "Notre champ de production",
+    "items": [
+      {
+        "title": "CAB ATELIER"
+      },
+      {
+        "title": "BORNE NUMÉRIQUE"
+      },
+      {
+        "title": "MINI TRACTEUR"
+      },
+      {
+        "title": "STRUCTURE MÉTALLIQUE"
+      }
+    ]
+  },
+  "fab": {
+    "titleRound": "Un projet en tête ",
+    "titleRound2": "Besoin d'une solution",
+    "sub": "sur mesure",
+    "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
+    "buttonRound": "Contactez-nous"
+  }
  
   
 

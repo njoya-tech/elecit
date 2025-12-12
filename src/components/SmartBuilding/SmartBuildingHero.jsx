@@ -128,7 +128,7 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
             {t('smartBuilding.subtitle')}
           </p>
           <button 
-            className="px-8 py-3 rounded-full border-2 text-white font-medium hover:bg-white hover:text-black transition-all"
+            className="px-8 py-3 rounded-full border-2 text-white font-medium hover:bg-white  transition-all"
             style={{ borderColor: MY_COLORS.secondaryGreen, color: MY_COLORS.secondaryGreen }}
           >
             {t('smartBuilding.buttonText')}

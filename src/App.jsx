@@ -4,6 +4,7 @@ import ProjetsPage from './pages/projets/ProjetsPage';
 import Carriere from './pages/carriere/Carriere';
 import LanguageSwitcher from './components/features/LanguageSwitcher'
 import SmartBuildingPage from './pages/solution/SmartBuildingPage';
+import FabriMecaPage from './pages/solution/FabriMecaPage';
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ function App() {
         < Route path='/projets' element={<ProjetsPage/>} />
         < Route path='/carriere' element={<Carriere/>} />
         < Route path= '/solutions/smart-building' element={<SmartBuildingPage/>} />
+        < Route path='/solutions/fabrication-mecanique' element={<FabriMecaPage/>} />
           
       </Routes>
     </BrowserRouter>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
+import p3 from '../../assets/p3.svg'
 
 const RecruitmentHero = ({ title1, title2, subtitle, bgImage }) => {
   const { t } = useTranslation();
@@ -37,6 +38,10 @@ const RecruitmentHero = ({ title1, title2, subtitle, bgImage }) => {
           {t(subtitle)}
         </p>
       </div>
+              <div className='absolute bottom-5 z-10'>
+            <img src={p3} alt="form technologie" className='lg:w-screen md:w-screen opacity-10'/>
+
+        </div>
     </div>
   );
 };

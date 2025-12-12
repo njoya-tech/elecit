@@ -7,6 +7,8 @@ import st2 from '../../assets/st2.png'
 import { MY_COLORS } from '../../utils/colors'
 import { useState , useEffect} from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion'
+import rail from '../../assets/rail.svg'
 
 // Simuler useTranslation
 const useTranslation = () => {
@@ -92,46 +94,38 @@ const SmartBander = () => {
 
     <div className='bg-gray-400/20 w-screen items-center justify-center flex p-10'>
             <div className='  relative w-[1000px] '   style={{
-          backgroundImage:  `url(${smart1})`,
+          backgroundImage:  ` linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${smart1})`,
         backgroundSize: 'cover',
-            backgroundPosition: 'center'
-        }}>
-<div className="flex items-center gap-16">
+            backgroundPosition: 'center',
+            
+        }}>          
+<div className="flex items-center gap-10 pl-4">
             {/* Left Content Section */}
             <div className="flex-1 relative z-10">
               {/* Decorative Gear Left */}
               <div 
-                className="absolute -left-20 top-0 w-32 h-32 opacity-40"
+                className="absolute -left-20 top-0 w-32 h-32  "
               >
-                <svg viewBox="0 0 100 100" className="w-full h-full">
-                  <circle 
-                    cx="50" 
-                    cy="50" 
-                    r="35" 
-                    fill="none" 
-                    stroke={MY_COLORS.secondaryGreen} 
-                    strokeWidth="3"
-                  />
-                  <circle 
-                    cx="50" 
-                    cy="50" 
-                    r="20" 
-                    fill="none" 
-                    stroke={MY_COLORS.secondaryGreen} 
-                    strokeWidth="3"
-                  />
-                  {[0, 60, 120, 180, 240, 300].map((angle, i) => (
-                    <line
-                      key={i}
-                      x1="50"
-                      y1="50"
-                      x2={50 + 35 * Math.cos((angle * Math.PI) / 180)}
-                      y2={50 + 35 * Math.sin((angle * Math.PI) / 180)}
-                      stroke={MY_COLORS.secondaryGreen}
-                      strokeWidth="3"
-                    />
-                  ))}
-                </svg>
+                 <motion.img 
+                   src={casq} 
+                   alt="engrenage" 
+                   className="w-30 h-30"
+                  // Animation: Uniquement le mouvement vertical (flottement)
+  animate={{ 
+    y: [0, -15, 0], // Commence à 0, monte à -15px, revient à 0
+  }}
+  
+  // Transition: Rend le flottement doux et répétitif
+  transition={{ 
+    // On cible explicitement la propriété 'y'
+    y: {
+      duration: 2, // Le cycle de flottement dure 2 secondes (montée et descente)
+      ease: "easeInOut", // Pour un mouvement doux au sommet et au fond
+      repeat: Infinity, // Répète sans fin
+      repeatType: "reverse", // Essentiel : inverse le mouvement (monte puis redescend)
+    }
+  }}
+                /> 
               </div>
 
               <h2 className="text-4xl font-bold mb-6 text-white">
@@ -140,7 +134,7 @@ const SmartBander = () => {
 
               <h3 
                 className="text-2xl font-bold mb-4"
-                style={{ color: MY_COLORS.secondaryGreen }}
+                style={{ color: MY_COLORS.white }}
               >
                 {t('interfaceCommande.featureTitle')}
               </h3>
@@ -180,19 +174,19 @@ const SmartBander = () => {
               </button>
 
               {/* Carousel Container with Floating Animation */}
-              <div className="relative floating">
-                <div className="relative h-96 rounded-lg overflow-hidden">
+              <div className="relative floating ">
+                <div className="relative h-96 rounded-lg overflow-hidden ">
                   {slides.map((slide, index) => (
                     <div
                       key={index}
-                      className={`absolute inset-0 transition-opacity duration-500 ${
+                      className={`absolute flex items-center justify-center inset-0 transition-opacity duration-500 ${
                         index === currentSlide && fadeIn ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
                       <img
                         src={slide}
                         alt={`Interface ${index + 1}`}
-                        className="w-full h-60 object-cover"
+                        className="w-80 h-60 object-cover"
                       />
                     </div>
                   ))}

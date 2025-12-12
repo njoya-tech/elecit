@@ -139,17 +139,21 @@ const SmartFeatureCarousel = ({ activeTab }) => {
             className="absolute -left-16 -top-8 w-24 h-24 rounded-full "
            
           >
-        <motion.img 
+          <motion.img 
                    src={rail} 
                    alt="engrenage" 
-                   className="w-50 h-30"
+                   className="w-30 h-30"
                    animate={{ rotate: 360 }}
                    transition={{ 
                      duration: 6, 
                      ease: "linear", 
                      repeat: Infinity 
                    }}
-                 /> </div>
+                /> 
+            </div>
+            {/* fond decalé */ }
+            <div className=" absolute bg-green-600 rounded-bottom-2xl p-10 translate-y-20 " style={{backgroundColor: MY_COLORS.secondaryGreen}}>
+            </div>
 
           {/* Image Container with rounded border */}
           <div 
@@ -224,7 +228,7 @@ const SmartFeatureCarousel = ({ activeTab }) => {
 
           {/* Decorative Gears */}
           <div 
-            className="absolute lg:-right-20 left-80 lg:left-140 top-60 lg:top-30 w-32 h-32 rounded-full "
+            className="absolute lg:-right-20 left-85 lg:left-140 top-60 lg:top-30 w-32 h-32 rounded-full "
             
           >
            <motion.img 

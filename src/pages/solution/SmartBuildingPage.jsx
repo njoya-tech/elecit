@@ -6,6 +6,9 @@ import Footer from '../../components/features/Footer'
 import SmartBander from '../../components/SmartBuilding/smartBander'
 import InterfaceCommandeCarousel from '../../components/SmartBuilding/InterfaceCommandeCarousel'
 import { useState } from 'react'
+import Prestations from '../../components/SmartBuilding/Prestations'
+import SmartBander2 from '../../components/SmartBuilding/SmartBander2'
+import FormRoundSmart from '../../components/SmartBuilding/FormRoundSmart'
 const SmartBuildingPage = () => {
        
   const [activeTab, setActiveTab] = useState('smartHome');
@@ -33,6 +36,20 @@ const SmartBuildingPage = () => {
     <div>
       <SmartBander></SmartBander>
     </div>
+
+    <div>
+      <Prestations/>
+    </div>
+
+    <div className='mb-130'>
+      <SmartBander2></SmartBander2>
+    </div>
+
+         <div>
+          <FormRoundSmart className=''></FormRoundSmart>
+         </div>
+     
+     
         </main>
 <Footer></Footer>
     </div>
