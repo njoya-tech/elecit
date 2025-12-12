@@ -27,6 +27,17 @@
     }
   },
 
+  "contact": {
+    "floatingButton": "Contactez-nous",
+    "popup": {
+      "title": "Contactez-nous",
+      "subtitle": "Nous vous répondrons dès que possible",
+      "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
+      "openWhatsApp": "Ouvrir WhatsApp",
+      "messagePlaceholder": "Rédigez votre message..."
+    }
+  },
+
   "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Soumettre un projet",
@@ -53,6 +64,58 @@
     }
   },
 
+  "trackingPlatform": {
+    "title": "Plateforme de Tracking disponible sur Web & Smartphone",
+    "buttonText": "Regardez la vidéo"
+  },
+
+  "smartBuild": {
+    "title": "Exposition des solutions et bâtiment intellignet",
+    "buttonText": "Visitez le showroom"
+  },
+
+  "footer": {
+    "banner": {
+      "availableEverywhere": "Service disponible partout",
+      "phoneNumber": "+237 650 416 640",
+      "phoneLabel": "Téléphone"
+    },
+    "company": {
+      "description": "Tout notre potentiel technique et technologique au service de votre imagination"
+    },
+    "services": {
+      "title": "SERVICES",
+      "mechanicalFabrication": "Conception, Fabrication mécanique & métallique",
+      "smartBuilding": "Bâtiments intelligents & automatisation",
+      "gpsTracking": "GPS & Tracking (More Than Track)",
+      "itServices": "Services informatiques & DATA Processing",
+      "designOffice": "Bureau d'étude: conception & ingénierie",
+      "afterSales": "Service après vente disponible 24/7"
+    },
+    "usefulLinks": {
+      "title": "LIENS UTILES",
+      "mangoBoutique": "MANGO BOUTIQUE",
+      "foczou": "FOCZOU",
+      "moreThanTrack": "MORE THAN TRACK",
+      "matoa": "MATOA"
+    },
+    "newsletter": {
+      "title": "NEWSLETTER",
+      "description": "Futur partenaire, chercheur d'emploi, autre? Abonnez vous à notre newsletter et ne manquez pas nos dernières actualités",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Saisissez votre e-mail",
+      "submitButton": "Rejoindre"
+    },
+    "copyright": {
+      "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
+      "privacyPolicy": "Politique de confidentialité",
+      "legalNotice": "Mentions légales"
+    },
+    "contact": {
+      "floatingButton": "Contactez-nous"
+    }
+  },
+
   "keySolutions": {
     "bannerTitle": "Des solutions clés pour des besoins spécifiques",
     "viewMore": "Voir plus",
@@ -75,6 +138,7 @@
     ]
   },
 
+
   "entreprise": {
     "hero": {
       "title": "",
@@ -93,7 +157,7 @@
       "items": [
         {
           "title": "",
-          "description": ""
+                   "description": ""
         }
       ]
     },
@@ -125,5 +189,11 @@
         }
       ]
     }
+  },
+
+  "projets": {
+    "title": "Nos Realisations",
+    "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",
+    "buttonText": "livre blanc"
   }
 }

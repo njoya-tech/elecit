@@ -1,15 +1,36 @@
 import React from 'react'
 import LanguageSwitcher from '../../components/features/LanguageSwitcher'
 import NavBar from '../../components/features/NavBar'
+import Footer from '../../components/features/Footer'
 import ImageWithTextOverlay from '../../components/ImageWithTextOverlay'
+
+import BlogBanner from '../../components/HomePage/BlogBanner'
+
+import SmartBuilding from '../../components/HomePage/SmartBuilding'
 import HeroSection from '../../components/HomePage/HeroSection'
 import slide1_home from '../../assets/slide1_home.jpg';
 import slide2_home from '../../assets/slide2_home.jpg';
 import slide3_home from '../../assets/slide3_home.jpg';
 
+import loca1 from '../../assets/loca1.png';
+import loca2 from '../../assets/loca2.png';
+import ordi1 from '../../assets/ordi1.png';
+
+import st1 from '../../assets/st1.png';
+import st2 from '../../assets/st2.png';
+// eslint-disable-next-line no-unused-vars
+import st3 from '../../assets/st3.png';
+import s from '../../assets/s.png'
+
+import phonegps from '../../assets/phonegps.png';
+import ServicesSection from '../../components/HomePage/ServicesSection'
+import RealBanner from '../../components/HomePage/RealBanner'
+import ServicesCarousel from '../../components/HomePage/ServicesCarousel'
+import TrackingPlatformSection from '../../components/HomePage/TrackingPlatformSection'
+import TestimonialsCarousel from '../../components/HomePage/TestimonialsCarousel'
 
 import SolutionsSection from '../../components/HomePage/SolutionsSection'
-
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -17,8 +38,40 @@ import SolutionsSection from '../../components/HomePage/SolutionsSection'
 
 const HomePage = () => {
 
+   const services = [
+    {
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop',
+      title: 'Services Informatiques & DATA Processing',
+      description: 'Des solutions sur mesure pour l\'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop',
+      title: 'Smart Building Solutions',
+      description: 'Solutions innovantes pour la gestion intelligente des bâtiments et l\'optimisation énergétique.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop',
+      title: 'GPS & Tracking',
+      description: 'Systèmes de localisation et de suivi en temps réel pour une gestion optimale de vos ressources.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop',
+      title: 'Contrôle d\'accès & Sécurité',
+      description: 'Solutions complètes de sécurité et de contrôle d\'accès pour protéger vos installations.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop',
+      title: 'Bureau d\'étude',
+      description: 'Expertise technique et conseil pour la conception de vos projets technologiques.'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop',
+      title: 'Service Après-Vente',
+      description: 'Support technique et maintenance pour assurer la pérennité de vos installations.'
+    }
+  ];
 
-
+const { t } = useTranslation();
 
   const heroSlides = [
     {
@@ -53,10 +106,14 @@ const HomePage = () => {
 
   return (
     <>
-    
-    <LanguageSwitcher/>
+    <div className='min-h-screen'>
+                  <header className='fixed top-0 left-0 right-0 z-50'>
 
-     <NavBar/>
+                         <NavBar/>
+                  </header>
+
+ <main className='pt-46'>
+
 
      <HeroSection slides={heroSlides} />
       <br/>
@@ -64,15 +121,84 @@ const HomePage = () => {
      <SolutionsSection
       />
 
+    <TrackingPlatformSection 
+      title={t('trackingPlatform.title')}
+      buttonText={t('trackingPlatform.buttonText')}
+      images={{
+        loc1: loca1,
+        loc2: loca2,
+        ordi1: ordi1,
+        phonegps: phonegps
+      }}
+    />
+    <br/>
+    <br/>
+    
+    <ServicesSection
+      />
 
+       <div>
+      <RealBanner 
+        titlePart1="Des réalisations à la hauteur de vos"
+        highlightWord="espérances"
+        titlePart2=""
+      />
+      <div className=''>
+           <ServicesCarousel services={services} />
+      </div>
+    
+    </div>
+
+    <div>
+         <SmartBuilding
+      title={t('smartBuild.title')}
+      buttonText={t('smartBuild.buttonText')}
+      images={{
+    
+        loc2: st1,
+        ordi1: st2,
+        phonegps: s
+      }}
+    />
+    </div>
+
+    <div className='mt-20 '>
+            <BlogBanner 
+        titlePart1="Restez à jour sur nos "
+        highlightWord="actualités"
+        titlePart2=" en consultant notre blog"
+      />
+    </div>
+
+    <div className=' h-[400px]'>
+                 <p className=' font-medium items-center flex justify-center p-20'>
+                  En ATTente des Elements de Blog Via le Backoffice Directus
+                 </p>
+    </div>
+
+    <div className='mt-20'>
+         <BlogBanner 
+        titlePart1=" Ce que dise nos clients de leur "
+        highlightWord="experience"
+        titlePart2=" avec vous"
+      />
+    
+    </div>
+
+    <div>
+      <TestimonialsCarousel></TestimonialsCarousel>
+    </div>
+
+
+
+ </main>
+
+ <Footer/> 
  
-         {/* <section className='relative w-full max-w-lg mx-auto'>
-                <div className='absolute inset'>
+    </div>
 
-                </div>
-         </section>
-    <div className='text-green-600 font-montserrat   flex justify-center  '>HomePage</div>
-    <ImageWithTextOverlay></ImageWithTextOverlay> */}
+
+  
 
     </>
   )

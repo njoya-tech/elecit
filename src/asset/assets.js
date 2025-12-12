@@ -18,6 +18,19 @@ import transformation from "./icons/transformation.svg";
 import excellence from "./icons/excellence.svg";
 import cercle from "./icons/cercle.svg";
 import formePlan from "./icons/form_plan.svg";
+import badge from "./icons/badge.svg";
+import laptop from"./icons/laptop_mobile.svg";
+import stockage from "./icons/stockage.svg";
+import business_icon from "./icons/business_inteligence.svg";
+import faibilite_icon from "./icons/faibilite.svg";
+import securite_icon from "./icons/securite_renforcee.svg";
+import optimisation_icon from "./icons/optimisation_des_couts.svg"
+import gain_temps_icon from "./icons/gain_de_temps.svg"
+import flexibilite_icon from "./icons/flexibilite_et_evolution.svg";
+import conformite_icon from "./icons/conformite_reglementaire.svg"
+import decision_icon from "./icons/decision_plus_intelligentes.svg";
+
+
 
 //==========IMAGES==================
 
@@ -37,6 +50,9 @@ import IMG13 from "./images/image_13.JPG";
 import IMG14 from "./images/image_14.jpg";
 import IMG15 from "./images/image_15.JPG";
 import IMG16 from "./images/image_16.jpg";
+import IMG17 from "./images/engineer_phone.jpg";
+import IMG18 from "./images/engineer.jpg";
+import IMG19 from "./images/Tablet.jpg";
 
 //========== PARTNERS IMAGES ==========
 
@@ -81,7 +97,19 @@ export const ICONS = {
   transformation: transformation,
   excellence: excellence,
   cercle: cercle,
-  formePlan: formePlan,};
+  formePlan: formePlan,
+  badge: badge,
+  laptop:laptop,
+  business_icon:business_icon,
+  stockage:stockage,
+  faibilite_icon:faibilite_icon,
+  securite_icon:securite_icon,
+  optimisation_icon:optimisation_icon,
+  gain_temps_icon:gain_temps_icon,
+  flexibilite_icon: flexibilite_icon,
+  conformite_icon:conformite_icon,
+  decision_icon: decision_icon,
+};
 
 export const IMAGES = {
   IMG1: IMG1,
@@ -100,6 +128,9 @@ export const IMAGES = {
   IMG14: IMG14,
   IMG15: IMG15,
   IMG16: IMG16,
+  IMG17: IMG17,
+  IMG18: IMG18,
+  IMG19: IMG19,
 };
 
  export const PARTNERS = {

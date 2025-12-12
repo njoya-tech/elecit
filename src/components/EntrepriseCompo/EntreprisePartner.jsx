@@ -213,7 +213,7 @@ const EnterprisePartners = () => {
     <>
       <style>{animationStyles}</style>
 
-      <section className="w-full py-16 px-4 bg-white">
+      <section className="w-full  bg-white p-0 m-0">
         <div className="max-w-7xl mx-auto">
           {/* SECTION TITLE */}
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#7AB82E]">
@@ -281,30 +281,24 @@ const EnterprisePartners = () => {
 
           {/* CTA SECTION - PURE TAILWIND */}
           {/* CTA SECTION - PNG background + real content */}
-          <div className="relative mt-32 lg:mt-40 mx-auto w-[90%] lg:w-4/5 max-w-6xl">
+          <div className="relative mx-auto w-[90%] lg:w-4/5 max-w-6xl m-0 p-0">
             {/* BLACK BLOCK PNG - Background layer */}
-            <img
-              src={ICONS.formePlan}
-              alt=""
-              aria-hidden="true"
-              className="w-full "
-              style={{
-                height:"50%",
-                width:"100%",
-                objectFit:"cover",
-                
-
-              }}
-            />
+            <div className="w-full overflow-hidden" style={{ height: "440px" }}>
+              <img
+                src={ICONS.formePlan}
+                className="w-full object-cover block"
+                alt=""
+              />
+            </div>
 
             {/* CONTENT OVERLAY - Positioned absolutely on top of PNG */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16">
               {/* TECH PATTERN - Behind text */}
               <img
-              style={{
-                top:"12em",
-                width:"85%"
-              }}
+                style={{
+                  top: "12em",
+                  width: "85%",
+                }}
                 src={ICONS.formTech}
                 alt=""
                 aria-hidden="true"
@@ -316,9 +310,7 @@ const EnterprisePartners = () => {
               {/* TEXT */}
               <h3
                 className="relative z-20 text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8 md:mb-12"
-                style={{ color: MY_COLORS.white,
-                  top:"-25%"
-                 }}
+                style={{ color: MY_COLORS.white, top: "10%" }}
               >
                 Vous avez une idée ?<br />
                 Nous avons les{" "}
@@ -327,23 +319,23 @@ const EnterprisePartners = () => {
 
               {/* BUTTON */}
               <CTAButton
-              className=" absolute -top-40 "
-               onClick={() => alert("Video clicked!")}>
-              Contactez Nous
-             </CTAButton>
+                className=" absolute top-10 "
+                onClick={() => alert("Video clicked!")}
+              >
+                Contactez Nous
+              </CTAButton>
             </div>
 
             {/* ROTATING GEAR - Top priority overlay */}
             <div
-              className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-50"
+              className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40"
               style={{
                 animation: "rotateClockwise 8s linear infinite",
-                top: "40%",
+                top: "65%",
                 right: "1%",
-
               }}
               aria-hidden="true"
-             >
+            >
               <img
                 src={ICONS.Engrenage_plan}
                 alt=""
@@ -352,14 +344,14 @@ const EnterprisePartners = () => {
             </div>
 
             <div
-              className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-32 lg:h-32 z-40"
+              className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-16 lg:h-16 z-40"
               style={{
                 animation: "rotateClockwise 20s linear infinite",
-                top: "7%",
-                left: "7%",
+                top: "17%",
+                left: "10%",
               }}
               aria-hidden="true"
-             >
+            >
               <img
                 src={ICONS.Engrenage_plan}
                 alt=""

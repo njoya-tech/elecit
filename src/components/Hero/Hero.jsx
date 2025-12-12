@@ -49,7 +49,7 @@ const Hero = () => {
           absolute inset-0 flex flex-col items-center justify-center
           px-6 md:px-12 text-center
         "
-      >
+       >
         {/* MAIN TITLE */}
         <h1
           className="
