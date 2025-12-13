@@ -43,13 +43,15 @@ const CardDonnes = () => {
     <>
       {/* CONTAINER 1: HEADER */}
       <header className="w-full bg-slate-900">
-        <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-4 md:py-5">
+        <div className="mx-auto max-w-7xl flex items-center 
+        justify-between px-6 md:px-12 py-4 md:py-5">
           {/* Left: circuit pattern */}
           <div className="flex-shrink-0">
             <img
               src={ICONS.formTech}
               alt="Motif circuit"
-              className="h-24 md:h-24 w-auto object-contain scale-200 opacity-100 mr-20"
+              className="h-24 md:h-24 w-auto object-contain 
+              scale-190 opacity-100 mr-20 translate-x-15"
             />
           </div>
 

@@ -144,25 +144,25 @@ const BlogContact = () => {
                 <div className="flex-1 p-6 flex flex-col">
                   <h3
                     className={`font-semibold text-base md:text-lg mb-3 text-center transition-all duration-500 transform
-  ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
+                     ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
                     style={{ transitionDelay: "100ms" }}
-                  >
+                   >
                     {post.title}
                   </h3>
 
                   <p
                     className={`text-sm text-gray-600 mb-4 flex-1 text-center transition-all duration-500 transform
-  ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
+                       ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
                     style={{ transitionDelay: "200ms" }}
-                  >
+                   >
                     {post.excerpt}
                   </p>
 
                   <button
                     className={`mt-auto inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#00729B] text-white text-sm font-semibold hover:bg-[#005d7e] transition-all duration-500 transform
-  ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
+                     ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
                     style={{ transitionDelay: "300ms" }}
-                  >
+                   >
                     Lire plus
                   </button>
                 </div>
