@@ -1,15 +1,25 @@
-import React from "react";
-import LanguageSwitcher from "../../components/features/LanguageSwitcher";
-import NavBar from "../../components/features/NavBar";
-import ImageWithTextOverlay from "../../components/ImageWithTextOverlay";
-import HeroSection from "../../components/HomePage/HeroSection";
-import slide1_home from "../../assets/slide1_home.jpg";
-import slide2_home from "../../assets/slide2_home.jpg";
-import slide3_home from "../../assets/slide3_home.jpg";
+import React from 'react'
+import LanguageSwitcher from '../../components/features/LanguageSwitcher'
+import NavBar from '../../components/features/NavBar'
+import ImageWithTextOverlay from '../../components/ImageWithTextOverlay'
+import HeroSection from '../../components/HomePage/HeroSection'
+import slide1_home from '../../assets/slide1_home.jpg';
+import slide2_home from '../../assets/slide2_home.jpg';
+import slide3_home from '../../assets/slide3_home.jpg';
 
-import SolutionsSection from "../../components/HomePage/SolutionsSection";
+
+import SolutionsSection from '../../components/HomePage/SolutionsSection'
+
+
+
+
+
 
 const HomePage = () => {
+
+
+
+
   const heroSlides = [
     {
       image: slide1_home,
@@ -42,22 +52,27 @@ const HomePage = () => {
 
   return (
     <>
-      <LanguageSwitcher />
+    
+    <LanguageSwitcher/>
 
-      <NavBar />
+     <NavBar/>
 
-      <HeroSection slides={heroSlides} />
-      <br />
-      <br />
-      <SolutionsSection />
+     <HeroSection slides={heroSlides} />
+      <br/>
+      <br/>
+     <SolutionsSection
+      />
 
-      {/* <section className='relative w-full max-w-lg mx-auto'>
+
+ 
+         {/* <section className='relative w-full max-w-lg mx-auto'>
                 <div className='absolute inset'>
 
                 </div>
          </section>
     <div className='text-green-600 font-montserrat   flex justify-center  '>HomePage</div>
     <ImageWithTextOverlay></ImageWithTextOverlay> */}
+
     </>
   );
 };
