@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
+import CTAButton from "../CTA/CTAButton.jsx";
 
 const EntrepriseTeam = () => {
   // 📸 CAROUSEL DATA - Array of slides (images + titles)
@@ -112,24 +113,9 @@ const EntrepriseTeam = () => {
               </li>
             </ul>
 
-            <button
-              className="px-8 py-3 rounded-full font-semibold text-lg border-2 transition-all duration-300"
-              style={{
-                borderColor: MY_COLORS.green,
-                backgroundColor: "transparent",
-                color: MY_COLORS.green,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = MY_COLORS.green;
-                e.currentTarget.style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = MY_COLORS.green;
-              }}
-            >
-              Publireportage
-            </button>
+            <CTAButton onClick={() => alert("Video clicked!")}>
+          Publireportage
+        </CTAButton>
           </div>
 
           {/* 🎠 RIGHT SIDE - Carousel */}
@@ -226,9 +212,9 @@ const EntrepriseTeam = () => {
       </div>
 
       {/* 🟢 GREEN DASHED LINE SEPARATOR */}
-      <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-16 mt-16">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-16 mt-26 lg:pt-1">
         <div
-          className="w-full h-[2px]"
+          className="w-full h-0.5 -top-10"
           style={{
             backgroundImage: `repeating-linear-gradient(
         to right,
@@ -236,7 +222,7 @@ const EntrepriseTeam = () => {
         ${MY_COLORS.green} 9px,
         transparent 1px,
         transparent 12px
-      )`,
+            )`,
           }}
         />
       </div>

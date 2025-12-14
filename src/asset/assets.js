@@ -17,6 +17,20 @@ import innovation from "./icons/innovation.svg";
 import transformation from "./icons/transformation.svg";
 import excellence from "./icons/excellence.svg";
 import cercle from "./icons/cercle.svg";
+import formePlan from "./icons/form_plan.svg";
+import badge from "./icons/badge.svg";
+import laptop from"./icons/laptop_mobile.svg";
+import stockage from "./icons/stockage.svg";
+import business_icon from "./icons/business_inteligence.svg";
+import faibilite_icon from "./icons/faibilite.svg";
+import securite_icon from "./icons/securite_renforcee.svg";
+import optimisation_icon from "./icons/optimisation_des_couts.svg"
+import gain_temps_icon from "./icons/gain_de_temps.svg"
+import flexibilite_icon from "./icons/flexibilite_et_evolution.svg";
+import conformite_icon from "./icons/conformite_reglementaire.svg"
+import decision_icon from "./icons/decision_plus_intelligentes.svg";
+
+
 
 //==========IMAGES==================
 
@@ -36,6 +50,33 @@ import IMG13 from "./images/image_13.JPG";
 import IMG14 from "./images/image_14.jpg";
 import IMG15 from "./images/image_15.JPG";
 import IMG16 from "./images/image_16.jpg";
+import IMG17 from "./images/engineer_phone.jpg";
+import IMG18 from "./images/engineer.jpg";
+import IMG19 from "./images/Tablet.jpg";
+
+//========== PARTNERS IMAGES ==========
+
+import partner1 from "./images/partner_1.png";
+import partner2 from "./images/partner_2.png";
+import partner3 from "./images/partner_3.png";
+import partner4 from "./images/partner_4.png";
+import partner5 from "./images/partner_5.png";
+import partner6 from "./images/partner_6.png";
+import partner7 from "./images/partner_7.png";
+import partner8 from "./images/partner_8.png";
+import partner9 from "./images/partner_9.png";
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Export organized assets
 export const HERO = {
@@ -56,6 +97,18 @@ export const ICONS = {
   transformation: transformation,
   excellence: excellence,
   cercle: cercle,
+  formePlan: formePlan,
+  badge: badge,
+  laptop:laptop,
+  business_icon:business_icon,
+  stockage:stockage,
+  faibilite_icon:faibilite_icon,
+  securite_icon:securite_icon,
+  optimisation_icon:optimisation_icon,
+  gain_temps_icon:gain_temps_icon,
+  flexibilite_icon: flexibilite_icon,
+  conformite_icon:conformite_icon,
+  decision_icon: decision_icon,
 };
 
 export const IMAGES = {
@@ -75,6 +128,21 @@ export const IMAGES = {
   IMG14: IMG14,
   IMG15: IMG15,
   IMG16: IMG16,
+  IMG17: IMG17,
+  IMG18: IMG18,
+  IMG19: IMG19,
+};
+
+ export const PARTNERS = {
+  partner1: partner1,
+  partner2: partner2,
+  partner3: partner3,
+  partner4: partner4,
+  partner5: partner5,
+  partner6: partner6,
+  partner7: partner7,
+  partner8: partner8,
+  partner9: partner9,
 };
 
 // Global default export
@@ -82,4 +150,5 @@ export default {
   HERO,
   ICONS,
   IMAGES,
+  PARTNERS,
 };

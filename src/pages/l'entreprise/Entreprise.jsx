@@ -5,7 +5,8 @@ import ElecITCarouselCard from "../../components/HeroTest.jsx";
 import EntrepriseCards from "../../components/EntrepriseCompo/EntrepriseCards.jsx";
 import EntrepriseTeam from "../../components/EntrepriseCompo/EntrepriseTeam.jsx";
 import EntrepriseAcc from "../../components/EntrepriseCompo/EntrepriseAcc.jsx";
-
+import EntreprisePartner from "../../components/EntrepriseCompo/EntreprisePartner.jsx";
+import Footer from "../../components/features/Footer.jsx";
 const Entreprise = () => {
   return (
     <div className="relative w-full min-h-screen">
@@ -38,9 +39,17 @@ const Entreprise = () => {
         </section>
 
         {/* Acc Section - Full Width */}
-        <section className="w-full pt-8 md:pt-12 lg:pt-16">
+        <section className="w-full pt-8 md:pt-12 lg:pt-6">
           <EntrepriseAcc />
         </section>
+
+        <section className="w-full p-0 m-0">
+          <EntreprisePartner />
+        </section>
+
+        <footer className="m-0 p-0">
+          <Footer />
+        </footer>
       </main>
     </div>
   );
