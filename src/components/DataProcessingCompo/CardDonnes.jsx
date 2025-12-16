@@ -1,250 +1,225 @@
-import React from "react";
-import { ICONS, IMAGES } from "../../asset/assets.js";
-import { MY_COLORS } from "../../constants/colors.js";
+import React, { useEffect, useState } from "react";
+import { ICONS, IMAGES, OBJECTS } from "../../asset/assets";
+import { MY_COLORS } from "../../constants/colors";
 
-const CardDonnes = () => {
-  const services = {
-    row1: [
-      {
-        icon: ICONS.laptop, // Replace with actual icon
-        title: "Gestion des Infrastructures IT",
-        description:
-          "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.).",
-      },
-      {
-        icon: ICONS.stockage,
-        title: "Support Technique & Assistance",
-        description:
-          "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective.",
-      },
-    ],
-    row2: [
-      {
-        icon: ICONS.badge,
-        title: "Cybersécurité",
-        description:
-          "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité.",
-      },
-      {
-        icon: ICONS.business_icon,
-        title: "Virtualisation & Cloud Computing",
-        description:
-          "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides.",
-      },
-      {
-        icon: ICONS.badge,
-        title: "Développement d'applications",
-        description:
-          "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers.",
-      },
-    ],
-  };
+const ControlCards = () => {
+  const carouselImages = [OBJECTS.obj_1, OBJECTS.obj_4, OBJECTS.obj_6];
+  const [currentImagesIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % carouselImages.length
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
+  const cards = [
+    {
+      icon: ICONS.badge,
+      title: "Contrôle d'Accès Intelligent",
+      features: [
+        "Systèmes de badges, cartes RFID et biométrie",
+        "Portails automatiques avec gestion des entrées et sorties",
+        "Serrures électroniques et systèmes de verrouillage sécurisé",
+      ],
+    },
+    {
+      icon: ICONS.stockage,
+      title: "Vidéosurveillance et Détection d'Intrusion",
+      features: [
+        "Installation de caméras haute définition et vidéosurveillance IP",
+        "Systèmes de détection de mouvement et alarmes connectées",
+        "Surveillance en temps réel et enregistrement sécurisé",
+      ],
+    },
+    {
+      icon: ICONS.securite_icon,
+      title: "Sécurité et Gestion des Risques",
+      features: [
+        "Protection contre les intrusions, le vol et le vandalisme",
+        "Solutions de cybersécurité pour les systèmes de contrôle d'accès",
+        "Détection des incendies et intégration avec les systèmes d'alerte",
+      ],
+    },
+    {
+      icon: ICONS.decision_icon,
+      title: "Gestion Centralisée et Automatisation",
+      features: [
+        "Supervision des accès via des logiciels de gestion",
+        "Solutions cloud pour le contrôle à distance",
+        "Historique des accès et rapports d'activité détaillés",
+      ],
+    },
+  ];
+
   return (
-    <>
-      {/* CONTAINER 1: HEADER */}
-      <header className="w-full bg-slate-900">
-        <div className="mx-auto max-w-7xl flex items-center 
-        justify-between px-6 md:px-12 py-4 md:py-5">
-          {/* Left: circuit pattern */}
-          <div className="flex-shrink-0">
+    <div className="w-full py-12 md:py-16 lg:py-20">
+      {/* Section Header */}
+      <div
+        className="relative w-full mb-8 overflow-hidden"
+        style={{ backgroundColor: MY_COLORS.black }}
+      >
+        <div className="absolute -top-10 right-0 w-1/3 h-full opacity-100 scale-125">
+          <img src={ICONS.formTech} alt="" />
+        </div>
+        <h2
+          className="relative text-3xl md:text-4xl lg:text-5xl font-bold px-8 py-6 md:py-8"
+          style={{ color: MY_COLORS.secondaryGreen }}
+        >
+          Nos prestations
+        </h2>
+      </div>
+
+      {/* Subtitle */}
+      <p
+        className="text-center text-base md:text-lg lg:text-xl mb-12 md:mb-16 
+        px-4 max-w-4xl mx-auto"
+        style={{ color: MY_COLORS.black }}
+      >
+        Nous proposons des solutions performantes pour sécuriser les bâtiments,
+        les infrastructures et les espaces sensibles.
+      </p>
+
+      {/* Main Grid Layout */}
+      <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+        {/* Vertical Green Line - Between left and right sections */}
+        <div
+          className="hidden md:block absolute top-0 bottom-0 w-px border-l-2 border-dotted -translate-x-1/2 z-0"
+          style={{
+            borderColor: MY_COLORS.secondaryGreen,
+            left: "33.33%",
+          }}
+        ></div>
+
+        {/* Left Featured Card */}
+        <div className="lg:col-span-1">
+          <div className="h-full flex flex-col justify-between min-h-[500px]">
+            {/* Green Card with Carousel */}
+            <div
+              className="rounded-2xl p-8 md:p-12 shadow-lg mb-6"
+              style={{
+                background: `linear-gradient(135deg, ${MY_COLORS.secondaryGreen} 0%, ${MY_COLORS.green} 100%)`,
+              }}
+            >
+              <div className="flex items-center justify-center">
+                <img
+                  src={carouselImages[currentImagesIndex]}
+                  alt="Product showcase"
+                  className="w-full h-auto object-contain max-w-[250px]"
+                />
+              </div>
+            </div>
+
+            {/* Title Text */}
+            <h3
+              className="text-center font-bold text-lg md:text-xl mb-4 px-4"
+              style={{ color: MY_COLORS.green }}
+            >
+              Visite immersive de la boutique de vente de matériaux de
+              construction et d'équipements électriques
+            </h3>
+
+            {/* Black Button */}
+            <button
+              className="px-8 py-3 rounded-full font-semibold 
+              transition-opacity hover:opacity-90 flex items-center 
+              justify-center mx-auto gap-2"
+              style={{
+                backgroundColor: MY_COLORS.black,
+                color: MY_COLORS.white,
+              }}
+            >
+              Mango boutique
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Right Cards Grid (2x2) */}
+        <div className="lg:col-span-2 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+            {/* Vertical Dotted Line */}
+            <div
+              className="hidden md:block absolute left-1/2 top-0 bottom-0 
+              w-px border-l-2 border-dotted -translate-x-1/2 z-0"
+              style={{ borderColor: MY_COLORS.secondaryGreen }}
+            ></div>
+
+            {/* Horizontal Dotted Line */}
+            <div
+              className="hidden md:block absolute left-0 right-0 top-1/2 
+              h-px border-t-2 border-dotted -translate-y-1/2 z-0"
+              style={{ borderColor: MY_COLORS.secondaryGreen }}
+            ></div>
+
+            {cards.map((card, index) => {
+              const isTopRow = index < 2;
+
+              return (
+                <div
+                  key={index}
+                  className="relative pt-14 p-6 rounded-xl shadow-lg bg-white 
+                  hover:shadow-xl transition-shadow duration-300 border border-gray-100 z-10"
+                  style={{
+                    transform: isTopRow ? 'translateY(-10px)' : 'translateY(10px)',
+                  }}
+                >
+                  {/* Icon - Half in, half out at top - SAME AS CardDonnes */}
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+                    <img 
+                      src={card.icon} 
+                      alt={card.title} 
+                      className="w-20 h-20 object-contain" 
+                    />
+                  </div>
+
+                  {/* Card Content */}
+                  <h3
+                    className="text-xl font-bold mb-3 text-center"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {card.title}
+                  </h3>
+
+                  <div className="text-gray-600 text-center text-sm leading-relaxed space-y-2">
+                    {card.features.map((feature, idx) => (
+                      <p key={idx} className="leading-relaxed">
+                        {feature}
+                        {idx < card.features.length - 1 && "/"}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Decorative Helmet Icon */}
+          <div className="hidden xl:block absolute -right-16 top-1/2 -translate-y-1/2 z-0 opacity-60">
             <img
-              src={ICONS.formTech}
-              alt="Motif circuit"
-              className="h-24 md:h-24 w-auto object-contain 
-              scale-190 opacity-100 mr-20 translate-x-15"
+              src={ICONS.Casque}
+              alt="Helmet decoration"
+              className="w-32 h-32"
             />
           </div>
-
-          {/* Right: title */}
-          <h1 className="ml-4 text-white font-extrabold text-xl md:text-3xl leading-tight text-right">
-            Traitement et Valorisation des Données
-          </h1>
-        </div>
-      </header>
-
-      {/* CONTAINER 2: CONTENT WRAPPER */}
-      <div className="w-full bg-white-50">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 py-12 md:py-16">
-          {/* CONTAINER 3: INTRO SECTION - Control the entire div */}
-          <div
-            style={{
-              marginRight: "10px", // Move entire section to the left
-              paddingLeft: "10px", // Add padding if needed
-            }}
-            className="flex items-center gap-8 mb-16"
-          >
-            {/* Helmet Icon - Control the helmet */}
-            <div className="flex-shrink-0">
-              <img
-                style={{
-                  marginLeft: "50px", // Push helmet to the right
-                  animationDelay: "0.5s", // Delay bounce animation
-                  animationDuration: "2s", // Slower bounce
-                  right: "200px",
-                }}
-                src={ICONS.Casque}
-                alt="Casque de sécurité"
-                className="relative h-32 md:h-40 w-auto object-contain animate-bounce"
-              />
-            </div>
-
-            {/* Description Text - Control the paragraph */}
-            <p
-              style={{
-                textAlign: "center",
-                paddingLeft: "2px", // Add space from helmet
-                paddingRight: "20px", // Balance the text
-                maxWidth: "800px", // Limit text width
-                fontSize: "1.3em",
-              }}
-              className="text-gray-700 text-base md:text-lg leading-relaxed flex-1"
-            >
-              Nous transformons les données brutes en informations exploitables
-              pour aider nos clients à prendre des décisions éclairées,
-              optimiser leurs performances et créer de la valeur à chaque étape
-              de leur activité.
-            </p>
-          </div>
         </div>
       </div>
-      <div className="relative">
-        {/* HORIZONTAL DOTTED LINE - Between rows */}
-        <div
-          className="absolute left-0 right-0 hidden md:block"
-          style={{
-            top: "55%",
-            borderTop: "2px dashed #8CC63F",
-          }}
-        />
-
-        {/* VERTICAL DOTTED LINES - Between columns */}
-        <div
-          className="hidden lg:block absolute top-0 bottom-0"
-          style={{
-            left: "33.333%",
-            borderLeft: "2px dashed #8CC63F",
-          }}
-        />
-        <div
-          className="hidden lg:block absolute top-0 bottom-0"
-          style={{
-            left: "66.666%",
-            borderLeft: "2px dashed #8CC63F",
-          }}
-        />
-
-        {/* ============================================ */}
-        {/* ROW 1: 2 Cards + Image                      */}
-        {/* ============================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 relative z-10">
-          {/* CARD 1 */}
-          <div className="relative pt-14 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            {/* ICON - Half in, half out */}
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-              <img src={services.row1[0].icon} alt="" className="w-20 h-20" />
-            </div>
-
-            <h3
-              className="text-xl font-bold mb-3 text-center"
-              style={{ color: MY_COLORS.black }}
-            >
-              {services.row1[0].title}
-            </h3>
-            <p className="text-gray-600 text-center text-sm leading-relaxed">
-              {services.row1[0].description}
-            </p>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="relative pt-14 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            {/* ICON - Half in, half out */}
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-              <img src={services.row1[1].icon} alt="" className="w-20 h-20" />
-            </div>
-
-            <h3
-              className="text-xl font-bold mb-3 text-center"
-              style={{ color: MY_COLORS.black }}
-            >
-              {services.row1[1].title}
-            </h3>
-            <p className="text-gray-600 text-center text-sm leading-relaxed">
-              {services.row1[1].description}
-            </p>
-          </div>
-
-          {/* IMAGE (Right Side) */}
-          <div className="flex justify-center items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg w-full h-full">
-              <img
-                src={IMAGES.IMG5}
-                alt="IT Services Illustration"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* ============================================ */}
-        {/* ROW 2: 3 Cards                             */}
-        {/* ============================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8 relative z-20">
-          {services.row2.map((service, index) => (
-            <div
-              key={index}
-              className="
-      relative 
-      pt-14 p-6 
-      rounded-xl shadow-lg bg-white
-      hover:shadow-xl transition-shadow duration-500 
-      border border-gray-100 
-      z-20 
-      overflow-visible
-    "
-            >
-              {/* ICON - Half in, half out */}
-              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
-                <img src={service.icon} alt="" className="w-20 h-20" />
-              </div>
-
-              <h3
-                className="text-xl font-bold mb-3 text-center"
-                style={{ color: MY_COLORS.black }}
-              >
-                {service.title}
-              </h3>
-
-              <p className="text-gray-600 text-center text-sm leading-relaxed">
-                {service.description}
-              </p>
-
-              {/* GEAR BEHIND CARD */}
-              {index === 2 && (
-                <div
-                  className="
-          absolute 
-          -bottom-18 -right-28 
-          opacity-100 pointer-events-none z-10
-          
-          
-        "
-                >
-                  <img
-                    style={{
-                      animation: "rotateClockwise 5s linear infinite",
-                    }}
-                    src={ICONS.Engrenage_plan}
-                    alt=""
-                    className="w-32 h-32"
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 
-export default CardDonnes;
+export default ControlCards;
