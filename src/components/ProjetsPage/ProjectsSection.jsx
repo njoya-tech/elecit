@@ -34,7 +34,7 @@ const projectsData = [
   {
     id: 2,
     number: '2',
-    title: 'Services informatiques & DATA Processing',
+    title: 'Services informatiques & DATA ',
     category: 'Smart building',
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop',
     shortDescription: "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
@@ -113,7 +113,7 @@ const categories = [
 const ProjectCard = ({ project, onClick }) => {
   return (
     <div 
-      className="relative bg-white rounded-lg overflow-visible cursor-pointer transition-all duration-300 hover:shadow-2xl"
+      className="relative bg-white rounded-lg w-100 h-100  overflow-visible cursor-pointer transition-all duration-300 hover:shadow-2xl"
       style={{ border: `2px solid ${MY_COLORS.secondaryGreen}` }}
       onClick={() => onClick(project)}
     >
@@ -126,7 +126,7 @@ const ProjectCard = ({ project, onClick }) => {
       </div>
 
       {/* Image */}
-      <div className="h-48 overflow-hidden mt-8">
+      <div className="h-48 overflow-hidden ">
         <img 
           src={project.image} 
           alt={project.title}
@@ -144,7 +144,7 @@ const ProjectCard = ({ project, onClick }) => {
         </p>
         
         {/* Bouton Voir plus */}
-        <div className="flex justify-center">
+        <div className="flex justify-center  ">
           <button 
             className="px-8 py-2 rounded-full font-semibold transition-all duration-300"
             style={{
@@ -349,12 +349,12 @@ const ProjectsSection = () => {
     <div className="w-full py-16 px-4" style={{backgroundColor: MY_COLORS.white}}>
       <div className="max-w-7xl mx-auto">
         {/* Tabs de catégories */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex lg:flex-wrap w-auto justify-center gap-4 mb-16">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className="px-6 py-3 font-semibold transition-all duration-300 relative"
+              className="px-6 py-3 text-sm font-semibold transition-all duration-300 relative"
               style={{
                 color: activeCategory === category.id 
                   ? MY_COLORS.secondaryGreen 
@@ -373,7 +373,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Grille de projets */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mt-12 flex justify-center ">
           {filteredProjects.map((project) => (
             <ProjectCard 
               key={project.id} 

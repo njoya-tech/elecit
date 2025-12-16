@@ -15,11 +15,11 @@ const JobOfferModal = ({ offer, onClose }) => {
     lastName: '',
     email: '',
     phone: '',
-    sex: '', // 'Masculin' ou 'Féminin'
+    sex: '',
     day: '',
     month: '',
     year: '',
-    position: offer.title || '', // Pré-remplir avec le poste de l'offre
+    position: offer.title || '',
     motivation: '',
     cvFile: null,
   });
@@ -28,10 +28,7 @@ const JobOfferModal = ({ offer, onClose }) => {
   // LOGIQUE DE BLOCAGE DU DÉFILEMENT (scroll lock)
   // ******************************************************
   useEffect(() => {
-    // 1. Désactiver le défilement sur le body lorsque le modal est monté
     document.body.style.overflow = 'hidden';
-
-    // 2. Rétablir le défilement lorsque le composant est démonté (fermeture du modal)
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -43,7 +40,6 @@ const JobOfferModal = ({ offer, onClose }) => {
     const { name, value, type, files } = e.target;
     setFormData(prev => ({
       ...prev,
-      // Gère les fichiers (CV) et les autres types de champs
       [name]: type === 'file' ? files[0] : value,
     }));
   };
@@ -51,117 +47,112 @@ const JobOfferModal = ({ offer, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Données de candidature soumises:", formData);
-    // Ajoutez ici la logique de soumission API (e.g., axios.post('/api/apply', formData))
-    // Après une soumission réussie, vous pouvez appeler onClose()
-    // onClose(); 
   };
 
   return (
     <div 
-      // L'overflow-y-auto est ici pour centrer le modal si la fenêtre est trop petite
-      className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-70 flex items-center justify-center z-50 p-4 overflow-y-auto"
+      className="fixed inset-0 bg-transparent backdrop-blur-sm bg-opacity-70 flex items-start lg:items-center justify-center z-50 overflow-y-auto"
       onClick={onClose}
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
-        // max-h-[95vh] et overflow-hidden gèrent le scroll interne du modal
-        className="bg-white rounded-lg shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-hidden" 
+        className="bg-white rounded-lg shadow-2xl w-full lg:max-w-6xl my-4 lg:my-0 mx-2 sm:mx-4" 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Conteneur Flex pour les deux colonnes */}
-        <div className="flex h-full">
+        <div className="flex flex-col lg:flex-row w-full">
           {/* COLONNE 1 : Détails de l'offre (gauche) */}
-          <div className="w-1/2 overflow-y-auto max-h-[95vh] flex flex-col">
+          <div className="w-full lg:w-1/2 flex flex-col max-h-[50vh] lg:max-h-[90vh] overflow-y-auto">
             
-            {/* En-tête du modal (Identique) */}
+            {/* En-tête du modal */}
             <div 
-              className="p-6 border-b flex items-start justify-between flex-shrink-0"
+              className="p-4 sm:p-6 border-b flex items-start justify-between flex-shrink-0"
               style={{ backgroundColor: MY_COLORS.primaryBlue }}
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <motion.img 
                   src={rail} 
                   alt="engrenage" 
-                  className="w-20 h-20"
+                  className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 flex-shrink-0"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 6, ease: "linear", repeat: Infinity }}
                 />
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-2">{offer.title}</h2>
-                  <p className="text-white opacity-90">{offer.subtitle}</p>
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-1 sm:mb-2 break-words">{offer.title}</h2>
+                  <p className="text-sm sm:text-base text-white opacity-90 break-words">{offer.subtitle}</p>
                 </div>
               </div>
               <button
                 onClick={onClose}
-                className="text-white text-3xl hover:opacity-70 transition-opacity"
+                className="text-white text-2xl sm:text-3xl hover:opacity-70 transition-opacity flex-shrink-0 ml-2"
               >
                 ×
               </button>
             </div>
             
             {/* Contenu des détails (Scrollable) */}
-            <div className="p-8 flex-grow">
+            <div className="p-4 sm:p-6 lg:p-8 flex-grow overflow-y-auto">
               
               {/* Informations clés */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 <div>
-                  <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
+                  <p className="text-xs sm:text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
                     {t('jobOffers.modal.typePoste')}
                   </p>
-                  <p className="text-gray-800">{offer.type}</p>
+                  <p className="text-sm sm:text-base text-gray-800">{offer.type}</p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
+                  <p className="text-xs sm:text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
                     {t('jobOffers.modal.lieuPoste')}
                   </p>
-                  <p className="text-gray-800">{offer.location}</p>
+                  <p className="text-sm sm:text-base text-gray-800">{offer.location}</p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
+                  <p className="text-xs sm:text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
                     {t('jobOffers.modal.datePublication')}
                   </p>
-                  <p className="text-gray-800">{offer.publicationDate}</p>
+                  <p className="text-sm sm:text-base text-gray-800">{offer.publicationDate}</p>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
+                  <p className="text-xs sm:text-sm font-semibold mb-1" style={{ color: MY_COLORS.primaryBlue }}>
                     {t('jobOffers.modal.validJusquau')}
                   </p>
-                  <p className="text-gray-800">{offer.validUntil}</p>
+                  <p className="text-sm sm:text-base text-gray-800">{offer.validUntil}</p>
                 </div>
               </div>
 
               {/* Description */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold mb-4" style={{ color: MY_COLORS.black }}>
+              <div className="mb-6 sm:mb-8">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4" style={{ color: MY_COLORS.black }}>
                   {t('jobOffers.modal.description')}
                 </h3>
-                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                   {offer.description}
                 </p>
               </div>
 
-              {/* Responsabilités (Affiché si la donnée existe) */}
+              {/* Responsabilités */}
               {offer.responsibilities && (
-                <div className="mb-8">
+                <div className="mb-6 sm:mb-8">
                   <h3 
-                    className="text-xl font-bold mb-4"
+                    className="text-lg sm:text-xl font-bold mb-3 sm:mb-4"
                     style={{ color: MY_COLORS.black }}
                   >
                     {t('jobOffers.modal.responsibilities')}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                     {offer.responsibilities}
                   </p>
                 </div>
               )}
 
-              {/* Activités (Affiché si la donnée existe) */}
+              {/* Activités */}
               {offer.activities && offer.activities.length > 0 && (
-                <div className="mb-8">
+                <div className="mb-6 sm:mb-8">
                   <h3 
-                    className="text-xl font-bold mb-4"
+                    className="text-lg sm:text-xl font-bold mb-3 sm:mb-4"
                     style={{ color: MY_COLORS.black }}
                   >
                     {t('jobOffers.modal.activities')}
@@ -169,24 +160,24 @@ const JobOfferModal = ({ offer, onClose }) => {
                   <ul className="space-y-2">
                     {offer.activities.map((activity, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <span style={{ color: MY_COLORS.secondaryGreen }}>•</span>
-                        <span className="text-gray-700">{activity}</span> 
+                        <span style={{ color: MY_COLORS.secondaryGreen }} className="flex-shrink-0">•</span>
+                        <span className="text-sm sm:text-base text-gray-700">{activity}</span> 
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
 
-              {/* Profil recherché (Affiché si la donnée existe) */}
+              {/* Profil recherché */}
               {offer.profile && (
-                <div className="mb-8">
+                <div className="mb-6 sm:mb-8">
                   <h3 
-                    className="text-xl font-bold mb-4"
+                    className="text-lg sm:text-xl font-bold mb-3 sm:mb-4"
                     style={{ color: MY_COLORS.black }}
                   >
                     {t('jobOffers.modal.profile')}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                     {offer.profile}
                   </p>
                 </div>
@@ -195,15 +186,15 @@ const JobOfferModal = ({ offer, onClose }) => {
           </div>
           
           {/* COLONNE 2 : Formulaire de candidature (droite) */}
-          <div className="w-1/2 p-8 border-l max-h-[95vh] overflow-y-auto">
-            <h2 className="text-2xl font-bold text-center mb-6" style={{ color: MY_COLORS.primaryBlue }}>
+          <div className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 border-t lg:border-t-0 lg:border-l max-h-[50vh] lg:max-h-[90vh] overflow-y-auto">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6" style={{ color: MY_COLORS.primaryBlue }}>
               {t('jobOffers.modal.formTitle')}
             </h2>
             
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Nom */}
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.name')}</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.name')}</label>
                 <input
                   type="text"
                   name="name"
@@ -211,13 +202,13 @@ const JobOfferModal = ({ offer, onClose }) => {
                   onChange={handleFormChange}
                   placeholder={t('jobOffers.modal.namePlaceholder')}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               {/* Prénom */}
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.lastName')}</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.lastName')}</label>
                 <input
                   type="text"
                   name="lastName"
@@ -225,14 +216,14 @@ const JobOfferModal = ({ offer, onClose }) => {
                   onChange={handleFormChange}
                   placeholder={t('jobOffers.modal.lastNamePlaceholder')}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {/* Email */}
                 <div>
-                  <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.email')}</label>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.email')}</label>
                   <input
                     type="email"
                     name="email"
@@ -240,13 +231,13 @@ const JobOfferModal = ({ offer, onClose }) => {
                     onChange={handleFormChange}
                     placeholder={t('jobOffers.modal.emailPlaceholder')}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
-                {/* Téléphone (Simplifié) */}
+                {/* Téléphone */}
                 <div>
-                  <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.phone')}</label>
+                  <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.phone')}</label>
                   <input
                     type="tel"
                     name="phone"
@@ -254,15 +245,15 @@ const JobOfferModal = ({ offer, onClose }) => {
                     onChange={handleFormChange}
                     placeholder={t('jobOffers.modal.phonePlaceholder')}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
 
               {/* Sexe */}
               <div>
-                <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.sex')}</label>
-                <div className="flex gap-6">
+                <label className="block text-xs sm:text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.sex')}</label>
+                <div className="flex gap-4 sm:gap-6">
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
@@ -273,7 +264,7 @@ const JobOfferModal = ({ offer, onClose }) => {
                       required
                       className="form-radio text-blue-600"
                     />
-                    <span className="ml-2 text-gray-700">{t('jobOffers.modal.male')}</span>
+                    <span className="ml-2 text-sm sm:text-base text-gray-700">{t('jobOffers.modal.male')}</span>
                   </label>
                   <label className="inline-flex items-center">
                     <input
@@ -285,24 +276,24 @@ const JobOfferModal = ({ offer, onClose }) => {
                       required
                       className="form-radio text-blue-600"
                     />
-                    <span className="ml-2 text-gray-700">{t('jobOffers.modal.female')}</span>
+                    <span className="ml-2 text-sm sm:text-base text-gray-700">{t('jobOffers.modal.female')}</span>
                   </label>
                 </div>
               </div>
 
               {/* Date de naissance */}
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.dateOfBirth')}</label>
-                <div className="grid grid-cols-3 gap-3">
-                  <input type="text" name="day" value={formData.day} onChange={handleFormChange} placeholder={t('jobOffers.modal.day')} required className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500" />
-                  <input type="text" name="month" value={formData.month} onChange={handleFormChange} placeholder={t('jobOffers.modal.month')} required className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500" />
-                  <input type="text" name="year" value={formData.year} onChange={handleFormChange} placeholder={t('jobOffers.modal.year')} required className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500" />
+                <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.dateOfBirth')}</label>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                  <input type="text" name="day" value={formData.day} onChange={handleFormChange} placeholder={t('jobOffers.modal.day')} required className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-blue-500" />
+                  <input type="text" name="month" value={formData.month} onChange={handleFormChange} placeholder={t('jobOffers.modal.month')} required className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-blue-500" />
+                  <input type="text" name="year" value={formData.year} onChange={handleFormChange} placeholder={t('jobOffers.modal.year')} required className="px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-blue-500" />
                 </div>
               </div>
 
-              {/* Poste demandé (Pré-rempli) */}
+              {/* Poste demandé */}
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.position')}</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.position')}</label>
                 <input
                   type="text"
                   name="position"
@@ -311,13 +302,13 @@ const JobOfferModal = ({ offer, onClose }) => {
                   placeholder={t('jobOffers.modal.positionPlaceholder')}
                   required
                   readOnly={!!offer.title} 
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100" 
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100" 
                 />
               </div>
 
               {/* Motivation */}
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.motivation')}</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.motivation')}</label>
                 <textarea
                   name="motivation"
                   value={formData.motivation}
@@ -325,13 +316,13 @@ const JobOfferModal = ({ offer, onClose }) => {
                   placeholder={t('jobOffers.modal.motivationPlaceholder')}
                   required
                   rows="4"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               {/* CV Upload */}
               <div>
-                <label className="block text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.joinCV')}</label>
+                <label className="block text-xs sm:text-sm font-medium mb-1 text-gray-700">{t('jobOffers.modal.joinCV')}</label>
                 <input
                   type="file"
                   name="cvFile"
@@ -342,17 +333,17 @@ const JobOfferModal = ({ offer, onClose }) => {
                 />
                 <label 
                   htmlFor="cv-upload" 
-                  className="inline-block px-4 py-2 border border-dashed border-gray-400 rounded-lg cursor-pointer text-gray-600 hover:border-blue-500 transition-colors"
+                  className="inline-block px-3 sm:px-4 py-2 text-sm sm:text-base border border-dashed border-gray-400 rounded-lg cursor-pointer text-gray-600 hover:border-blue-500 transition-colors break-all"
                 >
                   {formData.cvFile ? formData.cvFile.name : t('jobOffers.modal.addFile')}
                 </label>
               </div>
 
               {/* Bouton de soumission */}
-              <div className="flex justify-center pt-2">
+              <div className="flex justify-center pt-2 pb-4">
                 <button
                   type="submit"
-                  className="px-8 py-3 rounded-lg text-white font-bold text-lg transition-all"
+                  className="px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-white font-bold text-base sm:text-lg transition-all w-full sm:w-auto"
                   style={{ backgroundColor: MY_COLORS.secondaryGreen }}
                   onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = MY_COLORS.primaryBlue; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen; }}

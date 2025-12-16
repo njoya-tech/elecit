@@ -13,8 +13,8 @@ import { motion } from 'framer-motion'
 const FormRound = () => {
     const {t}  = useTranslation();
   return (
-    <div className='items-center w-full md:w-screen h-screen lg:h-[100px] md:h-[60px] relative overflow-visible flex justify-center'>
-        <div className="absolute lg:bottom-95 lg:left-119 md:left-20 md:bottom-70 z-30">
+    <div className='items-center w-full bottom-0 md:w-[80%]  lg:h-[30px] lg:w-[59.6%] md:left-20 lg:ml-75 sm:mr-50 md:h-[20px] sm:h-[20px] relative overflow-visible flex justify-center'>
+        <div className=" absolute lg:bottom-95 lg:left-2 md:left-20 md:bottom-60 z-30">
           <motion.img 
             src={rail} 
             alt="engrenage" 
@@ -27,7 +27,7 @@ const FormRound = () => {
             }}
           />
         </div>
-        <div className="absolute lg:bottom-100 lg:left-320 z-30 md:left-190 md:bottom-70">
+        <div className=" absolute lg:bottom-100 lg:left-220 z-30 md:left-140 md:bottom-50">
           <motion.img 
             src={rail} 
             alt="engrenage" 
@@ -41,32 +41,32 @@ const FormRound = () => {
           />
         </div>
         <div className='relative overflow-hidden'>
-            <img src={p2} alt="fond arrondie" className='w-280' />
+            <img src={p2} alt="fond arrondie" className='w-screen' />
            
 
         </div>
-    <div className='absolute lg:bottom-85 md:bottom-70 bottom-0 z-20'>
-        <h1 style={{color: MY_COLORS.white}} className='font-bold text-4xl' >{t('recruitment.titleRound')} ? </h1>
+    <div className='absolute lg:bottom-85 md:bottom-60 bottom-100 z-20'>
+        <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-3xl text-2xl' >{t('projets.titleRound1')} <span style={{color: MY_COLORS.green}} className=''>{t('projets.titleRound3')}</span> {t('projets.titleRound2')} ? </h1>
 
      
     </div>
-    <div className='absolute items-center justify-center flex lg:bottom-50 md:bottom-50 z-20'>
+    <div className='absolute items-center justify-center flex lg:bottom-50 md:bottom-50 bottom-80 z-20'>
          <p style={{color: MY_COLORS.white}} className='font-medium '>
             {t('projets.subtitleRound')} 
         </p>
     </div>
-        <div className='absolute bottom-40 z-10'>
-            <img src={p3} alt="form technologie" className='lg:w-230 md:w-180 opacity-40'/>
+        <div className='absolute lg:bottom-40 md:bottom-30 sm:botttom-40 bottom-75 z-10'>
+            <img src={p3} alt="form technologie" className='lg:w-230 md:w-130 sm:w-110 w-100 opacity-40'/>
 
         </div>
 
-        <div className='absolute md:bottom-20 lg:bottom-10 bottom-0 z-20'>
-                     {/* Boutons d'action */}
+        <div className='absolute md:bottom-20 lg:bottom-10 bottom-19 z-20'>
+                     {/* Boutons d'action */} 
                           <div className="flex items-center justify-center gap-4 sm:gap-6">
                             {/* Bouton Livre blanc */}
                             <div className="flex items-center gap-3">
                               <button 
-                                className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
+                                className="px-8 py-2 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
                                 style={{
                                   borderColor: MY_COLORS.secondaryGreen,
                                   color: MY_COLORS.secondaryGreen

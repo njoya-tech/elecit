@@ -60,7 +60,7 @@ const ContactPopup = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black bg-opacity-50 z-[60]"
+              className="fixed inset-0 bg-transparent bg-opacity-50 z-[60]"
             />
 
             {/* Popup */}
@@ -103,7 +103,7 @@ const ContactPopup = () => {
               {/* Content */}
               {!showMessageInput ? (
                 <div className="p-6">
-                  <p className="text-sm text-gray-700 leading-relaxed mb-6">
+                  <p className="text-sm bg-gray-400/90 text-gray-700 leading-relaxed mb-6">
                     {t('footer.contact.popup.availability')}
                   </p>
 
@@ -125,7 +125,7 @@ const ContactPopup = () => {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder={t('footer.contact.popup.messagePlaceholder')}
-                      className="w-full p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 text-sm"
+                      className="w-full p-3 text-black border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 text-sm"
                       style={{ borderColor: MY_COLORS.green }}
                       rows={4}
                     />
@@ -155,7 +155,8 @@ const ContactPopup = () => {
                 <div className="flex justify-center gap-4">
                   <button
                     onClick={() => setShowMessageInput(false)}
-                    className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow hover:shadow-md transition"
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow hover:shadow-md transition-shadow-lg"
+                  style={{ backgroundColor: MY_COLORS.primaryBlue }}
                   >
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>

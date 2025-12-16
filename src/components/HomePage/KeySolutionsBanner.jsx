@@ -33,7 +33,7 @@ const SolutionsSection = ({
         </div>
         
         {/* Grille de solutions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 lg:gap-8 gap-3 justify-items-center">
           {solutions.map((solution, index) => (
             <SolutionCard
               key={index}

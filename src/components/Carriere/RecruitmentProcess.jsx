@@ -10,7 +10,7 @@ const RecruitmentProcess = ({ steps }) => {
     <div className="w-full py-16 px-4">
       {/* Titre de la section */}
       <h2 
-        className="text-3xl md:text-4xl font-bold text-center mb-16"
+        className="text-xl md:text-4xl font-bold text-center mb-5"
         style={{ color: MY_COLORS.primaryBlue }}
       >
         {t('recruitment.processTitle')}

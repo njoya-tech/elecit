@@ -5,6 +5,7 @@ import Carriere from './pages/carriere/Carriere';
 import LanguageSwitcher from './components/features/LanguageSwitcher'
 import SmartBuildingPage from './pages/solution/SmartBuildingPage';
 import FabriMecaPage from './pages/solution/FabriMecaPage';
+import GpsTracking from './pages/solution/GpsTracking';
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +15,8 @@ function App() {
         < Route path='/carriere' element={<Carriere/>} />
         < Route path= '/solutions/smart-building' element={<SmartBuildingPage/>} />
         < Route path='/solutions/fabrication-mecanique' element={<FabriMecaPage/>} />
-          
+        < Route path='/solutions/gps-tracking' element={<GpsTracking/>}/>
+        
       </Routes>
     </BrowserRouter>
   );

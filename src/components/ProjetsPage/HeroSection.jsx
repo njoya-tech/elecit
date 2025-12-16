@@ -25,7 +25,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative md:w-[800px] lg:w-[1800px] translate-x-15 h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden " style={{backgroundColor: MY_COLORS.white}}>
+    <div className="relative md:w-[800px] lg:w-[1800px] lg:translate-x-15 md:translate-x-5 h-[300px] md:h-[600px] lg:h-[650px] overflow-hidden " style={{backgroundColor: MY_COLORS.white}}>
       {/* Image de fond */}
       
        <div className='flex items-center justify-center '>

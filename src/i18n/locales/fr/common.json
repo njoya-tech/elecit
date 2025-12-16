@@ -112,7 +112,14 @@
       "legalNotice": "Mentions légales"
     },
     "contact": {
-      "floatingButton": "Contactez-nous"
+      "floatingButton": "Contactez-nous",
+      "popup": {
+        "title":"Nous Contactez",
+        "subtitle":"Nous vous repondrons dès que possible",
+        "availability": " ",
+        "messagePlaceholder": "Redigez votre message...",
+        "openWhatsApp": "Ouvrez whatsapp"
+      }
     }
   },
 
@@ -215,7 +222,7 @@
     "step4Title": "Cas pratique",
     "step4Description": "Un éventuel test est soumis aux candidats pour mesurer leurs compétences techniques.",
     "step5Title": "Prise de décision",
-    "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour signer son contrat de travail."
+    "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour proposition d’embauche."
   },
    "smartBuilding": {
     "title": "SMART BUILDING",
@@ -365,7 +372,33 @@
     "sub": "sur mesure",
     "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
     "buttonRound": "Contactez-nous"
+  },
+  "gpsT": {
+    "titlehero":"GPS & TRACKING",
+    "descriptionhero": "solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu’international (dans l’espace CEMAC).",
+    "buttonhero": " Nos visuels"  ,
+    "TitleFeatures": "Nos domaines d’intervention",
+    "DescriptionFeatures": " Des solutions pensées pour le suivi précis, l’analyse approfondie et l’optimisation durable de votre flotte de véhicules et de l’ensemble de vos actifs, le tout de manière centralisée au sein d’une plateforme unique.",
+    "BanderTitle":" Autres d’informations sur notre chaîne",
+    "BanderTitle2": "Youtube",
+    "BanderDescription": "Plateforme de suivi de véhicule en temps réel",
+    "BanderButton": " Poursuivre",
+    "titleRound": "Besoin dune solution",
+    "titleRound2": "Personnalisée ?",
+    "descriptionRound": "Nos experts vous accompagnent de l'etude à la mise en oeuvre complete de vos dispositifs de tracking"
+  },
+      "whyChooseUs": {
+    "title": "Pourquoi nous choisir?",
+    "subtitle": "Nos solutions de tracking offrent des avantages concrets en matière de visibilité, de sécurité et d'optimisation des opérations, pour un meilleur contrôle de vos ressources en temps réel.",
+    "feature1": "Système d'immobilisation/antivol à distance inclus gratuitement.",
+    "feature2": "Accès à une plateforme web sous licence et/ou application mobile dédiée.",
+    "feature3": "Tous les paramètres et outils de gestion sont accessibles sans frais supplémentaires.",
+    "feature4": "Couverture internationale gratuite (zone CEMAC).",
+    "feature5": "Entretien, maintenance et intervention SAV offerts dans les villes de Douala et Yaoundé.",
+    "feature6": "Jusqu'à 1 an de garantie sur les équipements."
+   
   }
+  
  
   
 

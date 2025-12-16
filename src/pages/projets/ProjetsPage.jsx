@@ -14,13 +14,13 @@ const ProjetsPage = () => {
                          <NavBar/>
        </header>
 
-        <main className='pt-46'>
+        <main className='pt-46 '>
               
               <div>
                 <HeroSection></HeroSection>
               </div>
 
-              <div className='mb-130'>
+              <div className='lg:mb-130 md:mb-100 sm:mb-60 -mb-20 '>
                 <ProjectsSection></ProjectsSection>
               </div>
 

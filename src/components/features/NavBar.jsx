@@ -257,7 +257,7 @@ const NavBar = () => {
 
         {/* Menu Mobile (uniquement pour smartphones) */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 mt-2">
+          <div className="md:hidden border-t border-gray-200 mt-2 text-center flex justify-center">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map(item => (
                 <div key={item.key}>

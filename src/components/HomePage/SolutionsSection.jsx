@@ -106,7 +106,7 @@ const SolutionCard = ({ solution, onSeeMore }) => {
     // Remplacement direct de la structure pour le placement du bouton
     return (
         <div 
-            className="flex flex-col items-center max-w-sm mx-auto z-10"
+            className="flex flex-col lg:flex md:flex items-center max-w-sm mx-auto z-10"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -209,7 +209,7 @@ const SolutionsSection = () => {
             {/* 2. Grille de solutions (Premier plan, superposée) */}
             {/* Le padding-top est ajusté pour placer le centre de la carte au niveau de la coupure de la bannière */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-65 "> 
-                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
                     {solutions.map((solution, index) => (
                         <SolutionCard
                             key={index}
