@@ -133,7 +133,7 @@ const ControlCarousel = () => {
             style={{
               height: "440px",
             }}
-          >
+           >
             <img
               src={ICONS.formePlan}
               className="w-full object-cover block"

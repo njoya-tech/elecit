@@ -60,7 +60,7 @@ const ControlCards = () => {
       <div
         className="relative w-full mb-8 overflow-hidden"
         style={{ backgroundColor: MY_COLORS.black }}
-      >
+       >
         <div className="absolute -top-10 right-0 w-1/3 h-full opacity-100 scale-125">
           <img src={ICONS.formTech} alt="" />
         </div>
