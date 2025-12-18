@@ -99,7 +99,6 @@ const GpsTracking = () => {
               <GpThero
                 title1="gpsT.titlehero"
                 subtitle="gpsT.descriptionhero"
-               
                 buttonText="gpsT.buttonhero"
                 bgImage={gps1}
               
@@ -122,7 +121,7 @@ images={{
   casqIcon={casq}
 />
                     </div>
-             <div className='mb-130'>
+             <div className='lg:mb-130 md:mb-100 sm:mb-60 -mb-2' >
               <WhyChooseUs translations={translations} />;
              </div>
 

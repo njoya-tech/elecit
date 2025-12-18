@@ -27,7 +27,7 @@ const FormRoundCar = () => {
             }}
           />
         </div>
-        <div className="absolute lg:bottom-100 lg:left-220 z-30 md:left-140 md:bottom-50">
+        <div className="opacity-20 absolute lg:bottom-100 lg:left-220 z-30 md:left-140 md:bottom-50">
           <motion.img 
             src={rail} 
             alt="engrenage" 
@@ -45,18 +45,18 @@ const FormRoundCar = () => {
            
 
         </div>
-    <div className='absolute lg:bottom-85 md:bottom-60 bottom-100 z-20'>
-        <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-3xl text-2xl' >{t('recruitment.titleRound')} ? </h1>
+    <div className='absolute lg:bottom-85 md:bottom-60 bottom-75 z-20'>
+        <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-3xl text-xl' >{t('recruitment.titleRound')} ? </h1>
 
      
     </div>
-    <div className='absolute items-center justify-center text-center w-100 flex lg:bottom-50 md:bottom-50 bottom-80 z-20'>
+    <div className='absolute items-center justify-center text-center w-80 flex lg:bottom-50 md:bottom-50 bottom-55 z-20'>
          <p style={{color: MY_COLORS.white}} className='font-medium text-sm '>
             {t('recruitment.subtitleRound')} ?
         </p>
     </div>
-        <div className='absolute lg:bottom-40 md:bottom-30 sm:bottom-40 bottom-75 z-10'>
-            <img src={p3} alt="form technologie" className='lg:w-230 md:w-130 sm:w-110 w-100 opacity-40'/>
+        <div className='absolute lg:bottom-40 md:bottom-30 sm:bottom-40 bottom-55 z-10'>
+            <img src={p3} alt="form technologie" className='lg:w-230 md:w-130 sm:w-110 w-90 opacity-40'/>
 
         </div>
 

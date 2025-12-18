@@ -82,7 +82,7 @@ const WhyChooseUs = ({ translations }) => {
         </div>
 
         {/* Features Grid with Dashed Lines */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-15">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-10">
           {/* Horizontal dashed line between rows (desktop only) */}
           <div className="hidden md:block absolute left-0 right-0 top-1/2 border-t-2 border-dashed border-gray-400 -translate-y-1/2" style={{ zIndex: 0, borderColor: MY_COLORS.green }}></div>
           

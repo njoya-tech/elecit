@@ -9,7 +9,7 @@ const RecruitmentHero = ({ title1, title2, subtitle, bgImage }) => {
   
   return (
     <div 
-      className="relative w-full  h-[300px] md:h-[600px] lg:h-[650px] flex items-center justify-center lg:translate-x-15 md:translate-x-15 md:w-[800px] lg:w-[1800px] "
+      className="relative w-screen mx-auto  h-[300px] md:h-[600px] lg:h-[650px] flex items-center justify-center  md:w-[800px] lg:w-[1800px] "
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',

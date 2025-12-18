@@ -10,7 +10,7 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
  
   return (
     <div 
-      className="relative w-full  h-[500px] md:h-[600px] lg:h-[650px] flex items-center justify-center translate-x-15 md:w-[800px] lg:w-[1800px] "
+      className="relative w-screen mx-auto  h-[300px] md:h-[600px] lg:h-[650px] flex items-center justify-center  md:w-[800px] lg:w-[1800px] "
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
@@ -18,7 +18,7 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Overlay sombre */}
+  {/* Overlay sombre */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
       
       {/* Contenu */}

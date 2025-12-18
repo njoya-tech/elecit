@@ -10,7 +10,7 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
  
   return (
     <div 
-      className="relative w-full  h-[500px] md:h-[600px] lg:h-[650px] flex items-center justify-center translate-x-15 md:w-[800px] lg:w-[1800px] "
+      className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[650px]"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
@@ -22,16 +22,16 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
       <div className="absolute inset-0 bg-black opacity-60"></div>
       
       {/* Contenu */}
-      <div className="relative z-10 text-center px-4 w-full -pb-10 ">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+      <div className="absolute mb-5 inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 mt-6 sm:mt-8 md:mt-10 text-center ">
+        <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold  ">
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t(title1)}
           </span>
          
         </h1>
-        <div className='text-center'>
+        <div className='text-center mt-5'>
                        <p 
-          className="text-base md:text-lg font-medium leading-relaxed mb-10"
+          className=" md:text-lg font-medium leading-relaxed "
           style={{ color: MY_COLORS.white }}
         >
           {t(subtitle)}
@@ -40,7 +40,7 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
     
 
         <p 
-          className="text-base italic  md:text-lg leading-relaxed mb-10"
+          className="text-base italic  md:text-lg leading-relaxed mt-3 "
           style={{ color: MY_COLORS.white }}
         >
           {t(subtitle2)}
@@ -50,7 +50,7 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
                     {/* Bouton Livre blanc */}
                     <div className="flex items-center gap-3">
                       <button 
-                        className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
+                        className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base md:font-semibold lg:font-semibold font-medium rounded-full transition-all duration-300"
                         style={{
                           borderColor: MY_COLORS.secondaryGreen,
                           color: MY_COLORS.secondaryGreen

@@ -158,6 +158,9 @@
   },
 
   "jobOffers": {
+ 
+    "previous": "Précédent",
+  "next": "Suivant",
     "title": "Toutes les offres d'emplois",
     "filterTitle": "Filtrer les offres",
     "filterPoste": "Poste",
@@ -170,6 +173,7 @@
     "viewButton": "Voir tout",
     "noResults": "Aucune offre ne correspond à vos critères de recherche",
     "modal": {
+       "back": "Retour aux offres",
       "typePoste": "Type de poste:",
       "lieuPoste": "Lieu du poste:",
       "datePublication": "Date de publication:",
@@ -266,6 +270,25 @@
 },
 
  "prestations": {
+      "title": "Prestations associées",
+    "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
+    "prestations": [
+      {
+        "number": "1",
+        "title": "Conception &\nBureau d'études",
+        "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+      },
+      {
+        "number": "2",
+        "title": "Fabrication &\nAssemblage",
+        "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+      },
+      {
+        "number": "3",
+        "title": "Traitements\n& Finitions",
+        "description": "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
+      }
+    ],
     "title": "Prestations associées",
     "description": "Ces services accompagnent chaque étape du projet, depuis l'audit initial jusqu'à la supervision en temps réel, pour transformer les infrastructures traditionnelles en environnements intelligents, sécurisés et écoénergétiques.",
     "buttonText": "Visitez FOCZOU",
@@ -328,27 +351,7 @@
       }
     ]
   },
- "prestations": {
-    "title": "Prestations associées",
-    "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
-    "prestations": [
-      {
-        "number": "1",
-        "title": "Conception &\nBureau d'études",
-        "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
-      },
-      {
-        "number": "2",
-        "title": "Fabrication &\nAssemblage",
-        "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
-      },
-      {
-        "number": "3",
-        "title": "Traitements\n& Finitions",
-        "description": "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
-      }
-    ]
-  },
+
   "production": {
     "title": "Notre champ de production",
     "items": [

@@ -1,6 +1,7 @@
 import React from 'react'
 import sma from '../../assets/sma.png'
 import smart1 from '../../assets/smart1.jpg'
+import eng from '../../assets/eng.jpg'
 import casq from '../../assets/casq.svg'
 import st1 from '../../assets/st1.png'
 import st2 from '../../assets/st2.png'
@@ -14,15 +15,21 @@ import rail from '../../assets/rail.svg'
 const useTranslation = () => {
   const translations = {
     interfaceCommande: {
-      title: "Explorez du contenu intéressant",
-      featureTitle: "l'atelier mecanique",
-      featureDescription: "Plongez vous au coeur de l'ingénieurie mécanique et métallique",
-      buttonText: "Visitez MATOA",
+      title: "Interfaces de commande",
+      featureTitle: "Le pilotage centralisé",
+      featureDescription: "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
+      buttonText: "Visitez la boutique",
       slides: [
        sma,
        st1,
        st2
       ]
+    },
+    fm : {
+      "title": "Explorez du contenu intéressant",
+      "subtitle": "L'atelier mécanique",
+      "description": "Plongez vous au coeur de l'ingenieurie mécanique et métallique",
+      "buttonText":"Visitez MATOA"
     }
   };
 
@@ -57,7 +64,7 @@ const floatingAnimation = `
   }
 `;
 
-const Bander = () => {
+const SmartBander = () => {
      const { t } = useTranslation();
       const [currentSlide, setCurrentSlide] = useState(0);
       const [fadeIn, setFadeIn] = useState(true);
@@ -93,8 +100,8 @@ const Bander = () => {
       <style>{floatingAnimation}</style>
 
     <div className='bg-gray-400/20 w-screen items-center justify-center flex p-10'>
-            <div className='  relative w-[1000px] '   style={{
-          backgroundImage:  ` linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${smart1})`,
+            <div className='  relative w-[1000px] h-[400px] '   style={{
+          backgroundImage:  ` linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${eng})`,
         backgroundSize: 'cover',
             backgroundPosition: 'center',
             
@@ -128,23 +135,23 @@ const Bander = () => {
                 /> 
               </div>
 
-              <h2 className="text-4xl font-bold mb-6 text-white">
-                {t('interfaceCommande.title')}
+              <h2 className="md:text-4xl text-2xl font-bold md:mb-2 text-white">
+                {t('fm.title')}
               </h2>
 
               <h3 
-                className="text-2xl font-bold mb-4"
+                className="text-1xl font-bold mb-4"
                 style={{ color: MY_COLORS.white }}
               >
-                {t('interfaceCommande.featureTitle')}
+                {t('fm.subtitle')}
               </h3>
 
-              <p className="text-white leading-relaxed mb-8 max-w-md">
-                {t('interfaceCommande.featureDescription')}
+              <p className="text-white  md:mb-8 mb-4 text-sm max-w-md">
+                {t('fm.description')}
               </p>
 
               <button 
-                className="px-8 py-3 rounded-full border-2 font-medium transition-all hover:bg-white"
+                className="md:px-8 py-2 px-2 text-sm mb-15 rounded-full md:border-2 border-1 font-medium transition-all hover:bg-white"
                 style={{ 
                   borderColor: MY_COLORS.secondaryGreen,
                   color: MY_COLORS.secondaryGreen
@@ -158,12 +165,12 @@ const Bander = () => {
                   e.target.style.color = MY_COLORS.secondaryGreen;
                 }}
               >
-                {t('interfaceCommande.buttonText')}
+                {t('fm.buttonText')}
               </button>
             </div>
 
             {/* Right Carousel Section */}
-            <div className="flex-1 relative">
+            <div className="flex-1 relative ">
               {/* Navigation Arrow Left */}
               <button
                 onClick={() => changeSlide('prev')}
@@ -175,7 +182,7 @@ const Bander = () => {
 
               {/* Carousel Container with Floating Animation */}
               <div className="relative floating ">
-                <div className="relative h-96 rounded-lg overflow-hidden ">
+                <div className="relative md:h-96  h-40 rounded-lg overflow-hidden ">
                   {slides.map((slide, index) => (
                     <div
                       key={index}
@@ -186,7 +193,7 @@ const Bander = () => {
                       <img
                         src={slide}
                         alt={`Interface ${index + 1}`}
-                        className="w-80 h-60 object-cover"
+                        className="w-80 md:h-60 object-cover"
                       />
                     </div>
                   ))}
@@ -214,4 +221,4 @@ const Bander = () => {
   )
 }
 
-export default Bander
+export default SmartBander

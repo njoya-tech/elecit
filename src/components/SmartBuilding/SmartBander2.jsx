@@ -99,7 +99,7 @@ const SmartBander2 = () => {
       <style>{floatingAnimation}</style>
 
     <div className='bg-gray-400/20 w-screen items-center justify-center flex p-10'>
-            <div className='  relative w-[1000px] '   style={{
+            <div className='  relative w-[1000px] h-[400px]'   style={{
           backgroundImage:  ` linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${smart1})`,
         backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -110,13 +110,13 @@ const SmartBander2 = () => {
             <div className="flex-1 relative z-10">
               {/* Decorative Gear Left */}
               <div 
-                className="absolute -left-30 top-3 w-35 h-40  "
+                className="absolute -left-30 top-3 w-35 lg:h-60 md:h-40  "
               >
 <motion.img 
     src={casq} 
     alt="engrenage" 
     // AJOUT DE LA CLASSE DE SYMETRIE HORIZONTALE
-    className="w-30 h-30 scale-x-[-1]" 
+    className="lg:w-30 lg:h-30 h-20 ml-10 scale-x-[-1]" 
     // Animation: Uniquement le mouvement vertical (flottement)
     animate={{ 
       y: [0, -15, 0], // Commence à 0, monte à -15px, revient à 0
@@ -135,7 +135,7 @@ const SmartBander2 = () => {
 />
               </div>
 
-              <h1 className='text-4xl font-bold mt-8 text-white'> <span style={{color: MY_COLORS.secondaryGreen}}>{t('smartVilla.title1')} </span>{t('smartVilla.title2')}</h1>
+              <h1 className='text-4xl font-bold mt-5 text-sm text-white'> <span style={{color: MY_COLORS.secondaryGreen}}>{t('smartVilla.title1')} </span>{t('smartVilla.title2')}</h1>
 
 
               <p className="text-white leading-relaxed mt-8 max-w-md mb-10">

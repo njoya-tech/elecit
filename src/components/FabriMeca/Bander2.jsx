@@ -27,7 +27,7 @@ const useTranslation = () => {
     },
       smartVilla: {
     "title1": "PROJET:",
-    "title2": "Banque movile",
+    "title2": "Banque mobile",
     "subtitle": "Agence bancaire itinérante, entièrement équipée et aménagée dans une structure métallique montée sur un tracteur." ,
     "buttonText": "Plus de projets"
   },
@@ -100,7 +100,7 @@ const Bander2 = () => {
       <style>{floatingAnimation}</style>
 
     <div className='bg-gray-400/20 w-screen items-center justify-center flex p-10'>
-            <div className='  relative w-[1000px] '   style={{
+            <div className='  relative w-[1000px]   '   style={{
           backgroundImage:  ` linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${fabp})`,
         backgroundSize: 'cover',
             backgroundPosition: 'center',

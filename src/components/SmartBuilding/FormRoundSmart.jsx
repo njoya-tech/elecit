@@ -13,8 +13,8 @@ import { motion } from 'framer-motion'
 const FormRoundSmart = () => {
     const {t}  = useTranslation();
   return (
-    <div className='items-center w-full md:w-screen h-screen lg:h-[100px] md:h-[60px] relative overflow-visible flex justify-center'>
-        <div className="absolute lg:bottom-95 lg:left-119 md:left-20 md:bottom-70 z-30">
+   <div className='items-center w-screen md:w-[80%] lg:h-[30px] lg:w-[59.6%] md:left-20 lg:ml-75 sm:mr-50 md:h-[20px] sm:h-[20px] relative overflow-visible flex justify-center mb-0'>
+        <div className="hidden absolute lg:bottom-95 lg:left-2 md:left-20 md:bottom-60 z-30">
           <motion.img 
             src={rail} 
             alt="engrenage" 
@@ -27,7 +27,7 @@ const FormRoundSmart = () => {
             }}
           />
         </div>
-        <div className="absolute lg:bottom-100 lg:left-320 z-30 md:left-190 md:bottom-70">
+        <div className="opacity-20 absolute lg:bottom-100 lg:left-220 z-30 md:left-140 md:bottom-50">
           <motion.img 
             src={rail} 
             alt="engrenage" 
@@ -41,17 +41,17 @@ const FormRoundSmart = () => {
           />
         </div>
         <div className='relative overflow-hidden'>
-            <img src={p2} alt="fond arrondie" className='w-280' />
+            <img src={p2} alt="fond arrondie" className='w-screen' />
            
 
         </div>
-    <div className='absolute lg:bottom-95 md:bottom-70 bottom-0 z-20'>
-        <h1 style={{color: MY_COLORS.white}} className='font-bold text-5xl' >{t('smartVilla.titleRound')} </h1>
+    <div className='absolute lg:bottom-85 md:bottom-60 bottom-80 z-20'>
+        <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-3xl text-xl font-bold' >{t('smartVilla.titleRound')} ? </h1>
 
      
     </div>
-    <div className='absolute items-center justify-center flex lg:bottom-80 md:bottom-50 z-20'>
-         <p style={{color: MY_COLORS.secondaryGreen}} className='font-bold text-5xl '>
+    <div className='absolute items-center justify-center text-center w-80 flex lg:bottom-50 md:bottom-50 bottom-70 z-20'>
+         <p style={{color: MY_COLORS.secondaryGreen}} className='font-semibold text-sm '>
             {t('smartVilla.titleRound2')} 
         </p>
     </div>
@@ -65,7 +65,7 @@ const FormRoundSmart = () => {
                 left-1/2 transform -translate-x-1/2 
                 lg:bottom-50 md:bottom-50 
                 z-20 
-                w-full max-w-md px-4' // AJOUTÉ : w-full, max-w-md et px-4 (padding pour ne pas coller aux bords)
+                lg:w-full w-90 px-4' // AJOUTÉ : w-full, max-w-md et px-4 (padding pour ne pas coller aux bords)
 > 
 
     <p 
@@ -84,18 +84,18 @@ const FormRoundSmart = () => {
 
 
 
-        <div className='absolute bottom-40 z-10'>
-            <img src={p3} alt="form technologie" className='lg:w-230 md:w-180 opacity-40'/>
+              <div className='absolute lg:bottom-40 md:bottom-30 sm:bottom-40 bottom-55 z-10'>
+                   <img src={p3} alt="form technologie" className='lg:w-230 md:w-130 sm:w-110 w-90 opacity-40'/>
+       
+               </div>
 
-        </div>
-
-        <div className='absolute md:bottom-20 lg:bottom-10 bottom-0 z-20'>
-                     {/* Boutons d'action */}
+        <div className='absolute md:bottom-20 lg:bottom-10 bottom-19 z-20'>
+                 {/* Boutons d'action */}
                           <div className="flex items-center justify-center gap-4 sm:gap-6">
                             {/* Bouton Livre blanc */}
                             <div className="flex items-center gap-3">
                               <button 
-                                className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
+                                className="px-8 py-2 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
                                 style={{
                                   borderColor: MY_COLORS.secondaryGreen,
                                   color: MY_COLORS.secondaryGreen
@@ -110,7 +110,7 @@ const FormRoundSmart = () => {
                                 }}
                               >
                                 {t('smartVilla.buttonRound')}
-                              </button>
+                            </button>
                               
                              
                             </div>

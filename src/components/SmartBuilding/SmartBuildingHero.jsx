@@ -111,24 +111,24 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
   return (
     <div className="relative w-full mb-20">
       {/* Hero Section */}
-      <div 
-        className="relative w-full bg-cover bg-center md:w-[800px] lg:w-[1800px] translate-x-15 h-[500px] md:h-[600px] lg:h-[650px]"
+<div 
+        className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[650px]"
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 18, 28, 0.7), rgba(0, 18, 28, 0.7)), url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200)',
         }}
       >
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+        <div className="absolute mb-10 inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 mt-6 sm:mt-8 md:mt-10 text-center">
           <h1 
-            className="text-5xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 md:mb-6"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
             {t('smartBuilding.title')}
           </h1>
-          <p className="text-white text-lg max-w-3xl mb-8 leading-relaxed">
+          <p className="text-white text-sm sm:text-base md:text-lg max-w-full sm:max-w-xl md:max-w-3xl mb-6 sm:mb-7 md:mb-8 leading-relaxed px-2">
             {t('smartBuilding.subtitle')}
           </p>
           <button 
-            className="px-8 py-3 rounded-full border-2 text-white font-medium hover:bg-white  transition-all"
+            className="px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3 text-sm sm:text-base rounded-full border-2 text-white font-medium hover:bg-white transition-all"
             style={{ borderColor: MY_COLORS.secondaryGreen, color: MY_COLORS.secondaryGreen }}
           >
             {t('smartBuilding.buttonText')}
@@ -143,7 +143,7 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 px-6 py-4 font-medium transition-all relative ${
+              className={`flex-1 px-4 py-4 font-medium text-sm transition-all relative ${
                 activeTab === tab.id ? 'font-bold' : ''
               } ${index === 0 ? 'rounded-l-full' : ''} ${index === tabs.length - 1 ? 'rounded-r-full' : ''}`}
               // style={{

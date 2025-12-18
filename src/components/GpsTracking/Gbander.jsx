@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const MY_COLORS = {
@@ -11,22 +10,23 @@ const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-// Composant pour les images flottantes
-const FloatingImage = ({ src, alt, delay = 0, duration = 4, xOffset = 0, yOffset = 0, zIndex = 1, scale = 1 }) => {
+// Composant pour les images flottantes - VERSION RESPONSIVE
+const FloatingImage = ({ 
+  src, 
+  alt, 
+  delay = 0, 
+  duration = 4, 
+  className = "",
+  scale = 1 
+}) => {
   return (
     <motion.img
       src={src}
       alt={alt}
-      className="absolute"
-      style={{
-        zIndex,
-        width: `${scale * 100}px`,
-        maxWidth: `${scale * 300}px`,
-      }}
-      initial={{ x: xOffset, y: yOffset }}
+      className={`absolute ${className}`}
       animate={{
-        y: [yOffset, yOffset - 20, yOffset],
-        x: [xOffset, xOffset + 10, xOffset],
+        y: [0, -20, 0],
+        x: [0, 10, 0],
       }}
       transition={{
         duration,
@@ -41,46 +41,47 @@ const FloatingImage = ({ src, alt, delay = 0, duration = 4, xOffset = 0, yOffset
   );
 };
 
-// Simuler useTranslation
-const useTranslation = () => {
-  const translations = {
-    gpsT: {
-      "BanderTitle": "Autres d'informations sur notre chaîne",
-      "BanderTitle2": "Youtube",
-      "BanderDescription": "Plateforme de suivi de véhicule en temps réel",
-      "BanderButton": "Poursuivre"
-    }
+const Gbander = ({ images, casqIcon, t }) => {
+  // Fonction de traduction par défaut
+  const translate = t || ((key) => {
+    const translations = {
+      'gpsT.BanderTitle': "Plus d'informations sur notre chaîne",
+      'gpsT.BanderTitle2': "Youtube",
+      'gpsT.BanderDescription': "Plateforme de suivi de véhicule en temps réel avec géolocalisation avancée",
+      'gpsT.BanderButton': "En savoir plus"
+    };
+    return translations[key] || key;
+  });
+
+  // Images par défaut
+  const defaultImages = {
+    loc1: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=300&h=300&fit=crop",
+    ordi1: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=400&fit=crop",
+    loc2: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=300&h=300&fit=crop",
+    phonegps: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=500&fit=crop"
   };
 
-  return {
-    t: (key) => {
-      const keys = key.split('.');
-      let value = translations;
-      for (const k of keys) {
-        value = value[k];
-        if (!value) return key;
-      }
-      return value;
-    }
-  };
-};
-
-// CORRECTION: Destructurer les props correctement avec { images }
-const Gbander = ({ images, casqIcon }) => {
-  const { t } = useTranslation();
+  const bannerImages = images || defaultImages;
+  const gearIcon = casqIcon || "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=100&h=100&fit=crop";
 
   return (
-    <div className='w-screen items-center justify-center flex p-10'>
-      <div style={{ backgroundColor: '#40414F' }} className='rounded-2xl relative w-[1000px] grid grid-cols-3 gap-0'>          
-        <div className="flex items-center gap-5 pl-4">
-          {/* Left Content Section */}
-          <div className="flex-1 relative z-10">
-            {/* Decorative Gear Left */}
-            <div className="absolute -left-30 top-3 w-35 h-40">
+    <div className='w-full px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 flex items-center justify-center'>
+      <div 
+        style={{ backgroundColor: '#40414F' }} 
+        className='rounded-xl  sm:rounded-2xl relative w-full max-w-7xl overflow-hidden'
+      >
+        {/* Container responsive */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 relative">
+          
+          {/* Section Contenu Texte */}
+          <div className="flex flex-col justify-center p-6 sm:p-8 md:p-10 lg:p-12 relative z-10 lg:col-span-1">
+            
+            {/* Engrenage décoratif - Responsive positioning */}
+            <div className="absolute -left-4 sm:-left-8 md:-left-12 lg:-left-16 top-4 sm:top-6 md:top-8 z-10">
               <motion.img 
-                src={casqIcon || "https://placehold.co/100x100/7DA837/FFFFFF?text=Gear"}
+                src={gearIcon}
                 alt="engrenage" 
-                className="w-45 h-45 scale-x-[-1]" 
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 scale-x-[-1]" 
                 animate={{ y: [0, -15, 0] }}
                 transition={{ 
                   y: {
@@ -93,92 +94,111 @@ const Gbander = ({ images, casqIcon }) => {
               />
             </div>
 
-            <h1 className='text-4xl font-bold  text-white'>
-              <span style={{color: MY_COLORS.secondaryGreen}}>{t('gpsT.BanderTitle')} </span>
-              {t('gpsT.BanderTitle2')}
+            {/* Titre */}
+            <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight'>
+              <span style={{color: MY_COLORS.secondaryGreen}}>
+                {translate('gpsT.BanderTitle')}
+              </span>
+              <br className="hidden sm:block" />
+              {' '}{translate('gpsT.BanderTitle2')}
             </h1>
 
-            <p className="text-white leading-relaxed mt-8 max-w-md mb-10">
-              {t('gpsT.BanderDescription')}
+            {/* Description */}
+            <p className="text-white text-sm sm:text-base leading-relaxed mt-4 sm:mt-6 md:mt-8 max-w-md">
+              {translate('gpsT.BanderDescription')}
             </p>
 
-            <button 
-              className="px-8 py-3 bg-white rounded-full font-bold transition-all hover:bg-white mt-10 mb-20"
+            {/* Bouton CTA */}
+            <motion.button 
+              className="px-6 py-2.5 sm:px-8 sm:py-3 bg-white rounded-full font-bold transition-all mt-6 sm:mt-8 md:mt-10 self-start text-sm sm:text-base"
               style={{ color: MY_COLORS.black }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = MY_COLORS.secondaryGreen;
-                e.target.style.color = MY_COLORS.white;
+              whileHover={{
+                backgroundColor: MY_COLORS.secondaryGreen,
+                color: MY_COLORS.white,
+                scale: 1.05
               }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = MY_COLORS.white;
-                e.target.style.color = MY_COLORS.black;
-              }}
+              whileTap={{ scale: 0.95 }}
             >
-              {t('gpsT.BanderButton')}
-            </button>
+              {translate('gpsT.BanderButton')}
+            </motion.button>
           </div>
 
-          {/* Partie Droite - Images Flottantes Superposées */}
-          <div className="relative h-96 lg:h-[500px] mt-20 col-span-2 overflow-visible">
-            {/* Couche 1 (Fond) - loc1 (pin arrière-plan droite) */}
-            {images?.loc1 && (
-              <FloatingImage
-                src={images.loc1}
-                alt="Location Pin 1"
-                delay={0}
-                duration={5.5}
-                xOffset={420}
-                yOffset={20}
-                zIndex={1}
-                scale={1.5}
-              />
-            )}
+          {/* Section Images Flottantes - Responsive */}
+          <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] lg:col-span-2 overflow-visible px-4 py-8 lg:px-0 lg:py-0">
+            
+            {/* Layout responsive des images */}
+            <div className="relative w-full h-full">
+              
+              {/* Pin de localisation 1 - Arrière-plan droite */}
+              {bannerImages?.loc1 && (
+                <FloatingImage
+                  src={bannerImages.loc1}
+                  alt="Location Pin 1"
+                  delay={0}
+                  duration={5.5}
+                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32
+                             right-[5%] sm:right-[8%] md:right-[10%] lg:right-[15%]
+                             top-[5%] sm:top-[8%] md:top-[10%]
+                             z-10"
+                />
+              )}
 
-            {/* Couche 2 (Base centrale) - ordi1 (ordinateur - élément principal) */}
-            {images?.ordi1 && (
-              <FloatingImage
-                src={images.ordi1}
-                alt="Ordinateur Dashboard"
-                delay={0.3}
-                duration={4.8}
-                xOffset={175}
-                yOffset={10}
-                zIndex={2}
-                scale={3.5}
-              />
-            )}
+              {/* Ordinateur - Élément central principal */}
+              {bannerImages?.ordi1 && (
+                <FloatingImage
+                  src={bannerImages.ordi1}
+                  alt="Ordinateur Dashboard"
+                  delay={0.3}
+                  duration={4.8}
+                  className="w-48 h-32 sm:w-56 sm:h-40 md:w-72 md:h-48 lg:w-96 lg:h-64
+                             left-[10%] sm:left-[12%] md:left-[15%] lg:left-[18%]
+                             top-[15%] sm:top-[18%] md:top-[20%]
+                             z-20 object-contain"
+                />
+              )}
 
-            {/* Couche 3 (Accent bas) - loc2 (pin de localisation bas gauche) */}
-            {images?.loc2 && (
-              <FloatingImage
-                src={images.loc2}
-                alt="Location Pin 2"
-                delay={0.9}
-                duration={4.3}
-                xOffset={150}
-                yOffset={160}
-                zIndex={3}
-                scale={2}
-              />
-            )}
+              {/* Pin de localisation 2 - Bas gauche */}
+              {bannerImages?.loc2 && (
+                <FloatingImage
+                  src={bannerImages.loc2}
+                  alt="Location Pin 2"
+                  delay={0.9}
+                  duration={4.3}
+                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36
+                             left-[8%] sm:left-[10%] md:left-[12%] lg:left-[15%]
+                             bottom-[10%] sm:bottom-[12%] md:bottom-[15%]
+                             z-30"
+                />
+              )}
 
-            {/* Couche 4 (Premier plan) - phonegps (smartphone avant droite) */}
-            {images?.phonegps && (
-              <FloatingImage
-                src={images.phonegps}
-                alt="Smartphone GPS"
-                delay={0.6}
-                duration={4.0}
-                xOffset={300}
-                yOffset={140}
-                zIndex={4}
-                scale={2}
-              />
-            )}
+              {/* Smartphone GPS - Premier plan droite */}
+              {bannerImages?.phonegps && (
+                <FloatingImage
+                  src={bannerImages.phonegps}
+                  alt="Smartphone GPS"
+                  delay={0.6}
+                  duration={4.0}
+                  className="w-20 h-32 sm:w-24 sm:h-40 md:w-28 md:h-48 lg:w-32 lg:h-56
+                             right-[15%] sm:right-[18%] md:right-[20%] lg:right-[22%]
+                             bottom-[15%] sm:bottom-[18%] md:bottom-[20%]
+                             z-40 object-contain"
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
-export default Gbander
+
+// Composant de démonstration
+const DemoGbander = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 py-10">
+      <Gbander />
+    </div>
+  );
+};
+
+export default DemoGbander;

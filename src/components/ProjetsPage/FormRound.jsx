@@ -45,17 +45,17 @@ const FormRound = () => {
            
 
         </div>
-    <div className='absolute lg:bottom-85 md:bottom-60 bottom-100 z-20'>
+    <div className='absolute lg:bottom-85 md:bottom-60 bottom-80 z-20'>
         <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-3xl text-2xl' >{t('projets.titleRound1')} <span style={{color: MY_COLORS.green}} className=''>{t('projets.titleRound3')}</span> {t('projets.titleRound2')} ? </h1>
 
      
     </div>
-    <div className='absolute items-center justify-center flex lg:bottom-50 md:bottom-50 bottom-80 z-20'>
+    <div className='absolute items-center justify-center flex lg:bottom-50 md:bottom-50 bottom-65 z-20'>
          <p style={{color: MY_COLORS.white}} className='font-medium '>
             {t('projets.subtitleRound')} 
         </p>
     </div>
-        <div className='absolute lg:bottom-40 md:bottom-30 sm:botttom-40 bottom-75 z-10'>
+        <div className='absolute lg:bottom-40 md:bottom-30 sm:botttom-40 bottom-55 z-10'>
             <img src={p3} alt="form technologie" className='lg:w-230 md:w-130 sm:w-110 w-100 opacity-40'/>
 
         </div>
