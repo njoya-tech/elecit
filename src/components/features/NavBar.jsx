@@ -1,18 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import { MY_COLORS } from '../../utils/colors';
 import LanguageSwitcher from './LanguageSwitcher';
-import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
   const dropdownRef = useRef(null);
-  const closeTimeoutRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   const solutionsItems = [
     { key: 'submenus.solutions.smartBuilding', path: '/solutions/smart-building' },
@@ -41,41 +43,37 @@ const NavBar = () => {
     { key: 'nav.contacts', path: '/contacts' }
   ];
 
+  // Fermer le menu mobile lors du changement de route
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setMobileDropdowns({});
+    setOpenDropdown(null);
+    setHoveredIndex(null);
+  }, [location]);
+
+  // Gestion des clics en dehors
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setOpenDropdown(null);
+        setHoveredIndex(null);
+      }
+      
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+        const menuButton = document.getElementById('mobile-menu-button');
+        if (menuButton && !menuButton.contains(e.target)) {
+          setIsMenuOpen(false);
+          setMobileDropdowns({});
+        }
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      if (closeTimeoutRef.current) {
-        clearTimeout(closeTimeoutRef.current);
-      }
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleMouseEnter = (index, key) => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-    }
-    setHoveredIndex(index);
-    setOpenDropdown(key);
-  };
-
-  const handleMouseLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setHoveredIndex(null);
-      setOpenDropdown(null);
-    }, 150);
-  };
-
-  const handleDropdownClick = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-    }
+  const handleNavigation = (path) => {
+    navigate(path);
     setOpenDropdown(null);
     setHoveredIndex(null);
   };
@@ -87,6 +85,11 @@ const NavBar = () => {
     }));
   };
 
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setMobileDropdowns({});
+  };
+
   return (
     <>
       <LanguageSwitcher/>
@@ -94,8 +97,8 @@ const NavBar = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             
-            {/* Logo - Visible sur TOUS les écrans */}
-            <div className="flex-shrink-0">
+            {/* Logo */}
+            <div className="flex-shrink-0 cursor-pointer" onClick={() => handleNavigation('/')}>
               <img 
                 src={logo} 
                 alt="ElecIT Engineering Logo" 
@@ -103,21 +106,31 @@ const NavBar = () => {
               />
             </div>
 
-            {/* Navigation Desktop & Tablette (masquée sur mobile) */}
+            {/* Navigation Desktop & Tablette Large */}
             <div className="hidden lg:flex items-center justify-center flex-1 ml-6 xl:ml-10">
               <div className="flex items-center gap-3 xl:gap-6" ref={dropdownRef}>
                 {navItems.map((item, index) => (
                   <div key={item.key} className="relative">
                     {item.dropdown ? (
                       <div
-                        onMouseEnter={() => handleMouseEnter(index, item.key)}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => {
+                          setHoveredIndex(index);
+                          setOpenDropdown(item.key);
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredIndex(null);
+                          setOpenDropdown(null);
+                        }}
                       >
                         <button
                           className="font-semibold transition-colors duration-200 text-xs lg:text-sm xl:text-base font-montserrat flex items-center gap-1 whitespace-nowrap"
                           style={{
                             color: hoveredIndex === index || openDropdown === item.key ? MY_COLORS.green : MY_COLORS.black,
-                            transition: 'color 0.2s'
+                            transition: 'color 0.2s',
+                            background: 'none',
+                            border: 'none',
+                            padding: 0,
+                            cursor: 'pointer'
                           }}
                         >
                           {t(item.key)}
@@ -134,24 +147,23 @@ const NavBar = () => {
                         {openDropdown === item.key && (
                           <div className="absolute top-full left-0 mt-2 w-56 xl:w-64 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-100">
                             {item.dropdown.map(subItem => (
-                              <Link
+                              <div
                                 key={subItem.key}
-                                to={subItem.path}
-                                className="block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat"
+                                onClick={() => handleNavigation(subItem.path)}
+                                className="block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat cursor-pointer"
                                 onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
                                 onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
-                                onClick={handleDropdownClick}
                               >
                                 {t(subItem.key)}
-                              </Link>
+                              </div>
                             ))}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <Link 
-                        to={item.path}
-                        className="font-semibold transition-colors duration-200 text-xs lg:text-sm xl:text-base font-montserrat whitespace-nowrap"
+                      <div
+                        onClick={() => handleNavigation(item.path)}
+                        className="font-semibold transition-colors duration-200 text-xs lg:text-sm xl:text-base font-montserrat whitespace-nowrap cursor-pointer"
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                         style={{
@@ -160,7 +172,7 @@ const NavBar = () => {
                         }}
                       >
                         {t(item.key)}
-                      </Link>
+                      </div>
                     )}
                   </div>
                 ))}
@@ -174,14 +186,23 @@ const NavBar = () => {
                   <div key={item.key} className="relative">
                     {item.dropdown ? (
                       <div
-                        onMouseEnter={() => handleMouseEnter(index, item.key)}
-                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={() => {
+                          setHoveredIndex(index);
+                          setOpenDropdown(item.key);
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredIndex(null);
+                          setOpenDropdown(null);
+                        }}
                       >
                         <button
                           className="font-semibold transition-colors duration-200 text-xs font-montserrat flex items-center gap-1 whitespace-nowrap px-1"
                           style={{
                             color: hoveredIndex === index || openDropdown === item.key ? MY_COLORS.green : MY_COLORS.black,
-                            transition: 'color 0.2s'
+                            transition: 'color 0.2s',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer'
                           }}
                         >
                           {t(item.key)}
@@ -198,24 +219,23 @@ const NavBar = () => {
                         {openDropdown === item.key && (
                           <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-100">
                             {item.dropdown.map(subItem => (
-                              <Link
+                              <div
                                 key={subItem.key}
-                                to={subItem.path}
-                                className="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat"
+                                onClick={() => handleNavigation(subItem.path)}
+                                className="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 transition-colors duration-200 font-montserrat cursor-pointer"
                                 onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
                                 onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
-                                onClick={handleDropdownClick}
                               >
                                 {t(subItem.key)}
-                              </Link>
+                              </div>
                             ))}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <Link 
-                        to={item.path}
-                        className="font-semibold transition-colors duration-200 text-xs font-montserrat whitespace-nowrap px-1"
+                      <div
+                        onClick={() => handleNavigation(item.path)}
+                        className="font-semibold transition-colors duration-200 text-xs font-montserrat whitespace-nowrap px-1 cursor-pointer"
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                         style={{
@@ -224,15 +244,16 @@ const NavBar = () => {
                         }}
                       >
                         {t(item.key)}
-                      </Link>
+                      </div>
                     )}
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Bouton Menu Mobile (visible uniquement sur petits écrans) */}
+            {/* Bouton Menu Mobile */}
             <button
+              id="mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-100 focus:outline-none flex-shrink-0"
             >
@@ -255,9 +276,12 @@ const NavBar = () => {
           </div>
         </div>
 
-        {/* Menu Mobile (uniquement pour smartphones) */}
+        {/* Menu Mobile */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 mt-2 text-center flex justify-center">
+          <div 
+            ref={mobileMenuRef}
+            className="md:hidden border-t border-gray-200 mt-2 text-center flex justify-center"
+          >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map(item => (
                 <div key={item.key}>
@@ -280,26 +304,30 @@ const NavBar = () => {
                       {mobileDropdowns[item.key] && (
                         <div className="pl-4 space-y-1 bg-gray-50 rounded-md mt-1 py-1">
                           {item.dropdown.map(subItem => (
-                            <Link
+                            <div
                               key={subItem.key}
-                              to={subItem.path}
-                              className="block px-3 py-2 rounded-md text-xs sm:text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-white transition-colors duration-200"
-                              onClick={() => setIsMenuOpen(false)}
+                              onClick={() => {
+                                handleNavigation(subItem.path);
+                                closeMobileMenu();
+                              }}
+                              className="block px-3 py-2 rounded-md text-xs sm:text-sm font-medium text-gray-600 hover:text-green-600 hover:bg-white transition-colors duration-200 cursor-pointer"
                             >
                               {t(subItem.key)}
-                            </Link>
+                            </div>
                           ))}
                         </div>
                       )}
                     </>
                   ) : (
-                    <Link 
-                      to={item.path}
-                      className="block px-3 py-2 rounded-md text-sm sm:text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
+                    <div
+                      onClick={() => {
+                        handleNavigation(item.path);
+                        closeMobileMenu();
+                      }}
+                      className="block px-3 py-2 rounded-md text-sm sm:text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
                     >
                       {t(item.key)}
-                    </Link>
+                    </div>
                   )}
                 </div>
               ))}

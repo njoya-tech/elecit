@@ -70,7 +70,7 @@ const Ground = () => {
 
     <p 
         style={{color: MY_COLORS.white}} 
-        className='font-medium text-center lg:text-4xl md:text-2xl sm:text-xl text-md whitespace-normal'
+        className='font-medium text-center lg:text-2xl md:text-2xl sm:text-xl text-md whitespace-normal'
     >
         {t('gpsT.descriptionRound')} 
     </p>

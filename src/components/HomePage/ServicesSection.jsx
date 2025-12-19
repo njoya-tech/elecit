@@ -145,7 +145,7 @@ const SolutionCard = ({ solution, onSeeMore }) => {
                         {solution.title}
                     </h3>
                     <p 
-                        className="text-sm text-gray-600 px-4 leading-relaxed flex-grow"
+                        className="text-sm text-gray-600 px-4 leading-relaxed flex-grow "
                     >
                         {solution.description}
                     </p>
@@ -203,7 +203,7 @@ const ServicesSection = () => {
                 className="absolute top-0 left-0 w-full h-60" // Hauteur de 12rem (192px)
                 style={{ backgroundColor: MY_COLORS.black }} 
             >
-                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
+                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center lg:mt-5 md:mt-5 sm:mt-5 mt-5">
                     <h2 className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight">
                                <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
                     <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight} </span>

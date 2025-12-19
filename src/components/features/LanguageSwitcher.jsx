@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 // CORRECTION: Utiliser ../../assets/ au lieu de ../assets/
 import en from '../../assets/en.png';
+import enn from '../../assets/enn.png'
 import fr from '../../assets/fr.png';
 import all from '../../assets/all.png';
 
@@ -19,13 +20,13 @@ const LanguageSwitcher = ({ onLanguageChange }) => {
 
   const languages = [
     { code: 'fr', label: 'Français', flag: fr },
-    { code: 'en', label: 'English', flag: en },
+    { code: 'en', label: 'English', flag: enn },
     { code: 'de', label: 'Deutsch', flag: all }
   ];
 
   return (
     <div 
-      className="w-full flex items-center justify-end pr-20 h-20" 
+      className="w-full flex items-center lg:justify-end justify-center md:justify-end  pr-20 h-20" 
       style={{ backgroundColor: MY_COLORS.black }}
     >
       <div className="flex items-center gap-4">

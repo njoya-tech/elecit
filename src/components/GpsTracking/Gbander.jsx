@@ -62,8 +62,7 @@ const Gbander = ({ images, casqIcon, t }) => {
   };
 
   const bannerImages = images || defaultImages;
-  const gearIcon = casqIcon || "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=100&h=100&fit=crop";
-
+ 
   return (
     <div className='w-full px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 flex items-center justify-center'>
       <div 
@@ -79,7 +78,7 @@ const Gbander = ({ images, casqIcon, t }) => {
             {/* Engrenage décoratif - Responsive positioning */}
             <div className="absolute -left-4 sm:-left-8 md:-left-12 lg:-left-16 top-4 sm:top-6 md:top-8 z-10">
               <motion.img 
-                src={gearIcon}
+                src={casqIcon}
                 alt="engrenage" 
                 className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 scale-x-[-1]" 
                 animate={{ y: [0, -15, 0] }}
@@ -192,13 +191,5 @@ const Gbander = ({ images, casqIcon, t }) => {
   );
 };
 
-// Composant de démonstration
-const DemoGbander = () => {
-  return (
-    <div className="min-h-screen bg-gray-100 py-10">
-      <Gbander />
-    </div>
-  );
-};
 
-export default DemoGbander;
+export default Gbander;
