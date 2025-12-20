@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import comm from '../../assets/comm.png'
+import { useTranslation } from 'react-i18next';
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -42,51 +43,12 @@ const TestimonialsCarousel = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isPaused, setIsPaused] = React.useState(false);
 
-  const testimonials = [
-    {
-      id: 1,
-      text: "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
-      author: "Directeur Général",
-      company: "AFB",
-      rating: 5
-    },
-    {
-      id: 2,
-      text: "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
-      author: "Directeur Général",
-      company: "AFB",
-      rating: 5
-    },
-    {
-      id: 3,
-      text: "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
-      author: "Directeur Général",
-      company: "AFB",
-      rating: 5
-    },
-    {
-      id: 4,
-      text: "Service exceptionnel et équipe très professionnelle. Nous recommandons vivement leurs prestations.",
-      author: "Directeur Technique",
-      company: "Tech Corp",
-      rating: 5
-    },
-    {
-      id: 5,
-      text: "Service exceptionnel et équipe très professionnelle. Nous recommandons vivement leurs prestations.",
-      author: "Directeur Technique",
-      company: "Tech Corp",
-      rating: 5
-    },
-    {
-      id:6,
-      text: "Service exceptionnel et équipe très professionnelle. Nous recommandons vivement leurs prestations.",
-      author: "Directeur Technique",
-      company: "Tech Corp",
-      rating: 5
-    }
+const { t } = useTranslation();
+const testimonials = t('testimonials.items', { returnObjects: true });
 
-  ];
+// Pour les aria-labels :
+
+
 
   const totalSlides = testimonials.length;
 
@@ -140,7 +102,7 @@ const TestimonialsCarousel = () => {
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110"
             style={{ marginLeft: '-20px' }}
-            aria-label="Précédent"
+           aria-label={t('testimonials.ariaLabels.previous')}
           >
             <svg 
               className="w-6 h-6" 
@@ -253,7 +215,7 @@ const TestimonialsCarousel = () => {
             onClick={nextSlide}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110"
             style={{ marginRight: '-20px' }}
-            aria-label="Suivant"
+           aria-label={t('testimonials.ariaLabels.next')}
           >
             <svg 
               className="w-6 h-6" 
@@ -278,7 +240,7 @@ const TestimonialsCarousel = () => {
                 height: '8px',
                 backgroundColor: currentIndex === index ? MY_COLORS.green : '#CCCCCC',
               }}
-              aria-label={`Aller au témoignage ${index + 1}`}
+            aria-label={`${t('testimonials.ariaLabels.goToTestimonial')} ${index + 1}`}
             />
           ))}
         </div>

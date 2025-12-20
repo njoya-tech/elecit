@@ -20,7 +20,7 @@ const ProjetsPage = () => {
                 <HeroSection></HeroSection>
               </div>
 
-              <div className='lg:mb-130 md:mb-100 sm:mb-60 -mb-20 '>
+              <div className=' '>
                 <ProjectsSection></ProjectsSection>
               </div>
 

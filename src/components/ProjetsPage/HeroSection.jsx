@@ -1,45 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import fond_sombre from '../../assets/fond_sombre.png';
-import projet1 from '../../assets/projet1.JPG'
-import design_x from '../../assets/design_x.png';
-import vid from '../../assets/vid.png';
-import fleche from '../../assets/fleche.png';
-
+import projet1 from '../../assets/projet1.JPG';
 import { MY_COLORS } from '../../utils/colors';
 
-
-
-
 const HeroSection = () => {
+  const { t } = useTranslation(); 
   const [isHovered, setIsHovered] = useState(false);
- 
-  // Simulated translations
-  const t = (key) => {
-    const translations = {
-      'projets.title': 'NOS RÉALISATIONS',
-      'projets.subtitle': 'Découvrez quelques-uns des projets que nous avons conçus et réalisés pour nos clients.',
-      'projets.buttonText': 'Livre blanc'
-    };
-    return translations[key] || key;
-  };
-
+  
   return (
-    <div className="relative md:w-[800px] lg:w-[1800px] lg:translate-x-15 md:translate-x-5 h-[300px] md:h-[600px] lg:h-[650px] overflow-hidden " style={{backgroundColor: MY_COLORS.white}}>
+    <div 
+      className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] overflow-hidden" 
+      style={{ backgroundColor: MY_COLORS.white }}
+    >
       {/* Image de fond */}
-      
-       <div className='flex items-center justify-center '>
-        <div 
-          className="absolute inset-0 w-full h-full"
-          style={{ 
-            backgroundImage: `url(${projet1})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        />
-     
-      </div>
-    
+      <div 
+        className="absolute inset-0 w-full h-full"
+        style={{ 
+          backgroundImage: `url(${projet1})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
 
       {/* Overlay sombre pour améliorer la lisibilité du texte */}
       <div 
@@ -48,66 +30,48 @@ const HeroSection = () => {
       />
      
       {/* Contenu principal */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4  sm:px-6 lg:px-8 h-full flex items-center pt-8 md:pt-0">
-        <div className="w-full">
+      <div className="relative z-10 w-full h-full flex items-center px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-7xl mx-auto">
           {/* Titre */}
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="mb-4 sm:mb-6">
             <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-center"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
-              {t('projets.title')}
+              {t('projet.title')}
             </h1>
           </div>
          
           {/* Sous-titre */}
-          <div className='mt-8 mb-12'>
-            <p className="text-white text-center text-base md:text-lg lg:text-xl max-w-3xl mx-auto">
-              {t('projets.subtitle')}
+          <div className="mb-8 sm:mb-10 md:mb-12">
+            <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
+              {t('projet.subtitle')}
             </p>
           </div>
          
           {/* Boutons d'action */}
-          <div className="flex items-center justify-center gap-4 sm:gap-6">
-            {/* Bouton Livre blanc */}
-            <div className="flex items-center gap-3">
-              <button 
-                className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
-                style={{
-                  borderColor: MY_COLORS.secondaryGreen,
-                  color: MY_COLORS.secondaryGreen
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
-                  e.currentTarget.style.color = MY_COLORS.white;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = MY_COLORS.secondaryGreen;
-                }}
-              >
-                {t('projets.buttonText')}
-              </button>
-              
-             
-            </div>
+          <div className="flex items-center justify-center">
+            <button 
+              className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3.5 lg:px-12 lg:py-4 border-2 text-sm sm:text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-lg"
+              style={{
+                borderColor: MY_COLORS.secondaryGreen,
+                color: MY_COLORS.secondaryGreen,
+                backgroundColor: 'transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
+                e.currentTarget.style.color = MY_COLORS.white;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+              }}
+            >
+              {t('projet.buttonText')}
+            </button>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(10px);
-          }
-        }
-        .animate-bounce {
-          animation: bounce 2s infinite;
-        }
-      `}</style>
     </div>
   );
 };

@@ -6,7 +6,9 @@ import cercle_interomp from '../../assets/cercle_interomp.svg'
 
 import { motion } from 'framer-motion'
 
-// --- Définition des Couleurs et Données (pour rendre le fichier autonome) ---
+import { useTranslation } from 'react-i18next';
+
+// --- Définition des Couleurs ---
 const MY_COLORS = {
   primaryBlue: '#006F95',
   secondaryGreen: '#7DA837',
@@ -16,45 +18,14 @@ const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-// Données de traduction intégrées (simulant l'accès à common.json)
-const t = (key) => {
-    // Les données sont ici en français car c'est la langue demandée pour le contenu
-    const data = {
-        "bannerTitle": "Des solutions",
-        "bannerHighlight": "clés pour des",
-        "bannerTitle2": "besoins spécifiques",
-        "viewMore": "Voir plus",
-        "items": [
-            {
-                "title": "Bâtiments intelligents & automatisation",
-                "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
-                "imagePlaceholderText": "Bâtiments",
-                "imageName": c1 // Simule c1.jpg
-            },
-            {
-                "title": "Conception, Fabrication mécanique & métallique",
-                "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
-                "imagePlaceholderText": "Fabrication",
-                "imageName": c2 // Simule c2.jpg
-            },
-            {
-                "title": "GPS & Tracking (More Than Track)",
-                "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
-                "imagePlaceholderText": "GPS Tracking",
-                "imageName": c3 // Simule c3.jpg
-            }
-        ]
-    };
-
-    if (key === 'bannerTitle') return data.bannerTitle;
-    if (key === 'bannerHighlight') return data.bannerHighlight;
-    if (key === 'bannerTitle2') return data.bannerTitle2;
-    if (key === 'viewMore') return data.viewMore;
-    return data.items;
+// Mapping des images pour les associer aux items
+const imageMap = {
+  0: c1,
+  1: c2,
+  2: c3
 };
 
-
-// --- Composant pour l'icône de la flèche (Remplacement de ChevronRight) ---
+// --- Composant pour l'icône de la flèche ---
 const ChevronRight = ({ size = 20, className = "" }) => (
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
@@ -72,18 +43,14 @@ const ChevronRight = ({ size = 20, className = "" }) => (
     </svg>
 );
 
-
-// --- Composant pour le cercle discontinu animé (AnimatedCircleBorder) ---
+// --- Composant pour le cercle discontinu animé ---
 const AnimatedCircleBorder = ({ children, isHovered }) => {
     return (
         <div className="relative w-48 h-48 flex items-center justify-center">
-            
-            {/* SVG importé (Base64) et animé avec Framer Motion */}
             <motion.img 
                 className="absolute inset-0 w-full h-full"
                 src={cercle_interomp}
                 alt="Cercle Interrompu Décoratif"
-                // Animation de rotation infinie permanente
                 animate={{ rotate: 360 }}
                 transition={{ 
                     duration: 6, 
@@ -92,38 +59,37 @@ const AnimatedCircleBorder = ({ children, isHovered }) => {
                 }}
             />
             
-            {/* Image au centre */}
             <div className="relative z-10 w-40 h-40 rounded-full overflow-hidden border-4 shadow-xl" style={{ borderColor: 'transparent' }}>
                 {children}
             </div>
         </div>
     );
 };
-// --- Composant pour chaque carte de solution (SolutionCard) ---
-const SolutionCard = ({ solution, onSeeMore }) => {
+
+// --- Composant pour chaque carte de solution ---
+const SolutionCard = ({ solution, onSeeMore, imageSrc }) => {
+    const { t } = useTranslation();
     const [isHovered, setIsHovered] = useState(false);
     
-    // Remplacement direct de la structure pour le placement du bouton
     return (
         <div 
             className="flex flex-col lg:flex md:flex items-center max-w-sm mx-auto z-10"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {/* 1. Contenu de la Carte (La partie blanche superposée) */}
+            {/* Contenu de la Carte */}
             <div 
                 className="flex flex-col items-center w-full bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl"
                 style={{ 
-                    // Pour que la carte flotte un peu au survol
                     transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
-                    paddingBottom: '2rem' // Espace interne
+                    paddingBottom: '2rem'
                 }}
             >
-                {/* Emplacement de l'Image qui par son dessus coupe aussi limage et le cercle inerropu  (décalé vers le haut, créant la superposition) */}
+                {/* Image avec cercle */}
                 <div className="relative -mt-20 mb-4"> 
-                    <AnimatedCircleBorder >
+                    <AnimatedCircleBorder isHovered={isHovered}>
                         <img 
-                            src={solution.imageName} 
+                            src={imageSrc} 
                             alt={solution.title}
                             className="w-full h-full object-cover"
                             onError={(e) => {
@@ -150,37 +116,32 @@ const SolutionCard = ({ solution, onSeeMore }) => {
                 </div>
             </div>
             
-            {/* 2. Bouton Voir Plus (Extérieur à la carte, au bas) */}
+            {/* Bouton Voir Plus */}
             <button
                 onClick={onSeeMore}
                 className="group flex items-center gap-2 px-6 py-3 mt-6 rounded-full font-semibold transition-all duration-300 hover:gap-3 shadow-md"
                 style={{ 
-                    // Inversement des couleurs au survol
                     backgroundColor: isHovered ? MY_COLORS.green : MY_COLORS.white,
                     color: isHovered ? MY_COLORS.white : MY_COLORS.green,
                     border: `2px solid ${MY_COLORS.green}`,
-                    // Légère élévation au survol (coordonnée avec l'effet de la carte)
                     transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
                 }}
             >
-                {t('viewMore')}
-                {/* <ChevronRight 
-                    size={20} 
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                /> */}
+                {t('solution.viewMore')}
             </button>
         </div>
     );
 };
 
-
-// --- Composant Principal de la Section (SolutionsSection) ---
+// --- Composant Principal de la Section ---
 const SolutionsSection = () => {
-    // Récupération des données de traduction
-    const bannerTitle = t('bannerTitle');
-    const bannerHighlight = t('bannerHighlight');
-    const bannerTitle2 = t('bannerTitle2');
-    const solutions = t('items'); 
+    const { t } = useTranslation();
+    
+    // Récupération des données de traduction avec le préfixe 'solution.'
+    const bannerTitle = t('solution.bannerTitle');
+    const bannerHighlight = t('solution.bannerHighlight');
+    const bannerTitle2 = t('solution.bannerTitle2');
+    const solutions = t('solution.items', { returnObjects: true }); 
 
     const handleSeeMore = (solutionTitle) => {
         console.log(`Navigation vers la solution: ${solutionTitle}`);
@@ -191,12 +152,11 @@ const SolutionsSection = () => {
             className="relative pb-24 pt-0" 
             style={{ backgroundColor: MY_COLORS.white }} 
         >
-            {/* 1.  */}
-            {/* La hauteur est ajustée pour que le bas de la bannière coupe le cercle des image et cercle intertrompu de 192px (96px) */}
+            {/* Bannière avec fond noir */}
             <div 
-                className="absolute top-0 left-0 w-full h-60" // Hauteur de 12rem (192px)
+                className="absolute top-0 left-0 w-full h-60"
                 style={{ backgroundColor: MY_COLORS.black }} 
-            >center
+            >
                 <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
                     <h2 className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight">
                         <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
@@ -206,14 +166,14 @@ const SolutionsSection = () => {
                 </div>
             </div>
             
-            {/* 2. Grille de solutions (Premier plan, superposée) */}
-            {/* Le padding-top est ajusté pour placer le centre de la carte au niveau de la coupure de la bannière */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-65 "> 
+            {/* Grille de solutions */}
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-65"> 
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
-                    {solutions.map((solution, index) => (
+                    {solutions && solutions.map((solution, index) => (
                         <SolutionCard
                             key={index}
                             solution={solution}
+                            imageSrc={imageMap[index]}
                             onSeeMore={() => handleSeeMore(solution.title)}
                         />
                     ))}
@@ -222,4 +182,5 @@ const SolutionsSection = () => {
         </section>
     );
 };
-export default SolutionsSection
+
+export default SolutionsSection;
