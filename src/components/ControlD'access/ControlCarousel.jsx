@@ -44,7 +44,8 @@ const ControlCarousel = () => {
             src={ICONS.Engrenage_plan}
             alt=""
             aria-hidden="true"
-            className="hidden lg:block absolute -left-20 top-8 z-0 w-20 opacity-100 animate-spin"
+            className="hidden lg:block absolute -left-25 
+            -top-35 z-0 w-40 opacity-100 animate-spin"
             style={{ animationDuration: "8s" }}
           />
 
@@ -53,8 +54,9 @@ const ControlCarousel = () => {
             src={ICONS.Engrenage_plan}
             alt=""
             aria-hidden="true"
-            className="hidden lg:block absolute -right-20 top-1/2 -translate-y-1/2 z-0 w-24 opacity-100 animate-spin"
-            style={{ animationDuration: "10s", animationDirection: "reverse" }}
+            className="hidden lg:block absolute -right-20 
+            top-1/2 -translate-y-1/2 z-0 w-40 opacity-100 animate-spin"
+            style={{ animationDuration: "10s",  }}
           />
 
           {/* STEP 3: Single white container with rounded corners and shadow */}

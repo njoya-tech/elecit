@@ -1,224 +1,227 @@
-import React, { useEffect, useState } from "react";
-import { ICONS, IMAGES, OBJECTS } from "../../asset/assets";
+import React from "react";
+import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 
 const ControlCards = () => {
-  const carouselImages = [OBJECTS.obj_1, OBJECTS.obj_4, OBJECTS.obj_6];
-  const [currentImagesIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % carouselImages.length
-      );
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [carouselImages.length]);
-
-  const cards = [
-    {
-      icon: ICONS.badge,
-      title: "Contrôle d'Accès Intelligent",
-      features: [
-        "Systèmes de badges, cartes RFID et biométrie",
-        "Portails automatiques avec gestion des entrées et sorties",
-        "Serrures électroniques et systèmes de verrouillage sécurisé",
-      ],
-    },
-    {
-      icon: ICONS.stockage,
-      title: "Vidéosurveillance et Détection d'Intrusion",
-      features: [
-        "Installation de caméras haute définition et vidéosurveillance IP",
-        "Systèmes de détection de mouvement et alarmes connectées",
-        "Surveillance en temps réel et enregistrement sécurisé",
-      ],
-    },
-    {
-      icon: ICONS.securite_icon,
-      title: "Sécurité et Gestion des Risques",
-      features: [
-        "Protection contre les intrusions, le vol et le vandalisme",
-        "Solutions de cybersécurité pour les systèmes de contrôle d'accès",
-        "Détection des incendies et intégration avec les systèmes d'alerte",
-      ],
-    },
-    {
-      icon: ICONS.decision_icon,
-      title: "Gestion Centralisée et Automatisation",
-      features: [
-        "Supervision des accès via des logiciels de gestion",
-        "Solutions cloud pour le contrôle à distance",
-        "Historique des accès et rapports d'activité détaillés",
-      ],
-    },
-  ];
+  const services = {
+    row1: [
+      {
+        icon: ICONS.badge,
+        title: "Contrôle d'Accès Intelligent",
+        description:
+          "Systèmes de badges, cartes RFID et biométrie, portails automatiques et serrures électroniques.",
+      },
+      {
+        icon: ICONS.stockage,
+        title: "Vidéosurveillance & Intrusion",
+        description:
+          "Caméras HD, détection de mouvement, alarmes connectées et surveillance en temps réel.",
+      },
+    ],
+    row2: [
+      {
+        icon: ICONS.securite_icon,
+        title: "Sécurité & Gestion des Risques",
+        description:
+          "Protection contre les intrusions, cybersécurité et détection incendie intégrée aux systèmes d’alerte.",
+      },
+      {
+        icon: ICONS.decision_icon,
+        title: "Gestion Centralisée & Automatisation",
+        description:
+          "Supervision des accès, contrôle à distance, solutions cloud et rapports d’activité détaillés.",
+      },
+      {
+        icon: ICONS.business_icon,
+        title: "Audit & Conseil en Sécurité",
+        description:
+          "Analyse des vulnérabilités, définition de politiques de sécurité et accompagnement à la mise en conformité.",
+      },
+    ],
+  };
 
   return (
-    <div className="w-full py-12 md:py-16 lg:py-20">
-      {/* Section Header */}
-      <div
-        className="relative w-full mb-8 overflow-hidden"
-        style={{ backgroundColor: MY_COLORS.black }}
-       >
-        <div className="absolute -top-10 right-0 w-1/3 h-full opacity-100 scale-125">
-          <img src={ICONS.formTech} alt="" />
-        </div>
-        <h2
-          className="relative text-3xl md:text-4xl lg:text-5xl font-bold px-8 py-6 md:py-8"
-          style={{ color: MY_COLORS.secondaryGreen }}
-        >
-          Nos prestations
-        </h2>
-      </div>
+    <>
+      {/* HEADER WITH BLACK BACKGROUND + formTech */}
+      <header className="w-full bg-slate-900">
+        <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-4 md:py-5">
+          {/* Title */}
+          <h1 className="ml-4 text-white font-extrabold text-xl md:text-3xl leading-tight text-left">
+            Traitement et Valorisation des Données
+          </h1>
 
-      {/* Subtitle */}
-      <p
-        className="text-center text-base md:text-lg lg:text-xl mb-12 md:mb-16 
-        px-4 max-w-4xl mx-auto"
-        style={{ color: MY_COLORS.black }}
-      >
-        Nous proposons des solutions performantes pour sécuriser les bâtiments,
-        les infrastructures et les espaces sensibles.
-      </p>
-
-      {/* Main Grid Layout */}
-      <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
-        {/* Vertical Green Line - Between left and right sections */}
-        <div
-          className="hidden md:block absolute top-0 bottom-0 w-px border-l-2 border-dotted -translate-x-1/2 z-0"
-          style={{
-            borderColor: MY_COLORS.secondaryGreen,
-            left: "33.33%",
-          }}
-        ></div>
-
-        {/* Left Featured Card */}
-        <div className="lg:col-span-1">
-          <div className="h-full flex flex-col justify-between min-h-[500px]">
-            {/* Green Card with Carousel */}
-            <div
-              className="rounded-2xl p-8 md:p-12 shadow-lg mb-6"
-              style={{
-                background: `linear-gradient(135deg, ${MY_COLORS.secondaryGreen} 0%, ${MY_COLORS.green} 100%)`,
-              }}
-            >
-              <div className="flex items-center justify-center">
-                <img
-                  src={carouselImages[currentImagesIndex]}
-                  alt="Product showcase"
-                  className="w-full h-auto object-contain max-w-[250px]"
-                />
-              </div>
-            </div>
-
-            {/* Title Text */}
-            <h3
-              className="text-center font-bold text-lg md:text-xl mb-4 px-4"
-              style={{ color: MY_COLORS.green }}
-            >
-              Visite immersive de la boutique de vente de matériaux de
-              construction et d'équipements électriques
-            </h3>
-
-            {/* Black Button */}
-            <button
-              className="px-8 py-3 rounded-full font-semibold 
-              transition-opacity hover:opacity-90 flex items-center 
-              justify-center mx-auto gap-2"
-              style={{
-                backgroundColor: MY_COLORS.black,
-                color: MY_COLORS.white,
-              }}
-            >
-              Mango boutique
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Right Cards Grid (2x2) */}
-        <div className="lg:col-span-2 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-            {/* Vertical Dotted Line */}
-            <div
-              className="hidden md:block absolute left-1/2 top-0 bottom-0 
-              w-px border-l-2 border-dotted -translate-x-1/2 z-0"
-              style={{ borderColor: MY_COLORS.secondaryGreen }}
-            ></div>
-
-            {/* Horizontal Dotted Line */}
-            <div
-              className="hidden md:block absolute left-0 right-0 top-1/2 
-              h-px border-t-2 border-dotted -translate-y-1/2 z-0"
-              style={{ borderColor: MY_COLORS.secondaryGreen }}
-            ></div>
-
-            {cards.map((card, index) => {
-              const isTopRow = index < 2;
-
-              return (
-                <div
-                  key={index}
-                  className="relative pt-14 p-6 rounded-xl shadow-lg bg-white 
-                  hover:shadow-xl transition-shadow duration-300 border border-gray-100 z-10"
-                  style={{
-                    transform: isTopRow ? 'translateY(-10px)' : 'translateY(10px)',
-                  }}
-                >
-                  {/* Icon - Half in, half out at top - SAME AS CardDonnes */}
-                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-                    <img 
-                      src={card.icon} 
-                      alt={card.title} 
-                      className="w-20 h-20 object-contain" 
-                    />
-                  </div>
-
-                  {/* Card Content */}
-                  <h3
-                    className="text-xl font-bold mb-3 text-center"
-                    style={{ color: MY_COLORS.black }}
-                  >
-                    {card.title}
-                  </h3>
-
-                  <div className="text-gray-600 text-center text-sm leading-relaxed space-y-2">
-                    {card.features.map((feature, idx) => (
-                      <p key={idx} className="leading-relaxed">
-                        {feature}
-                        {idx < card.features.length - 1 && "/"}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Decorative Helmet Icon */}
-          <div className="hidden xl:block absolute -right-16 top-1/2 -translate-y-1/2 z-0 opacity-60">
+          {/* formTech icon */}
+          <div className="shrink-0">
             <img
-              src={ICONS.Casque}
-              alt="Helmet decoration"
-              className="w-32 h-32"
+              src={ICONS.formTech}
+              alt="Motif circuit"
+              className="h-24 md:h-24 w-auto object-contain scale-200 opacity-100 -ml-9"
             />
           </div>
         </div>
+      </header>
+
+      {/* MAIN WHITE SECTION */}
+      <div className="w-full bg-white pt-0 pb-16 px-2">
+        <div className="max-w-7xl mx-auto">
+          {/* ================= HEADER INSIDE SECTION (HELMET ONLY) ================= */}
+          <div className="relative text-center mb-20">
+            {/* HELMET TOP-LEFT */}
+            <div className="absolute -left-20 top-0 hidden lg:block">
+              <img
+                src={ICONS.Casque}
+                alt="Casque de chantier"
+                className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40
+                 animate-[bounce_3s_ease-in-out_infinite]"
+                style={{
+                  top: "-20px",
+                  left: "10px",
+                }}
+              />
+            </div>
+
+            {/* Small subtitle instead of big green heading (optional) */}
+            <p
+              style={{ color: MY_COLORS.black }}
+              className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed mt-8"
+            >
+              Nous sécurisons vos bâtiments, infrastructures et espaces
+              sensibles grâce à des solutions de contrôle d&apos;accès et de
+              vidéosurveillance performantes.
+            </p>
+          </div>
+
+          {/* ================= GRID + DOTTED LINES ================= */}
+          <div className="relative">
+            {/* HORIZONTAL DOTTED LINE */}
+            <div
+              className="absolute left-0 right-0 hidden md:block"
+              style={{
+                top: "55%",
+                borderTop: `2px dashed ${MY_COLORS.secondaryGreen}`,
+              }}
+            />
+
+            {/* VERTICAL DOTTED LINES */}
+            <div
+              className="hidden lg:block absolute top-0 bottom-0"
+              style={{
+                left: "33.333%",
+                borderLeft: `2px dashed ${MY_COLORS.secondaryGreen}`,
+              }}
+            />
+            <div
+              className="hidden lg:block absolute top-0 bottom-0"
+              style={{
+                left: "66.666%",
+                borderLeft: `2px dashed ${MY_COLORS.secondaryGreen}`,
+              }}
+            />
+
+            {/* ================= ROW 1 ================= */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 relative z-10">
+              {/* CARD 1 */}
+              <div
+                className="relative pt-10 p-16 rounded-xl shadow-2xl
+               bg-white hover:shadow-xl transition-shadow duration-300 border
+                border-gray-100"
+              >
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                  <img
+                    src={services.row1[0].icon}
+                    alt=""
+                    className="w-24 h-24"
+                  />
+                </div>
+                <h3
+                  className="text-xl font-bold mb-3 text-center mt-4"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {services.row1[0].title}
+                </h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                  {services.row1[0].description}
+                </p>
+              </div>
+
+              {/* CARD 2 */}
+              <div className="relative pt-10 p-16 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                  <img
+                    src={services.row1[1].icon}
+                    alt=""
+                    className="w-24 h-24"
+                  />
+                </div>
+                <h3
+                  className="text-xl font-bold mb-3 text-center mt-4"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {services.row1[1].title}
+                </h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                  {services.row1[1].description}
+                </p>
+              </div>
+
+              {/* STATIC IMAGE AS LAST CARD OF ROW 1 */}
+              <div className="flex justify-center items-center p-4">
+                <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-sm">
+                  <img
+                    src={IMAGES.IMG5} // choose your static image here
+                    alt="Contrôle & sécurité"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* ================= ROW 2 ================= */}
+            <div
+              className="grid grid-cols-1 lg:grid-cols-3 
+            gap-8 pt-8 relative z-10 "
+              style={{
+                marginTop: "12px",
+              }}
+            >
+              {services.row2.map((service, index) => (
+                <div
+                  key={index}
+                  className="relative pt-10 p-6 rounded-xl shadow-lg
+                   bg-white hover:shadow-xl transition-shadow 
+                   duration-300 border border-gray-100"
+                >
+                  <div className="absolute -top-9 left-1/2 transform -translate-x-1/2">
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-16 h-16"
+                    />
+                  </div>
+                  <h3
+                    className="text-xl font-bold mb-3 text-center mt-4"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-center text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* OPTIONAL: rotation keyframes if you reuse rotateClockwise elsewhere */}
+        <style>{`
+          @keyframes rotateClockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
-    </div>
+    </>
   );
 };
 

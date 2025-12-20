@@ -96,11 +96,7 @@ const Hero = () => {
         </CTAButton>
       </div>
 
-      {/* DECORATIVE BAR (kept from design) */}
-      <div
-        className="absolute bottom-0 left-0 h-1 w-full"
-        style={{ backgroundColor: MY_COLORS.green }}
-      />
+      
     </section>
   );
 };

@@ -139,7 +139,8 @@ const CardInfo = () => {
             </div>
 
             {/* CARD 1 - Icon WITHOUT circle */}
-            <div className="relative pt-10 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div className="relative pt-10 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl 
+            transition-shadow duration-300 border border-gray-100">
               {/* ICON - No circle, just the icon */}
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
                 <img

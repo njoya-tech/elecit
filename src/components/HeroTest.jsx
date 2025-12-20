@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from "react";
 import { IMAGES, ICONS } from "../asset/assets";
 import { MY_COLORS } from "../constants/colors";
@@ -21,18 +22,13 @@ const ElecITCarouselCard = () => {
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowLeft") {
-        setCurrentIndex((prev) =>
-          prev === 0 ? images.length - 1 : prev - 1
-        );
+        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
       } else if (e.key === "ArrowRight") {
-        setCurrentIndex((prev) =>
-          prev === images.length - 1 ? 0 : prev + 1
-        );
+        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
       }
     };
 
     const carousel = carouselRef.current;
-    // Ensure element is focusable for keyboard navigation
     if (carousel) {
       carousel.addEventListener("keydown", handleKey);
     }
@@ -41,33 +37,64 @@ const ElecITCarouselCard = () => {
     };
   }, []);
 
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <div className="relative bg-white flex flex-col md:flex-row items-start justify-center p-4 sm:p-6 md:p-8 py-6 md:py-12 top-0 w-full gap-6 sm:gap-8 md:gap-16">
-      {/* === GROUP: GREEN BLOCK + TOP GEARS (single block for easy responsive control) === */}
+    <div
+      className="relative bg-white flex flex-col
+     md:flex-row items-start justify-center p-4 sm:p-6 md:p-8 py-6 
+     md:py-12 top-0 w-full gap-6 sm:gap-8 
+     md:gap-12 lg:gap-16"
+    >
+      {/* === GROUP: GREEN BLOCK + TOP GEARS === */}
       <div
-        className="elecit-green-block-wrapper relative flex-none w-full max-w-[420px] sm:max-w-[520px] md:w-[400px] md:h-[500px] h-80 sm:h-[380px] lg:-left-30"
+        className="elecit-green-block-wrapper relative flex-none w-full 
+        max-w-[320px] sm:max-w-[420px] md:max-w-[400px] 
+        lg:max-w-[440px] mx-auto md:mx-0 md:w-[400px] md:h-[500px] h-64 sm:h-80 md:h-[450px]
+        lg:h-[500px]"
         data-component="elecit-green-block"
       >
-        {/* Grouped Top-left gears (positioned relative to this wrapper) */}
+        {/* Top-left gears - visible on all screens but smaller on mobile */}
         <img
           src={ICONS.Engrenage_plan}
           alt="gear"
-          className="hidden md:block absolute -top-12 md:-top-20 -left-6 md:-left-20 w-10 sm:w-14 md:w-20 opacity-100 animate-spin --z-10 lg:w-50"
+          className="absolute -top-8 
+          sm:-top-8 md:-top-12 lg:-top-16 xl:-top-17 
+          -left-9 sm:-left-10 
+          md:-left-15 lg:-left-6 
+          xl:-left-20 w-20 sm:w-10 
+          md:w-32 lg:w-16 
+          xl:w-40 opacity-100
+         sm:opacity-80 md:opacity-100 animate-spin z-0"
           style={{ animationDuration: "12s" }}
         />
         <img
           src={ICONS.Engrenage_plan}
           alt="gear"
-          className="hidden md:block absolute -top-14 md:-top-24 left-3 md:left-4 w-8 sm:w-12 md:w-14 opacity-100 animate-spin --z-10 lg:w-30 lg:left-14 lg:-top-26"
+          className="absolute -top-12 sm:-top-10 
+          md:-top-20
+          lg:-top-20 
+          xl:-top-24 left-5 sm:left-2 
+          md:left-5 lg:left-10 
+          xl:left-10 w-14 sm:w-8 
+          md:w-20 lg:w-2 
+          xl:w-27 opacity-100 sm:opacity-100 md:opacity-100 animate-spin z-0"
           style={{
             animationDuration: "10s",
             animationDirection: "reverse",
           }}
         />
 
-        {/* Green block + carousel (still unchanged internally) */}
+        {/* Green block + carousel */}
         <div
-          className="relative rounded-[2.5rem] shadow-2xl p-6 sm:p-8 md:p-10 w-full h-full"
+          className="relative rounded-3xl sm:rounded-[2.5rem] shadow-xl 
+          sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 w-full h-full z-10"
           style={{
             background: `linear-gradient(135deg, ${MY_COLORS.secondaryGreen}, ${MY_COLORS.green})`,
           }}
@@ -75,7 +102,7 @@ const ElecITCarouselCard = () => {
           {/* === CAROUSEL === */}
           <div
             ref={carouselRef}
-            className="md:absolute top-4 md:top-5 md:-right-10 right-0 w-full md:w-[400px] h-44 sm:h-56 md:h-[450px] rounded-[1.25rem] overflow-hidden bg-white shadow-2xl"
+            className="md:absolute top-3 sm:top-4 md:top-5 md:-right-6 lg:-right-10 w-full md:w-[360px] lg:w-[400px] h-40 sm:h-48 md:h-[420px] lg:h-[450px] rounded-2xl sm:rounded-[1.25rem] overflow-hidden bg-white shadow-xl sm:shadow-2xl z-20"
             tabIndex={0}
             role="region"
             aria-label="Image carousel"
@@ -86,19 +113,19 @@ const ElecITCarouselCard = () => {
               className="w-full h-full object-cover transition-all duration-700"
             />
 
-            {/* Transparent stripe placeholder */}
-            <div className="absolute bottom-0 w-full h-10 bg-transparent opacity-60" />
-
             {/* Dots Navigation */}
-            <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-30">
               {images.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
                   className={`rounded-full transition-all ${
-                    i === currentIndex ? "bg-white w-8 h-2" : "bg-white/50 w-2 h-2"
+                    i === currentIndex
+                      ? "bg-white w-6 sm:w-8 h-1.5 sm:h-2"
+                      : "bg-white/50 w-1.5 sm:w-2 h-1.5 sm:h-2"
                   }`}
                   aria-label={`Aller à l'image ${i + 1}`}
+                  aria-current={i === currentIndex ? "true" : "false"}
                 />
               ))}
             </div>
@@ -106,14 +133,14 @@ const ElecITCarouselCard = () => {
         </div>
       </div>
 
-      {/* === GROUP: RIGHT CONTENT (helmet, text, docs, bottom gear) === */}
+      {/* === GROUP: RIGHT CONTENT === */}
       <div
-        className="elecit-content-wrapper max-w-md flex-1 relative p-4 sm:p-6 md:p-8"
+        className="elecit-content-wrapper max-w-lg lg:max-w-xl flex-1 relative p-4 sm:p-6 md:p-8 z-10"
         data-component="elecit-content"
       >
-        {/* Helmet Icon */}
+        {/* Helmet Icon - visible on all screens */}
         <div
-          className="hidden md:block absolute -top-16 md:-top-24 right-0 md:-right-10 lg:-right-14 w-36 sm:w-44 origin-center"
+          className="absolute -top-6 sm:-top-10 md:-top-16 lg:-top-20 xl:-top-24 -right-4 sm:-right-6 md:-right-8 lg:-right-12 xl:-right-14 w-16 sm:w-24 md:w-32 lg:w-36 xl:w-44 origin-center z-0"
           style={{
             transform: "scaleX(-1)",
             transformOrigin: "center",
@@ -126,40 +153,42 @@ const ElecITCarouselCard = () => {
             style={{
               color: MY_COLORS.secondaryGreen,
               animationDelay: "0s",
+              opacity: 0.7,
             }}
           />
         </div>
 
-        {/* TITLE */}
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center">
-          <span
-            style={{ color: MY_COLORS.secondaryGreen }}
-            className="mr-2"
-          >
-            »
-          </span>
-          L'essentiel d'Elec
-          <span
-            style={{
-              color: MY_COLORS.secondaryGreen,
-              fontWeight: 700,
-            }}
-          >
-            IT
-          </span>
-        </h2>
+        {/* TITLE with higher z-index to stay on top */}
+        <div className="relative z-20">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-6 flex items-center">
+            <span
+              style={{ color: MY_COLORS.secondaryGreen }}
+              className="mr-1.5 sm:mr-2"
+            >
+              »
+            </span>
+            L'essentiel d'Elec
+            <span
+              style={{
+                color: MY_COLORS.secondaryGreen,
+                fontWeight: 700,
+              }}
+            >
+              IT
+            </span>
+          </h2>
+        </div>
 
         {/* Paragraph 1 */}
-        <p className="text-gray-600 mb-4 text-justify leading-relaxed text-sm sm:text-base">
-          Depuis sa création en{" "}
-          <span className="font-bold">2015</span>, ElecIT
+        <p className="text-gray-600 mb-3 sm:mb-4 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20">
+          Depuis sa création en <span className="font-bold">2015</span>, ElecIT
           Engineering s'est imposée comme un acteur pluridisciplinaire, capable
           de piloter des projets complexes, alliant savoir-faire technique,
           innovation et engagement sur le terrain.
         </p>
 
         {/* Paragraph 2 */}
-        <p className="text-gray-600 mb-4 text-justify leading-relaxed text-sm sm:text-base">
+        <p className="text-gray-600 mb-4 sm:mb-6 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20">
           Animée par une volonté constante d'apporter des réponses concrètes aux
           besoins de ses clients, l'entreprise s'est construite autour de la
           mission de son promoteur :{" "}
@@ -171,25 +200,27 @@ const ElecITCarouselCard = () => {
         </p>
 
         {/* Documents à lire Section */}
-        <div className="mt-8">
-          <p className="font-bold text-gray-900 mb-3">Documents à lire:</p>
+        <div className="mt-6 sm:mt-8 relative z-20">
+          <p className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">
+            Documents à lire:
+          </p>
 
-          <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-2 gap-y-1 text-xs sm:text-sm">
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline font-bold hover:opacity-80 transition-opacity"
+              className="underline font-bold hover:opacity-80 transition-opacity inline-block"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
               Certification ISO 9001 V 2015
             </a>
-            <span className="text-gray-600">&amp;</span>
+            <span className="text-gray-600 hidden sm:inline">&amp;</span>
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline font-bold hover:opacity-80 transition-opacity"
+              className="underline font-bold hover:opacity-80 transition-opacity inline-block"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
               Politique de qualité
@@ -197,11 +228,11 @@ const ElecITCarouselCard = () => {
           </div>
         </div>
 
-        {/* Bottom-right gear */}
+        {/* Bottom-right gear - visible on all screens */}
         <img
           src={ICONS.Engrenage_plan}
           alt="gear"
-          className="hidden md:block absolute -bottom-32 md:-bottom-40 right-0 md:-right-20 w-20 md:w-50 opacity-100 rotate-45 animate-spin"
+          className="absolute -bottom-12 sm:-bottom-16 md:-bottom-24 lg:-bottom-32 xl:-bottom-40 -right-4 sm:-right-6 md:-right-10 lg:-right-16 xl:-right-20 w-8 sm:w-12 md:w-16 lg:w-24 xl:w-32 opacity-60 sm:opacity-80 md:opacity-100 rotate-45 animate-spin z-0"
           style={{ animationDuration: "4s" }}
         />
       </div>

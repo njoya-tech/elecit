@@ -8,6 +8,7 @@ import DataProcessing from './pages/solution/DataProcessing';
 import ControlPage from './pages/solution/ControlPage';
 import BureauPage from './pages/bureau\'etude/BureauPage';
 import SavPage from "./pages/sav/SavPage"
+import BlogPage from './pages/blog/BlogPage';
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         < Route path='/solutions/controle-acces-securite' element={<ControlPage/>} />
         < Route path='/solutions/bureau-etude' element={<BureauPage/>} />
         < Route path='/solutions/sav' element={<SavPage/>} />
+        < Route path='/blog' element={<BlogPage/>} />
            
       </Routes>
     </BrowserRouter>
