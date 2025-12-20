@@ -8,11 +8,11 @@ import Footer from '../../components/features/Footer'
 
 const ProjetsPage = () => {
   return (
-    <div className='min-h-screen'>
-       <header className='fixed top-0 left-0 right-0 z-50'>
-
-                         <NavBar/>
-       </header>
+    <>
+    <div className="min-h-screen">
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <NavBar />
+      </header>
 
         <main className='pt-46 '>
               
@@ -34,7 +34,8 @@ const ProjetsPage = () => {
  <Footer/> 
     
     </div>
-  )
-}
+    </>
+  );
+};
 
-export default ProjetsPage
+export default ProjetsPage;

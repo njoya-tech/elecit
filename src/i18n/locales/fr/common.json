@@ -1,5 +1,5 @@
 {
- "nav": {
+  "nav": {
     "accueil": "Accueil",
     "entreprise": "L'entreprise",
     "solutions": "Solutions",
@@ -39,8 +39,18 @@
       }
     },
 
-  
-   "hero": {
+  "contact": {
+    "floatingButton": "Contactez-nous",
+    "popup": {
+      "title": "Contactez-nous",
+      "subtitle": "Nous vous répondrons dès que possible",
+      "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
+      "openWhatsApp": "Ouvrir WhatsApp",
+      "messagePlaceholder": "Rédigez votre message..."
+    }
+  },
+
+  "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Soumettre un projet",
     "slide1": {
@@ -169,8 +179,11 @@
 "smartBuild":{
   "title" : "Exposition des solutions et bâtiment intellignet",
   "buttonText": "Visitez le showroom"
-
 },
+  "smartBuild": {
+    "title": "Exposition des solutions et bâtiment intellignet",
+    "buttonText": "Visitez le showroom"
+  },
 
 "blogBanner": {
   "titlePart1": "Restez à jour sur nos ",
@@ -267,7 +280,6 @@
     }
   },
 
-
   "keySolutions": {
     "bannerTitle": "Des solutions clés pour des besoins spécifiques",
     "viewMore": "Voir plus",
@@ -289,6 +301,60 @@
       }
     ]
   },
+
+
+  "entreprise": {
+    "hero": {
+      "title": "",
+      "subtitle": "",
+      "button": ""
+    },
+    "elecITCarouselCard": {
+      "items": [
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    "entrepriseCards": {
+      "items": [
+        {
+          "title": "",
+                   "description": ""
+        }
+      ]
+    },
+    "entrepriseTeam": {
+      "title": "",
+      "members": [
+        {
+          "name": "",
+          "role": "",
+          "bio": ""
+        }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "",
+      "items": [
+        {
+          "question": "",
+          "answer": ""
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "",
+      "partners": [
+        {
+          "name": "",
+          "logo": ""
+        }
+      ]
+    }
+  },
+
   "projets": {
     "title": "Nos Realisations",
     "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",

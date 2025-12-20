@@ -18,6 +18,7 @@ import ordi1 from '../../assets/ordi1.png';
 
 import st1 from '../../assets/st1.png';
 import st2 from '../../assets/st2.png';
+// eslint-disable-next-line no-unused-vars
 import st3 from '../../assets/st3.png';
 import s from '../../assets/s.png'
 
