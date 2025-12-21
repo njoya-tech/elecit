@@ -1,250 +1,228 @@
 import React from "react";
-import { ICONS, IMAGES } from "../../asset/assets.js";
-import { MY_COLORS } from "../../constants/colors.js";
+import { ICONS, IMAGES } from "../../asset/assets";
+import { MY_COLORS } from "../../constants/colors";
 
-const CardDonnes = () => {
+const ControlCards = () => {
   const services = {
     row1: [
       {
-        icon: ICONS.laptop, // Replace with actual icon
-        title: "Gestion des Infrastructures IT",
+        icon: ICONS.badge,
+        title: "Contrôle d'Accès Intelligent",
         description:
-          "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.).",
+          "Systèmes de badges, cartes RFID et biométrie, portails automatiques et serrures électroniques.",
       },
       {
         icon: ICONS.stockage,
-        title: "Support Technique & Assistance",
+        title: "Vidéosurveillance & Intrusion",
         description:
-          "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective.",
+          "Caméras HD, détection de mouvement, alarmes connectées et surveillance en temps réel.",
       },
     ],
     row2: [
       {
-        icon: ICONS.badge,
-        title: "Cybersécurité",
+        icon: ICONS.securite_icon,
+        title: "Sécurité & Gestion des Risques",
         description:
-          "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité.",
+          "Protection contre les intrusions, cybersécurité et détection incendie intégrée aux systèmes d’alerte.",
+      },
+      {
+        icon: ICONS.decision_icon,
+        title: "Gestion Centralisée & Automatisation",
+        description:
+          "Supervision des accès, contrôle à distance, solutions cloud et rapports d’activité détaillés.",
       },
       {
         icon: ICONS.business_icon,
-        title: "Virtualisation & Cloud Computing",
+        title: "Audit & Conseil en Sécurité",
         description:
-          "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides.",
-      },
-      {
-        icon: ICONS.badge,
-        title: "Développement d'applications",
-        description:
-          "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers.",
+          "Analyse des vulnérabilités, définition de politiques de sécurité et accompagnement à la mise en conformité.",
       },
     ],
   };
+
   return (
     <>
-      {/* CONTAINER 1: HEADER */}
+      {/* HEADER WITH BLACK BACKGROUND + formTech */}
       <header className="w-full bg-slate-900">
-        <div className="mx-auto max-w-7xl flex items-center 
-        justify-between px-6 md:px-12 py-4 md:py-5">
-          {/* Left: circuit pattern */}
-          <div className="flex-shrink-0">
+        <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-4 md:py-5">
+          {/* Title */}
+          <h1 className="ml-4 text-white font-extrabold text-xl md:text-3xl leading-tight text-left">
+            Traitement et Valorisation des Données
+          </h1>
+
+          {/* formTech icon */}
+          <div className="shrink-0">
             <img
               src={ICONS.formTech}
               alt="Motif circuit"
-              className="h-24 md:h-24 w-auto object-contain 
-              scale-190 opacity-100 mr-20 translate-x-15"
+              className="h-24 md:h-24 w-auto object-contain scale-200 opacity-100 -ml-9"
             />
           </div>
-
-          {/* Right: title */}
-          <h1 className="ml-4 text-white font-extrabold text-xl md:text-3xl leading-tight text-right">
-            Traitement et Valorisation des Données
-          </h1>
         </div>
       </header>
 
-      {/* CONTAINER 2: CONTENT WRAPPER */}
-      <div className="w-full bg-white-50">
-        <div className="mx-auto max-w-7xl px-6 md:px-12 py-12 md:py-16">
-          {/* CONTAINER 3: INTRO SECTION - Control the entire div */}
-          <div
-            style={{
-              marginRight: "10px", // Move entire section to the left
-              paddingLeft: "10px", // Add padding if needed
-            }}
-            className="flex items-center gap-8 mb-16"
-          >
-            {/* Helmet Icon - Control the helmet */}
-            <div className="flex-shrink-0">
+      {/* MAIN WHITE SECTION */}
+      <div className="w-full bg-white pt-0 pb-16 px-2">
+        <div className="max-w-7xl mx-auto">
+          {/* ================= HEADER INSIDE SECTION (HELMET ONLY) ================= */}
+          <div className="relative text-center mb-20">
+            {/* HELMET TOP-LEFT */}
+            <div className="absolute -left-20 top-0 hidden lg:block">
               <img
-                style={{
-                  marginLeft: "50px", // Push helmet to the right
-                  animationDelay: "0.5s", // Delay bounce animation
-                  animationDuration: "2s", // Slower bounce
-                  right: "200px",
-                }}
                 src={ICONS.Casque}
-                alt="Casque de sécurité"
-                className="relative h-32 md:h-40 w-auto object-contain animate-bounce"
+                alt="Casque de chantier"
+                className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40
+                 animate-[bounce_3s_ease-in-out_infinite]"
+                style={{
+                  top: "-20px",
+                  left: "10px",
+                }}
               />
             </div>
 
-            {/* Description Text - Control the paragraph */}
+            {/* Small subtitle instead of big green heading (optional) */}
             <p
-              style={{
-                textAlign: "center",
-                paddingLeft: "2px", // Add space from helmet
-                paddingRight: "20px", // Balance the text
-                maxWidth: "800px", // Limit text width
-                fontSize: "1.3em",
-              }}
-              className="text-gray-700 text-base md:text-lg leading-relaxed flex-1"
-            >
-              Nous transformons les données brutes en informations exploitables
-              pour aider nos clients à prendre des décisions éclairées,
-              optimiser leurs performances et créer de la valeur à chaque étape
-              de leur activité.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="relative">
-        {/* HORIZONTAL DOTTED LINE - Between rows */}
-        <div
-          className="absolute left-0 right-0 hidden md:block"
-          style={{
-            top: "55%",
-            borderTop: "2px dashed #8CC63F",
-          }}
-        />
-
-        {/* VERTICAL DOTTED LINES - Between columns */}
-        <div
-          className="hidden lg:block absolute top-0 bottom-0"
-          style={{
-            left: "33.333%",
-            borderLeft: "2px dashed #8CC63F",
-          }}
-        />
-        <div
-          className="hidden lg:block absolute top-0 bottom-0"
-          style={{
-            left: "66.666%",
-            borderLeft: "2px dashed #8CC63F",
-          }}
-        />
-
-        {/* ============================================ */}
-        {/* ROW 1: 2 Cards + Image                      */}
-        {/* ============================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 relative z-10">
-          {/* CARD 1 */}
-          <div className="relative pt-14 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            {/* ICON - Half in, half out */}
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-              <img src={services.row1[0].icon} alt="" className="w-20 h-20" />
-            </div>
-
-            <h3
-              className="text-xl font-bold mb-3 text-center"
               style={{ color: MY_COLORS.black }}
+              className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed mt-8"
             >
-              {services.row1[0].title}
-            </h3>
-            <p className="text-gray-600 text-center text-sm leading-relaxed">
-              {services.row1[0].description}
+              Nous sécurisons vos bâtiments, infrastructures et espaces
+              sensibles grâce à des solutions de contrôle d&apos;accès et de
+              vidéosurveillance performantes.
             </p>
           </div>
 
-          {/* CARD 2 */}
-          <div className="relative pt-14 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            {/* ICON - Half in, half out */}
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-              <img src={services.row1[1].icon} alt="" className="w-20 h-20" />
-            </div>
-
-            <h3
-              className="text-xl font-bold mb-3 text-center"
-              style={{ color: MY_COLORS.black }}
-            >
-              {services.row1[1].title}
-            </h3>
-            <p className="text-gray-600 text-center text-sm leading-relaxed">
-              {services.row1[1].description}
-            </p>
-          </div>
-
-          {/* IMAGE (Right Side) */}
-          <div className="flex justify-center items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg w-full h-full">
-              <img
-                src={IMAGES.IMG5}
-                alt="IT Services Illustration"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* ============================================ */}
-        {/* ROW 2: 3 Cards                             */}
-        {/* ============================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8 relative z-20">
-          {services.row2.map((service, index) => (
+          {/* ================= GRID + DOTTED LINES ================= */}
+          <div className="relative">
+            {/* HORIZONTAL DOTTED LINE */}
             <div
-              key={index}
-              className="
-      relative 
-      pt-14 p-6 
-      rounded-xl shadow-lg bg-white
-      hover:shadow-xl transition-shadow duration-500 
-      border border-gray-100 
-      z-20 
-      overflow-visible
-    "
-            >
-              {/* ICON - Half in, half out */}
-              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-20">
-                <img src={service.icon} alt="" className="w-20 h-20" />
-              </div>
+              className="absolute left-0 right-0 hidden md:block"
+              style={{
+                top: "55%",
+                borderTop: `2px dashed ${MY_COLORS.secondaryGreen}`,
+              }}
+            />
 
-              <h3
-                className="text-xl font-bold mb-3 text-center"
-                style={{ color: MY_COLORS.black }}
+            {/* VERTICAL DOTTED LINES */}
+            <div
+              className="hidden lg:block absolute top-0 bottom-0"
+              style={{
+                left: "33.333%",
+                borderLeft: `2px dashed ${MY_COLORS.secondaryGreen}`,
+              }}
+            />
+            <div
+              className="hidden lg:block absolute top-0 bottom-0"
+              style={{
+                left: "66.666%",
+                borderLeft: `2px dashed ${MY_COLORS.secondaryGreen}`,
+              }}
+            />
+
+            {/* ================= ROW 1 ================= */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 relative z-10">
+              {/* CARD 1 */}
+              <div
+                className="relative pt-10 p-16 rounded-xl shadow-2xl
+               bg-white hover:shadow-xl transition-shadow duration-300 border
+                border-gray-100"
               >
-                {service.title}
-              </h3>
-
-              <p className="text-gray-600 text-center text-sm leading-relaxed">
-                {service.description}
-              </p>
-
-              {/* GEAR BEHIND CARD */}
-              {index === 2 && (
-                <div
-                  className="
-          absolute 
-          -bottom-18 -right-28 
-          opacity-100 pointer-events-none z-10
-          
-          
-        "
-                >
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
                   <img
-                    style={{
-                      animation: "rotateClockwise 5s linear infinite",
-                    }}
-                    src={ICONS.Engrenage_plan}
+                    src={services.row1[0].icon}
                     alt=""
-                    className="w-32 h-32"
+                    className="w-24 h-24"
                   />
                 </div>
-              )}
+                <h3
+                  className="text-xl font-bold mb-3 text-center mt-4"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {services.row1[0].title}
+                </h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                  {services.row1[0].description}
+                </p>
+              </div>
+
+              {/* CARD 2 */}
+              <div className="relative pt-10 p-16 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                  <img
+                    src={services.row1[1].icon}
+                    alt=""
+                    className="w-24 h-24"
+                  />
+                </div>
+                <h3
+                  className="text-xl font-bold mb-3 text-center mt-4"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {services.row1[1].title}
+                </h3>
+                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                  {services.row1[1].description}
+                </p>
+              </div>
+
+              {/* STATIC IMAGE AS LAST CARD OF ROW 1 */}
+              <div className="flex justify-center items-center p-4">
+                <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-sm">
+                  <img
+                    src={IMAGES.IMG5} // choose your static image here
+                    alt="Contrôle & sécurité"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
-          ))}
+
+            {/* ================= ROW 2 ================= */}
+            <div
+              className="grid grid-cols-1 lg:grid-cols-3 
+            gap-8 pt-8 relative z-10 "
+              style={{
+                marginTop: "12px",
+              }}
+            >
+              {services.row2.map((service, index) => (
+                <div
+                  key={index}
+                  className="relative pt-10 p-6 rounded-xl shadow-lg
+                   bg-white hover:shadow-xl transition-shadow 
+                   duration-300 border border-gray-100"
+                >
+                  <div className="absolute -top-9 left-1/2 transform -translate-x-1/2">
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-16 h-16"
+                    />
+                  </div>
+                  <h3
+                    className="text-xl font-bold mb-3 text-center mt-4"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-center text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
+        {/* OPTIONAL: rotation keyframes if you reuse rotateClockwise elsewhere */}
+        <style>{`
+          @keyframes rotateClockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     </>
   );
 };
 
-export default CardDonnes;
+export default ControlCards;

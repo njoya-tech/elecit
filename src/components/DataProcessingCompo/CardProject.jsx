@@ -163,16 +163,17 @@ const CardProject = () => {
             style={{ color: MY_COLORS.white, top: "10%" }}
           >
             Un projet <span style={{ color: MY_COLORS.green }}>data</span> ou{" "}
-            <span style={{ color: MY_COLORS.green }}>IT</span>{" "}
-            en tête ?
+            <span style={{ color: MY_COLORS.green }}>IT</span> en tête ?
           </h3>
 
           {/* Subtitle/Description */}
-      <p className="text-center md:text-lg lg:text-xl text-white/90 
-      max-w-2xl mx-auto mt-15">
-        Optimisez votre transformation digitale avec des solutions
-        intelligentes et performantes !
-      </p>
+          <p
+            className="text-center md:text-lg lg:text-xl text-white/90 
+           max-w-2xl mx-auto mt-15"
+          >
+            Optimisez votre transformation digitale avec des solutions
+            intelligentes et performantes !
+          </p>
 
           {/* BUTTON */}
           <CTAButton

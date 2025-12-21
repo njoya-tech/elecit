@@ -26,6 +26,18 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
+    "contact": {
+      "floatingButton": "Contactez-nous",
+      "popup": {
+        "title": "Contactez-nous",
+        "subtitle": "Nous vous répondrons dès que possible",
+        "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
+        "openWhatsApp": "Ouvrir WhatsApp",
+        "messagePlaceholder": "Rédigez votre message...",
+        "leftButton":"Retour",
+        "rightButton":"Envoyer"
+      }
+    },
 
   "contact": {
     "floatingButton": "Contactez-nous",
@@ -64,17 +76,162 @@
     }
   },
 
-  "trackingPlatform": {
-    "title": "Plateforme de Tracking disponible sur Web & Smartphone",
-    "buttonText": "Regardez la vidéo"
-  },
+  "solution": {
+     "bannerTitle": "Des solutions",
+        "bannerHighlight": "clés pour des",
+        "bannerTitle2": "besoins spécifiques",
+        "viewMore": "Voir plus",
+        "items": [
+            {
+                "title": "Bâtiments intelligents & automatisation",
+                "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
+                "imagePlaceholderText": "Bâtiments"
+            
+            },
+            {
+                "title": "Conception, Fabrication mécanique & métallique",
+                "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
+                "imagePlaceholderText": "Fabrication"
+               
+            },
+            {
+                "title": "GPS & Tracking (More Than Track)",
+                "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
+                "imagePlaceholderText": "GPS Tracking"
+           
+            }
+        ]
+    },
+ 
 
+
+
+
+
+
+
+  "trackingPlatform": {
+  "title": "Plateforme de Tracking disponible sur Web & Smartphone",
+  "buttonText": "Regardez la vidéo"
+}, 
+
+ "serviceOffer": {
+      "title": "Une offre de",
+      "titleHighlight": "service",
+      "title2": "diversifiée",
+      "title3": ", adaptée à vos besoins",
+      "viewMore": "Voir plus",
+      "services": [
+        {
+          "title": "Services informatiques & DATA Processing",
+          "description": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données."
+        },
+        {
+          "title": "Bureau d'étude: conception & ingénierie",
+          "description": "Conception, optimisation et réalisation de vos projets techniques. Analyse des besoins et mise en œuvre des solutions sur mesure."
+        },
+        {
+          "title": "Service après vente disponible 24/7",
+          "description": "Des prestations techniques pour garantir la fiabilité, la durabilité et la performance optimale des équipements après leur mise en service."
+        }
+      ]
+    },
+
+    "realBanner": {
+      "titlePart1": "Des réalisations à la hauteur de vos",
+      "highlightWord": "espérances",
+      "titlePart2": ""
+    },
+
+   "servicesCarousel": {
+      "services": [
+        {
+          "title": "Services Informatiques & DATA Processing",
+          "description": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données."
+        },
+        {
+          "title": "Smart Building Solutions",
+          "description": "Solutions innovantes pour la gestion intelligente des bâtiments et l'optimisation énergétique."
+        },
+        {
+          "title": "GPS & Tracking",
+          "description": "Systèmes de localisation et de suivi en temps réel pour une gestion optimale de vos ressources."
+        },
+        {
+          "title": "Contrôle d'accès & Sécurité",
+          "description": "Solutions complètes de sécurité et de contrôle d'accès pour protéger vos installations."
+        },
+        {
+          "title": "Bureau d'étude",
+          "description": "Expertise technique et conseil pour la conception de vos projets technologiques."
+        },
+        {
+          "title": "Service Après-Vente",
+          "description": "Support technique et maintenance pour assurer la pérennité de vos installations."
+        }
+      ]
+    },
+
+
+
+
+
+"smartBuild":{
+  "title" : "Exposition des solutions et bâtiment intellignet",
+  "buttonText": "Visitez le showroom"
+},
   "smartBuild": {
     "title": "Exposition des solutions et bâtiment intellignet",
     "buttonText": "Visitez le showroom"
   },
 
-  "footer": {
+"blogBanner": {
+  "titlePart1": "Restez à jour sur nos ",
+  "highlightWord": "actualités",
+  "titlePart2": " en consultant notre blog"
+},
+
+"blog": {
+  "articles": [
+    {
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+      "title": "Pourquoi la fabrication sur mesure change la donne dans l'industrie camerounaise?",
+      "description": "Dans de nombreux secteurs industriels au Cameroun, les entreprises se heurtent à une difficulté récurrente...."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+      "title": "5 manières dont un hôtel intelligent économise énergie et fidélise ses clients",
+      "description": "Dans un contexte hôtelier de plus en plus compétitif au Cameroun, la question est double..."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+      "title": "La révolution du tracking : quand l'IA surveille vos véhicules",
+      "description": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à des défis majeurs...."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+      "title": "Irrigation intelligente : la technologie au service de l'agriculture durable",
+      "description": "L'agriculture camerounaise, moteur de l'économie nationale, est confrontée à un défi de taille..."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+      "title": "Du métal brut à l'innovation : comment nous façonnons des infrastructures durables",
+      "description": "Transformer une matière brute en un produit innovant et fonctionnel, voilà l'art de la métallurgie moderne..."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
+      "description": "Chaque entreprise, quelle que soit sa taille, génère quotidiennement des volumes considérables d'informations...."
+    }
+  ]
+},
+"testimonialsBanner": {
+  "titlePart1": "Ce que disent nos clients de leur ",
+  "highlightWord": "expérience",
+  "titlePart2": " avec nous"
+},
+
+"footer": {
     "banner": {
       "availableEverywhere": "Service disponible partout",
       "phoneNumber": "+237 650 416 640",
@@ -112,7 +269,14 @@
       "legalNotice": "Mentions légales"
     },
     "contact": {
-      "floatingButton": "Contactez-nous"
+      "floatingButton": "Contactez-nous",
+      "popup": {
+        "title":"Nous Contactez",
+        "subtitle":"Nous vous repondrons dès que possible",
+        "availability": " ",
+        "messagePlaceholder": "Redigez votre message...",
+        "openWhatsApp": "Ouvrez whatsapp"
+      }
     }
   },
 
@@ -194,6 +358,429 @@
   "projets": {
     "title": "Nos Realisations",
     "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",
-    "buttonText": "livre blanc"
+    "buttonText": "livre blanc",
+    "titleRound1":  " Un ",
+    "titleRound2": " en tête",
+    "titleRound3": " projet",
+    "subtitleRound": "Bâtissons-le ensemble des aujourd'hui",
+    "buttonRound": "Contactez-nous"
+
+  },
+  "projet": {
+  "title": "NOS RÉALISATIONS",
+  "subtitle": "Découvrez quelques-uns des projets que nous avons conçus et réalisés pour nos clients.",
+  "buttonText": "Livre blanc"
+},
+
+
+  "jobOffers": {
+ 
+    "previous": "Précédent",
+  "next": "Suivant",
+    "title": "Toutes les offres d'emplois",
+    "filterTitle": "Filtrer les offres",
+    "filterPoste": "Poste",
+    "filterPostePlaceholder": "Ex: Ingénieur, Technicien...",
+    "filterLocation": "Lieu",
+    "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
+    "filterDateFrom": "Date de début",
+    "filterDateTo": "Date de fin",
+    "resetFilters": "Réinitialiser les filtres",
+    "viewButton": "Voir tout",
+    "noResults": "Aucune offre ne correspond à vos critères de recherche",
+    "modal": {
+       "back": "Retour aux offres",
+      "typePoste": "Type de poste:",
+      "lieuPoste": "Lieu du poste:",
+      "datePublication": "Date de publication:",
+      "validJusquau": "Valide jusqu'au:",
+      "description": "Description",
+      "responsibilities": "Responsabilités",
+      "activities": "Activités :",
+      "profile": "Profil recherché",
+      "applyButton": "Postuler maintenant",
+
+      "formTitle": "POSTULEZ EN LIGNE",
+      "name": "Nom ",
+      "namePlaceholder": "Saisissez votre prénom",
+      "lastName": "Prénom ",
+      "lastNamePlaceholder": "Saisissez votre nom de famille",
+      "email": "Email *",
+      "emailPlaceholder": "Saisissez votre e-mail",
+      "phone": "Téléphone *",
+      "phonePlaceholder": "Saisissez votre n...",
+      "sex": "Sexe *",
+      "male": "Masculin",
+      "female": "Féminin",
+      "dateOfBirth": "Date de naissance *",
+      "day": "Jour",
+      "month": "Mois",
+      "year": "Année",
+      "position": "Poste *",
+      "positionPlaceholder": "Saisissez le nom du poste demandé",
+      "motivation": "Pourquoi pensez-vous avoir le profil le plus indiqué? *",
+      "motivationPlaceholder": "Tapez votre message",
+      "joinCV": "Joindre votre CV *",
+      "addFile": "Ajouter un fichier",
+      "sendApplication": "Envoyer la candidature"
+    }
+  },
+   "recruitment": {
+    "titleRound": "Pas d'offres pour le moment",
+    "subtitleRound": "Vous souhaitez rejoindre ElecIT Engineering mais aucune offre actuelle ne correspond à votre profil ",
+    "buttonText":"Déposez ici",
+    "heroTitle1": "Pour les chercheurs d'emploi,",
+    "heroTitle2": "nous recrutons",
+    "heroSubtitle": "Rejoignez une équipe jeune et talentueuse et contribuez par votre savoir-faire à une vision axée vers l'innovation technologique, le professionnalisme et le progrès.",
+    "processTitle": "Processus de recrutement",
+    "step1Title": "Les pièces jointes",
+    "step1Description": "Nous évaluons la conformité de vos CV (en français et en anglais), lettre de motivation et diplômes.",
+    "step2Title": "1er Entretien",
+    "step2Description": "Un entretien téléphonique est au préalable effectué avec vous afin de mieux vous connaître.",
+    "step3Title": "2ème Entretien",
+    "step3Description": "Un entretien en présentiel se déroulera entre les responsables et vous sur divers sujets.",
+    "step4Title": "Cas pratique",
+    "step4Description": "Un éventuel test est soumis aux candidats pour mesurer leurs compétences techniques.",
+    "step5Title": "Prise de décision",
+    "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour proposition d’embauche."
+  },
+   "smartBuilding": {
+    "title": "SMART BUILDING",
+    "subtitle": "Des solutions sur mesure pour les habitations, les bureaux, les hôtels et les espaces commerciaux. Confort, sécurité, performance énergétique et connectivité réunis dans une architecture intelligente.",
+    "buttonText": "Visitez le showroom",
+    "tabs": {
+      "smartHome": "Smart home",
+      "smartHotel": "Smart hotel",
+      "smartOffice": "Smart office",
+      "smartCommercial": "Smart commercial",
+      "smartEvents": "Smart events"
+    }
+  },
+  "smartHome": {
+    "title": "La maison qui s'adapte à vous",
+    "featureTitle": "Gestion automatisée",
+    "featureDescription": "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
+    "buttonText": "Un projet en tête?"
+  },
+  "smartVilla": {
+    "tilte1": "PROJET:",
+    "title2": "VILLA 2 YASSA",
+    "subtitle": "installation système domotique pour le contrôle centralisé de l'ensemble des équipements de l'habitat." ,
+    "buttonText": "Plus de projets",
+    "titleRound": "Construisons ensemble votre",
+    "titleRound2": "Smart Building",
+    "descriptionRound": "Vous avez une maison,  un hotel , un bureau ou un espace commercial, une salle de fêtes à transformer ? Parlons-en.",
+    "buttonRound": "Contactez-nous"
+  },
+
+  "interfaceCommande": {
+  "title": "Interfaces de commande",
+  "featureTitle": "Le pilotage centralisé",
+  "featureDescription": "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
+  "buttonText": "Visitez la boutique",
+  "slides": [
+    "/images/interface1.jpg",
+    "/images/interface2.jpg",
+    "/images/interface3.jpg"
+  ]
+},
+
+ "prestations": {
+      "title": "Prestations associées",
+    "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
+    "prestations": [
+      {
+        "number": "1",
+        "title": "Conception &\nBureau d'études",
+        "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+      },
+      {
+        "number": "2",
+        "title": "Fabrication &\nAssemblage",
+        "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+      },
+      {
+        "number": "3",
+        "title": "Traitements\n& Finitions",
+        "description": "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
+      }
+    ],
+    "title": "Prestations associées",
+    "description": "Ces services accompagnent chaque étape du projet, depuis l'audit initial jusqu'à la supervision en temps réel, pour transformer les infrastructures traditionnelles en environnements intelligents, sécurisés et écoénergétiques.",
+    "buttonText": "Visitez FOCZOU",
+    "services": {
+      "audit": {
+        "title": "Audit & diagnostic des infrastructures",
+        "description": "Évaluation des systèmes existants (électriques, CVC, sécurité, etc.); Analyse énergétique et identification des leviers d'optimisation."
+      },
+      "conception": {
+        "title": "Conception & ingénierie de solutions intelligentes",
+        "description": "Étude technique et modélisation; Intégration de capteurs, automates, et systèmes de régulation."
+      },
+      "automatisation": {
+        "title": "Automatisation des systèmes du bâtiment",
+        "description": "Gestion technique centralisée: éclairage, chauffage, ventilation, sécurité; programmation de scénarios intelligents"
+      },
+      "securite": {
+        "title": "Sécurité & contrôle d'accès intelligents",
+        "description": "Vidéosurveillance intelligente, alarme connectée, biométrie; Traçabilité et gestion des flux de personnes"
+      },
+      "supervision": {
+        "title": "Supervision à distance & maintenance prédictive",
+        "description": "Plateformes cloud pour le monitoring 24/7; Détection précoce des anomalies et maintenance préventive."
+      },
+      "formation": {
+        "title": "Formation à l'utilisation",
+        "description": "Formation des équipes à l'exploitation du système;Documentation et support technique dédié."
+      },
+      "evolution": {
+        "title": "Évolution & évolutivité des systèmes",
+        "description": "Possibilité d'ajouter de nouvelles fonctionnalités (modularité); Mises à jour logicielles et adaptation aux nouveaux besoins."
+      }
+    }
+  },
+  "FabriMeca": {
+    "heroTitle1":"CONCEPTION, FABRICATION MECANIQUE & METALLIQUE",
+    "heroSubtitle": " Notre atelier concoit des appareils et machines standards ou personnalisés selon les spécifications de vos besoins",
+    "heroSubtitle2": "Cliquez sur le bouton pour consultez le site dedié à l'atelier mécanique",
+    "heroButtonText":"Visitez MATOA"
+  },
+
+  "expertise": {
+    "title": "Nos domaines d'expertise",
+    "subtitle": "Nous offrons des solutions globales pour la conception, la fabrication et l'assemblage de pièces métalliques et mécaniques, ainsi que d'engins roulants et de contenants, alliant qualité et précision.",
+    "expertises": [
+      {
+        "title": "Engins roulants",
+        "description": "Conception et fabrication de chariots, remorques, plateformes motorisées ou manuelles.",
+        "imagePosition": "right"
+      },
+      {
+        "title": "Machines",
+        "description": "Machines industrielles, sanitaires et commerciales, conçues selon vos besoins spécifiques",
+        "imagePosition": "left"
+      },
+      {
+        "title": "Infrastructures & Pièces métalliques",
+        "description": "Structures métalliques, escaliers, garde-corps, pièces mécaniques usinées ou soudées.",
+        "imagePosition": "right"
+      }
+    ]
+  },
+
+  "production": {
+    "title": "Notre champ de production",
+    "items": [
+      {
+        "title": "CAB ATELIER"
+      },
+      {
+        "title": "BORNE NUMÉRIQUE"
+      },
+      {
+        "title": "MINI TRACTEUR"
+      },
+      {
+        "title": "STRUCTURE MÉTALLIQUE"
+      }
+    ]
+  },
+  "fab": {
+    "titleRound": "Un projet en tête ",
+    "titleRound2": "Besoin d'une solution",
+    "sub": "sur mesure",
+    "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
+    "buttonRound": "Contactez-nous"
+  },
+  "gpsT": {
+    "titlehero":"GPS & TRACKING",
+    "descriptionhero": "solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu’international (dans l’espace CEMAC).",
+    "buttonhero": " Nos visuels"  ,
+    "TitleFeatures": "Nos domaines d’intervention",
+    "DescriptionFeatures": " Des solutions pensées pour le suivi précis, l’analyse approfondie et l’optimisation durable de votre flotte de véhicules et de l’ensemble de vos actifs, le tout de manière centralisée au sein d’une plateforme unique.",
+    "BanderTitle":" Autres d’informations sur notre chaîne",
+    "BanderTitle2": "Youtube",
+    "BanderDescription": "Plateforme de suivi de véhicule en temps réel",
+    "BanderButton": " Poursuivre",
+    "titleRound": "Besoin dune solution",
+    "titleRound2": "Personnalisée ?",
+    "descriptionRound": "Nos experts vous accompagnent de l'etude à la mise en oeuvre complete de vos dispositifs de tracking"
+  },
+      "whyChooseUs": {
+    "title": "Pourquoi nous choisir?",
+    "subtitle": "Nos solutions de tracking offrent des avantages concrets en matière de visibilité, de sécurité et d'optimisation des opérations, pour un meilleur contrôle de vos ressources en temps réel.",
+    "feature1": "Système d'immobilisation/antivol à distance inclus gratuitement.",
+    "feature2": "Accès à une plateforme web sous licence et/ou application mobile dédiée.",
+    "feature3": "Tous les paramètres et outils de gestion sont accessibles sans frais supplémentaires.",
+    "feature4": "Couverture internationale gratuite (zone CEMAC).",
+    "feature5": "Entretien, maintenance et intervention SAV offerts dans les villes de Douala et Yaoundé.",
+    "feature6": "Jusqu'à 1 an de garantie sur les équipements."
+   
+  },
+
+
+  "testimonials": {
+  "items": [
+    {
+      "id": 1,
+      "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
+      "author": "Directeur Général",
+      "company": "AFB",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
+      "author": "Directeur Général",
+      "company": "AFB",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
+      "author": "Directeur Général",
+      "company": "AFB",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "text": "SGC exprime sa satisfaction quant à l'amélioration de l'éclairage et de la climatisation de leurs bâtiments. L'intervention a pleinement répondu à leurs attentes.",
+      "author": "Directeur Général",
+      "company": "SGC",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "text": "Elecit a délivré une installation domotique exceptionnelle à KILO FORCE. Nous sommes ravis de la qualité du service et de la modernisation apportée. Merci pour cette expérience !",
+      "author": "Directeur Général",
+      "company": "KILO FORCE",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "text": "SGC exprime sa satisfaction quant à l'amélioration de l'éclairage et de la climatisation de leurs bâtiments. L'intervention a pleinement répondu à leurs attentes.",
+      "author": "Directeur Général",
+      "company": "SGC",
+      "rating": 5
+    }
+  ],
+  "ariaLabels": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "goToTestimonial": "Aller au témoignage"
   }
+},
+    "projects": {
+      "categories": [
+        { "id": "all", "label": "Tous les projets" },
+        { "id": "smart", "label": "Smart building" },
+        { "id": "fabrication", "label": "Fabrication mécanique" },
+        { "id": "interne", "label": "Projet interne" }
+      ],
+      "projectCard": {
+        "seeMore": "Voir plus"
+      },
+      "projectModal": {
+        "mechanicalFabrication": "Fabrication mécanique",
+        "project": "Projet:",
+        "dateRealisation": "Date de réalisation:",
+        "projectStatus": "Statut du projet:",
+        "projectDescription": "Description du projet:",
+        "utility": "Utilité:",
+        "clientFeedback": "Retour client:",
+        "haveProject": "Vous avez un projet?",
+        "close": "Fermer"
+      },
+      "projectsData": [
+        {
+          "id": 1,
+          "number": "1",
+          "title": "Banque Mobile",
+          "category": "Fabrication mécanique",
+          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "dateRealisation": "12/06/23",
+          "statut": "terminé",
+          "description": "Conception et fabrication d'une flotte sur mesure de véhicules destinés au transport sécurisé et confortable du personnel d'une entreprise.",
+          "utilite": "Ce projet répond au besoin critique de mobilité interne fluide, réduction du temps de déplacement des équipes sur site, tout en assurant leur sécurité et leur confort.",
+          "retourClient": "Grâce à ces nouveaux moyens de transport, nous avons réduit de 30 % les retards liés aux déplacements internes, tout en améliorant le confort de nos collaborateurs.",
+          "responsable": "Responsable Logistique"
+        },
+        {
+          "id": 2,
+          "number": "2",
+          "title": "Services informatiques & DATA",
+          "category": "Smart building",
+          "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "dateRealisation": "15/08/23",
+          "statut": "terminé",
+          "description": "Mise en place d'une infrastructure informatique complète pour la gestion et l'analyse de données en temps réel.",
+          "utilite": "Amélioration de la productivité et de la prise de décision grâce à des outils d'analyse avancés.",
+          "retourClient": "L'implémentation de cette solution a transformé notre façon de travailler et augmenté notre efficacité de 40%.",
+          "responsable": "Directeur IT"
+        },
+        {
+          "id": 3,
+          "number": "3",
+          "title": "Système de sécurité intelligent",
+          "category": "Smart building",
+          "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "dateRealisation": "20/09/23",
+          "statut": "en cours",
+          "description": "Installation d'un système de surveillance et de contrôle d'accès intelligent pour un bâtiment administratif.",
+          "utilite": "Assurer la sécurité des occupants et des biens tout en optimisant la gestion des accès.",
+          "retourClient": "La tranquillité d'esprit apportée par ce système est inestimable pour notre organisation.",
+          "responsable": "Chef de la sécurité"
+        },
+        {
+          "id": 4,
+          "number": "4",
+          "title": "Plateforme IoT industrielle",
+          "category": "Fabrication mécanique",
+          "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "dateRealisation": "05/10/23",
+          "statut": "terminé",
+          "description": "Développement d'une plateforme IoT pour monitorer et optimiser les processus de production.",
+          "utilite": "Réduction des temps d'arrêt et amélioration de l'efficacité opérationnelle.",
+          "retourClient": "Cette solution nous a permis de réduire nos coûts de maintenance de 25%.",
+          "responsable": "Directeur de production"
+        },
+        {
+          "id": 5,
+          "number": "5",
+          "title": "Infrastructure réseau entreprise",
+          "category": "Projet interne",
+          "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "dateRealisation": "12/11/23",
+          "statut": "en cours",
+          "description": "Refonte complète de l'infrastructure réseau pour supporter la croissance de l'entreprise.",
+          "utilite": "Garantir une connectivité fiable et performante pour tous les services.",
+          "retourClient": "Le nouveau réseau a considérablement amélioré notre productivité quotidienne.",
+          "responsable": "Responsable Infrastructure"
+        },
+        {
+          "id": 6,
+          "number": "6",
+          "title": "Automatisation processus",
+          "category": "Smart building",
+          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "dateRealisation": "18/12/23",
+          "statut": "terminé",
+          "description": "Automatisation des processus métier pour améliorer l'efficacité opérationnelle.",
+          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
+          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
+          "responsable": "Directeur des opérations"
+        }
+      ]
+    }
+  
+ 
+  
+
+  
 }

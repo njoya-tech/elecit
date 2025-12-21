@@ -16,7 +16,7 @@ const MY_COLORS = {
 // Composant pour le cercle animé avec des segments discontinus
 const AnimatedCircleBorder = ({ children, isHovered }) => {
   return (
-    <div className="relative w-48 h-48 flex items-center justify-center">
+    <div className="relative lg:w-48 lg:h-48 md:w-30 md:h-30 flex items-center justify-center">
       {/* SVG pour le cercle discontinu animé */}
       <svg 
         className="absolute inset-0 w-full h-full"
@@ -77,8 +77,9 @@ const SolutionCard = ({ image, title, description, buttonText, onSeeMore }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
+    <>
     <div 
-      className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 max-w-sm"
+      className="flex flex-col  items-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 max-w-sm"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -114,7 +115,7 @@ const SolutionCard = ({ image, title, description, buttonText, onSeeMore }) => {
         {/* Bouton Voir Plus a lexterieur des card  */}
       <button
         onClick={onSeeMore}
-        className="group flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:gap-3"
+        className="group   items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:gap-3"
         style={{ 
           backgroundColor: isHovered ? MY_COLORS.green : 'transparent',
           color: isHovered ? MY_COLORS.white : MY_COLORS.green,
@@ -127,6 +128,7 @@ const SolutionCard = ({ image, title, description, buttonText, onSeeMore }) => {
           className="transition-transform duration-300 group-hover:translate-x-1"
         />
       </button>
+      </>
   );
 };
 

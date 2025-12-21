@@ -4,12 +4,12 @@ import { PARTNERS, ICONS } from "../../asset/assets.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 
 // ============================================================================
-// CONSTANTS - Extract all magic numbers
+// CONSTANTS
 // ============================================================================
 const ANIMATION_CONFIG = {
-  exitDuration: 600, // ms - must match CSS animation
-  autoPlayInterval: 4000, // ms
-  staggerDelay: 120, // ms per item
+  exitDuration: 600,
+  autoPlayInterval: 4000,
+  staggerDelay: 120,
 };
 
 const CAROUSEL_CONFIG = {
@@ -21,18 +21,18 @@ const CAROUSEL_CONFIG = {
 // CSS ANIMATIONS
 // ============================================================================
 const animationStyles = `
-  @keyframes slideOutRight {
+  @keyframes slideOutLeft {
     from {
       opacity: 1;
       transform: translateX(0);
     }
     to {
       opacity: 0;
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
   }
 
-  @keyframes slideInBottom {
+  @keyframes slideUpReveal {
     from {
       opacity: 0;
       transform: translateY(40px);
@@ -52,14 +52,13 @@ const animationStyles = `
     }
   }
 
-  .animate-slide-out-right {
-    animation: slideOutRight ${
-      ANIMATION_CONFIG.exitDuration
-    }ms ease-in-out forwards;
+  .animate-slide-out-left {
+    animation: slideOutLeft ${ANIMATION_CONFIG.exitDuration}ms ease-in-out forwards;
   }
 
-  .animate-slide-in-bottom {
-    animation: slideInBottom 0.6s ease-out forwards;
+  .animate-slide-up-reveal {
+    opacity: 0;
+    animation: slideUpReveal 0.6s ease-out forwards;
   }
 
   .logo-item-0 { animation-delay: 0ms; }
@@ -80,8 +79,8 @@ const ArrowButton = ({ direction, onClick, disabled }) => {
       disabled={disabled}
       aria-label={`${isLeft ? "Previous" : "Next"} slide`}
       className={`
-        absolute ${isLeft ? "left-0 md:left-8" : "right-0 md:right-8"} 
-        z-10 p-2 rounded-full 
+        absolute ${isLeft ? "left-0 sm:left-2 md:left-4 lg:left-8" : "right-0 sm:right-2 md:right-4 lg:right-8"} 
+        z-10 p-1.5 sm:p-2 rounded-full 
         hover:bg-gray-200 active:bg-gray-300
         transition-all text-black 
         disabled:opacity-50 disabled:cursor-not-allowed
@@ -89,8 +88,9 @@ const ArrowButton = ({ direction, onClick, disabled }) => {
       `}
     >
       <svg
-        width="32"
-        height="32"
+        width="24"
+        height="24"
+        className="sm:w-8 sm:h-8"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.5"
@@ -104,7 +104,7 @@ const ArrowButton = ({ direction, onClick, disabled }) => {
 
 const DotIndicator = ({ total, current, onSelect, disabled }) => (
   <div
-    className="flex justify-center gap-2 mt-12"
+    className="flex justify-center gap-1.5 sm:gap-2 mt-8 sm:mt-10 md:mt-12"
     role="tablist"
     aria-label="Carousel navigation"
   >
@@ -117,7 +117,7 @@ const DotIndicator = ({ total, current, onSelect, disabled }) => (
         aria-selected={current === index}
         aria-label={`Go to slide ${index + 1}`}
         className={`
-          w-2.5 h-2.5 rounded-full transition-all
+          w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all
           focus:outline-none focus:ring-2 focus:ring-[#7AB82E] focus:ring-offset-2
           disabled:cursor-not-allowed
           ${
@@ -136,12 +136,11 @@ const DotIndicator = ({ total, current, onSelect, disabled }) => (
 // ============================================================================
 const EnterprisePartners = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [displayIndex, setDisplayIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef(null);
 
-  // Partner data with better alt text
   const partners = [
     { id: 1, logo: PARTNERS.partner1, alt: "Partner company logo 1" },
     { id: 2, logo: PARTNERS.partner2, alt: "Partner company logo 2" },
@@ -156,37 +155,33 @@ const EnterprisePartners = () => {
 
   const totalSlides = Math.ceil(partners.length / CAROUSEL_CONFIG.logosPerView);
 
-  // Transition handler with proper cleanup
-  const performTransition = (nextIndex) => {
+  const performTransition = (targetIndex) => {
     if (isExiting) return;
 
     setIsExiting(true);
+    setNextIndex(targetIndex);
 
-    // Clear any existing timeout to prevent memory leaks
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
 
     timeoutRef.current = setTimeout(() => {
-      setDisplayIndex(nextIndex);
-      setCurrentIndex(nextIndex);
+      setCurrentIndex(targetIndex);
       setIsExiting(false);
     }, ANIMATION_CONFIG.exitDuration);
   };
 
-  // Auto-cycle with pause functionality
   useEffect(() => {
     if (isPaused || isExiting) return;
 
     const interval = setInterval(() => {
-      const nextIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
-      performTransition(nextIndex);
+      const nextIdx = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+      performTransition(nextIdx);
     }, ANIMATION_CONFIG.autoPlayInterval);
 
     return () => clearInterval(interval);
   }, [currentIndex, totalSlides, isExiting, isPaused]);
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
@@ -195,10 +190,16 @@ const EnterprisePartners = () => {
     };
   }, []);
 
-  const startIndex = displayIndex * CAROUSEL_CONFIG.logosPerView;
+  const currentStartIndex = currentIndex * CAROUSEL_CONFIG.logosPerView;
   const currentLogos = partners.slice(
-    startIndex,
-    startIndex + CAROUSEL_CONFIG.logosPerView
+    currentStartIndex,
+    currentStartIndex + CAROUSEL_CONFIG.logosPerView
+  );
+
+  const nextStartIndex = nextIndex * CAROUSEL_CONFIG.logosPerView;
+  const nextLogos = partners.slice(
+    nextStartIndex,
+    nextStartIndex + CAROUSEL_CONFIG.logosPerView
   );
 
   const handlePrevious = () => {
@@ -213,10 +214,16 @@ const EnterprisePartners = () => {
     <>
       <style>{animationStyles}</style>
 
-      <section className="w-full  bg-white p-0 m-0">
-        <div className="max-w-7xl mx-auto">
+      <section className="w-full bg-white p-0 m-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* SECTION TITLE */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#7AB82E]">
+          <h2
+            style={{
+              color: MY_COLORS.secondaryGreen,
+              marginTop: "20px",
+            }}
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12 md:mb-16"
+          >
             Nos partenaires
           </h2>
 
@@ -236,31 +243,51 @@ const EnterprisePartners = () => {
             />
 
             {/* LOGO LIST */}
-            <div className="flex items-center justify-center w-full max-w-5xl px-16 md:px-24 overflow-hidden relative min-h-[100px]">
+            <div className="flex items-center justify-center w-full max-w-5xl px-8 sm:px-12 md:px-16 lg:px-24 overflow-hidden relative min-h-[80px] sm:min-h-[100px]">
+              {/* CURRENT SLIDE */}
               <div
-                className={`flex items-center justify-center gap-8 md:gap-16 w-full ${
-                  isExiting ? "animate-slide-out-right" : ""
+                className={`flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16 w-full ${
+                  isExiting ? "animate-slide-out-left" : ""
                 }`}
-                key={displayIndex}
               >
-                {currentLogos.map((partner, index) => (
+                {currentLogos.map((partner) => (
                   <div
                     key={partner.id}
-                    className={`flex-1 flex items-center justify-center ${
-                      !isExiting
-                        ? `animate-slide-in-bottom logo-item-${index}`
-                        : ""
-                    }`}
+                    className="flex-1 flex items-center justify-center"
                   >
                     <img
                       src={partner.logo}
                       alt={partner.alt}
-                      className="w-full h-auto max-w-[200px] max-h-[80px] object-contain"
+                      className="w-full h-auto max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px] max-h-[60px] sm:max-h-[70px] md:max-h-[80px] object-contain"
                       loading="lazy"
                     />
                   </div>
                 ))}
               </div>
+
+              {/* NEXT SLIDE */}
+              {isExiting && (
+                <div className="absolute inset-0 flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16 w-full">
+                  {nextLogos.map((partner, idx) => (
+                    <div
+                      key={partner.id}
+                      className="flex-1 flex items-center justify-center"
+                      style={{
+                        animation: `slideUpReveal 0.6s ease-out forwards`,
+                        animationDelay: `${idx * ANIMATION_CONFIG.staggerDelay}ms`,
+                        opacity: 0,
+                      }}
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.alt}
+                        className="w-full h-auto max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px] max-h-[60px] sm:max-h-[70px] md:max-h-[80px] object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* RIGHT ARROW */}
@@ -279,37 +306,36 @@ const EnterprisePartners = () => {
             disabled={isExiting}
           />
 
-          {/* CTA SECTION - PURE TAILWIND */}
-          {/* CTA SECTION - PNG background + real content */}
-          <div className="relative mx-auto w-[90%] lg:w-4/5 max-w-6xl m-0 p-0">
-            {/* BLACK BLOCK PNG - Background layer */}
-            <div className="w-full overflow-hidden" style={{ height: "440px" }}>
+          {/* CTA SECTION */}
+          <div className="relative mx-auto w-[95%] sm:w-[90%] lg:w-full max-w-6xl m-0 p-0 mt-8 sm:mt-12 md:mt-16">
+            {/* BLACK BLOCK PNG */}
+            <div className="w-full overflow-hidden h-[300px] sm:h-[350px] md:h-[400px] lg:h-[440px]">
               <img
                 src={ICONS.formePlan}
-                className="w-full object-cover block"
+                className="w-full h-full object-cover block"
                 alt=""
               />
             </div>
 
-            {/* CONTENT OVERLAY - Positioned absolutely on top of PNG */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16">
-              {/* TECH PATTERN - Behind text */}
+            {/* CONTENT OVERLAY */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-16">
+              {/* TECH PATTERN */}
               <img
                 style={{
-                  top: "12em",
+                  top: "8em",
                   width: "85%",
                 }}
                 src={ICONS.formTech}
                 alt=""
                 aria-hidden="true"
-                className="absolute z-0 pointer-events-none opacity-30 
-             top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em]  // Use Tailwind transform
-             w-[150%] md:w-[100%] lg:w-[180%] h-auto"
+                className="absolute z-0 pointer-events-none opacity-20 sm:opacity-25 md:opacity-30 
+                top-1/2 left-1/2 -translate-x-1/2 -translate-y-[8em] sm:-translate-y-[10em] md:-translate-y-[12em]
+                w-[180%] sm:w-[150%] md:w-[120%] lg:w-[100%] xl:w-[180%] h-auto"
               />
 
               {/* TEXT */}
               <h3
-                className="relative z-20 text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-8 md:mb-12"
+                className="relative z-20 text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 sm:mb-8 md:mb-10 lg:mb-12"
                 style={{ color: MY_COLORS.white, top: "10%" }}
               >
                 Vous avez une idée ?<br />
@@ -319,16 +345,16 @@ const EnterprisePartners = () => {
 
               {/* BUTTON */}
               <CTAButton
-                className=" absolute top-10 "
+                className="absolute top-8 sm:top-10"
                 onClick={() => alert("Video clicked!")}
               >
                 Contactez Nous
               </CTAButton>
             </div>
 
-            {/* ROTATING GEAR - Top priority overlay */}
+            {/* ROTATING GEARS */}
             <div
-              className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40"
+              className="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 z-40"
               style={{
                 animation: "rotateClockwise 8s linear infinite",
                 top: "65%",
@@ -344,10 +370,10 @@ const EnterprisePartners = () => {
             </div>
 
             <div
-              className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-16 lg:h-16 z-40"
+              className="absolute w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 z-40"
               style={{
                 animation: "rotateClockwise 20s linear infinite",
-                top: "17%",
+                top: "20%",
                 left: "10%",
               }}
               aria-hidden="true"

@@ -278,7 +278,7 @@ const CardAvantage = () => {
                   left: "15px",
                   top: "15px",
                 }}
-              >
+               >
                 {/* Icon half in/out - black for green cards */}
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
                   <img

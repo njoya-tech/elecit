@@ -2,6 +2,13 @@ import React from 'react'
 import LanguageSwitcher from '../../components/features/LanguageSwitcher'
 import NavBar from '../../components/features/NavBar'
 import ImageWithTextOverlay from '../../components/ImageWithTextOverlay'
+<<<<<<< HEAD
+=======
+import BlogCarousel from '../../components/HomePage/BlogCaroussel'
+import BlogBanner from '../../components/HomePage/BlogBanner'
+
+import SmartBuilding from '../../components/HomePage/SmartBuilding'
+>>>>>>> 7d4b5f1d479963867cb8f16f8db257f7e339bbdc
 import HeroSection from '../../components/HomePage/HeroSection'
 import slide1_home from '../../assets/slide1_home.jpg';
 import slide2_home from '../../assets/slide2_home.jpg';
@@ -17,8 +24,34 @@ import SolutionsSection from '../../components/HomePage/SolutionsSection'
 
 const HomePage = () => {
 
+<<<<<<< HEAD
 
 
+=======
+  const { t } = useTranslation();
+
+   // Récupération des traductions
+  const servicesData = t('servicesCarousel.services', { returnObjects: true });
+   const serviceImages = [
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop'
+  ];
+
+
+  // Fusion traductions + images
+  const services = servicesData.map((service, index) => ({
+    ...service,
+    image: serviceImages[index]
+  }));  
+
+
+const blog = t('blog.articles', { returnObjects: true });
+
+>>>>>>> 7d4b5f1d479963867cb8f16f8db257f7e339bbdc
 
   const heroSlides = [
     {
@@ -60,10 +93,89 @@ const HomePage = () => {
      <HeroSection slides={heroSlides} />
       <br/>
       <br/>
-     <SolutionsSection
+      <div>
+                <SolutionsSection
       />
 
+<<<<<<< HEAD
 
+=======
+      </div>
+   
+    <TrackingPlatformSection 
+      title={t('trackingPlatform.title')}
+      buttonText={t('trackingPlatform.buttonText')}
+      images={{
+        loc1: loca1,
+        loc2: loca2,
+        ordi1: ordi1,
+        phonegps: phonegps
+      }}
+    />
+    <br/>
+    <br/>
+    
+    <ServicesSection
+      />
+
+       <div>
+     <RealBanner 
+        titlePart1={t('realBanner.titlePart1')}
+        highlightWord={t('realBanner.highlightWord')}
+        titlePart2={t('realBanner.titlePart2')}
+      />
+      <div className=''>
+           <ServicesCarousel services={services} />
+      </div>
+    
+    </div>
+
+    <div>
+         <SmartBuilding
+      title={t('smartBuild.title')}
+      buttonText={t('smartBuild.buttonText')}
+      images={{
+    
+        loc2: st1,
+        ordi1: st2,
+        phonegps: s
+      }}
+    />
+    </div>
+
+    <div className='mt-20 '>
+       <BlogBanner 
+  titlePart1={t("blogBanner.titlePart1")}
+  highlightWord={t("blogBanner.highlightWord")}
+  titlePart2={t("blogBanner.titlePart2")}
+/>
+    </div>
+
+    <div>
+      <BlogCarousel services={blog}></BlogCarousel>
+    </div>
+
+  
+
+    <div className='mt-20'>
+      <BlogBanner 
+  titlePart1={t("testimonialsBanner.titlePart1")}
+  highlightWord={t("testimonialsBanner.highlightWord")}
+  titlePart2={t("testimonialsBanner.titlePart2")}
+/>
+    
+    </div>
+
+    <div>
+      <TestimonialsCarousel></TestimonialsCarousel>
+    </div>
+
+
+
+ </main>
+
+ <Footer/> 
+>>>>>>> 7d4b5f1d479963867cb8f16f8db257f7e339bbdc
  
          {/* <section className='relative w-full max-w-lg mx-auto'>
                 <div className='absolute inset'>

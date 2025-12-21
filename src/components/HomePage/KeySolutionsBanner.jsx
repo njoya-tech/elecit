@@ -25,7 +25,7 @@ const SolutionsSection = ({
           className="text-center mb-16 py-12 w-full flex items-center justify-center"
           style={{ backgroundColor: MY_COLORS.black }}
         >
-          <h2 className="text-3 xl md:text-4xl font-bold px-4 md:w-140">
+          <h2 className="text-3 flex items-center justify-center xl md:text-4xl font-bold px-4 md:w-140">
             <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
             <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight}</span>
             <span style={{ color: MY_COLORS.white }}> {bannerTitle2}</span>
@@ -33,7 +33,7 @@ const SolutionsSection = ({
         </div>
         
         {/* Grille de solutions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 lg:gap-8 gap-3 justify-items-center">
           {solutions.map((solution, index) => (
             <SolutionCard
               key={index}

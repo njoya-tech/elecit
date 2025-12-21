@@ -1,27 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { ICONS, IMAGES } from "../../asset/assets";
+import { ICONS, IMAGES, OBJECTS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 
 const ControlCards = () => {
-  const carouselImages = [
-    IMAGES.IMG1,
-    IMAGES.IMG2,
-    IMAGES.IMG3,
-    IMAGES.IMG4,
-    IMAGES.IMG5,
-  ];
-
+  const carouselImages = [OBJECTS.obj_1, OBJECTS.obj_4, OBJECTS.obj_6];
   const [currentImagesIndex, setCurrentImageIndex] = useState(0);
 
-  // ✅ FIXED: Complete useEffect with interval time and cleanup
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % carouselImages.length
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % carouselImages.length
       );
-    }, 3000); // Change image every 3 seconds
-
-    // Cleanup interval on unmount
+    }, 3000);
     return () => clearInterval(interval);
   }, [carouselImages.length]);
 
@@ -84,7 +74,8 @@ const ControlCards = () => {
 
       {/* Subtitle */}
       <p
-        className="text-center text-base md:text-lg lg:text-xl mb-12 md:mb-16 px-4 max-w-4xl mx-auto"
+        className="text-center text-base md:text-lg lg:text-xl mb-12 md:mb-16 
+        px-4 max-w-4xl mx-auto"
         style={{ color: MY_COLORS.black }}
       >
         Nous proposons des solutions performantes pour sécuriser les bâtiments,
@@ -92,11 +83,20 @@ const ControlCards = () => {
       </p>
 
       {/* Main Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+      <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+        <div
+          className="hidden md:block absolute left-1/2 
+              top-0 bottom-0 w-px border-l-2 border-dotted -translate-x-1/2 z-0"
+          style={{
+            borderColor: MY_COLORS.secondaryGreen,
+            left: "33.33%",
+          }}
+        ></div>
+
         {/* Left Featured Card */}
         <div className="lg:col-span-1">
           <div className="h-full flex flex-col justify-between min-h-[500px]">
-            {/* Green Card with Carousel - ONLY this has green background */}
+            {/* Green Card with Carousel */}
             <div
               className="rounded-2xl p-8 md:p-12 shadow-lg mb-6"
               style={{
@@ -104,7 +104,6 @@ const ControlCards = () => {
               }}
             >
               <div className="flex items-center justify-center">
-                {/* ✅ FIXED: Now using the carousel state */}
                 <img
                   src={carouselImages[currentImagesIndex]}
                   alt="Product showcase"
@@ -113,7 +112,7 @@ const ControlCards = () => {
               </div>
             </div>
 
-            {/* Title Text - NO background, just green text */}
+            {/* Title Text */}
             <h3
               className="text-center font-bold text-lg md:text-xl mb-4 px-4"
               style={{ color: MY_COLORS.green }}
@@ -124,7 +123,9 @@ const ControlCards = () => {
 
             {/* Black Button */}
             <button
-              className="px-8 py-3 rounded-full font-semibold transition-opacity hover:opacity-90 flex items-center justify-center mx-auto gap-2"
+              className="px-8 py-3 rounded-full font-semibold 
+              transition-opacity hover:opacity-90 flex items-center 
+              justify-center mx-auto gap-2"
               style={{
                 backgroundColor: MY_COLORS.black,
                 color: MY_COLORS.white,
@@ -151,71 +152,81 @@ const ControlCards = () => {
         {/* Right Cards Grid (2x2) */}
         <div className="lg:col-span-2 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
-            {/* Vertical Dotted Line - Hidden on mobile */}
+            {/* Vertical Dotted Line */}
             <div
-              className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px border-l-2 border-dotted -translate-x-1/2 z-0"
+              className="hidden md:block absolute left-1/2 
+              top-0 bottom-0 w-px border-l-2 border-dotted -translate-x-1/2 z-0"
               style={{ borderColor: MY_COLORS.secondaryGreen }}
             ></div>
 
-            {/* Horizontal Dotted Line - Hidden on mobile */}
+            {/* Horizontal Dotted Line */}
             <div
-              className="hidden md:block absolute left-0 right-0 top-1/2 h-px border-t-2 border-dotted -translate-y-1/2 z-0"
+              className="hidden md:block absolute left-0 right-0 top-1/2 
+              h-px border-t-2 border-dotted -translate-y-1/2 z-0"
               style={{ borderColor: MY_COLORS.secondaryGreen }}
             ></div>
 
-            {cards.map((card, index) => (
-              <div
-                key={index}
-                className="relative rounded-xl p-6 md:p-8 pt-16 shadow-sm hover:shadow-md transition-shadow z-10"
-                style={{
-                  backgroundColor: MY_COLORS.white,
-                  border: `1px solid #e5e7eb`,
-                }}
-              >
-                {/* Badge Icon - Half in/out at top */}
+            {cards.map((card, index) => {
+              const isTopRow = index < 2;
+
+              return (
                 <div
-                  className="absolute -top-6 left-1/2 -translate-x-1/2 w-16 h-16 flex items-center justify-center rounded-full"
+                  key={index}
+                  className="relative rounded-xl p-4 md:p-6 pt-12 shadow-lg
+                  hover:shadow-lg transition-shadow z-10"
                   style={{
                     backgroundColor: MY_COLORS.white,
-                    border: `2px solid #e5e7eb`,
+                    border: `1px solid #e5e7eb`,
+                    transform: isTopRow ? 'translateY(-10px)' : 'translateY(10px)',
                   }}
                 >
-                  <img
-                    src={card.icon}
-                    alt={card.title}
-                    className="w-10 h-10 object-contain"
-                    style={{
-                      filter: `brightness(0) saturate(100%) invert(56%) sepia(18%) saturate(1367%) hue-rotate(34deg) brightness(91%) contrast(87%)`,
-                    }}
-                  />
-                </div>
-
-                {/* Card Content */}
-                <div className="flex flex-col items-center text-center">
-                  <h3
-                    className="text-lg md:text-xl font-bold mb-4"
-                    style={{ color: MY_COLORS.black }}
-                  >
-                    {card.title}
-                  </h3>
+                  {/* Badge Icon - SAME SIZE FOR ALL */}
                   <div
-                    className="space-y-2 text-sm md:text-base"
-                    style={{ color: "#6b7280" }}
+                    className="absolute left-1/2 -translate-x-1/2 w-28 
+                    h-20 flex items-center justify-center"
+                    style={{
+                      top: "-35px",
+                    }}
                   >
-                    {card.features.map((feature, idx) => (
-                      <p key={idx} className="leading-relaxed">
-                        {feature}
-                        {idx < card.features.length - 1 && "/"}
-                      </p>
-                    ))}
+                    <img
+                      src={card.icon}
+                      alt={card.title}
+                      className="w-14 h-24 object-contain"
+                      style={{
+                        filter: `brightness(0) saturate(100%) invert(56%) 
+                        sepia(18%) saturate(1367%) hue-rotate(34deg)
+                        brightness(91%) contrast(87%)`,
+                      }}
+                    />
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="flex flex-col items-center text-center">
+                    <h3
+                      className="text-lg md:text-xl font-bold mb-4"
+                      style={{ color: MY_COLORS.black }}
+                    >
+                      {card.title}
+                    </h3>
+                    <div
+                      className="space-y-2 text-sm md:text-base"
+                      style={{ color: "#6b7280" }}
+                    >
+                      {card.features.map((feature, idx) => (
+                        <p key={idx} className="leading-relaxed">
+                          {feature}
+                          {idx < card.features.length - 1 && "/"}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Decorative Helmet Icon - Desktop only, RIGHT side */}
-          <div className="hidden xl:block absolute -right-24 top-1/2 -translate-y-1/2 z-0">
+          {/* Decorative Helmet Icon */}
+          <div className="hidden xl:block absolute -right-54 top-1/2 -translate-y-1/2 z-0">
             <img
               src={ICONS.Casque}
               alt="Helmet decoration"

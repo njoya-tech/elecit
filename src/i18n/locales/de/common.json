@@ -1,6 +1,6 @@
 {
     
-  "nav": {
+"nav": {
     "accueil": "Startseite",
     "entreprise": "Unternehmen",
     "solutions": "Lösungen",
@@ -8,8 +8,39 @@
     "filiales": "Tochtergesellschaften",
     "blog": "Blog",
     "carriere": "Karriere",
-    "contacts": "Kontakte"
+    "contacts": "Kontakt"
   },
+
+  "submenus": {
+    "solutions": {
+      "smartBuilding": "Smart Building",
+      "mechanicalFabrication": "Mechanische Fertigung",
+      "gpsTracking": "GPS & Tracking",
+      "itDataProcessing": "IT & Datenverarbeitung",
+      "accessControlSecurity": "Zutrittskontrolle & Sicherheit",
+      "designOffice": "Planungsbüro",
+      "afterSalesService": "Kundendienst"
+    },
+    "subsidiaries": {
+      "foczou": "FOCZOU",
+      "mangoSmart": "MANGO SMART",
+      "moreThanTrack": "MORE THAN TRACK"
+    }
+  },
+    "contact": {
+      "floatingButton": "Kontaktieren Sie uns",
+      "popup": {
+        "title": "Kontaktieren Sie uns",
+        "subtitle": "Wir antworten so schnell wie möglich",
+        "availability": "Wir sind von Montag bis Freitag von 8 bis 18 Uhr auf WhatsApp erreichbar. Zögern Sie nicht, uns zu kontaktieren.",
+        "openWhatsApp": "WhatsApp öffnen",
+        "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+      "leftButton":"Zurück",
+"rightButton":"Senden"
+
+
+      }
+    },
 
    "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
@@ -35,7 +66,395 @@
       "highlighted2": "",
       "title3": "für Ihre Zukunft"
     }
+  },
+
+  "solution": {
+     "bannerTitle": "Intelligente",
+  "bannerHighlight": "Lösungen für",
+  "bannerTitle2": "spezifische Bedürfnisse",
+  "viewMore": "Mehr anzeigen",
+  "items": [
+    {
+      "title": "Intelligente Gebäude & Automatisierung",
+      "description": "Intelligente Verwaltung aller Ausrüstungen in öffentlichen oder privaten Gebäuden und des Energieverbrauchs.",
+      "imagePlaceholderText": "Gebäude"
+    },
+    {
+      "title": "Design, Mechanische & Metallische Fertigung",
+      "description": "Fertigung von Metallinfrastrukturen, landwirtschaftlichen Maschinen, rollendem Gerät, neuen Maschinenteilen und Ersatzteilen.",
+      "imagePlaceholderText": "Fertigung"
+    },
+    {
+      "title": "GPS & Tracking (More Than Track)",
+      "description": "Präzises Echtzeit-Tracking von Fahrzeugflotten und anderen Assets. Nachhaltige Analyse und Optimierung des gesamten Portfolios.",
+      "imagePlaceholderText": "GPS Tracking"
+    }
+  ]
+  },
+
+  "trackingPlatform": {
+  "title": "Tracking-Plattform verfügbar auf Web & Smartphone",
+  "buttonText": "Video ansehen"
+},
+
+"serviceOffer": {
+    "title": "Ein",
+    "titleHighlight": "vielfältiges Dienstleistungsangebot",
+    "title2": "",
+    "title3": ", angepasst an Ihre Bedürfnisse",
+    "viewMore": "Mehr erfahren",
+    "services": [
+      {
+        "title": "IT-Dienstleistungen & Datenverarbeitung",
+        "description": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung."
+      },
+      {
+        "title": "Ingenieurbüro: Konzeption & Engineering",
+        "description": "Konzeption, Optimierung und Umsetzung Ihrer technischen Projekte. Bedarfsanalyse und Implementierung maßgeschneiderter Lösungen."
+      },
+      {
+        "title": "24/7 Kundendienst",
+        "description": "Technische Dienstleistungen zur Gewährleistung von Zuverlässigkeit, Langlebigkeit und optimaler Leistung der Anlagen nach der Inbetriebnahme."
+      }
+    ]
+  },
+   "realBanner": {
+      "titlePart1": "Realisierungen, die Ihre",
+      "highlightWord": "Erwartungen",
+      "titlePart2": ""
+    },
+
+        "servicesCarousel": {
+      "services": [
+        {
+          "title": "IT-Dienstleistungen & Datenverarbeitung",
+          "description": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung."
+        },
+        {
+          "title": "Smart Building Lösungen",
+          "description": "Innovative Lösungen für intelligentes Gebäudemanagement und Energieoptimierung."
+        },
+        {
+          "title": "GPS & Tracking",
+          "description": "Echtzeit-Ortungs- und Tracking-Systeme für optimales Ressourcenmanagement."
+        },
+        {
+          "title": "Zutrittskontrolle & Sicherheit",
+          "description": "Umfassende Sicherheits- und Zutrittskontrolllösungen zum Schutz Ihrer Anlagen."
+        },
+        {
+          "title": "Ingenieurbüro",
+          "description": "Technische Expertise und Beratung für die Konzeption Ihrer Technologieprojekte."
+        },
+        {
+          "title": "Kundendienst",
+          "description": "Technischer Support und Wartung zur Sicherstellung der Nachhaltigkeit Ihrer Installationen."
+        }
+      ]
+    },
+
+    "smartBuild":{
+  "title": "Ausstellung von Lösungen und intelligentes Gebäude",
+  "buttonText": "Besuchen Sie den Showroom"
+},
+
+"blogBanner": {
+  "titlePart1": "Bleiben Sie auf dem Laufenden über unsere ",
+  "highlightWord": "Neuigkeiten",
+  "titlePart2": ", indem Sie unseren Blog besuchen"
+},
+
+"blog": {
+  "articles": [
+    {
+      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+      "title": "Warum maßgeschneiderte Fertigung die kamerunische Industrie verändert?",
+      "description": "In vielen Industriebereichen in Kamerun stoßen Unternehmen auf eine wiederkehrende Schwierigkeit...."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+      "title": "5 Wege, wie ein intelligentes Hotel Energie spart und Kunden bindet",
+      "description": "In einem zunehmend wettbewerbsorientierten Hotelmarkt in Kamerun ist die Frage zweifach..."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+      "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
+      "description": "Transport und Logistik sind das Herzstück der kamerunischen Wirtschaft, aber dieser Sektor steht vor großen Herausforderungen...."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+      "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
+      "description": "Die kamerunische Landwirtschaft, Motor der Volkswirtschaft, steht vor einer großen Herausforderung..."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+      "title": "Von Rohmetall zur Innovation: Wie wir nachhaltige Infrastrukturen gestalten",
+      "description": "Rohmaterial in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallurgie..."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+      "title": "Datenverarbeitung und Sicherheit: Das digitale Gold Ihres Unternehmens schützen",
+      "description": "Jedes Unternehmen, unabhängig von seiner Größe, generiert täglich erhebliche Mengen an Informationen...."
+    }
+  ]
+},
+
+"testimonialsBanner": {
+  "titlePart1": "Was unsere Kunden über ihre ",
+  "highlightWord": "Erfahrung",
+  "titlePart2": " mit uns sagen"
+},
+
+"testimonials": {
+  "items": [
+    {
+      "id": 1,
+      "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+      "author": "Geschäftsführer",
+      "company": "AFB",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+      "author": "Geschäftsführer",
+      "company": "AFB",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+      "author": "Geschäftsführer",
+      "company": "AFB",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
+      "author": "Geschäftsführer",
+      "company": "SGC",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "text": "Elecit hat eine außergewöhnliche Hausautomationsinstallation für KILO FORCE geliefert. Wir sind begeistert von der Servicequalität und der gebotenen Modernisierung. Vielen Dank für diese Erfahrung!",
+      "author": "Geschäftsführer",
+      "company": "KILO FORCE",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
+      "author": "Geschäftsführer",
+      "company": "SGC",
+      "rating": 5
+    }
+  ],
+  "ariaLabels": {
+    "previous": "Zurück",
+    "next": "Weiter",
+    "goToTestimonial": "Zum Testimonial gehen"
   }
+},
+
+"footer": {
+    "banner": {
+      "availableEverywhere": "Service überall verfügbar",
+      "phoneNumber": "+237 650 416 640",
+      "phoneLabel": "Telefon"
+    },
+    "company": {
+      "description": "Unser gesamtes technisches und technologisches Potenzial im Dienst Ihrer Vorstellungskraft"
+    },
+    "services": {
+      "title": "DIENSTLEISTUNGEN",
+      "mechanicalFabrication": "Design, Mechanische & Metallische Fertigung",
+      "smartBuilding": "Intelligente Gebäude & Automatisierung",
+      "gpsTracking": "GPS & Tracking (More Than Track)",
+      "itServices": "IT-Dienste & DATA Processing",
+      "designOffice": "Planungsbüro: Konstruktion & Ingenieurwesen",
+      "afterSales": "24/7 Kundendienst"
+    },
+    "usefulLinks": {
+      "title": "NÜTZLICHE LINKS",
+      "mangoBoutique": "MANGO BOUTIQUE",
+      "foczou": "FOCZOU",
+      "moreThanTrack": "MORE THAN TRACK",
+      "matoa": "MATOA"
+    },
+    "newsletter": {
+      "title": "NEWSLETTER",
+      "description": "Zukünftiger Partner, Jobsuchender, anderes? Abonnieren Sie unseren Newsletter und verpassen Sie keine aktuellen Neuigkeiten",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "submitButton": "Beitreten"
+    },
+    "copyright": {
+      "text": "Copyright 2025 by ElecIT Engineering. Alle Rechte vorbehalten",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "legalNotice": "Rechtliche Hinweise"
+    },
+    "contact": {
+      "floatingButton": "Kontaktieren Sie uns",
+      "popup": {
+        "title": "Kontaktieren Sie uns",
+        "subtitle": "Wir antworten so schnell wie möglich",
+        "availability": " ",
+        "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+        "openWhatsApp": "WhatsApp öffnen"
+      }
+    }
+  },
+
+  "keySolutions": {
+    "bannerTitle": "Schlüssellösungen für spezifische Bedürfnisse",
+    "viewMore": "Mehr anzeigen",
+    "items": [
+      {
+        "title": "Intelligente Gebäude & Automatisierung",
+        "description": "Intelligente Verwaltung aller Ausrüstungen in öffentlichen oder privaten Gebäuden und des Energieverbrauchs.",
+        "imagePlaceholderText": "Smart Building"
+      },
+      {
+        "title": "Design, Mechanische & Metallische Fertigung",
+        "description": "Fertigung von Metallinfrastrukturen, landwirtschaftlichen Maschinen, rollendem Gerät, neuen Maschinenteilen und Ersatzteilen.",
+        "imagePlaceholderText": "Mechanische Fertigung"
+      },
+      {
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Präzises Echtzeit-Tracking von Fahrzeugflotten und anderen Assets. Nachhaltige Analyse und Optimierung des gesamten Portfolios.",
+        "imagePlaceholderText": "GPS Tracking"
+      }
+    ]
+  },
+  "projets": {
+    "title": "Unsere Realisierungen",
+    "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben",
+    "buttonText": "weißes papier",
+    "titleRound1": "Ein ",
+    "titleRound2": "führendes",
+    "titleRound3": " Projekt",
+    "subtitleRound": "Lassen Sie uns es gemeinsam ab heute bauen",
+    "buttonRound": "Kontaktieren Sie uns"
+  },
+  "projet": {
+  "title": "UNSERE REALISIERUNGEN",
+  "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben.",
+  "buttonText": "Weißbuch"
+},
+
+"projects": {
+      "categories": [
+        { "id": "all", "label": "Alle Projekte" },
+        { "id": "smart", "label": "Smart Building" },
+        { "id": "fabrication", "label": "Mechanische Fertigung" },
+        { "id": "interne", "label": "Internes Projekt" }
+      ],
+      "projectCard": {
+        "seeMore": "Mehr erfahren"
+      },
+      "projectModal": {
+        "mechanicalFabrication": "Mechanische Fertigung",
+        "project": "Projekt:",
+        "dateRealisation": "Fertigstellungsdatum:",
+        "projectStatus": "Projektstatus:",
+        "projectDescription": "Projektbeschreibung:",
+        "utility": "Nutzen:",
+        "clientFeedback": "Kundenfeedback:",
+        "haveProject": "Haben Sie ein Projekt?",
+        "close": "Schließen"
+      },
+      "projectsData": [
+        {
+          "id": 1,
+          "number": "1",
+          "title": "Mobile Bank",
+          "category": "Mechanische Fertigung",
+          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+          "dateRealisation": "12.06.23",
+          "statut": "abgeschlossen",
+          "description": "Konzeption und Fertigung einer maßgeschneiderten Fahrzeugflotte für den sicheren und komfortablen Transport von Unternehmenspersonal.",
+          "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
+          "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
+          "responsable": "Logistikleiter"
+        },
+        {
+          "id": 2,
+          "number": "2",
+          "title": "IT-Dienstleistungen & DATEN",
+          "category": "Smart Building",
+          "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
+          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+          "dateRealisation": "15.08.23",
+          "statut": "abgeschlossen",
+          "description": "Implementierung einer vollständigen IT-Infrastruktur für Echtzeit-Datenmanagement und -analyse.",
+          "utilite": "Verbesserte Produktivität und Entscheidungsfindung durch fortschrittliche Analysetools.",
+          "retourClient": "Die Implementierung dieser Lösung hat unsere Arbeitsweise transformiert und unsere Effizienz um 40% gesteigert.",
+          "responsable": "IT-Direktor"
+        },
+        {
+          "id": 3,
+          "number": "3",
+          "title": "Intelligentes Sicherheitssystem",
+          "category": "Smart Building",
+          "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop",
+          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+          "dateRealisation": "20.09.23",
+          "statut": "in Bearbeitung",
+          "description": "Installation eines intelligenten Überwachungs- und Zutrittskontrollsystems für ein Verwaltungsgebäude.",
+          "utilite": "Gewährleistung der Sicherheit von Bewohnern und Eigentum bei gleichzeitiger Optimierung des Zugriffsmanagements.",
+          "retourClient": "Die Sicherheit, die dieses System bietet, ist für unsere Organisation von unschätzbarem Wert.",
+          "responsable": "Sicherheitsleiter"
+        },
+        {
+          "id": 4,
+          "number": "4",
+          "title": "Industrielle IoT-Plattform",
+          "category": "Mechanische Fertigung",
+          "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+          "dateRealisation": "05.10.23",
+          "statut": "abgeschlossen",
+          "description": "Entwicklung einer IoT-Plattform zur Überwachung und Optimierung von Produktionsprozessen.",
+          "utilite": "Reduzierte Ausfallzeiten und verbesserte Betriebseffizienz.",
+          "retourClient": "Diese Lösung hat es uns ermöglicht, unsere Wartungskosten um 25% zu senken.",
+          "responsable": "Produktionsleiter"
+        },
+        {
+          "id": 5,
+          "number": "5",
+          "title": "Unternehmensnetzwerk-Infrastruktur",
+          "category": "Internes Projekt",
+          "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
+          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+          "dateRealisation": "12.11.23",
+          "statut": "in Bearbeitung",
+          "description": "Vollständige Überholung der Netzwerkinfrastruktur zur Unterstützung des Unternehmenswachstums.",
+          "utilite": "Gewährleistung zuverlässiger und leistungsstarker Konnektivität für alle Dienste.",
+          "retourClient": "Das neue Netzwerk hat unsere tägliche Produktivität erheblich verbessert.",
+          "responsable": "Infrastrukturleiter"
+        },
+        {
+          "id": 6,
+          "number": "6",
+          "title": "Prozessautomatisierung",
+          "category": "Smart Building",
+          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
+          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+          "dateRealisation": "18.12.23",
+          "statut": "abgeschlossen",
+          "description": "Geschäftsprozessautomatisierung zur Verbesserung der Betriebseffizienz.",
+          "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
+          "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
+          "responsable": "Betriebsleiter"
+        }
+      ]
+    }
+
+
+
+
 
 
 }

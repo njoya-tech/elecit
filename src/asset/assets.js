@@ -66,6 +66,16 @@ import partner7 from "./images/partner_7.png";
 import partner8 from "./images/partner_8.png";
 import partner9 from "./images/partner_9.png";
 
+// ============  OBJECTS ====================
+
+
+import obj_1 from "./images/obj_1.png"
+import obj_2 from "./images/obj_2.png"
+import obj_3 from "./images/obj_3.png"
+import obj_4 from "./images/obj_4.png"
+import obj_5 from "./images/obj_5.png"
+import obj_6 from "./images/obj_6.png"
+
 
 
 
@@ -144,6 +154,19 @@ export const IMAGES = {
   partner8: partner8,
   partner9: partner9,
 };
+// =========== OBJECTS =============
+
+export const OBJECTS ={
+  obj_1:obj_1,
+  obj_2:obj_2,
+  obj_3:obj_3,
+  obj_4:obj_4,
+  obj_5:obj_5,
+  obj_6:obj_6,
+
+
+
+}
 
 // Global default export
 export default {

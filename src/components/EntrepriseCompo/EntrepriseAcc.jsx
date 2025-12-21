@@ -38,15 +38,15 @@ const EntrepriseAcc = () => {
 
   return (
     <section
-      className="w-full pt-10 pb-16 px-14"
+      className="w-full pt-6 sm:pt-8 md:pt-10 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-10 lg:px-14"
       style={{ backgroundColor: MY_COLORS.gray }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* LEFT BLOCK - FAQ */}
-          <div className="space-y-8 relative">
+          <div className="space-y-6 sm:space-y-8 relative">
             {/* Hard Hat Icon */}
-            <div className="absolute w-32 h-32 -top-20 -left-24">
+            <div className="absolute w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 -top-12 sm:-top-16 md:-top-20 -left-8 sm:-left-12 md:-left-16 lg:-left-24">
               <img
                 src={ICONS.Casque}
                 alt="Casque"
@@ -56,7 +56,7 @@ const EntrepriseAcc = () => {
 
             {/* Title */}
             <h2
-              className="text-3xl md:text-4xl font-bold lg:mt-10"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 sm:mt-6 lg:mt-10"
               style={{ color: MY_COLORS.black }}
             >
               Questions fréquemment <br />
@@ -64,11 +64,11 @@ const EntrepriseAcc = () => {
             </h2>
 
             {/* FAQ Accordion */}
-            <div className="space-y-4 lg:space-y-6 lg:mt-40">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-6 mt-6 sm:mt-8 lg:mt-40">
               {faqData.map((item, index) => (
                 <div
                   key={index}
-                  className="border-b pb-4"
+                  className="border-b pb-3 sm:pb-4"
                   style={{ borderColor: MY_COLORS.creamDark }}
                 >
                   {/* Question Button */}
@@ -77,23 +77,23 @@ const EntrepriseAcc = () => {
                     className="w-full flex items-start justify-between text-left"
                   >
                     <h3
-                      className="text-lg md:text-xl font-medium pr-4"
+                      className="text-base sm:text-lg md:text-xl font-medium pr-3 sm:pr-4"
                       style={{ color: MY_COLORS.green }}
                     >
                       {item.question}
                     </h3>
 
                     {/* Plus/Minus Icon */}
-                    <span className="flex-shrink-0 w-6 h-6">
+                    <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6">
                       {openIndex === index ? (
                         <Minus
-                          size={24}
+                          className="w-5 h-5 sm:w-6 sm:h-6"
                           color={MY_COLORS.green}
                           strokeWidth={2}
                         />
                       ) : (
                         <Plus
-                          size={24}
+                          className="w-5 h-5 sm:w-6 sm:h-6"
                           color={MY_COLORS.green}
                           strokeWidth={2}
                         />
@@ -110,7 +110,7 @@ const EntrepriseAcc = () => {
                     }}
                   >
                     <p
-                      className="mt-4 text-base leading-relaxed"
+                      className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed"
                       style={{ color: MY_COLORS.black }}
                     >
                       {item.answer}
@@ -122,22 +122,24 @@ const EntrepriseAcc = () => {
           </div>
 
           {/* RIGHT BLOCK - Contact Card */}
-          <div className="relative">
+          <div className="relative mt-8 lg:mt-0">
             {/* Border Container - BACK LAYER (z-10) */}
-            <div className="absolute top-32 left-0 right-0 z-10">
-              <div className="px-4">
+            <div
+             className="absolute top-30 sm:top-32
+            md:top-35 lg:top-35 left-0 right-0 z-10">
+              <div className="px-2 sm:px-4">
                 <div
-                  className="rounded-3xl p-0.5"
+                  className="rounded-2xl sm:rounded-3xl p-0.5"
                   style={{
                     backgroundColor: MY_COLORS.green,
-                    marginTop: "42px",
+                    marginTop: "28px",
                   }}
                 >
                   <div
-                    className="rounded-3xl p-1"
+                    className="rounded-2xl sm:rounded-3xl p-1"
                     style={{ backgroundColor: MY_COLORS.gray }}
                   >
-                    <div className="h-[480px] rounded-2xl" />
+                    <div className="h-64 sm:h-80 md:h-96 lg:h-[480px] rounded-xl sm:rounded-2xl" />
                   </div>
                 </div>
               </div>
@@ -145,7 +147,7 @@ const EntrepriseAcc = () => {
 
             {/* Green Text Block - MIDDLE LAYER (z-20) */}
             <div
-              className="rounded-3xl p-8 relative z-20  "
+              className="rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 lg:p-8 relative z-20"
               style={{
                 backgroundColor: MY_COLORS.green,
               }}
@@ -153,7 +155,7 @@ const EntrepriseAcc = () => {
               {/* Title & Subtitle */}
               <div className="text-center">
                 <h3
-                  className="text-2xl md:text-3xl font-bold mb-4"
+                  className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4"
                   style={{ color: MY_COLORS.black }}
                 >
                   Obtenez d'autres
@@ -161,11 +163,11 @@ const EntrepriseAcc = () => {
                   informations
                 </h3>
                 <p
-                  className="text-base"
+                  className="text-sm sm:text-base"
                   style={{
                     color: MY_COLORS.black,
                     lineHeight: "1.75rem",
-                    marginBottom: "18px",
+                    marginBottom: "14px",
                   }}
                 >
                   Nous serons heureux d'apporter des
@@ -176,49 +178,38 @@ const EntrepriseAcc = () => {
             </div>
 
             {/* Image - FRONT LAYER (z-30) */}
-            <div className="px-4 -mt-16 relative z-30">
+            <div className="px-2 sm:px-4 -mt-10 sm:-mt-12
+             md:-mt-14 lg:-mt-16 relative z-30">
               <img
                 src={IMAGES.IMG4}
                 alt="Technicien électrique"
-                className="rounded-2xl w-full h-[480px] object-cover"
+                className="rounded-xl sm:rounded-2xl w-full h-64
+                 sm:h-80 md:h-96 lg:h-[480px] object-cover"
                 style={{
-                  height: "480px",
-                  width: "95%",
-                  marginLeft: "15px",
-                  marginTop: "10px",
+                  width: "98%",
+                  marginLeft: "10px",
+                  marginTop: "8px",
                 }}
               />
             </div>
 
-            {/* CTA Section: Arrow + Button + Gears */}
-            <div className="px-4 mt-8 flex items-center justify-between">
-              {/* Left Side: Arrow + Button */}
-              <div className="flex items-center gap-4">
-                {/* Curved Arrow Icon */}
-                <div className="w-16 h-16">
-                  <img
-                    src={ICONS.FlecheVerte}
-                    alt="Arrow"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-
-                {/* CTA Button - With Hover Fill Animation */}
+            {/* CTA Section: Button + Gears */}
+            <div className="px-2 sm:px-4 mt-6 sm:mt-8 flex items-center justify-between">
+              {/* Left Side: Button */}
+              <div className="flex items-center gap-3 sm:gap-4">
                 <CTAButton onClick={() => alert("Video clicked!")}>
                   Nous joindre
                 </CTAButton>
               </div>
 
               {/* Right Side: Animated Gear Icons - Diagonal Layout */}
-              <div className="relative w-48 h-48">
+              <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48">
                 {/* Small Gear (Top) */}
                 <div
-                  className="absolute"
+                  className="absolute w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-[100px] lg:h-[100px]"
                   style={{
                     top: "-10%",
                     right: "-9%",
-                    width: "100px",
-                    height: "100px",
                     animation: "rotateClockwise 20s linear infinite",
                   }}
                 >
@@ -231,12 +222,10 @@ const EntrepriseAcc = () => {
 
                 {/* Large Gear (Bottom) - Diagonal Position */}
                 <div
-                  className="absolute"
+                  className="absolute w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-[150px] lg:h-[150px]"
                   style={{
                     top: "18%",
                     right: "-50%",
-                    width: "150px",
-                    height: "150px",
                     animation: "rotateClockwise 25s linear infinite",
                   }}
                 >
