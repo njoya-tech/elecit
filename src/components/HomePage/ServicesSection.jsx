@@ -78,8 +78,10 @@ const ServiceCard = ({ service, onSeeMore, imageSrc }) => {
         >
             {/* Contenu de la Carte */}
             <div 
-                className="flex flex-col items-center w-full bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl"
-                style={{ 
+                className="flex flex-col items-center w-full 
+    bg-white rounded-2xl shadow-xl
+    transition-all duration-300 transform hover:shadow-2xl
+    h-[420px]" style={{ 
                     transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
                     paddingBottom: '2rem'
                 }}
@@ -157,8 +159,8 @@ const ServicesSection = () => {
                 className="absolute top-0 left-0 w-full h-60"
                 style={{ backgroundColor: MY_COLORS.black }} 
             >
-                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center lg:mt-15 md:mt-15 sm:mt-15 mt-5">
-                    <h2 className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight">
+                <div className="max-w-9xl mx-auto py-40 px-4 text-center h-full flex items-end justify-center">
+                    <h2 className="text-3xl md:text-3xl lg:text-5xl w-full lg:w-[49%] font-bold px-4 md:w-140 tracking-tight">
                         <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
                         <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight} </span>
                         <span style={{ color: MY_COLORS.white }}>{bannerTitle2}</span>

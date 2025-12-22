@@ -21,32 +21,33 @@ const ServicesCarousel = ({ services, t }) => {
 
   const totalSlides = services.length;
 
-  // Auto-slide toutes les 5 secondes
-  React.useEffect(() => {
-    if (isPaused) return;
-    
-    const interval = setInterval(() => {
-      setDirection(1);
-      setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    }, 5000);
+React.useEffect(() => {
+  if (isPaused) return;
 
-    return () => clearInterval(interval);
-  }, [isPaused, totalSlides]);
+  const interval = setInterval(() => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 3) % totalSlides);
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, [isPaused, totalSlides]);
+
 
   const goToSlide = (index) => {
     setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
 
-  const nextSlide = () => {
-    setDirection(1); // Coulisse vers la droite
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
-  };
+const nextSlide = () => {
+  setDirection(1);
+  setCurrentIndex((prev) => (prev + 3) % totalSlides);
+};
 
-  const prevSlide = () => {
-    setDirection(-1); // Coulisse vers la gauche
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+const prevSlide = () => {
+  setDirection(-1);
+  setCurrentIndex((prev) => (prev - 3 + totalSlides) % totalSlides);
+};
+
 
   // Calculer quelles cartes afficher (3 cartes visibles)
   const getVisibleCards = () => {

@@ -17,9 +17,9 @@ const RealBanner = ({ titlePart1, titlePart2, highlightWord }) => {
       className="relative w-full py-16 px-4"
       style={{ backgroundColor: MY_COLORS.black }}
     >
-      <div className="max-w-7xl mx-auto text-center flex items-end justify-center">
+      <div className="max-w-9xl mx-auto px-4 text-center h-full flex items-end justify-center">
         <motion.h1 
-          className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight"
+          className="text-3xl md:text-3xl lg:text-5xl w-full lg:w-[49%] font-bold px-4 md:w-140 tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

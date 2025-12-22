@@ -130,7 +130,7 @@ const Footer = () => {
 
           {/* Contenu principal du footer */}
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 py-8 sm:py-10 md:py-12 relative z-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 md:gap-5">
               
               {/* Colonne 1 - Logo et description */}
               <div className="space-y-4 sm:space-y-5 md:space-y-6">
@@ -149,7 +149,7 @@ const Footer = () => {
                     href="https://linkedin.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition hover:opacity-80"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-8 md:h-8 rounded-full flex items-center justify-center transition hover:opacity-80"
                     style={{ backgroundColor: MY_COLORS.green }}
                   >
                     <svg className="w-4 sm:w-5 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -160,7 +160,7 @@ const Footer = () => {
                     href="https://facebook.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition hover:opacity-80"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-8 md:h-8  rounded-full flex items-center justify-center transition hover:opacity-80"
                     style={{ backgroundColor: MY_COLORS.green }}
                   >
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -171,7 +171,7 @@ const Footer = () => {
                     href="https://whatsapp.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition hover:opacity-80"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-8 md:h-8 rounded-full flex items-center justify-center transition hover:opacity-80"
                     style={{ backgroundColor: MY_COLORS.green }}
                   >
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@ const Footer = () => {
                     href="https://youtube.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition hover:opacity-80"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-8 md:h-8  rounded-full flex items-center justify-center transition hover:opacity-80"
                     style={{ backgroundColor: MY_COLORS.green }}
                   >
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-black" fill="currentColor" viewBox="0 0 24 24">

@@ -88,7 +88,8 @@ const blog = t('blog.articles', { returnObjects: true });
       highlighted: 'hero.slide3.highlighted',
       title2: 'hero.slide3.title2',
       highlighted2: 'hero.slide3.highlighted2',
-      title3: 'hero.slide3.title3'
+     
+      title4: 'hero.slide3.title4'
     }
   ];
 

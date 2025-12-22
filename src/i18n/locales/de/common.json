@@ -41,32 +41,32 @@
 
       }
     },
-
-   "hero": {
-    "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
-    "submitProject": "Projekt einreichen",
-    "slide1": {
-      "title": "Unser gesamtes",
-      "highlighted": "technisches",
-      "title2": "und",
-      "highlighted2": "technologisches",
-      "title3": "Potenzial im Dienste Ihrer Vorstellungskraft"
-    },
-    "slide2": {
-      "title": "Innovation und",
-      "highlighted": "Expertise",
-      "title2": "für Ihre",
-      "highlighted2": "ambitioniertesten",
-      "title3": "Projekte"
-    },
-    "slide3": {
-      "title": "Intelligente und",
-      "highlighted": "nachhaltige",
-      "title2": "Lösungen",
-      "highlighted2": "",
-      "title3": "für Ihre Zukunft"
-    }
+"hero": {
+  "subtitle": "AFRIKA'S ERSTES HIGH-TECH-UNTERNEHMEN",
+  "submitProject": "Projekt einreichen",
+  "slide1": {
+    "title": "Willkommen im Zentrum für",
+    "highlighted": "Forschung",
+    "title2": "und",
+    "highlighted2": "Exzellenz",
+    "title3": "im Ingenieurwesen in Zentralafrika."
   },
+  "slide2": {
+    "title": "Unser gesamtes",
+    "highlighted": "technisches",
+    "title2": "und",
+    "highlighted2": "technologisches",
+    "title3": "Potenzial steht Ihrer Vorstellungskraft zur Verfügung"
+  },
+  "slide3": {
+    "title": "Setzen Sie auf",
+    "highlighted": "innovative",
+    "title2": "",
+    "highlighted2": "",
+    "title4": "Ein maßgeschneiderter Ansatz, der Ihr Wohlbefinden berücksichtigt und seine beruflichen Verpflichtungen respektiert"
+  }
+},
+
 
   "solution": {
      "bannerTitle": "Intelligente",

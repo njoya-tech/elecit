@@ -79,7 +79,10 @@ const SolutionCard = ({ solution, onSeeMore, imageSrc }) => {
         >
             {/* Contenu de la Carte */}
             <div 
-                className="flex flex-col items-center w-full bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:shadow-2xl"
+                className="flex flex-col items-center w-full 
+    bg-white rounded-2xl shadow-xl
+    transition-all duration-300 transform hover:shadow-2xl
+    h-[420px]"
                 style={{ 
                     transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
                     paddingBottom: '2rem'
@@ -103,13 +106,13 @@ const SolutionCard = ({ solution, onSeeMore, imageSrc }) => {
                 {/* Texte de la carte */}
                 <div className="flex flex-col items-center p-6 pt-0 text-center flex-grow">
                     <h3 
-                        className="text-xl font-bold mb-4 px-4"
+                        className=" font-bold mb-4 px-4"
                         style={{ color: MY_COLORS.black }}
                     >
                         {solution.title}
                     </h3>
                     <p 
-                        className="text-sm text-gray-600 px-4 leading-relaxed flex-grow"
+                        className="text-sm font-semibold text-gray-600 px-4 leading-relaxed flex-grow"
                     >
                         {solution.description}
                     </p>
@@ -157,8 +160,8 @@ const SolutionsSection = () => {
                 className="absolute top-0 left-0 w-full h-60"
                 style={{ backgroundColor: MY_COLORS.black }} 
             >
-                <div className="max-w-7xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
-                    <h2 className="text-3xl md:text-4xl font-bold px-4 md:w-140 tracking-tight">
+                <div className="max-w-9xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
+                    <h2 className="text-3xl md:text-3xl lg:text-5xl w-full lg:w-[49%] font-bold px-4 md:w-140 tracking-tight">
                         <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
                         <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight}</span>
                         <span style={{ color: MY_COLORS.white }}> {bannerTitle2}</span>

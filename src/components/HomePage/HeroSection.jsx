@@ -44,28 +44,44 @@ const HeroSection = ({ slides }) => {
         </div>
 
         {/* Overlay fond_sombre.png avec opacité 80% */}
-        <div 
-          className="absolute inset-0 md:mr-20 mr-9"
-          style={{ 
-            backgroundImage: `url(${fond_sombre})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.8 
-          }}
-        />
+       <div 
+  className="absolute inset-y-0 -left-10 
+             w-full sm:w-[75%] md:w-[80%] lg:w-[70%]"
+  style={{ 
+    backgroundImage: `url(${fond_sombre})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.8 
+  }}
+/>
+
 
         {/* Design X à droite - TOUJOURS VISIBLE sur tous les écrans */}
-        <div className="absolute inset-y-0 right-0 w-1/2 sm:w-2/5 md:w-1/2 lg:mr-40 flex items-center justify-end pointer-events-none">
-          <img 
-            src={design_x} 
-            alt="Design X" 
-            className="h-[100%] w-auto sm:h-[100%] md:h-[99%] lg:h-[99%] object-contain opacity-90 md:opacity-100"
-          />
+        <div className="absolute inset-y-0 right-0
+    w-1/2 sm:w-2/5 md:w-1/2
+    flex items-center justify-end
+    transform -translate-x-5
+    md:-translate-x-25
+    lg:-translate-x-153">
+          <img
+  src={design_x}
+  alt="Design X"
+  className="
+    w-auto
+    max-h-full
+    sm:max-h-full
+    md:max-h-[120%]
+    lg:max-h-[100%]
+    object-contain
+    
+  "
+/>
+
         </div>
 
         {/* Contenu principal - Adapté pour cohabiter avec X */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="w-full sm:w-3/5 md:w-3/5 lg:w-1/2 py-8 md:py-0">
+          <div className="w-full sm:w-1/2 md:w-[28%] lg:w-[35%] py-8 md:py-0">
             
             {/* Sous-titre avec icône */}
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
@@ -80,17 +96,22 @@ const HeroSection = ({ slides }) => {
 
             {/* Titre principal avec hauteur minimale pour éviter les sauts */}
             <div className="transition-all duration-700 ease-in-out min-h-[110px] sm:min-h-[130px] md:min-h-[150px] lg:min-h-[180px]"> 
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold text-white leading-tight md:leading-snug mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-                {t(slides[currentSlide].title)}{' '}
-                <span style={{color: MY_COLORS.secondaryGreen}}>{t(slides[currentSlide].highlighted)}</span>
-                <br />
-                {t(slides[currentSlide].title2)}{' '}
-                <span style={{color: MY_COLORS.secondaryGreen}}>{t(slides[currentSlide].highlighted2)}</span>
-                <br />
-                <span className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl"> 
-                  {t(slides[currentSlide].title3)}
-                </span>
-              </h1>
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold text-white leading-tight md:leading-snug mb-4 sm:mb-5 md:mb-3 lg:mb-3 ">
+  {t(slides[currentSlide].title)}{' '}
+  <span style={{ color: MY_COLORS.secondaryGreen }}>
+    {t(slides[currentSlide].highlighted)}
+  </span>{' '}
+  {t(slides[currentSlide].title2)}{' '}
+  <span style={{ color: MY_COLORS.secondaryGreen }}>
+    {t(slides[currentSlide].highlighted2)}
+  </span>{' '}
+  {t(slides[currentSlide].title3)}{' '}
+</h1>
+<p className="text-xs font-bold sm:text-sm md:text-sm lg:text-base text-white max-w-prose mb-4">
+  {t(slides[currentSlide].title4)}
+</p>
+
+
             </div>
 
             {/* Boutons d'action - Toujours visibles */}
