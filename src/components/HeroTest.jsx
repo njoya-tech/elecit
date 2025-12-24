@@ -149,11 +149,11 @@ const ElecITCarouselCard = () => {
           <img
             src={ICONS.Casque}
             alt="helmet"
-            className="w-full animate-bounce"
+            className="w-full"
             style={{
               color: MY_COLORS.secondaryGreen,
-              animationDelay: "0s",
               opacity: 0.7,
+              animation: "bounce 3s ease-in-out infinite",
             }}
           />
         </div>

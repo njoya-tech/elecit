@@ -44,19 +44,19 @@ const ControlCards = () => {
     <>
       {/* HEADER WITH BLACK BACKGROUND + formTech */}
       <header className="w-full bg-slate-900">
-        <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-4 md:py-5">
-          {/* Title */}
-          <h1 className="ml-4 text-white font-extrabold text-xl md:text-3xl leading-tight text-left">
-            Traitement et Valorisation des Données
-          </h1>
-
-          {/* formTech icon */}
-          <div className="shrink-0">
-            <img
-              src={ICONS.formTech}
-              alt="Motif circuit"
-              className="h-24 md:h-24 w-auto object-contain scale-200 opacity-100 -ml-9"
-            />
+        <div
+          className="relative w-full mb-8 overflow-hidden"
+          style={{ backgroundColor: MY_COLORS.black }}
+        >
+          <h2
+            className="relative text-3xl md:text-2xl lg:text-3xl 
+                  font-bold px-8 py-6 md:py-8 text-right"
+            style={{ color: MY_COLORS.secondaryGreen }}
+          >
+            Traitement et Valorisation des Données{" "}
+          </h2>
+          <div className="absolute -top-10 left-0 w-1/3 h-full opacity-100 scale-125">
+            <img src={ICONS.formTech} alt="" />
           </div>
         </div>
       </header>

@@ -7,7 +7,7 @@ const BlogHero = () => {
     <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
       {/* Background Image */}
       <img
-        src={HERO.security} // <-- put the hero image here
+        src={HERO.blog} // <-- put the hero image here
         alt="Data Processing"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -44,24 +44,22 @@ const BlogHero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl">
-        <h1
-          style={{ color: MY_COLORS.secondaryGreen, lineHeight: "1.5em" }}
-          className="text-3xl md:text-5xl font-extrabold  mb-6"
-        >
-          Inside ElecIT <br />
+      <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold 
+        mb-4 text-white whitespace-nowrap lg:-mt-10">
+          <span style={{ color: MY_COLORS.secondaryGreen }}>Inside ElecIT</span>
         </h1>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-5">
-          <span style={{ color: MY_COLORS.white }}>
-            Innovation, Expertise & Vie d’Entreprise
-          </span>
-        </h2>
 
-        <p 
-        style={{
-            
-        }}
-        className="text-white text-2xl md:text-lg leading-relaxed mb-8 ">
+        <h3
+          style={{
+            color: MY_COLORS.white,
+          }}
+          className="text-3xl font-extrabold mb-16"
+        >
+          Innovation, Expertise & Vie d’Entreprise
+        </h3>
+
+        <p className="text-white text-base md:text-lg leading-relaxed mb-6 max-w-3xl">
           Une fenêtre ouverte sur notre savoir-faire et notre culture.<br/> Explorez
           nos projets, nos innovations et notre vision de l’ingénierie moderne.<br/>
           Plongez dans le quotidien d’ElecIT, là où la technique rencontre

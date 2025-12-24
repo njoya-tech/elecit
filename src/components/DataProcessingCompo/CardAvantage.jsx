@@ -7,20 +7,19 @@ const CardAvantage = () => {
     <>
       {/* CONTAINER 1: HEADER */}
       <header className="w-full bg-slate-900">
-        <div className="mx-auto max-w-7xl flex items-center justify-between px-6 md:px-12 py-4 md:py-5">
-          {/* Right: title */}
-          <h1 className="ml-4 text-white font-extrabold text-xl md:text-3xl leading-tight text-left">
-            Traitement et Valorisation des Données
-          </h1>
-
-          {/* Left: circuit pattern */}
-          <div className="flex-shrink-0">
-            <img
-              src={ICONS.formTech}
-              alt="Motif circuit"
-              className="h-24 md:h-24 w-auto object-contain scale-200 opacity-100 -ml-9"
-            />
+        <div
+          className="relative w-full mb-8 overflow-hidden"
+          style={{ backgroundColor: MY_COLORS.black }}
+        >
+          <div className="absolute -top-10 right-0 w-1/3 h-full opacity-100 scale-125">
+            <img src={ICONS.formTech} alt="" />
           </div>
+          <h2
+            className="relative text-3xl md:text-4xl lg:text-5xl font-bold px-8 py-6 md:py-8"
+            style={{ color: MY_COLORS.secondaryGreen }}
+          >
+            Les avantages clés{" "}
+          </h2>
         </div>
       </header>
 
@@ -42,7 +41,7 @@ const CardAvantage = () => {
                   Documentation
                 </button>
                 {/* Curved Arrow */}
-                <svg
+                {/* <svg
                   width="60"
                   height="40"
                   viewBox="0 0 60 40"
@@ -55,7 +54,7 @@ const CardAvantage = () => {
                     strokeWidth="2"
                     fill="none"
                   />
-                </svg>
+                </svg> */}
               </div>
             </div>
 
@@ -128,7 +127,7 @@ const CardAvantage = () => {
               style={{
                 top: "calc(50% - 3rem)",
                 color: MY_COLORS.secondaryGreen,
-                 borderLeft: "2px dashed #8CC63F",
+                borderLeft: "2px dashed #8CC63F",
               }}
             ></div>
 
@@ -278,7 +277,7 @@ const CardAvantage = () => {
                   left: "15px",
                   top: "15px",
                 }}
-               >
+              >
                 {/* Icon half in/out - black for green cards */}
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
                   <img

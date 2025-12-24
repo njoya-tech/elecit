@@ -10,44 +10,37 @@ import Footer from "../../components/features/Footer.jsx";
 const Entreprise = () => {
   return (
     <div className="relative w-full min-h-screen">
-      {/* Navigation - full bleed (cancels parent padding) */}
+      {/*---NAVBAR-----*/}
+
       <div className="fixed top-0 left-0 right-0 z-50">
         <NavBar />
       </div>
 
-      {/* Hero Section */}
       <main className="w-full">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-16">
-          <section className="pt-8 md:pt-16 lg:pt-20 lg:-mt-20">
-            <Hero />
+        {/* HERO - FULL WIDTH, NO CONTAINER*/}
+
+        <section className="pt-20 lg:px-20  ">
+          <Hero height="75vh" />
+        </section>
+
+        <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+          <section className="pt-0 lg:mt-20 ">
+            <EntrepriseCards />
           </section>
 
-          {/* Carousel / second section */}
-          <section className="pt-8 md:pt-12 lg:pt-16">
-            <ElecITCarouselCard />
+          <section className="pt-12 md:pt-16 lg:pt-20">
+            <EntrepriseTeam />
+          </section>
+
+          <section className="pt-12 md:pt-16 lg:pt-px">
+            <EntrepriseAcc />
+          </section>
+          <section className="pt-12 md:pt-16 lg:pt-20">
+            <EntreprisePartner />
           </section>
         </div>
 
-        {/* Entreprise Cards Section - Full Width */}
-        <section className="w-full pt-8 md:pt-12 lg:pt-16">
-          <EntrepriseCards />
-        </section>
-
-        {/* Team Section - Full Width */}
-        <section className="w-full pt-8 md:pt-12 lg:pt-16">
-          <EntrepriseTeam />
-        </section>
-
-        {/* Acc Section - Full Width */}
-        <section className="w-full pt-8 md:pt-12 lg:pt-6">
-          <EntrepriseAcc />
-        </section>
-
-        <section className="w-full p-0 m-0">
-          <EntreprisePartner />
-        </section>
-
-        <footer className="m-0 p-0">
+        <footer className="mt-0 p-0">
           <Footer />
         </footer>
       </main>

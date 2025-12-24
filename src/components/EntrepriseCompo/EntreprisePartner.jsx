@@ -330,7 +330,7 @@ const EnterprisePartners = () => {
                 aria-hidden="true"
                 className="absolute z-0 pointer-events-none opacity-20 sm:opacity-25 md:opacity-30 
                 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[8em] sm:-translate-y-[10em] md:-translate-y-[12em]
-                w-[180%] sm:w-[150%] md:w-[120%] lg:w-[100%] xl:w-[180%] h-auto"
+                w-[180%] sm:w-[150%] md:w-[120%] lg:w-full xl:w-[180%] h-auto"
               />
 
               {/* TEXT */}

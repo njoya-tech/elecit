@@ -8,7 +8,7 @@ const BureauHero = () => {
     <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
       {/* Background Image */}
       <img
-        src={HERO.security} // <-- put the hero image here
+        src={HERO.bureauEtude} // <-- put the hero image here
         alt="Data Processing"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -45,20 +45,16 @@ const BureauHero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl">
-        <h1
-          style={{ color: MY_COLORS.secondaryGreen,
-            lineHeight:"1.5em"
-           }}
-          className="text-3xl md:text-5xl font-extrabold  mb-6"
-        >
-          INGÉNIERIE BÂTIMENT <br/>
-          & TRAVAUX PUBLIQUE
+      <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-14 text-white whitespace-nowrap">
+          <span style={{ color: MY_COLORS.secondaryGreen }}>
+            INGÉNIERIE BÂTIMENT <br />& TRAVAUX PUBLIQUE
+          </span>
         </h1>
 
-        <p className="text-white text-base md:text-lg leading-relaxed mb-8">
-          Nous proposons une offre complète pour la construction de <br/>
-          bâtiments publics et privés, des ouvrages hydrauliques.
+        <p className="text-white text-base md:text-lg leading-relaxed mb-10 max-w-3xl">
+          Nous proposons une offre complète pour la construction de <br/> bâtiments
+          publics et privés, des ouvrages hydrauliques.
         </p>
 
         {/* CTA BUTTON */}

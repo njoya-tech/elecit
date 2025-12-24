@@ -38,11 +38,13 @@ const EntrepriseAcc = () => {
 
   return (
     <section
-      className="w-full pt-6 sm:pt-8 md:pt-10 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-10 lg:px-14"
-      style={{ backgroundColor: MY_COLORS.gray }}
+      className="w-screen py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
+      style={{
+        backgroundColor: MY_COLORS.gray,
+      }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mt-0">
           {/* LEFT BLOCK - FAQ */}
           <div className="space-y-6 sm:space-y-8 relative">
             {/* Hard Hat Icon */}
@@ -125,8 +127,9 @@ const EntrepriseAcc = () => {
           <div className="relative mt-8 lg:mt-0">
             {/* Border Container - BACK LAYER (z-10) */}
             <div
-             className="absolute top-30 sm:top-32
-            md:top-35 lg:top-35 left-0 right-0 z-10">
+              className="absolute top-30 sm:top-32
+            md:top-35 lg:top-38 left-0 right-0 z-10"
+            >
               <div className="px-2 sm:px-4">
                 <div
                   className="rounded-2xl sm:rounded-3xl p-0.5"
@@ -155,7 +158,9 @@ const EntrepriseAcc = () => {
               {/* Title & Subtitle */}
               <div className="text-center">
                 <h3
-                  className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4"
+                  className="text-xl 
+                  sm:text-2xl 
+                  md:text-3xl font-bold mb-3 sm:mb-4"
                   style={{ color: MY_COLORS.black }}
                 >
                   Obtenez d'autres
@@ -163,11 +168,11 @@ const EntrepriseAcc = () => {
                   informations
                 </h3>
                 <p
-                  className="text-sm sm:text-base"
+                  className="text-sm sm:text-base text-slate-900"
                   style={{
                     color: MY_COLORS.black,
                     lineHeight: "1.75rem",
-                    marginBottom: "14px",
+                    marginBottom: "24px",
                   }}
                 >
                   Nous serons heureux d'apporter des
@@ -178,25 +183,27 @@ const EntrepriseAcc = () => {
             </div>
 
             {/* Image - FRONT LAYER (z-30) */}
-            <div className="px-2 sm:px-4 -mt-10 sm:-mt-12
-             md:-mt-14 lg:-mt-16 relative z-30">
+            <div
+              className="px-2 sm:px-4 -mt-10 sm:-mt-12
+             md:-mt-14 lg:-mt-16 relative z-30"
+            >
               <img
                 src={IMAGES.IMG4}
                 alt="Technicien électrique"
                 className="rounded-xl sm:rounded-2xl w-full h-64
                  sm:h-80 md:h-96 lg:h-[480px] object-cover"
                 style={{
-                  width: "98%",
+                  width: "97%",
                   marginLeft: "10px",
-                  marginTop: "8px",
+                  marginTop: "15px",
                 }}
               />
             </div>
 
             {/* CTA Section: Button + Gears */}
-            <div className="px-2 sm:px-4 mt-6 sm:mt-8 flex items-center justify-between">
+            <div className="px-2 sm:px-4 mt-6 sm:mt-8 flex items-center justify-between ml-40">
               {/* Left Side: Button */}
-              <div className="flex items-center gap-3 sm:gap-4">
+              <div style={{}} className="flex items-center gap-3 sm:gap-4">
                 <CTAButton onClick={() => alert("Video clicked!")}>
                   Nous joindre
                 </CTAButton>

@@ -1,19 +1,39 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/set-state-in-effect */
+import React, { useEffect, useState, useRef } from "react";
 import { ICONS, IMAGES, OBJECTS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 
 const ControlCards = () => {
-  const carouselImages = [OBJECTS.obj_1, OBJECTS.obj_4, OBJECTS.obj_6];
-  const [currentImagesIndex, setCurrentImageIndex] = useState(0);
+  const carouselImages = [
+    OBJECTS.obj_1,
+    OBJECTS.obj_4,
+    OBJECTS.obj_6,
+    OBJECTS.obj_3,
+  ];
+
+  const slides = [carouselImages[carouselImages.length - 1], ...carouselImages];
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const carouselRef = useRef();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % carouselImages.length
-      );
+      setCurrentIndex((prev) => prev - 1);
     }, 3000);
+
     return () => clearInterval(interval);
-  }, [carouselImages.length]);
+  }, []);
+
+  useEffect(() => {
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        setTransitionEnabled(false);
+        setCurrentIndex(carouselImages.length);
+      }, 500);
+    } else {
+      setTransitionEnabled(true);
+    }
+  }, [currentIndex, carouselImages.length]);
 
   const cards = [
     {
@@ -98,17 +118,36 @@ const ControlCards = () => {
           <div className="h-full flex flex-col justify-between min-h-[500px]">
             {/* Green Card with Carousel */}
             <div
-              className="rounded-2xl p-8 md:p-12 shadow-lg mb-6"
+              className="rounded-2xl p-8 md:p-12 shadow-lg mb-6 flex items-center justify-center"
               style={{
-                background: `linear-gradient(135deg, ${MY_COLORS.secondaryGreen} 0%, ${MY_COLORS.green} 100%)`,
+                background: `linear-gradient(135deg, ${MY_COLORS.secondaryGreen} 
+                0%, ${MY_COLORS.green} 100%)`,
               }}
             >
-              <div className="flex items-center justify-center">
-                <img
-                  src={carouselImages[currentImagesIndex]}
-                  alt="Product showcase"
-                  className="w-full h-auto object-contain max-w-[250px]"
-                />
+              <div
+                className="w-[180px] md:w-[220px] 
+              lg:w-[250px] h-[180px] md:h-[220px] 
+              lg:h-[250px] flex items-center justify-center overflow-hidden relative"
+              >
+                <div
+                  className="absolute top-0 left-0 w-full h-full flex"
+                  ref={carouselRef}
+                  style={{
+                    transition: transitionEnabled
+                      ? "transform 0.5s ease-in-out"
+                      : "none",
+                    transform: `translateX(-${currentIndex * 100}%)`,
+                  }}
+                >
+                  {slides.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`Slide ${idx}`}
+                      className="w-full h-full object-cover shrink-0"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -177,10 +216,12 @@ const ControlCards = () => {
                   style={{
                     backgroundColor: MY_COLORS.white,
                     border: `1px solid #e5e7eb`,
-                    transform: isTopRow ? 'translateY(-10px)' : 'translateY(10px)',
+                    transform: isTopRow
+                      ? "translateY(-10px)"
+                      : "translateY(10px)",
                   }}
                 >
-                  {/* Badge Icon - SAME SIZE FOR ALL */}
+                  {/* Badge Icon */}
                   <div
                     className="absolute left-1/2 -translate-x-1/2 w-28 
                     h-20 flex items-center justify-center"
@@ -209,7 +250,7 @@ const ControlCards = () => {
                       {card.title}
                     </h3>
                     <div
-                      className="space-y-2 text-sm md:text-base"
+                      className="space-y-2 text-sm md:text-base text-slate-950"
                       style={{ color: "#6b7280" }}
                     >
                       {card.features.map((feature, idx) => (
@@ -230,7 +271,10 @@ const ControlCards = () => {
             <img
               src={ICONS.Casque}
               alt="Helmet decoration"
-              className="w-32 h-32 opacity-100"
+              className="w-36 h-36 opacity-100 animate-bounce"
+              style={{
+                animationDuration: "4s",
+              }}
             />
           </div>
         </div>
