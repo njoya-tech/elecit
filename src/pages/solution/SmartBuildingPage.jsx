@@ -41,9 +41,9 @@ const SmartBuildingPage = () => {
       <Prestations/>
     </div>
 
-    <div  className='lg:mb-130 md:mb-100 sm:mb-60 -mb-5'>
+    {/* <div  className=''>
       <SmartBander2></SmartBander2>
-    </div>
+    </div> */}
 
          <div>
           <FormRoundSmart className=''></FormRoundSmart>

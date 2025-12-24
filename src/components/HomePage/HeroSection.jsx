@@ -4,7 +4,7 @@ import fond_sombre from '../../assets/fond_sombre.png';
 import design_x from '../../assets/design_x.png';
 import vid from '../../assets/vid.png';
 import fleche from '../../assets/fleche.png';
-
+import {motion } from 'framer-motion'
 import { MY_COLORS } from '../../utils/colors';
 
 const HeroSection = ({ slides }) => {
@@ -118,30 +118,49 @@ const HeroSection = ({ slides }) => {
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               
               {/* Bouton vidéo avec effet hover */}
-              <button
-                className="relative group transition-all duration-300 flex-shrink-0"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                aria-label="Play video"
-              >
-                <div
-                  className={`
-                    w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center overflow-hidden
-                    transition-all duration-300
-                    ${isHovered ? 'bg-transparent border-2 scale-110' : ''}
-                  `}
-                  style={{
-                    backgroundColor: isHovered ? 'transparent' : MY_COLORS.secondaryGreen,
-                    borderColor: isHovered ? MY_COLORS.secondaryGreen : 'transparent'
-                  }}
-                >
-                  <img 
-                    src={vid} 
-                    alt="Video Icon"
-                    className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 transition-all duration-300 ${isHovered ? 'scale-125' : ''}`}
-                  />
-                </div>
-              </button>
+
+<motion.button
+  className="relative group flex-shrink-0"
+  aria-label="Play video"
+
+  /* 🎬 Animation automatique au chargement */
+  initial={{ scale: 1 }}
+  animate={{
+    scale: [1, 0.92, 1.08, 1],
+  }}
+  transition={{
+    duration: 1.4,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+
+  /* 🖱️ Hover = effet visuel seulement */
+  whileHover={{ scale: 1.12 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <div
+    className="
+      w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
+      rounded-full flex items-center justify-center overflow-hidden
+      border-2 transition-colors duration-300
+      group-hover:bg-transparent
+    "
+    style={{
+      backgroundColor: MY_COLORS.secondaryGreen,
+      borderColor: MY_COLORS.secondaryGreen,
+    }}
+  >
+    <img 
+      src={vid}
+      alt="Video Icon"
+      className="
+        w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8
+        transition-transform duration-300
+        group-hover:scale-125
+      "
+    />
+  </div>
+</motion.button>
 
               {/* Bouton Soumettre un projet avec flèche */}
               <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">

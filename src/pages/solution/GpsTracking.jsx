@@ -69,6 +69,18 @@ const GpsTracking = () => {
         imagePosition: "right"
       },
       {
+        title: "Conduite Assistée par Caméra IA",
+        description: "Détection, capture et enregistrement du comportement de conduite à risque (usage du téléphone, somnolence…); Alerte visuelle ou sonore.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        imagePosition: "left"
+      },
+      {
+        title: "Gestion de Carburant",
+        description: "Suivi du niveau de carburant par capteurs intégrés en vue d’éviter les vols et fuites/ Diagnostique de la courbe de consommation et génération de ses graphiques.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        imagePosition: "right"
+      },
+      {
         title: "Gestion des Rapports",
         description: "Génération des rapports périodiques (journal de bord, trajets, anomalies, consommation..)/ Export des rapports sous format EXCEL, PDF, images, vidéos.",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
@@ -121,7 +133,7 @@ images={{
   casqIcon={casq}
 />
                     </div>
-             <div className='lg:mb-130 md:mb-100 sm:mb-60 -mb-2' >
+             <div  >
               <WhyChooseUs translations={translations} />;
              </div>
 

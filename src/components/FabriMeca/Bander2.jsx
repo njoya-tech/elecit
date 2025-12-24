@@ -106,7 +106,7 @@ const Bander2 = () => {
             backgroundPosition: 'center',
             
         }}>          
-<div className="flex items-center gap-10 pl-4">
+<div className="flex items-center gap-5 pl-10">
             {/* Left Content Section */}
             <div className="flex-1 relative z-10">
               {/* Decorative Gear Left */}
@@ -139,7 +139,7 @@ const Bander2 = () => {
               <h1 className='text-4xl font-bold mt-8 text-white'> <span style={{color: MY_COLORS.secondaryGreen}}>{t('smartVilla.title1')} </span>{t('smartVilla.title2')}</h1>
 
 
-              <p className="text-white leading-relaxed mt-8 max-w-md mb-10">
+              <p className="text-white text-light mt-8 max-w-md mb-10">
                 {t('smartVilla.subtitle')}
               </p>
 

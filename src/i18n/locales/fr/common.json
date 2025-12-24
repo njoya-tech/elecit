@@ -442,6 +442,8 @@
     }
   },
    "recruitment": {
+    "spontaneousTitle": "Candidature ",
+    "spontaneousSubtitle": "Rejoignez notre équipe et faites partie de l'aventure",
     "titleRound": "Pas d'offres pour le moment",
     "subtitleRound": "Vous souhaitez rejoindre ElecIT Engineering mais aucune offre actuelle ne correspond à votre profil ",
     "buttonText":"Déposez ici",
@@ -714,7 +716,7 @@
           "title": "Banque Mobile",
           "category": "Fabrication mécanique",
           "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données. ",
           "dateRealisation": "12/06/23",
           "statut": "terminé",
           "description": "Conception et fabrication d'une flotte sur mesure de véhicules destinés au transport sécurisé et confortable du personnel d'une entreprise.",

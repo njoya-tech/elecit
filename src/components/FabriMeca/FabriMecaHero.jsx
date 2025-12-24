@@ -40,13 +40,13 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
     
 
         <p 
-          className="text-base italic  md:text-lg leading-relaxed mt-3 "
+          className="lg:mt-15  text-base italic  md:text-lg leading-relaxed mt-3 "
           style={{ color: MY_COLORS.white }}
         >
           {t(subtitle2)}
         </p>
                   {/* Boutons d'action */}
-                  <div className="flex items-center justify-center gap-4 sm:gap-6">
+                  <div className="flex items-center justify-center gap-4 lg:mt-4 sm:gap-6">
                     {/* Bouton Livre blanc */}
                     <div className="flex items-center gap-3">
                       <button 

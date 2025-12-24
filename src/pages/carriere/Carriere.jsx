@@ -20,7 +20,7 @@ const Carriere = () => {
     publicationDate: "12 février 2025",
     validUntil: "28 février 2025",
     tags: ["CDD", "fabrication mécanique"],
-    description: "Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche.",
+    description: "Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche.Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche",
     responsibilities: "Concevoir et produire les solutions innovantes selon le cahier de charge.",
     activities: [
       "Analyser le schéma et le tableau électrique",
@@ -111,7 +111,7 @@ const Carriere = () => {
            <RecruitmentProcess steps={processSteps} />
     </div>
 
-    <div className='lg:mb-130 md:mb-100 sm:mb-60 -mb-20'>
+    <div className='lg:mb-20 md:mb-100 sm:mb-60 -mb-20'>
         <JobOffersList offers={jobOffersData} />
     </div>
  

@@ -62,96 +62,97 @@ const floatingAnimation = `
   .floating {
     animation: floating 3s ease-in-out infinite;
   }
+  
+  @media (max-width: 768px) {
+    .floating {
+      animation: none;
+    }
+  }
 `;
 
 const SmartBander = () => {
-     const { t } = useTranslation();
-      const [currentSlide, setCurrentSlide] = useState(0);
-      const [fadeIn, setFadeIn] = useState(true);
-    
-      const slides = t('interfaceCommande.slides') || [];
-    
-      useEffect(() => {
-        const timer = setInterval(() => {
-          setFadeIn(false);
-          setTimeout(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-            setFadeIn(true);
-          }, 500);
-        }, 4000);
-    
-        return () => clearInterval(timer);
-      }, [slides.length]);
-    
-      const changeSlide = (direction) => {
-        setFadeIn(false);
-        setTimeout(() => {
-          if (direction === 'next') {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-          } else {
-            setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-          }
-          setFadeIn(true);
-        }, 500);
-      };
-    
+  const { t } = useTranslation();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [fadeIn, setFadeIn] = useState(true);
+
+  const slides = t('interfaceCommande.slides') || [];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFadeIn(false);
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setFadeIn(true);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const changeSlide = (direction) => {
+    setFadeIn(false);
+    setTimeout(() => {
+      if (direction === 'next') {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      } else {
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+      }
+      setFadeIn(true);
+    }, 500);
+  };
+
   return (
     <>
       <style>{floatingAnimation}</style>
 
-    <div className='bg-gray-400/20 w-screen items-center justify-center flex p-10'>
-            <div className='  relative w-[1000px] h-[400px] '   style={{
-          backgroundImage:  ` linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${eng})`,
-        backgroundSize: 'cover',
+      <div className='bg-gray-400/20 w-full items-center justify-center flex md:p-10 p-4'>
+        <div className='relative md:w-[70%] w-full md:h-[400px] h-auto' 
+          style={{
+            backgroundImage: `linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${eng})`,
+            backgroundSize: 'cover',
             backgroundPosition: 'center',
-            
-        }}>          
-<div className="flex items-center gap-10 pl-4">
+          }}
+        >
+          <div className="flex md:flex-row flex-col items-center gap-5 md:py-0 py-8">
             {/* Left Content Section */}
-            <div className="flex-1 relative z-10">
+            <div className="flex-1 md:pl-10 pl-4 pr-4 relative z-10">
               {/* Decorative Gear Left */}
-              <div 
-                className="absolute -left-20 top-0 w-32 h-32  "
-              >
-                 <motion.img 
-                   src={casq} 
-                   alt="engrenage" 
-                   className="w-30 h-30"
-                  // Animation: Uniquement le mouvement vertical (flottement)
-  animate={{ 
-    y: [0, -15, 0], // Commence à 0, monte à -15px, revient à 0
-  }}
-  
-  // Transition: Rend le flottement doux et répétitif
-  transition={{ 
-    // On cible explicitement la propriété 'y'
-    y: {
-      duration: 2, // Le cycle de flottement dure 2 secondes (montée et descente)
-      ease: "easeInOut", // Pour un mouvement doux au sommet et au fond
-      repeat: Infinity, // Répète sans fin
-      repeatType: "reverse", // Essentiel : inverse le mouvement (monte puis redescend)
-    }
-  }}
+              <div className="absolute md:-left-20 -left-4 md:top-0 -top-6 md:w-32 md:h-32 w-16 h-16">
+                <motion.img 
+                  src={casq} 
+                  alt="engrenage" 
+                  className="md:w-30 md:h-30 w-16 h-16"
+                  animate={{ 
+                    y: [0, -15, 0],
+                  }}
+                  transition={{ 
+                    y: {
+                      duration: 2,
+                      ease: "easeInOut",
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                    }
+                  }}
                 /> 
               </div>
 
-              <h2 className="md:text-4xl text-2xl font-bold md:mb-2 text-white">
+              <h2 className="md:text-4xl text-2xl font-bold md:mb-2 mb-3 text-white">
                 {t('fm.title')}
               </h2>
 
               <h3 
-                className="text-1xl font-bold mb-4"
+                className="md:text-xl text-lg font-bold md:mt-5 mt-3"
                 style={{ color: MY_COLORS.white }}
               >
                 {t('fm.subtitle')}
               </h3>
 
-              <p className="text-white  md:mb-8 mb-4 text-sm max-w-md">
+              <p className="text-white md:mb-8 mb-4 font-semibold text-sm md:max-w-md">
                 {t('fm.description')}
               </p>
 
               <button 
-                className="md:px-8 py-2 px-2 text-sm mb-15 rounded-full md:border-2 border-1 font-medium transition-all hover:bg-white"
+                className="md:px-8 px-6 py-2 text-sm md:mb-15 mb-6 rounded-full md:border-2 border-2 font-medium transition-all hover:bg-white"
                 style={{ 
                   borderColor: MY_COLORS.secondaryGreen,
                   color: MY_COLORS.secondaryGreen
@@ -170,19 +171,18 @@ const SmartBander = () => {
             </div>
 
             {/* Right Carousel Section */}
-            <div className="flex-1 relative ">
+            <div className="flex-1 relative w-full md:px-0 px-8">
               {/* Navigation Arrow Left */}
               <button
                 onClick={() => changeSlide('prev')}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 text-gray-400 p-3  transition-all -translate-x-6"
-              
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 text-gray-400 md:p-3 p-1 transition-all md:-translate-x-6 -translate-x-2"
               >
-                <ChevronLeft size={35}  />
+                <ChevronLeft className="md:w-[35px] md:h-[35px] w-[25px] h-[25px]" />
               </button>
 
               {/* Carousel Container with Floating Animation */}
-              <div className="relative floating ">
-                <div className="relative md:h-96  h-40 rounded-lg overflow-hidden ">
+              <div className="relative floating">
+                <div className="relative md:h-96 h-48 rounded-lg overflow-hidden">
                   {slides.map((slide, index) => (
                     <div
                       key={index}
@@ -193,7 +193,7 @@ const SmartBander = () => {
                       <img
                         src={slide}
                         alt={`Interface ${index + 1}`}
-                        className="w-80 md:h-60 object-cover"
+                        className="md:w-80 w-full md:h-60 h-40 object-cover"
                       />
                     </div>
                   ))}
@@ -203,22 +203,16 @@ const SmartBander = () => {
               {/* Navigation Arrow Right */}
               <button
                 onClick={() => changeSlide('next')}
-                className="absolute text-gray-400 right-0 top-1/2 -translate-y-1/2 z-20 p-3 transition-all translate-x-6"
-              
+                className="absolute text-gray-400 right-0 top-1/2 -translate-y-1/2 z-20 md:p-3 p-1 transition-all md:translate-x-0 translate-x-2"
               >
-                <ChevronRight size={35}  />
+                <ChevronRight className="md:w-[35px] md:h-[35px] w-[25px] h-[25px]" />
               </button>
-
-            
-              
-            
             </div>
           </div>
-            </div>
-
-    </div>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default SmartBander
+export default SmartBander;

@@ -5,6 +5,10 @@ import rail from '../../assets/rail.svg'
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
+import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
+
+import CTAButton from "../CTA/CTAButton.jsx";
+
 
 const FormRound = () => {
 
@@ -13,41 +17,18 @@ const FormRound = () => {
     
     return (
       <div className='relative w-full flex items-center justify-center '>
-        {/* Engrenages animés */}
-        <motion.img 
-          src={rail} 
-          alt="engrenage" 
-          className="absolute w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 left-4 top-8 md:left-12 md:top-12 lg:left-12 lg:top-8 z-30"
-          animate={{ rotate: 360 }}
-          transition={{ 
-            duration: 6, 
-            ease: "linear", 
-            repeat: Infinity 
-          }}
-        />
-        
-        <motion.img 
-          src={rail} 
-          alt="engrenage" 
-          className="absolute w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 right-8 top-12 md:right-16 md:top-16 lg:right-12 lg:top-8 z-30"
-          animate={{ rotate: 360 }}
-          transition={{ 
-            duration: 6, 
-            ease: "linear", 
-            repeat: Infinity 
-          }}
-        />
+      
 
         {/* Image de fond */}
-        <div className='relative w-full max-w-6xl h-[500px]'>
+        <div className='relative w-full max-w-6xl h-[350px] lg:h-[480px] md:h-[480px] sm:h-[480px]'>
           <img src={p2} alt="fond arrondie" className='w-full   ' />
           
           {/* Contenu centré */}
-          <div className='absolute inset-0 flex flex-col items-center justify-center px-4 z-20 space-y-4 md:space-y-6'>
+          <div className='absolute inset-0 flex flex-col items-center justify-center px-4 z-20 space-y-10 md:space-y-6'>
             {/* Titre */}
             <h1 
               style={{color: MY_COLORS.white}} 
-              className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center'
+              className='font-bold text-2xl  sm:text-2xl md:text-3xl lg:text-6xl lg:pt-30 text-center'
             >
               {t('projets.titleRound1')}{' '}
               <span style={{color: MY_COLORS.green}}>
@@ -65,12 +46,13 @@ const FormRound = () => {
             </p>
 
             {/* Image tech en arrière-plan */}
-            <img 
-              src={p3} 
-              alt="form technologie" 
-              className='absolute inset-0 w-full lg:max-w-4xl lg:ml-40 sm:max-w-4xl h-full object-contain opacity-30 z-[-1]'
-            />
 
+          {/* Image tech */}
+          <img
+            src={p3}
+            alt="form technologie"
+            className='absolute inset-0 w-full lg:max-w-4xl lg:left-30 lg:-bottom-100 sm:max-w-4xl h-full object-contain opacity-30 z-[-1]'
+          />
             {/* Bouton */}
             <button 
               className="px-6 py-2 md:px-10 md:py-3 lg:px-12 lg:py-4 border-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 mt-4"
@@ -91,6 +73,35 @@ const FormRound = () => {
             </button>
           </div>
         </div>
+
+          {/* Engrenages animés */}
+       <div className=" absolute lg:bottom-70 lg:left-125 md:left-20 md:bottom-60 sm:left-20 sm:bottom-60 z-30 -left-5 bottom-50">
+                 <motion.img 
+                   src={rail} 
+                   alt="engrenage" 
+                   className="w-20 h-20"
+                   animate={{ rotate: 360 }}
+                   transition={{ 
+                     duration: 6, 
+                     ease: "linear", 
+                     repeat: Infinity 
+                   }}
+                 />
+               </div>
+        
+       <div className=" absolute lg:bottom-70 lg:left-320 z-30 md:left-140 md:bottom-50 left-80 bottom-50">
+                <motion.img 
+                  src={rail} 
+                  alt="engrenage" 
+                  className="w-70 h-45"
+                  animate={{ rotate: 360 }}
+                  transition={{ 
+                    duration: 6, 
+                    ease: "linear", 
+                    repeat: Infinity 
+                  }}
+                />
+              </div>
       </div>
     )
 }

@@ -9,79 +9,103 @@ import { motion } from 'framer-motion'
 
 
 
-
 const FoRound = () => {
-    const {t}  = useTranslation();
+  const { t } = useTranslation();
+  
   return (
-    <div className='items-center w-screen md:w-[80%] lg:h-[30px] lg:w-[59.6%] md:left-20 lg:ml-75 sm:mr-50 md:h-[20px]  relative overflow-visible flex justify-center mb-0'>
-        
-        <div className="absolute  lg:-top-120 lg:-left-10 md:left-20 md:bottom-60 lg:-top-10  md:-top-10 sm:left-100 sm:-top-5 left-50 -top-5 z-30">
-          <motion.img 
-            src={rail} 
-            alt="engrenage" 
-            className="lg:w-70 lg:h-45 md:w-50 md:h-35 sm:w-40 sm:h-30 w-30 h-30"
-            animate={{ rotate: 360 }}
-            transition={{ 
-              duration: 6, 
-              ease: "linear", 
-              repeat: Infinity 
-            }}
-          />
-        </div>
-        <div className='relative overflow-hidden'>
-            <img src={p2} alt="fond arrondie" className='w-screen' />
-           
+    <div className='relative w-full flex items-center justify-center'>
+      {/* Image de fond */}
+         <div className='relative w-full max-w-6xl h-[350px] lg:h-[480px] md:h-[480px] sm:h-[480px]'>
+        <img src={p2} alt="fond arrondie" className='w-full' />
 
-        </div>
-    <div className='absolute lg:bottom-85 md:bottom-70 sm:bottom-75 bottom-70 z-20'>
-        <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-3xl text-xl' >{t('fab.titleRound')} ? </h1>
+        {/* Contenu centré */}
+        <div className='absolute inset-0 flex flex-col items-center justify-center px-4 z-20 space-y-10 md:space-y-6'>
+          {/* Titre principal */}
+          <h1 
+            style={{color: MY_COLORS.white}} 
+            className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl lg:pt-30 text-center'
+          >
+            {t('fab.titleRound')} ?
+          </h1>
 
-     
-    </div>
-      <div className='absolute lg:bottom-70 md:bottom-55 sm:bottom-60 bottom-55 z-19'>
-        <h1 style={{color: MY_COLORS.white}} className='font-bold lg:text-4xl md:text-3xl sm:text-2xl text-lg' >{t('fab.titleRound2')}  <span className='' style={{ color: MY_COLORS.green}}>  {t('fab.sub')} ? </span> </h1>
+          {/* Sous-titre avec span coloré */}
+          <h1 
+            style={{color: MY_COLORS.white}} 
+            className='font-bold text-lg sm:text-2xl md:text-3xl lg:text-5xl text-center'
+          >
+            {t('fab.titleRound2')}{' '}
+            <span style={{ color: MY_COLORS.green }}>
+              {t('fab.sub')} ?
+            </span>
+          </h1>
 
-     
-    </div>
-    <div className='absolute items-center justify-center text-center w-80 flex lg:bottom-50 md:bottom-40 sm:bottom-45 bottom-40 z-20'>
-         <p style={{color: MY_COLORS.white}} className='font-medium lg:text-base md:text-sm sm:text-sm text-xs'>
+          {/* Description */}
+          <p 
+            style={{color: MY_COLORS.white}} 
+            className='font-medium text-sm md:text-base text-center max-w-2xl w-[80%]'
+          >
             {t('fab.subtitleRound')} 
-        </p>
-    </div>
-        <div className='absolute lg:bottom-40 md:bottom-90 sm:bottom-90 bottom-60 z-10'>
-            <img src={p3} alt="form technologie" className='lg:w-230 md:w-180 sm:w-150 w-90 opacity-40'/>
+          </p>
 
+          {/* Image tech en arrière-plan */}
+          <img 
+            src={p3} 
+            alt="form technologie" 
+            className='absolute inset-0 w-full lg:max-w-4xl lg:left-30 lg:-bottom-100 sm:max-w-4xl h-full object-contain opacity-40 z-[-1]'
+          />
+
+          {/* Bouton */}
+          <button 
+            className="px-6 py-2 md:px-10 md:py-3 lg:px-12 lg:py-4 border-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 mt-4"
+            style={{
+              borderColor: MY_COLORS.secondaryGreen,
+              color: MY_COLORS.secondaryGreen
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
+              e.currentTarget.style.color = MY_COLORS.white;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+            }}
+          >
+            {t('fab.buttonRound')}
+          </button>
         </div>
+      </div>
 
-        <div className='absolute md:bottom-20 lg:bottom-10 sm:bottom-19 bottom-15 z-20'>
-                     {/* Boutons d'action */}
-                          <div className="flex items-center justify-center gap-4 sm:gap-6">
-                            {/* Bouton Livre blanc */}
-                            <div className="flex items-center gap-3">
-                              <button 
-                                className="px-8 py-2 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base font-semibold rounded-full transition-all duration-300"
-                                style={{
-                                  borderColor: MY_COLORS.secondaryGreen,
-                                  color: MY_COLORS.secondaryGreen
-                                }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
-                                  e.currentTarget.style.color = MY_COLORS.white;
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.backgroundColor = 'transparent';
-                                  e.currentTarget.style.color = MY_COLORS.secondaryGreen;
-                                }}
-                              >
-                                {t('fab.buttonRound')}
-                              </button>
-                              
-                             
-                            </div>
-                          </div>
-        </div>
-    </div>
-  )
-}
+     
+       {/* Engrenages animés */}
+       <div className=" absolute lg:bottom-70 lg:left-125 md:left-20 md:bottom-60 sm:left-20 sm:bottom-60 z-30 -left-5 bottom-50">
+                 <motion.img 
+                   src={rail} 
+                   alt="engrenage" 
+                   className="w-20 h-20"
+                   animate={{ rotate: 360 }}
+                   transition={{ 
+                     duration: 6, 
+                     ease: "linear", 
+                     repeat: Infinity 
+                   }}
+                 />
+               </div>
+        
+       <div className=" absolute lg:bottom-70 lg:left-320 z-30 md:left-140 md:bottom-50 left-80 bottom-50">
+                <motion.img 
+                  src={rail} 
+                  alt="engrenage" 
+                  className="w-70 h-45"
+                  animate={{ rotate: 360 }}
+                  transition={{ 
+                    duration: 6, 
+                    ease: "linear", 
+                    repeat: Infinity 
+                  }}
+                />
+              </div>
+      </div>
+  );
+};
 
-export default FoRound
+export default FoRound;

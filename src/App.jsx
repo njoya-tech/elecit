@@ -14,6 +14,8 @@ import ControlPage from './pages/solution/ControlPage';
 import BureauPage from './pages/bureau\'etude/BureauPage';
 import SavPage from "./pages/sav/SavPage"
 import BlogPage from './pages/blog/BlogPage';
+import JobOfferFormOnlyModal from './components/Carriere/jobOfferformonlyModal';
+import JobOffersOnly from './pages/job/JobOffersOnly';
 function App() {
   return (
     <BrowserRouter>
@@ -24,7 +26,8 @@ function App() {
         < Route path= '/solutions/smart-building' element={<SmartBuildingPage/>} />
         < Route path='/solutions/fabrication-mecanique' element={<FabriMecaPage/>} />
         < Route path='/solutions/gps-tracking' element={<GpsTracking/>}/>
-          <Route path='/carriere/job' element={<JobOffers/>}></Route>
+        <Route path='/carriere/job' element={<JobOffers/>}></Route>
+        <Route path='/carriere/job-Only' element={<JobOffersOnly/>}></Route>
         < Route path='/entreprise' element={<Entreprise/>} />
         < Route path='/contacts' element={<Contact/>} />
         < Route path='/solutions/it-data-processing' element={<DataProcessing/>} />

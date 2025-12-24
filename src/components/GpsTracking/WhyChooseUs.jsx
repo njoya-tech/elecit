@@ -22,7 +22,7 @@ const MY_COLORS = {
 };
 
 const FeatureCard = ({ icon , text }) => (
-  <div className="relative bg-white mt-10 rounded-lg border-2 border-gray-200 p-6 flex flex-col items-center text-center min-h-[180px] hover:shadow-lg shadow-lg transition-shadow">
+  <div className="relative bg-white mt-10 rounded-lg border-2 border-gray-200 p-6 mx-auto flex flex-col items-center text-center min-h-[320px] max-w-[350px] hover:shadow-lg shadow-lg transition-shadow">
     <div className=" -mt-20 absolute">
      <img src={icon} alt="" className='w-30 h-30 object-contain' />
     </div>

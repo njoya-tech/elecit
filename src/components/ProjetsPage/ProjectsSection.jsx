@@ -421,11 +421,20 @@ const ProjectCard = ({ project, onClick }) => {
   const { t } = useTranslation();
   
   return (
-    <div 
-      className="relative bg-white rounded-lg w-100 h-100 overflow-visible cursor-pointer transition-all duration-300 hover:shadow-2xl"
-      style={{ border: `2px solid ${MY_COLORS.secondaryGreen}` }}
-      onClick={() => onClick(project)}
-    >
+<div 
+  className="
+    relative bg-white rounded-lg 
+    w-full
+    min-h-[520px] sm:min-h-[540px] md:min-h-[560px] lg:min-h-[500px]
+    flex flex-col
+    overflow-visible
+    cursor-pointer
+    transition-all duration-300 hover:shadow-2xl z-5
+  "
+  style={{ border: `2px solid ${MY_COLORS.secondaryGreen}` }}
+  onClick={() => onClick(project)}
+>
+
       {/* Badge numéro */}
       <div 
         className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl font-bold z-10"
@@ -435,42 +444,53 @@ const ProjectCard = ({ project, onClick }) => {
       </div>
 
       {/* Image */}
-      <div className="h-48 overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-        />
-      </div>
+<div className="h-48 sm:h-52 md:h-56 overflow-hidden">
+  <img 
+    src={project.image} 
+    alt={project.title}
+    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+  />
+</div>
+
 
       {/* Contenu */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-4 text-center" style={{ color: MY_COLORS.darkBlue }}>
-          {project.title}
-        </h3>
-        <p className="text-sm text-gray-700 text-center mb-6 leading-relaxed">
-          {project.shortDescription}
-        </p>
-        
+      <div className="p-6 flex flex-col flex-grow">
+
+<h3 className="text-xl font-bold mb-3 text-center" style={{ color: MY_COLORS.darkBlue }}>
+  {project.title}
+</h3>
+
+
+<p className="
+  text-sm text-gray-700 text-center leading-relaxed
+  line-clamp-4
+">
+  {project.shortDescription}
+</p>
+
         {/* Bouton Voir plus */}
-        <div className="flex justify-center">
-          <button 
-            className="px-8 py-2 rounded-full font-semibold transition-all duration-300"
-            style={{
-              border: `2px solid ${MY_COLORS.secondaryGreen}`,
-              color: MY_COLORS.secondaryGreen
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
-              e.currentTarget.style.color = MY_COLORS.white;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = MY_COLORS.secondaryGreen;
-            }}
-          >
-            {t('projects.projectCard.seeMore')}
-          </button>
+        <div className="mt-auto pt-6 flex justify-center">
+
+
+<button 
+  className="px-8 py-2 rounded-full font-semibold transition-all duration-300"
+  style={{
+    border: `2px solid ${MY_COLORS.secondaryGreen}`,
+    color: MY_COLORS.secondaryGreen
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
+    e.currentTarget.style.color = MY_COLORS.white;
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = 'transparent';
+    e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+  }}
+>
+  {t('projects.projectCard.seeMore')}
+</button>
+
+
         </div>
       </div>
     </div>

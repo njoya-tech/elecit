@@ -151,7 +151,7 @@ const NavBar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMenuOpen ? (
@@ -167,7 +167,7 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 mt-2">
+          <div className="lg:hidden border-t border-gray-200 mt-2 text-center items-center justify-center flex">
             <div className="px-2 pt-2 pb-3 space-y-1">
 
               {navItems.map(item => (

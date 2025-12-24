@@ -76,7 +76,7 @@ const FabriMecaPage = () => {
     decorIcon: rail,
     items: [
       {
-        title: "CAB ATELIER",
+        title: "CITERNES",
         image: photo
       },
       {
@@ -84,7 +84,11 @@ const FabriMecaPage = () => {
         image: photo
       },
       {
-        title: "MINI TRACTEUR",
+        title: "BENNE",
+        image: photo
+      },
+        {
+        title: "CAMION FRIGORIPHIQUE",
         image: photo
       },
       {
@@ -128,7 +132,7 @@ const FabriMecaPage = () => {
      <PrestationsProductionPage prestationsData={prestationsData} productionData={productionData} />
     </div>
         
-        <div  className='lg:mb-130 md:mb-100 sm:mb-60 -mb-2'>
+        <div  className=''>
           <Bander2></Bander2>
         </div>
 
