@@ -103,8 +103,8 @@ const BureauCarousel = () => {
         className="w-screen py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
         style={{
           backgroundColor: MY_COLORS.gray,
-        }}
-      >
+        }} 
+       >
         <div className="max-w-[1200px] mx-auto px-6">
           <h3
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16"
@@ -238,16 +238,11 @@ const BureauCarousel = () => {
               className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              Sécurisez vos bâtiments <br />
-              avec nos{" "}
-              <span style={{ color: MY_COLORS.secondaryGreen }}>
-                solutions certifiées.
-              </span>
+             Un projet de <span style={{color:MY_COLORS.secondaryGreen}}> construction</span> en tête ?
             </h3>
 
             <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              Protégez efficacement vos locaux et contrôlez les accès avec des
-              solutions de sécurité performantes !
+             Bâtissons-le ensemble dès aujourd’hui.
             </p>
 
             <CTAButton

@@ -3,7 +3,6 @@ import { HERO, ICONS } from "../../asset/assets"; // adjust path to your image a
 import CTAButton from "../CTA/CTAButton";
 import { MY_COLORS } from "../../constants/colors.js";
 
-
 const HeroData = () => {
   return (
     <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
@@ -23,7 +22,7 @@ const HeroData = () => {
         alt=""
         aria-hidden="true"
         className="absolute bottom-0 left-0 w-full max-h-[420px]
-               object-cover pointer-events-none"
+                 object-cover pointer-events-none"
         style={{ objectFit: "cover" }}
       />
 
@@ -33,12 +32,12 @@ const HeroData = () => {
         alt=""
         aria-hidden="true"
         className="
-                          absolute inset-0 m-auto 
-                          w-[120%] max-w-[1400px] 
-                          opacity-10 
-                          pointer-events-none 
-                          z-10
-                        "
+                            absolute inset-0 m-auto 
+                            w-[120%] max-w-[1400px] 
+                            opacity-10 
+                            pointer-events-none 
+                            z-10
+                          "
         style={{
           top: "10%",
           color: "gray",
@@ -46,21 +45,21 @@ const HeroData = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl">
-        <h1 
-        style={{color:MY_COLORS.secondaryGreen}}
-        className="text-3xl md:text-5xl font-extrabold  mb-6">
-          IT & DATA PROCESSING
+      <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 text-white whitespace-nowrap">
+          <span style={{ color: MY_COLORS.secondaryGreen }}>
+            IT & DATA PROCESSING?
+          </span>
         </h1>
 
-        <p className="text-white text-base md:text-lg leading-relaxed mb-8">
-          Nous aidons les entreprises à gérer efficacement leurs systèmes
+        <p className="text-white text-base md:text-lg leading-relaxed mb-10 max-w-3xl">
+          Nous aidons les entreprises à gérer efficacement leurs systèmes<br/>
           informatiques et à tirer le meilleur parti de leurs données.
         </p>
 
         {/* CTA BUTTON */}
-        <CTAButton onClick={() => alert("Video clicked!")}>
-          Publireportage 
+        <CTAButton className="mt-10" onClick={() => alert("Video clicked!")}>
+          Publireportage
         </CTAButton>
       </div>
     </section>

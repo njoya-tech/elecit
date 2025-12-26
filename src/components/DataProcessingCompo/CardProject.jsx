@@ -1,28 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import CTAButton from "../CTA/CTAButton.jsx";
+import ProjectModal from "./ProjectModal.jsx";
 
 const CardProject = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
   // Static posts data (you can replace with your actual data)
   const visiblePosts = [
     {
       id: 1,
-      title: " Logiciel de Content Management System (CMS)",
+      title: "Logiciel de Content Management System (CMS)",
       excerpt:
         "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure…",
+        image : IMAGES.IMG1
     },
     {
       id: 2,
       title: "Logiciel de gestion de la relation client(CRM)",
       excerpt:
-        "Développement d'un logiciel CRM entièrement adapté aux besoins de l’entreprise...",
+        "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
     },
     {
       id: 3,
       title: "Logiciel de gestion de la relation client  (CRM)",
       excerpt:
-        "Développement d'un logiciel CRM entièrement adapté aux besoins de l’entreprise...",
+        "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
     },
   ];
 
@@ -80,13 +85,13 @@ const CardProject = () => {
               {visiblePosts.map((post) => (
                 <article
                   key={post.id}
-                  className="relative bg-white/40 border border-transparent 
+                  className="relative bg-white/70 border border-transparent 
                 rounded-md shadow-sm flex flex-col min-h-[350px] "
                 >
                   {/* Number badge */}
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2">
                     <div
-                      className="h-12 w-12 rounded-full bg-[#00729B]
+                      className="h-12 w-12 rounded-full bg-[#7DA837]
                    text-white flex items-center justify-center text-lg font-bold"
                     >
                       {post.id}
@@ -114,6 +119,10 @@ const CardProject = () => {
                       className="mt-auto inline-flex items-center 
                   justify-center px-6 py-2 rounded-full bg-[#000000]
                    text-white text-sm font-semibold hover:bg-[#f7f7f7] shadow-md hover:text-green-700"
+                      onClick={() => {
+                        setSelectedProject(post);
+                        setIsModalOpen(true);
+                      }}
                     >
                       Voir plus
                     </button>
@@ -124,6 +133,12 @@ const CardProject = () => {
           </div>
         </div>
       </section>
+
+      <ProjectModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        project={selectedProject}
+      />
 
       <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0">
         {/* BLACK BLOCK PNG - Background layer */}

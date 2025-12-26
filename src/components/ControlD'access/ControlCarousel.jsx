@@ -56,7 +56,7 @@ const ControlCarousel = () => {
             aria-hidden="true"
             className="hidden lg:block absolute -right-20 
             top-1/2 -translate-y-1/2 z-0 w-40 opacity-100 animate-spin"
-            style={{ animationDuration: "10s",  }}
+            style={{ animationDuration: "10s" }}
           />
 
           {/* STEP 3: Single white container with rounded corners and shadow */}
@@ -135,7 +135,7 @@ const ControlCarousel = () => {
             style={{
               height: "440px",
             }}
-           >
+          >
             <img
               src={ICONS.formePlan}
               className="w-full object-cover block"
@@ -166,7 +166,10 @@ const ControlCarousel = () => {
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
               Sécurisez vos bâtiments <br />
-              avec nos <span style={{color:MY_COLORS.secondaryGreen}}>solutions certifiées.</span>
+              avec nos{" "}
+              <span style={{ color: MY_COLORS.secondaryGreen }}>
+                solutions certifiées.
+              </span>
             </h3>
 
             {/* Subtitle/Description */}
@@ -189,9 +192,9 @@ const ControlCarousel = () => {
 
           {/* ROTATING GEAR - Top priority overlay */}
           <div
-            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40"
+            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
             style={{
-              animation: "rotateClockwise 8s linear infinite",
+              animationDuration: "4s",
               top: "65%",
               right: "1%",
             }}
@@ -205,9 +208,9 @@ const ControlCarousel = () => {
           </div>
 
           <div
-            className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-16 lg:h-16 z-40"
+            className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-16 lg:h-16 z-40 animate-spin"
             style={{
-              animation: "rotateClockwise 20s linear infinite",
+              animationDuration: "4s",
               top: "23%",
               left: "10%",
             }}

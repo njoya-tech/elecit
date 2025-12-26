@@ -53,9 +53,9 @@ const SavCards = () => {
       className="w-full py-16"
       style={{ backgroundColor: MY_COLORS.white }}
       aria-labelledby="services-heading"
-    >
+     >
       {/* TOP SECTION - Helmet + Title + Description */}
-      <div className="max-w-[1200px] mx-auto px-6 mb-12">
+      <div className="max-w-[1200px] mr-36 px-6 mb-12">
         <div className="flex flex-col md:flex-row items-center gap-6 mb-8 ">
           {/* Helmet Icon */}
           <div className="shrink-0">
@@ -71,12 +71,12 @@ const SavCards = () => {
           <div className="flex-1">
             <h2
               id="services-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 -mt-10 text-center"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
               Nos prestations
             </h2>
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-3xl mx-auto">
               De l'étude de faisabilité à la livraison clé en main, nous
               accompagnons nos clients à chaque étape du projet, en assurant un
               haut niveau de technicité et de conformité réglementaire.
@@ -153,7 +153,7 @@ const SavCards = () => {
                     <h3 className="text-xl font-bold text-slate-900 mb-1">
                       {card.title}
                     </h3>
-                    <h4 className="text-lg font-semibold text-slate-700">
+                    <h4 className="text-lg font-bold text-slate-900">
                       {card.subtitle}
                     </h4>
                   </header>

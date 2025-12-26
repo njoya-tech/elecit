@@ -5,24 +5,24 @@ import { MY_COLORS } from "../../constants/colors.js";
 
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden">
-
-      {/* BACKGROUND IMAGE (your style) */}
+    <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
+      {/* Background Image */}
       <img
-        src={HERO.entreprise}
-        alt=""
-        className="w-full h-[75vh] md:h-[85vh] object-cover"
+        src={HERO.entreprise} // <-- put the hero image here
+        alt="Data Processing"
+        className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* DARK GRADIENT OVERLAY (fixes readability) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* ANGLED BLACK PNG MASK (correct height control) */}
       <img
         src={ICONS.formeSombre}
         alt=""
         aria-hidden="true"
-        className="absolute bottom-0 left-0 w-full max-h-[420px] object-cover pointer-events-none"
+        className="absolute bottom-0 left-0 w-full max-h-[420px]
+                 object-cover pointer-events-none"
         style={{ objectFit: "cover" }}
       />
 
@@ -32,71 +32,44 @@ const Hero = () => {
         alt=""
         aria-hidden="true"
         className="
-          absolute inset-0 m-auto 
-          w-[120%] max-w-[1400px] 
-          opacity-20 
-          pointer-events-none 
-          -z-10
-        "
+                            absolute inset-0 m-auto 
+                            w-[120%] max-w-[1400px] 
+                            opacity-10 
+                            pointer-events-none 
+                            z-10
+                          "
         style={{
           top: "10%",
+          color: "gray",
         }}
       />
 
-      {/* CENTERED TEXT CONTENT */}
-      <div
-        className="
-          absolute inset-0 flex flex-col items-center justify-center
-          px-6 md:px-12 text-center
-        "
-       >
-        {/* MAIN TITLE */}
-        <h1
-          className="
-            text-white font-extrabold 
-            text-4xl md:text-5xl lg:text-6xl 
-            leading-tight
-            mb-4
-          "
-        >
+      {/* Content */}
+      <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 text-white whitespace-nowrap">
           Que faut-il savoir sur{" "}
-          <span style={{ color: MY_COLORS.green }}>ELECIT?</span>
+          <span style={{ color: MY_COLORS.secondaryGreen }}>ELECIT?</span>
         </h1>
 
-        {/* SUBTITLE */}
-        <h2
-          className="
-            text-white 
-            text-sm md:text-base lg:text-lg 
-            tracking-wide uppercase 
-            font-semibold
-            mb-4
-          "
+        <h3
+          style={{
+            color: MY_COLORS.secondaryGreen,
+          }}
+          className="text-3xl font-extrabold mb-6"
         >
-          Africa 1st High Tech Company
-        </h2>
+          AFRICA 1ST HIGH TECH COMPANY
+        </h3>
 
-        {/* QUOTE */}
-        <p
-          className="
-            max-w-3xl 
-            text-white/90 
-            text-base md:text-lg 
-            leading-relaxed 
-            mb-8
-          "
-        >
-          “Parce qu’au-delà du marché camerounais, nous souhaitons développer
-          toute l’Afrique à travers nos services.”
+        <p className="text-white text-base md:text-lg leading-relaxed mb-6 max-w-3xl">
+          "Parce qu'au-delà du marché camerounais, nous souhaitons <br />{" "}
+          développer toute l'Afrique à travers nos services. "
         </p>
 
         {/* CTA BUTTON */}
         <CTAButton onClick={() => alert("Video clicked!")}>
-          Regarder la vidéo
+          Publireportage
         </CTAButton>
       </div>
-
-      
     </section>
   );
 };
