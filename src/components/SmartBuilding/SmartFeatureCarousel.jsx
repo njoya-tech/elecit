@@ -1,92 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-// Simuler useTranslation
-const useTranslation = () => {
-  const translations = {
-    smartBuilding: {
-      title: "SMART BUILDING",
-      subtitle: "Des solutions sur mesure pour les habitations, les bureaux, les hôtels et les espaces commerciaux. Confort, sécurité, performance énergétique et connectivité réunis dans une architecture intelligente.",
-      buttonText: "Visitez le showroom",
-      tabs: {
-        smartHome: "Smart home",
-        smartHotel: "Smart hotel",
-        smartOffice: "Smart office",
-        smartCommercial: "Smart commercial",
-        smartEvents: "Smart events"
-      }
-    },
-    smartHome: {
-      title: "La maison qui s'adapte à vous",
-      featureTitle: "Gestion automatisée",
-      featureDescription: "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
-        'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800'
-      ]
-    },
-    smartHotel: {
-      title: "L'hôtel connecté du futur",
-      featureTitle: "Expérience client optimisée",
-      featureDescription: "Offrez à vos clients une expérience unique avec des chambres intelligentes. Contrôle de l'éclairage, de la température, et des services hôteliers via une interface intuitive.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
-        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800',
-        'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800'
-      ]
-    },
-    smartOffice: {
-      title: "Le bureau intelligent",
-      featureTitle: "Productivité maximale",
-      featureDescription: "Créez un environnement de travail optimal avec des espaces qui s'adaptent aux besoins de vos équipes. Gestion intelligente de l'énergie, de la sécurité et du confort.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800',
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800',
-        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800'
-      ]
-    },
-    smartCommercial: {
-      title: "L'espace commercial innovant",
-      featureTitle: "Gestion centralisée",
-      featureDescription: "Optimisez la gestion de vos espaces commerciaux avec des solutions intelligentes. Contrôle de l'éclairage, de la climatisation et de la sécurité pour une efficacité maximale.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800',
-        'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800',
-        'https://images.unsplash.com/photo-1491336238524-c990bd671778?w=800'
-      ]
-    },
-    smartEvents: {
-      title: "L'événementiel connecté",
-      featureTitle: "Événements mémorables",
-      featureDescription: "Transformez vos événements avec des technologies intelligentes. Éclairage dynamique, sonorisation adaptative et contrôle centralisé pour des expériences inoubliables.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800',
-        'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800',
-        'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'
-      ]
-    }
-  };
-
-  return {
-    t: (key) => {
-      const keys = key.split('.');
-      let value = translations;
-      for (const k of keys) {
-        value = value[k];
-        if (!value) return key;
-      }
-      return value;
-    }
-  };
-};
+import { useTranslation } from 'react-i18next';
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -101,7 +16,36 @@ const SmartFeatureCarousel = ({ activeTab = 'smartHome' }) => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = t(`${activeTab}.slides`) || [];
+  // Images définies localement (ne changent pas avec la langue)
+  const slideImages = {
+    smartHome: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
+      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800'
+    ],
+    smartHotel: [
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
+      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800',
+      'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800'
+    ],
+    smartOffice: [
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800',
+      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800',
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800'
+    ],
+    smartCommercial: [
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800',
+      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800',
+      'https://images.unsplash.com/photo-1491336238524-c990bd671778?w=800'
+    ],
+    smartEvents: [
+      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800',
+      'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'
+    ]
+  };
+
+  const slides = slideImages[activeTab] || [];
 
   useEffect(() => {
     setCurrentSlide(0);
@@ -271,4 +215,5 @@ const SmartFeatureCarousel = ({ activeTab = 'smartHome' }) => {
     </div>
   );
 };
-export default SmartFeatureCarousel
+
+export default SmartFeatureCarousel;

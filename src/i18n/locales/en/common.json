@@ -41,7 +41,7 @@
     },
 
 
-
+"seeMore": "Learn more",
 
 "hero": {
   "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
@@ -128,6 +128,7 @@
     },
 
     "servicesCarousel": {
+      "seeMore": "See more",
       "services": [
         {
           "title": "IT Services & DATA Processing",
@@ -167,6 +168,7 @@
 },
 
 "blog": {
+  "seeMore": "See more",
   "articles": [
     {
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
@@ -395,6 +397,8 @@
     "sendApplication": "Send application"
   }
 },
+
+
 "recruitment": {
   "titleRound": "No offers at the moment",
   "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
@@ -414,34 +418,54 @@
   "step5Title": "Decision making",
   "step5Description": "The selected candidate(s) will be called back for a job offer."
 },
-"smartBuilding": {
-  "title": "SMART BUILDING",
-  "subtitle": "Custom solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy performance and connectivity combined in intelligent architecture.",
-  "buttonText": "Visit showroom",
-  "tabs": {
-    "smartHome": "Smart home",
-    "smartHotel": "Smart hotel",
-    "smartOffice": "Smart office",
-    "smartCommercial": "Smart commercial",
-    "smartEvents": "Smart events"
-  }
-},
-"smartHome": {
-  "title": "The home that adapts to you",
-  "featureTitle": "Automated management",
-  "featureDescription": "Automatically control all your connected devices. With an integrated home automation system, manage your home functions on site or remotely via mobile app.",
-  "buttonText": "Got a project in mind?"
-},
-"smartVilla": {
-  "tilte1": "PROJECT:",
-  "title2": "VILLA 2 YASSA",
-  "subtitle": "Home automation system installation for centralized control of all habitat equipment.",
-  "buttonText": "More projects",
-  "titleRound": "Let's build your",
-  "titleRound2": "Smart Building",
-  "descriptionRound": "You have a house, hotel, office, commercial space or event hall to transform? Let's talk.",
-  "buttonRound": "Contact us"
-},
+
+
+ "smartBuilding": {
+    "title": "SMART BUILDING",
+    "subtitle": "Tailor-made solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy performance and connectivity combined in an intelligent architecture.",
+    "buttonText": "Visit the showroom",
+    "tabs": {
+      "smartHome": "Smart home",
+      "smartHotel": "Smart hotel",
+      "smartOffice": "Smart office",
+      "smartCommercial": "Smart commercial",
+      "smartEvents": "Smart events"
+    }
+  },
+  "smartHome": {
+    "title": "The home that adapts to you",
+    "featureTitle": "Automated management",
+    "featureDescription": "Automatically control all your connected equipment. Thanks to an integrated home automation system, manage your home functions on-site or remotely via mobile application.",
+    "buttonText": "Have a project in mind?"
+  },
+  "smartHotel": {
+    "title": "The connected hotel of the future",
+    "featureTitle": "Optimized customer experience",
+    "featureDescription": "Offer your guests a unique experience with smart rooms. Control lighting, temperature, and hotel services via an intuitive interface.",
+    "buttonText": "Have a project in mind?"
+  },
+  "smartOffice": {
+    "title": "The intelligent office",
+    "featureTitle": "Maximum productivity",
+    "featureDescription": "Create an optimal work environment with spaces that adapt to your teams' needs. Intelligent management of energy, security and comfort.",
+    "buttonText": "Have a project in mind?"
+  },
+  "smartCommercial": {
+    "title": "The innovative commercial space",
+    "featureTitle": "Centralized management",
+    "featureDescription": "Optimize the management of your commercial spaces with intelligent solutions. Control of lighting, air conditioning and security for maximum efficiency.",
+    "buttonText": "Have a project in mind?"
+  },
+  "smartEvents": {
+    "title": "Connected events",
+    "featureTitle": "Memorable events",
+    "featureDescription": "Transform your events with intelligent technologies. Dynamic lighting, adaptive sound system and centralized control for unforgettable experiences.",
+    "buttonText": "Have a project in mind?"
+  },
+
+
+
+
 "interfaceCommande": {
   "title": "Control interfaces",
   "featureTitle": "Centralized control",
@@ -557,20 +581,58 @@
   "subtitleRound": "Our team is ready to listen to bring your ideas to life and offer personalized support.",
   "buttonRound": "Contact us"
 },
-"gpsT": {
-  "titlehero": "GPS & TRACKING",
-  "descriptionhero": "Modern, scalable tracking solutions adapted to the needs of individuals, businesses and institutions, both nationally and internationally (CEMAC area).",
-  "buttonhero": "Our visuals",
-  "TitleFeatures": "Our areas of intervention",
-  "DescriptionFeatures": "Solutions designed for precise tracking, in-depth analysis and sustainable optimization of your vehicle fleet and all your assets, all centralized in a single platform.",
-  "BanderTitle": "More information on our",
-  "BanderTitle2": "Youtube",
-  "BanderDescription": "Real-time vehicle tracking platform",
-  "BanderButton": "Continue",
-  "titleRound": "Need a",
-  "titleRound2": "Customized solution?",
-  "descriptionRound": "Our experts support you from study to complete implementation of your tracking devices"
-},
+ "gpsT": {
+    "titlehero": "GPS & TRACKING",
+    "descriptionhero": "Modern, scalable tracking solutions tailored to the needs of individuals, businesses and institutions, both nationally and internationally (within the CEMAC area).",
+    "buttonhero": "Our visuals",
+    "TitleFeatures": "Our areas of intervention",
+    "DescriptionFeatures": "Solutions designed for precise tracking, in-depth analysis and sustainable optimization of your vehicle fleet and all your assets, all centralized within a single platform.",
+    "BanderTitle": "More information on our",
+    "BanderTitle2": "Youtube Channel",
+    "BanderDescription": "Real-time vehicle tracking platform with advanced geolocation",
+    "BanderButton": "Learn more",
+    "titleRound": "Need a",
+    "titleRound2": "Custom Solution?",
+    "descriptionRound": "Our experts support you from study to complete implementation of your tracking devices",
+        "domaines": {
+      "title": "Our areas of intervention",
+      "subtitle": "Solutions designed for precise tracking, in-depth analysis and sustainable optimization of your vehicle fleet and all your assets, all centralized within a single platform.",
+      "items": {
+        "videoSurveillance": {
+          "title": "Video Surveillance Driver Tracking",
+          "description": "Real-time monitoring via in-cabin camera of operations carried out by drivers and their travel routes."
+        },
+        "objetsValeur": {
+          "title": "Valuable Objects Tracking",
+          "description": "Discreet and secure real-time tracking of sensitive goods (container, suitcase, safe...) via portable, rechargeable mini GPS"
+        },
+        "gestionFlottes": {
+          "title": "Fleet Management",
+          "description": "Real-time GPS tracking, centralized management of the entire fleet via the platform, route optimization, alert creation."
+        },
+        "antivol": {
+          "title": "Anti-theft Solutions",
+          "description": "Remote engine immobilization system via platform, alerts, active vehicle protection."
+        },
+        "badge": {
+          "title": "Badge Tracking",
+          "description": "Individual geolocation solution via smart badge suitable for monitoring elderly or vulnerable people, children, isolated workers..."
+        },
+        "conduiteAssistee": {
+          "title": "AI Camera Assisted Driving",
+          "description": "Detection, capture and recording of risky driving behavior (phone use, drowsiness...); Visual or audible alert."
+        },
+        "carburant": {
+          "title": "Fuel Management",
+          "description": "Fuel level monitoring by integrated sensors to prevent theft and leaks/ Diagnosis of consumption curve and generation of its graphs."
+        },
+        "rapports": {
+          "title": "Report Management",
+          "description": "Generation of periodic reports (logbook, routes, anomalies, consumption...)/ Export of reports in EXCEL, PDF, images, videos format."
+        }
+      }
+    }  
+  },
 "whyChooseUs": {
   "title": "Why choose us?",
   "subtitle": "Our tracking solutions offer concrete benefits in visibility, security and operations optimization, for better real-time control of your resources.",
@@ -582,7 +644,7 @@
   "feature6": "Up to 1 year warranty on equipment."
 },
 
-    "projects": {
+"projects": {
       "categories": [
         { "id": "all", "label": "All projects" },
         { "id": "smart", "label": "Smart building" },
@@ -689,7 +751,99 @@
           "responsable": "Operations Director"
         }
       ]
+},
+
+"smartVilla": {
+  "title1": "PROJECT:",
+  "title2": "VILLA 2 YASSA",
+  "subtitle": "Installation of a home automation system for centralized control of all household equipment.",
+  "buttonText": "More projects",
+  "titleRound": "Let’s build together your",
+  "titleRound2": "Smart Building",
+  "descriptionRound": "Do you have a house, a hotel, an office, a commercial space, or an events hall to transform? Let’s talk about it.",
+  "buttonRound": "Contact us"
+},
+
+"fabriMeca": {
+    "hero": {
+      "title1": "Mechanical & Metallic Fabrication",
+      "subtitle": "Excellence in design and manufacturing",
+      "subtitle2": "Custom solutions for your industrial needs",
+      "buttonText": "Discover our achievements"
+    },
+    "expertise": {
+      "title": "Our areas of expertise",
+      "subtitle": "We offer comprehensive solutions for the design, manufacturing and assembly of metal and mechanical parts, as well as rolling equipment and containers, combining quality and precision.",
+      "items": {
+        "engins": {
+          "title": "Rolling Equipment",
+          "description": "Design and manufacture of trolleys, trailers, motorized or manual platforms."
+        },
+        "machines": {
+          "title": "Machines",
+          "description": "Industrial, sanitary and commercial machines, designed according to your specific needs"
+        },
+        "pieces": {
+          "title": "Infrastructure & Metal Parts",
+          "description": "Metal structures, stairs, guardrails, machined or welded mechanical parts."
+        }
+      }
+    },
+    "prestations": {
+      "title": "Associated services",
+      "subtitle": "Our services cover the entire mechanical and metallic manufacturing process, from technical study to final coating, to guarantee reliable, durable solutions tailored to each need.",
+      "items": {
+        "conception": {
+          "title": "Design &\nEngineering Office",
+          "description": "3D modeling and numerical simulation, custom manufacturing plans, rapid prototyping."
+        },
+        "fabrication": {
+          "title": "Manufacturing &\nAssembly",
+          "description": "Milling, welding, laser cutting, machining, assembly of metal structures in workshop or on site."
+        },
+        "traitements": {
+          "title": "Treatments\n& Finishes",
+          "description": "Surface coating (painting, anodizing, galvanizing); quality control and metrology."
+        }
+      }
+    },
+    "production": {
+      "title": "Our production field",
+      "items": {
+        "citernes": "TANKS",
+        "borneNumerique": "DIGITAL TERMINAL",
+        "benne": "DUMP TRUCK",
+        "camionFrigo": "REFRIGERATED TRUCK",
+        "structureMetallique": "METAL STRUCTURE"
+      }
+    },
+    "bander": {
+      "title": "More information on our",
+      "title2": "Youtube Channel",
+      "description": "Discover our achievements and manufacturing processes",
+      "button": "Continue"
+    },
+    "round": {
+      "title": "Need a",
+      "title2": "Custom Solution?",
+      "description": "Our experts support you from study to complete implementation of your manufacturing projects"
     }
+
+    
+  },
+   "fm": {
+    "title": "Explore interesting content",
+    "subtitle": "The mechanical workshop",
+    "description": "Dive into the heart of mechanical and metallic engineering",
+    "buttonText": "Visit MATOA"
+  },
+  "smartVill": {
+    "title1": "PROJECT:",
+    "title2": "Mobile Bank",
+    "subtitle": "Itinerant banking agency, fully equipped and fitted in a metal structure mounted on a tractor.",
+    "buttonText": "More projects"
+  }
+
 
 
 

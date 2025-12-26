@@ -41,6 +41,8 @@
 
       }
     },
+
+    "seeMore": "Mehr anzeigen",
 "hero": {
   "subtitle": "AFRIKA'S ERSTES HIGH-TECH-UNTERNEHMEN",
   "submitProject": "Projekt einreichen",
@@ -125,6 +127,7 @@
     },
 
         "servicesCarousel": {
+      "seeMore": "Mehr anzeigen",
       "services": [
         {
           "title": "IT-Dienstleistungen & Datenverarbeitung",
@@ -165,6 +168,7 @@
 },
 
 "blog": {
+  "seeMore": "Mehr anzeigen",
   "articles": [
     {
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
@@ -364,7 +368,7 @@
         "haveProject": "Haben Sie ein Projekt?",
         "close": "Schließen"
       },
-      "projectsData": [
+    "projectsData": [
         {
           "id": 1,
           "number": "1",
@@ -450,7 +454,352 @@
           "responsable": "Betriebsleiter"
         }
       ]
+    },
+
+    "recruitment": {
+  "titleRound": "Zurzeit keine Stellenangebote",
+  "subtitleRound": "Du möchtest Teil von ElecIT Engineering werden, aber kein aktuelles Angebot passt zu deinem Profil.",
+  "buttonText": "Hier bewerben",
+  "heroTitle1": "Für Arbeitssuchende,",
+  "heroTitle2": "wir stellen ein",
+  "heroSubtitle": "Schließe dich einem jungen und talentierten Team an und trage mit deiner Expertise zu einer Vision bei, die sich auf technologische Innovation, Professionalität und Fortschritt konzentriert.",
+  "processTitle": "Bewerbungsprozess",
+  "step1Title": "Unterlagen",
+  "step1Description": "Wir prüfen die Übereinstimmung deines Lebenslaufs (auf Französisch und Englisch), deines Motivationsschreibens und deiner Diplome.",
+  "step2Title": "Erstes Interview",
+  "step2Description": "Ein Telefongespräch wird geführt, um dich besser kennenzulernen.",
+  "step3Title": "Zweites Interview",
+  "step3Description": "Ein persönliches Gespräch findet zwischen den Verantwortlichen und dir zu verschiedenen Themen statt.",
+  "step4Title": "Praktischer Test",
+  "step4Description": "Bewerber können eine Aufgabe erhalten, um ihre technischen Fähigkeiten zu prüfen.",
+  "step5Title": "Entscheidung",
+  "step5Description": "Die ausgewählten Kandidaten werden für ein Jobangebot zurückgerufen."
+},
+
+"jobOffers": {
+  "previous": "Zurück",
+  "next": "Weiter",
+  "title": "Alle Stellenangebote",
+  "filterTitle": "Angebote filtern",
+  "filterPoste": "Position",
+  "filterPostePlaceholder": "Z. B.: Ingenieur, Techniker...",
+  "filterLocation": "Ort",
+  "filterLocationPlaceholder": "Z. B.: Douala, Yaoundé...",
+  "filterDateFrom": "Startdatum",
+  "filterDateTo": "Enddatum",
+  "resetFilters": "Filter zurücksetzen",
+  "viewButton": "Alle anzeigen",
+  "noResults": "Keine Angebote entsprechen deinen Suchkriterien",
+  "modal": {
+    "back": "Zurück zu den Angeboten",
+    "typePoste": "Positionstyp:",
+    "lieuPoste": "Ort:",
+    "datePublication": "Veröffentlichungsdatum:",
+    "validJusquau": "Gültig bis:",
+    "description": "Beschreibung",
+    "responsibilities": "Verantwortlichkeiten",
+    "activities": "Aufgaben:",
+    "profile": "Erforderliches Profil",
+    "applyButton": "Jetzt bewerben",
+    "formTitle": "ONLINE BEWERBEN",
+    "name": "Vorname",
+    "namePlaceholder": "Gib deinen Vornamen ein",
+    "lastName": "Nachname",
+    "lastNamePlaceholder": "Gib deinen Nachnamen ein",
+    "email": "E-Mail *",
+    "emailPlaceholder": "Gib deine E-Mail-Adresse ein",
+    "phone": "Telefon *",
+    "phonePlaceholder": "Gib deine Telefonnummer ein...",
+    "sex": "Geschlecht *",
+    "male": "Männlich",
+    "female": "Weiblich",
+    "dateOfBirth": "Geburtsdatum *",
+    "day": "Tag",
+    "month": "Monat",
+    "year": "Jahr",
+    "position": "Position *",
+    "positionPlaceholder": "Gib den Namen der Position ein",
+    "motivation": "Warum glaubst du, dass du das beste Profil hast? *",
+    "motivationPlaceholder": "Schreibe deine Nachricht hier",
+    "joinCV": "Lebenslauf anhängen *",
+    "addFile": "Datei hinzufügen",
+    "sendApplication": "Bewerbung senden"
+  }
+},
+
+
+  "smartBuilding": {
+    "title": "SMART BUILDING",
+    "subtitle": "Maßgeschneiderte Lösungen für Wohnungen, Büros, Hotels und Gewerberäume. Komfort, Sicherheit, Energieeffizienz und Konnektivität vereint in intelligenter Architektur.",
+    "buttonText": "Besuchen Sie den Showroom",
+    "tabs": {
+      "smartHome": "Smart home",
+      "smartHotel": "Smart hotel",
+      "smartOffice": "Smart office",
+      "smartCommercial": "Smart commercial",
+      "smartEvents": "Smart events"
     }
+  },
+  "smartHome": {
+    "title": "Das Haus, das sich an Sie anpasst",
+    "featureTitle": "Automatisierte Verwaltung",
+    "featureDescription": "Steuern Sie automatisch alle Ihre vernetzten Geräte. Dank eines integrierten Hausautomationssystems verwalten Sie die Funktionen Ihres Hauses vor Ort oder per Mobilanwendung aus der Ferne.",
+    "buttonText": "Haben Sie ein Projekt im Kopf?"
+  },
+  "smartHotel": {
+    "title": "Das vernetzte Hotel der Zukunft",
+    "featureTitle": "Optimiertes Kundenerlebnis",
+    "featureDescription": "Bieten Sie Ihren Gästen ein einzigartiges Erlebnis mit intelligenten Zimmern. Steuerung von Beleuchtung, Temperatur und Hoteldienstleistungen über eine intuitive Oberfläche.",
+    "buttonText": "Haben Sie ein Projekt im Kopf?"
+  },
+  "smartOffice": {
+    "title": "Das intelligente Büro",
+    "featureTitle": "Maximale Produktivität",
+    "featureDescription": "Schaffen Sie eine optimale Arbeitsumgebung mit Räumen, die sich an die Bedürfnisse Ihrer Teams anpassen. Intelligente Verwaltung von Energie, Sicherheit und Komfort.",
+    "buttonText": "Haben Sie ein Projekt im Kopf?"
+  },
+  "smartCommercial": {
+    "title": "Der innovative Gewerberaum",
+    "featureTitle": "Zentrale Verwaltung",
+    "featureDescription": "Optimieren Sie die Verwaltung Ihrer Gewerberäume mit intelligenten Lösungen. Steuerung von Beleuchtung, Klimatisierung und Sicherheit für maximale Effizienz.",
+    "buttonText": "Haben Sie ein Projekt im Kopf?"
+  },
+  "smartEvents": {
+    "title": "Vernetzte Veranstaltungen",
+    "featureTitle": "Unvergessliche Veranstaltungen",
+    "featureDescription": "Verwandeln Sie Ihre Veranstaltungen mit intelligenten Technologien. Dynamische Beleuchtung, adaptives Soundsystem und zentrale Steuerung für unvergessliche Erlebnisse.",
+    "buttonText": "Haben Sie ein Projekt im Kopf?"
+  },
+
+  "interfaceCommande": {
+  "title": "Steuerungsschnittstellen",
+  "featureTitle": "Zentralisierte Steuerung",
+  "featureDescription": "Steuern Sie Ihre Beleuchtung, Rollläden, Klimaanlage, Kameras und Audiogeräte von zu Hause oder aus der Ferne.",
+  "buttonText": "Shop besuchen",
+  "slides": [
+    "/images/interface1.jpg",
+    "/images/interface2.jpg",
+    "/images/interface3.jpg"
+  ]
+},
+
+"prestations": {
+  "title": "Verbundene Dienstleistungen",
+  "subtitle": "Unsere Dienstleistungen decken den gesamten Prozess der mechanischen und metallischen Fertigung ab – von der technischen Planung bis zur Endbeschichtung – um zuverlässige, langlebige und maßgeschneiderte Lösungen zu gewährleisten.",
+  "prestations": [
+    {
+      "number": "1",
+      "title": "Konstruktion &\nTechnisches Büro",
+      "description": "3D-Modellierung und numerische Simulation, maßgeschneiderte Fertigungspläne, Rapid Prototyping."
+    },
+    {
+      "number": "2",
+      "title": "Fertigung &\nMontage",
+      "description": "Fräsen, Schweißen, Laserschneiden, Bearbeitung und Montage von Metallkonstruktionen in der Werkstatt oder vor Ort."
+    },
+    {
+      "number": "3",
+      "title": "Behandlungen\n& Oberflächenveredelung",
+      "description": "Oberflächenbeschichtung (Lackierung, Anodisierung, Verzinkung); Qualitätskontrolle und Messtechnik."
+    }
+  ],
+  "description": "Diese Dienstleistungen begleiten jede Phase des Projekts – von der ersten Analyse bis zur Echtzeitüberwachung – und verwandeln herkömmliche Infrastrukturen in intelligente, sichere und energieeffiziente Umgebungen.",
+  "buttonText": "Besuchen Sie FOCZOU",
+  "services": {
+    "audit": {
+      "title": "Audit & Diagnostik der Infrastrukturen",
+      "description": "Bewertung bestehender Systeme (elektrisch, HLK, Sicherheit usw.); Energieanalyse und Identifizierung von Optimierungspotenzialen."
+    },
+    "conception": {
+      "title": "Konzeption & Ingenieurwesen intelligenter Lösungen",
+      "description": "Technische Studien und Modellierung; Integration von Sensoren, Steuerungen und Regelsystemen."
+    },
+    "automatisation": {
+      "title": "Automatisierung von Gebäudesystemen",
+      "description": "Zentralisierte technische Verwaltung: Beleuchtung, Heizung, Lüftung, Sicherheit; Programmierung intelligenter Szenarien."
+    },
+    "securite": {
+      "title": "Intelligente Sicherheits- & Zutrittskontrolle",
+      "description": "Intelligente Videoüberwachung, vernetzter Alarm, Biometrie; Rückverfolgbarkeit und Verwaltung des Personenflusses."
+    },
+    "supervision": {
+      "title": "Fernüberwachung & Vorausschauende Wartung",
+      "description": "Cloud-Plattformen für 24/7-Monitoring; Früherkennung von Anomalien und vorbeugende Wartung."
+    },
+    "formation": {
+      "title": "Benutzerschulung",
+      "description": "Schulung der Teams in der Systemnutzung; Bereitstellung von Dokumentation und technischem Support."
+    },
+    "evolution": {
+      "title": "Weiterentwicklung & Skalierbarkeit der Systeme",
+      "description": "Möglichkeit, neue Funktionen hinzuzufügen (Modularität); Software-Updates und Anpassung an neue Anforderungen."
+    }
+  }
+},
+"smartVilla": {
+  "title1": "PROJEKT:",
+  "title2": "VILLA 2 YASSA",
+  "subtitle": "Installation eines Hausautomationssystems zur zentralen Steuerung aller Geräte im Gebäude.",
+  "buttonText": "Weitere Projekte",
+  "titleRound": "Lassen Sie uns gemeinsam Ihr",
+  "titleRound2": "Smart Building",
+  "descriptionRound": "Haben Sie ein Haus, ein Hotel, ein Büro, eine Gewerbefläche oder einen Veranstaltungsraum, den Sie modernisieren möchten? Sprechen wir darüber.",
+  "buttonRound": "Kontaktieren Sie uns"
+},
+"FabriMeca": {
+  "heroTitle1": "KONSTRUKTION, MECHANISCHE UND METALLISCHE FERTIGUNG",
+  "heroSubtitle": "Unsere Werkstatt entwirft Standard- oder maßgeschneiderte Maschinen und Geräte nach Ihren spezifischen Anforderungen.",
+  "heroSubtitle2": "Klicken Sie auf die Schaltfläche, um die Website unserer mechanischen Werkstatt zu besuchen.",
+  "heroButtonText": "MATOA besuchen"
+},
+
+ "fabriMeca": {
+    "hero": {
+      "title1": "Mechanische & Metallische Fertigung",
+      "subtitle": "Exzellenz in Design und Fertigung",
+      "subtitle2": "Maßgeschneiderte Lösungen für Ihre industriellen Bedürfnisse",
+      "buttonText": "Entdecken Sie unsere Leistungen"
+    },
+    "expertise": {
+      "title": "Unsere Fachgebiete",
+      "subtitle": "Wir bieten umfassende Lösungen für die Konstruktion, Fertigung und Montage von Metall- und mechanischen Teilen sowie Rollgeräten und Behältern, die Qualität und Präzision vereinen.",
+      "items": {
+        "engins": {
+          "title": "Rollgeräte",
+          "description": "Konstruktion und Fertigung von Wagen, Anhängern, motorisierten oder manuellen Plattformen."
+        },
+        "machines": {
+          "title": "Maschinen",
+          "description": "Industrie-, Sanitär- und Gewerbemaschinen, entwickelt nach Ihren spezifischen Anforderungen"
+        },
+        "pieces": {
+          "title": "Infrastruktur & Metallteile",
+          "description": "Metallstrukturen, Treppen, Geländer, bearbeitete oder geschweißte mechanische Teile."
+        }
+      }
+    },
+    "prestations": {
+      "title": "Zugehörige Dienstleistungen",
+      "subtitle": "Unsere Dienstleistungen decken den gesamten mechanischen und metallischen Fertigungsprozess ab, von der technischen Studie bis zur Endbeschichtung, um zuverlässige, langlebige und auf jeden Bedarf zugeschnittene Lösungen zu garantieren.",
+      "items": {
+        "conception": {
+          "title": "Konstruktion &\nKonstruktionsbüro",
+          "description": "3D-Modellierung und numerische Simulation, maßgeschneiderte Fertigungspläne, schnelles Prototyping."
+        },
+        "fabrication": {
+          "title": "Fertigung &\nMontage",
+          "description": "Fräsen, Schweißen, Laserschneiden, Bearbeitung, Montage von Metallstrukturen in der Werkstatt oder vor Ort."
+        },
+        "traitements": {
+          "title": "Behandlungen\n& Oberflächen",
+          "description": "Oberflächenbeschichtung (Lackierung, Eloxierung, Verzinkung); Qualitätskontrolle und Metrologie."
+        }
+      }
+    },
+    "production": {
+      "title": "Unser Produktionsbereich",
+      "items": {
+        "citernes": "TANKS",
+        "borneNumerique": "DIGITALES TERMINAL",
+        "benne": "KIPPER",
+        "camionFrigo": "KÜHLWAGEN",
+        "structureMetallique": "METALLSTRUKTUR"
+      }
+    },
+    "bander": {
+      "title": "Weitere Informationen auf unserem",
+      "title2": "Youtube-Kanal",
+      "description": "Entdecken Sie unsere Leistungen und Fertigungsprozesse",
+      "button": "Fortfahren"
+    },
+    "round": {
+      "title": "Benötigen Sie eine",
+      "title2": "Maßgeschneiderte Lösung?",
+      "description": "Unsere Experten begleiten Sie von der Studie bis zur vollständigen Umsetzung Ihrer Fertigungsprojekte"
+    }
+  },
+    "fm": {
+    "title": "Entdecken Sie interessante Inhalte",
+    "subtitle": "Die mechanische Werkstatt",
+    "description": "Tauchen Sie ein in das Herz der mechanischen und metallischen Technik",
+    "buttonText": "Besuchen Sie MATOA"
+  },
+  "smartVill": {
+    "title1": "PROJEKT:",
+    "title2": "Mobile Bank",
+    "subtitle": "Reisende Bankagentur, vollständig ausgestattet und eingerichtet in einer Metallstruktur auf einem Traktor montiert.",
+    "buttonText": "Weitere Projekte"
+  },
+
+   "gpsT": {
+    "titlehero": "GPS & TRACKING",
+    "descriptionhero": "Moderne, skalierbare Tracking-Lösungen, die auf die Bedürfnisse von Privatpersonen, Unternehmen und Institutionen zugeschnitten sind, sowohl national als auch international (im CEMAC-Raum).",
+    "buttonhero": "Unsere Visuals",
+    "TitleFeatures": "Unsere Interventionsbereiche",
+    "DescriptionFeatures": "Lösungen für präzise Verfolgung, vertiefte Analyse und nachhaltige Optimierung Ihrer Fahrzeugflotte und all Ihrer Assets, alles zentralisiert auf einer einzigen Plattform.",
+    "BanderTitle": "Weitere Informationen auf unserem",
+    "BanderTitle2": "Youtube-Kanal",
+    "BanderDescription": "Echtzeit-Fahrzeugverfolgungsplattform mit fortschrittlicher Geolokalisierung",
+    "BanderButton": "Mehr erfahren",
+    "titleRound": "Benötigen Sie eine",
+    "titleRound2": "Maßgeschneiderte Lösung?",
+    "descriptionRound": "Unsere Experten begleiten Sie von der Studie bis zur vollständigen Implementierung Ihrer Tracking-Geräte",
+     "domaines": {
+      "title": "Unsere Interventionsbereiche",
+      "subtitle": "Lösungen für präzise Verfolgung, vertiefte Analyse und nachhaltige Optimierung Ihrer Fahrzeugflotte und all Ihrer Assets, alles zentralisiert auf einer einzigen Plattform.",
+      "items": {
+        "videoSurveillance": {
+          "title": "Videoüberwachung Fahrer-Tracking",
+          "description": "Echtzeitüberwachung über Kabinenkamera der von Fahrern durchgeführten Operationen und ihrer Reiserouten."
+        },
+        "objetsValeur": {
+          "title": "Wertsachen-Tracking",
+          "description": "Diskrete und sichere Echtzeit-Verfolgung sensibler Güter (Container, Koffer, Safe...) über tragbares, wiederaufladbares Mini-GPS"
+        },
+        "gestionFlottes": {
+          "title": "Flottenmanagement",
+          "description": "Echtzeit-GPS-Tracking, zentrale Verwaltung der gesamten Flotte über die Plattform, Routenoptimierung, Erstellung von Warnungen."
+        },
+        "antivol": {
+          "title": "Diebstahlschutz-Lösungen",
+          "description": "Ferngesteuertes Motorblockierungssystem über Plattform, Warnungen, aktiver Fahrzeugschutz."
+        },
+        "badge": {
+          "title": "Badge-Tracking",
+          "description": "Individuelle Geolokalisierungslösung über intelligenten Badge geeignet für die Überwachung älterer oder gefährdeter Personen, Kinder, isolierter Arbeiter..."
+        },
+        "conduiteAssistee": {
+          "title": "KI-Kamera-Assistiertes Fahren",
+          "description": "Erkennung, Erfassung und Aufzeichnung riskanten Fahrverhaltens (Telefonnutzung, Schläfrigkeit...); Visuelle oder akustische Warnung."
+        },
+        "carburant": {
+          "title": "Kraftstoffmanagement",
+          "description": "Kraftstoffstand-Überwachung durch integrierte Sensoren zur Verhinderung von Diebstahl und Lecks/ Diagnose der Verbrauchskurve und Generierung ihrer Grafiken."
+        },
+        "rapports": {
+          "title": "Berichtverwaltung",
+          "description": "Erstellung periodischer Berichte (Logbuch, Routen, Anomalien, Verbrauch...)/ Export von Berichten im Format EXCEL, PDF, Bilder, Videos."
+        }
+      }
+    }
+  },
+  "whyChooseUs": {
+  "title": "Warum uns wählen?",
+  "subtitle": "Unsere Tracking-Lösungen bieten greifbare Vorteile in Bezug auf Sichtbarkeit, Sicherheit und Optimierung der Abläufe – für eine bessere Kontrolle Ihrer Ressourcen in Echtzeit.",
+  "feature1": "Fernverriegelungs- bzw. Diebstahlschutzsystem kostenlos enthalten.",
+  "feature2": "Zugang zu einer lizenzierten Webplattform und/oder einer dedizierten mobilen Anwendung.",
+  "feature3": "Alle Verwaltungsparameter und -werkzeuge sind ohne zusätzliche Kosten zugänglich.",
+  "feature4": "Kostenlose internationale Abdeckung (CEMAC-Region).",
+  "feature5": "Wartung, Instandhaltung und Kundendienst in den Städten Douala und Yaoundé inklusive.",
+  "feature6": "Bis zu 1 Jahr Garantie auf die Geräte."
+}
+
+
+
+
+
+
+
 
 
 

@@ -1,91 +1,5 @@
-
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-// Simuler useTranslation
-const useTranslation = () => {
-  const translations = {
-    smartBuilding: {
-      title: "SMART BUILDING",
-      subtitle: "Des solutions sur mesure pour les habitations, les bureaux, les hôtels et les espaces commerciaux. Confort, sécurité, performance énergétique et connectivité réunis dans une architecture intelligente.",
-      buttonText: "Visitez le showroom",
-      tabs: {
-        smartHome: "Smart home",
-        smartHotel: "Smart hotel",
-        smartOffice: "Smart office",
-        smartCommercial: "Smart commercial",
-        smartEvents: "Smart events"
-      }
-    },
-    smartHome: {
-      title: "La maison qui s'adapte à vous",
-      featureTitle: "Gestion automatisée",
-      featureDescription: "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
-        'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
-        'https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800'
-      ]
-    },
-    smartHotel: {
-      title: "L'hôtel connecté du futur",
-      featureTitle: "Expérience client optimisée",
-      featureDescription: "Offrez à vos clients une expérience unique avec des chambres intelligentes. Contrôle de l'éclairage, de la température, et des services hôteliers via une interface intuitive.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
-        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800',
-        'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800'
-      ]
-    },
-    smartOffice: {
-      title: "Le bureau intelligent",
-      featureTitle: "Productivité maximale",
-      featureDescription: "Créez un environnement de travail optimal avec des espaces qui s'adaptent aux besoins de vos équipes. Gestion intelligente de l'énergie, de la sécurité et du confort.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800',
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800',
-        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800'
-      ]
-    },
-    smartCommercial: {
-      title: "L'espace commercial innovant",
-      featureTitle: "Gestion centralisée",
-      featureDescription: "Optimisez la gestion de vos espaces commerciaux avec des solutions intelligentes. Contrôle de l'éclairage, de la climatisation et de la sécurité pour une efficacité maximale.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800',
-        'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800',
-        'https://images.unsplash.com/photo-1491336238524-c990bd671778?w=800'
-      ]
-    },
-    smartEvents: {
-      title: "L'événementiel connecté",
-      featureTitle: "Événements mémorables",
-      featureDescription: "Transformez vos événements avec des technologies intelligentes. Éclairage dynamique, sonorisation adaptative et contrôle centralisé pour des expériences inoubliables.",
-      buttonText: "Un projet en tête?",
-      slides: [
-        'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800',
-        'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800',
-        'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'
-      ]
-    }
-  };
-
-  return {
-    t: (key) => {
-      const keys = key.split('.');
-      let value = translations;
-      for (const k of keys) {
-        value = value[k];
-        if (!value) return key;
-      }
-      return value;
-    }
-  };
-};
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -96,7 +10,6 @@ const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-// Composant Hero avec tabs superposés
 const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
   const { t } = useTranslation();
 
@@ -111,7 +24,7 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
   return (
     <div className="relative w-full mb-20">
       {/* Hero Section */}
-<div 
+      <div 
         className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[650px]"
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 18, 28, 0.7), rgba(0, 18, 28, 0.7)), url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200)',
@@ -146,10 +59,6 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
               className={`flex-1 px-4 py-4 font-medium text-sm transition-all relative ${
                 activeTab === tab.id ? 'font-bold' : ''
               } ${index === 0 ? 'rounded-l-full' : ''} ${index === tabs.length - 1 ? 'rounded-r-full' : ''}`}
-              // style={{
-              //   color: activeTab === tab.id ? MY_COLORS.secondaryGreen : MY_COLORS.black,
-              //   backgroundColor: activeTab === tab.id ? 'rgba(125, 168, 55, 0.1)' : 'transparent'
-              // }}
             >
               {tab.label}
               {activeTab === tab.id && (
@@ -165,7 +74,8 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
     </div>
   );
 };
-export default SmartBuildingHero
+
+export default SmartBuildingHero;
 
 // // Composant Feature avec carousel
 // const SmartFeatureCarousel = () => {

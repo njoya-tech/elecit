@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import FabriMecaHero from '../../components/FabriMeca/FabriMecaHero'
 import NavBar from '../../components/features/NavBar'
 import Footer from '../../components/features/Footer'
@@ -17,132 +18,136 @@ import Bander2 from '../../components/FabriMeca/Bander2'
 import FoRound from '../../components/FabriMeca/FoRound'
 
 const FabriMecaPage = () => {
+  const { t } = useTranslation()
+
+  // expertiseData avec traductions
   const expertiseData = {
-    title: "Nos domaines d'expertise",
-    subtitle: "Nous offrons des solutions globales pour la conception, la fabrication et l'assemblage de pièces métalliques et mécaniques, ainsi que d'engins roulants et de contenants, alliant qualité et précision.",
+    title: t('fabriMeca.expertise.title'),
+    subtitle: t('fabriMeca.expertise.subtitle'),
     headerIcon: casq,
     gearIcon: rail,
     expertises: [
       {
         icon: engins,
-        title: "Engins roulants",
-        description: "Conception et fabrication de chariots, remorques, plateformes motorisées ou manuelles.",
+        title: t('fabriMeca.expertise.items.engins.title'),
+        description: t('fabriMeca.expertise.items.engins.description'),
         image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=500&fit=crop",
         imagePosition: "right"
       },
       {
         icon: machines,
-        title: "Machines",
-        description: "Machines industrielles, sanitaires et commerciales, conçues selon vos besoins spécifiques",
+        title: t('fabriMeca.expertise.items.machines.title'),
+        description: t('fabriMeca.expertise.items.machines.description'),
         image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=500&fit=crop",
         imagePosition: "left"
       },
       {
         icon: pieces,
-        title: "Infrastructures & Pièces métalliques",
-        description: "Structures métalliques, escaliers, garde-corps, pièces mécaniques usinées ou soudées.",
+        title: t('fabriMeca.expertise.items.pieces.title'),
+        description: t('fabriMeca.expertise.items.pieces.description'),
         image: c2,
         imagePosition: "right"
       }
     ]
-  };
+  }
 
+  // prestationsData avec traductions
   const prestationsData = {
-    title: "Prestations associées",
-    subtitle: "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
+    title: t('fabriMeca.prestations.title'),
+    subtitle: t('fabriMeca.prestations.subtitle'),
     icon: casq,
     prestations: [
       {
         number: "1",
-        title: "Conception &\nBureau d'études",
-        description: "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+        title: t('fabriMeca.prestations.items.conception.title'),
+        description: t('fabriMeca.prestations.items.conception.description')
       },
       {
         number: "2",
-        title: "Fabrication &\nAssemblage",
-        description: "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+        title: t('fabriMeca.prestations.items.fabrication.title'),
+        description: t('fabriMeca.prestations.items.fabrication.description')
       },
       {
         number: "3",
-        title: "Traitements\n& Finitions",
-        description: "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
+        title: t('fabriMeca.prestations.items.traitements.title'),
+        description: t('fabriMeca.prestations.items.traitements.description')
       }
     ]
-  };
+  }
 
+  // productionData avec traductions
   const productionData = {
-    title: "Notre champ de production",
+    title: t('fabriMeca.production.title'),
     icon: rail,
     decorIcon: rail,
     items: [
       {
-        title: "CITERNES",
+        title: t('fabriMeca.production.items.citernes'),
         image: photo
       },
       {
-        title: "BORNE NUMÉRIQUE",
+        title: t('fabriMeca.production.items.borneNumerique'),
         image: photo
       },
       {
-        title: "BENNE",
-        image: photo
-      },
-        {
-        title: "CAMION FRIGORIPHIQUE",
+        title: t('fabriMeca.production.items.benne'),
         image: photo
       },
       {
-        title: "STRUCTURE MÉTALLIQUE",
+        title: t('fabriMeca.production.items.camionFrigo'),
+        image: photo
+      },
+      {
+        title: t('fabriMeca.production.items.structureMetallique'),
         image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=600&fit=crop"
       }
     ]
-  };
-
-
+  }
 
   return (
     <>
-    <div className='min-h-screen'>
-       <header className='fixed top-0 left-0 right-0 z-50'>
-
-                         <NavBar/>
-       </header>
+      <div className='min-h-screen'>
+        <header className='fixed top-0 left-0 right-0 z-50'>
+          <NavBar />
+        </header>
 
         <main className='pt-46'>
+          <div>
+            <FabriMecaHero
+              title1={t('FabriMeca.heroTitle1')}
+              subtitle={t('FabriMeca.heroSubtitle')}
+              subtitle2={t('FabriMeca.heroSubtitle2')}
+              buttonText={t('FabriMeca.heroButtonText')}
+              bgImage={fa1}
+            />
+          </div>
 
-    <div>
-           <FabriMecaHero
-             title1="FabriMeca.heroTitle1"
-  subtitle="FabriMeca.heroSubtitle"
-  subtitle2="FabriMeca.heroSubtitle2"
-  buttonText="FabriMeca.heroButtonText"
-  bgImage={fa1}
-           ></FabriMecaHero>
-    </div>
+          <div className=''>
+            <ExpertiseSection data={expertiseData} />
+          </div>
 
-    <div className=''>
-<ExpertiseSection data={expertiseData} />
-    </div>
+          <div className=''>
+            <Bander />
+          </div>
 
-    <div className=''>
-      <Bander></Bander>
-    </div>
+          <div>
+            <PrestationsProductionPage 
+              prestationsData={prestationsData} 
+              productionData={productionData} 
+            />
+          </div>
+          
+          <div className=''>
+            <Bander2 />
+          </div>
 
-    <div>
-     <PrestationsProductionPage prestationsData={prestationsData} productionData={productionData} />
-    </div>
-        
-        <div  className=''>
-          <Bander2></Bander2>
-        </div>
-
-        <div>
-          <FoRound></FoRound>
-        </div>
-        
+          <div>
+            <FoRound />
+          </div>
         </main>
-<Footer></Footer>
-    </div>
+
+        <Footer />
+      </div>
     </>
   )
 }

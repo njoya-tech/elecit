@@ -12,7 +12,8 @@ export const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-const BlogCarousel = ({ services, t }) => {
+const BlogCarousel = ({ services }) => {
+   const { t } = useTranslation(); 
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isPaused, setIsPaused] = React.useState(false);
   const [direction, setDirection] = React.useState(0); // 1 pour droite, -1 pour gauche
@@ -171,7 +172,7 @@ const BlogCarousel = ({ services, t }) => {
                           className="px-6 py-2 rounded-full text-white font-semibold"
                           style={{ backgroundColor: MY_COLORS.green }}
                         >
-                          {t ? t('seeMore') : 'Voir plus'}
+                          {t('blog.seeMore')}
                         </motion.button>
                       </div>
                     </div>

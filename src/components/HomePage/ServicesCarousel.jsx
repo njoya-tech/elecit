@@ -14,42 +14,40 @@ export const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-const ServicesCarousel = ({ services, t }) => {
+const ServicesCarousel = ({ services }) => {
+  const { t } = useTranslation(); // Ajout de useTranslation ici
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isPaused, setIsPaused] = React.useState(false);
-  const [direction, setDirection] = React.useState(0); // 1 pour droite, -1 pour gauche
+  const [direction, setDirection] = React.useState(0);
 
   const totalSlides = services.length;
 
-React.useEffect(() => {
-  if (isPaused) return;
+  React.useEffect(() => {
+    if (isPaused) return;
 
-  const interval = setInterval(() => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 3) % totalSlides);
-  }, 5000);
+    const interval = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 3) % totalSlides);
+    }, 5000);
 
-  return () => clearInterval(interval);
-}, [isPaused, totalSlides]);
-
+    return () => clearInterval(interval);
+  }, [isPaused, totalSlides]);
 
   const goToSlide = (index) => {
     setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
 
-const nextSlide = () => {
-  setDirection(1);
-  setCurrentIndex((prev) => (prev + 3) % totalSlides);
-};
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 3) % totalSlides);
+  };
 
-const prevSlide = () => {
-  setDirection(-1);
-  setCurrentIndex((prev) => (prev - 3 + totalSlides) % totalSlides);
-};
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 3 + totalSlides) % totalSlides);
+  };
 
-
-  // Calculer quelles cartes afficher (3 cartes visibles)
   const getVisibleCards = () => {
     const cards = [];
     for (let i = 0; i < 3; i++) {
@@ -61,7 +59,6 @@ const prevSlide = () => {
 
   const visibleCards = getVisibleCards();
 
-  // Variants pour l'animation en fonction de la direction
   const slideVariants = {
     enter: (direction) => ({
       x: direction > 0 ? 300 : -300,
@@ -85,7 +82,6 @@ const prevSlide = () => {
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Conteneur principal du carousel */}
         <div className="relative">
           {/* Bouton Gauche */}
           <button
@@ -113,8 +109,7 @@ const prevSlide = () => {
               initial="enter"
               animate="center"
               exit="exit"
-                         transition={{ duration: 0.9, ease: "easeInOut" }}
-
+              transition={{ duration: 0.9, ease: "easeInOut" }}
               className="grid grid-cols-1 md:grid-cols-3 gap-6 px-12"
             >
               {visibleCards.map((service, idx) => (
@@ -174,7 +169,7 @@ const prevSlide = () => {
                           className="px-6 py-2 rounded-full text-white font-semibold"
                           style={{ backgroundColor: MY_COLORS.green }}
                         >
-                          {t ? t('seeMore') : 'Voir plus'}
+                          {t('servicesCarousel.seeMore')}
                         </motion.button>
                       </div>
                     </div>

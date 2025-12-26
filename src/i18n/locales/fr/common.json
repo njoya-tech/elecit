@@ -148,6 +148,7 @@
     },
 
    "servicesCarousel": {
+     "seeMore": "Voir plus",
       "services": [
         {
           "title": "Services Informatiques & DATA Processing",
@@ -192,10 +193,8 @@
 
 
 
-"smartBuild":{
-  "title" : "Exposition des solutions et bâtiment intellignet",
-  "buttonText": "Visitez le showroom"
-},
+"seeMore": "Voir plus",
+
   "smartBuild": {
     "title": "Exposition des solutions et bâtiment intellignet",
     "buttonText": "Visitez le showroom"
@@ -208,6 +207,7 @@
 },
 
 "blog": {
+  "seeMore": "Voir plus",
   "articles": [
     {
       "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
@@ -462,7 +462,10 @@
     "step5Title": "Prise de décision",
     "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour proposition d’embauche."
   },
-   "smartBuilding": {
+
+
+ 
+  "smartBuilding": {
     "title": "SMART BUILDING",
     "subtitle": "Des solutions sur mesure pour les habitations, les bureaux, les hôtels et les espaces commerciaux. Confort, sécurité, performance énergétique et connectivité réunis dans une architecture intelligente.",
     "buttonText": "Visitez le showroom",
@@ -480,6 +483,32 @@
     "featureDescription": "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
     "buttonText": "Un projet en tête?"
   },
+  "smartHotel": {
+    "title": "L'hôtel connecté du futur",
+    "featureTitle": "Expérience client optimisée",
+    "featureDescription": "Offrez à vos clients une expérience unique avec des chambres intelligentes. Contrôle de l'éclairage, de la température, et des services hôteliers via une interface intuitive.",
+    "buttonText": "Un projet en tête?"
+  },
+  "smartOffice": {
+    "title": "Le bureau intelligent",
+    "featureTitle": "Productivité maximale",
+    "featureDescription": "Créez un environnement de travail optimal avec des espaces qui s'adaptent aux besoins de vos équipes. Gestion intelligente de l'énergie, de la sécurité et du confort.",
+    "buttonText": "Un projet en tête?"
+  },
+  "smartCommercial": {
+    "title": "L'espace commercial innovant",
+    "featureTitle": "Gestion centralisée",
+    "featureDescription": "Optimisez la gestion de vos espaces commerciaux avec des solutions intelligentes. Contrôle de l'éclairage, de la climatisation et de la sécurité pour une efficacité maximale.",
+    "buttonText": "Un projet en tête?"
+  },
+  "smartEvents": {
+    "title": "L'événementiel connecté",
+    "featureTitle": "Événements mémorables",
+    "featureDescription": "Transformez vos événements avec des technologies intelligentes. Éclairage dynamique, sonorisation adaptative et contrôle centralisé pour des expériences inoubliables.",
+    "buttonText": "Un projet en tête?"
+  },
+
+
   "smartVilla": {
     "tilte1": "PROJET:",
     "title2": "VILLA 2 YASSA",
@@ -489,6 +518,8 @@
     "titleRound2": "Smart Building",
     "descriptionRound": "Vous avez une maison,  un hotel , un bureau ou un espace commercial, une salle de fêtes à transformer ? Parlons-en.",
     "buttonRound": "Contactez-nous"
+    
+
   },
 
   "interfaceCommande": {
@@ -610,21 +641,60 @@
     "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
     "buttonRound": "Contactez-nous"
   },
-  "gpsT": {
-    "titlehero":"GPS & TRACKING",
-    "descriptionhero": "solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu’international (dans l’espace CEMAC).",
-    "buttonhero": " Nos visuels"  ,
-    "TitleFeatures": "Nos domaines d’intervention",
-    "DescriptionFeatures": " Des solutions pensées pour le suivi précis, l’analyse approfondie et l’optimisation durable de votre flotte de véhicules et de l’ensemble de vos actifs, le tout de manière centralisée au sein d’une plateforme unique.",
-    "BanderTitle":" Autres d’informations sur notre chaîne",
+"gpsT": {
+    "titlehero": "GPS & TRACKING",
+    "descriptionhero": "Solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu'international (dans l'espace CEMAC).",
+    "buttonhero": "Nos visuels",
+    "TitleFeatures": "Nos domaines d'intervention",
+    "DescriptionFeatures": "Des solutions pensées pour le suivi précis, l'analyse approfondie et l'optimisation durable de votre flotte de véhicules et de l'ensemble de vos actifs, le tout de manière centralisée au sein d'une plateforme unique.",
+    "BanderTitle": "Plus d'informations sur notre chaîne",
     "BanderTitle2": "Youtube",
-    "BanderDescription": "Plateforme de suivi de véhicule en temps réel",
-    "BanderButton": " Poursuivre",
-    "titleRound": "Besoin dune solution",
+    "BanderDescription": "Plateforme de suivi de véhicule en temps réel avec géolocalisation avancée",
+    "BanderButton": "En savoir plus",
+    "titleRound": "Besoin d'une solution",
     "titleRound2": "Personnalisée ?",
-    "descriptionRound": "Nos experts vous accompagnent de l'etude à la mise en oeuvre complete de vos dispositifs de tracking"
+    "descriptionRound": "Nos experts vous accompagnent de l'étude à la mise en œuvre complète de vos dispositifs de tracking",
+       "domaines": {
+      "title": "Nos domaines d'intervention",
+      "subtitle": "Des solutions pensées pour le suivi précis, l'analyse approfondie et l'optimisation durable de votre flotte de véhicules et de l'ensemble de vos actifs, le tout de manière centralisée au sein d'une plateforme unique.",
+      "items": {
+        "videoSurveillance": {
+          "title": "Tracking par Vidéosurveillance-chauffeurs",
+          "description": "Suivi en temps réel via caméra en cabine des opérations menées par les chauffeurs et de leur itinéraire de déplacement."
+        },
+        "objetsValeur": {
+          "title": "Tracking des Objets de Valeur",
+          "description": "Suivi en temps réel discret et sécurisé de biens sensibles (conteneur, valise, coffre fort…) via mini GPS portable, rechargeable"
+        },
+        "gestionFlottes": {
+          "title": "Gestion de Flottes",
+          "description": "Suivi GPS en temps réel, gestion centralisée de l'ensemble de la flotte via la plateforme, optimisation des trajets, création des alertes."
+        },
+        "antivol": {
+          "title": "Solutions Antivols",
+          "description": "Système de blocage moteur à distance via plateforme, alertes, protection active des véhicules."
+        },
+        "badge": {
+          "title": "Tracking par badge",
+          "description": "Solution de géolocalisation individuelle via badge intelligent adaptée au suivi de personnes âgées ou vulnérables, des enfants, des travailleurs isolés…"
+        },
+        "conduiteAssistee": {
+          "title": "Conduite Assistée par Caméra IA",
+          "description": "Détection, capture et enregistrement du comportement de conduite à risque (usage du téléphone, somnolence…); Alerte visuelle ou sonore."
+        },
+        "carburant": {
+          "title": "Gestion de Carburant",
+          "description": "Suivi du niveau de carburant par capteurs intégrés en vue d'éviter les vols et fuites/ Diagnostique de la courbe de consommation et génération de ses graphiques."
+        },
+        "rapports": {
+          "title": "Gestion des Rapports",
+          "description": "Génération des rapports périodiques (journal de bord, trajets, anomalies, consommation..)/ Export des rapports sous format EXCEL, PDF, images, vidéos."
+        }
+      }
+    }
   },
-      "whyChooseUs": {
+
+  "whyChooseUs": {
     "title": "Pourquoi nous choisir?",
     "subtitle": "Nos solutions de tracking offrent des avantages concrets en matière de visibilité, de sécurité et d'optimisation des opérations, pour un meilleur contrôle de vos ressources en temps réel.",
     "feature1": "Système d'immobilisation/antivol à distance inclus gratuitement.",
@@ -795,7 +865,86 @@
           "responsable": "Directeur des opérations"
         }
       ]
+    },
+
+    "fabriMeca": {
+    "hero": {
+      "title1": "Fabrication Mécanique & Métallique",
+      "subtitle": "Excellence en conception et fabrication",
+      "subtitle2": "Solutions sur mesure pour vos besoins industriels",
+      "buttonText": "Découvrir nos réalisations"
+    },
+    "expertise": {
+      "title": "Nos domaines d'expertise",
+      "subtitle": "Nous offrons des solutions globales pour la conception, la fabrication et l'assemblage de pièces métalliques et mécaniques, ainsi que d'engins roulants et de contenants, alliant qualité et précision.",
+      "items": {
+        "engins": {
+          "title": "Engins roulants",
+          "description": "Conception et fabrication de chariots, remorques, plateformes motorisées ou manuelles."
+        },
+        "machines": {
+          "title": "Machines",
+          "description": "Machines industrielles, sanitaires et commerciales, conçues selon vos besoins spécifiques"
+        },
+        "pieces": {
+          "title": "Infrastructures & Pièces métalliques",
+          "description": "Structures métalliques, escaliers, garde-corps, pièces mécaniques usinées ou soudées."
+        }
+      }
+    },
+    "prestations": {
+      "title": "Prestations associées",
+      "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
+      "items": {
+        "conception": {
+          "title": "Conception &\nBureau d'études",
+          "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+        },
+        "fabrication": {
+          "title": "Fabrication &\nAssemblage",
+          "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+        },
+        "traitements": {
+          "title": "Traitements\n& Finitions",
+          "description": "Revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
+        }
+      }
+    },
+    "production": {
+      "title": "Notre champ de production",
+      "items": {
+        "citernes": "CITERNES",
+        "borneNumerique": "BORNE NUMÉRIQUE",
+        "benne": "BENNE",
+        "camionFrigo": "CAMION FRIGORIFIQUE",
+        "structureMetallique": "STRUCTURE MÉTALLIQUE"
+      }
+    },
+    "bander": {
+      "title": "Autres informations sur notre chaîne",
+      "title2": "Youtube",
+      "description": "Découvrez nos réalisations et processus de fabrication",
+      "button": "Poursuivre"
+    },
+    "round": {
+      "title": "Besoin d'une solution",
+      "title2": "Personnalisée ?",
+      "description": "Nos experts vous accompagnent de l'étude à la mise en œuvre complète de vos projets de fabrication"
     }
+  },
+
+   "fm": {
+    "title": "Explorez du contenu intéressant",
+    "subtitle": "L'atelier mécanique",
+    "description": "Plongez vous au cœur de l'ingénierie mécanique et métallique",
+    "buttonText": "Visitez MATOA"
+  },
+  "smartVill": {
+    "title1": "PROJET:",
+    "title2": "Banque mobile",
+    "subtitle": "Agence bancaire itinérante, entièrement équipée et aménagée dans une structure métallique montée sur un tracteur.",
+    "buttonText": "Plus de projets"
+  }
   
  
   

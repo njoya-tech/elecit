@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import sma from '../../assets/sma.png'
 import smart1 from '../../assets/smart1.jpg'
 import eng from '../../assets/eng.jpg'
@@ -6,47 +7,9 @@ import casq from '../../assets/casq.svg'
 import st1 from '../../assets/st1.png'
 import st2 from '../../assets/st2.png'
 import { MY_COLORS } from '../../utils/colors'
-import { useState , useEffect} from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import rail from '../../assets/rail.svg'
-
-// Simuler useTranslation
-const useTranslation = () => {
-  const translations = {
-    interfaceCommande: {
-      title: "Interfaces de commande",
-      featureTitle: "Le pilotage centralisé",
-      featureDescription: "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
-      buttonText: "Visitez la boutique",
-      slides: [
-       sma,
-       st1,
-       st2
-      ]
-    },
-    fm : {
-      "title": "Explorez du contenu intéressant",
-      "subtitle": "L'atelier mécanique",
-      "description": "Plongez vous au coeur de l'ingenieurie mécanique et métallique",
-      "buttonText":"Visitez MATOA"
-    }
-  };
-
-  return {
-    t: (key) => {
-      const keys = key.split('.');
-      let value = translations;
-      for (const k of keys) {
-        value = value[k];
-        if (!value) return key;
-      }
-      return value;
-    }
-  };
-};
-
-
 
 // Animation flottante keyframes
 const floatingAnimation = `
@@ -68,38 +31,39 @@ const floatingAnimation = `
       animation: none;
     }
   }
-`;
+`
 
 const SmartBander = () => {
-  const { t } = useTranslation();
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true);
+  const { t } = useTranslation()
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [fadeIn, setFadeIn] = useState(true)
 
-  const slides = t('interfaceCommande.slides') || [];
+  // Les images du carrousel restent fixes (non traduites)
+  const slides = [sma, st1, st2]
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setFadeIn(false);
+      setFadeIn(false)
       setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setFadeIn(true);
-      }, 500);
-    }, 4000);
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
+        setFadeIn(true)
+      }, 500)
+    }, 4000)
 
-    return () => clearInterval(timer);
-  }, [slides.length]);
+    return () => clearInterval(timer)
+  }, [slides.length])
 
   const changeSlide = (direction) => {
-    setFadeIn(false);
+    setFadeIn(false)
     setTimeout(() => {
       if (direction === 'next') {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
       } else {
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
       }
-      setFadeIn(true);
-    }, 500);
-  };
+      setFadeIn(true)
+    }, 500)
+  }
 
   return (
     <>
@@ -158,12 +122,12 @@ const SmartBander = () => {
                   color: MY_COLORS.secondaryGreen
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = MY_COLORS.secondaryGreen;
-                  e.target.style.color = MY_COLORS.white;
+                  e.target.style.backgroundColor = MY_COLORS.secondaryGreen
+                  e.target.style.color = MY_COLORS.white
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'transparent';
-                  e.target.style.color = MY_COLORS.secondaryGreen;
+                  e.target.style.backgroundColor = 'transparent'
+                  e.target.style.color = MY_COLORS.secondaryGreen
                 }}
               >
                 {t('fm.buttonText')}
@@ -212,7 +176,7 @@ const SmartBander = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SmartBander;
+export default SmartBander

@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -8,7 +9,7 @@ const MY_COLORS = {
   red: '#E30613',
   black: '#00121C',
   white: '#FFFFFF'
-};
+}
 
 // Composant image flottante (version propre)
 const FloatingImage = ({
@@ -36,36 +37,27 @@ const FloatingImage = ({
     }}
     onError={(e) => {
       e.currentTarget.src =
-        `https://placehold.co/300x300/CCCCCC/000000?text=${alt}`;
+        `https://placehold.co/300x300/CCCCCC/000000?text=${alt}`
     }}
   />
-);
+)
 
-const Gbander = ({ images, casqIcon, t }) => {
-  // Fonction de traduction par défaut
-  const translate = t || ((key) => {
-    const translations = {
-      'gpsT.BanderTitle': "Plus d'informations sur notre chaîne",
-      'gpsT.BanderTitle2': "Youtube",
-      'gpsT.BanderDescription': "Plateforme de suivi de véhicule en temps réel avec géolocalisation avancée",
-      'gpsT.BanderButton': "En savoir plus"
-    };
-    return translations[key] || key;
-  });
+const Gbander = ({ images, casqIcon }) => {
+  const { t } = useTranslation()
 
-  // Images par défaut
+  // Images par défaut (restent fixes, non traduites)
   const defaultImages = {
     loc1: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=300&h=300&fit=crop",
     ordi1: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=400&fit=crop",
     loc2: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=300&h=300&fit=crop",
     phonegps: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=500&fit=crop"
-  };
+  }
 
-  const bannerImages = images || defaultImages;
-  const defaultCasqIcon = "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=200";
+  const bannerImages = images || defaultImages
+  const defaultCasqIcon = "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=200"
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 pb-40 ">
+    <div className="grid grid-cols-1 md:grid-cols-12 pb-40">
       
       {/* Colonne gauche */}
       <div className="hidden md:block md:col-span-1 bg-white" />
@@ -106,15 +98,15 @@ const Gbander = ({ images, casqIcon, t }) => {
                   style={{ color: MY_COLORS.white }}
                 >
                   <span style={{color: MY_COLORS.secondaryGreen}}>
-                    {translate('gpsT.BanderTitle')}
+                    {t('gpsT.BanderTitle')}
                   </span>
                   <br className="hidden sm:block" />
-                  {' '}{translate('gpsT.BanderTitle2')}
+                  {' '}{t('gpsT.BanderTitle2')}
                 </h2>
 
                 {/* Description */}
                 <p className="text-white text-sm sm:text-base leading-relaxed max-w-md">
-                  {translate('gpsT.BanderDescription')}
+                  {t('gpsT.BanderDescription')}
                 </p>
 
                 {/* Bouton CTA avec animation pulse */}
@@ -142,7 +134,7 @@ const Gbander = ({ images, casqIcon, t }) => {
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {translate('gpsT.BanderButton')}
+                  {t('gpsT.BanderButton')}
                 </motion.button>
               </div>
 
@@ -195,7 +187,7 @@ const Gbander = ({ images, casqIcon, t }) => {
       {/* Colonne droite */}
       <div className="hidden md:block md:col-span-1 bg-white" />
     </div>
-  );
-};
+  )
+}
 
-export default Gbander;
+export default Gbander

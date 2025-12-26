@@ -10,35 +10,8 @@ import { useState , useEffect} from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion'
 import rail from '../../assets/rail.svg'
+import { useTranslation } from 'react-i18next'
 
-// Simuler useTranslation
-const useTranslation = () => {
-  const translations = {
-    interfaceCommande: {
-      title: "Interfaces de commande",
-      featureTitle: "Le pilotage centralisé",
-      featureDescription: "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
-      buttonText: "Visitez la boutique",
-      slides: [
-       sma,
-       st1,
-       st2
-      ]
-    }
-  };
-
-  return {
-    t: (key) => {
-      const keys = key.split('.');
-      let value = translations;
-      for (const k of keys) {
-        value = value[k];
-        if (!value) return key;
-      }
-      return value;
-    }
-  };
-};
 
 
 
@@ -69,7 +42,16 @@ const SmartBander = () => {
       const [currentSlide, setCurrentSlide] = useState(0);
       const [fadeIn, setFadeIn] = useState(true);
     
-      const slides = t('interfaceCommande.slides') || [];
+const slideImages = [
+    st1,
+    st2,
+    sma
+  ]
+
+  
+
+const slides = t('interfaceCommande.slides', { returnObjects: true }) || [];
+
     
       useEffect(() => {
         const timer = setInterval(() => {
@@ -177,7 +159,7 @@ const SmartBander = () => {
                   {/* Carousel Container with Floating Animation */}
                   <div className="relative floating">
                     <div className="relative md:h-96 h-48 rounded-lg overflow-hidden">
-                      {slides.map((slide, index) => (
+                      {slideImages.map((slide, index) => (
                         <div
                           key={index}
                           className={`absolute flex items-center justify-center inset-0 transition-opacity duration-500 ${
