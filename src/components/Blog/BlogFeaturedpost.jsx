@@ -39,12 +39,12 @@ const BlogFeaturedPost = ({ category, onPostClick }) => {
   return (
     <div
       onClick={() => onPostClick && onPostClick(featuredPost.id)}
-      className="max-w-[1200px] mx-auto cursor-pointer" 
+      className="max-w-[1200px] mx-auto cursor-pointer px-4 sm:px-6 lg:px-8" 
     >
       {/* Horizontal Layout Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
         {/* LEFT SIDE: Featured Image */}
-        <div className="relative h-[300px] lg:h-[400px]">
+        <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[450px]">
           <img
             src={featuredPost.image}
             alt={featuredPost.title}
@@ -53,20 +53,20 @@ const BlogFeaturedPost = ({ category, onPostClick }) => {
         </div>
 
         {/* RIGHT SIDE: Post Details */}
-        <div className="p-8 lg:p-12 flex flex-col justify-center">
+        <div className="p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 flex flex-col justify-center">
           {/* Author Info */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between mb-4 sm:mb-5 md:mb-6">
+            <div className="flex items-center gap-2 sm:gap-3">
               <img
                 src={featuredPost.author.avatar}
                 alt={featuredPost.author.name}
-                className="w-10 h-10 rounded-full object-cover"
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full object-cover"
               />
               <div>
-                <p className="font-bold text-sm text-gray-900">
+                <p className="font-bold text-xs sm:text-sm text-gray-900">
                   {featuredPost.author.name}
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-[10px] sm:text-xs text-gray-500">
                   {featuredPost.author.date}
                 </p>
               </div>
@@ -78,52 +78,56 @@ const BlogFeaturedPost = ({ category, onPostClick }) => {
                 e.stopPropagation();
                 // Handle menu click
               }}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-gray-400 hover:text-gray-600 transition-colors p-1"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
               </svg>
             </button>
           </div>
 
           {/* Category Badge */}
-          <p className="text-sm text-gray-600 mb-4 font-medium">
+          <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 font-medium">
             {featuredPost.category}
           </p>
 
           {/* Title */}
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
             {featuredPost.title}
           </h2>
 
           {/* Excerpt */}
-          <p className="text-base text-gray-700 leading-relaxed mb-8">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-7 md:mb-8">
             {featuredPost.excerpt}
           </p>
 
           {/* Divider */}
-          <div className="border-t border-gray-200 mb-6"></div>
+          <div className="border-t border-gray-200 mb-4 sm:mb-5 md:mb-6"></div>
 
           {/* Engagement Metrics & Like */}
           <div className="relative" ref={menuRef}>
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMenuOpen(!isMenuOpen);
+              }}
+              className="text-gray-400 hover:text-gray-600 transition-colors p-1"
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
               </svg>
             </button>
 
             {/* Dropdown Menu */}
             {isMenuOpen && (
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+              <div className="absolute top-full right-0 mt-2 w-44 sm:w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setIsShareModalOpen(true);
                     setIsMenuOpen(false);
                   }}
-                  className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="w-full text-left px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   Partager le post
                 </button>
