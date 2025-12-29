@@ -43,13 +43,21 @@ const HeroContact = ({height = "75vh"}) => {
         </h1>
 
         <h2
-          className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+          className="text-white text-sm sm:text-base 
+          md:text-lg lg:text-xl xl:text-2xl tracking-wide 
+          uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs
+           sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
           Notre équipe d'experts vous apporte une solution !
         </h2>
 
         <button
-          className="relative z-20 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full border-2 transition-all duration-300 font-semibold text-sm sm:text-base md:text-lg hover:scale-105 active:scale-95 mt-6 sm:mt-8 md:mt-10 lg:mt-12"
+          className="relative z-20 px-6 sm:px-8
+           md:px-10 py-2.5 sm:py-3 
+           md:py-3.5 rounded-full border-2 transition-all duration-300 
+           font-semibold text-sm sm:text-base 
+           md:text-lg hover:scale-105 active:scale-95 mt-6 
+           sm:mt-8 md:mt-10 lg:mt-12"
           style={{
             borderColor: MY_COLORS.primaryBlue,
             color: MY_COLORS.primaryBlue,

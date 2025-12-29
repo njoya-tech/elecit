@@ -1,64 +1,81 @@
 import React from "react";
-import { HERO, ICONS } from "../../asset/assets"; // adjust path to your image assets
+import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton";
 import { MY_COLORS } from "../../constants/colors.js";
 
 const HeroData = () => {
   return (
-    <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
-      {/* Background Image */}
+    <section
+      className="relative w-full overflow-hidden min-h-[500px]"
+      style={{ height: "75vh" }}
+    >
+      {/* ================= BACKGROUND IMAGE ================= */}
       <img
-        src={HERO.dataProcessing} // <-- put the hero image here
+        src={HERO.dataProcessing}
         alt="Data Processing"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* ================= DARK GRADIENT OVERLAY ================= */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
 
-      {/* ANGLED BLACK PNG MASK (correct height control) */}
+      {/* ================= ANGLED MASK ================= */}
       <img
         src={ICONS.formeSombre}
         alt=""
         aria-hidden="true"
-        className="absolute bottom-0 left-0 w-full max-h-[420px]
-                 object-cover pointer-events-none"
-        style={{ objectFit: "cover" }}
+        className="
+          absolute bottom-0 left-0 w-full 
+          max-h-[220px] sm:max-h-[280px] md:max-h-[340px] lg:max-h-[420px]
+          object-cover pointer-events-none
+        "
       />
 
-      {/* TECH PATTERN - FULL WIDTH + BEHIND TEXT (corrected) */}
+      {/* ================= TECH PATTERN (SavHero logic) ================= */}
       <img
         src={ICONS.formTech}
         alt=""
         aria-hidden="true"
         className="
-                            absolute inset-0 m-auto 
-                            w-[120%] max-w-[1400px] 
-                            opacity-10 
-                            pointer-events-none 
-                            z-10
-                          "
-        style={{
-          top: "10%",
-          color: "gray",
-        }}
+          hidden sm:block absolute inset-0 m-auto
+          w-[150%] sm:w-[130%] md:w-[120%] lg:w-[110%]
+          max-w-[1400px]
+          opacity-10
+          pointer-events-none
+          z-10
+        "
+        style={{ top: "10%" }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 text-white whitespace-nowrap">
-          <span style={{ color: MY_COLORS.secondaryGreen }}>
-            IT & DATA PROCESSING?
-          </span>
+      {/* ================= CENTERED CONTENT ================= */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
+        
+        <h1
+          className="
+            font-extrabold 
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
+            leading-tight mb-3 sm:mb-4 md:mb-6
+          "
+          style={{ color: MY_COLORS.secondaryGreen }}
+        >
+          IT & DATA PROCESSING
         </h1>
 
-        <p className="text-white text-base md:text-lg leading-relaxed mb-10 max-w-3xl">
-          Nous aidons les entreprises à gérer efficacement leurs systèmes<br/>
+        <p
+          className="
+            text-white 
+            text-sm sm:text-base md:text-lg lg:text-xl 
+            leading-relaxed
+            mb-6 sm:mb-8 md:mb-10
+            max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl
+          "
+        >
+          Nous aidons les entreprises à gérer efficacement leurs systèmes
+          <br className="hidden md:block" />
           informatiques et à tirer le meilleur parti de leurs données.
         </p>
 
-        {/* CTA BUTTON */}
-        <CTAButton className="mt-10" onClick={() => alert("Video clicked!")}>
+        <CTAButton onClick={() => alert("Video clicked!")}>
           Publireportage
         </CTAButton>
       </div>

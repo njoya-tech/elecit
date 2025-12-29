@@ -5,66 +5,53 @@ import CTAButton from "../CTA/CTAButton.jsx";
 
 const SavHero = () => {
   return (
-    <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
+    <section 
+      className="relative w-full overflow-hidden min-h-[500px]" 
+      style={{height: "75vh"}}
+    >
       {/* Background Image */}
       <img
-        src={HERO.sav} // <-- put the hero image here
-        alt="Data Processing"
-        className="absolute inset-0 w-full h-full object-cover"
+        src={HERO.sav}
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* DARK GRADIENT OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
 
-      {/* ANGLED BLACK PNG MASK (correct height control) */}
-      <img
-        src={ICONS.formeSombre}
-        alt=""
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 w-full max-h-[420px]
-                 object-cover pointer-events-none"
-        style={{ objectFit: "cover" }}
-      />
-
-      {/* TECH PATTERN - FULL WIDTH + BEHIND TEXT (corrected) */}
+      {/* TECH PATTERN - Hidden on mobile for performance */}
       <img
         src={ICONS.formTech}
         alt=""
         aria-hidden="true"
-        className="
-                            absolute inset-0 m-auto 
-                            w-[120%] max-w-[1400px] 
-                            opacity-10 
-                            pointer-events-none 
-                            z-10
-                          "
+        className="hidden sm:block absolute inset-0 m-auto w-[150%] sm:w-[130%] md:w-[120%] lg:w-[110%] max-w-[1400px] opacity-10 pointer-events-none z-10"
         style={{
           top: "10%",
-          color: "gray",
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 w-full flex flex-col items-center">
+      {/* CENTERED TEXT CONTENT */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
         <h1
-          className="text-4xl md:text-6xl lg:text-7xl 
-        font-extrabold mb-4 text-white whitespace-nowrap lg:-mt-9"
+          className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
+          style={{
+            color: MY_COLORS.secondaryGreen,
+          }}
         >
-          <span style={{ color: MY_COLORS.secondaryGreen }}>
-            SERVICE APRES-VENTE
-          </span>
+          SERVICE APRES-VENTE
         </h1>
 
-        <p
-          className="text-white text-base md:text-xl sm:text-lg 
-        leading-relaxed mb-16 max-w-3xl lg:mt-10"
+        <h2
+          className="text-white text-sm sm:text-base 
+          md:text-lg lg:text-xl xl:text-2xl tracking-wide 
+          uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs
+           sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
-          Nous assurons la satisfaction du client, garantissons la longévité{" "}
-          <br />
+          Nous assurons la satisfaction du client, garantissons la longévité
+          <br className="hidden md:block" />
           des équipements et renforçons la confiance client.
-        </p>
+        </h2>
 
-        {/* CTA BUTTON */}
         <CTAButton onClick={() => alert("Video clicked!")}>
           Publireportage
         </CTAButton>

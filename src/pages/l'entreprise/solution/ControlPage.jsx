@@ -1,33 +1,33 @@
 import React from "react";
 import NavBar from "../../components/features/NavBar.jsx";
 import Footer from "../../components/features/Footer.jsx";
-import SavHero from "../../components/sav/SavHero.jsx";
-import SavCards from "../../components/sav/SavCards.jsx";
-import SavGreenCards from "../../components/sav/SavGreenCards.jsx";
+import ControlHero from "../../components/ControlD'access/ControlHero.jsx";
+import ControlCards from "../../components/ControlD'access/ControlCards.jsx";
+import ControlCarousel from "../../components/ControlD'access/ControlCarousel.jsx";
 
 const ControlPage = () => {
   return (
     <div className="relative w-full min-h-screen">
       {/*---NAVBAR-----*/}
 
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      <div className="fixed top-0 left-0 right-0 z-50">
         <NavBar />
       </div>
 
       <main className="w-full">
         {/* HERO - FULL WIDTH, NO CONTAINER*/}
 
-        <section className="pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 md:px-8 lg:px-20">
-          <SavHero height="60vh sm:65vh md:70vh lg:75vh" />
+        <section className="pt-20 lg:px-20  ">
+          <ControlHero height="75vh" />
         </section>
 
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-            <SavCards />
+          <section className="pt-0 lg:mt-20 ">
+            <ControlCards />
           </section>
 
-          <section className="py-0 sm:py-0 md:py-12 lg:py-0">
-            <SavGreenCards />
+          <section className="pt-12 md:pt-16 lg:pt-20">
+            <ControlCarousel />
           </section>
         </div>
 
