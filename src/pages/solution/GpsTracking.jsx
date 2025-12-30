@@ -27,6 +27,15 @@ import loca2 from '../../assets/loca2.png'
 import ordi1 from '../../assets/ordi1.png'
 import phonegps from '../../assets/phonegps.png'
 import Ground from '../../components/GpsTracking/Ground'
+import t9 from '../../assets/new/t9.jpg'
+import t8 from '../../assets/new/t8.jpg'
+import t7 from '../../assets/new/t7.png'
+import t6 from '../../assets/new/t6.png'
+import t5 from '../../assets/new/t5.png'
+import t4 from '../../assets/new/t4.png'
+import t3 from '../../assets/new/t3.png'
+import t1 from '../../assets/new/t1.jpg'
+
 
 const GpsTracking = () => {
   const { t } = useTranslation()
@@ -41,49 +50,49 @@ const GpsTracking = () => {
       {
         title: t('gpsT.domaines.items.videoSurveillance.title'),
         description: t('gpsT.domaines.items.videoSurveillance.description'),
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=500&fit=crop",
+        image: t9,
         imagePosition: "right"
       },
       {
         title: t('gpsT.domaines.items.objetsValeur.title'),
         description: t('gpsT.domaines.items.objetsValeur.description'),
-        image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=500&fit=crop",
+        image: t1,
         imagePosition: "left"
       },
       {
         title: t('gpsT.domaines.items.gestionFlottes.title'),
         description: t('gpsT.domaines.items.gestionFlottes.description'),
-        image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=500&fit=crop",
+        image: t8,
         imagePosition: "right"
       },
       {
         title: t('gpsT.domaines.items.antivol.title'),
         description: t('gpsT.domaines.items.antivol.description'),
-        image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=500&fit=crop",
+        image: t4,
         imagePosition: "left"
       },
       {
         title: t('gpsT.domaines.items.badge.title'),
         description: t('gpsT.domaines.items.badge.description'),
-        image: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&h=500&fit=crop",
+        image: t6,
         imagePosition: "right"
       },
       {
         title: t('gpsT.domaines.items.conduiteAssistee.title'),
         description: t('gpsT.domaines.items.conduiteAssistee.description'),
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        image: t5,
         imagePosition: "left"
       },
       {
         title: t('gpsT.domaines.items.carburant.title'),
         description: t('gpsT.domaines.items.carburant.description'),
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        image: t3,
         imagePosition: "right"
       },
       {
         title: t('gpsT.domaines.items.rapports.title'),
         description: t('gpsT.domaines.items.rapports.description'),
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        image: t7,
         imagePosition: "left"
       }
     ]

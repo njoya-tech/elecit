@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import c1 from '../../assets/c1.jpg'
 import c2 from '../../assets/c2.jpg'
 import s3 from '../../assets/s3.jpg'
+import BM3 from '../../assets/new/BM3.png'
+import an2 from '../../assets/new/an2.jpg'
+import an3 from '../../assets/new/an3.jpg'
+
 import cercle_interomp from '../../assets/cercle_interomp.svg'
 
 import { motion } from 'framer-motion'
@@ -19,8 +23,8 @@ const MY_COLORS = {
 
 // Mapping des images pour les associer aux services
 const imageMap = {
-  0: s3,
-  1: s3,
+  0: an3,
+  1: an2,
   2: s3
 };
 

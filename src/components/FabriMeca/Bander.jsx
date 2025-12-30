@@ -10,6 +10,12 @@ import { MY_COLORS } from '../../utils/colors'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import rail from '../../assets/rail.svg'
+import fab3 from '../../assets/new/fab3.png'
+import fab4 from '../../assets/new/fab4.png'
+import fab5 from '../../assets/new/fab5.png'
+import fab6 from '../../assets/new/fab6.png'
+import fab7 from '../../assets/new/fab7.png'
+
 
 // Animation flottante keyframes
 const floatingAnimation = `
@@ -39,31 +45,40 @@ const SmartBander = () => {
   const [fadeIn, setFadeIn] = useState(true)
 
   // Les images du carrousel restent fixes (non traduites)
-  const slides = [sma, st1, st2]
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setFadeIn(false)
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length)
-        setFadeIn(true)
-      }, 500)
-    }, 4000)
-
-    return () => clearInterval(timer)
-  }, [slides.length])
-
-  const changeSlide = (direction) => {
-    setFadeIn(false)
+const slides = [
+fab3,
+fab4,
+fab5,
+fab6,
+fab7
+  ]
+    
+// Dans useEffect
+useEffect(() => {
+  const timer = setInterval(() => {
+    setFadeIn(false);
     setTimeout(() => {
-      if (direction === 'next') {
-        setCurrentSlide((prev) => (prev + 1) % slides.length)
-      } else {
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-      }
-      setFadeIn(true)
-    }, 500)
-  }
+      setCurrentSlide((prev) => (prev + 1) % slides.length); // ✅
+      setFadeIn(true);
+    }, 500);
+  }, 4000);
+
+  return () => clearInterval(timer);
+}, [slides.length]); // ✅
+
+// Dans changeSlide
+const changeSlide = (direction) => {
+  setFadeIn(false);
+  setTimeout(() => {
+    if (direction === 'next') {
+      setCurrentSlide((prev) => (prev + 1) % slides.length); // ✅
+    } else {
+      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length); // ✅
+    }
+    setFadeIn(true);
+  }, 500);
+};
+    
 
   return (
     <>
@@ -154,11 +169,10 @@ const SmartBander = () => {
                         index === currentSlide && fadeIn ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
-                      <img
-                        src={slide}
-                        alt={`Interface ${index + 1}`}
-                        className="md:w-80 w-full md:h-60 h-40 object-cover"
-                      />
+                     <img
+  src={slide}
+  className="md:w-80 w-full md:h-80 h-48 object-contain" // ✅ object-contain au lieu de cover
+/>
                     </div>
                   ))}
                 </div>

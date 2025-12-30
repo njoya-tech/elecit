@@ -16,6 +16,17 @@ import PrestationsProductionPage from '../../components/FabriMeca/PrestationProd
 import photo from '../../assets/photo.jpg'
 import Bander2 from '../../components/FabriMeca/Bander2'
 import FoRound from '../../components/FabriMeca/FoRound'
+import an14 from '../../assets/new/an14.jpg'
+import fab1 from '../../assets/new/fab1.jpg'
+import fa2 from '../../assets/new/fa2.jpg'
+import fab8 from '../../assets/new/fab8.jpg'
+import fab9 from '../../assets/new/fab9.png'
+import fab10 from '../../assets/new/fab10.png'
+import fab11 from '../../assets/new/fab11.JPG'
+import fab12 from '../../assets/new/fab12.jpg'
+import fab13 from '../../assets/new/fab13.jpg'
+import fab14 from '../../assets/new/fab14.jpeg'
+import fab15 from '../../assets/new/fab15.png'
 
 const FabriMecaPage = () => {
   const { t } = useTranslation()
@@ -31,21 +42,21 @@ const FabriMecaPage = () => {
         icon: engins,
         title: t('fabriMeca.expertise.items.engins.title'),
         description: t('fabriMeca.expertise.items.engins.description'),
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=500&fit=crop",
+        image: fa2,
         imagePosition: "right"
       },
       {
         icon: machines,
         title: t('fabriMeca.expertise.items.machines.title'),
         description: t('fabriMeca.expertise.items.machines.description'),
-        image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=500&fit=crop",
+        image: fab1,
         imagePosition: "left"
       },
       {
         icon: pieces,
         title: t('fabriMeca.expertise.items.pieces.title'),
         description: t('fabriMeca.expertise.items.pieces.description'),
-        image: c2,
+        image: an14,
         imagePosition: "right"
       }
     ]
@@ -83,24 +94,40 @@ const FabriMecaPage = () => {
     items: [
       {
         title: t('fabriMeca.production.items.citernes'),
-        image: photo
-      },
-      {
-        title: t('fabriMeca.production.items.borneNumerique'),
-        image: photo
+        image: fa2
       },
       {
         title: t('fabriMeca.production.items.benne'),
-        image: photo
+        image: fab10
       },
       {
-        title: t('fabriMeca.production.items.camionFrigo'),
-        image: photo
+        title: t('fabriMeca.production.items.borneNumerique'),
+        image: fab13
+      },
+      {
+        title: t('fabriMeca.production.items.porteEngins'),
+        image: fab14
+      },
+      {
+        title: t('fabriMeca.production.items.presseBrique'),
+        image: fab11
+      },
+      {
+        title: t('fabriMeca.production.items.broyeurMarteau'),
+        image: fab12
       },
       {
         title: t('fabriMeca.production.items.structureMetallique'),
-        image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=600&fit=crop"
-      }
+        image: fab9
+      },
+      {
+        title: t('fabriMeca.production.items.camionFrigo'),
+        image: fab8
+      },
+      {
+        title: t('fabriMeca.production.items.PlateauRidelle'),
+        image: fab15
+      },
     ]
   }
 

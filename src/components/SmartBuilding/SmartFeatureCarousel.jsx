@@ -2,6 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import sm1 from '../../assets/new/sm1.jpeg'
+import sm2 from '../../assets/new/sm2.jpg'
+import sm3 from '../../assets/new/sm3.jpg'
+import sm4 from '../../assets/new/sm4.jpg'
+import sm5 from '../../assets/new/sm5.jpg'
+import sm6 from '../../assets/new/sm6.jpg'
+import sm7 from '../../assets/new/sm7.jpg'
+import sm8 from '../../assets/new/sm8.jpg'
+import sm9 from '../../assets/new/sm9.jpg'
+import sm10 from '../../assets/new/sm10.jpg'
+import sm11 from '../../assets/new/sm11.jpg'
+import sm12 from '../../assets/new/sm12.jpg'
+import sm13 from '../../assets/new/sm13.jpg'
+import sm14 from '../../assets/new/sm14.jpg'
+import sm15 from '../../assets/new/sm15.jpg'
+import sm16 from '../../assets/new/sm16.jpg'
+import sm17 from '../../assets/new/sm17.jpg'
+
+import an15 from '../../assets/new/an15.jpg'
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -19,29 +38,34 @@ const SmartFeatureCarousel = ({ activeTab = 'smartHome' }) => {
   // Images définies localement (ne changent pas avec la langue)
   const slideImages = {
     smartHome: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800'
+      sm1,
+      sm2,
+      sm3,
+      sm4
+     
     ],
     smartHotel: [
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800',
-      'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800'
+      sm6,
+      sm5,
+    an15,
+      sm7
+    
     ],
     smartOffice: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800',
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800'
+      sm8,
+      sm9,
+      sm10,
+      sm11
     ],
     smartCommercial: [
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800',
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800',
-      'https://images.unsplash.com/photo-1491336238524-c990bd671778?w=800'
+      sm12,
+      sm13,
+      sm14
     ],
     smartEvents: [
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800',
-      'https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800',
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'
+      sm15,
+      sm17,
+      sm16
     ]
   };
 

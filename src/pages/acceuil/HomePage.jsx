@@ -15,7 +15,7 @@ import slide3_home from '../../assets/slide3_home.jpg';
 import loca1 from '../../assets/loca1.png';
 import loca2 from '../../assets/loca2.png';
 import ordi1 from '../../assets/ordi1.png';
-
+import c2 from '../../assets/c2.jpg';
 import st1 from '../../assets/st1.png';
 import st2 from '../../assets/st2.png';
 // eslint-disable-next-line no-unused-vars
@@ -31,6 +31,22 @@ import TestimonialsCarousel from '../../components/HomePage/TestimonialsCarousel
 
 import SolutionsSection from '../../components/HomePage/SolutionsSection'
 import { useTranslation } from 'react-i18next';
+import an9 from '../../assets/new/an9.jpg'
+import an5 from '../../assets/new/an5.png'
+import BM3 from '../../assets/new/BM3.PNG'
+import an10 from '../../assets/new/an10.jpg'
+import an7 from '../../assets/new/an7.jpg'
+import an8 from '../../assets/new/an8.jpg'
+import an11 from '../../assets/new/an11.jpg'
+import an12 from '../../assets/new/an12.jpeg'
+import an13 from '../../assets/new/an13.JPG'
+import an14 from '../../assets/new/an14.jpg'
+import an15 from '../../assets/new/an15.jpg'
+import an16 from '../../assets/new/an16.jpg'
+import an17 from '../../assets/new/an17.jpg'
+import an18 from '../../assets/new/an18.jpg'
+import an19 from '../../assets/new/an19.jpg'
+import an20 from '../../assets/new/an20.jpg'
 
 
 
@@ -43,12 +59,15 @@ const HomePage = () => {
    // Récupération des traductions
   const servicesData = t('servicesCarousel.services', { returnObjects: true });
    const serviceImages = [
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop'
+   BM3,
+   an5,
+   an8,
+   c2,
+   an10,
+   an9,
+   an7,
+   an12,
+   an11
   ];
 
 
@@ -59,7 +78,24 @@ const HomePage = () => {
   }));  
 
 
-const blog = t('blog.articles', { returnObjects: true });
+const blogData = t('blog.articles', { returnObjects: true });
+
+const blogImages = [
+  c2,
+   an15,
+   an17,
+   an18,
+   an14,
+   an19,
+   an16,
+   an20,
+   an13
+]
+
+const blog = blogData.map((blog, index) => ({
+  ...blog,
+  image: blogImages[index]
+}))
 
 
   const heroSlides = [
@@ -88,7 +124,6 @@ const blog = t('blog.articles', { returnObjects: true });
       highlighted: 'hero.slide3.highlighted',
       title2: 'hero.slide3.title2',
       highlighted2: 'hero.slide3.highlighted2',
-     
       title4: 'hero.slide3.title4'
     }
   ];

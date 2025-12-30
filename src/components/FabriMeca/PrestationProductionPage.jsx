@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MY_COLORS = {
@@ -130,20 +130,51 @@ const ProductionCard = ({ image, title }) => {
   );
 };
 
-// Composant Carrousel de Production
 const ProductionCarousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % items.length);
-  };
+const nextSlide = () => {
+  setDirection(1);
+  setCurrentIndex((prev) => (prev + 3) % items.length);
+};
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
-  };
+const prevSlide = () => {
+  setDirection(-1);
+  setCurrentIndex((prev) => (prev - 3 + items.length) % items.length);
+};
 
   const goToSlide = (index) => {
+    setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
+  };
+
+  // Calculer les 3 cartes visibles
+  const getVisibleCards = () => {
+    const cards = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentIndex + i) % items.length;
+      cards.push({ ...items[index], originalIndex: index });
+    }
+    return cards;
+  };
+
+  const visibleCards = getVisibleCards();
+
+  // Variants pour l'animation
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? -300 : 300,
+      opacity: 0
+    })
   };
 
   return (
@@ -159,19 +190,26 @@ const ProductionCarousel = ({ items }) => {
 
       {/* Carrousel */}
       <div className="overflow-hidden px-12">
-        <motion.div
-          className="flex gap-6"
-          animate={{ x: `-${currentIndex * (320 + 24)}px` }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {items.map((item, index) => (
-            <ProductionCard
-              key={index}
-              image={item.image}
-              title={item.title}
-            />
-          ))}
-        </motion.div>
+        <div className="flex gap-6 justify-center">
+          <AnimatePresence initial={false} custom={direction}>
+            {visibleCards.map((item, idx) => (
+              <motion.div
+                key={`${currentIndex}-${idx}`}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <ProductionCard
+                  image={item.image}
+                  title={item.title}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Bouton suivant */}
@@ -183,25 +221,29 @@ const ProductionCarousel = ({ items }) => {
         <ChevronRight size={24} />
       </button>
 
-      {/* Indicateurs */}
-      <div className="flex justify-center gap-2 mt-8">
-        {items.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'w-8' : ''
-            }`}
-            style={{
-              backgroundColor: index === currentIndex ? MY_COLORS.secondaryGreen : '#D1D5DB'
-            }}
-          />
-        ))}
-      </div>
+      
+{/* Indicateurs */}
+<div className="flex justify-center gap-2 mt-8">
+  {Array.from({ length: Math.ceil(items.length / 3) }).map((_, index) => {
+    const slideIndex = index * 3;
+    const isActive = Math.floor(currentIndex / 3) === index;
+    return (
+      <button
+        key={index}
+        onClick={() => goToSlide(slideIndex)}
+        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+          isActive ? 'w-8' : ''
+        }`}
+        style={{
+          backgroundColor: isActive ? MY_COLORS.secondaryGreen : '#D1D5DB'
+        }}
+      />
+    );
+  })}
+</div>
     </div>
   );
 };
-
 // Composant Section Production
 const ProductionSection = ({ data }) => {
   return (

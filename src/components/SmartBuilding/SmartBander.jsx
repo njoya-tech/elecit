@@ -11,7 +11,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion'
 import rail from '../../assets/rail.svg'
 import { useTranslation } from 'react-i18next'
-
+import sm18 from '../../assets/new/sm18.png'
+import sm19 from '../../assets/new/sm19.png'
+import sm20 from '../../assets/new/sm20.png'
+import sm21 from '../../assets/new/sm21.png'
+import sm22 from '../../assets/new/sm22.png'
 
 
 
@@ -45,7 +49,12 @@ const SmartBander = () => {
 const slideImages = [
     st1,
     st2,
-    sma
+    sma,
+    sm18,
+    sm20,
+    sm21,
+    sm19,
+    sm22
   ]
 
   
@@ -53,29 +62,31 @@ const slideImages = [
 const slides = t('interfaceCommande.slides', { returnObjects: true }) || [];
 
     
-      useEffect(() => {
-        const timer = setInterval(() => {
-          setFadeIn(false);
-          setTimeout(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-            setFadeIn(true);
-          }, 500);
-        }, 4000);
-    
-        return () => clearInterval(timer);
-      }, [slides.length]);
-    
-      const changeSlide = (direction) => {
-        setFadeIn(false);
-        setTimeout(() => {
-          if (direction === 'next') {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-          } else {
-            setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-          }
-          setFadeIn(true);
-        }, 500);
-      };
+// Dans useEffect
+useEffect(() => {
+  const timer = setInterval(() => {
+    setFadeIn(false);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideImages.length); // ✅
+      setFadeIn(true);
+    }, 500);
+  }, 4000);
+
+  return () => clearInterval(timer);
+}, [slideImages.length]); // ✅
+
+// Dans changeSlide
+const changeSlide = (direction) => {
+  setFadeIn(false);
+  setTimeout(() => {
+    if (direction === 'next') {
+      setCurrentSlide((prev) => (prev + 1) % slideImages.length); // ✅
+    } else {
+      setCurrentSlide((prev) => (prev - 1 + slideImages.length) % slideImages.length); // ✅
+    }
+    setFadeIn(true);
+  }, 500);
+};
     
   return (
     <>
@@ -167,10 +178,9 @@ const slides = t('interfaceCommande.slides', { returnObjects: true }) || [];
                           }`}
                         >
                           <img
-                            src={slide}
-                            alt={`Interface ${index + 1}`}
-                            className="md:w-80 w-full md:h-60 h-40 object-cover"
-                          />
+  src={slide}
+  className="md:w-80 w-full md:h-80 h-48 object-contain" // ✅ object-contain au lieu de cover
+/>
                         </div>
                       ))}
                     </div>
