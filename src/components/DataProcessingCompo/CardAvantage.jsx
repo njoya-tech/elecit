@@ -8,14 +8,14 @@ const CardAvantage = () => {
       {/* CONTAINER 1: HEADER */}
       <header className="w-full bg-slate-900">
         <div
-          className="relative w-full mb-8 overflow-hidden"
+          className="relative w-full mb-4 sm:mb-6 md:mb-8 overflow-hidden"
           style={{ backgroundColor: MY_COLORS.black }}
         >
-          <div className="absolute -top-10 right-0 w-1/3 h-full opacity-100 scale-125">
+          <div className="absolute -top-10 right-0 w-1/3 h-full opacity-100 scale-125 hidden sm:block">
             <img src={ICONS.formTech} alt="" />
           </div>
           <h2
-            className="relative text-3xl md:text-4xl lg:text-5xl font-bold px-8 py-6 md:py-8"
+            className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 lg:py-8"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
             Les avantages clés{" "}
@@ -24,64 +24,46 @@ const CardAvantage = () => {
       </header>
 
       {/* CONTAINER 2: TOP SECTION - Text, Button, and Fiabilité Card */}
-      <section className="w-full py-12 px-6 md:px-12">
+      <section className="w-full py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-12">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
             {/* Left: Description Text */}
             <div className="w-full md:w-1/2">
-              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
                 Grâce à notre expertise, nous vous accompagnons dans la
                 transformation numérique de votre entreprise et vous aidons à
                 prendre de meilleures décisions grâce à vos données.
               </p>
 
               {/* Documentation Button with curved arrow */}
-              <div className="mt-6 flex items-center gap-4">
-                <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition">
+              <div className="mt-4 sm:mt-6 flex items-center gap-4">
+                <button className="bg-black text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-gray-800 transition">
                   Documentation
                 </button>
-                {/* Curved Arrow */}
-                {/* <svg
-                  width="60"
-                  height="40"
-                  viewBox="0 0 60 40"
-                  fill="none"
-                  className="hidden md:block"
-                >
-                  <path
-                    d="M5 5 Q30 -5, 50 15 L45 20 M50 15 L55 10"
-                    stroke="#7FA946"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </svg> */}
               </div>
             </div>
 
             {/* Right: Fiabilité Card */}
-            <div className="w-full md:w-1/2 flex justify-end">
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
               <div
-                style={{
-                  left: "27px",
-                }}
-                className="bg-white border border-gray-200 rounded-2xl 
-              shadow-lg p-6 pt-16 w-full md:w-80 relative"
+                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
+              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 w-full max-w-sm md:max-w-none md:w-80 relative"
               >
                 {/* Icon half in/out - no circle, just icon */}
                 <div
-                  className="absolute -top-8 left-1/2 
+                  className="absolute -top-7 sm:-top-8 left-1/2 
                 transform -translate-x-1/2"
                 >
                   <img
                     src={ICONS.faibilite_icon}
                     alt="Fiabilité"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3">
                   Fiabilité des systèmes
                 </h3>
-                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
                   Des infrastructures informatiques stables, performantes et
                   toujours opérationnelles
                 </p>
@@ -92,7 +74,7 @@ const CardAvantage = () => {
       </section>
 
       {/* CONTAINER 3: GRID SECTION with Cards and Decorative Gears */}
-      <section className="w-full py-12 px-6 md:px-12 relative">
+      <section className="w-full py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-12 relative">
         <div className="mx-auto max-w-7xl relative lg:mt-10">
           {/* Left Decorative Gear */}
           <div className="absolute -left-15 top-1/4 -translate-x-1/2 hidden lg:block">
@@ -123,7 +105,7 @@ const CardAvantage = () => {
             {/* Horizontal dotted divider line (between rows) - goes up to cards */}
             <div
               className="absolute left-0 right-0 border-t-2 
-              border-dashed hidden md:block"
+              border-dashed hidden lg:block"
               style={{
                 top: "calc(50% - 3rem)",
                 color: MY_COLORS.secondaryGreen,
@@ -133,7 +115,7 @@ const CardAvantage = () => {
 
             <div
               className="absolute left-0 right-0 border-t-2 
-              border-dashed hidden md:block"
+              border-dashed hidden lg:block"
               style={{
                 top: "calc(10% - 9rem)",
                 color: MY_COLORS.secondaryGreen,
@@ -143,7 +125,7 @@ const CardAvantage = () => {
             {/* Vertical dotted divider lines (between columns) - goes up to cards */}
             <div
               className="absolute -top-25 bottom-0 border-l-2
-               border-dashed hidden md:block"
+               border-dashed hidden lg:block"
               style={{
                 left: "calc(33.333% + 0.05rem)",
                 color: MY_COLORS.secondaryGreen,
@@ -151,40 +133,36 @@ const CardAvantage = () => {
             ></div>
             <div
               className="absolute -top-80 bottom-0 border-l-2 
-              border-dashed  hidden md:block"
+              border-dashed  hidden lg:block"
               style={{
                 left: "calc(66.666% + 0.95rem)",
                 color: MY_COLORS.secondaryGreen,
               }}
             ></div>
 
-            <div
-              style={{ top: "-20px" }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 relative"
-            >
-              {/* ROW 1 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 
+             md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-6 lg:-top-9 relative">
               {/* Card 1: Sécurité renforcée - GREEN */}
               <div
-                className="rounded-2xl shadow-lg p-6 pt-16 relative"
+                className="rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5"
                 style={{
                   backgroundColor: "#7FA946",
-                  top: "-20px",
                   boxShadow: "0,4px,10px  rgba (0,0,0,0.15)",
                 }}
               >
                 {/* Icon half in/out - black for green cards */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.securite_icon}
                     alt="Sécurité"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                     style={{ filter: "brightness(0)" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3 text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
                   Sécurité renforcée
                 </h3>
-                <p className="text-gray-800 text-center text-sm leading-relaxed">
+                <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
                   Protection complète des données et des systèmes contre les
                   cybermenaces.
                 </p>
@@ -192,25 +170,21 @@ const CardAvantage = () => {
 
               {/* Card 2: Gain de temps - WHITE */}
               <div
-                style={{
-                  top: "-20px",
-                  left: "10px",
-                }}
-                className="bg-white border border-gray-200 rounded-2xl 
-              shadow-lg p-6 pt-16 w-full md:w-80 relative"
+                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
+              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5 lg:left-2.5"
               >
                 {/* Icon half in/out - normal for white cards */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.gain_temps_icon}
                     alt="Gain de temps"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3 text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
                   Gain de temps
                 </h3>
-                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
                   Automatisation des tâches et support technique réactif pour
                   vous concentrer sur l'essentiel.
                 </p>
@@ -218,52 +192,46 @@ const CardAvantage = () => {
 
               {/* Card 3: Optimisation des coûts - GREEN */}
               <div
-                className="rounded-2xl shadow-md p-6 pt-16 relative"
+                className="rounded-xl sm:rounded-2xl shadow-md p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5 lg:left-2.5"
                 style={{
                   backgroundColor: "#7FA946",
-                  top: "-20px",
-                  left: "10px",
                 }}
               >
                 {/* Icon half in/out - black for green cards */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.optimisation_icon}
                     alt="Optimisation"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                     style={{ filter: "brightness(0)" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3 text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
                   Optimisation des coûts
                 </h3>
-                <p className="text-gray-800 text-center text-sm leading-relaxed">
+                <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
                   Réduction des dépenses liées à la maintenance, à
                   l'infrastructure et à la gestion des données.
                 </p>
               </div>
 
-              {/* ROW 2 */}
               {/* Card 4: Décisions plus intelligentes - WHITE */}
               <div
-                style={{
-                  top: "20px",
-                }}
-                className="bg-white border border-gray-200 rounded-2xl 
-              shadow-lg p-6 pt-16 w-full md:w-80 relative"
+                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
+              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-5"
               >
                 {/* Icon half in/out - normal for white cards */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.decision_icon}
                     alt="Décisions"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3 text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
                   Décisions plus intelligentes
                 </h3>
-                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
                   Accès à des données claires et structurées pour guider vos
                   choix stratégiques.
                 </p>
@@ -271,26 +239,24 @@ const CardAvantage = () => {
 
               {/* Card 5: Flexibilité et évolutivité - GREEN */}
               <div
-                className="rounded-2xl shadow-md p-6 pt-16 relative"
+                className="rounded-xl sm:rounded-2xl shadow-md p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-3.5 lg:left-3.5"
                 style={{
                   backgroundColor: "#7FA946",
-                  left: "15px",
-                  top: "15px",
                 }}
               >
                 {/* Icon half in/out - black for green cards */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.flexibilite_icon}
                     alt="Flexibilité"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                     style={{ filter: "brightness(0)" }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-center mb-3 text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
                   Flexibilité et évolutivité
                 </h3>
-                <p className="text-gray-800 text-center text-sm leading-relaxed">
+                <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
                   Des solutions adaptées à votre croissance et à l'évolution de
                   vos besoins.
                 </p>
@@ -298,26 +264,22 @@ const CardAvantage = () => {
 
               {/* Card 6: Conformité réglementaire - WHITE */}
               <div
-                style={{
-                  top: "15px",
-                  left: "15px",
-                }}
-                className="bg-white border border-gray-200 rounded-2xl 
-              shadow-lg p-6 pt-16 w-full md:w-80 relative"
+                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
+              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-3.5 lg:left-3.5"
               >
                 {/* Icon half in/out - normal for white cards */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.conformite_icon}
                     alt="Conformité"
-                    className="w-16 h-16"
+                    className="w-14 h-14 sm:w-16 sm:h-16"
                   />
                 </div>
 
-                <h3 className="text-xl font-bold text-center mb-3 text-black">
+                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
                   Conformité réglementaire
                 </h3>
-                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
                   Respect des normes (comme le RGPD) pour une gestion des
                   données en toute légalité.
                 </p>
@@ -325,6 +287,14 @@ const CardAvantage = () => {
             </div>
           </div>
         </div>
+
+        {/* Rotation Animation */}
+        <style>{`
+          @keyframes rotateClockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </section>
     </>
   );

@@ -26,18 +26,7 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
-    "contact": {
-      "floatingButton": "Contactez-nous",
-      "popup": {
-        "title": "Contactez-nous",
-        "subtitle": "Nous vous répondrons dès que possible",
-        "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
-        "openWhatsApp": "Ouvrir WhatsApp",
-        "messagePlaceholder": "Rédigez votre message...",
-        "leftButton":"Retour",
-        "rightButton":"Envoyer"
-      }
-    },
+    
 
   "contact": {
     "floatingButton": "Contactez-nous",
@@ -485,7 +474,7 @@
   ]
 },
 
- "prestations": {
+ "prestations":  {
       "title": "Prestations associées",
     "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
     "prestations": [

@@ -123,12 +123,15 @@ const SavCards = () => {
         {cards.map((card, index) => (
           <div key={index} className="relative flex justify-center">
             {/* Icon Badge */}
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-20">
+            <div className="absolute -top-2 md:-top-10 left-1/2 -translate-x-1/2 z-20">
               <div
-                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 duration-300"
+                className="w-12 h-12 sm:w-14 sm:h-14 
+                md:w-16 md:h-16 rounded-full flex items-center 
+                justify-center shadow-lg transition-transform 
+                hover:scale-110 duration-300 "
                 style={{ backgroundColor: MY_COLORS.secondaryGreen }}
                 aria-hidden="true"
-              >
+               >
                 <img
                   src={card.icon}
                   alt=""

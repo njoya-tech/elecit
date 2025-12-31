@@ -53,7 +53,9 @@ const animationStyles = `
   }
 
   .animate-slide-out-left {
-    animation: slideOutLeft ${ANIMATION_CONFIG.exitDuration}ms ease-in-out forwards;
+    animation: slideOutLeft ${
+      ANIMATION_CONFIG.exitDuration
+    }ms ease-in-out forwards;
   }
 
   .animate-slide-up-reveal {
@@ -79,7 +81,11 @@ const ArrowButton = ({ direction, onClick, disabled }) => {
       disabled={disabled}
       aria-label={`${isLeft ? "Previous" : "Next"} slide`}
       className={`
-        absolute ${isLeft ? "left-0 sm:left-2 md:left-4 lg:left-8" : "right-0 sm:right-2 md:right-4 lg:right-8"} 
+        absolute ${
+          isLeft
+            ? "left-0 sm:left-2 md:left-4 lg:left-8"
+            : "right-0 sm:right-2 md:right-4 lg:right-8"
+        } 
         z-10 p-1.5 sm:p-2 rounded-full 
         hover:bg-gray-200 active:bg-gray-300
         transition-all text-black 
@@ -274,7 +280,9 @@ const EnterprisePartners = () => {
                       className="flex-1 flex items-center justify-center"
                       style={{
                         animation: `slideUpReveal 0.6s ease-out forwards`,
-                        animationDelay: `${idx * ANIMATION_CONFIG.staggerDelay}ms`,
+                        animationDelay: `${
+                          idx * ANIMATION_CONFIG.staggerDelay
+                        }ms`,
                         opacity: 0,
                       }}
                     >
@@ -306,85 +314,94 @@ const EnterprisePartners = () => {
             disabled={isExiting}
           />
 
-          {/* CTA SECTION */}
-          <div className="relative mx-auto w-[95%] sm:w-[90%] lg:w-full max-w-6xl m-0 p-0 mt-8 sm:mt-12 md:mt-16">
-            {/* BLACK BLOCK PNG */}
-            <div className="w-full overflow-hidden h-[300px] sm:h-[350px] md:h-[400px] lg:h-[440px]">
-              <img
-                src={ICONS.formePlan}
-                className="w-full h-full object-cover block"
-                alt=""
-              />
-            </div>
+          {/* ============================================ */}
+          {/* CTA SECTION WITH BACKGROUND                 */}
+          {/* ============================================ */}
+          <section className="hidden lg:block">
+            <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0 top-20">
+              <div
+                className="w-full overflow-hidden"
+                style={{ height: "440px" }}
+              >
+                <img
+                  src={ICONS.formePlan}
+                  className="w-full object-cover block"
+                  alt=""
+                />
+              </div>
 
-            {/* CONTENT OVERLAY */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-16">
-              {/* TECH PATTERN */}
-              <img
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16">
+                <img
+                  style={{
+                    top: "12em",
+                    width: "85%",
+                  }}
+                  src={ICONS.formTech}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute z-0 pointer-events-none opacity-30
+                   top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] 
+                   w-[150%] md:w-full lg:w-[180%] h-auto"
+                />
+
+                <h3
+                  className="relative z-20 text-center text-2xl
+                   md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
+                  style={{ color: MY_COLORS.white, top: "24%" }}
+                >
+                  Vous avez un Bession ? <br /> Nous avons les{" "}
+                  <span style={{ color: MY_COLORS.secondaryGreen }}>
+                    solutions
+                  </span>
+                  .
+                </h3>
+
+                {/* <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
+                  " Contactez notre service après-vente dès maintenant pour
+                  garantir la continuité et l’efficacité de vos installations!"
+                </p> */}
+
+                <CTAButton
+                  className="absolute top-10 md:top-15 md:w-60"
+                  onClick={() => alert("Video clicked!")}
+                >
+                  Contactez Nous
+                </CTAButton>
+              </div>
+
+              <div
+                className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
                 style={{
-                  top: "8em",
-                  width: "85%",
+                  animationDuration: "4s",
+                  top: "65%",
+                  right: "1%",
                 }}
-                src={ICONS.formTech}
-                alt=""
                 aria-hidden="true"
-                className="absolute z-0 pointer-events-none opacity-20 sm:opacity-25 md:opacity-30 
-                top-1/2 left-1/2 -translate-x-1/2 -translate-y-[8em] sm:-translate-y-[10em] md:-translate-y-[12em]
-                w-[180%] sm:w-[150%] md:w-[120%] lg:w-full xl:w-[180%] h-auto"
-              />
-
-              {/* TEXT */}
-              <h3
-                className="relative z-20 text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 sm:mb-8 md:mb-10 lg:mb-12"
-                style={{ color: MY_COLORS.white, top: "10%" }}
               >
-                Vous avez une idée ?<br />
-                Nous avons les{" "}
-                <span style={{ color: MY_COLORS.green }}>solutions</span>.
-              </h3>
+                <img
+                  src={ICONS.Engrenage_plan}
+                  alt=""
+                  className="w-full h-full object-contain"
+                />
+              </div>
 
-              {/* BUTTON */}
-              <CTAButton
-                className="absolute top-8 sm:top-10"
-                onClick={() => alert("Video clicked!")}
+              <div
+                className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-16 lg:h-16 z-40"
+                style={{
+                  animation: "rotateClockwise 20s linear infinite",
+                  top: "23%",
+                  left: "10%",
+                }}
+                aria-hidden="true"
               >
-                Contactez Nous
-              </CTAButton>
+                <img
+                  src={ICONS.Engrenage_plan}
+                  alt=""
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
-
-            {/* ROTATING GEARS */}
-            <div
-              className="absolute w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-40 xl:h-40 z-40"
-              style={{
-                animation: "rotateClockwise 8s linear infinite",
-                top: "65%",
-                right: "1%",
-              }}
-              aria-hidden="true"
-            >
-              <img
-                src={ICONS.Engrenage_plan}
-                alt=""
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            <div
-              className="absolute w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 z-40"
-              style={{
-                animation: "rotateClockwise 20s linear infinite",
-                top: "20%",
-                left: "10%",
-              }}
-              aria-hidden="true"
-            >
-              <img
-                src={ICONS.Engrenage_plan}
-                alt=""
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
+          </section>
         </div>
       </section>
     </>
