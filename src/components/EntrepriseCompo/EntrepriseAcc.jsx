@@ -3,34 +3,13 @@ import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { Plus, Minus } from "lucide-react";
 import CTAButton from "../CTA/CTAButton.jsx";
+import { useTranslation } from "react-i18next";
 
 const EntrepriseAcc = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqData = [
-    {
-      question:
-        "Où êtes-vous implantés et dans quelles régions intervenez-vous ?",
-      answer:
-        "Notre siège est basé à Douala et à Yaoundé; mais nous intervenons sur l'ensemble du territoire national et dans certaines zones d'Afrique de l'Ouest. Pour des projets spécifiques, nous étudions aussi les interventions à l'international.",
-    },
-    {
-      question: "Quels sont vos délais moyens pour un projet ?",
-      answer:
-        "Les délais varient selon la complexité du projet. En général, nous livrons les projets standards en 2-4 semaines.",
-    },
-    {
-      question: "Comment obtenir un devis personnalisé ?",
-      answer:
-        "Vous pouvez nous contacter via le formulaire en ligne ou par téléphone. Nous vous envoyons un devis sous 48h.",
-    },
-    {
-      question:
-        "Est-ce que vous proposez un accompagnement après la livraison ?",
-      answer:
-        "Oui, nous offrons un service après-vente complet incluant maintenance et support technique 24/7.",
-    },
-  ];
+  const faqData = t("entreprise.entrepriseAcc.items", { returnObjects: true });
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -61,8 +40,7 @@ const EntrepriseAcc = () => {
               className="text-2xl md:text-4xl font-bold mt-4 md:mt-6 lg:mt-10"
               style={{ color: MY_COLORS.black }}
             >
-              Questions fréquemment <br />
-              posées
+              {t("entreprise.entrepriseAcc.title")}
             </h2>
 
             {/* FAQ Accordion */}
@@ -127,7 +105,8 @@ const EntrepriseAcc = () => {
           <div className="relative mt-8 lg:mt-0">
             {/* Border Container - BACK LAYER (z-10) */}
             <div
-              className="absolute top-30 md:top-35 lg:top-38 left-0 right-0 z-10"
+              className="absolute top-30 md:top-35 
+              lg:top-25 left-0 right-0 z-10"
             >
               <div className="px-2 md:px-4">
                 <div
@@ -160,9 +139,7 @@ const EntrepriseAcc = () => {
                   className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4"
                   style={{ color: MY_COLORS.black }}
                 >
-                  Obtenez d'autres
-                  <br />
-                  informations
+                  {t("entreprise.entrepriseAcc.contactTitle")}
                 </h3>
                 <p
                   className="text-sm md:text-base text-slate-900"
@@ -172,9 +149,7 @@ const EntrepriseAcc = () => {
                     marginBottom: "24px",
                   }}
                 >
-                  Nous serons heureux d'apporter des
-                  <br />
-                  réponses à vos questions.
+                  {t("entreprise.entrepriseAcc.contactSubtitle")}
                 </p>
               </div>
             </div>
@@ -182,8 +157,8 @@ const EntrepriseAcc = () => {
             {/* Image - FRONT LAYER (z-30) */}
             <div
               className="px-2 md:px-4 -mt-10 md:-mt-14 
-              lg:-mt-16 relative z-30 md:left-2 md:-top-2"
-             >
+              lg:-mt-12 relative z-30 md:left-2 md:-top-2"
+            >
               <img
                 src={IMAGES.IMG4}
                 alt="Technicien électrique"
@@ -200,9 +175,12 @@ const EntrepriseAcc = () => {
             {/* CTA Section: Button + Gears */}
             <div className="px-2 md:px-4 mt-6 md:mt-8 flex items-center justify-between ml-0 lg:ml-40">
               {/* Left Side: Button */}
-              <div style={{}} className="flex items-center gap-3 md:gap-4">
-                <CTAButton onClick={() => alert("Video clicked!")}>
-                  Nous joindre
+              <div className="flex items-center gap-3 md:gap-4  shrink-0">
+                <CTAButton
+                  onClick={() => alert("Video clicked!")}
+                  className="whitespace-nowrap min-w-fit"
+                >
+                  {t("entreprise.entrepriseAcc.contactButton")}
                 </CTAButton>
               </div>
 

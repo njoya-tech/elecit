@@ -2,8 +2,11 @@ import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
@@ -35,24 +38,25 @@ const Hero = () => {
            xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
           style={{ color: MY_COLORS.white }}
         >
-          Que faut-il savoir sur <br className="hidden md:block" />
-          <span style={{ color: MY_COLORS.secondaryGreen }}>ELECIT?</span>
+          {t('entreprise.hero.title')} <br className="hidden md:block" />
+          <span style={{ color: MY_COLORS.secondaryGreen }}>
+            {t('entreprise.hero.titleHighlight')}
+          </span>
         </h1>
 
         <h3
           style={{ color: MY_COLORS.secondaryGreen }}
           className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
-          AFRICA 1ST HIGH TECH COMPANY
+          {t('entreprise.hero.subtitle')}
         </h3>
 
         <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl">
-          Parce qu'au-delà du marché camerounais, nous souhaitons <br className="hidden md:block" />
-          développer toute l'Afrique à travers nos services.
+          {t('entreprise.hero.description')}
         </p>
 
         <CTAButton onClick={() => alert("Video clicked!")}>
-          Publireportage
+          {t('entreprise.hero.button')}
         </CTAButton>
       </div>
     </section>

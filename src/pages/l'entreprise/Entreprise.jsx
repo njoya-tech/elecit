@@ -8,6 +8,8 @@ import EntrepriseAcc from "../../components/EntrepriseCompo/EntrepriseAcc.jsx";
 import EntreprisePartner from "../../components/EntrepriseCompo/EntreprisePartner.jsx";
 import Footer from "../../components/features/Footer.jsx";
 
+ 
+
 const Entreprise = () => {
   return (
     <div className="relative w-full min-h-screen">

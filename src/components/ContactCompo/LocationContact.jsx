@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 const LocationContact = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="mb-8 sm:mb-10 md:mb-12 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug sm:leading-normal px-2">
-            Nos services sont accessibles dans tout{" "}
-            <span className="text-[#00729B]">le territoire camerounais</span>,
-            mais également dans toute{" "}
-            <span className="text-[#00729B]">l'Afrique centrale.</span>
+            {t('contact.location.title')}{" "}
+            <span className="text-[#00729B]">{t('contact.location.highlight1')}</span>
+            {t('contact.location.title2')}{" "}
+            <span className="text-[#00729B]">{t('contact.location.highlight2')}</span>
           </h2>
         </div>
 

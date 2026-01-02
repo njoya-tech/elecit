@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { MY_COLORS } from "../../constants/colors";
 import { PARTNERS, ICONS } from "../../asset/assets.js";
 import CTAButton from "../CTA/CTAButton.jsx";
+import { useTranslation } from 'react-i18next';
 
 // ============================================================================
 // CONSTANTS
@@ -141,6 +142,7 @@ const DotIndicator = ({ total, current, onSelect, disabled }) => (
 // MAIN COMPONENT
 // ============================================================================
 const EnterprisePartners = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
@@ -230,7 +232,7 @@ const EnterprisePartners = () => {
             }}
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12 md:mb-16"
           >
-            Nos partenaires
+            {t('entreprise.entreprisePartner.title')}
           </h2>
 
           {/* CAROUSEL */}
@@ -349,23 +351,19 @@ const EnterprisePartners = () => {
                    md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
                   style={{ color: MY_COLORS.white, top: "24%" }}
                 >
-                  Vous avez un Bession ? <br /> Nous avons les{" "}
+                  {t('entreprise.entreprisePartner.ctaTitle')} <br /> 
+                  {t('entreprise.entreprisePartner.ctaTitle2')}{" "}
                   <span style={{ color: MY_COLORS.secondaryGreen }}>
-                    solutions
+                    {t('entreprise.entreprisePartner.ctaHighlight')}
                   </span>
                   .
                 </h3>
-
-                {/* <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-                  " Contactez notre service après-vente dès maintenant pour
-                  garantir la continuité et l’efficacité de vos installations!"
-                </p> */}
 
                 <CTAButton
                   className="absolute top-10 md:top-15 md:w-60"
                   onClick={() => alert("Video clicked!")}
                 >
-                  Contactez Nous
+                  {t('entreprise.entreprisePartner.ctaButton')}
                 </CTAButton>
               </div>
 

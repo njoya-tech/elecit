@@ -1,10 +1,12 @@
 import React from "react";
 import { HERO } from "../../asset/assets";
 import { ICONS } from "../../asset/assets";
-import CTAButton from "../CTA/CTAButton";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from 'react-i18next';
 
 const HeroContact = ({height = "75vh"}) => {
+  const { t } = useTranslation();
+
   return (
     <section 
       className="relative w-full overflow-hidden min-h-[500px]" 
@@ -39,7 +41,7 @@ const HeroContact = ({height = "75vh"}) => {
             color: MY_COLORS.primaryBlue,
           }}
         >
-          Contactez-Nous.
+          {t('contact.hero.title')}
         </h1>
 
         <h2
@@ -48,7 +50,7 @@ const HeroContact = ({height = "75vh"}) => {
           uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs
            sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
-          Notre équipe d'experts vous apporte une solution !
+          {t('contact.hero.subtitle')}
         </h2>
 
         <button
@@ -57,7 +59,7 @@ const HeroContact = ({height = "75vh"}) => {
            md:py-3.5 rounded-full border-2 transition-all duration-300 
            font-semibold text-sm sm:text-base 
            md:text-lg hover:scale-105 active:scale-95 mt-6 
-           sm:mt-8 md:mt-10 lg:mt-12"
+           sm:mt-8 md:mt-10 lg:mt-12 whitespace-nowrap"
           style={{
             borderColor: MY_COLORS.primaryBlue,
             color: MY_COLORS.primaryBlue,
@@ -72,7 +74,7 @@ const HeroContact = ({height = "75vh"}) => {
             e.currentTarget.style.color = MY_COLORS.primaryBlue;
           }}
         >
-          Plus de Contenus
+          {t('contact.hero.button')}
         </button>
       </div>
     </section>

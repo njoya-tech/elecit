@@ -1,26 +1,56 @@
-import React, { useState, useRef, useEffect, useEffectEvent } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, useRef, useEffect, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { MY_COLORS } from "../../constants/colors";
 
-const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+const BlogCards = ({ onPostClick, initialCategory }) => {
+  const { t } = useTranslation();
 
-  // Main categories visible in navigation
-  const mainCategories = [
+  // Category key mapping (internal logic stays in French keys)
+  const categoryKeys = {
+    "Tous les postes": "all",
+    "Smart spaces": "smartSpaces",
+    "Atelier d'Ingéniosité": "workshop",
+    "More Than Track": "moreThanTrack",
+    "Sécurité avancée": "advancedSecurity",
+    "Tool box meeting": "toolBoxMeeting",
+    "Vie d'entreprise": "companyLife",
+  };
+
+  // Get translated category labels
+  const categoryLabels = useMemo(
+    () => ({
+      "Tous les postes": t("blogPage.categories.all"),
+      "Smart spaces": t("blogPage.categories.smartSpaces"),
+      "Atelier d'Ingéniosité": t("blogPage.categories.workshop"),
+      "More Than Track": t("blogPage.categories.moreThanTrack"),
+      "Sécurité avancée": t("blogPage.categories.advancedSecurity"),
+      "Tool box meeting": t("blogPage.categories.toolBoxMeeting"),
+      "Vie d'entreprise": t("blogPage.categories.companyLife"),
+    }),
+    [t]
+  );
+
+  // Internal categories (stay the same for logic)
+  const mainCategoriesKeys = [
     "Tous les postes",
     "Smart spaces",
     "Atelier d'Ingéniosité",
     "More Than Track",
   ];
 
-  // Additional categories in dropdown
-  const dropdownCategories = [
+  const dropdownCategoriesKeys = [
     "Sécurité avancée",
     "Tool box meeting",
     "Vie d'entreprise",
   ];
+
+  const [activeCategory, setActiveCategory] = useState(
+    initialCategory || "Tous les postes"
+  );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -34,92 +64,75 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleCategoryChange = useEffectEvent((category) => {
-    setActiveCategory(category);
-    setCurrentPage(1);
-  });
+  // Get translated posts
+  const translatedPosts = t("blogPage.posts", { returnObjects: true });
 
-  useEffect(() => {
-    handleCategoryChange(initialCategory);
-  }, [initialCategory]);
-
-  // Sample blog posts data (will come from Directus later)
-  const [post] = useState([
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500",
+  // Sample blog posts data with translations merged
+  const [posts] = useState(
+    translatedPosts.map((post, index) => ({
+      ...post,
+      image:
+        index === 0
+          ? "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500"
+          : index === 1
+          ? "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500"
+          : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500",
       author: {
-        name: "Therese Egoutou",
+        ...post.author,
         avatar: "https://i.pravatar.cc/150?img=1",
-        date: "19 nov.",
       },
-      category: "Tool box meeting",
-      title: "Le bâtiment qui s'adapte à vous",
-      excerpt: "Tout projet commence par une idée, mais c'est la conception qui transforme cett...",
-      views: 2,
+      views: index === 0 ? 2 : index === 1 ? 3 : 12,
       comments: 0,
       liked: false,
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500",
-      author: {
-        name: "Therese Egoutou",
-        avatar: "https://i.pravatar.cc/150?img=1",
-        date: "19 nov.",
-      },
-      category: "Sécurité avancée",
-      title: "Du métal brut à l'innovation technologie",
-      excerpt: "Tout projet commence par une idée, mais c'est la conception qui transforme cett...",
-      views: 3,
-      comments: 0,
-      liked: false,
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500",
-      author: {
-        name: "Therese Egoutou",
-        avatar: "https://i.pravatar.cc/150?img=1",
-        date: "19 nov.",
-      },
-      category: "Vie d'entreprise",
-      title: "Le bâtiment qui s'adapte à vous",
-      excerpt: "Tout projet commence par une idée, mais c'est la conception qui transforme cett...",
-      views: 12,
-      comments: 0,
-      liked: false,
-    },
-  ]);
+    }))
+  );
 
   // ------------------- PAGINATION LOGIC -------------------
   const POSTS_PER_PAGE = 6;
-  const totalPages = Math.ceil(post.length / POSTS_PER_PAGE);
+  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
-  const paginatedPosts = post.slice(startIndex, endIndex);
+  const paginatedPosts = posts.slice(startIndex, endIndex);
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    setCurrentPage(1);
+    setIsDropdownOpen(false);
+  };
+
+  // Get featured post data
+  const featuredPost = {
+    ...t("blogPage.featured", { returnObjects: true }),
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+    avatar: "https://i.pravatar.cc/150?img=1",
+    views: 2,
+    comments: 0,
+  };
 
   return (
     <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
       <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-     {/* BLOCK 1: Category Navigation - Scrollable on mobile/tablet, centered on desktop */}
+        {/* BLOCK 1: Category Navigation */}
         <div className="relative mb-8 sm:mb-10 md:mb-12">
           <nav className="flex items-center justify-start lg:justify-center gap-4 md:gap-6 lg:gap-8 pb-3 overflow-x-auto lg:overflow-x-visible scrollbar-thin scrollbar-thumb-gray-300 lg:scrollbar-hide px-3 lg:px-0">
             {/* Main Categories */}
-            {mainCategories.map((category) => (
+            {mainCategoriesKeys.map((categoryKey) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
+                key={categoryKey}
+                onClick={() => handleCategoryChange(categoryKey)}
                 className={`text-sm sm:text-base md:text-lg font-bold px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 flex-shrink-0 ${
-                  activeCategory === category
+                  activeCategory === categoryKey
                     ? "text-green-600"
                     : "text-black hover:text-gray-600"
                 }`}
                 style={{
-                  color: activeCategory === category ? MY_COLORS.secondaryGreen : "#000",
+                  color:
+                    activeCategory === categoryKey
+                      ? MY_COLORS.secondaryGreen
+                      : "#000",
                 }}
               >
-                {category}
+                {categoryLabels[categoryKey]}
               </button>
             ))}
 
@@ -130,7 +143,7 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                 className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-lg font-bold px-3 py-2 hover:text-gray-600 transition-colors whitespace-nowrap"
                 style={{ color: MY_COLORS.secondaryGreen }}
               >
-                <span>Plus</span>
+                <span>{t("blogPage.categories.more")}</span>
                 <svg
                   className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${
                     isDropdownOpen ? "rotate-180" : ""
@@ -148,32 +161,26 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                 </svg>
               </button>
 
-              {/* Dropdown Menu - Fixed positioning on mobile/tablet to prevent scrolling */}
+              {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="fixed lg:absolute bottom-60
-                 lg:top-full right-4 
-                 lg:right-0 mt-2 w-48 sm:w-56 bg-white rounded-lg shadow-xl
-                  border border-gray-200 py-2 z-[100] lg:z-50">
-                  {dropdownCategories.map((category) => (
+                <div className="fixed lg:absolute bottom-60 lg:top-full right-4 lg:right-0 mt-2 w-48 sm:w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-[100] lg:z-50">
+                  {dropdownCategoriesKeys.map((categoryKey) => (
                     <button
-                      key={category}
-                      onClick={() => {
-                        setActiveCategory(category);
-                        setIsDropdownOpen(false);
-                      }}
+                      key={categoryKey}
+                      onClick={() => handleCategoryChange(categoryKey)}
                       className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors ${
-                        activeCategory === category
+                        activeCategory === categoryKey
                           ? "bg-green-50"
                           : "hover:bg-gray-50"
                       }`}
                       style={{
                         color:
-                          activeCategory === category
+                          activeCategory === categoryKey
                             ? MY_COLORS.secondaryGreen
                             : "#000",
                       }}
                     >
-                      {category}
+                      {categoryLabels[categoryKey]}
                     </button>
                   ))}
                 </div>
@@ -181,38 +188,39 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
             </div>
           </nav>
         </div>
-        {/* BLOCK 2 & 3: Show Featured Post OR Blog Cards Grid based on category */}
+
+        {/* BLOCK 2 & 3: Show Featured Post OR Blog Cards Grid */}
         {activeCategory !== "Tous les postes" ? (
-          // FEATURED POST VIEW for specific categories
+          // FEATURED POST VIEW
           <div className="mb-8 sm:mb-10 md:mb-12">
             <div
               onClick={() => onPostClick && onPostClick(1)}
               className="max-w-[1200px] mx-auto cursor-pointer"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* LEFT: Image - Responsive height */}
                 <div className="relative h-48 sm:h-[280px] md:h-[300px] lg:h-[400px]">
                   <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
-                    alt="Featured post"
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
 
-                {/* RIGHT: Details - Responsive padding */}
                 <div className="p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center justify-between mb-4 sm:mb-6">
                     <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                       <img
-                        src="https://i.pravatar.cc/150?img=1"
-                        alt="Author"
+                        src={featuredPost.avatar}
+                        alt={featuredPost.authorName}
                         className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover flex-shrink-0"
                       />
                       <div className="min-w-0">
                         <p className="font-bold text-xs sm:text-sm text-gray-900 truncate">
-                          Therese Egoutou
+                          {featuredPost.authorName}
                         </p>
-                        <p className="text-xs text-gray-500">17 nov.</p>
+                        <p className="text-xs text-gray-500">
+                          {featuredPost.date}
+                        </p>
                       </div>
                     </div>
                     <button
@@ -224,30 +232,37 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                        />
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
                       </svg>
                     </button>
                   </div>
 
                   <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 font-medium">
-                    {activeCategory}
+                    {categoryLabels[activeCategory]}
                   </p>
                   <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
-                    Le bâtiment qui s'adapte à vous
+                    {featuredPost.title}
                   </h2>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-6 sm:mb-8 line-clamp-3 sm:line-clamp-none">
-                    Tout projet commence par une idée, mais c'est la conception
-                    qui transforme cette idée en solution réelle.
+                    {featuredPost.excerpt}
                   </p>
 
                   <div className="border-t border-gray-200 mb-4 sm:mb-6"></div>
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
-                      <span>2 vues</span>
-                      <span>0 commentaire</span>
+                      <span>
+                        {featuredPost.views}{" "}
+                        {featuredPost.views === 1
+                          ? t("blogPage.cards.view")
+                          : t("blogPage.cards.views")}
+                      </span>
+                      <span>
+                        {featuredPost.comments}{" "}
+                        {featuredPost.comments === 1
+                          ? t("blogPage.cards.comment")
+                          : t("blogPage.cards.comments")}
+                      </span>
                     </div>
                     <button
                       onClick={(e) => e.stopPropagation()}
@@ -273,7 +288,7 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
             </div>
           </div>
         ) : (
-          // BLOG CARDS GRID for "Tous les postes" - Responsive heights
+          // BLOG CARDS GRID
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {paginatedPosts.map((post) => (
               <article
@@ -281,7 +296,6 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                 onClick={() => onPostClick && onPostClick(post.id)}
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer h-full flex flex-col"
               >
-                {/* Featured Image - Responsive height */}
                 <div className="relative h-40 sm:h-44 md:h-48 lg:h-56 overflow-hidden flex-shrink-0">
                   <img
                     src={post.image}
@@ -290,9 +304,7 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                   />
                 </div>
 
-                {/* Card Content - Flexible height */}
                 <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-1">
-                  {/* Author Info - Responsive */}
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
                     <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
                       <img
@@ -304,41 +316,37 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                         <p className="font-bold text-xs sm:text-sm text-gray-900 truncate">
                           {post.author.name}
                         </p>
-                        <p className="text-xs text-gray-500">{post.author.date}</p>
+                        <p className="text-xs text-gray-500">
+                          {post.author.date}
+                        </p>
                       </div>
                     </div>
 
-                    {/* Three-dot menu */}
                     <button className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0 ml-2 p-1">
                       <svg
                         className="w-4 h-4 sm:w-5 sm:h-5"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                        />
+                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
                       </svg>
                     </button>
                   </div>
 
-                  {/* Category Badge */}
-                  <p className="text-xs text-gray-500 mb-2">{post.category}</p>
+                  <p className="text-xs text-gray-500 mb-2">
+                    {categoryLabels[post.category]}
+                  </p>
 
-                  {/* Title */}
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 line-clamp-2 flex-1 leading-tight">
                     {post.title}
                   </h3>
 
-                  {/* Excerpt */}
                   <p className="text-sm text-gray-600 mb-4 line-clamp-2 sm:line-clamp-3 leading-relaxed flex-none">
                     {post.excerpt}
                   </p>
 
-                  {/* Engagement Metrics */}
                   <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex items-center gap-3 sm:gap-4">
-                      {/* Views */}
                       <div className="flex items-center gap-1 text-gray-500 text-xs sm:text-sm">
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5"
@@ -362,7 +370,6 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                         <span>{post.views}</span>
                       </div>
 
-                      {/* Comments */}
                       <div className="flex items-center gap-1 text-gray-500 text-xs sm:text-sm">
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5"
@@ -381,7 +388,6 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                       </div>
                     </div>
 
-                    {/* Like Button */}
                     <button
                       className={`transition-colors duration-300 flex-shrink-0 ${
                         post.liked
@@ -410,10 +416,9 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
           </div>
         )}
 
-        {/* BLOCK 4: Pagination - Responsive with ellipsis logic */}
+        {/* BLOCK 4: Pagination */}
         {activeCategory === "Tous les postes" && totalPages > 1 && (
           <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 mt-10 sm:mt-12 px-2">
-            {/* Previous Button */}
             <button
               onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
@@ -422,7 +427,7 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                   ? "text-gray-300 cursor-not-allowed"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
-              aria-label="Previous page"
+              aria-label={t("blogPage.cards.previous")}
             >
               <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 mx-auto"
@@ -439,9 +444,7 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
               </svg>
             </button>
 
-            {/* Page Numbers - Smart ellipsis */}
             <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide flex-1 max-w-full">
-              {/* First page + ellipsis */}
               {currentPage > 3 && (
                 <>
                   <button
@@ -452,14 +455,18 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                     1
                   </button>
                   {currentPage > 4 && (
-                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm flex-shrink-0">...</span>
+                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm flex-shrink-0">
+                      ...
+                    </span>
                   )}
                 </>
               )}
 
-              {/* Nearby pages */}
               {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                const pageNum = Math.max(2, Math.min(totalPages - 1, currentPage + (i - 2)));
+                const pageNum = Math.max(
+                  2,
+                  Math.min(totalPages - 1, currentPage + (i - 2))
+                );
                 return pageNum;
               })
                 .filter((page, idx, arr) => arr.indexOf(page) === idx)
@@ -473,18 +480,22 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
                         : "text-gray-600 hover:bg-gray-100 hover:shadow-sm"
                     }`}
                     style={{
-                      color: currentPage === page ? MY_COLORS.secondaryGreen : "#000",
+                      color:
+                        currentPage === page
+                          ? MY_COLORS.secondaryGreen
+                          : "#000",
                     }}
                   >
                     {page}
                   </button>
                 ))}
 
-              {/* Last page + ellipsis */}
               {currentPage < totalPages - 2 && (
                 <>
                   {currentPage < totalPages - 3 && (
-                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm flex-shrink-0">...</span>
+                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm flex-shrink-0">
+                      ...
+                    </span>
                   )}
                   <button
                     onClick={() => setCurrentPage(totalPages)}
@@ -497,16 +508,17 @@ const BlogCards = ({ onPostClick, initialCategory = "Tous les postes" }) => {
               )}
             </div>
 
-            {/* Next Button */}
             <button
-              onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(totalPages, prev + 1))
+              }
               disabled={currentPage === totalPages}
               className={`p-1.5 sm:p-2 min-w-[40px] h-10 rounded-lg transition-all duration-300 flex-shrink-0 ${
                 currentPage === totalPages
                   ? "text-gray-300 cursor-not-allowed"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
-              aria-label="Next page"
+              aria-label={t("blogPage.cards.next")}
             >
               <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 mx-auto"

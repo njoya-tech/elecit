@@ -1,28 +1,26 @@
 import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
+import { useTranslation } from 'react-i18next';
 
 const EntrepriseCards = () => {
-  const cards = [
-    {
-      title: "Innovation",
-      icon: ICONS.innovation,
-      description:
-        "Grâce à une veille technologique permanente et à une culture de créativité, nous développons des approches novatrices pour répondre aux besoins de nos partenaires.",
-    },
-    {
-      title: "Transformation",
-      icon: ICONS.transformation,
-      description:
-        "Nous accompagnons nos clients dans leur mutation vers des modèles plus performants et durables par l'intégration de nouvelles technologies et par l'optimisation des processus.",
-    },
-    {
-      title: "Excellence",
-      icon: ICONS.excellence,
-      description:
-        "À travers des standards de qualité élevés, une expertise pointue et un souci du détail, nous garantissons des résultats qui répondent aux attentes les plus exigeantes.",
-    },
+  const { t } = useTranslation();
+  
+  // Get translated cards data
+  const cardsData = t('entreprise.entrepriseCards.items', { returnObjects: true });
+
+  // Map icons to cards using index (language-independent)
+  const iconMap = [
+    ICONS.innovation,      // Card 0: Innovation
+    ICONS.transformation,  // Card 1: Transformation
+    ICONS.excellence       // Card 2: Excellence
   ];
+
+  // Combine translated data with icons
+  const cards = cardsData.map((card, index) => ({
+    ...card,
+    icon: iconMap[index]
+  }));
 
   return (
     <section
@@ -51,14 +49,14 @@ const EntrepriseCards = () => {
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4 sm:px-6">
               <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 md:mb-3">
-                Nos valeurs
+                {t('entreprise.entrepriseCards.bannerTitle')}
               </h3>
               <p
                 className="text-base sm:text-lg md:text-2xl font-bold px-2"
                 style={{ color: MY_COLORS.secondaryGreen }}
               >
-                <span className="font-bold">03 mots clés</span>{" "}
-                <span className="text-white">nous définissent</span>
+                <span className="font-bold">{t('entreprise.entrepriseCards.bannerSubtitle')}</span>{" "}
+                <span className="text-white">{t('entreprise.entrepriseCards.bannerSubtitle2')}</span>
               </p>
             </div>
           </div>

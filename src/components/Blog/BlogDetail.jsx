@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MY_COLORS } from "../../constants/colors";
-
+ 
 const BlogDetail = ({ postId, onBack }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [comment, setComment] = useState("");
@@ -23,7 +23,8 @@ const BlogDetail = ({ postId, onBack }) => {
   // Sample blog post data (will come from Directus later)
   const post = {
     id: postId,
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200",
     author: {
       name: "Therese Egoutou",
       avatar: "https://i.pravatar.cc/150?img=1",
@@ -99,7 +100,8 @@ const BlogDetail = ({ postId, onBack }) => {
             onClick={() => handleCategoryClick(category)}
             className="text-sm sm:text-base md:text-lg font-medium px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 flex-shrink-0"
             style={{
-              color: post.category === category ? MY_COLORS.secondaryGreen : "#000",
+              color:
+                post.category === category ? MY_COLORS.secondaryGreen : "#000",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
@@ -156,7 +158,9 @@ const BlogDetail = ({ postId, onBack }) => {
                     setIsDropdownOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors ${
-                    post.category === category ? "bg-green-50" : "hover:bg-gray-50"
+                    post.category === category
+                      ? "bg-green-50"
+                      : "hover:bg-gray-50"
                   }`}
                   style={{
                     color:
@@ -202,7 +206,11 @@ const BlogDetail = ({ postId, onBack }) => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-400 hover:text-gray-600 transition-colors p-1 sm:p-0"
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
               </svg>
             </button>
@@ -266,21 +274,33 @@ const BlogDetail = ({ postId, onBack }) => {
         <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
           {/* Facebook */}
           <button className="text-gray-600 hover:text-blue-600 transition-colors p-2">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
             </svg>
           </button>
 
           {/* Twitter/X */}
           <button className="text-gray-600 hover:text-gray-900 transition-colors p-2">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
             </svg>
           </button>
 
           {/* LinkedIn */}
           <button className="text-gray-600 hover:text-blue-700 transition-colors p-2">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
               <circle cx="4" cy="4" r="2" />
             </svg>
@@ -336,7 +356,9 @@ const BlogDetail = ({ postId, onBack }) => {
 
         {/* COMMENTS SECTION - Responsive */}
         <div className="mb-8 sm:mb-12">
-          <h3 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-6">Commentaires</h3>
+          <h3 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-6">
+            Commentaires
+          </h3>
 
           <div className="border-t border-gray-200 pt-4 sm:pt-6">
             {/* Comment Input Box */}
@@ -345,7 +367,7 @@ const BlogDetail = ({ postId, onBack }) => {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="Rédigez un commentaire..."
-                className="w-full min-h-[80px] outline-none resize-none text-gray-700 text-sm sm:text-base px-3 py-2"
+                className="w-full min-h-20 outline-none resize-none text-gray-700 text-sm sm:text-base px-3 py-2"
               />
 
               {/* Comment Toolbar - Responsive */}

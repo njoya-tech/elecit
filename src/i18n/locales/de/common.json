@@ -1,6 +1,5 @@
 {
-    
-"nav": {
+  "nav": {
     "accueil": "Startseite",
     "entreprise": "Unternehmen",
     "solutions": "Lösungen",
@@ -27,22 +26,9 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
-    "contact": {
-      "floatingButton": "Kontaktieren Sie uns",
-      "popup": {
-        "title": "Kontaktieren Sie uns",
-        "subtitle": "Wir antworten so schnell wie möglich",
-        "availability": "Wir sind von Montag bis Freitag von 8 bis 18 Uhr auf WhatsApp erreichbar. Zögern Sie nicht, uns zu kontaktieren.",
-        "openWhatsApp": "WhatsApp öffnen",
-        "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
-      "leftButton":"Zurück",
-"rightButton":"Senden"
+ 
 
-
-      }
-    },
-
-   "hero": {
+  "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Projekt einreichen",
     "slide1": {
@@ -69,35 +55,35 @@
   },
 
   "solution": {
-     "bannerTitle": "Intelligente",
-  "bannerHighlight": "Lösungen für",
-  "bannerTitle2": "spezifische Bedürfnisse",
-  "viewMore": "Mehr anzeigen",
-  "items": [
-    {
-      "title": "Intelligente Gebäude & Automatisierung",
-      "description": "Intelligente Verwaltung aller Ausrüstungen in öffentlichen oder privaten Gebäuden und des Energieverbrauchs.",
-      "imagePlaceholderText": "Gebäude"
-    },
-    {
-      "title": "Design, Mechanische & Metallische Fertigung",
-      "description": "Fertigung von Metallinfrastrukturen, landwirtschaftlichen Maschinen, rollendem Gerät, neuen Maschinenteilen und Ersatzteilen.",
-      "imagePlaceholderText": "Fertigung"
-    },
-    {
-      "title": "GPS & Tracking (More Than Track)",
-      "description": "Präzises Echtzeit-Tracking von Fahrzeugflotten und anderen Assets. Nachhaltige Analyse und Optimierung des gesamten Portfolios.",
-      "imagePlaceholderText": "GPS Tracking"
-    }
-  ]
+    "bannerTitle": "Intelligente",
+    "bannerHighlight": "Lösungen für",
+    "bannerTitle2": "spezifische Bedürfnisse",
+    "viewMore": "Mehr anzeigen",
+    "items": [
+      {
+        "title": "Intelligente Gebäude & Automatisierung",
+        "description": "Intelligente Verwaltung aller Ausrüstungen in öffentlichen oder privaten Gebäuden und des Energieverbrauchs.",
+        "imagePlaceholderText": "Gebäude"
+      },
+      {
+        "title": "Design, Mechanische & Metallische Fertigung",
+        "description": "Fertigung von Metallinfrastrukturen, landwirtschaftlichen Maschinen, rollendem Gerät, neuen Maschinenteilen und Ersatzteilen.",
+        "imagePlaceholderText": "Fertigung"
+      },
+      {
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Präzises Echtzeit-Tracking von Fahrzeugflotten und anderen Assets. Nachhaltige Analyse und Optimierung des gesamten Portfolios.",
+        "imagePlaceholderText": "GPS Tracking"
+      }
+    ]
   },
 
   "trackingPlatform": {
-  "title": "Tracking-Plattform verfügbar auf Web & Smartphone",
-  "buttonText": "Video ansehen"
-},
+    "title": "Tracking-Plattform verfügbar auf Web & Smartphone",
+    "buttonText": "Video ansehen"
+  },
 
-"serviceOffer": {
+  "serviceOffer": {
     "title": "Ein",
     "titleHighlight": "vielfältiges Dienstleistungsangebot",
     "title2": "",
@@ -118,146 +104,146 @@
       }
     ]
   },
-   "realBanner": {
-      "titlePart1": "Realisierungen, die Ihre",
-      "highlightWord": "Erwartungen",
-      "titlePart2": ""
-    },
+  "realBanner": {
+    "titlePart1": "Realisierungen, die Ihre",
+    "highlightWord": "Erwartungen",
+    "titlePart2": ""
+  },
 
-        "servicesCarousel": {
-      "services": [
-        {
-          "title": "IT-Dienstleistungen & Datenverarbeitung",
-          "description": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung."
-        },
-        {
-          "title": "Smart Building Lösungen",
-          "description": "Innovative Lösungen für intelligentes Gebäudemanagement und Energieoptimierung."
-        },
-        {
-          "title": "GPS & Tracking",
-          "description": "Echtzeit-Ortungs- und Tracking-Systeme für optimales Ressourcenmanagement."
-        },
-        {
-          "title": "Zutrittskontrolle & Sicherheit",
-          "description": "Umfassende Sicherheits- und Zutrittskontrolllösungen zum Schutz Ihrer Anlagen."
-        },
-        {
-          "title": "Ingenieurbüro",
-          "description": "Technische Expertise und Beratung für die Konzeption Ihrer Technologieprojekte."
-        },
-        {
-          "title": "Kundendienst",
-          "description": "Technischer Support und Wartung zur Sicherstellung der Nachhaltigkeit Ihrer Installationen."
-        }
-      ]
-    },
+  "servicesCarousel": {
+    "services": [
+      {
+        "title": "IT-Dienstleistungen & Datenverarbeitung",
+        "description": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung."
+      },
+      {
+        "title": "Smart Building Lösungen",
+        "description": "Innovative Lösungen für intelligentes Gebäudemanagement und Energieoptimierung."
+      },
+      {
+        "title": "GPS & Tracking",
+        "description": "Echtzeit-Ortungs- und Tracking-Systeme für optimales Ressourcenmanagement."
+      },
+      {
+        "title": "Zutrittskontrolle & Sicherheit",
+        "description": "Umfassende Sicherheits- und Zutrittskontrolllösungen zum Schutz Ihrer Anlagen."
+      },
+      {
+        "title": "Ingenieurbüro",
+        "description": "Technische Expertise und Beratung für die Konzeption Ihrer Technologieprojekte."
+      },
+      {
+        "title": "Kundendienst",
+        "description": "Technischer Support und Wartung zur Sicherstellung der Nachhaltigkeit Ihrer Installationen."
+      }
+    ]
+  },
 
-    "smartBuild":{
-  "title": "Ausstellung von Lösungen und intelligentes Gebäude",
-  "buttonText": "Besuchen Sie den Showroom"
-},
+  "smartBuild": {
+    "title": "Ausstellung von Lösungen und intelligentes Gebäude",
+    "buttonText": "Besuchen Sie den Showroom"
+  },
 
-"blogBanner": {
-  "titlePart1": "Bleiben Sie auf dem Laufenden über unsere ",
-  "highlightWord": "Neuigkeiten",
-  "titlePart2": ", indem Sie unseren Blog besuchen"
-},
+  "blogBanner": {
+    "titlePart1": "Bleiben Sie auf dem Laufenden über unsere ",
+    "highlightWord": "Neuigkeiten",
+    "titlePart2": ", indem Sie unseren Blog besuchen"
+  },
 
-"blog": {
-  "articles": [
-    {
-      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-      "title": "Warum maßgeschneiderte Fertigung die kamerunische Industrie verändert?",
-      "description": "In vielen Industriebereichen in Kamerun stoßen Unternehmen auf eine wiederkehrende Schwierigkeit...."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-      "title": "5 Wege, wie ein intelligentes Hotel Energie spart und Kunden bindet",
-      "description": "In einem zunehmend wettbewerbsorientierten Hotelmarkt in Kamerun ist die Frage zweifach..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-      "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
-      "description": "Transport und Logistik sind das Herzstück der kamerunischen Wirtschaft, aber dieser Sektor steht vor großen Herausforderungen...."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-      "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
-      "description": "Die kamerunische Landwirtschaft, Motor der Volkswirtschaft, steht vor einer großen Herausforderung..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-      "title": "Von Rohmetall zur Innovation: Wie wir nachhaltige Infrastrukturen gestalten",
-      "description": "Rohmaterial in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallurgie..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      "title": "Datenverarbeitung und Sicherheit: Das digitale Gold Ihres Unternehmens schützen",
-      "description": "Jedes Unternehmen, unabhängig von seiner Größe, generiert täglich erhebliche Mengen an Informationen...."
+  "blog": {
+    "articles": [
+      {
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+        "title": "Warum maßgeschneiderte Fertigung die kamerunische Industrie verändert?",
+        "description": "In vielen Industriebereichen in Kamerun stoßen Unternehmen auf eine wiederkehrende Schwierigkeit...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+        "title": "5 Wege, wie ein intelligentes Hotel Energie spart und Kunden bindet",
+        "description": "In einem zunehmend wettbewerbsorientierten Hotelmarkt in Kamerun ist die Frage zweifach..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+        "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
+        "description": "Transport und Logistik sind das Herzstück der kamerunischen Wirtschaft, aber dieser Sektor steht vor großen Herausforderungen...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+        "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
+        "description": "Die kamerunische Landwirtschaft, Motor der Volkswirtschaft, steht vor einer großen Herausforderung..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+        "title": "Von Rohmetall zur Innovation: Wie wir nachhaltige Infrastrukturen gestalten",
+        "description": "Rohmaterial in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallurgie..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+        "title": "Datenverarbeitung und Sicherheit: Das digitale Gold Ihres Unternehmens schützen",
+        "description": "Jedes Unternehmen, unabhängig von seiner Größe, generiert täglich erhebliche Mengen an Informationen...."
+      }
+    ]
+  },
+
+  "testimonialsBanner": {
+    "titlePart1": "Was unsere Kunden über ihre ",
+    "highlightWord": "Erfahrung",
+    "titlePart2": " mit uns sagen"
+  },
+
+  "testimonials": {
+    "items": [
+      {
+        "id": 1,
+        "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+        "author": "Geschäftsführer",
+        "company": "AFB",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+        "author": "Geschäftsführer",
+        "company": "AFB",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+        "author": "Geschäftsführer",
+        "company": "AFB",
+        "rating": 5
+      },
+      {
+        "id": 4,
+        "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
+        "author": "Geschäftsführer",
+        "company": "SGC",
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "text": "Elecit hat eine außergewöhnliche Hausautomationsinstallation für KILO FORCE geliefert. Wir sind begeistert von der Servicequalität und der gebotenen Modernisierung. Vielen Dank für diese Erfahrung!",
+        "author": "Geschäftsführer",
+        "company": "KILO FORCE",
+        "rating": 5
+      },
+      {
+        "id": 6,
+        "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
+        "author": "Geschäftsführer",
+        "company": "SGC",
+        "rating": 5
+      }
+    ],
+    "ariaLabels": {
+      "previous": "Zurück",
+      "next": "Weiter",
+      "goToTestimonial": "Zum Testimonial gehen"
     }
-  ]
-},
+  },
 
-"testimonialsBanner": {
-  "titlePart1": "Was unsere Kunden über ihre ",
-  "highlightWord": "Erfahrung",
-  "titlePart2": " mit uns sagen"
-},
-
-"testimonials": {
-  "items": [
-    {
-      "id": 1,
-      "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
-      "author": "Geschäftsführer",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 2,
-      "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
-      "author": "Geschäftsführer",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 3,
-      "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
-      "author": "Geschäftsführer",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 4,
-      "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
-      "author": "Geschäftsführer",
-      "company": "SGC",
-      "rating": 5
-    },
-    {
-      "id": 5,
-      "text": "Elecit hat eine außergewöhnliche Hausautomationsinstallation für KILO FORCE geliefert. Wir sind begeistert von der Servicequalität und der gebotenen Modernisierung. Vielen Dank für diese Erfahrung!",
-      "author": "Geschäftsführer",
-      "company": "KILO FORCE",
-      "rating": 5
-    },
-    {
-      "id": 6,
-      "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
-      "author": "Geschäftsführer",
-      "company": "SGC",
-      "rating": 5
-    }
-  ],
-  "ariaLabels": {
-    "previous": "Zurück",
-    "next": "Weiter",
-    "goToTestimonial": "Zum Testimonial gehen"
-  }
-},
-
-"footer": {
+  "footer": {
     "banner": {
       "availableEverywhere": "Service überall verfügbar",
       "phoneNumber": "+237 650 416 640",
@@ -338,123 +324,396 @@
     "buttonRound": "Kontaktieren Sie uns"
   },
   "projet": {
-  "title": "UNSERE REALISIERUNGEN",
-  "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben.",
-  "buttonText": "Weißbuch"
-},
+    "title": "UNSERE REALISIERUNGEN",
+    "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben.",
+    "buttonText": "Weißbuch"
+  },
 
-"projects": {
-      "categories": [
-        { "id": "all", "label": "Alle Projekte" },
-        { "id": "smart", "label": "Smart Building" },
-        { "id": "fabrication", "label": "Mechanische Fertigung" },
-        { "id": "interne", "label": "Internes Projekt" }
-      ],
-      "projectCard": {
-        "seeMore": "Mehr erfahren"
+  "projects": {
+    "categories": [
+      { "id": "all", "label": "Alle Projekte" },
+      { "id": "smart", "label": "Smart Building" },
+      { "id": "fabrication", "label": "Mechanische Fertigung" },
+      { "id": "interne", "label": "Internes Projekt" }
+    ],
+    "projectCard": {
+      "seeMore": "Mehr erfahren"
+    },
+    "projectModal": {
+      "mechanicalFabrication": "Mechanische Fertigung",
+      "project": "Projekt:",
+      "dateRealisation": "Fertigstellungsdatum:",
+      "projectStatus": "Projektstatus:",
+      "projectDescription": "Projektbeschreibung:",
+      "utility": "Nutzen:",
+      "clientFeedback": "Kundenfeedback:",
+      "haveProject": "Haben Sie ein Projekt?",
+      "close": "Schließen"
+    },
+    "projectsData": [
+      {
+        "id": 1,
+        "number": "1",
+        "title": "Mobile Bank",
+        "category": "Mechanische Fertigung",
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+        "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+        "dateRealisation": "12.06.23",
+        "statut": "abgeschlossen",
+        "description": "Konzeption und Fertigung einer maßgeschneiderten Fahrzeugflotte für den sicheren und komfortablen Transport von Unternehmenspersonal.",
+        "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
+        "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
+        "responsable": "Logistikleiter"
       },
-      "projectModal": {
-        "mechanicalFabrication": "Mechanische Fertigung",
-        "project": "Projekt:",
-        "dateRealisation": "Fertigstellungsdatum:",
-        "projectStatus": "Projektstatus:",
-        "projectDescription": "Projektbeschreibung:",
-        "utility": "Nutzen:",
-        "clientFeedback": "Kundenfeedback:",
-        "haveProject": "Haben Sie ein Projekt?",
-        "close": "Schließen"
+      {
+        "id": 2,
+        "number": "2",
+        "title": "IT-Dienstleistungen & DATEN",
+        "category": "Smart Building",
+        "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
+        "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+        "dateRealisation": "15.08.23",
+        "statut": "abgeschlossen",
+        "description": "Implementierung einer vollständigen IT-Infrastruktur für Echtzeit-Datenmanagement und -analyse.",
+        "utilite": "Verbesserte Produktivität und Entscheidungsfindung durch fortschrittliche Analysetools.",
+        "retourClient": "Die Implementierung dieser Lösung hat unsere Arbeitsweise transformiert und unsere Effizienz um 40% gesteigert.",
+        "responsable": "IT-Direktor"
       },
-      "projectsData": [
+      {
+        "id": 3,
+        "number": "3",
+        "title": "Intelligentes Sicherheitssystem",
+        "category": "Smart Building",
+        "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop",
+        "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+        "dateRealisation": "20.09.23",
+        "statut": "in Bearbeitung",
+        "description": "Installation eines intelligenten Überwachungs- und Zutrittskontrollsystems für ein Verwaltungsgebäude.",
+        "utilite": "Gewährleistung der Sicherheit von Bewohnern und Eigentum bei gleichzeitiger Optimierung des Zugriffsmanagements.",
+        "retourClient": "Die Sicherheit, die dieses System bietet, ist für unsere Organisation von unschätzbarem Wert.",
+        "responsable": "Sicherheitsleiter"
+      },
+      {
+        "id": 4,
+        "number": "4",
+        "title": "Industrielle IoT-Plattform",
+        "category": "Mechanische Fertigung",
+        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+        "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+        "dateRealisation": "05.10.23",
+        "statut": "abgeschlossen",
+        "description": "Entwicklung einer IoT-Plattform zur Überwachung und Optimierung von Produktionsprozessen.",
+        "utilite": "Reduzierte Ausfallzeiten und verbesserte Betriebseffizienz.",
+        "retourClient": "Diese Lösung hat es uns ermöglicht, unsere Wartungskosten um 25% zu senken.",
+        "responsable": "Produktionsleiter"
+      },
+      {
+        "id": 5,
+        "number": "5",
+        "title": "Unternehmensnetzwerk-Infrastruktur",
+        "category": "Internes Projekt",
+        "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
+        "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+        "dateRealisation": "12.11.23",
+        "statut": "in Bearbeitung",
+        "description": "Vollständige Überholung der Netzwerkinfrastruktur zur Unterstützung des Unternehmenswachstums.",
+        "utilite": "Gewährleistung zuverlässiger und leistungsstarker Konnektivität für alle Dienste.",
+        "retourClient": "Das neue Netzwerk hat unsere tägliche Produktivität erheblich verbessert.",
+        "responsable": "Infrastrukturleiter"
+      },
+      {
+        "id": 6,
+        "number": "6",
+        "title": "Prozessautomatisierung",
+        "category": "Smart Building",
+        "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
+        "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
+        "dateRealisation": "18.12.23",
+        "statut": "abgeschlossen",
+        "description": "Geschäftsprozessautomatisierung zur Verbesserung der Betriebseffizienz.",
+        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
+        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
+        "responsable": "Betriebsleiter"
+      }
+    ]
+  },
+  
+  "entreprise": {
+    "hero": {
+      "title": "Wat u moet weten over",
+      "titleHighlight": "ELECIT?",
+      "subtitle": "AFRIKA'S 1E HIGH TECH BEDRIJF",
+      "description": "Omdat we naast de Kameroense markt heel Afrika willen ontwikkelen door middel van onze diensten.",
+      "button": "Bekijk Video"
+    },
+    "entrepriseCards": {
+      "bannerTitle": "Onze waarden",
+      "bannerSubtitle": "03 sleutelwoorden",
+      "bannerSubtitle2": "definiëren ons",
+      "items": [
         {
-          "id": 1,
-          "number": "1",
-          "title": "Mobile Bank",
-          "category": "Mechanische Fertigung",
-          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
-          "dateRealisation": "12.06.23",
-          "statut": "abgeschlossen",
-          "description": "Konzeption und Fertigung einer maßgeschneiderten Fahrzeugflotte für den sicheren und komfortablen Transport von Unternehmenspersonal.",
-          "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
-          "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
-          "responsable": "Logistikleiter"
+          "title": "Innovatie",
+          "description": "Door voortdurende technologiebewaking en een cultuur van creativiteit ontwikkelen we innovatieve benaderingen om aan de behoeften van onze partners te voldoen."
         },
         {
-          "id": 2,
-          "number": "2",
-          "title": "IT-Dienstleistungen & DATEN",
-          "category": "Smart Building",
-          "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
-          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
-          "dateRealisation": "15.08.23",
-          "statut": "abgeschlossen",
-          "description": "Implementierung einer vollständigen IT-Infrastruktur für Echtzeit-Datenmanagement und -analyse.",
-          "utilite": "Verbesserte Produktivität und Entscheidungsfindung durch fortschrittliche Analysetools.",
-          "retourClient": "Die Implementierung dieser Lösung hat unsere Arbeitsweise transformiert und unsere Effizienz um 40% gesteigert.",
-          "responsable": "IT-Direktor"
+          "title": "Transformatie",
+          "description": "We ondersteunen onze klanten bij hun transitie naar efficiëntere en duurzamere modellen door de integratie van nieuwe technologieën en procesoptimalisatie."
         },
         {
-          "id": 3,
-          "number": "3",
-          "title": "Intelligentes Sicherheitssystem",
-          "category": "Smart Building",
-          "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop",
-          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
-          "dateRealisation": "20.09.23",
-          "statut": "in Bearbeitung",
-          "description": "Installation eines intelligenten Überwachungs- und Zutrittskontrollsystems für ein Verwaltungsgebäude.",
-          "utilite": "Gewährleistung der Sicherheit von Bewohnern und Eigentum bei gleichzeitiger Optimierung des Zugriffsmanagements.",
-          "retourClient": "Die Sicherheit, die dieses System bietet, ist für unsere Organisation von unschätzbarem Wert.",
-          "responsable": "Sicherheitsleiter"
-        },
-        {
-          "id": 4,
-          "number": "4",
-          "title": "Industrielle IoT-Plattform",
-          "category": "Mechanische Fertigung",
-          "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
-          "dateRealisation": "05.10.23",
-          "statut": "abgeschlossen",
-          "description": "Entwicklung einer IoT-Plattform zur Überwachung und Optimierung von Produktionsprozessen.",
-          "utilite": "Reduzierte Ausfallzeiten und verbesserte Betriebseffizienz.",
-          "retourClient": "Diese Lösung hat es uns ermöglicht, unsere Wartungskosten um 25% zu senken.",
-          "responsable": "Produktionsleiter"
-        },
-        {
-          "id": 5,
-          "number": "5",
-          "title": "Unternehmensnetzwerk-Infrastruktur",
-          "category": "Internes Projekt",
-          "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
-          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
-          "dateRealisation": "12.11.23",
-          "statut": "in Bearbeitung",
-          "description": "Vollständige Überholung der Netzwerkinfrastruktur zur Unterstützung des Unternehmenswachstums.",
-          "utilite": "Gewährleistung zuverlässiger und leistungsstarker Konnektivität für alle Dienste.",
-          "retourClient": "Das neue Netzwerk hat unsere tägliche Produktivität erheblich verbessert.",
-          "responsable": "Infrastrukturleiter"
-        },
-        {
-          "id": 6,
-          "number": "6",
-          "title": "Prozessautomatisierung",
-          "category": "Smart Building",
-          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-          "shortDescription": "Maßgeschneiderte Lösungen für Datenanalyse, Programmentwicklung sowie Netzwerk- und Datenbankverwaltung.",
-          "dateRealisation": "18.12.23",
-          "statut": "abgeschlossen",
-          "description": "Geschäftsprozessautomatisierung zur Verbesserung der Betriebseffizienz.",
-          "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-          "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-          "responsable": "Betriebsleiter"
+          "title": "Uitmuntendheid",
+          "description": "Door hoge kwaliteitsnormen, scherpe expertise en aandacht voor detail garanderen we resultaten die aan de meest veeleisende verwachtingen voldoen."
         }
       ]
+    },
+    "entrepriseTeam": {
+      "title": "Het team",
+      "subtitle": "Deze actoren die zich verenigen om aan uw behoeften te voldoen",
+      "description": "We mobiliseren de juiste vaardigheden op het juiste moment. Deze menselijke en technische rijkdom stelt ons in staat om met behendigheid en precisie te reageren op de meest uiteenlopende uitdagingen van onze klanten, van advies tot implementatie.",
+      "button": "Bekijk Video",
+      "members": [
+        { "title": "Domotica Specialisten" },
+        { "title": "Mechatronica Ingenieurs" },
+        { "title": "Wagenpark Managers" },
+        { "title": "IT Ingenieurs" },
+        { "title": "Civiele Ingenieurs" },
+        { "title": "Productie Technici" },
+        { "title": "IT Technici" },
+        { "title": "Onderhouds Agenten" },
+        { "title": "Duurzame Energie Ingenieurs" },
+        { "title": "Hoog en Laag Stroom Technici" }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "Veelgestelde vragen",
+      "contactTitle": "Krijg meer informatie",
+      "contactSubtitle": "We beantwoorden graag uw vragen.",
+      "contactButton": "Neem contact op",
+      "items": [
+        {
+          "question": "Waar bent u gevestigd en in welke regio's bent u actief?",
+          "answer": "Ons hoofdkantoor is gevestigd in Douala en Yaoundé; maar we zijn actief in het hele nationale grondgebied en in bepaalde gebieden van West-Afrika. Voor specifieke projecten bestuderen we ook internationale interventies."
+        },
+        {
+          "question": "Wat zijn uw gemiddelde projecttijdlijnen?",
+          "answer": "Tijdlijnen variëren afhankelijk van de complexiteit van het project. Over het algemeen leveren we standaardprojecten in 2-4 weken."
+        },
+        {
+          "question": "Hoe krijg ik een persoonlijke offerte?",
+          "answer": "U kunt contact met ons opnemen via het online formulier of telefonisch. We sturen u binnen 48 uur een offerte."
+        },
+        {
+          "question": "Bieden jullie ondersteuning na levering?",
+          "answer": "Ja, we bieden volledige after-sales service inclusief onderhoud en 24/7 technische ondersteuning."
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "Onze partners",
+      "ctaTitle": "Heeft u een behoefte?",
+      "ctaTitle2": "Wij hebben de",
+      "ctaHighlight": "oplossingen",
+      "ctaButton": "Neem Contact Op"
     }
-
-
-
-
-
-
+  },
+  
+  "contact": {
+     "floatingButton": "Kontaktieren Sie uns",
+    "popup": {
+      "title": "Kontaktieren Sie uns",
+      "subtitle": "Wir antworten so schnell wie möglich",
+      "availability": "Wir sind von Montag bis Freitag von 8 bis 18 Uhr auf WhatsApp erreichbar. Zögern Sie nicht, uns zu kontaktieren.",
+      "openWhatsApp": "WhatsApp öffnen",
+      "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+      "leftButton": "Zurück",
+      "rightButton": "Senden"
+    },
+    "hero": {
+      "title": "Neem Contact Op.",
+      "subtitle": "Ons team van experts biedt u een oplossing!",
+      "button": "Meer Inhoud"
+    },
+    "form": {
+      "title": "Contact Formulier",
+      "subtitle": "Een vraag, behoefte of project om te bespreken?",
+      "subtitle2": "Vul het onderstaande formulier in",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Voer uw achternaam in",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Voer uw voornaam in",
+      "phone": "Telefoon",
+      "email": "E-mail",
+      "emailPlaceholder": "Voer uw e-mail in",
+      "message": "Bericht",
+      "messagePlaceholder": "Antwoord in enkele woorden",
+      "submit": "Verstuur",
+      "imageAlt": "Professional in een industriële omgeving"
+    },
+    "location": {
+      "title": "Onze diensten zijn toegankelijk in heel",
+      "highlight1": "Kameroen",
+      "title2": ", maar ook in heel",
+      "highlight2": "Centraal-Afrika."
+    },
+    "blog": {
+  "preview": {
+    "banner": {
+      "titlePart1": "Blijf op de hoogte van ons ",
+      "highlightWord": "nieuws",
+      "titlePart2": " door onze blog te bezoeken"
+    },
+    "articles": [
+      {
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+        "title": "Waarom maatwerkproductie een game-changer is in de Kameroense industrie?",
+        "description": "In veel industriële sectoren in Kameroen staan bedrijven voor een terugkerende uitdaging...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+        "title": "5 manieren waarop een slim hotel energie bespaart en klantenloyaliteit opbouwt",
+        "description": "Op een steeds competitievere hotelmarkt in Kameroen is de vraag tweeledig..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+        "title": "De trackingrevolutie: wanneer AI uw voertuigen bewaakt",
+        "description": "Transport en logistiek staan centraal in de economie van Kameroen, maar deze sector ondervindt grote uitdagingen...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+        "title": "Slimme irrigatie: technologie voor duurzame landbouw",
+        "description": "De Kameroense landbouw, de motor van de nationale economie, staat voor een grote uitdaging..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+        "title": "Van ruw metaal naar innovatie: hoe we duurzame infrastructuur vormgeven",
+        "description": "Het transformeren van grondstoffen naar een innovatief en functioneel product is de kunst van moderne metallurgie..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+        "title": "Gegevensverwerking en beveiliging: het digitale goud van uw bedrijf beschermen",
+        "description": "Elk bedrijf genereert dagelijks aanzienlijke hoeveelheden informatie...."
+      }
+    ]
+  }
+  
 }
+
+  },
+ 
+ 
+  "blogPage": {
+    "hero": {
+      "title": "Inside ElecIT",
+      "subtitle": "Innovatie, Expertise & Bedrijfsleven",
+      "description1": "Een open venster op onze expertise en cultuur.",
+      "description2": "Ontdek onze projecten, innovaties en visie op moderne engineering.",
+      "description3": "Duik in het dagelijks leven van ElecIT, waar technologie mensen ontmoet."
+    },
+    "featured": {
+      "authorName": "Therese Egoutou",
+      "date": "17 nov",
+      "title": "Het gebouw dat zich aan u aanpast",
+      "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat idee omzet in een echte oplossing."
+    },
+    "categories": {
+      "all": "Alle berichten",
+      "smartSpaces": "Smart spaces",
+      "workshop": "Workshop van Vindingrijkheid",
+      "moreThanTrack": "More Than Track",
+      "advancedSecurity": "Geavanceerde Beveiliging",
+      "toolBoxMeeting": "Toolbox vergadering",
+      "companyLife": "Bedrijfsleven",
+      "more": "Meer"
+    },
+    "cards": {
+      "views": "weergaven",
+      "view": "weergave",
+      "comments": "reacties",
+      "comment": "reactie",
+      "readMore": "Lees meer",
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "detail": {
+      "readTime": "min leestijd",
+      "share": "Deel bericht",
+      "cancel": "Annuleren",
+      "publish": "Publiceren",
+      "loginPrompt": "om te posten als lid",
+      "login": "Inloggen",
+      "commentPlaceholder": "Schrijf een reactie...",
+      "commentsTitle": "Reacties",
+      "shareModal": {
+        "title": "Deel dit bericht",
+        "copyLink": "Of kopieer link",
+        "copy": "Kopiëren",
+        "copied": "Link gekopieerd!",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
+      }
+    },
+    "posts": [
+      {
+        "id": 1,
+        "category": "Toolbox vergadering",
+        "title": "Het gebouw dat zich aan u aanpast",
+        "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov"
+        },
+        "content": {
+          "heading1": "Slim ontwerp vanaf de basis",
+          "paragraph1": "Elk project begint met een idee, maar het is het <strong>ontwerp</strong> dat dat idee omzet in een echte oplossing. Dankzij <strong>Computer-Aided Design (CAD)</strong> modelleren we onderdelen en structuren met millimeterprecisie.",
+          "listIntro": "Deze stap stelt ons in staat om:",
+          "listItems": [
+            "mechanische beperkingen te anticiperen,",
+            "vormen en diktes te optimaliseren,",
+            "materiaalverspilling te verminderen,",
+            "en naleving te garanderen vóór de productie."
+          ],
+          "paragraph2": "We winnen dus aan <strong>efficiëntie</strong>, <strong>kosten</strong> en <strong>algehele kwaliteit</strong>.",
+          "heading2": "Hoe we duurzame infrastructuur vormgeven",
+          "paragraph3": "Metaal, een oud materiaal, is een van de belangrijkste pijlers van menselijke evolutie. Van de eerste ambachtelijke gereedschappen tot moderne industriële structuren, het begeleidt elke fase van vooruitgang.",
+          "paragraph4": "Bij <strong>ElecIT ENGINEERING</strong> maken we van metaal meer dan alleen een grondstof: we maken het een <strong>duurzame engineering oplossing</strong>, ontworpen om lang mee te gaan."
+        }
+      },
+      {
+        "id": 2,
+        "category": "Geavanceerde Beveiliging",
+        "title": "Van ruw metaal tot technologische innovatie",
+        "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov"
+        }
+      },
+      {
+        "id": 3,
+        "category": "Bedrijfsleven",
+        "title": "Het gebouw dat zich aan u aanpast",
+        "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov"
+        }
+      }
+    ]
+  }
+}
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
