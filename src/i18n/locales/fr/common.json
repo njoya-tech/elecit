@@ -147,47 +147,48 @@
       "titlePart2": ""
     },
 
-   "servicesCarousel": {
-     "seeMore": "Voir plus",
-      "services": [
-        {
-          "title": "La banque Mobile",
-          "description": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données."
-        },
-        {
-          "title": "Camion transport pour personnel",
-          "description": "Solutions innovantes pour la gestion intelligente des bâtiments et l'optimisation énergétique."
-        },
-        {
-          "title": "Fabrication escabeau 3 en 1",
-          "description": "Systèmes de localisation et de suivi en temps réel pour une gestion optimale de vos ressources."
-        },
-        {
-          "title": "Fabrication Presse à Brique",
-          "description": "Solutions complètes de sécurité et de contrôle d'accès pour protéger vos installations."
-        },
-        {
-          "title": "Smart Home Villa YASSA",
-          "description": "Expertise technique et conseil pour la conception de vos projets technologiques."
-        },
-        {
-          "title": "Smart Office AFB",
-          "description": "Support technique et maintenance pour assurer la pérennité de vos installations."
-        },
-           {
-          "title": "Construction Hangar YASSA",
-          "description": "Support technique et maintenance pour assurer la pérennité de vos installations."
-        },
-           {
-          "title": "Showroom Mango Smart",
-          "description": "Support technique et maintenance pour assurer la pérennité de vos installations."
-        },
-           {
-          "title": "Boutique Mango Smart",
-          "description": "Support technique et maintenance pour assurer la pérennité de vos installations."
-        }
-      ]
-    },
+ 
+  "servicesCarousel": {
+    "seeMore": "Voir plus",
+    "services": [
+      {
+        "title": "Banque Mobile",
+        "description": "Conception, développement et déploiement d'une plateforme de banque mobile permettant aux utilisateurs d'effectuer des opérations financières."
+      },
+      {
+        "title": "Camion de transport du personnel",
+        "description": "Restructuration technique et fonctionnel d'un camion destiné au transport du personnel."
+      },
+      {
+        "title": "Machine de fabrication de briques (presse à brique)",
+        "description": "Conception et fabrication d'une machine industrielle de production de briques, intégrant des mécanismes robustes."
+      },
+      {
+        "title": "Construction d'un hangar métallique",
+        "description": "Étude, conception et construction d'un hangar métallique destiné à des usages industriels et logistiques."
+      },
+      {
+        "title": "Installation domotique dans une villa",
+        "description": "Installation complète d'un système domotique résidentiel comprenant la gestion intelligente."
+      },
+      {
+        "title": "Installation domotique dans une banque",
+        "description": "Déploiement d'un système domotique professionnel pour une banque, incluant la gestion intelligente."
+      },
+      {
+        "title": "Fabrication d'un escabeau 3 en 1",
+        "description": "Conception et fabrication d'un escabeau multifonction 3 en 1, capable de s'adapter à plusieurs configurations d'utilisation."
+      },
+      {
+        "title": "Création et aménagement du showroom",
+        "description": "Conception, aménagement et mise en service d'un showroom dédié à la présentation des solutions domotiques."
+      },
+      {
+        "title": "Ouverture de la boutique vitrine",
+        "description": "Création et aménagement d'une boutique vitrine dédiée à la vente d'équipements électriques, réseaux et autres matériaux."
+      }
+    ]
+  },
 
 
 
@@ -490,33 +491,33 @@
     }
   },
   "smartHome": {
-    "title": "La maison qui s'adapte à vous",
-    "featureTitle": "Gestion automatisée",
-    "featureDescription": "Contrôlez automatiquement l'ensemble de vos équipements connectés. Grâce à un système domotique intégré, gérez les fonctions de votre habitat sur place ou à distance via application mobile.",
+    "title": "Le confort intelligent au quotidien",
+    "featureTitle": "Habitat intelligent",
+    "featureDescription": "La solution Smart Home transforme les habitations en espaces intelligents, confortables et sécurisés grâce à l’intégration de systèmes connectés. Elle permet le pilotage centralisé et à distance de l’éclairage, de la climatisation, des volets, de la vidéosurveillance, des accès et de la gestion énergétique via smartphone, tablette ou écran mural.",
     "buttonText": "Un projet en tête?"
   },
   "smartHotel": {
-    "title": "L'hôtel connecté du futur",
-    "featureTitle": "Expérience client optimisée",
-    "featureDescription": "Offrez à vos clients une expérience unique avec des chambres intelligentes. Contrôle de l'éclairage, de la température, et des services hôteliers via une interface intuitive.",
+    "title": "L’expérience hôtelière intelligente",
+    "featureTitle": "Service hôtelier automatisé",
+    "featureDescription": "La solution Smart Hôtel est dédiée aux établissements hôteliers et couvre aussi bien les chambres, les espaces publics que la réception et la conciergerie. Elle permet un contrôle intelligent de l’éclairage, de la climatisation, des accès et des équipements audiovisuels, avec des scénarios adaptés à l’arrivée et au départ des clients.",
     "buttonText": "Un projet en tête?"
   },
   "smartOffice": {
-    "title": "Le bureau intelligent",
+    "title": "Des bureaux connectés et performants",
     "featureTitle": "Productivité maximale",
     "featureDescription": "Créez un environnement de travail optimal avec des espaces qui s'adaptent aux besoins de vos équipes. Gestion intelligente de l'énergie, de la sécurité et du confort.",
     "buttonText": "Un projet en tête?"
   },
   "smartCommercial": {
-    "title": "L'espace commercial innovant",
-    "featureTitle": "Gestion centralisée",
-    "featureDescription": "Optimisez la gestion de vos espaces commerciaux avec des solutions intelligentes. Contrôle de l'éclairage, de la climatisation et de la sécurité pour une efficacité maximale.",
+    "title": "Des espaces de vente intelligents et attractifs",
+    "featureTitle": "Supermarché, boutique, restaurant..",
+    "featureDescription": "La solution Smart Commercial répond aux besoins spécifiques des espaces commerciaux en combinant automatisation, sécurité et expérience client améliorée. Elle permet la gestion intelligente de l’éclairage, de la climatisation, de la vidéosurveillance, de la sonorisation et des affichages dynamiques.",
     "buttonText": "Un projet en tête?"
   },
   "smartEvents": {
-    "title": "L'événementiel connecté",
-    "featureTitle": "Événements mémorables",
-    "featureDescription": "Transformez vos événements avec des technologies intelligentes. Éclairage dynamique, sonorisation adaptative et contrôle centralisé pour des expériences inoubliables.",
+    "title": "Des événements connectés et immersifs",
+    "featureTitle": "Mariages, conférences, cinémas, anniversaires, discothèques…",
+    "featureDescription": "La solution Smart Events apporte une gestion intelligente et automatisée des événements grâce au contrôle centralisé de l’éclairage, du son, de la vidéo et des effets scénographiques. Elle permet de créer des ambiances dynamiques et personnalisées adaptées à chaque type d’événement.",
     "buttonText": "Un projet en tête?"
   },
 
@@ -726,15 +727,15 @@
     {
       "id": 2,
       "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
-      "author": "Directeur Général",
+      "author": "Particuliers",
       "company": "AFB",
       "rating": 5
     },
     {
       "id": 3,
       "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
-      "author": "Directeur Général",
-      "company": "AFB",
+      "author": "AFB BEKOKO",
+      "company": "",
       "rating": 5
     },
     {
@@ -754,8 +755,8 @@
     {
       "id": 6,
       "text": "SGC exprime sa satisfaction quant à l'amélioration de l'éclairage et de la climatisation de leurs bâtiments. L'intervention a pleinement répondu à leurs attentes.",
-      "author": "Directeur Général",
-      "company": "SGC",
+      "author": "SAAR ASSURANCE",
+      "company": "",
       "rating": 5
     }
   ],
@@ -770,6 +771,7 @@
         { "id": "all", "label": "Tous les projets" },
         { "id": "smart", "label": "Smart building" },
         { "id": "fabrication", "label": "Fabrication mécanique" },
+        { "id": "genie", "label": "Génie civil"},
         { "id": "interne", "label": "Projet interne" }
       ],
       "projectCard": {
@@ -792,11 +794,11 @@
           "number": "1",
           "title": "Banque Mobile",
           "category": "Fabrication mécanique",
-          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données. ",
+          
+          "shortDescription": "Conception, développement et déploiement d’une plateforme de banque mobile permettant aux utilisateurs d’effectuer des opérations financières. ",
           "dateRealisation": "12/06/23",
           "statut": "terminé",
-          "description": "Conception et fabrication d'une flotte sur mesure de véhicules destinés au transport sécurisé et confortable du personnel d'une entreprise.",
+          "description": "Conception, développement et déploiement d’une plateforme de banque mobile permettant aux utilisateurs d’effectuer des opérations financières",
           "utilite": "Ce projet répond au besoin critique de mobilité interne fluide, réduction du temps de déplacement des équipes sur site, tout en assurant leur sécurité et leur confort.",
           "retourClient": "Grâce à ces nouveaux moyens de transport, nous avons réduit de 30 % les retards liés aux déplacements internes, tout en améliorant le confort de nos collaborateurs.",
           "responsable": "Responsable Logistique"
@@ -804,13 +806,13 @@
         {
           "id": 2,
           "number": "2",
-          "title": "Services informatiques & DATA",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Camion de transport du personnel",
+          "category": "Fabrication mécanique",
+          
+          "shortDescription": "Restructuration technique et fonctionnel d’un camion destiné au transport du personnel.",
           "dateRealisation": "15/08/23",
           "statut": "terminé",
-          "description": "Mise en place d'une infrastructure informatique complète pour la gestion et l'analyse de données en temps réel.",
+          "description": "Restructuration technique et fonctionnel d’un camion destiné au transport du personnel.",
           "utilite": "Amélioration de la productivité et de la prise de décision grâce à des outils d'analyse avancés.",
           "retourClient": "L'implémentation de cette solution a transformé notre façon de travailler et augmenté notre efficacité de 40%.",
           "responsable": "Directeur IT"
@@ -818,13 +820,13 @@
         {
           "id": 3,
           "number": "3",
-          "title": "Système de sécurité intelligent",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Machine de fabrication de briques (presse à brique)",
+          "category": "Fabrication mécanique",
+          
+          "shortDescription": "Conception et fabrication d’une machine industrielle de production de briques, intégrant des mécanismes robustes.",
           "dateRealisation": "20/09/23",
           "statut": "en cours",
-          "description": "Installation d'un système de surveillance et de contrôle d'accès intelligent pour un bâtiment administratif.",
+          "description": "Conception et fabrication d’une machine industrielle de production de briques, intégrant des mécanismes robustes..",
           "utilite": "Assurer la sécurité des occupants et des biens tout en optimisant la gestion des accès.",
           "retourClient": "La tranquillité d'esprit apportée par ce système est inestimable pour notre organisation.",
           "responsable": "Chef de la sécurité"
@@ -832,13 +834,13 @@
         {
           "id": 4,
           "number": "4",
-          "title": "Plateforme IoT industrielle",
-          "category": "Fabrication mécanique",
-          "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Construction d’un hangar métallique",
+          "category": "Génie civil",
+          
+          "shortDescription": "Étude, conception et construction d’un hangar métallique destiné à des usages industriels et logistiques.",
           "dateRealisation": "05/10/23",
           "statut": "terminé",
-          "description": "Développement d'une plateforme IoT pour monitorer et optimiser les processus de production.",
+          "description": "Étude, conception et construction d’un hangar métallique destiné à des usages industriels et logistiques..",
           "utilite": "Réduction des temps d'arrêt et amélioration de l'efficacité opérationnelle.",
           "retourClient": "Cette solution nous a permis de réduire nos coûts de maintenance de 25%.",
           "responsable": "Directeur de production"
@@ -846,13 +848,13 @@
         {
           "id": 5,
           "number": "5",
-          "title": "Infrastructure réseau entreprise",
-          "category": "Projet interne",
-          "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Installation domotique dans une villa",
+          "category": "Smart building",
+          
+          "shortDescription": "Installation complète d’un système domotique résidentiel comprenant la gestion intelligente.",
           "dateRealisation": "12/11/23",
           "statut": "en cours",
-          "description": "Refonte complète de l'infrastructure réseau pour supporter la croissance de l'entreprise.",
+          "description": "Installation complète d’un système domotique résidentiel comprenant la gestion intelligente..",
           "utilite": "Garantir une connectivité fiable et performante pour tous les services.",
           "retourClient": "Le nouveau réseau a considérablement amélioré notre productivité quotidienne.",
           "responsable": "Responsable Infrastructure"
@@ -860,13 +862,13 @@
         {
           "id": 6,
           "number": "6",
-          "title": "Automatisation processus",
+          "title": "Installation domotique dans une banque",
           "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          
+          "shortDescription": "Déploiement d’un système domotique professionnel pour une banque, incluant la gestion intelligente.",
           "dateRealisation": "18/12/23",
           "statut": "terminé",
-          "description": "Automatisation des processus métier pour améliorer l'efficacité opérationnelle.",
+          "description": "Déploiement d’un système domotique professionnel pour une banque, incluant la gestion intelligente..",
           "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
           "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
           "responsable": "Directeur des opérations"
@@ -874,13 +876,13 @@
                 {
           "id": 7,
           "number": "7",
-          "title": "Automatisation processus",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Fabrication d’un escabeau en 1",
+          "category": "Fabrication mécanique",
+          
+          "shortDescription": "Conception et fabrication d’un escabeau multifonction 3 en 1, capable de s’adapter à plusieurs configurations d’utilisation.",
           "dateRealisation": "18/12/23",
           "statut": "terminé",
-          "description": "Automatisation des processus métier pour améliorer l'efficacité opérationnelle.",
+          "description": "Conception et fabrication d’un escabeau multifonction 3 en 1, capable de s’adapter à plusieurs configurations d’utilisation..",
           "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
           "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
           "responsable": "Directeur des opérations"
@@ -888,13 +890,13 @@
                 {
           "id": 8,
           "number": "8",
-          "title": "Automatisation processus",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Création et aménagement du showroom ",
+          "category": "Projet interne",
+          
+          "shortDescription": "Conception, aménagement et mise en service d’un showroom dédié à la présentation des solutions domotiques.",
           "dateRealisation": "18/12/23",
           "statut": "terminé",
-          "description": "Automatisation des processus métier pour améliorer l'efficacité opérationnelle.",
+          "description": "Conception, aménagement et mise en service d’un showroom dédié à la présentation des solutions domotiques..",
           "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
           "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
           "responsable": "Directeur des opérations"
@@ -902,13 +904,13 @@
           {
           "id": 9,
           "number": "9",
-          "title": "Automatisation processus",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-          "shortDescription": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données.",
+          "title": "Ouverture de la boutique vitrine ",
+          "category": "Projet interne",
+          
+          "shortDescription": "Création et aménagement d’une boutique vitrine dédiée à la vente d’équipements électriques, réseaux et autres matériaux.",
           "dateRealisation": "18/12/23",
           "statut": "terminé",
-          "description": "Automatisation des processus métier pour améliorer l'efficacité opérationnelle.",
+          "description": "Création et aménagement d’une boutique vitrine dédiée à la vente d’équipements électriques, réseaux et autres matériaux..",
           "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
           "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
           "responsable": "Directeur des opérations"
