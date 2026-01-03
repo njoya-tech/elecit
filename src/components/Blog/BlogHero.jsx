@@ -1,6 +1,3 @@
-// ============================================
-// 1. BlogHero.jsx with i18n
-// ============================================
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import { ICONS, HERO } from "../../asset/assets.js";
