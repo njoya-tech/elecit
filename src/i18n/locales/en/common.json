@@ -126,36 +126,47 @@
       "highlightWord": "expectations",
       "titlePart2": ""
     },
-
-    "servicesCarousel": {
-      "seeMore": "See more",
-      "services": [
-        {
-          "title": "IT Services & DATA Processing",
-          "description": "Custom solutions for data analysis, program design, as well as network and database management."
-        },
-        {
-          "title": "Smart Building Solutions",
-          "description": "Innovative solutions for intelligent building management and energy optimization."
-        },
-        {
-          "title": "GPS & Tracking",
-          "description": "Real-time location and tracking systems for optimal resource management."
-        },
-        {
-          "title": "Access Control & Security",
-          "description": "Complete security and access control solutions to protect your facilities."
-        },
-        {
-          "title": "Engineering Consulting",
-          "description": "Technical expertise and consulting for the design of your technology projects."
-        },
-        {
-          "title": "After-Sales Service",
-          "description": "Technical support and maintenance to ensure the sustainability of your installations."
-        }
-      ]
-    },
+"servicesCarousel": {
+    "seeMore": "See more",
+    "services": [
+      {
+        "title": "Mobile Banking",
+        "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions."
+      },
+      {
+        "title": "Personnel Transport Truck",
+        "description": "Technical and functional restructuring of a truck intended for personnel transportation."
+      },
+      {
+        "title": "Brick Making Machine (Brick Press)",
+        "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms."
+      },
+      {
+        "title": "Metal Warehouse Construction",
+        "description": "Study, design and construction of a metal warehouse intended for industrial and logistics use."
+      },
+      {
+        "title": "Home Automation Installation in a Villa",
+        "description": "Complete installation of a residential home automation system including intelligent management."
+      },
+      {
+        "title": "Home Automation Installation in a Bank",
+        "description": "Deployment of a professional home automation system for a bank, including intelligent management."
+      },
+      {
+        "title": "Manufacturing of a 3-in-1 Stepladder",
+        "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations."
+      },
+      {
+        "title": "Creation and Layout of the Showroom",
+        "description": "Design, layout and commissioning of a showroom dedicated to the presentation of home automation solutions."
+      },
+      {
+        "title": "Opening of the Display Store",
+        "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials."
+      }
+    ]
+  },
 
     "smartBuild":{
   "title": "Solutions Exhibition and Smart Building",
@@ -210,56 +221,56 @@
 },
 
 "testimonials": {
-  "items": [
-    {
-      "id": 1,
-      "text": "AFB expresses their satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
-      "author": "General Manager",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 2,
-      "text": "AFB expresses their satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
-      "author": "General Manager",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 3,
-      "text": "AFB expresses their satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
-      "author": "General Manager",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 4,
-      "text": "SGC expresses satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
-      "author": "General Manager",
-      "company": "SGC",
-      "rating": 5
-    },
-    {
-      "id": 5,
-      "text": "Elecit delivered an exceptional home automation installation to KILO FORCE. We are delighted with the quality of service and the modernization provided. Thank you for this experience!",
-      "author": "General Manager",
-      "company": "KILO FORCE",
-      "rating": 5
-    },
-    {
-      "id": 6,
-      "text": "SGC expresses satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
-      "author": "General Manager",
-      "company": "SGC",
-      "rating": 5
+    "items": [
+      {
+        "id": 1,
+        "text": "AFB expresses its satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
+        "author": "General Manager",
+        "company": "AFB",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "text": "Individual customers' satisfaction is palpable regarding the wireless home automation and smart building project. This demonstrates the success and positive impact.",
+        "author": "Individual Customers",
+        "company": "",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "text": "AFB BEKOKO is fully satisfied with the installation of two power sources and an inverter, as well as smoke and flood detectors. Quality service!",
+        "author": "AFB BEKOKO",
+        "company": "",
+        "rating": 5
+      },
+      {
+        "id": 4,
+        "text": "SGC expresses its satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
+        "author": "General Manager",
+        "company": "SGC",
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "text": "Elecit delivered an exceptional home automation installation at KILO FORCE. We are delighted with the quality of service and the modernization provided. Thank you for this experience!",
+        "author": "General Manager",
+        "company": "KILO FORCE",
+        "rating": 5
+      },
+      {
+        "id": 6,
+        "text": "The maintenance and repair of our air conditioning systems by ElecIT brings us complete satisfaction. Their professionalism and efficiency have significantly improved our experience. We highly recommend ElecIT for their exceptional services.",
+        "author": "SAAR ASSURANCE",
+        "company": "",
+        "rating": 5
+      }
+    ],
+    "ariaLabels": {
+      "previous": "Previous",
+      "next": "Next",
+      "goToTestimonial": "Go to testimonial"
     }
-  ],
-  "ariaLabels": {
-    "previous": "Previous",
-    "next": "Next",
-    "goToTestimonial": "Go to testimonial"
-  }
-},
+  },
 
 "footer": {
     "banner": {
@@ -341,6 +352,8 @@
     "subtitleRound": "Let's build it together from today",
     "buttonRound": "Contact us"
   },
+
+  
 "projet": {
   "title": "OUR REALIZATIONS",
   "subtitle": "Discover some of the projects we have designed and realized for our clients.",
@@ -420,9 +433,10 @@
 },
 
 
- "smartBuilding": {
+
+  "smartBuilding": {
     "title": "SMART BUILDING",
-    "subtitle": "Tailor-made solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy performance and connectivity combined in an intelligent architecture.",
+    "subtitle": "Custom solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy efficiency and connectivity combined in intelligent architecture.",
     "buttonText": "Visit the showroom",
     "tabs": {
       "smartHome": "Smart home",
@@ -433,33 +447,33 @@
     }
   },
   "smartHome": {
-    "title": "The home that adapts to you",
-    "featureTitle": "Automated management",
-    "featureDescription": "Automatically control all your connected equipment. Thanks to an integrated home automation system, manage your home functions on-site or remotely via mobile application.",
+    "title": "Intelligent comfort for everyday life",
+    "featureTitle": "Smart living",
+    "featureDescription": "The Smart Home solution transforms homes into intelligent, comfortable and secure spaces through the integration of connected systems. It enables centralized and remote control of lighting, air conditioning, shutters, video surveillance, access control and energy management via smartphone, tablet or wall screen.",
     "buttonText": "Have a project in mind?"
   },
   "smartHotel": {
-    "title": "The connected hotel of the future",
-    "featureTitle": "Optimized customer experience",
-    "featureDescription": "Offer your guests a unique experience with smart rooms. Control lighting, temperature, and hotel services via an intuitive interface.",
+    "title": "The intelligent hotel experience",
+    "featureTitle": "Automated hotel service",
+    "featureDescription": "The Smart Hotel solution is dedicated to hotel establishments and covers guest rooms, public spaces, reception and concierge services. It enables intelligent control of lighting, air conditioning, access and audiovisual equipment, with scenarios adapted to guest arrivals and departures.",
     "buttonText": "Have a project in mind?"
   },
   "smartOffice": {
-    "title": "The intelligent office",
+    "title": "Connected and efficient offices",
     "featureTitle": "Maximum productivity",
-    "featureDescription": "Create an optimal work environment with spaces that adapt to your teams' needs. Intelligent management of energy, security and comfort.",
+    "featureDescription": "Create an optimal work environment with spaces that adapt to your team's needs. Intelligent management of energy, security and comfort.",
     "buttonText": "Have a project in mind?"
   },
   "smartCommercial": {
-    "title": "The innovative commercial space",
-    "featureTitle": "Centralized management",
-    "featureDescription": "Optimize the management of your commercial spaces with intelligent solutions. Control of lighting, air conditioning and security for maximum efficiency.",
+    "title": "Intelligent and attractive retail spaces",
+    "featureTitle": "Supermarket, shop, restaurant...",
+    "featureDescription": "The Smart Commercial solution meets the specific needs of commercial spaces by combining automation, security and enhanced customer experience. It enables intelligent management of lighting, air conditioning, video surveillance, sound systems and dynamic displays.",
     "buttonText": "Have a project in mind?"
   },
   "smartEvents": {
-    "title": "Connected events",
-    "featureTitle": "Memorable events",
-    "featureDescription": "Transform your events with intelligent technologies. Dynamic lighting, adaptive sound system and centralized control for unforgettable experiences.",
+    "title": "Connected and immersive events",
+    "featureTitle": "Weddings, conferences, cinemas, birthdays, nightclubs...",
+    "featureDescription": "The Smart Events solution brings intelligent and automated event management through centralized control of lighting, sound, video and scenographic effects. It enables the creation of dynamic and personalized atmospheres adapted to each type of event.",
     "buttonText": "Have a project in mind?"
   },
 
@@ -581,6 +595,8 @@
   "subtitleRound": "Our team is ready to listen to bring your ideas to life and offer personalized support.",
   "buttonRound": "Contact us"
 },
+
+
  "gpsT": {
     "titlehero": "GPS & TRACKING",
     "descriptionhero": "Modern, scalable tracking solutions tailored to the needs of individuals, businesses and institutions, both nationally and internationally (within the CEMAC area).",
@@ -645,112 +661,155 @@
 },
 
 "projects": {
-      "categories": [
-        { "id": "all", "label": "All projects" },
-        { "id": "smart", "label": "Smart building" },
-        { "id": "fabrication", "label": "Mechanical manufacturing" },
-        { "id": "interne", "label": "Internal project" }
-      ],
-      "projectCard": {
-        "seeMore": "Learn more"
-      },
-      "projectModal": {
-        "mechanicalFabrication": "Mechanical manufacturing",
-        "project": "Project:",
-        "dateRealisation": "Completion date:",
-        "projectStatus": "Project status:",
-        "projectDescription": "Project description:",
-        "utility": "Purpose:",
-        "clientFeedback": "Client feedback:",
-        "haveProject": "Do you have a project?",
-        "close": "Close"
-      },
-      "projectsData": [
-        {
-          "id": 1,
-          "number": "1",
-          "title": "Mobile Bank",
-          "category": "Mechanical manufacturing",
-          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-          "shortDescription": "Custom solutions for data analysis, program design, as well as network and database management.",
-          "dateRealisation": "06/12/23",
-          "statut": "completed",
-          "description": "Design and manufacture of a custom fleet of vehicles for safe and comfortable transportation of company personnel.",
-          "utilite": "This project addresses the critical need for smooth internal mobility, reducing team travel time on site, while ensuring their safety and comfort.",
-          "retourClient": "Thanks to these new means of transport, we have reduced internal travel delays by 30%, while improving the comfort of our employees.",
-          "responsable": "Logistics Manager"
-        },
-        {
-          "id": 2,
-          "number": "2",
-          "title": "IT Services & DATA",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop",
-          "shortDescription": "Custom solutions for data analysis, program design, as well as network and database management.",
-          "dateRealisation": "08/15/23",
-          "statut": "completed",
-          "description": "Implementation of a complete IT infrastructure for real-time data management and analysis.",
-          "utilite": "Improved productivity and decision-making through advanced analytics tools.",
-          "retourClient": "The implementation of this solution has transformed the way we work and increased our efficiency by 40%.",
-          "responsable": "IT Director"
-        },
-        {
-          "id": 3,
-          "number": "3",
-          "title": "Smart security system",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=300&fit=crop",
-          "shortDescription": "Custom solutions for data analysis, program design, as well as network and database management.",
-          "dateRealisation": "09/20/23",
-          "statut": "in progress",
-          "description": "Installation of an intelligent surveillance and access control system for an administrative building.",
-          "utilite": "Ensure the safety of occupants and property while optimizing access management.",
-          "retourClient": "The peace of mind provided by this system is invaluable to our organization.",
-          "responsable": "Security Manager"
-        },
-        {
-          "id": 4,
-          "number": "4",
-          "title": "Industrial IoT platform",
-          "category": "Mechanical manufacturing",
-          "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-          "shortDescription": "Custom solutions for data analysis, program design, as well as network and database management.",
-          "dateRealisation": "10/05/23",
-          "statut": "completed",
-          "description": "Development of an IoT platform to monitor and optimize production processes.",
-          "utilite": "Reduced downtime and improved operational efficiency.",
-          "retourClient": "This solution has allowed us to reduce our maintenance costs by 25%.",
-          "responsable": "Production Director"
-        },
-        {
-          "id": 5,
-          "number": "5",
-          "title": "Enterprise network infrastructure",
-          "category": "Internal project",
-          "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=300&fit=crop",
-          "shortDescription": "Custom solutions for data analysis, program design, as well as network and database management.",
-          "dateRealisation": "11/12/23",
-          "statut": "in progress",
-          "description": "Complete overhaul of network infrastructure to support company growth.",
-          "utilite": "Ensure reliable and high-performance connectivity for all services.",
-          "retourClient": "The new network has significantly improved our daily productivity.",
-          "responsable": "Infrastructure Manager"
-        },
-        {
-          "id": 6,
-          "number": "6",
-          "title": "Process automation",
-          "category": "Smart building",
-          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop",
-          "shortDescription": "Custom solutions for data analysis, program design, as well as network and database management.",
-          "dateRealisation": "12/18/23",
-          "statut": "completed",
-          "description": "Business process automation to improve operational efficiency.",
-          "utilite": "Free up time for teams and reduce human errors.",
-          "retourClient": "Automation has transformed the way we work on a daily basis.",
-          "responsable": "Operations Director"
-        }
-      ]
+  "categories": [
+    { "id": "all", "label": "All projects" },
+    { "id": "smart", "label": "Smart building" },
+    { "id": "fabrication", "label": "Mechanical manufacturing" },
+    { "id": "genie", "label": "Civil engineering"},
+    { "id": "interne", "label": "Internal project" }
+  ],
+  "projectCard": {
+    "seeMore": "See more"
+  },
+  "projectModal": {
+    "mechanicalFabrication": "Mechanical manufacturing",
+    "project": "Project:",
+    "dateRealisation": "Completion date:",
+    "projectStatus": "Project status:",
+    "projectDescription": "Project description:",
+    "utility": "Benefits:",
+    "clientFeedback": "Client feedback:",
+    "haveProject": "Do you have a project?",
+    "close": "Close"
+  },
+  "projectsData": [
+    {
+      "id": 1,
+      "number": "1",
+      "title": "Mobile Bank",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions.",
+      "dateRealisation": "12/06/23",
+      "statut": "completed",
+      "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions",
+      "utilite": "This project addresses the critical need for smooth internal mobility, reducing on-site team travel time while ensuring their safety and comfort.",
+      "retourClient": "Thanks to these new means of transport, we have reduced internal travel delays by 30%, while improving the comfort of our employees.",
+      "responsable": "Logistics Manager"
+    },
+    {
+      "id": 2,
+      "number": "2",
+      "title": "Personnel Transport Truck",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Technical and functional restructuring of a truck for personnel transportation.",
+      "dateRealisation": "15/08/23",
+      "statut": "completed",
+      "description": "Technical and functional restructuring of a truck for personnel transportation.",
+      "utilite": "Improved productivity and decision-making through advanced analytics tools.",
+      "retourClient": "The implementation of this solution has transformed our way of working and increased our efficiency by 40%.",
+      "responsable": "IT Director"
+    },
+    {
+      "id": 3,
+      "number": "3",
+      "title": "Brick Making Machine (Brick Press)",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
+      "dateRealisation": "20/09/23",
+      "statut": "in progress",
+      "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
+      "utilite": "Ensure the safety of occupants and property while optimizing access management.",
+      "retourClient": "The peace of mind provided by this system is invaluable to our organization.",
+      "responsable": "Security Chief"
+    },
+    {
+      "id": 4,
+      "number": "4",
+      "title": "Metal Warehouse Construction",
+      "category": "Civil engineering",
+      
+      "shortDescription": "Study, design and construction of a metal warehouse for industrial and logistics use.",
+      "dateRealisation": "05/10/23",
+      "statut": "completed",
+      "description": "Study, design and construction of a metal warehouse for industrial and logistics use.",
+      "utilite": "Reduced downtime and improved operational efficiency.",
+      "retourClient": "This solution allowed us to reduce our maintenance costs by 25%.",
+      "responsable": "Production Director"
+    },
+    {
+      "id": 5,
+      "number": "5",
+      "title": "Home Automation Installation in a Villa",
+      "category": "Smart building",
+      
+      "shortDescription": "Complete installation of a residential home automation system including intelligent management.",
+      "dateRealisation": "12/11/23",
+      "statut": "in progress",
+      "description": "Complete installation of a residential home automation system including intelligent management.",
+      "utilite": "Ensure reliable and high-performance connectivity for all services.",
+      "retourClient": "The new network has significantly improved our daily productivity.",
+      "responsable": "Infrastructure Manager"
+    },
+    {
+      "id": 6,
+      "number": "6",
+      "title": "Home Automation Installation in a Bank",
+      "category": "Smart building",
+      
+      "shortDescription": "Deployment of a professional home automation system for a bank, including intelligent management.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Deployment of a professional home automation system for a bank, including intelligent management.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    },
+    {
+      "id": 7,
+      "number": "7",
+      "title": "Manufacturing of a 3-in-1 Stepladder",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    },
+    {
+      "id": 8,
+      "number": "8",
+      "title": "Creation and Layout of the Showroom",
+      "category": "Internal project",
+      
+      "shortDescription": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    },
+    {
+      "id": 9,
+      "number": "9",
+      "title": "Opening of the Display Store",
+      "category": "Internal project",
+      
+      "shortDescription": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    }
+  ]
 },
 
 "smartVilla": {

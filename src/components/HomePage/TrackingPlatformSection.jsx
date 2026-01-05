@@ -69,7 +69,7 @@ const TrackingPlatformSection = ({ title, buttonText, images }) => {
     
   "
   style={{ color: MY_COLORS.white }}
->
+  >
   {title}
 </h2>
 

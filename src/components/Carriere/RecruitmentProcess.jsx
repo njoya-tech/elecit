@@ -10,7 +10,7 @@ const RecruitmentProcess = ({ steps }) => {
     <div className="w-full py-16 px-4">
       {/* Titre de la section */}
       <h2 
-        className="text-xl md:text-4xl font-bold text-center mb-5"
+        className="text-xl md:text-4xl font-bold text-center mb-12"
         style={{ color: MY_COLORS.primaryBlue }}
       >
         {t('recruitment.processTitle')}
@@ -18,35 +18,48 @@ const RecruitmentProcess = ({ steps }) => {
       
       {/* Timeline des étapes */}
       <div className="max-w-6xl mx-auto">
-        {/* Ligne de connexion pour desktop */}
-        <div className="hidden md:flex items-center justify-between mb-8 relative">
-          {/* Ligne horizontale */}
+        {/* Contenu des étapes pour desktop */}
+        <div className="hidden md:grid md:grid-cols-5 gap-8 relative">
+          {/* Ligne horizontale en pointillés qui relie les cercles */}
           <div 
-            className="absolute top-1/2 left-0 right-0 h-0.5 transform -translate-y-1/2"
+            className="absolute top-8 left-0 right-0 h-0.5 z-0"
             style={{ 
-              background: `repeating-linear-gradient(to right, ${MY_COLORS.primaryBlue} 0, ${MY_COLORS.primaryBlue} 10px, transparent 10px, transparent 20px)`
+              background: `repeating-linear-gradient(to right, ${MY_COLORS.primaryBlue} 0, ${MY_COLORS.primaryBlue} 10px, transparent 10px, transparent 20px)`,
+              left: '10%',
+              right: '10%'
             }}
           ></div>
           
-          {/* Cercles numérotés */}
-          {steps.map((_, index) => (
-            <div
-              key={index}
-              className="relative z-10 w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold"
-              style={{ backgroundColor: MY_COLORS.primaryBlue }}
-            >
-              {index + 1}
+          {steps.map((step, index) => (
+            <div key={index} className="flex flex-col items-center text-center relative z-10">
+              {/* Cercle numéroté centré */}
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6"
+                style={{ backgroundColor: MY_COLORS.primaryBlue }}
+              >
+                {index + 1}
+              </div>
+              
+              {/* Titre de l'étape */}
+              <h3 className="font-bold text-lg mb-3" style={{ color: MY_COLORS.black }}>
+                {t(step.title)}
+              </h3>
+              
+              {/* Description */}
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {t(step.description)}
+              </p>
             </div>
           ))}
         </div>
         
-        {/* Contenu des étapes */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        {/* Version mobile */}
+        <div className="md:hidden space-y-8">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               {/* Cercle pour mobile */}
               <div
-                className="md:hidden w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4"
+                className="w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4"
                 style={{ backgroundColor: MY_COLORS.primaryBlue }}
               >
                 {index + 1}

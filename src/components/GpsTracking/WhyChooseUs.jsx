@@ -6,6 +6,9 @@ import gp3  from '../../assets/gp3.svg'
 import gp5 from '../../assets/gp5.svg'
 import gp6 from '../../assets/gp6.svg'
 import g1 from '../../assets/g1.svg'
+import gv from '../../assets/gv.svg'
+
+
 import { motion } from 'framer-motion'
 
 
@@ -22,7 +25,7 @@ const MY_COLORS = {
 };
 
 const FeatureCard = ({ icon , text }) => (
-  <div className="relative bg-white mt-10 rounded-lg border-2 border-gray-200 p-6 mx-auto flex flex-col items-center text-center min-h-[320px] max-w-[350px] hover:shadow-lg shadow-lg transition-shadow">
+  <div className="relative bg-white mt-10 rounded-lg border-2 border-gray-200 p-6 mx-auto flex flex-col items-center text-center min-h-[220px] max-w-[300px] hover:shadow-lg shadow-lg transition-shadow">
     <div className=" -mt-20 absolute">
      <img src={icon} alt="" className='w-30 h-30 object-contain' />
     </div>
@@ -58,7 +61,7 @@ const WhyChooseUs = ({ translations }) => {
           >
             {title}
           </h2>
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-700 font-semibold text-lg max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -117,7 +120,7 @@ const WhyChooseUs = ({ translations }) => {
           {/* Feature 4 */}
           <div className="relative " style={{ zIndex: 1 }}>
             <FeatureCard
-              icon={g1}
+              icon={gv}
               text={feature4}
             />
           </div>

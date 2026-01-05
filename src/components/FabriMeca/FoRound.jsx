@@ -23,7 +23,7 @@ const FoRound = () => {
           {/* Titre principal */}
           <h1 
             style={{color: MY_COLORS.white}} 
-            className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl lg:pt-30 text-center'
+            className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl lg:pt-30 text-center'
           >
             {t('fab.titleRound')} ?
           </h1>

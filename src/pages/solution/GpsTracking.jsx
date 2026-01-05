@@ -37,6 +37,8 @@ import t3 from '../../assets/new/t3.png'
 import t1 from '../../assets/new/t1.jpg'
 
 
+
+
 const GpsTracking = () => {
   const { t } = useTranslation()
 

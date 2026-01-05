@@ -130,7 +130,7 @@ const Footer = () => {
 
           {/* Contenu principal du footer */}
           <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 py-8 sm:py-10 md:py-12 relative z-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 md:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8 md:gap-8">
               
               {/* Colonne 1 - Logo et description */}
               <div className="space-y-4 sm:space-y-5 md:space-y-6">
@@ -230,7 +230,7 @@ const Footer = () => {
               </div>
 
               {/* Colonne 3 - Liens utiles */}
-              <div>
+              <div className="translate-x-4">
                 <h3 className="text-white font-bold text-base sm:text-lg mb-3 sm:mb-4">{t('footer.usefulLinks.title')}</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>

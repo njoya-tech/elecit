@@ -27,7 +27,7 @@ const Ground = () => {
             {/* Titre secondaire */}
              <p 
          style={{color: MY_COLORS.secondaryGreen}} 
-            className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-5xl  text-center max-w-2xl'
+            className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-6xl  text-center max-w-2xl'
           >
               {t('gpsT.titleRound2')} 
             </p>
@@ -49,7 +49,7 @@ const Ground = () => {
 
             {/* Bouton */}
             <button 
-              className="px-6 py-2 md:px-10 md:py-3 lg:px-12 lg:py-4 border-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 mt-4"
+              className="px-6 py-2 md:px-10 md:py-3 lg:px-12 lg:py-4 border-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 "
               style={{
                 borderColor: MY_COLORS.secondaryGreen,
                 color: MY_COLORS.secondaryGreen

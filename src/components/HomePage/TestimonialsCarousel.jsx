@@ -51,28 +51,38 @@ const testimonials = t('testimonials.items', { returnObjects: true });
 
 
   const totalSlides = testimonials.length;
+  const totalGroups = Math.ceil(totalSlides / 3); // Nombre de groupes
 
   // Auto-slide toutes les 5 secondes
   React.useEffect(() => {
     if (isPaused) return;
     
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalSlides);
+      setCurrentIndex((prev) => {
+        const nextIndex = prev + 3;
+        return nextIndex >= totalSlides ? 0 : nextIndex;
+      });
     }, 5000);
 
     return () => clearInterval(interval);
   }, [isPaused, totalSlides]);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
+  const goToSlide = (groupIndex) => {
+    setCurrentIndex(groupIndex * 3);
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+    setCurrentIndex((prev) => {
+      const nextIndex = prev + 3;
+      return nextIndex >= totalSlides ? 0 : nextIndex;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    setCurrentIndex((prev) => {
+      const prevIndex = prev - 3;
+      return prevIndex < 0 ? totalSlides - 3 : prevIndex;
+    });
   };
 
   // Calculer quelles cartes afficher (3 cartes visibles)
@@ -160,7 +170,7 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                     className="w-full mb-6"
                     style={{
                       height: '2px',
-                      backgroundImalge: `inear-gradient(to right, ${MY_COLORS.green} 50%, transparent 50%)`,
+                      backgroundImage: `linear-gradient(to right, ${MY_COLORS.green} 50%, transparent 50%)`,
                       backgroundSize: '12px 2px',
                       backgroundRepeat: 'repeat-x'
                     }}
@@ -230,23 +240,28 @@ const testimonials = t('testimonials.items', { returnObjects: true });
 
         {/* Indicateurs de pagination (pointillés) */}
         <div className="flex justify-center items-center gap-2 mt-8">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className="transition-all rounded-full"
-              style={{
-                width: currentIndex === index ? '32px' : '8px',
-                height: '8px',
-                backgroundColor: currentIndex === index ? MY_COLORS.green : '#CCCCCC',
-              }}
-            aria-label={`${t('testimonials.ariaLabels.goToTestimonial')} ${index + 1}`}
-            />
-          ))}
+          {[...Array(totalGroups)].map((_, index) => {
+            const groupIndex = Math.floor(currentIndex / 3);
+            const isActive = groupIndex === index;
+            
+            return (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className="transition-all rounded-full"
+                style={{
+                  width: isActive ? '32px' : '8px',
+                  height: '8px',
+                  backgroundColor: isActive ? MY_COLORS.green : '#CCCCCC',
+                }}
+                aria-label={`${t('testimonials.ariaLabels.goToTestimonial')} ${index + 1}`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
 
-export default TestimonialsCarousel;                                              
+export default TestimonialsCarousel;

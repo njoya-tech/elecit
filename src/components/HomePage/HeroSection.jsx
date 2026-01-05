@@ -6,6 +6,7 @@ import vid from '../../assets/vid.png';
 import fleche from '../../assets/fleche.png';
 import {motion } from 'framer-motion'
 import { MY_COLORS } from '../../utils/colors';
+import fi from '../../assets/fi.svg'
 
 const HeroSection = ({ slides }) => {
   const { t } = useTranslation();
@@ -60,8 +61,9 @@ const HeroSection = ({ slides }) => {
         <div className="absolute inset-y-0 right-0
     w-1/2 sm:w-2/5 md:w-1/2
     flex items-center justify-end
-    transform -translate-x-5
-    md:-translate-x-25
+    transform -translate-x-2
+    md:-translate-x-18
+   
     lg:-translate-x-153">
           <img
   src={design_x}
@@ -81,7 +83,7 @@ const HeroSection = ({ slides }) => {
 
         {/* Contenu principal - Adapté pour cohabiter avec X */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="w-full sm:w-1/2 md:w-[28%] lg:w-[35%] py-8 md:py-0">
+          <div className="w-[60%] sm:w-1/2 md:w-[48%] lg:w-[35%] py-8 md:py-0">
             
             {/* Sous-titre avec icône */}
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">

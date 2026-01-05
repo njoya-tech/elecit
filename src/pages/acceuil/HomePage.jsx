@@ -82,14 +82,14 @@ const blogData = t('blog.articles', { returnObjects: true });
 
 const blogImages = [
   c2,
-   an15,
-   an17,
-   an18,
-   an14,
-   an19,
-   an16,
-   an20,
-   an13
+  an15,
+  an17,
+  an18,
+  an14,
+  an19,
+  an16,
+  an20,
+  an13
 ]
 
 const blog = blogData.map((blog, index) => ({

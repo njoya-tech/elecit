@@ -254,6 +254,8 @@
     }
   ]
 },
+
+
 "testimonialsBanner": {
   "titlePart1": "Ce que disent nos clients de leur ",
   "highlightWord": "expérience",
@@ -454,6 +456,8 @@
       "sendApplication": "Envoyer la candidature"
     }
   },
+
+
    "recruitment": {
     "spontaneousTitle": "Candidature ",
     "spontaneousSubtitle": "Rejoignez notre équipe et faites partie de l'aventure",
@@ -649,6 +653,8 @@
     "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
     "buttonRound": "Contactez-nous"
   },
+
+  
 "gpsT": {
     "titlehero": "GPS & TRACKING",
     "descriptionhero": "Solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu'international (dans l'espace CEMAC).",
@@ -726,14 +732,14 @@
     },
     {
       "id": 2,
-      "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
+      "text": "La satisfaction des particuliers est palpable à l’égard du projet de domotique sans fil et des bâtiments intelligents. Cela témoigne du succès et de l’impact positif.",
       "author": "Particuliers",
-      "company": "AFB",
+      "company": "",
       "rating": 5
     },
     {
       "id": 3,
-      "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
+      "text": "AFB BEKOKO est pleinement satisfait de l’installation de deux sources d’alimentation et d’un inverseur, ainsi que des détecteurs de fumée et d’inondation. Un service de qualité !",
       "author": "AFB BEKOKO",
       "company": "",
       "rating": 5
@@ -754,7 +760,7 @@
     },
     {
       "id": 6,
-      "text": "SGC exprime sa satisfaction quant à l'amélioration de l'éclairage et de la climatisation de leurs bâtiments. L'intervention a pleinement répondu à leurs attentes.",
+      "text": "La maintenance et le dépannage de nos climatisations par ElecIT nous apportent une satisfaction totale. Leur professionnalisme et efficacité ont considérablement amélioré notre expérience. Nous recommandons vivement ElecIT pour leurs services exceptionnels.",
       "author": "SAAR ASSURANCE",
       "company": "",
       "rating": 5
