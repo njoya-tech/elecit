@@ -32,6 +32,9 @@ const EntrepriseAcc = () => {
                 src={ICONS.Casque}
                 alt="Casque"
                 className="w-full h-full object-contain animate-bounce"
+                style={{
+                  animationDuration:"3s"
+                }}
               />
             </div>
 

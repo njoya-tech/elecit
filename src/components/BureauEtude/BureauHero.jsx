@@ -1,9 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ICONS, HERO } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton";
 
 const BureauHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       className="
@@ -15,7 +18,7 @@ const BureauHero = () => {
       {/* BACKGROUND IMAGE */}
       <img
         src={HERO.bureauEtude}
-        alt="Bureau d’étude et ingénierie"
+        alt="Bureau d'étude et ingénierie"
         className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
       />
 
@@ -71,9 +74,7 @@ const BureauHero = () => {
           "
           style={{ color: MY_COLORS.secondaryGreen }}
         >
-          INGÉNIERIE BÂTIMENT
-          <br />
-          & TRAVAUX PUBLICS
+          {t('bureau.hero.title')}
         </h1>
 
         {/* DESCRIPTION */}
@@ -86,15 +87,12 @@ const BureauHero = () => {
             max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl
           "
         >
-          Nous proposons une offre complète pour la construction de
-          bâtiments publics et privés,
-          <br className="hidden md:block" />
-          des ouvrages hydrauliques.
+          {t('bureau.hero.description')}
         </p>
 
         {/* CTA */}
         <CTAButton onClick={() => alert("Video clicked!")}>
-          Publireportage
+          {t('bureau.hero.button')}
         </CTAButton>
       </div>
     </section>

@@ -1,45 +1,13 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
 
 const SavGreenCards = () => {
-  const services = {
-    row1: [
-      {
-        icon: ICONS.laptop,
-        title: "Gestion des Infrastructures IT",
-        description:
-          "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.).",
-      },
-      {
-        icon: ICONS.stockage,
-        title: "Support Technique & Assistance",
-        description:
-          "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective.",
-      },
-    ],
-    row2: [
-      {
-        icon: ICONS.badge,
-        title: "Cybersécurité",
-        description:
-          "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité.",
-      },
-      {
-        icon: ICONS.business_icon,
-        title: "Virtualisation & Cloud Computing",
-        description:
-          "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides.",
-      },
-      {
-        icon: ICONS.badge,
-        title: "Développement d'applications",
-        description:
-          "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers.",
-      },
-    ],
-  };
+  const { t } = useTranslation();
+
+  const services = t('sav.greenCards.services', { returnObjects: true });
 
   return (
     <>
@@ -56,7 +24,7 @@ const SavGreenCards = () => {
           font-bold px-4 sm:px-8 py-6 md:py-8 text-right z-10"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
-            Nos engagements clés
+            {t('sav.greenCards.heading')}
           </h2>
           <div
             className="absolute -top-1 -left-20 w-3/4 sm:w-1/5
@@ -94,8 +62,7 @@ const SavGreenCards = () => {
             className="text-slate-900 text-base 
             md:text-lg max-w-3xl mx-auto leading-relaxed"
           >
-            Bénéficiez d'un SAV intégré, rentable et structurant, pensé pour
-            assurer la pérennité de vos projets.
+            {t('sav.greenCards.subtitle')}
           </p>
         </div>
 
@@ -155,7 +122,7 @@ const SavGreenCards = () => {
               <div className="absolute -top-10 md:-top-12 left-1/2 
               transform -translate-x-1/2">
                 <img
-                  src={services.row1[0].icon}
+                  src={ICONS.laptop}
                   alt=""
                   className="w-20 h-20 md:w-24 md:h-24"
                 />
@@ -165,10 +132,10 @@ const SavGreenCards = () => {
                 className="text-lg md:text-xl font-bold mb-3 text-center"
                 style={{ color: MY_COLORS.black }}
               >
-                {services.row1[0].title}
+                {services[0].title}
               </h3>
               <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed">
-                {services.row1[0].description}
+                {services[0].description}
               </p>
             </div>
 
@@ -176,7 +143,7 @@ const SavGreenCards = () => {
             <div className="relative pt-16 md:pt-20 p-6 rounded-xl shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow duration-300 border border-gray-100">
               <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
                 <img
-                  src={services.row1[1].icon}
+                  src={ICONS.stockage}
                   alt=""
                   className="w-20 h-20 md:w-24 md:h-24"
                   style={{ filter: "brightness(0)" }}
@@ -187,15 +154,15 @@ const SavGreenCards = () => {
                 className="text-lg md:text-xl font-bold mb-3 text-center"
                 style={{ color: MY_COLORS.black }}
               >
-                {services.row1[1].title}
+                {services[1].title}
               </h3>
               <p className="text-black text-center text-sm md:text-base leading-relaxed">
-                {services.row1[1].description}
+                {services[1].description}
               </p>
             </div>
 
-            {/* CARDS 4, 5, 6 - From services.row2 */}
-            {services.row2.map((service, index) => (
+            {/* CARDS 4, 5, 6 - From services array */}
+            {services.slice(2).map((service, index) => (
               <div
                 key={index}
                 className={`
@@ -203,10 +170,10 @@ const SavGreenCards = () => {
                   hover:shadow-xl transition-shadow duration-300 border border-gray-100
                   ${index === 1 ? "bg-[#7FA946]" : "bg-white"}
                 `}
-               >
+              >
                 <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
                   <img
-                    src={service.icon}
+                    src={ICONS.badge}
                     alt=""
                     className={`
                       w-20 h-20 md:w-24 md:h-24
@@ -263,22 +230,21 @@ const SavGreenCards = () => {
               className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              Faites le choix d’un accompagnement <br />
+              {t('sav.greenCards.cta.title')} <br />
               <span style={{ color: MY_COLORS.secondaryGreen }}>
-                fiable, durable et rentable.
+                {t('sav.greenCards.cta.titleHighlight')}
               </span>
             </h3>
 
             <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              " Contactez notre service après-vente dès maintenant pour garantir
-              la continuité et l’efficacité de vos installations!"
+              {t('sav.greenCards.cta.subtitle')}
             </p>
 
             <CTAButton
-              className="absolute top-10 md:top-2 md:w-60"
+              className="absolute top-10 md:top-2 md:w-70"
               onClick={() => alert("Video clicked!")}
             >
-              Contactez Nous
+              {t('sav.greenCards.cta.button')}
             </CTAButton>
           </div>
 

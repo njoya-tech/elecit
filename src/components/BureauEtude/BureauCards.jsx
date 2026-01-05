@@ -1,31 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 
 const BureauCards = () => {
-  const cards = [
-    {
-      title: "Études",
-      subtitle: "& Conception",
-      icon: ICONS.laptop,
-      description:
-        "Analyse des besoins et du programme architectural Études techniques Modélisation 2D/3D/ Planification, chiffrage prévisionnel et autorisations",
-    },
-    {
-      title: "Gestion de Projet",
-      subtitle: "& Suivi de Chantier",
-      icon: ICONS.laptop,
-      description:
-        "Planification des travaux et coordination des intervenants Suivi de chantier, contrôles techniques et qualité Respect strict des délais et du budget contractuel Communication transparente avec le maître d'ouvrage",
-    },
-    {
-      title: "Réalisation",
-      subtitle: "& Livraison",
-      icon: ICONS.laptop,
-      description:
-        "Travaux de gros œuvre et second œuvre Intégration des lots techniques (électricité, plomberie, CVC) Finitions intérieures et extérieures selon cahier des charges Reception des travaux",
-    },
-  ];
+  const { t } = useTranslation();
+
+  const cards = t('bureau.cards.items', { returnObjects: true });
 
   return (
     <section
@@ -53,16 +34,10 @@ const BureauCards = () => {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 md:-mt-10 text-center"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
-              Nos prestations
+              {t('bureau.cards.heading')}
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-3xl mx-auto px-2">
-              De l'étude de faisabilité à la livraison clé en main, nous
-              accompagnons nos clients à chaque étape du projet, en assurant un
-              haut niveau de technicité et de{" "}
-              <span className="hidden lg:inline">
-                <br />
-              </span>
-              conformité réglementaire.
+              {t('bureau.cards.description')}
             </p>
           </div>
         </div>
@@ -115,7 +90,7 @@ const BureauCards = () => {
                     aria-hidden="true"
                   >
                     <img
-                      src={card.icon}
+                      src={ICONS.laptop}
                       alt=""
                       className="brightness-0 invert w-10 h-10 sm:w-7 sm:h-7 md:w-18 md:h-18"
                     />
@@ -166,15 +141,14 @@ const BureauCards = () => {
           justify-center px-6 sm:px-8 md:px-16 max-w-3xl"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:-mt-20">
-              <span style={{ color: MY_COLORS.secondaryGreen }}>PROJET:</span>{" "}
-              <span className="text-white">Construction hangar</span>
+              <span style={{ color: MY_COLORS.secondaryGreen }}>
+                {t('bureau.cards.project.title')}
+              </span>{" "}
+              <span className="text-white">{t('bureau.cards.project.subtitle')}</span>
             </h2>
 
             <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-2xl">
-              Qu'il s'agisse de bâtiments publics, résidentiels, scolaires ou
-              industriels, chaque ouvrage témoigne de notre engagement pour
-              l'excellence, du respect des délais et des normes les plus
-              exigeantes.
+              {t('bureau.cards.project.description')}
             </p>
 
             <div>
@@ -190,7 +164,7 @@ const BureauCards = () => {
                   e.currentTarget.style.color = "#0f172a";
                 }}
               >
-                Voir le projet
+                {t('bureau.cards.project.button')}
               </button>
             </div>
           </div>

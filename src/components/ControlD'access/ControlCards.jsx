@@ -1,9 +1,12 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect, useState, useRef } from "react";
-import { ICONS, IMAGES, OBJECTS } from "../../asset/assets";
+import { useTranslation } from "react-i18next";
+import { ICONS, OBJECTS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 
 const ControlCards = () => {
+  const { t } = useTranslation();
+
   const carouselImages = [
     OBJECTS.obj_1,
     OBJECTS.obj_4,
@@ -35,44 +38,7 @@ const ControlCards = () => {
     }
   }, [currentIndex, carouselImages.length]);
 
-  const cards = [
-    {
-      icon: ICONS.badge,
-      title: "Contrôle d'Accès Intelligent",
-      features: [
-        "Systèmes de badges, cartes RFID et biométrie",
-        "Portails automatiques avec gestion des entrées et sorties",
-        "Serrures électroniques et systèmes de verrouillage sécurisé",
-      ],
-    },
-    {
-      icon: ICONS.stockage,
-      title: "Vidéosurveillance et Détection d'Intrusion",
-      features: [
-        "Installation de caméras haute définition et vidéosurveillance IP",
-        "Systèmes de détection de mouvement et alarmes connectées",
-        "Surveillance en temps réel et enregistrement sécurisé",
-      ],
-    },
-    {
-      icon: ICONS.securite_icon,
-      title: "Sécurité et Gestion des Risques",
-      features: [
-        "Protection contre les intrusions, le vol et le vandalisme",
-        "Solutions de cybersécurité pour les systèmes de contrôle d'accès",
-        "Détection des incendies et intégration avec les systèmes d'alerte",
-      ],
-    },
-    {
-      icon: ICONS.decision_icon,
-      title: "Gestion Centralisée et Automatisation",
-      features: [
-        "Supervision des accès via des logiciels de gestion",
-        "Solutions cloud pour le contrôle à distance",
-        "Historique des accès et rapports d'activité détaillés",
-      ],
-    },
-  ];
+  const cards = t('control.cards.items', { returnObjects: true });
 
   return (
     <div className="w-full py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20">
@@ -99,7 +65,7 @@ const ControlCards = () => {
            sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 lg:py-8"
           style={{ color: MY_COLORS.secondaryGreen }}
         >
-          Nos prestations
+          {t('control.cards.heading')}
         </h2>
       </div>
 
@@ -111,8 +77,7 @@ const ControlCards = () => {
          sm:px-6 max-w-4xl mx-auto leading-relaxed"
         style={{ color: MY_COLORS.black }}
       >
-        Nous proposons des solutions performantes pour sécuriser les bâtiments,
-        les infrastructures et les espaces sensibles.
+        {t('control.cards.subtitle')}
       </p>
 
       {/* Main Grid Layout */}
@@ -175,8 +140,7 @@ const ControlCards = () => {
                 md:text-xl mb-3 sm:mb-4 px-2 sm:px-4 leading-snug"
                 style={{ color: MY_COLORS.green }}
               >
-                Visite immersive de la boutique de vente de matériaux de
-                construction et d'équipements électriques
+                {t('control.cards.featured.title')}
               </h3>
 
               {/* Black Button */}
@@ -189,7 +153,7 @@ const ControlCards = () => {
                   color: MY_COLORS.white,
                 }}
               >
-                Mango boutique
+                {t('control.cards.featured.button')}
                 <svg
                   className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
@@ -258,7 +222,7 @@ const ControlCards = () => {
                       }}
                     >
                       <img
-                        src={card.icon}
+                        src={[ICONS.badge, ICONS.stockage, ICONS.securite_icon, ICONS.decision_icon][index]}
                         alt={card.title}
                         className="w-14 h-20 sm:w-16 sm:h-24 object-contain"
                         style={{

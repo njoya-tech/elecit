@@ -700,8 +700,208 @@
         }
       }
     ]
+  },
+  
+  "sav": {
+    "hero": {
+      "title": "KUNDENDIENST",
+      "subtitle": "Wir gewährleisten Kundenzufriedenheit, garantieren die Langlebigkeit der Ausrüstung und stärken das Kundenvertrauen.",
+      "button": "Video ansehen"
+    },
+    "cards": {
+      "heading": "Unsere Dienstleistungen",
+      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und Einhaltung gesetzlicher Vorschriften.",
+      "items": [
+        {
+          "title": "Studien",
+          "subtitle": "& Konzeption",
+          "description": "Bedarfsanalyse und Architekturprogramm/ Technische Studien/ 2D/3D-Modellierung/ Planung, vorläufige Kostenschätzung und Genehmigungen"
+        },
+        {
+          "title": "Projektmanagement",
+          "subtitle": "& Baustellenüberwachung",
+          "description": "Arbeitsplanung und Stakeholder-Koordination/ Baustellenüberwachung, technische und Qualitätskontrollen/ Strikte Einhaltung von Fristen und vertraglich vereinbartem Budget/ Transparente Kommunikation mit dem Auftraggeber"
+        },
+        {
+          "title": "Realisierung",
+          "subtitle": "& Übergabe",
+          "description": "Rohbau- und Ausbauarbeiten/ Integration technischer Gewerke (Elektrizität, Sanitär, HLK)/ Innen- und Außenverarbeitung nach Leistungsverzeichnis/ Abnahme der Arbeiten"
+        },
+        {
+          "title": "Wartung",
+          "subtitle": "& Renovierung",
+          "description": "Vorbeugende und korrektive Gebäudewartung/ Renovierung und Normenanpassung/ Energetische Verbesserung/ Kundendienst und zehnjährige Garantie"
+        },
+        {
+          "title": "Beratung",
+          "subtitle": "& Expertise",
+          "description": "Technische Prüfung und Immobiliendiagnose/ Bauherrenberatung/ Rechtliche und administrative Unterstützung/ Optimierung der Baukosten"
+        },
+        {
+          "title": "Schlüsselfertige",
+          "subtitle": "Lösungen",
+          "description": "Vollständige Projektübernahme/ Koordination aller Gewerke/ Einheitliche Garantie und globale Verantwortung/ Lieferung innerhalb vereinbarter Fristen"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Unsere wichtigsten Verpflichtungen",
+      "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierenden Kundendienst, der darauf ausgelegt ist, die Nachhaltigkeit Ihrer Projekte zu gewährleisten.",
+      "services": [
+        {
+          "title": "IT-Infrastruktur-Management",
+          "description": "Implementierung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
+        },
+        {
+          "title": "Technischer Support & Unterstützung",
+          "description": "Helpdesk-Service, Fernwartung oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
+        },
+        {
+          "title": "Cybersicherheit",
+          "description": "Umsetzung von Sicherheitsrichtlinien, Firewalls, Backups, Zugangskontrollen, Schwachstellenprüfungen."
+        },
+        {
+          "title": "Virtualisierung & Cloud Computing",
+          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybrid-Lösungen."
+        },
+        {
+          "title": "Anwendungsentwicklung",
+          "description": "Konzeption und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
+        }
+      ],
+      "cta": {
+        "title": "Wählen Sie eine",
+        "titleHighlight": "zuverlässige, nachhaltige und rentable Begleitung.",
+        "subtitle": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
+        "button": "Kontaktieren Sie uns"
+      }
+    }
+  },
+  
+  "bureau": {
+    "hero": {
+      "title": "GEBÄUDETECHNIK & ÖFFENTLICHE ARBEITEN",
+      "description": "Wir bieten ein komplettes Angebot für den Bau öffentlicher und privater Gebäude sowie hydraulischer Bauwerke.",
+      "button": "Video ansehen"
+    },
+    "cards": {
+      "heading": "Unsere Dienstleistungen",
+      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und Einhaltung gesetzlicher Vorschriften.",
+      "items": [
+        {
+          "title": "Studien",
+          "subtitle": "& Konzeption",
+          "description": "Bedarfsanalyse und Architekturprogramm Technische Studien 2D/3D-Modellierung/ Planung, vorläufige Kostenschätzung und Genehmigungen"
+        },
+        {
+          "title": "Projektmanagement",
+          "subtitle": "& Baustellenüberwachung",
+          "description": "Arbeitsplanung und Stakeholder-Koordination Baustellenüberwachung, technische und Qualitätskontrollen Strikte Einhaltung von Fristen und vertraglich vereinbartem Budget Transparente Kommunikation mit dem Auftraggeber"
+        },
+        {
+          "title": "Realisierung",
+          "subtitle": "& Übergabe",
+          "description": "Rohbau- und Ausbauarbeiten Integration technischer Gewerke (Elektrizität, Sanitär, HLK) Innen- und Außenverarbeitung nach Leistungsverzeichnis Abnahme der Arbeiten"
+        }
+      ],
+      "project": {
+        "title": "PROJEKT:",
+        "subtitle": "Lagerhallenbau",
+        "description": "Ob öffentliche, Wohn-, Schul- oder Industriegebäude – jedes Bauwerk zeugt von unserem Engagement für Exzellenz, Termintreue und höchste Standards.",
+        "button": "Projekt ansehen"
+      }
+    },
+    "carousel": {
+      "heading": "Unterstützte Arten von hydraulischen Bauwerken",
+      "projects": [
+        { "title": "Tunnel" },
+        { "title": "Staudamm" },
+        { "title": "Bohrung" },
+        { "title": "Kanal" },
+        { "title": "Pumpen" },
+        { "title": "Entwässerung" }
+      ],
+      "cta": {
+        "title": "Ein",
+        "titleHighlight": "Bauprojekt",
+        "title2": "im Kopf?",
+        "subtitle": "Lassen Sie es uns gemeinsam ab heute bauen.",
+        "button": "Kontaktieren Sie uns"
+      },
+      "navigation": {
+        "previous": "Vorherige Folie",
+        "next": "Nächste Folie",
+        "goToSlide": "Zur Folie gehen"
+      }
+    }
+  },
+  
+  "control": {
+    "hero": {
+      "title": "Toegangscontrole & Beveiliging",
+      "description": "Dankzij geavanceerde technologieën garanderen wij toegangsbeheer, realtime bewaking en de bescherming van personen en eigendommen tegen indringers en bedreigingen.",
+      "button": "Flyer downloaden"
+    },
+    "cards": {
+      "heading": "Onze Diensten",
+      "subtitle": "Wij bieden krachtige oplossingen voor het beveiligen van gebouwen, infrastructuren en gevoelige ruimtes.",
+      "featured": {
+        "title": "Virtuele rondleiding door de winkel voor bouwmaterialen en elektrische apparatuur",
+        "button": "Mango boutique"
+      },
+      "items": [
+        {
+          "title": "Slimme Toegangscontrole",
+          "features": [
+            "Badgesystemen, RFID-kaarten en biometrie",
+            "Automatische poorten met in- en uitgangsbeheer",
+            "Elektronische sloten en veilige vergrendelingssystemen"
+          ]
+        },
+        {
+          "title": "Videobewaking & Inbraakdetectie",
+          "features": [
+            "Installatie van HD-camera’s en IP-videobewaking",
+            "Bewegingsdetectiesystemen en gekoppelde alarmsystemen",
+            "Realtime bewaking en veilige opslag van opnames"
+          ]
+        },
+        {
+          "title": "Beveiliging & Risicobeheer",
+          "features": [
+            "Bescherming tegen inbraak, diefstal en vandalisme",
+            "Cyberbeveiligingsoplossingen voor toegangscontrolesystemen",
+            "Branddetectie en integratie met alarmsystemen"
+          ]
+        },
+        {
+          "title": "Gecentraliseerd Beheer & Automatisering",
+          "features": [
+            "Toegangsbeheer via beheersoftware",
+            "Cloudoplossingen voor bediening op afstand",
+            "Toegangsgeschiedenis en gedetailleerde activiteitsrapporten"
+          ]
+        }
+      ]
+    },
+    "carousel": {
+      "quote": "Oplossingen op maat voor de beveiliging van kantoren en professionele ruimtes, toegangsbeheer tot gebouwen en parkeergarages en geavanceerde bewaking",
+      "cta": {
+        "title": "Beveilig uw gebouwen met onze",
+        "titleHighlight": "gecertificeerde oplossingen.",
+        "subtitle": "Bescherm uw panden effectief en beheer de toegang met krachtige beveiligingsoplossingen!",
+        "button": "Neem contact op"
+      },
+      "navigation": {
+        "goToSlide": "Ga naar dia"
+      }
+    }
   }
 }
+
+
+
+
 
 
   

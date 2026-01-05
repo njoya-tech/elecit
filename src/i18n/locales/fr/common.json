@@ -946,8 +946,207 @@
         }
       }
     ]
+  },
+  
+  "sav": {
+    "hero": {
+      "title": "SERVICE APRES-VENTE",
+      "subtitle": "Nous assurons la satisfaction du client, garantissons la longévité des équipements et renforçons la confiance client.",
+      "button": "Publireportage"
+    },
+    "cards": {
+      "heading": "Nos prestations",
+      "description": "De l'étude de faisabilité à la livraison clé en main, nous accompagnons nos clients à chaque étape du projet, en assurant un haut niveau de technicité et de conformité réglementaire.",
+      "items": [
+        {
+          "title": "Études",
+          "subtitle": "& Conception",
+          "description": "Analyse des besoins et du programme architectural/ Études techniques/ Modélisation 2D/3D/ Planification, chiffrage prévisionnel et autorisations"
+        },
+        {
+          "title": "Gestion de Projet",
+          "subtitle": "& Suivi de Chantier",
+          "description": "Planification des travaux et coordination des intervenants/ Suivi de chantier, contrôles techniques et qualité/ Respect strict des délais et du budget contractuel/ Communication transparente avec le maître d'ouvrage"
+        },
+        {
+          "title": "Réalisation",
+          "subtitle": "& Livraison",
+          "description": "Travaux de gros œuvre et second œuvre/ Intégration des lots techniques (électricité, plomberie, CVC)/ Finitions intérieures et extérieures selon cahier des charges/ Reception des travaux"
+        },
+        {
+          "title": "Maintenance",
+          "subtitle": "& Rénovation",
+          "description": "Entretien préventif et curatif des bâtiments/ Rénovation et mise aux normes/ Amélioration énergétique/ Service après-vente et garantie décennale"
+        },
+        {
+          "title": "Conseil",
+          "subtitle": "& Expertise",
+          "description": "Audit technique et diagnostic immobilier/ Conseil en maîtrise d'ouvrage/ Assistance juridique et administrative/ Optimisation des coûts de construction"
+        },
+        {
+          "title": "Solutions",
+          "subtitle": "Clé en Main",
+          "description": "Prise en charge complète du projet/ Coordination de tous les corps de métier/ Garantie unique et responsabilité globale/ Livraison dans les délais convenus"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Nos engagements clés",
+      "subtitle": "Bénéficiez d'un SAV intégré, rentable et structurant, pensé pour assurer la pérennité de vos projets.",
+      "services": [
+        {
+          "title": "Gestion des Infrastructures IT",
+          "description": "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.)."
+        },
+        {
+          "title": "Support Technique & Assistance",
+          "description": "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective."
+        },
+        {
+          "title": "Cybersécurité",
+          "description": "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité."
+        },
+        {
+          "title": "Virtualisation & Cloud Computing",
+          "description": "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides."
+        },
+        {
+          "title": "Développement d'applications",
+          "description": "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers."
+        }
+      ],
+      "cta": {
+        "title": "Faites le choix d'un accompagnement",
+        "titleHighlight": "fiable, durable et rentable.",
+        "subtitle": "\" Contactez notre service après-vente dès maintenant pour garantir la continuité et l'efficacité de vos installations!\"",
+        "button": "Contactez Nous"
+      }
+    }
+  },
+  
+  "bureau": {
+    "hero": {
+      "title": "INGÉNIERIE BÂTIMENT & TRAVAUX PUBLICS",
+      "description": "Nous proposons une offre complète pour la construction de bâtiments publics et privés, des ouvrages hydrauliques.",
+      "button": "Publireportage"
+    },
+    "cards": {
+      "heading": "Nos prestations",
+      "description": "De l'étude de faisabilité à la livraison clé en main, nous accompagnons nos clients à chaque étape du projet, en assurant un haut niveau de technicité et de conformité réglementaire.",
+      "items": [
+        {
+          "title": "Études",
+          "subtitle": "& Conception",
+          "description": "Analyse des besoins et du programme architectural Études techniques Modélisation 2D/3D/ Planification, chiffrage prévisionnel et autorisations"
+        },
+        {
+          "title": "Gestion de Projet",
+          "subtitle": "& Suivi de Chantier",
+          "description": "Planification des travaux et coordination des intervenants Suivi de chantier, contrôles techniques et qualité Respect strict des délais et du budget contractuel Communication transparente avec le maître d'ouvrage"
+        },
+        {
+          "title": "Réalisation",
+          "subtitle": "& Livraison",
+          "description": "Travaux de gros œuvre et second œuvre Intégration des lots techniques (électricité, plomberie, CVC) Finitions intérieures et extérieures selon cahier des charges Reception des travaux"
+        }
+      ],
+      "project": {
+        "title": "PROJET:",
+        "subtitle": "Construction hangar",
+        "description": "Qu'il s'agisse de bâtiments publics, résidentiels, scolaires ou industriels, chaque ouvrage témoigne de notre engagement pour l'excellence, du respect des délais et des normes les plus exigeantes.",
+        "button": "Voir le projet"
+      }
+    },
+    "carousel": {
+      "heading": "Types d'ouvrages hydrauliques pris en charge",
+      "projects": [
+        { "title": "Tunnel" },
+        { "title": "Barrage" },
+        { "title": "Forage" },
+        { "title": "Canal" },
+        { "title": "Pompage" },
+        { "title": "Drainage" }
+      ],
+      "cta": {
+        "title": "Un projet de",
+        "titleHighlight": "construction",
+        "title2": "en tête ?",
+        "subtitle": "Bâtissons-le ensemble dès aujourd'hui.",
+        "button": "Contactez Nous"
+      },
+      "navigation": {
+        "previous": "Diapositive précédente",
+        "next": "Diapositive suivante",
+        "goToSlide": "Aller à la diapositive"
+      }
+    }
+  },
+  
+  "control": {
+    "hero": {
+      "title": "Contrôle d'accès & Sécurité",
+      "description": "Grâce à des technologies avancées, nous garantissons la gestion des accès, la surveillance en temps réel et la protection des personnes et des biens contre les intrusions et les menaces.",
+      "button": "Télécharger le flyer"
+    },
+    "cards": {
+      "heading": "Nos prestations",
+      "subtitle": "Nous proposons des solutions performantes pour sécuriser les bâtiments, les infrastructures et les espaces sensibles.",
+      "featured": {
+        "title": "Visite immersive de la boutique de vente de matériaux de construction et d'équipements électriques",
+        "button": "Mango boutique"
+      },
+      "items": [
+        {
+          "title": "Contrôle d'Accès Intelligent",
+          "features": [
+            "Systèmes de badges, cartes RFID et biométrie",
+            "Portails automatiques avec gestion des entrées et sorties",
+            "Serrures électroniques et systèmes de verrouillage sécurisé"
+          ]
+        },
+        {
+          "title": "Vidéosurveillance et Détection d'Intrusion",
+          "features": [
+            "Installation de caméras haute définition et vidéosurveillance IP",
+            "Systèmes de détection de mouvement et alarmes connectées",
+            "Surveillance en temps réel et enregistrement sécurisé"
+          ]
+        },
+        {
+          "title": "Sécurité et Gestion des Risques",
+          "features": [
+            "Protection contre les intrusions, le vol et le vandalisme",
+            "Solutions de cybersécurité pour les systèmes de contrôle d'accès",
+            "Détection des incendies et intégration avec les systèmes d'alerte"
+          ]
+        },
+        {
+          "title": "Gestion Centralisée et Automatisation",
+          "features": [
+            "Supervision des accès via des logiciels de gestion",
+            "Solutions cloud pour le contrôle à distance",
+            "Historique des accès et rapports d'activité détaillés"
+          ]
+        }
+      ]
+    },
+    "carousel": {
+      "quote": "Solutions adaptées pour la sécurisation des bureaux et locaux professionnels, la gestion des accès aux immeubles et parkings et une surveillance avancée",
+      "cta": {
+        "title": "Sécurisez vos bâtiments avec nos",
+        "titleHighlight": "solutions certifiées.",
+        "subtitle": "Protégez efficacement vos locaux et contrôlez les accès avec des solutions de sécurité performantes !",
+        "button": "Contactez Nous"
+      },
+      "navigation": {
+        "goToSlide": "Aller à la diapositive"
+      }
+    }
   }
 }
+
+
+
 
 
 

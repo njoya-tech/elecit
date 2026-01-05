@@ -940,8 +940,208 @@
         }
       }
     ]
+  },
+  
+  "sav": {
+    "hero": {
+      "title": "AFTER-SALES SERVICE",
+      "subtitle": "We ensure customer satisfaction, guarantee equipment longevity and strengthen customer trust.",
+      "button": "Watch Video"
+    },
+    "cards": {
+      "heading": "Our Services",
+      "description": "From feasibility study to turnkey delivery, we support our clients at every stage of the project, ensuring a high level of technical expertise and regulatory compliance.",
+      "items": [
+        {
+          "title": "Studies",
+          "subtitle": "& Design",
+          "description": "Needs analysis and architectural program/ Technical studies/ 2D/3D modeling/ Planning, provisional costing and authorizations"
+        },
+        {
+          "title": "Project Management",
+          "subtitle": "& Site Monitoring",
+          "description": "Work planning and stakeholder coordination/ Site monitoring, technical and quality controls/ Strict adherence to deadlines and contractual budget/ Transparent communication with the client"
+        },
+        {
+          "title": "Construction",
+          "subtitle": "& Delivery",
+          "description": "Structural and finishing works/ Integration of technical lots (electricity, plumbing, HVAC)/ Interior and exterior finishes according to specifications/ Work acceptance"
+        },
+        {
+          "title": "Maintenance",
+          "subtitle": "& Renovation",
+          "description": "Preventive and corrective building maintenance/ Renovation and standards compliance/ Energy improvement/ After-sales service and ten-year warranty"
+        },
+        {
+          "title": "Consulting",
+          "subtitle": "& Expertise",
+          "description": "Technical audit and property diagnosis/ Project management consulting/ Legal and administrative assistance/ Construction cost optimization"
+        },
+        {
+          "title": "Turnkey",
+          "subtitle": "Solutions",
+          "description": "Complete project management/ Coordination of all trades/ Single warranty and global responsibility/ Delivery within agreed deadlines"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Our Key Commitments",
+      "subtitle": "Benefit from an integrated, profitable and structured after-sales service, designed to ensure the sustainability of your projects.",
+      "services": [
+        {
+          "title": "IT Infrastructure Management",
+          "description": "Implementation, maintenance and supervision of IT environments (servers, networks, cloud, security, etc.)."
+        },
+        {
+          "title": "Technical Support & Assistance",
+          "description": "Helpdesk service, remote or on-site troubleshooting, preventive and corrective maintenance."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Implementation of security policies, firewalls, backup, access control, vulnerability audits."
+        },
+        {
+          "title": "Virtualization & Cloud Computing",
+          "description": "Cloud migration, deployment of virtual environments, hybrid solutions."
+        },
+        {
+          "title": "Application Development",
+          "description": "Design and deployment of custom software solutions adapted to your business processes."
+        }
+      ],
+      "cta": {
+        "title": "Choose",
+        "titleHighlight": "reliable, sustainable and profitable support.",
+        "subtitle": "\" Contact our after-sales service now to guarantee the continuity and efficiency of your installations!\"",
+        "button": "Contact Us"
+      }
+    }
+  },
+  
+  "bureau": {
+    "hero": {
+      "title": "BUILDING ENGINEERING & PUBLIC WORKS",
+      "description": "We offer a complete range for the construction of public and private buildings, hydraulic structures.",
+      "button": "Watch Video"
+    },
+    "cards": {
+      "heading": "Our Services",
+      "description": "From feasibility study to turnkey delivery, we support our clients at every stage of the project, ensuring a high level of technical expertise and regulatory compliance.",
+      "items": [
+        {
+          "title": "Studies",
+          "subtitle": "& Design",
+          "description": "Needs analysis and architectural program Technical studies 2D/3D modeling/ Planning, provisional costing and authorizations"
+        },
+        {
+          "title": "Project Management",
+          "subtitle": "& Site Monitoring",
+          "description": "Work planning and stakeholder coordination Site monitoring, technical and quality controls Strict adherence to deadlines and contractual budget Transparent communication with the client"
+        },
+        {
+          "title": "Construction",
+          "subtitle": "& Delivery",
+          "description": "Structural and finishing works Integration of technical lots (electricity, plumbing, HVAC) Interior and exterior finishes according to specifications Work acceptance"
+        }
+      ],
+      "project": {
+        "title": "PROJECT:",
+        "subtitle": "Warehouse Construction",
+        "description": "Whether it's public, residential, educational or industrial buildings, each structure demonstrates our commitment to excellence, meeting deadlines and the most demanding standards.",
+        "button": "View Project"
+      }
+    },
+    "carousel": {
+      "heading": "Types of hydraulic structures supported",
+      "projects": [
+        { "title": "Tunnel" },
+        { "title": "Dam" },
+        { "title": "Drilling" },
+        { "title": "Canal" },
+        { "title": "Pumping" },
+        { "title": "Drainage" }
+      ],
+      "cta": {
+        "title": "Have a",
+        "titleHighlight": "construction",
+        "title2": "project in mind?",
+        "subtitle": "Let's build it together from today.",
+        "button": "Contact Us"
+      },
+      "navigation": {
+        "previous": "Previous slide",
+        "next": "Next slide",
+        "goToSlide": "Go to slide"
+      }
+    }
+  },
+  
+  "control": {
+    "hero": {
+      "title": "Access Control & Security",
+      "description": "Thanks to advanced technologies, we ensure access management, real-time monitoring, and the protection of people and property against intrusions and threats.",
+      "button": "Download the flyer"
+    },
+    "cards": {
+      "heading": "Our Services",
+      "subtitle": "We provide high-performance solutions to secure buildings, infrastructures, and sensitive areas.",
+      "featured": {
+        "title": "Immersive visit of the construction materials and electrical equipment store",
+        "button": "Mango boutique"
+      },
+      "items": [
+        {
+          "title": "Smart Access Control",
+          "features": [
+            "Badge systems, RFID cards, and biometrics",
+            "Automatic gates with entry and exit management",
+            "Electronic locks and secure locking systems"
+          ]
+        },
+        {
+          "title": "Video Surveillance & Intrusion Detection",
+          "features": [
+            "Installation of high-definition cameras and IP video surveillance",
+            "Motion detection systems and connected alarms",
+            "Real-time monitoring and secure recording"
+          ]
+        },
+        {
+          "title": "Security & Risk Management",
+          "features": [
+            "Protection against intrusions, theft, and vandalism",
+            "Cybersecurity solutions for access control systems",
+            "Fire detection and integration with alert systems"
+          ]
+        },
+        {
+          "title": "Centralized Management & Automation",
+          "features": [
+            "Access supervision via management software",
+            "Cloud solutions for remote control",
+            "Access history and detailed activity reports"
+          ]
+        }
+      ]
+    },
+    "carousel": {
+      "quote": "Tailored solutions for securing offices and professional premises, managing access to buildings and parking areas, and advanced surveillance",
+      "cta": {
+        "title": "Secure your buildings with our",
+        "titleHighlight": "certified solutions.",
+        "subtitle": "Effectively protect your premises and control access with high-performance security solutions!",
+        "button": "Contact Us"
+      },
+      "navigation": {
+        "goToSlide": "Go to slide"
+      }
+    }
   }
 }
+
+
+
+
 
 
 

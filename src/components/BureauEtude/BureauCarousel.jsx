@@ -1,44 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { IMAGES, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton";
 
 const BureauCarousel = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Tunnel",
-      image: IMAGES.IMG1,
-    },
-    {
-      id: 2,
-      title: "Barrage",
-      image: IMAGES.IMG2,
-    },
-    {
-      id: 3,
-      title: "Forage",
-      image: IMAGES.IMG3,
-    },
-    {
-      id: 4,
-      title: "Canal",
-      image: IMAGES.IMG4,
-    },
-    {
-      id: 5,
-      title: "Pompage",
-      image: IMAGES.IMG5,
-    },
-    {
-      id: 6,
-      title: "Drainage",
-      image: IMAGES.IMG6,
-    },
-  ];
+  const projectsData = t('bureau.carousel.projects', { returnObjects: true });
+  
+  const projects = projectsData.map((project, index) => ({
+    id: index + 1,
+    title: project.title,
+    image: [IMAGES.IMG1, IMAGES.IMG2, IMAGES.IMG3, IMAGES.IMG4, IMAGES.IMG5, IMAGES.IMG6][index]
+  }));
 
   // Mobile: 1 card, Tablet: 2 cards, Desktop: 3 cards per slide
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
@@ -125,9 +102,7 @@ const BureauCarousel = () => {
              sm:mb-10 md:mb-12 lg:mb-16 px-2"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
-            Types d'ouvrages hydrauliques
-            <br />
-            pris en charge
+            {t('bureau.carousel.heading')}
           </h3>
 
           <div className="relative">
@@ -137,7 +112,7 @@ const BureauCarousel = () => {
               className="absolute left-0 top-1/2 -translate-y-1/2 
               -translate-x-4 sm:-translate-x-6 md:-translate-x-8 
               lg:-translate-x-16 z-20 transition-all duration-300 hover:scale-125"
-              aria-label="Previous slide"
+              aria-label={t('bureau.carousel.navigation.previous')}
             >
               <svg
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10
@@ -194,7 +169,7 @@ const BureauCarousel = () => {
             <button
               onClick={nextSlide}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 md:translate-x-8 lg:translate-x-16 z-20 transition-all duration-300 hover:scale-125"
-              aria-label="Next slide"
+              aria-label={t('bureau.carousel.navigation.next')}
             >
               <svg
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 
@@ -228,7 +203,7 @@ const BureauCarousel = () => {
                       ? MY_COLORS.secondaryGreen
                       : "#9ca3af",
                 }}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`${t('bureau.carousel.navigation.goToSlide')} ${index + 1}`}
               />
             ))}
           </div>
@@ -264,18 +239,22 @@ const BureauCarousel = () => {
               className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-             Un projet de <span style={{color:MY_COLORS.secondaryGreen}}>construction</span> en tête ?
+              {t('bureau.carousel.cta.title')}{" "}
+              <span style={{color:MY_COLORS.secondaryGreen}}>
+                {t('bureau.carousel.cta.titleHighlight')}
+              </span>{" "}
+              {t('bureau.carousel.cta.title2')}
             </h3>
 
             <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              Bâtissons-le ensemble dès aujourd’hui.
+              {t('bureau.carousel.cta.subtitle')}
             </p>
 
             <CTAButton
-              className="absolute top-10 md:top-2 md:w-60"
+              className="absolute top-10 md:top-2 md:w-70"
               onClick={() => alert("Video clicked!")}
             >
-              Contactez Nous
+              {t('bureau.carousel.cta.button')}
             </CTAButton>
           </div>
 

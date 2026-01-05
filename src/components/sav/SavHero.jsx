@@ -1,9 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ICONS, HERO } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 
 const SavHero = () => {
+  const { t } = useTranslation();
+
   return (
     <section 
       className="relative w-full overflow-hidden min-h-[500px]" 
@@ -38,22 +41,20 @@ const SavHero = () => {
             color: MY_COLORS.secondaryGreen,
           }}
         >
-          SERVICE APRES-VENTE
+          {t('sav.hero.title')}
         </h1>
 
         <h2
           className="text-white text-sm sm:text-base 
           md:text-lg lg:text-xl xl:text-2xl tracking-wide 
-          uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs
+          lowercase font-bold mb-4 sm:mb-6 px-4 max-w-xs
            sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
-          Nous assurons la satisfaction du client, garantissons la longévité
-          <br className="hidden md:block" />
-          des équipements et renforçons la confiance client.
+          {t('sav.hero.subtitle')}
         </h2>
 
         <CTAButton onClick={() => alert("Video clicked!")}>
-          Publireportage
+          {t('sav.hero.button')}
         </CTAButton>
       </div>
     </section>
