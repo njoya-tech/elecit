@@ -16,8 +16,8 @@ const EntrepriseTeam = () => {
     { image: IMAGES.IMG18, title: members[4].title },
     { image: IMAGES.IMG23, title: members[5].title },
     { image: IMAGES.IMG12, title: members[6].title },
-    { image: IMAGES.IMG8, title: members[7].title },
-    { image: IMAGES.IMG9, title: members[8].title },
+    { image: IMAGES.IMG25, title: members[7].title },
+    { image: IMAGES.IMG26, title: members[8].title },
     { image: IMAGES.IMG24, title: members[9].title },
   ];
 

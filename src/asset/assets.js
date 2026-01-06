@@ -57,6 +57,8 @@ import IMG21 from "./images/domotricien.jpg";
 import IMG22 from "./images/infomatique.jpg";
 import IMG23 from "./images/fabrication.jpg";
 import IMG24 from "./images/courant_faible.jpg";
+import IMG25 from "./images/agent_maintenace.jpg";
+import IMG26 from "./images/energy_renouvelable.jpg";
 
 //========== PARTNERS IMAGES ==========
 
@@ -137,6 +139,9 @@ export const IMAGES = {
   IMG21: IMG21,
   IMG22: IMG22,
   IMG23: IMG23,
+  IMG24: IMG24,
+  IMG25: IMG25,
+  IMG26: IMG26,
 };
 
 export const PARTNERS = {
