@@ -2,7 +2,9 @@ import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { MY_COLORS } from "../../constants/colors.js";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -20,7 +22,7 @@ const Hero = () => {
       />
 
       {/* DARK GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
 
       {/* TECH PATTERN - Hidden on mobile for performance */}
       <img
@@ -38,9 +40,9 @@ const Hero = () => {
            xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
           style={{ color: MY_COLORS.white }}
         >
-          {t('entreprise.hero.title')} <br className="hidden md:block" />
+          {t("entreprise.hero.title")} <br className="hidden md:block" />
           <span style={{ color: MY_COLORS.secondaryGreen }}>
-            {t('entreprise.hero.titleHighlight')}
+            {t("entreprise.hero.titleHighlight")}
           </span>
         </h1>
 
@@ -48,16 +50,33 @@ const Hero = () => {
           style={{ color: MY_COLORS.secondaryGreen }}
           className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
-          {t('entreprise.hero.subtitle')}
+          {t("entreprise.hero.subtitle")}
         </h3>
 
         <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl">
-          {t('entreprise.hero.description')}
+          {t("entreprise.hero.description")}
         </p>
 
-        <CTAButton onClick={() => alert("Video clicked!")}>
-          {t('entreprise.hero.button')}
-        </CTAButton>
+        {/* CTA + Arrow */}
+        <div className="flex items-center gap-4">
+          <CTAButton onClick={() => alert("Video clicked!")}>
+            {t("entreprise.hero.button")}
+          </CTAButton>
+
+          <motion.img
+            src={ICONS.flech_icon}
+            alt="Arrow"
+            className="w-10 sm:w-12 opacity-80 origin-top"
+            animate={{
+              rotate: [-15, 15, -15],
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+        </div>
       </div>
     </section>
   );

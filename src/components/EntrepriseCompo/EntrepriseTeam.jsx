@@ -9,16 +9,16 @@ const EntrepriseTeam = () => {
   const members = t('entreprise.entrepriseTeam.members', { returnObjects: true });
 
   const carouselSlides = [
-    { image: IMAGES.IMG1, title: members[0].title },
+    { image: IMAGES.IMG21, title: members[0].title },
     { image: IMAGES.IMG2, title: members[1].title },
-    { image: IMAGES.IMG3, title: members[2].title },
-    { image: IMAGES.IMG4, title: members[3].title },
-    { image: IMAGES.IMG5, title: members[4].title },
-    { image: IMAGES.IMG6, title: members[5].title },
-    { image: IMAGES.IMG7, title: members[6].title },
+    { image: IMAGES.IMG20, title: members[2].title },
+    { image: IMAGES.IMG22, title: members[3].title },
+    { image: IMAGES.IMG18, title: members[4].title },
+    { image: IMAGES.IMG23, title: members[5].title },
+    { image: IMAGES.IMG12, title: members[6].title },
     { image: IMAGES.IMG8, title: members[7].title },
     { image: IMAGES.IMG9, title: members[8].title },
-    { image: IMAGES.IMG10, title: members[9].title },
+    { image: IMAGES.IMG24, title: members[9].title },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

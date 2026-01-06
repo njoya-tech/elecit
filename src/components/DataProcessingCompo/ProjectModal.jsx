@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
-import { ICONS } from "../../asset/assets.js";
+import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from "react-i18next";
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (isOpen) {
       // Disable scrolling on body when modal is open
@@ -76,14 +79,14 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
               {/* Category Tag */}
               <div className="mb-4">
                 <span className="px-3 sm:px-4 py-2 text-lg sm:text-xl md:text-2xl font-bold text-black inline-block">
-                  IT and DATA PROCESSING
+                  {t("dataProcessing.projects.modal.category")}
                 </span>
               </div>
 
               {/* Project Image */}
               <div className="relative flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] z-20">
                 <img
-                  src={project?.image}
+                  src={project?.image || IMAGES.IMG1}
                   alt={project?.title}
                   className="w-full h-full object-cover rounded-lg"
                 />
@@ -96,22 +99,22 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
               <h2 className="max-w-[95%] sm:max-w-[90%] text-xl sm:text-2xl md:text-2xl lg:text-3xl 
               font-bold text-black leading-normal mb-4 sm:mb-5 md:mb-6 break-words 
               min-h-0 md:min-h-[4.8em]">
-                Projet : {project?.title}
+                {t("dataProcessing.projects.modal.projectLabel")} {project?.title}
               </h2>
 
               {/* Date & Status */}
               <div className="mb-4 sm:mb-5 md:mb-6 space-y-1">
                 <p className="text-xs sm:text-sm text-black">
-                  <span className="font-bold">Date de réalisation: </span>
+                  <span className="font-bold">{t("dataProcessing.projects.modal.dateLabel")} </span>
                   {project?.date || "12/06/23"}
                 </p>
                 <p className="text-xs sm:text-sm text-black">
-                  <span className="font-bold">Statut du projet: </span>
+                  <span className="font-bold">{t("dataProcessing.projects.modal.statusLabel")} </span>
                   <span
                     style={{ color: MY_COLORS.green }}
                     className="font-bold"
                   >
-                    {project?.status || "terminé"}
+                    {project?.status || t("dataProcessing.projects.items.0.status")}
                   </span>
                 </p>
               </div>
@@ -119,41 +122,41 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
               {/* Description */}
               <div className="mb-4 sm:mb-5 md:mb-6">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-2">
-                  Description du projet:
+                  {t("dataProcessing.projects.modal.descriptionLabel")}
                 </h3>
                 <p className="text-xs sm:text-sm text-black leading-relaxed text-left md:text-justify">
                   {project?.description ||
-                    "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure, pensé pour offrir une administration simple, rapide et totalement personnalisable."}
+                    t("dataProcessing.projects.items.0.description")}
                 </p>
               </div>
 
               {/* Utilité */}
               <div className="mb-4 sm:mb-5 md:mb-6">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-2">
-                  Utilité:
+                  {t("dataProcessing.projects.modal.utilityLabel")}
                 </h3>
                 <p className="text-xs sm:text-sm text-black leading-relaxed">
                   {project?.utility ||
-                    "Cette solution permet à l'entreprise de gérer efficacement ses informations, ses services et ses mises à jour sans dépendre d'un support technique externe"}
+                    t("dataProcessing.projects.items.0.utility")}
                 </p>
               </div>
 
               {/* Client Feedback */}
               <div className="mb-6 sm:mb-7 md:mb-8 flex-grow">
                 <h3 className="text-sm sm:text-base font-bold text-black mb-2">
-                  Retour client:
+                  {t("dataProcessing.projects.modal.feedbackLabel")}
                 </h3>
                 <p className="text-xs sm:text-sm text-black leading-relaxed mb-3">
                   "
                   {project?.clientFeedback ||
-                    "Le CMS conçu par ElecIT Engineering nous a simplifié la gestion de nos contenus. L'outil est intuitif, rapide et parfaitement adapté à nos besoins. Un vrai gain de temps au quotidien."}
+                    t("dataProcessing.projects.items.0.clientFeedback")}
                   "
                 </p>
                 <p
                   className="text-xs sm:text-sm font-semibold italic"
                   style={{ color: MY_COLORS.green }}
                 >
-                  {project?.clientRole || "Directeur général"}
+                  {project?.clientRole || t("dataProcessing.projects.items.0.clientRole")}
                 </p>
               </div>
 
@@ -164,10 +167,10 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                   text-xs sm:text-sm text-white transition-all duration-300 hover:scale-105"
                   style={{ backgroundColor: MY_COLORS.green }}
                   onClick={() => {
-                    alert("Contactez-nous pour votre projet!");
+                    alert(t("dataProcessing.projects.modal.haveProject"));
                   }}
                 >
-                  Vous avez un projet?
+                  {t("dataProcessing.projects.modal.haveProject")}
                 </button>
 
                 <button
@@ -175,7 +178,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                   text-black bg-transparent transition-all duration-300 hover:text-gray-600"
                   onClick={onClose}
                 >
-                  Fermer
+                  {t("dataProcessing.projects.modal.close")}
                 </button>
               </div>
             </div>

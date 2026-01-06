@@ -759,11 +759,11 @@
   },
 
   "contact": {
-    "floatingButton": "Contact us",
+    "floatingButton": "Contact Us",
     "popup": {
-      "title": "Contact us",
+      "title": "Contact Us",
       "subtitle": "We will respond as soon as possible",
-      "availability": "We are available on WhatsApp from Monday to Friday, 8 AM to 6 PM. Feel free to contact us.",
+      "availability": "We are available on WhatsApp Monday to Friday from 8 AM to 6 PM. Feel free to contact us.",
       "openWhatsApp": "Open WhatsApp",
       "messagePlaceholder": "Write your message...",
       "leftButton": "Back",
@@ -771,75 +771,74 @@
     },
     "hero": {
       "title": "Contact Us.",
-      "subtitle": "Our team of experts provides you with the right solution!",
+      "subtitle": "Our team of experts provides you with a solution!",
       "button": "More Content"
     },
     "form": {
       "title": "Contact Form",
-      "subtitle": "Have a question, a need, or a project to discuss?",
+      "subtitle": "A question, need, or project to discuss?",
       "subtitle2": "Fill out the form below",
-      "lastName": "Last name",
+      "lastName": "Last Name",
       "lastNamePlaceholder": "Enter your last name",
-      "firstName": "First name",
+      "firstName": "First Name",
       "firstNamePlaceholder": "Enter your first name",
       "phone": "Phone",
       "email": "Email",
       "emailPlaceholder": "Enter your email",
       "message": "Message",
-      "messagePlaceholder": "Reply in a few words",
+      "messagePlaceholder": "Answer in a few words",
       "submit": "Send",
       "imageAlt": "Professional in an industrial environment"
     },
     "location": {
-      "title": "Our services are available throughout",
-      "highlight1": "the Cameroonian territory",
-      "title2": ", as well as across",
+      "title": "Our services are accessible throughout",
+      "highlight1": "Cameroon",
+      "title2": ", but also throughout",
       "highlight2": "Central Africa."
     },
     "blog": {
-      "title": "Stay up to date with our",
+      "title": "Stay updated on our",
       "highlight": "news",
       "title2": "by visiting our blog",
-      "readMore": "Read more",
-      "prevPage": "Previous page",
-      "nextPage": "Next page",
+      "readMore": "Read More",
+      "prevPage": "Previous Page",
+      "nextPage": "Next Page",
       "goToPage": "Go to page",
       "articles": [
         {
+          "id": 1,
+          "title": "Why custom manufacturing is a game-changer in the Cameroonian industry?",
+          "excerpt": "In many industrial sectors in Cameroon, companies face a recurring challenge..."
+        },
+        {
+          "id": 2,
+          "title": "5 ways a smart hotel saves energy and builds customer loyalty",
+          "excerpt": "In an increasingly competitive hotel market in Cameroon, the question is twofold..."
+        },
+        {
+          "id": 3,
+          "title": "The tracking revolution: when AI monitors your vehicles",
+          "excerpt": "Transport and logistics are at the heart of Cameroon's economy, but this sector faces major challenges..."
+        },
+        {
           "id": 4,
-          "title": "Smart irrigation: technology serving sustainable agriculture",
-          "excerpt": "Cameroonian agriculture, a driver of the national economy, is facing a major challenge..."
+          "title": "Smart irrigation: technology for sustainable agriculture",
+          "excerpt": "Cameroonian agriculture, the engine of the national economy, faces a major challenge..."
         },
         {
           "id": 5,
-          "title": "From raw metal to innovation: how we shape sustainable infrastructures",
-          "excerpt": "Transforming raw material into an innovative and functional product—this is the art of modern metallurgy..."
+          "title": "From raw metal to innovation: how we shape sustainable infrastructure",
+          "excerpt": "Transforming raw materials into an innovative and functional product is the art of modern metallurgy..."
         },
         {
           "id": 6,
-          "title": "Data processing and security: protecting your company’s digital gold",
-          "excerpt": "Every company generates significant volumes of sensitive information on a daily basis..."
-        },
-        {
-          "id": 7,
-          "title": "Data processing and security: protecting your company’s digital gold",
-          "excerpt": "Every company generates significant volumes of sensitive information on a daily basis..."
-        },
-        {
-          "id": 8,
-          "title": "Data processing and security: protecting your company’s digital gold",
-          "excerpt": "Every company generates significant volumes of sensitive information on a daily basis..."
-        },
-        {
-          "id": 9,
-          "title": "Data processing and security: protecting your company’s digital gold",
-          "excerpt": "Every company generates significant volumes of sensitive information on a daily basis..."
+          "title": "Data Processing and security: protecting your company's digital gold",
+          "excerpt": "Every company generates considerable amounts of sensitive information daily..."
         }
       ]
     }
   },
-   
-  
+
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -941,7 +940,7 @@
       }
     ]
   },
-  
+
   "sav": {
     "hero": {
       "title": "AFTER-SALES SERVICE",
@@ -1017,7 +1016,7 @@
       }
     }
   },
-  
+
   "bureau": {
     "hero": {
       "title": "BUILDING ENGINEERING & PUBLIC WORKS",
@@ -1075,7 +1074,7 @@
       }
     }
   },
-  
+
   "control": {
     "hero": {
       "title": "Access Control & Security",
@@ -1136,14 +1135,167 @@
         "goToSlide": "Go to slide"
       }
     }
+  },
+
+  "dataProcessing": {
+    "hero": {
+      "title": "IT & DATA PROCESSING",
+      "description": "We help businesses effectively manage their IT systems and make the most of their data.",
+      "button": "Press Release"
+    },
+    "projects": {
+      "title": "Our IT Projects",
+      "subtitle": "innovation, performance and impact",
+      "description": "Each project presented reflects our commitment to innovation, rigor and customer satisfaction.",
+      "seeMore": "See more",
+      "items": [
+        {
+          "id": 1,
+          "title": "Content Management System (CMS) Software",
+          "excerpt": "We designed and developed a custom content management system (CMS)…",
+          "description": "We designed and developed a custom content management system (CMS), designed to offer simple, fast and fully customizable administration.",
+          "utility": "This solution allows the company to effectively manage its information, services and updates without depending on external technical support",
+          "clientFeedback": "The CMS designed by ElecIT Engineering simplified our content management. The tool is intuitive, fast and perfectly adapted to our needs. A real time-saver on a daily basis.",
+          "clientRole": "General Manager",
+          "date": "06/12/23",
+          "status": "completed"
+        },
+        {
+          "id": 2,
+          "title": "Customer Relationship Management (CRM) Software",
+          "excerpt": "Development of CRM software fully adapted to the company's needs...",
+          "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
+          "utility": "Improvement of customer relationship management and sales tracking",
+          "clientFeedback": "A powerful tool that transformed our customer approach.",
+          "clientRole": "Sales Director",
+          "date": "08/15/23",
+          "status": "completed"
+        },
+        {
+          "id": 3,
+          "title": "Customer Relationship Management (CRM) Software",
+          "excerpt": "Development of CRM software fully adapted to the company's needs...",
+          "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
+          "utility": "Improvement of customer relationship management and sales tracking",
+          "clientFeedback": "A powerful tool that transformed our customer approach.",
+          "clientRole": "Sales Director",
+          "date": "09/20/23",
+          "status": "in progress"
+        }
+      ],
+      "modal": {
+        "category": "IT and DATA PROCESSING",
+        "projectLabel": "Project:",
+        "dateLabel": "Completion date:",
+        "statusLabel": "Project status:",
+        "descriptionLabel": "Project description:",
+        "utilityLabel": "Purpose:",
+        "feedbackLabel": "Client feedback:",
+        "haveProject": "Have a project?",
+        "close": "Close"
+      },
+      "cta": {
+        "title": "Choose support that is",
+        "titleHighlight": "reliable, sustainable and cost-effective.",
+        "description": "\" Contact our after-sales service now to ensure the continuity and efficiency of your installations!\"",
+        "button": "Contact Us"
+      }
+    },
+    "services": {
+      "title": "IT Services",
+      "description": "We offer a complete range of IT services to support your organization's digital transformation, combining performance, security and scalability.",
+      "items": [
+        {
+          "title": "IT Infrastructure Management",
+          "description": "Setup, maintenance and supervision of IT environments (servers, networks, cloud, security, etc.)."
+        },
+        {
+          "title": "Technical Support & Assistance",
+          "description": "Helpdesk service, remote or on-site troubleshooting, preventive and corrective maintenance."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Implementation of security policies, firewall, backup, access control, vulnerability audits."
+        },
+        {
+          "title": "Virtualization & Cloud Computing",
+          "description": "Cloud migration, deployment of virtual environments, hybrid solutions."
+        },
+        {
+          "title": "Application Development",
+          "description": "Design and deployment of custom software solutions adapted to your business processes."
+        }
+      ]
+    },
+    "advantages": {
+      "headerTitle": "Key Advantages",
+      "description": "Thanks to our expertise, we support you in your company's digital transformation and help you make better decisions with your data.",
+      "documentationButton": "Documentation",
+      "items": [
+        {
+          "title": "System Reliability",
+          "description": "Stable, high-performance IT infrastructures that are always operational"
+        },
+        {
+          "title": "Enhanced Security",
+          "description": "Complete protection of data and systems against cyber threats."
+        },
+        {
+          "title": "Time Savings",
+          "description": "Task automation and responsive technical support so you can focus on what matters."
+        },
+        {
+          "title": "Cost Optimization",
+          "description": "Reduction of expenses related to maintenance, infrastructure and data management."
+        },
+        {
+          "title": "Smarter Decisions",
+          "description": "Access to clear and structured data to guide your strategic choices."
+        },
+        {
+          "title": "Flexibility and Scalability",
+          "description": "Solutions adapted to your growth and changing needs."
+        },
+        {
+          "title": "Regulatory Compliance",
+          "description": "Compliance with standards (such as GDPR) for legal data management."
+        }
+      ]
+    }
+  },
+  "controlAccess": {
+    "hero": {
+      "title": "Access Control & Security",
+      "description": "Thanks to advanced technologies, we guarantee access management, real-time monitoring and protection of people and property against intrusions and threats.",
+      "button": "Download flyer"
+    },
+    "header": {
+      "title": "Data Processing and Enhancement"
+    },
+    "services": {
+      "description": "We secure your buildings, infrastructures and sensitive spaces with high-performance access control and video surveillance solutions.",
+      "items": [
+        {
+          "title": "Smart Access Control",
+          "description": "Badge systems, RFID cards and biometrics, automatic gates and electronic locks."
+        },
+        {
+          "title": "Video Surveillance & Intrusion",
+          "description": "HD cameras, motion detection, connected alarms and real-time monitoring."
+        },
+        {
+          "title": "Security & Risk Management",
+          "description": "Protection against intrusions, cybersecurity and fire detection integrated with alert systems."
+        },
+        {
+          "title": "Centralized Management & Automation",
+          "description": "Access supervision, remote control, cloud solutions and detailed activity reports."
+        },
+        {
+          "title": "Security Audit & Consulting",
+          "description": "Vulnerability analysis, security policy definition and compliance support."
+        }
+      ]
+    }
   }
 }
-
-
-
-
-
-
-
-
-

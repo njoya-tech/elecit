@@ -27,22 +27,26 @@ const Entreprise = () => {
         {/* CONTENT SECTIONS - CONTAINER */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
           {/* Cards Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+            <ElecITCarouselCard />
+          </section>
+          {/* Cards Section */}
+          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
             <EntrepriseCards />
           </section>
 
           {/* Team Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
             <EntrepriseTeam />
           </section>
 
           {/* Acc Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
             <EntrepriseAcc />
           </section>
 
           {/* Partner Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
             <EntreprisePartner />
           </section>
         </div>

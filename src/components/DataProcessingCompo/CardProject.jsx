@@ -3,33 +3,16 @@ import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 import ProjectModal from "./ProjectModal.jsx";
+import { useTranslation } from "react-i18next";
 
 const CardProject = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Static posts data (you can replace with your actual data)
-  const visiblePosts = [
-    {
-      id: 1,
-      title: "Logiciel de Content Management System (CMS)",
-      excerpt:
-        "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure…",
-      image: IMAGES.IMG1,
-    },
-    {
-      id: 2,
-      title: "Logiciel de gestion de la relation client(CRM)",
-      excerpt:
-        "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
-    },
-    {
-      id: 3,
-      title: "Logiciel de gestion de la relation client  (CRM)",
-      excerpt:
-        "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
-    },
-  ];
+  const visiblePosts = t("dataProcessing.projects.items", {
+    returnObjects: true,
+  });
 
   return (
     <>
@@ -66,34 +49,36 @@ const CardProject = () => {
             className="text-white font-extrabold text-[28px] sm:text-[32px] md:text-4xl 
           lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 md:mb-10"
           >
-            <span>Nos projects IT</span>
+            <span>{t("dataProcessing.projects.title")}</span>
             <br />
-            <span>innovation, performance et impact</span>
+            <span>{t("dataProcessing.projects.subtitle")}</span>
           </h3>
 
           {/* SUBTITLE */}
           <p className="text-white text-sm md:text-base lg:text-lg tracking-wide font-semibold mb-2 px-4">
-            Chaque projet présenté reflète notre engagement envers l'innovation,
-            la <br className="hidden md:block" />
-            rigueur et la satisfaction client.
+            {t("dataProcessing.projects.description")}
           </p>
 
           {/* Cards grid */}
-<div
-  className="relative mt-12 sm:mt-14 md:mt-16 lg:mt-10 w-full max-w-7xl px-4 sm:px-6
+          <div
+            className="relative mt-12 sm:mt-14 md:mt-16 lg:mt-10 w-full max-w-7xl px-4 sm:px-6
   max-h-[60vh] overflow-y-auto md:max-h-none md:overflow-visible"
->
-
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-8 
-            md:justify-items-center">
+          >
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-8 
+            md:justify-items-center"
+            >
               {visiblePosts.map((post, index) => (
                 <article
                   key={post.id}
                   className={`relative bg-white/70 border border-transparent 
                 rounded-md shadow-sm flex flex-col min-h-[280px] sm:min-h-[300px] md:min-h-[320px] 
                 lg:min-h-[350px] w-full max-w-[400px] mx-auto
-                ${index === 2 ? 'md:col-span-2 lg:col-span-1 md:max-w-[400px]' : ''}`}
+                ${
+                  index === 2
+                    ? "md:col-span-2 lg:col-span-1 md:max-w-[400px]"
+                    : ""
+                }`}
                 >
                   {/* Number badge */}
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2">
@@ -104,8 +89,6 @@ const CardProject = () => {
                       {post.id}
                     </div>
                   </div>
-
-                  {/* Image */}
 
                   {/* Content */}
                   <div className="flex-1 p-4 sm:p-5 md:p-6 flex flex-col">
@@ -130,7 +113,7 @@ const CardProject = () => {
                         setIsModalOpen(true);
                       }}
                     >
-                      Voir plus
+                      {t("dataProcessing.projects.seeMore")}
                     </button>
                   </div>
                 </article>
@@ -145,7 +128,8 @@ const CardProject = () => {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject}
       />
- {/* ============================================ */}
+      
+      {/* ============================================ */}
       {/* CTA SECTION WITH BACKGROUND                 */}
       {/* ============================================ */}
       <section className="hidden lg:block">
@@ -174,29 +158,28 @@ const CardProject = () => {
               className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              Faites le choix d’un accompagnement <br />
+              {t("dataProcessing.projects.cta.title")} <br />
               <span style={{ color: MY_COLORS.secondaryGreen }}>
-                fiable, durable et rentable.
+                {t("dataProcessing.projects.cta.titleHighlight")}
               </span>
             </h3>
 
             <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              " Contactez notre service après-vente dès maintenant pour garantir
-              la continuité et l’efficacité de vos installations!"
+              {t("dataProcessing.projects.cta.description")}
             </p>
 
             <CTAButton
-              className="absolute top-10 md:top-2 md:w-60"
+              className="absolute top-10 md:top-2 md:w-70"
               onClick={() => alert("Video clicked!")}
             >
-              Contactez Nous
+              {t("dataProcessing.projects.cta.button")}
             </CTAButton>
           </div>
 
           <div
             className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
             style={{
-              animationDuration:"4s",
+              animationDuration: "4s",
               top: "65%",
               right: "1%",
             }}

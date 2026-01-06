@@ -3,32 +3,32 @@ import { IMAGES } from "../../asset/assets";
 import { useTranslation } from 'react-i18next';
 
 const BlogContact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [page, setPage] = useState(0);
   const [animate, setAnimate] = useState(false);
 
-  // Get translated blog articles
-const blogArticles = useMemo(() => {
+  // Get translated blog articles - add i18n.language as dependency
+  const blogArticles = useMemo(() => {
   return t('contact.blog.articles', { returnObjects: true }) || [];
-}, [t]);
+}, [t,]);
+
 
   // Map images to articles
- const BLOG_POSTS = useMemo(() => {
-  const imageMap = [
-    IMAGES.IMG1,
-    IMAGES.IMG2,
-    IMAGES.IMG3,
-    IMAGES.IMG4,
-    IMAGES.IMG5,
-    IMAGES.IMG6,
-  ];
+  const BLOG_POSTS = useMemo(() => {
+    const imageMap = [
+      IMAGES.IMG1,
+      IMAGES.IMG2,
+      IMAGES.IMG3,
+      IMAGES.IMG4,
+      IMAGES.IMG5,
+      IMAGES.IMG6,
+    ];
 
-  return blogArticles.map((article, index) => ({
-    ...article,
-    image: imageMap[index % imageMap.length],
-  }));
-}, [blogArticles]);
-
+    return blogArticles.map((article, index) => ({
+      ...article,
+      image: imageMap[index % imageMap.length],
+    }));
+  }, [blogArticles]);
 
   // Responsive posts per page
   const [postsPerPage, setPostsPerPage] = useState(3);
@@ -114,7 +114,7 @@ const blogArticles = useMemo(() => {
           >
             {visiblePosts.map((post) => (
               <article
-                key={post.id}
+                key={`${post.id}-${i18n.language}`}
                 className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8"
               >
                 {/* Number badge */}

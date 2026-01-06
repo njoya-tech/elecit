@@ -2,8 +2,11 @@ import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from "react-i18next";
 
 const HeroData = () => {
+  const { t } = useTranslation();
+
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
@@ -58,7 +61,7 @@ const HeroData = () => {
           "
           style={{ color: MY_COLORS.secondaryGreen }}
         >
-          IT & DATA PROCESSING
+          {t("dataProcessing.hero.title")}
         </h1>
 
         <p
@@ -70,13 +73,11 @@ const HeroData = () => {
             max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl
           "
         >
-          Nous aidons les entreprises à gérer efficacement leurs systèmes
-          <br className="hidden md:block" />
-          informatiques et à tirer le meilleur parti de leurs données.
+          {t("dataProcessing.hero.description")}
         </p>
 
         <CTAButton onClick={() => alert("Video clicked!")}>
-          Publireportage
+          {t("dataProcessing.hero.button")}
         </CTAButton>
       </div>
     </section>

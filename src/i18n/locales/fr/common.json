@@ -727,7 +727,7 @@
         { "title": "Ingénieurs informatique" },
         { "title": "Ingénieurs génie civil" },
         { "title": "Techniciens de fabrication" },
-        { "title": "Techniciens informatique" },
+        { "title": "Soudeur" },
         { "title": "Agents de maintenance" },
         { "title": "Ingénieurs énergie renouvelable" },
         { "title": "Techniciens courant fort et faible" }
@@ -773,7 +773,9 @@
       "subtitle": "Nous vous répondrons dès que possible",
       "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
       "openWhatsApp": "Ouvrir WhatsApp",
-      "messagePlaceholder": "Rédigez votre message..."
+      "messagePlaceholder": "Rédigez votre message...",
+      "leftButton": "Retour",
+      "rightButton": "Envoyer"
     },
     "hero": {
       "title": "Contactez-Nous.",
@@ -812,6 +814,21 @@
       "goToPage": "Aller à la page",
       "articles": [
         {
+          "id": 1,
+          "title": "Pourquoi la fabrication sur mesure est un game-changer dans l'industrie camerounaise ?",
+          "excerpt": "Dans de nombreux secteurs industriels au Cameroun, les entreprises font face à un défi récurrent..."
+        },
+        {
+          "id": 2,
+          "title": "5 façons dont un hôtel intelligent économise de l'énergie et fidélise sa clientèle",
+          "excerpt": "Sur un marché hôtelier camerounais de plus en plus compétitif, la question est double..."
+        },
+        {
+          "id": 3,
+          "title": "La révolution du tracking : quand l'IA surveille vos véhicules",
+          "excerpt": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à des défis majeurs..."
+        },
+        {
           "id": 4,
           "title": "Irrigation intelligente : la technologie au service de l'agriculture durable",
           "excerpt": "L'agriculture camerounaise, moteur de l'économie nationale, est confrontée à un défi de taille..."
@@ -825,27 +842,11 @@
           "id": 6,
           "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
           "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
-        },
-        {
-          "id": 7,
-          "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
-          "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
-        },
-        {
-          "id": 8,
-          "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
-          "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
-        },
-        {
-          "id": 9,
-          "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
-          "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
         }
       ]
     }
   },
-  
-  
+
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -947,7 +948,7 @@
       }
     ]
   },
-  
+
   "sav": {
     "hero": {
       "title": "SERVICE APRES-VENTE",
@@ -1023,7 +1024,7 @@
       }
     }
   },
-  
+
   "bureau": {
     "hero": {
       "title": "INGÉNIERIE BÂTIMENT & TRAVAUX PUBLICS",
@@ -1081,7 +1082,7 @@
       }
     }
   },
-  
+
   "control": {
     "hero": {
       "title": "Contrôle d'accès & Sécurité",
@@ -1142,14 +1143,167 @@
         "goToSlide": "Aller à la diapositive"
       }
     }
+  },
+
+  "dataProcessing": {
+    "hero": {
+      "title": "IT & DATA PROCESSING",
+      "description": "Nous aidons les entreprises à gérer efficacement leurs systèmes informatiques et à tirer le meilleur parti de leurs données.",
+      "button": "Publireportage"
+    },
+    "projects": {
+      "title": "Nos projects IT",
+      "subtitle": "innovation, performance et impact",
+      "description": "Chaque projet présenté reflète notre engagement envers l'innovation, la rigueur et la satisfaction client.",
+      "seeMore": "Voir plus",
+      "items": [
+        {
+          "id": 1,
+          "title": "Logiciel de Content Management System (CMS)",
+          "excerpt": "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure…",
+          "description": "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure, pensé pour offrir une administration simple, rapide et totalement personnalisable.",
+          "utility": "Cette solution permet à l'entreprise de gérer efficacement ses informations, ses services et ses mises à jour sans dépendre d'un support technique externe",
+          "clientFeedback": "Le CMS conçu par ElecIT Engineering nous a simplifié la gestion de nos contenus. L'outil est intuitif, rapide et parfaitement adapté à nos besoins. Un vrai gain de temps au quotidien.",
+          "clientRole": "Directeur général",
+          "date": "12/06/23",
+          "status": "terminé"
+        },
+        {
+          "id": 2,
+          "title": "Logiciel de gestion de la relation client(CRM)",
+          "excerpt": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
+          "description": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise pour gérer les relations clients.",
+          "utility": "Amélioration de la gestion de la relation client et du suivi commercial",
+          "clientFeedback": "Un outil performant qui a transformé notre approche client.",
+          "clientRole": "Directeur commercial",
+          "date": "15/08/23",
+          "status": "terminé"
+        },
+        {
+          "id": 3,
+          "title": "Logiciel de gestion de la relation client (CRM)",
+          "excerpt": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
+          "description": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise pour gérer les relations clients.",
+          "utility": "Amélioration de la gestion de la relation client et du suivi commercial",
+          "clientFeedback": "Un outil performant qui a transformé notre approche client.",
+          "clientRole": "Directeur commercial",
+          "date": "20/09/23",
+          "status": "en cours"
+        }
+      ],
+      "modal": {
+        "category": "IT and DATA PROCESSING",
+        "projectLabel": "Projet :",
+        "dateLabel": "Date de réalisation:",
+        "statusLabel": "Statut du projet:",
+        "descriptionLabel": "Description du projet:",
+        "utilityLabel": "Utilité:",
+        "feedbackLabel": "Retour client:",
+        "haveProject": "Vous avez un projet?",
+        "close": "Fermer"
+      },
+      "cta": {
+        "title": "Faites le choix d'un accompagnement",
+        "titleHighlight": "fiable, durable et rentable.",
+        "description": "\" Contactez notre service après-vente dès maintenant pour garantir la continuité et l'efficacité de vos installations!\"",
+        "button": "Contactez Nous"
+      }
+    },
+    "services": {
+      "title": "Les services informatiques",
+      "description": "Nous proposons une gamme complète de services informatiques pour accompagner la transformation numérique de votre organisation, en alliant performance, sécurité et évolutivité.",
+      "items": [
+        {
+          "title": "Gestion des Infrastructures IT",
+          "description": "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.)."
+        },
+        {
+          "title": "Support Technique & Assistance",
+          "description": "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective."
+        },
+        {
+          "title": "Cybersécurité",
+          "description": "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité."
+        },
+        {
+          "title": "Virtualisation & Cloud Computing",
+          "description": "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides."
+        },
+        {
+          "title": "Développement d'applications",
+          "description": "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers."
+        }
+      ]
+    },
+    "advantages": {
+      "headerTitle": "Les avantages clés",
+      "description": "Grâce à notre expertise, nous vous accompagnons dans la transformation numérique de votre entreprise et vous aidons à prendre de meilleures décisions grâce à vos données.",
+      "documentationButton": "Documentation",
+      "items": [
+        {
+          "title": "Fiabilité des systèmes",
+          "description": "Des infrastructures informatiques stables, performantes et toujours opérationnelles"
+        },
+        {
+          "title": "Sécurité renforcée",
+          "description": "Protection complète des données et des systèmes contre les cybermenaces."
+        },
+        {
+          "title": "Gain de temps",
+          "description": "Automatisation des tâches et support technique réactif pour vous concentrer sur l'essentiel."
+        },
+        {
+          "title": "Optimisation des coûts",
+          "description": "Réduction des dépenses liées à la maintenance, à l'infrastructure et à la gestion des données."
+        },
+        {
+          "title": "Décisions plus intelligentes",
+          "description": "Accès à des données claires et structurées pour guider vos choix stratégiques."
+        },
+        {
+          "title": "Flexibilité et évolutivité",
+          "description": "Des solutions adaptées à votre croissance et à l'évolution de vos besoins."
+        },
+        {
+          "title": "Conformité réglementaire",
+          "description": "Respect des normes (comme le RGPD) pour une gestion des données en toute légalité."
+        }
+      ]
+    }
+  },
+  "controlAccess": {
+    "hero": {
+      "title": "Contrôle d'accès & Sécurité",
+      "description": "Grâce à des technologies avancées, nous garantissons la gestion des accès, la surveillance en temps réel et la protection des personnes et des biens contre les intrusions et les menaces.",
+      "button": "Télécharger le flyer"
+    },
+    "header": {
+      "title": "Traitement et Valorisation des Données"
+    },
+    "services": {
+      "description": "Nous sécurisons vos bâtiments, infrastructures et espaces sensibles grâce à des solutions de contrôle d'accès et de vidéosurveillance performantes.",
+      "items": [
+        {
+          "title": "Contrôle d'Accès Intelligent",
+          "description": "Systèmes de badges, cartes RFID et biométrie, portails automatiques et serrures électroniques."
+        },
+        {
+          "title": "Vidéosurveillance & Intrusion",
+          "description": "Caméras HD, détection de mouvement, alarmes connectées et surveillance en temps réel."
+        },
+        {
+          "title": "Sécurité & Gestion des Risques",
+          "description": "Protection contre les intrusions, cybersécurité et détection incendie intégrée aux systèmes d'alerte."
+        },
+        {
+          "title": "Gestion Centralisée & Automatisation",
+          "description": "Supervision des accès, contrôle à distance, solutions cloud et rapports d'activité détaillés."
+        },
+        {
+          "title": "Audit & Conseil en Sécurité",
+          "description": "Analyse des vulnérabilités, définition de politiques de sécurité et accompagnement à la mise en conformité."
+        }
+      ]
+    }
   }
 }
-
-
-
-
-
-
-
-
-

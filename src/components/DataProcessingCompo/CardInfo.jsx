@@ -1,47 +1,14 @@
 import React from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from "react-i18next";
 
 const CardInfo = () => {
-  const services = {
-    row1: [
-      {
-        icon: ICONS.laptop,
-        title: "Gestion des Infrastructures IT",
-        description:
-          "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.).",
-      },
-      {
-        icon: ICONS.stockage,
-        title: "Support Technique & Assistance",
-        description:
-          "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective.",
-      },
-    ],
-    row2: [
-      {
-        icon: ICONS.badge,
-        title: "Cybersécurité",
-        description:
-          "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité.",
-      },
-      {
-        icon: ICONS.business_icon,
-        title: "Virtualisation & Cloud Computing",
-        description:
-          "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides.",
-      },
-      {
-        icon: ICONS.badge,
-        title: "Développement d'applications",
-        description:
-          "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers.",
-      },
-    ],
-  };
+  const { t } = useTranslation();
+  const services = t("dataProcessing.services.items", { returnObjects: true });
 
   // Combine all cards including the image to make 6 cards
-  const allCards = [{ type: "image", src: IMAGES.IMG5 }, ...services.row1, ...services.row2];
+  const allCards = [{ type: "image", src: IMAGES.IMG5 }, ...services];
 
   return (
     <div className="w-full bg-white pt-0 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6">
@@ -81,7 +48,7 @@ const CardInfo = () => {
             style={{ color: MY_COLORS.secondaryGreen }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 px-2"
           >
-            Les services informatiques
+            {t("dataProcessing.services.title")}
           </h2>
 
           {/* SUBTITLE */}
@@ -89,9 +56,7 @@ const CardInfo = () => {
             style={{ color: MY_COLORS.black }}
             className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed px-2"
           >
-            Nous proposons une gamme complète de services informatiques pour
-            accompagner la transformation numérique de votre organisation, en
-            alliant performance, sécurité et évolutivité.
+            {t("dataProcessing.services.description")}
           </p>
         </div>
 
@@ -139,7 +104,7 @@ const CardInfo = () => {
                   >
                     <div className="absolute -top-8 sm:-top-10 md:-top-12 left-1/2 -translate-x-1/2">
                       <img
-                        src={card.icon}
+                        src={ICONS.laptop}
                         alt=""
                         className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
                       />

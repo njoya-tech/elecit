@@ -67,7 +67,7 @@ const EntrepriseAcc = () => {
                     </h3>
 
                     {/* Plus/Minus Icon */}
-                    <span className="flex-shrink-0 w-5 h-5 md:w-6 md:h-6">
+                    <span className="shrink-0 w-5 h-5 md:w-6 md:h-6">
                       {openIndex === index ? (
                         <Minus
                           className="w-5 h-5 md:w-6 md:h-6"

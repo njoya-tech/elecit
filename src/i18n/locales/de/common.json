@@ -26,7 +26,6 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
- 
 
   "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
@@ -437,7 +436,7 @@
       }
     ]
   },
-  
+
   "entreprise": {
     "hero": {
       "title": "Wat u moet weten over",
@@ -515,17 +514,17 @@
       "ctaButton": "Neem Contact Op"
     }
   },
-  
+
   "contact": {
-     "floatingButton": "Kontaktieren Sie uns",
+    "floatingButton": "Neem contact op",
     "popup": {
-      "title": "Kontaktieren Sie uns",
-      "subtitle": "Wir antworten so schnell wie möglich",
-      "availability": "Wir sind von Montag bis Freitag von 8 bis 18 Uhr auf WhatsApp erreichbar. Zögern Sie nicht, uns zu kontaktieren.",
-      "openWhatsApp": "WhatsApp öffnen",
-      "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
-      "leftButton": "Zurück",
-      "rightButton": "Senden"
+      "title": "Neem contact op",
+      "subtitle": "We reageren zo snel mogelijk",
+      "availability": "We zijn van maandag tot vrijdag van 8 tot 18 uur bereikbaar via WhatsApp. Aarzel niet om contact met ons op te nemen.",
+      "openWhatsApp": "WhatsApp openen",
+      "messagePlaceholder": "Schrijf uw bericht...",
+      "leftButton": "Terug",
+      "rightButton": "Verzenden"
     },
     "hero": {
       "title": "Neem Contact Op.",
@@ -533,7 +532,7 @@
       "button": "Meer Inhoud"
     },
     "form": {
-      "title": "Contact Formulier",
+      "title": "Contactformulier",
       "subtitle": "Een vraag, behoefte of project om te bespreken?",
       "subtitle2": "Vul het onderstaande formulier in",
       "lastName": "Achternaam",
@@ -545,7 +544,7 @@
       "emailPlaceholder": "Voer uw e-mail in",
       "message": "Bericht",
       "messagePlaceholder": "Antwoord in enkele woorden",
-      "submit": "Verstuur",
+      "submit": "Versturen",
       "imageAlt": "Professional in een industriële omgeving"
     },
     "location": {
@@ -555,51 +554,48 @@
       "highlight2": "Centraal-Afrika."
     },
     "blog": {
-  "preview": {
-    "banner": {
-      "titlePart1": "Blijf op de hoogte van ons ",
-      "highlightWord": "nieuws",
-      "titlePart2": " door onze blog te bezoeken"
-    },
-    "articles": [
-      {
-        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-        "title": "Waarom maatwerkproductie een game-changer is in de Kameroense industrie?",
-        "description": "In veel industriële sectoren in Kameroen staan bedrijven voor een terugkerende uitdaging...."
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-        "title": "5 manieren waarop een slim hotel energie bespaart en klantenloyaliteit opbouwt",
-        "description": "Op een steeds competitievere hotelmarkt in Kameroen is de vraag tweeledig..."
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-        "title": "De trackingrevolutie: wanneer AI uw voertuigen bewaakt",
-        "description": "Transport en logistiek staan centraal in de economie van Kameroen, maar deze sector ondervindt grote uitdagingen...."
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-        "title": "Slimme irrigatie: technologie voor duurzame landbouw",
-        "description": "De Kameroense landbouw, de motor van de nationale economie, staat voor een grote uitdaging..."
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-        "title": "Van ruw metaal naar innovatie: hoe we duurzame infrastructuur vormgeven",
-        "description": "Het transformeren van grondstoffen naar een innovatief en functioneel product is de kunst van moderne metallurgie..."
-      },
-      {
-        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-        "title": "Gegevensverwerking en beveiliging: het digitale goud van uw bedrijf beschermen",
-        "description": "Elk bedrijf genereert dagelijks aanzienlijke hoeveelheden informatie...."
-      }
-    ]
-  }
-  
-}
-
+      "title": "Blijf op de hoogte van ons",
+      "highlight": "nieuws",
+      "title2": "door onze blog te bezoeken",
+      "readMore": "Lees meer",
+      "prevPage": "Vorige pagina",
+      "nextPage": "Volgende pagina",
+      "goToPage": "Ga naar pagina",
+      "articles": [
+        {
+          "id": 1,
+          "title": "Waarom maatwerkproductie een game-changer is in de Kameroense industrie?",
+          "excerpt": "In veel industriële sectoren in Kameroen staan bedrijven voor een terugkerende uitdaging..."
+        },
+        {
+          "id": 2,
+          "title": "5 manieren waarop een slim hotel energie bespaart en klantenloyaliteit opbouwt",
+          "excerpt": "Op een steeds competitievere hotelmarkt in Kameroen is de vraag tweeledig..."
+        },
+        {
+          "id": 3,
+          "title": "De trackingrevolutie: wanneer AI uw voertuigen bewaakt",
+          "excerpt": "Transport en logistiek staan centraal in de economie van Kameroen, maar deze sector ondervindt grote uitdagingen..."
+        },
+        {
+          "id": 4,
+          "title": "Slimme irrigatie: technologie voor duurzame landbouw",
+          "excerpt": "De Kameroense landbouw, de motor van de nationale economie, staat voor een grote uitdaging..."
+        },
+        {
+          "id": 5,
+          "title": "Van ruw metaal naar innovatie: hoe we duurzame infrastructuur vormgeven",
+          "excerpt": "Het transformeren van grondstoffen naar een innovatief en functioneel product is de kunst van moderne metallurgie..."
+        },
+        {
+          "id": 6,
+          "title": "Gegevensverwerking en beveiliging: het digitale goud van uw bedrijf beschermen",
+          "excerpt": "Elk bedrijf genereert dagelijks aanzienlijke hoeveelheden gevoelige informatie..."
+        }
+      ]
+    }
   },
- 
- 
+
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -701,7 +697,7 @@
       }
     ]
   },
-  
+
   "sav": {
     "hero": {
       "title": "KUNDENDIENST",
@@ -777,7 +773,7 @@
       }
     }
   },
-  
+
   "bureau": {
     "hero": {
       "title": "GEBÄUDETECHNIK & ÖFFENTLICHE ARBEITEN",
@@ -835,7 +831,7 @@
       }
     }
   },
-  
+
   "control": {
     "hero": {
       "title": "Toegangscontrole & Beveiliging",
@@ -896,24 +892,167 @@
         "goToSlide": "Ga naar dia"
       }
     }
+  },
+
+  "dataProcessing": {
+    "hero": {
+      "title": "IT & DATENVERARBEITUNG",
+      "description": "Wir helfen Unternehmen, ihre IT-Systeme effektiv zu verwalten und das Beste aus ihren Daten herauszuholen.",
+      "button": "Pressemitteilung"
+    },
+    "projects": {
+      "title": "Unsere IT-Projekte",
+      "subtitle": "Innovation, Leistung und Wirkung",
+      "description": "Jedes vorgestellte Projekt spiegelt unser Engagement für Innovation, Strenge und Kundenzufriedenheit wider.",
+      "seeMore": "Mehr sehen",
+      "items": [
+        {
+          "id": 1,
+          "title": "Content Management System (CMS) Software",
+          "excerpt": "Wir haben ein maßgeschneidertes Content-Management-System (CMS) entwickelt…",
+          "description": "Wir haben ein maßgeschneidertes Content-Management-System (CMS) entwickelt, das eine einfache, schnelle und vollständig anpassbare Verwaltung bietet.",
+          "utility": "Diese Lösung ermöglicht es dem Unternehmen, seine Informationen, Dienstleistungen und Aktualisierungen effektiv zu verwalten, ohne auf externen technischen Support angewiesen zu sein",
+          "clientFeedback": "Das von ElecIT Engineering entwickelte CMS hat unsere Content-Verwaltung vereinfacht. Das Tool ist intuitiv, schnell und perfekt an unsere Bedürfnisse angepasst. Eine echte Zeitersparnis im Alltag.",
+          "clientRole": "Geschäftsführer",
+          "date": "12.06.23",
+          "status": "abgeschlossen"
+        },
+        {
+          "id": 2,
+          "title": "Kundenbeziehungsmanagement (CRM) Software",
+          "excerpt": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+          "description": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens zur Verwaltung von Kundenbeziehungen angepasst ist.",
+          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Verkaufsverfolgung",
+          "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
+          "clientRole": "Vertriebsleiter",
+          "date": "15.08.23",
+          "status": "abgeschlossen"
+        },
+        {
+          "id": 3,
+          "title": "Kundenbeziehungsmanagement (CRM) Software",
+          "excerpt": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+          "description": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens zur Verwaltung von Kundenbeziehungen angepasst ist.",
+          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Verkaufsverfolgung",
+          "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
+          "clientRole": "Vertriebsleiter",
+          "date": "20.09.23",
+          "status": "in Bearbeitung"
+        }
+      ],
+      "modal": {
+        "category": "IT und DATENVERARBEITUNG",
+        "projectLabel": "Projekt:",
+        "dateLabel": "Fertigstellungsdatum:",
+        "statusLabel": "Projektstatus:",
+        "descriptionLabel": "Projektbeschreibung:",
+        "utilityLabel": "Zweck:",
+        "feedbackLabel": "Kundenfeedback:",
+        "haveProject": "Haben Sie ein Projekt?",
+        "close": "Schließen"
+      },
+      "cta": {
+        "title": "Wählen Sie eine Unterstützung, die",
+        "titleHighlight": "zuverlässig, nachhaltig und kosteneffektiv ist.",
+        "description": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
+        "button": "Kontaktieren Sie uns"
+      }
+    },
+    "services": {
+      "title": "IT-Dienstleistungen",
+      "description": "Wir bieten eine vollständige Palette von IT-Dienstleistungen zur Unterstützung der digitalen Transformation Ihrer Organisation, die Leistung, Sicherheit und Skalierbarkeit kombiniert.",
+      "items": [
+        {
+          "title": "IT-Infrastruktur-Management",
+          "description": "Einrichtung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
+        },
+        {
+          "title": "Technischer Support & Assistenz",
+          "description": "Helpdesk-Service, Remote- oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
+        },
+        {
+          "title": "Cybersicherheit",
+          "description": "Implementierung von Sicherheitsrichtlinien, Firewall, Backup, Zugriffskontrolle, Schwachstellenaudits."
+        },
+        {
+          "title": "Virtualisierung & Cloud Computing",
+          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybridlösungen."
+        },
+        {
+          "title": "Anwendungsentwicklung",
+          "description": "Design und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
+        }
+      ]
+    },
+    "advantages": {
+      "headerTitle": "Hauptvorteile",
+      "description": "Dank unserer Expertise unterstützen wir Sie bei der digitalen Transformation Ihres Unternehmens und helfen Ihnen, bessere Entscheidungen mit Ihren Daten zu treffen.",
+      "documentationButton": "Dokumentation",
+      "items": [
+        {
+          "title": "Systemzuverlässigkeit",
+          "description": "Stabile, leistungsstarke IT-Infrastrukturen, die immer betriebsbereit sind"
+        },
+        {
+          "title": "Verstärkte Sicherheit",
+          "description": "Vollständiger Schutz von Daten und Systemen gegen Cyber-Bedrohungen."
+        },
+        {
+          "title": "Zeitersparnis",
+          "description": "Aufgabenautomatisierung und reaktionsschneller technischer Support, damit Sie sich auf das Wesentliche konzentrieren können."
+        },
+        {
+          "title": "Kostenoptimierung",
+          "description": "Reduzierung der Ausgaben für Wartung, Infrastruktur und Datenverwaltung."
+        },
+        {
+          "title": "Intelligentere Entscheidungen",
+          "description": "Zugang zu klaren und strukturierten Daten zur Steuerung Ihrer strategischen Entscheidungen."
+        },
+        {
+          "title": "Flexibilität und Skalierbarkeit",
+          "description": "Lösungen, die an Ihr Wachstum und sich ändernde Bedürfnisse angepasst sind."
+        },
+        {
+          "title": "Einhaltung von Vorschriften",
+          "description": "Einhaltung von Standards (wie DSGVO) für eine rechtmäßige Datenverwaltung."
+        }
+      ]
+    }
+  },
+  "controlAccess": {
+    "hero": {
+      "title": "Zugangskontrolle & Sicherheit",
+      "description": "Dank fortschrittlicher Technologien garantieren wir Zugangsmanagement, Echtzeitüberwachung und Schutz von Menschen und Eigentum vor Eindringlingen und Bedrohungen.",
+      "button": "Flyer herunterladen"
+    },
+    "header": {
+      "title": "Datenverarbeitung und -aufwertung"
+    },
+    "services": {
+      "description": "Wir sichern Ihre Gebäude, Infrastrukturen und sensiblen Bereiche mit leistungsstarken Zugangskontroll- und Videoüberwachungslösungen.",
+      "items": [
+        {
+          "title": "Intelligente Zugangskontrolle",
+          "description": "Badge-Systeme, RFID-Karten und Biometrie, automatische Tore und elektronische Schlösser."
+        },
+        {
+          "title": "Videoüberwachung & Einbruch",
+          "description": "HD-Kameras, Bewegungserkennung, vernetzte Alarme und Echtzeitüberwachung."
+        },
+        {
+          "title": "Sicherheit & Risikomanagement",
+          "description": "Schutz vor Eindringlingen, Cybersicherheit und Branderkennung, integriert in Alarmsysteme."
+        },
+        {
+          "title": "Zentralisierte Verwaltung & Automatisierung",
+          "description": "Zugangsüberwachung, Fernsteuerung, Cloud-Lösungen und detaillierte Aktivitätsberichte."
+        },
+        {
+          "title": "Sicherheitsaudit & Beratung",
+          "description": "Schwachstellenanalyse, Definition von Sicherheitsrichtlinien und Compliance-Unterstützung."
+        }
+      ]
+    }
   }
 }
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-

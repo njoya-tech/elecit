@@ -1,8 +1,12 @@
 import React from "react";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from "react-i18next";
 
 const CardAvantage = () => {
+  const { t } = useTranslation();
+  const advantages = t("dataProcessing.advantages.items", { returnObjects: true });
+
   return (
     <>
       {/* CONTAINER 1: HEADER */}
@@ -18,7 +22,7 @@ const CardAvantage = () => {
             className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 lg:py-8"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
-            Les avantages clés{" "}
+            {t("dataProcessing.advantages.headerTitle")}
           </h2>
         </div>
       </header>
@@ -30,15 +34,13 @@ const CardAvantage = () => {
             {/* Left: Description Text */}
             <div className="w-full md:w-1/2">
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                Grâce à notre expertise, nous vous accompagnons dans la
-                transformation numérique de votre entreprise et vous aidons à
-                prendre de meilleures décisions grâce à vos données.
+                {t("dataProcessing.advantages.description")}
               </p>
 
               {/* Documentation Button with curved arrow */}
               <div className="mt-4 sm:mt-6 flex items-center gap-4">
                 <button className="bg-black text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-gray-800 transition">
-                  Documentation
+                  {t("dataProcessing.advantages.documentationButton")}
                 </button>
               </div>
             </div>
@@ -61,11 +63,10 @@ const CardAvantage = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3">
-                  Fiabilité des systèmes
+                  {advantages[0].title}
                 </h3>
                 <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  Des infrastructures informatiques stables, performantes et
-                  toujours opérationnelles
+                  {advantages[0].description}
                 </p>
               </div>
             </div>
@@ -150,7 +151,6 @@ const CardAvantage = () => {
                   boxShadow: "0,4px,10px  rgba (0,0,0,0.15)",
                 }}
               >
-                {/* Icon half in/out - black for green cards */}
                 <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.securite_icon}
@@ -160,11 +160,10 @@ const CardAvantage = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  Sécurité renforcée
+                  {advantages[1].title}
                 </h3>
                 <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
-                  Protection complète des données et des systèmes contre les
-                  cybermenaces.
+                  {advantages[1].description}
                 </p>
               </div>
 
@@ -173,7 +172,6 @@ const CardAvantage = () => {
                 className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
               shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5 lg:left-2.5"
               >
-                {/* Icon half in/out - normal for white cards */}
                 <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.gain_temps_icon}
@@ -182,11 +180,10 @@ const CardAvantage = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  Gain de temps
+                  {advantages[2].title}
                 </h3>
                 <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  Automatisation des tâches et support technique réactif pour
-                  vous concentrer sur l'essentiel.
+                  {advantages[2].description}
                 </p>
               </div>
 
@@ -197,7 +194,6 @@ const CardAvantage = () => {
                   backgroundColor: "#7FA946",
                 }}
               >
-                {/* Icon half in/out - black for green cards */}
                 <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.optimisation_icon}
@@ -207,11 +203,10 @@ const CardAvantage = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  Optimisation des coûts
+                  {advantages[3].title}
                 </h3>
                 <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
-                  Réduction des dépenses liées à la maintenance, à
-                  l'infrastructure et à la gestion des données.
+                  {advantages[3].description}
                 </p>
               </div>
 
@@ -220,7 +215,6 @@ const CardAvantage = () => {
                 className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
               shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-5"
               >
-                {/* Icon half in/out - normal for white cards */}
                 <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.decision_icon}
@@ -229,11 +223,10 @@ const CardAvantage = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  Décisions plus intelligentes
+                  {advantages[4].title}
                 </h3>
                 <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  Accès à des données claires et structurées pour guider vos
-                  choix stratégiques.
+                  {advantages[4].description}
                 </p>
               </div>
 
@@ -244,7 +237,6 @@ const CardAvantage = () => {
                   backgroundColor: "#7FA946",
                 }}
               >
-                {/* Icon half in/out - black for green cards */}
                 <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.flexibilite_icon}
@@ -254,11 +246,10 @@ const CardAvantage = () => {
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  Flexibilité et évolutivité
+                  {advantages[5].title}
                 </h3>
                 <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
-                  Des solutions adaptées à votre croissance et à l'évolution de
-                  vos besoins.
+                  {advantages[5].description}
                 </p>
               </div>
 
@@ -267,7 +258,6 @@ const CardAvantage = () => {
                 className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
               shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-3.5 lg:left-3.5"
               >
-                {/* Icon half in/out - normal for white cards */}
                 <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
                   <img
                     src={ICONS.conformite_icon}
@@ -277,11 +267,10 @@ const CardAvantage = () => {
                 </div>
 
                 <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  Conformité réglementaire
+                  {advantages[6].title}
                 </h3>
                 <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  Respect des normes (comme le RGPD) pour une gestion des
-                  données en toute légalité.
+                  {advantages[6].description}
                 </p>
               </div>
             </div>
