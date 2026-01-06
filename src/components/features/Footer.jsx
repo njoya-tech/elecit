@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.svg'
 import g1 from '../../assets/g1.svg'
 import rail from '../../assets/rail.svg'
-import phone from '../../assets/phone.svg'
+import te from '../../assets/te.svg'
 
 import ContactPopup from './ContactPopup';
 
@@ -97,9 +97,9 @@ const Footer = () => {
 
               {/* Partie droite - Téléphone */}
               <div className='flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-white'>
-                <motion.svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+ <motion.img
+                  src={te}
+                  alt="phone"
                   className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex-shrink-0"
                   role="img"
                   aria-label={t('footer.banner.phoneLabel')}
@@ -110,12 +110,7 @@ const Footer = () => {
                     repeat: Infinity,
                     repeatType: "loop"
                   }}
-                >
-                  <path
-                    fill={MY_COLORS?.white ?? "#FFFFFF"}
-                    d="M22.54 16.88l-5-2.14a1 1 0 0 0-1 .18l-2.2 1.8a15.05 15.05 0 0 1-6-6l1.8-2.2a1 1 0 0 0 .18-1l-2.14-5A1 1 0 0 0 8.16.6L4.03 2A3 3 0 0 0 2 5.03C2 14.44 9.56 22 18.97 22A3 3 0 0 0 22 19.97l1.4-4.13a1 1 0 0 0-.86-1z"
-                  />
-                </motion.svg>
+                />
 
                 <a 
                   href="tel:+237650416640"

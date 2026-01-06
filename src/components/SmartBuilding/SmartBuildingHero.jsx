@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import fi from '../../assets/fi.svg'
+import {motion} from 'framer-motion'
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -40,12 +42,34 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
           <p className="text-white text-sm sm:text-base md:text-lg max-w-full sm:max-w-xl md:max-w-3xl mb-6 sm:mb-7 md:mb-8 leading-relaxed px-2">
             {t('smartBuilding.subtitle')}
           </p>
+
+<div className='flex flex-row lg:-translate-x-10 gap-2'>
+  <motion.div 
+    className="flex-shrink-0"
+    animate={{
+      x: [0, -12, 0], // Position normale → Gauche → Position normale
+    }}
+    transition={{
+      duration: 1.5,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatDelay: 0.3
+    }}
+  >
+    <img 
+      src={fi} 
+      alt="Fleche"
+      className="w-8 h-8 sm:w-6 sm:h-6 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain scale-x-[-1]"
+    />
+  </motion.div>
+  
           <button 
             className="px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3 text-sm sm:text-base rounded-full border-2 text-white font-medium hover:bg-white transition-all"
             style={{ borderColor: MY_COLORS.secondaryGreen, color: MY_COLORS.secondaryGreen }}
           >
             {t('smartBuilding.buttonText')}
           </button>
+</div>
         </div>
       </div>
 

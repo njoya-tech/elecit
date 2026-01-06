@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 import p3 from '../../assets/p3.svg'
+import fi from '../../assets/fi.svg'
+import { motion } from 'framer-motion'
 
 const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
   const { t } = useTranslation();
@@ -43,8 +45,13 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
         >
           {t(subtitle2)}
         </p>
-        
-        {/* Boutons d'action */}
+
+                      <div className='flex flex-row  text-center items-center justify-center gap-2'>
+                      
+                        
+                               {/* Boutons d'action */}
+                          <div className="flex items-center justify-center gap-4  sm:gap-6">
+                                 {/* Boutons d'action */}
         <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6">
           {/* Bouton Livre blanc */}
           <div className="flex items-center gap-3">
@@ -67,6 +74,29 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
             </button>
           </div>
         </div>
+          <motion.div 
+                          className="flex-shrink-0"
+                          animate={{
+                            x: [0, -12, 0], // Position normale → Gauche → Position normale
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                            repeatDelay: 0.3
+                          }}
+                        >
+                          <img 
+                            src={fi} 
+                            alt="Fleche"
+                            className="w-8 h-8 sm:w-6 sm:h-6 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain "
+                          />
+                        </motion.div>
+                          </div>
+                      </div>
+        
+        
+ 
       </div>
       
       <div className='absolute bottom-5 z-10'>

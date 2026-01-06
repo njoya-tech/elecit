@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import projet1 from '../../assets/projet1.JPG';
 import { MY_COLORS } from '../../utils/colors';
+import {motion} from 'framer-motion'
+import fi from '../../assets/fi.svg'
+
 
 const HeroSection = () => {
   const { t } = useTranslation(); 
@@ -52,7 +55,10 @@ const HeroSection = () => {
          
           {/* Boutons d'action */}
           <div className="flex items-center justify-center">
-            <button 
+           
+
+            <div className='flex flex-row items-center gap-2'>
+               <button 
               className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3.5 lg:px-12 lg:py-4 border-2 text-sm sm:text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-lg"
               style={{
                 borderColor: MY_COLORS.secondaryGreen,
@@ -70,6 +76,27 @@ const HeroSection = () => {
             >
               {t('projet.buttonText')}
             </button>
+
+                <motion.div 
+                  className="flex-shrink-0"
+                  animate={{
+                    x: [0, -12, 0], // Position normale → Gauche → Position normale
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 0.3
+                  }}
+                >
+                  <img 
+                    src={fi} 
+                    alt="Fleche"
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain"
+                  />
+                </motion.div>
+
+            </div>
           </div>
         </div>
       </div>

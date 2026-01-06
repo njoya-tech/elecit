@@ -6,7 +6,7 @@ import NavBar from '../../components/features/NavBar';
 import bgImage from '../../assets/bgImage.jpg'
 import JobOffersList from '../../components/Carriere/jobOffersList';
 import FormRoundCar from '../../components/Carriere/formRoundCar';
-
+import car from '../../assets/car.png'
 
 const Carriere = () => {
 
@@ -102,7 +102,7 @@ const Carriere = () => {
         title1="recruitment.heroTitle1"
         title2="recruitment.heroTitle2"
         subtitle="recruitment.heroSubtitle"
-        bgImage={bgImage}
+        bgImage={car}
       />
       
     </div>

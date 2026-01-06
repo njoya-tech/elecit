@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
 import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
-
+import fi from '../../assets/fi.svg'
 import CTAButton from "../CTA/CTAButton.jsx";
 
 
@@ -53,7 +53,28 @@ const FormRound = () => {
             alt="form technologie"
             className='absolute inset-0 w-full lg:max-w-4xl lg:left-30 lg:-bottom-100 sm:max-w-4xl h-full object-contain opacity-30 z-[-1]'
           />
-            {/* Bouton */}
+
+             <div className='flex flex-row items-center gap-2'>
+                <motion.div 
+                  className="flex-shrink-0"
+                  animate={{
+                    x: [0, -12, 0], // Position normale → Gauche → Position normale
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 0.3
+                  }}
+                >
+                  <img 
+                    src={fi} 
+                    alt="Fleche"
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain scale-x-[-1]"
+                  />
+                </motion.div>
+
+                            {/* Bouton */}
             <button 
               className="px-6 py-2 md:px-10 md:py-3 lg:px-12 lg:py-4 border-2 text-sm md:text-base font-semibold rounded-full transition-all duration-300 mt-4"
               style={{
@@ -71,6 +92,11 @@ const FormRound = () => {
             >
               {t('projets.buttonRound')}
             </button>
+
+             </div>
+
+
+
           </div>
         </div>
 

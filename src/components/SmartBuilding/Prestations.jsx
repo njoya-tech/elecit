@@ -9,6 +9,8 @@ import pres5 from '../../assets/pres5.svg'
 import pres6 from '../../assets/pres6.svg'
 import pres7 from '../../assets/pres7.svg'
 import rail from '../../assets/rail.svg'
+import fi from '../../assets/fi.svg'
+
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -82,8 +84,29 @@ const Prestations = () => {
               >
                 {t('prestations.buttonText')}
               </button>
+
+                 <motion.div 
+                                      className="flex-shrink-0 lg:translate-x-4"
+                                      animate={{
+                                        x: [0, -12, 0], // Position normale → Gauche → Position normale
+                                      }}
+                                      transition={{
+                                        duration: 1.5,
+                                        ease: "easeInOut",
+                                        repeat: Infinity,
+                                        repeatDelay: 0.3
+                                      }}
+                                    >
+                                      <img 
+                                        src={fi} 
+                                        alt="Fleche"
+                                        className="w-8 h-8 sm:w-6 sm:h-6 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain "
+                                      />
+                                    </motion.div>
              
             </div>
+
+                              
           </div>
 
           {/* Right: Audit Card */}

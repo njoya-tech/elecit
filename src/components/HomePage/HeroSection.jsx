@@ -178,13 +178,24 @@ const HeroSection = ({ slides }) => {
                 </button>
                 
                 {/* Flèche animée - Toujours visible */}
-                <div className="animate-bounce-horizontal flex-shrink-0">
-                  <img 
-                    src={fleche} 
-                    alt="Fleche"
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 object-contain"
-                  />
-                </div>
+              <motion.div 
+  className="flex-shrink-0 translate-y-5"
+  animate={{
+    x: [0, -12, 0], // Position normale → Gauche → Position normale
+  }}
+  transition={{
+    duration: 1.5,
+    ease: "easeInOut",
+    repeat: Infinity,
+    repeatDelay: 0.3 // Petite pause avant de recommencer (optionnel)
+  }}
+>
+  <img 
+    src={fi} 
+    alt="Fleche"
+    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-20 lg:h-20 xl:w-15 xl:h-15 object-contain"
+  />
+</motion.div>
               </div>
             </div>
           </div>
