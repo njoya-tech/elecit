@@ -1,49 +1,42 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { IMAGES, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton";
 
 const BureauCarousel = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Tunnel",
-      image: IMAGES.IMG1,
-    },
-    {
-      id: 2,
-      title: "Barrage",
-      image: IMAGES.IMG2,
-    },
-    {
-      id: 3,
-      title: "Forage",
-      image: IMAGES.IMG3,
-    },
-    {
-      id: 4,
-      title: "Canal",
-      image: IMAGES.IMG4,
-    },
-    {
-      id: 5,
-      title: "Pompage",
-      image: IMAGES.IMG5,
-    },
-    {
-      id: 6,
-      title: "Drainage",
-      image: IMAGES.IMG6,
-    },
-  ];
+  const projectsData = t('bureau.carousel.projects', { returnObjects: true });
+  
+  const projects = projectsData.map((project, index) => ({
+    id: index + 1,
+    title: project.title,
+    image: [IMAGES.IMG1, IMAGES.IMG2, IMAGES.IMG3, IMAGES.IMG4, IMAGES.IMG5, IMAGES.IMG6][index]
+  }));
 
-  const slidesCount = Math.ceil(projects.length / 3);
-  const cardsPerSlide = 3;
+  // Mobile: 1 card, Tablet: 2 cards, Desktop: 3 cards per slide
+  const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
-  // Create extended slides array (duplicate first slide at end)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerSlide(1); // Mobile: 1 card
+      } else if (window.innerWidth < 1024) {
+        setCardsPerSlide(2); // Tablet: 2 cards
+      } else {
+        setCardsPerSlide(3); // Desktop: 3 cards
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const slidesCount = Math.ceil(projects.length / cardsPerSlide);
   const extendedSlidesCount = slidesCount + 1;
 
   const nextSlide = () => {
@@ -59,16 +52,14 @@ const BureauCarousel = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, );
 
   // Handle seamless infinite loop
   useEffect(() => {
     if (currentSlide === slidesCount) {
-      // Wait for transition to complete
       const timeout = setTimeout(() => {
-        setIsTransitioning(false); // Disable transition
-        setCurrentSlide(0); // Jump to real first slide instantly
-        // Re-enable transition after jump
+        setIsTransitioning(false);
+        setCurrentSlide(0);
         setTimeout(() => {
           setIsTransitioning(true);
         }, 50);
@@ -76,8 +67,6 @@ const BureauCarousel = () => {
       return () => clearTimeout(timeout);
     }
   }, [currentSlide, slidesCount]);
-
- 
 
   const prevSlide = () => {
     if (currentSlide === 0) {
@@ -100,29 +89,34 @@ const BureauCarousel = () => {
   return (
     <>
       <section
-        className="w-screen py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
+        className="w-screen py-12 sm:py-16 md:py-20 lg:py-24 
+        relative -mx-[50vw] left-1/2 right-1/2"
         style={{
           backgroundColor: MY_COLORS.gray,
-        }}
-      >
-        <div className="max-w-[1200px] mx-auto px-6">
+        }} 
+       >
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <h3
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 md:mb-16"
+            className="text-2xl sm:text-3xl md:text-4xl 
+            lg:text-5xl font-bold text-center mb-8
+             sm:mb-10 md:mb-12 lg:mb-16 px-2"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
-            Types d'ouvrages hydrauliques
-            <br />
-            pris en charge
+            {t('bureau.carousel.heading')}
           </h3>
 
           <div className="relative">
+            {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-8 md:-translate-x-16 z-20 transition-all duration-300 hover:scale-125"
-              aria-label="Previous slide"
+              className="absolute left-0 top-1/2 -translate-y-1/2 
+              -translate-x-4 sm:-translate-x-6 md:-translate-x-8 
+              lg:-translate-x-16 z-20 transition-all duration-300 hover:scale-125"
+              aria-label={t('bureau.carousel.navigation.previous')}
             >
               <svg
-                className="w-8 h-8 md:w-10 md:h-10 text-gray-700 hover:text-gray-900"
+                className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10
+                 lg:h-10 text-gray-700 hover:text-gray-900"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -141,42 +135,45 @@ const BureauCarousel = () => {
                 className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {/* Render all original slides + duplicate first slide at end */}
                 {Array.from({ length: extendedSlidesCount }).map((_, slideIndex) => {
-                  // For the last slide, show first slide content (duplicate)
                   const actualSlideIndex = slideIndex === slidesCount ? 0 : slideIndex;
                   
                   return (
                     <div
                       key={slideIndex}
-                      className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+                      className="min-w-full flex justify-center"
                     >
-                      {projects
-                        .slice(
-                          actualSlideIndex * cardsPerSlide,
-                          actualSlideIndex * cardsPerSlide + cardsPerSlide
-                        )
-                        .map((project, cardIndex) => (
-                          <ProjectCard
-                            key={`${slideIndex}-${project.id}`}
-                            project={project}
-                            index={cardIndex}
-                            isActive={slideIndex === currentSlide}
-                          />
-                        ))}
+                      <div className="w-full max-w-sm md:max-w-none 
+                      md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
+                        {projects
+                          .slice(
+                            actualSlideIndex * cardsPerSlide,
+                            actualSlideIndex * cardsPerSlide + cardsPerSlide
+                          )
+                          .map((project, cardIndex) => (
+                            <ProjectCard
+                              key={`${slideIndex}-${project.id}`}
+                              project={project}
+                              index={cardIndex}
+                              isActive={slideIndex === currentSlide}
+                            />
+                          ))}
+                      </div>
                     </div>
                   );
                 })}
               </div>
             </div>
 
+            {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-8 md:translate-x-16 z-20 transition-all duration-300 hover:scale-125"
-              aria-label="Next slide"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 md:translate-x-8 lg:translate-x-16 z-20 transition-all duration-300 hover:scale-125"
+              aria-label={t('bureau.carousel.navigation.next')}
             >
               <svg
-                className="w-8 h-8 md:w-10 md:h-10 text-gray-700 hover:text-gray-900"
+                className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 
+                lg:w-10 lg:h-10 text-gray-700 hover:text-gray-900"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -191,13 +188,14 @@ const BureauCarousel = () => {
             </button>
           </div>
 
-          <div className="flex justify-center items-center gap-3 mt-8">
+          {/* Pagination Dots */}
+          <div className="flex justify-center items-center gap-2 sm:gap-3 mt-6 sm:mt-8">
             {Array.from({ length: slidesCount }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "w-3 h-3" : "w-2.5 h-2.5"
+                  currentSlide === index ? "w-2.5 h-2.5 sm:w-3 sm:h-3" : "w-2 h-2 sm:w-2.5 sm:h-2.5"
                 }`}
                 style={{
                   backgroundColor:
@@ -205,15 +203,18 @@ const BureauCarousel = () => {
                       ? MY_COLORS.secondaryGreen
                       : "#9ca3af",
                 }}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`${t('bureau.carousel.navigation.goToSlide')} ${index + 1}`}
               />
             ))}
           </div>
         </div>
       </section>
 
-      <section>
-        <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0">
+      {/* ============================================ */}
+      {/* CTA SECTION WITH BACKGROUND                 */}
+      {/* ============================================ */}
+      <section className="hidden lg:block">
+        <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0 md:top-20">
           <div className="w-full overflow-hidden" style={{ height: "440px" }}>
             <img
               src={ICONS.formePlan}
@@ -238,30 +239,29 @@ const BureauCarousel = () => {
               className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              Sécurisez vos bâtiments <br />
-              avec nos{" "}
-              <span style={{ color: MY_COLORS.secondaryGreen }}>
-                solutions certifiées.
-              </span>
+              {t('bureau.carousel.cta.title')}{" "}
+              <span style={{color:MY_COLORS.secondaryGreen}}>
+                {t('bureau.carousel.cta.titleHighlight')}
+              </span>{" "}
+              {t('bureau.carousel.cta.title2')}
             </h3>
 
             <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              Protégez efficacement vos locaux et contrôlez les accès avec des
-              solutions de sécurité performantes !
+              {t('bureau.carousel.cta.subtitle')}
             </p>
 
             <CTAButton
-              className="absolute top-10"
+              className="absolute top-10 md:top-2 md:w-70"
               onClick={() => alert("Video clicked!")}
             >
-              Contactez Nous
+              {t('bureau.carousel.cta.button')}
             </CTAButton>
           </div>
 
           <div
-            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40"
+            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
             style={{
-              animation: "rotateClockwise 8s linear infinite",
+              animationDuration:"4s",
               top: "65%",
               right: "1%",
             }}
@@ -307,12 +307,11 @@ const BureauCarousel = () => {
 };
 
 const ProjectCard = ({ project, index, isActive }) => {
-  // Use derived value instead of state + effect
   const shouldAnimate = isActive;
 
   return (
     <article
-      className="relative h-64 md:h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
+      className="relative h-56 sm:h-60 md:h-64 lg:h-72 rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
       style={{
         opacity: shouldAnimate ? 1 : 0,
         transform: shouldAnimate ? 'translateY(0)' : 'translateY(48px)',
@@ -327,14 +326,13 @@ const ProjectCard = ({ project, index, isActive }) => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-300"></div>
 
-      <div className="absolute bottom-6 left-6 z-10">
-        <h4 className="text-2xl md:text-3xl font-bold text-white group-hover:text-green-400 transition-colors duration-300">
+      <div className="absolute bottom-4 sm:bottom-5 md:bottom-6 left-4 sm:left-5 md:left-6 z-10">
+        <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white group-hover:text-green-400 transition-colors duration-300">
           {project.title}
         </h4>
       </div>
     </article>
   );
 };
-
 
 export default BureauCarousel;

@@ -2,101 +2,82 @@ import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { MY_COLORS } from "../../constants/colors.js";
+import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  return (
-    <section className="relative w-full overflow-hidden">
+  const { t } = useTranslation();
 
-      {/* BACKGROUND IMAGE (your style) */}
+  return (
+    <section
+      className="relative w-full overflow-hidden min-h-[500px]"
+      style={{ height: "70vh" }}
+    >
+      {/* Background Image */}
       <img
         src={HERO.entreprise}
-        alt=""
-        className="w-full h-[75vh] md:h-[85vh] object-cover"
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
       />
 
-      {/* DARK GRADIENT OVERLAY (fixes readability) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      {/* DARK GRADIENT OVERLAY */}
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
 
-      {/* ANGLED BLACK PNG MASK (correct height control) */}
-      <img
-        src={ICONS.formeSombre}
-        alt=""
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 w-full max-h-[420px] object-cover pointer-events-none"
-        style={{ objectFit: "cover" }}
-      />
-
-      {/* TECH PATTERN - FULL WIDTH + BEHIND TEXT (corrected) */}
+      {/* TECH PATTERN - Hidden on mobile for performance */}
       <img
         src={ICONS.formTech}
         alt=""
         aria-hidden="true"
-        className="
-          absolute inset-0 m-auto 
-          w-[120%] max-w-[1400px] 
-          opacity-20 
-          pointer-events-none 
-          -z-10
-        "
-        style={{
-          top: "10%",
-        }}
+        className="hidden sm:block absolute inset-0 m-auto w-[150%] sm:w-[130%] md:w-[120%] lg:w-[110%] max-w-[1400px] opacity-10 pointer-events-none z-10"
+        style={{ top: "10%" }}
       />
 
       {/* CENTERED TEXT CONTENT */}
-      <div
-        className="
-          absolute inset-0 flex flex-col items-center justify-center
-          px-6 md:px-12 text-center
-        "
-       >
-        {/* MAIN TITLE */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
         <h1
-          className="
-            text-white font-extrabold 
-            text-4xl md:text-5xl lg:text-6xl 
-            leading-tight
-            mb-4
-          "
+          className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+           xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
+          style={{ color: MY_COLORS.white }}
         >
-          Que faut-il savoir sur{" "}
-          <span style={{ color: MY_COLORS.green }}>ELECIT?</span>
+          {t("entreprise.hero.title")} <br className="hidden md:block" />
+          <span style={{ color: MY_COLORS.secondaryGreen }}>
+            {t("entreprise.hero.titleHighlight")}
+          </span>
         </h1>
 
-        {/* SUBTITLE */}
-        <h2
-          className="
-            text-white 
-            text-sm md:text-base lg:text-lg 
-            tracking-wide uppercase 
-            font-semibold
-            mb-4
-          "
+        <h3
+          style={{ color: MY_COLORS.secondaryGreen }}
+          className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
-          Africa 1st High Tech Company
-        </h2>
+          {t("entreprise.hero.subtitle")}
+        </h3>
 
-        {/* QUOTE */}
-        <p
-          className="
-            max-w-3xl 
-            text-white/90 
-            text-base md:text-lg 
-            leading-relaxed 
-            mb-8
-          "
-        >
-          “Parce qu’au-delà du marché camerounais, nous souhaitons développer
-          toute l’Afrique à travers nos services.”
+        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl">
+          {t("entreprise.hero.description")}
         </p>
 
-        {/* CTA BUTTON */}
-        <CTAButton onClick={() => alert("Video clicked!")}>
-          Regarder la vidéo
-        </CTAButton>
-      </div>
+        {/* CTA + Arrow */}
+        <div className="flex items-center gap-4">
+          <CTAButton onClick={() => alert("Video clicked!")}>
+            {t("entreprise.hero.button")}
+          </CTAButton>
 
-      
+          <motion.img
+            src={ICONS.flech_icon}
+            alt="Arrow"
+            className="w-10 sm:w-12 opacity-80 origin-top"
+            animate={{
+              rotate: [-15, 15, -15],
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+        </div>
+      </div>
     </section>
   );
 };

@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
+import { useTranslation } from 'react-i18next';
 
 const EntrepriseTeam = () => {
+  const { t } = useTranslation();
+  const members = t('entreprise.entrepriseTeam.members', { returnObjects: true });
+
   const carouselSlides = [
-    { image: IMAGES.IMG1, title: "Domoticiens" },
-    { image: IMAGES.IMG2, title: "Mécatroniciens" },
-    { image: IMAGES.IMG3, title: "Gestionnaires de flotte" },
-    { image: IMAGES.IMG4, title: "Ingénieurs informatique" },
-    { image: IMAGES.IMG5, title: "Ingénieur génie civil" },
-    { image: IMAGES.IMG6, title: "Techniciens de fabrication" },
-    { image: IMAGES.IMG7, title: "Techniciens informatique" },
-    { image: IMAGES.IMG8, title: "Agents de maintenance" },
-    { image: IMAGES.IMG9, title: "Ingénieurs énergie renouvelable" },
-    { image: IMAGES.IMG10, title: "Techniciens courant fort et faible" },
+    { image: IMAGES.IMG21, title: members[0].title },
+    { image: IMAGES.IMG2, title: members[1].title },
+    { image: IMAGES.IMG20, title: members[2].title },
+    { image: IMAGES.IMG22, title: members[3].title },
+    { image: IMAGES.IMG18, title: members[4].title },
+    { image: IMAGES.IMG23, title: members[5].title },
+    { image: IMAGES.IMG12, title: members[6].title },
+    { image: IMAGES.IMG25, title: members[7].title },
+    { image: IMAGES.IMG26, title: members[8].title },
+    { image: IMAGES.IMG24, title: members[9].title },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,72 +48,35 @@ const EntrepriseTeam = () => {
               className="text-lg sm:text-xl md:text-2xl font-bold"
               style={{ color: MY_COLORS.green }}
             >
-              L'équipe
+              {t('entreprise.entrepriseTeam.title')}
             </h3>
 
             <h2
               className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight"
               style={{ color: MY_COLORS.black }}
             >
-              Ces acteurs là qui s'unissent pour répondre à vos besoins
+              {t('entreprise.entrepriseTeam.subtitle')}
             </h2>
 
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#666666" }}>
-              Nous mobilisons les bonnes compétences au bon moment. Cette
-              richesse humaine et technique nous permet de répondre avec agilité
-              et précision aux enjeux les plus variés de nos clients, du conseil
-              à la réalisation.
+              {t('entreprise.entrepriseTeam.description')}
             </p>
 
             <ul
               className="space-y-1.5 sm:space-y-2 text-sm sm:text-base"
               style={{ color: MY_COLORS.black }}
             >
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Domoticiens</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Mécatroniciens</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Gestionnaires de flotte</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Ingénieurs informatique</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Ingénieurs génie civil</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Techniciens de fabrication</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Techniciens informatique</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Agents de maintenance</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Ingénieurs énergie renouvelable</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">•</span>
-                <span>Techniciens courant fort et faible</span>
-              </li>
+              {members.map((member, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>{member.title}</span>
+                </li>
+              ))}
             </ul>
 
             <div className="hidden lg:block">
               <CTAButton onClick={() => alert("Video clicked!")}>
-                Publireportage
+                {t('entreprise.entrepriseTeam.button')}
               </CTAButton>
             </div>
           </div>
@@ -209,7 +176,7 @@ const EntrepriseTeam = () => {
         {/* MOBILE BUTTON - Shows only on mobile/tablet */}
         <div className="lg:hidden mt-8 flex justify-center">
           <CTAButton onClick={() => alert("Video clicked!")}>
-            Publireportage
+            {t('entreprise.entrepriseTeam.button')}
           </CTAButton>
         </div>
       </div>

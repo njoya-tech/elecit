@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { MY_COLORS } from "../../constants/colors";
 import { ICONS, IMAGES } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton";
 
 const ControlCarousel = () => {
-  // STEP 6: Carousel state and logic
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -13,7 +14,7 @@ const ControlCarousel = () => {
     { image: IMAGES.IMG3 },
   ];
 
-  // Auto-play carousel - changes slide every 5 seconds
+  // Auto-play carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -22,76 +23,49 @@ const ControlCarousel = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Manual navigation
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
 
   return (
-    // STEP 1: Outer Section - Full width, gray background
     <>
+      {/* MAIN CAROUSEL SECTION */}
       <section
-        className="w-screen py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
-        style={{
-          backgroundColor: MY_COLORS.gray,
-        }}
+        className="w-screen py-12 sm:py-16 md:py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
+        style={{ backgroundColor: MY_COLORS.gray }}
       >
-        {/* STEP 2: Max-width wrapper - Centers content */}
-        <div className="max-w-[1200px] mx-auto px-6 relative">
-          {/* STEP 5: Animated Gear Icons */}
-          {/* Top-Left Gear */}
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative">
+          {/* Animated Gear Icons - Desktop Only */}
           <img
             src={ICONS.Engrenage_plan}
             alt=""
             aria-hidden="true"
-            className="hidden lg:block absolute -left-25 
-            -top-35 z-0 w-40 opacity-100 animate-spin"
+            className="hidden lg:block absolute -left-25 -top-35 z-0 w-40 opacity-100 animate-spin"
             style={{ animationDuration: "8s" }}
           />
 
-          {/* Right-Middle Gear */}
           <img
             src={ICONS.Engrenage_plan}
             alt=""
             aria-hidden="true"
-            className="hidden lg:block absolute -right-20 
-            top-1/2 -translate-y-1/2 z-0 w-40 opacity-100 animate-spin"
-            style={{ animationDuration: "10s",  }}
+            className="hidden lg:block absolute -right-20 top-1/2 -translate-y-1/2 z-0 w-40 opacity-100 animate-spin"
+            style={{ animationDuration: "10s" }}
           />
 
-          {/* STEP 3: Single white container with rounded corners and shadow */}
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden relative z-10">
-            {/* STEP 4: Grid layout - splits into left and right */}
+          {/* White Container */}
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* LEFT SIDE: Text Content */}
-              <div className="p-8 md:p-12 lg:p-16 flex items-center justify-center">
+              {/* LEFT SIDE: Text */}
+              <div className="p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 flex items-center justify-center order-2 lg:order-1">
                 <div className="text-center">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-                    "Solutions adaptées
-                    <br />
-                    pour la{" "}
-                    <span style={{ color: MY_COLORS.secondaryGreen }}>
-                      sécurisation
-                    </span>
-                    <br />
-                    des bureaux et locaux
-                    <br />
-                    professionnels, la
-                    <br />
-                    gestion des accès aux
-                    <br />
-                    immeubles et parkings
-                    <br />
-                    et une surveillance
-                    <br />
-                    avancée"
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight">
+                    “{t("control.carousel.quote")}”
                   </h2>
                 </div>
               </div>
 
               {/* RIGHT SIDE: Carousel */}
-              <div className="relative h-96 lg:h-[600px] overflow-hidden">
-                {/* Carousel Images - Swipe Animation */}
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] overflow-hidden order-1 lg:order-2">
                 <div
                   className="flex transition-transform duration-700 ease-in-out h-full"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -107,18 +81,18 @@ const ControlCarousel = () => {
                   ))}
                 </div>
 
-                {/* Carousel Indicators (Dots) */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                {/* Indicators */}
+                <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                   {slides.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => goToSlide(index)}
                       className={`rounded-full transition-all duration-300 ${
                         index === currentSlide
-                          ? "bg-white w-8 h-3"
-                          : "bg-white/50 hover:bg-white/75 w-3 h-3"
+                          ? "bg-white w-6 sm:w-8 h-2.5 sm:h-3"
+                          : "bg-white/50 hover:bg-white/75 w-2.5 sm:w-3 h-2.5 sm:h-3"
                       }`}
-                      aria-label={`Go to slide ${index + 1}`}
+                      aria-label={`${t("control.carousel.navigation.goToSlide")} ${index + 1}`}
                     />
                   ))}
                 </div>
@@ -127,15 +101,11 @@ const ControlCarousel = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0">
-          {/* BLACK BLOCK PNG - Background layer */}
-          <div
-            className="w-full overflow-hidden"
-            style={{
-              height: "440px",
-            }}
-           >
+
+      {/* CTA SECTION */}
+      <section className="hidden lg:block">
+        <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0 md:top-20">
+          <div className="w-full overflow-hidden" style={{ height: "440px" }}>
             <img
               src={ICONS.formePlan}
               className="w-full object-cover block"
@@ -143,58 +113,40 @@ const ControlCarousel = () => {
             />
           </div>
 
-          {/* CONTENT OVERLAY - Positioned absolutely on top of PNG */}
           <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16">
-            {/* TECH PATTERN - Behind text */}
             <img
-              style={{
-                top: "12em",
-                width: "85%",
-              }}
               src={ICONS.formTech}
               alt=""
               aria-hidden="true"
-              className="absolute z-0 pointer-events-none opacity-30 
-             top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em]  // Use Tailwind transform
-             w-[150%] md:w-full lg:w-[180%] h-auto"
+              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[180%]"
             />
 
-            {/* TEXT */}
             <h3
-              className="relative z-20 text-center text-2xl 
-            md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
+              className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              Sécurisez vos bâtiments <br />
-              avec nos <span style={{color:MY_COLORS.secondaryGreen}}>solutions certifiées.</span>
+              {t("control.carousel.cta.title")}{" "}
+              <span style={{ color: MY_COLORS.secondaryGreen }}>
+                {t("control.carousel.cta.titleHighlight")}
+              </span>
             </h3>
 
-            {/* Subtitle/Description */}
-            <p
-              className="text-center md:text-lg lg:text-xl text-white/90 
-           max-w-2xl mx-auto mt-15"
-            >
-              Protégez efficacement vos locaux et contrôlez les accès avec des
-              solutions de sécurité performantes !
+            <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
+              {t("control.carousel.cta.subtitle")}
             </p>
 
-            {/* BUTTON */}
             <CTAButton
-              className=" absolute top-10 "
+              className="absolute top-10 md:top-5 md:w-60"
               onClick={() => alert("Video clicked!")}
             >
-              Contactez Nous
+              {t("control.carousel.cta.button")}
             </CTAButton>
           </div>
 
-          {/* ROTATING GEAR - Top priority overlay */}
+          {/* Decorative gears */}
           <div
-            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40"
-            style={{
-              animation: "rotateClockwise 8s linear infinite",
-              top: "65%",
-              right: "1%",
-            }}
+            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
+            style={{ animationDuration: "4s", top: "65%", right: "1%" }}
             aria-hidden="true"
           >
             <img
@@ -206,11 +158,7 @@ const ControlCarousel = () => {
 
           <div
             className="absolute w-24 h-24 md:w-16 md:h-16 lg:w-16 lg:h-16 z-40"
-            style={{
-              animation: "rotateClockwise 20s linear infinite",
-              top: "23%",
-              left: "10%",
-            }}
+            style={{ animation: "rotateClockwise 20s linear infinite", top: "23%", left: "10%" }}
             aria-hidden="true"
           >
             <img
