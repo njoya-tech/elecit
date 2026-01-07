@@ -120,7 +120,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               <button
                 key={categoryKey}
                 onClick={() => handleCategoryChange(categoryKey)}
-                className={`text-sm sm:text-base md:text-lg font-bold px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 flex-shrink-0 ${
+                className={`text-sm sm:text-base md:text-lg font-bold px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 -shrink-0 ${
                   activeCategory === categoryKey
                     ? "text-green-600"
                     : "text-black hover:text-gray-600"
@@ -137,7 +137,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
             ))}
 
             {/* Plus Dropdown */}
-            <div className="relative flex-shrink-0" ref={dropdownRef}>
+            <div className="relative -shrink-0" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-lg font-bold px-3 py-2 hover:text-gray-600 transition-colors whitespace-nowrap"
@@ -212,7 +212,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                       <img
                         src={featuredPost.avatar}
                         alt={featuredPost.authorName}
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover flex-shrink-0"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover -shrink-0"
                       />
                       <div className="min-w-0">
                         <p className="font-bold text-xs sm:text-sm text-gray-900 truncate">
@@ -225,7 +225,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                     </div>
                     <button
                       onClick={(e) => e.stopPropagation()}
-                      className="text-gray-400 hover:text-gray-600 flex-shrink-0 ml-2"
+                      className="text-gray-400 hover:text-gray-600 -shrink-0 ml-2"
                     >
                       <svg
                         className="w-4 h-4 sm:w-5 sm:h-5"
@@ -294,9 +294,9 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               <article
                 key={post.id}
                 onClick={() => onPostClick && onPostClick(post.id)}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer h-full flex flex-col"
+                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer h-full flex flex-col select-none"
               >
-                <div className="relative h-40 sm:h-44 md:h-48 lg:h-56 overflow-hidden flex-shrink-0">
+                <div className="relative h-40 sm:h-44 md:h-48 lg:h-56 overflow-hidden shrink-0">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -310,7 +310,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                       <img
                         src={post.author.avatar}
                         alt={post.author.name}
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover flex-shrink-0"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover shrink-0"
                       />
                       <div className="min-w-0">
                         <p className="font-bold text-xs sm:text-sm text-gray-900 truncate">
@@ -322,7 +322,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                       </div>
                     </div>
 
-                    <button className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0 ml-2 p-1">
+                    <button className="text-gray-400 hover:text-gray-600 transition-colors shrink-0 ml-2 p-1">
                       <svg
                         className="w-4 h-4 sm:w-5 sm:h-5"
                         fill="currentColor"
@@ -389,7 +389,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                     </div>
 
                     <button
-                      className={`transition-colors duration-300 flex-shrink-0 ${
+                      className={`transition-colors duration-300 shrink-0 ${
                         post.liked
                           ? "text-red-500"
                           : "text-gray-400 hover:text-red-500"
@@ -422,7 +422,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
             <button
               onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
-              className={`p-1.5 sm:p-2 min-w-[40px] h-10 rounded-lg transition-all duration-300 flex-shrink-0 ${
+              className={`p-1.5 sm:p-2 min-w-10 h-10 rounded-lg transition-all duration-300 shrink-0 ${
                 currentPage === 1
                   ? "text-gray-300 cursor-not-allowed"
                   : "text-gray-600 hover:bg-gray-100"
@@ -449,13 +449,13 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                 <>
                   <button
                     onClick={() => setCurrentPage(1)}
-                    className="min-w-[36px] h-10 px-2.5 rounded-lg transition-all duration-300 text-sm sm:text-base text-gray-600 hover:bg-gray-100 font-medium flex-shrink-0"
+                    className="min-w-9 h-10 px-2.5 rounded-lg transition-all duration-300 text-sm sm:text-base text-gray-600 hover:bg-gray-100 font-medium shrink-0"
                     style={{ color: "#000" }}
                   >
                     1
                   </button>
                   {currentPage > 4 && (
-                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm flex-shrink-0">
+                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm shrink-0">
                       ...
                     </span>
                   )}
@@ -474,7 +474,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`min-w-[36px] h-10 px-2.5 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                    className={`min-w-9 h-10 px-2.5 rounded-lg transition-all duration-300 shrink-0 ${
                       currentPage === page
                         ? "font-bold text-lg shadow-md bg-green-50 border-2 border-green-200"
                         : "text-gray-600 hover:bg-gray-100 hover:shadow-sm"
@@ -493,13 +493,13 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               {currentPage < totalPages - 2 && (
                 <>
                   {currentPage < totalPages - 3 && (
-                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm flex-shrink-0">
+                    <span className="px-1.5 text-gray-400 text-xs sm:text-sm shrink-0">
                       ...
                     </span>
                   )}
                   <button
                     onClick={() => setCurrentPage(totalPages)}
-                    className="min-w-[36px] h-10 px-2.5 rounded-lg transition-all duration-300 text-sm sm:text-base text-gray-600 hover:bg-gray-100 font-medium flex-shrink-0"
+                    className="min-w-9 h-10 px-2.5 rounded-lg transition-all duration-300 text-sm sm:text-base text-gray-600 hover:bg-gray-100 font-medium shrink-0"
                     style={{ color: "#000" }}
                   >
                     {totalPages}
@@ -513,7 +513,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                 setCurrentPage((prev) => Math.min(totalPages, prev + 1))
               }
               disabled={currentPage === totalPages}
-              className={`p-1.5 sm:p-2 min-w-[40px] h-10 rounded-lg transition-all duration-300 flex-shrink-0 ${
+              className={`p-1.5 sm:p-2 min-w-10 h-10 rounded-lg transition-all duration-300 shrink-0 ${
                 currentPage === totalPages
                   ? "text-gray-300 cursor-not-allowed"
                   : "text-gray-600 hover:bg-gray-100"

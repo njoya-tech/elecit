@@ -232,11 +232,13 @@ const BureauCarousel = () => {
               src={ICONS.formTech}
               alt=""
               aria-hidden="true"
-              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[180%] h-auto"
+              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 -translate-x-1/2 
+              -translate-y-[12em] w-[150%] md:w-full lg:w-[180%] h-auto"
             />
 
             <h3
-              className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
+              className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl
+               xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
               {t('bureau.carousel.cta.title')}{" "}
@@ -311,7 +313,8 @@ const ProjectCard = ({ project, index, isActive }) => {
 
   return (
     <article
-      className="relative h-56 sm:h-60 md:h-64 lg:h-72 rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
+      className="relative h-56 sm:h-60 md:h-64 lg:h-72 rounded-xl md:rounded-2xl overflow-hidden shadow-lg
+       hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
       style={{
         opacity: shouldAnimate ? 1 : 0,
         transform: shouldAnimate ? 'translateY(0)' : 'translateY(48px)',
@@ -324,10 +327,10 @@ const ProjectCard = ({ project, index, isActive }) => {
         className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-300"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-300"></div>
 
       <div className="absolute bottom-4 sm:bottom-5 md:bottom-6 left-4 sm:left-5 md:left-6 z-10">
-        <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white group-hover:text-green-400 transition-colors duration-300">
+        <h4 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white transition-colors duration-300">
           {project.title}
         </h4>
       </div>

@@ -58,7 +58,7 @@ const EntrepriseTeam = () => {
               {t('entreprise.entrepriseTeam.subtitle')}
             </h2>
 
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#666666" }}>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: MY_COLORS.black }}>
               {t('entreprise.entrepriseTeam.description')}
             </p>
 

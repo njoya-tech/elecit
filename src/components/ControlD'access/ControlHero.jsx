@@ -3,6 +3,8 @@ import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../utils/colors";
 import CTAButton from "../CTA/CTAButton";
 import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const ControlHero = () => {
   const { t } = useTranslation();
@@ -12,7 +14,7 @@ const ControlHero = () => {
       
       {/* Background Image */}
       <img
-        src={HERO.security}
+        src={HERO.control}
         alt={t("control.hero.title")}
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -46,13 +48,30 @@ const ControlHero = () => {
           </span>
         </h1>
 
-        <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 max-w-3xl">
+        <p className="text-white text-sm sm:text-base md:text-lg lg:text-2xl leading-relaxed mb-6 max-w-3xl">
           {t("control.hero.description")}
         </p>
 
-        <CTAButton onClick={() => alert("Video clicked!")}>
-          {t("control.hero.button")}
-        </CTAButton>
+         {/* CTA + Arrow */}
+        <div className="flex items-center gap-4 lg:mt-20">
+          <CTAButton onClick={() => alert("Video clicked!")}>
+            {t("entreprise.hero.button")}
+          </CTAButton>
+
+          <motion.img
+            src={ICONS.flech_icon}
+            alt="Arrow"
+            className="w-10 sm:w-22 opacity-100 origin-top"
+            animate={{
+              rotate: [-15, 15, -15],
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+        </div>
 
       </div>
     </section>

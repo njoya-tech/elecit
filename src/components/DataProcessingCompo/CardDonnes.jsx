@@ -2,6 +2,8 @@ import React from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const ControlCards = () => {
   const { t } = useTranslation();
@@ -40,14 +42,21 @@ const ControlCards = () => {
           <div className="relative text-center mb-12 sm:mb-16 md:mb-20">
             {/* HELMET TOP-LEFT */}
             <div className="absolute -left-20 top-0 hidden lg:block">
-              <img
+              <motion.img
                 src={ICONS.Casque}
                 alt="Casque de chantier"
-                className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40
-                 animate-[bounce_3s_ease-in-out_infinite]"
+                className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
                 style={{
                   top: "-20px",
                   left: "10px",
+                }}
+                animate={{
+                  y: [0, -40, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
                 }}
               />
             </div>
@@ -89,9 +98,11 @@ const ControlCards = () => {
             />
 
             {/* ================= ALL CARDS IN ONE GRID ================= */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 
             md:grid-cols-2 lg:grid-cols-3 gap-6 
-            sm:gap-8 mb-6 sm:mb-8 relative z-10 lg:top-0">
+            sm:gap-8 mb-6 sm:mb-8 relative z-10 lg:top-0"
+            >
               {/* CARD 1 */}
               <div
                 className="relative pt-8 sm:pt-10 p-5 sm:p-6 md:p-12 lg:p-16 rounded-lg sm:rounded-xl shadow-2xl
@@ -112,8 +123,10 @@ const ControlCards = () => {
                 >
                   {services[0].title}
                 </h3>
-                <p className="text-gray-600 text-center text-xs 
-                sm:text-sm leading-relaxed">
+                <p
+                  className="text-gray-600 text-center text-xs 
+                sm:text-sm leading-relaxed"
+                >
                   {services[0].description}
                 </p>
               </div>
@@ -133,16 +146,20 @@ const ControlCards = () => {
                 >
                   {services[1].title}
                 </h3>
-                <p className="text-gray-600 text-center text-xs 
-                sm:text-sm leading-relaxed">
+                <p
+                  className="text-gray-600 text-center text-xs 
+                sm:text-sm leading-relaxed"
+                >
                   {services[1].description}
                 </p>
               </div>
 
               {/* STATIC IMAGE */}
               <div className="flex justify-center items-center p-4">
-                <div className="rounded-lg sm:rounded-2xl overflow-hidden 
-                shadow-lg w-full max-w-sm">
+                <div
+                  className="rounded-lg sm:rounded-2xl overflow-hidden 
+                shadow-lg w-full max-w-sm"
+                >
                   <img
                     src={IMAGES.IMG5}
                     alt="Contrôle & sécurité"
@@ -158,12 +175,20 @@ const ControlCards = () => {
                   className="relative pt-8 sm:pt-10 p-5 sm:p-6 rounded-lg 
                   sm:rounded-xl shadow-lg
                    bg-white hover:shadow-xl transition-shadow 
-                   duration-300 border border-gray-100"
+                   duration-300 border border-gray-100 mt-8 sm:mt-12 md:mt-16 lg:mt-10"
                 >
-                  <div className="absolute -top-8 sm:-top-10 md:-top-9 left-1/2 
-                  transform -translate-x-1/2">
+                  <div
+                    className="absolute -top-8 sm:-top-10 md:-top-9 left-1/2 
+                  transform -translate-x-1/2"
+                  >
                     <img
-                      src={index === 0 ? ICONS.securite_icon : index === 1 ? ICONS.decision_icon : ICONS.business_icon}
+                      src={
+                        index === 0
+                          ? ICONS.securite_icon
+                          : index === 1
+                          ? ICONS.decision_icon
+                          : ICONS.business_icon
+                      }
                       alt={service.title}
                       className="w-16 h-16 sm:w-20 sm:h-20 md:w-16 md:h-16"
                     />

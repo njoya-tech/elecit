@@ -24,27 +24,25 @@ const DataProcessing = () => {
 
         {/* ================= MAIN CONTAINER ================= */}
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
-          
           {/* ===== INFO SECTION ===== */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section className="py-2 sm:py-4 md:py-6 lg:py-8">
             <CardInfo />
           </section>
 
           {/* ===== DONNÉES SECTION ===== */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section>
             <CardDonnes />
           </section>
 
           {/* ===== AVANTAGES SECTION ===== */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section>
             <CardAvantage />
           </section>
 
           {/* ===== PROJECT SECTION ===== */}
-          <section className="pt-12 md:pt-16 lg:pt-20">
+          <section>
             <CardProject />
           </section>
-
         </div>
 
         {/* ================= FOOTER ================= */}

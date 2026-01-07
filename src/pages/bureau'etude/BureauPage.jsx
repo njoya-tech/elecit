@@ -25,12 +25,12 @@ const BureauPage = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
           
           {/* ===== CARDS SECTION ===== */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section >
             <BureauCards />
           </section>
 
           {/* ===== CAROUSEL SECTION ===== */}
-          <section className="pt-8 sm:pt-10 md:pt-14 lg:pt-20 pb-12 lg:pb-20">
+          <section >
             <BureauCarousel />
           </section>
 

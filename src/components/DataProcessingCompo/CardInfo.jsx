@@ -87,7 +87,9 @@ const CardInfo = () => {
                 return (
                   <div
                     key={index}
-                    className="relative rounded-lg sm:rounded-xl shadow-lg bg-white border border-gray-100 overflow-hidden h-64 md:h-72"
+                    className={`relative rounded-lg sm:rounded-xl shadow-lg bg-white border border-gray-100 overflow-hidden h-64 md:h-72 ${
+                      index >= 3 ? "mt-8 sm:mt-12 md:mt-16 lg:mt-20" : ""
+                    }`}
                   >
                     <img
                       src={card.src}
@@ -100,7 +102,10 @@ const CardInfo = () => {
                 return (
                   <div
                     key={index}
-                    className="relative pt-8 sm:pt-10 p-5 sm:p-6 rounded-lg sm:rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-64 md:h-72"
+                    className={`relative pt-8 sm:pt-10 p-5 sm:p-6 rounded-lg sm:rounded-xl shadow-lg bg-white hover:shadow-xl 
+                    transition-shadow duration-300 border border-gray-100 h-64 md:h-72 ${
+                      index >= 3 ? "mt-8 sm:mt-12 md:mt-16 lg:mt-10" : ""
+                    }`}
                   >
                     <div className="absolute -top-8 sm:-top-10 md:-top-12 left-1/2 -translate-x-1/2">
                       <img
