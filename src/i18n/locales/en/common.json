@@ -1,5 +1,5 @@
 {
-"nav": {
+  "nav": {
     "accueil": "Home",
     "entreprise": "Company",
     "solutions": "Solutions",
@@ -26,19 +26,6 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
-    "contact": {
-      "floatingButton": "Contact us",
-      "popup": {
-        "title": "Contact us",
-        "subtitle": "We will respond as soon as possible",
-        "availability": "We are available on WhatsApp from Monday to Friday, 8 AM to 6 PM. Feel free to contact us.",
-        "openWhatsApp": "Open WhatsApp",
-        "messagePlaceholder": "Write your message...",
-        "leftButton":"Back",
-        "rightButton":"Send"
-        
-      }
-    },
 
 
 "seeMore": "Learn more",
@@ -51,7 +38,32 @@
     "highlighted": "Research",
     "title2": "and",
     "highlighted2": "Excellence",
-    "title3": "in engineering in Central Africa."
+   "title3": "in engineering in Central Africa."
+},
+"hero": {
+    "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+    "submitProject": "Submit a project",
+    "slide1": {
+      "title": "All our",
+      "highlighted": "technical",
+      "title2": "and",
+      "highlighted2": "technological",
+      "title3": "potential at the service of your imagination"
+    },
+    "slide2": {
+      "title": "Innovation and",
+      "highlighted": "expertise",
+      "title2": "for your",
+      "highlighted2": "most ambitious",
+      "title3": "projects"
+    },
+    "slide3": {
+      "title": "Smart and",
+      "highlighted": "sustainable",
+      "title2": "solutions",
+      "highlighted2": "",
+      "title3": "for your future"
+    }
   },
   "slide2": {
     "title": "All our",
@@ -71,147 +83,199 @@
 
 
   "solution": {
-    
-  "bannerTitle": "Smart",
-  "bannerHighlight": "solutions for",
-  "bannerTitle2": "specific needs",
-  "viewMore": "View more",
-  "items": [
-    {
-      "title": "Smart Buildings & Automation",
-      "description": "Intelligent management of all equipment in public or private buildings and energy consumption.",
-      "imagePlaceholderText": "Buildings"
-    },
-    {
-      "title": "Design, Mechanical & Metal Fabrication",
-      "description": "Fabrication of metal infrastructures, agricultural machinery, rolling equipment, new machine parts and spare parts.",
-      "imagePlaceholderText": "Fabrication"
-    },
-    {
-      "title": "GPS & Tracking (More Than Track)",
-      "description": "Precise real-time tracking of vehicle fleets and other assets. Sustainable analysis and optimization of the entire portfolio.",
-      "imagePlaceholderText": "GPS Tracking"
-    }
-  ]
-},
-
-"trackingPlatform": {
-  "title": "Tracking Platform available on Web & Smartphone",
-  "buttonText": "Watch the video"
-},
-
- "serviceOffer": {
-      "title": "A",
-      "titleHighlight": "diversified service",
-      "title2": "offering",
-      "title3": ", tailored to your needs",
-      "viewMore": "Learn more",
-      "services": [
-        {
-          "title": "IT Services & DATA Processing",
-          "description": "Custom solutions for data analysis, program design, as well as network and database management."
-        },
-        {
-          "title": "Design Office: Engineering & Conception",
-          "description": "Design, optimization and implementation of your technical projects. Needs analysis and deployment of tailored solutions."
-        },
-        {
-          "title": "24/7 After-Sales Service",
-          "description": "Technical services to ensure reliability, durability and optimal performance of equipment after commissioning."
-        }
-      ]
-    },
-    "realBanner": {
-      "titlePart1": "Achievements that meet your",
-      "highlightWord": "expectations",
-      "titlePart2": ""
-    },
-"servicesCarousel": {
-    "seeMore": "See more",
-    "services": [
+    "bannerTitle": "Smart",
+    "bannerHighlight": "solutions for",
+    "bannerTitle2": "specific needs",
+    "viewMore": "View more",
+    "items": [
       {
-        "title": "Mobile Banking",
-        "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions."
+        "title": "Smart Buildings & Automation",
+        "description": "Intelligent management of all equipment in public or private buildings and energy consumption.",
+        "imagePlaceholderText": "Buildings"
       },
       {
-        "title": "Personnel Transport Truck",
-        "description": "Technical and functional restructuring of a truck intended for personnel transportation."
+        "title": "Design, Mechanical & Metal Fabrication",
+        "description": "Fabrication of metal infrastructures, agricultural machinery, rolling equipment, new machine parts and spare parts.",
+        "imagePlaceholderText": "Fabrication"
       },
       {
-        "title": "Brick Making Machine (Brick Press)",
-        "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms."
-      },
-      {
-        "title": "Metal Warehouse Construction",
-        "description": "Study, design and construction of a metal warehouse intended for industrial and logistics use."
-      },
-      {
-        "title": "Home Automation Installation in a Villa",
-        "description": "Complete installation of a residential home automation system including intelligent management."
-      },
-      {
-        "title": "Home Automation Installation in a Bank",
-        "description": "Deployment of a professional home automation system for a bank, including intelligent management."
-      },
-      {
-        "title": "Manufacturing of a 3-in-1 Stepladder",
-        "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations."
-      },
-      {
-        "title": "Creation and Layout of the Showroom",
-        "description": "Design, layout and commissioning of a showroom dedicated to the presentation of home automation solutions."
-      },
-      {
-        "title": "Opening of the Display Store",
-        "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials."
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Precise real-time tracking of vehicle fleets and other assets. Sustainable analysis and optimization of the entire portfolio.",
+        "imagePlaceholderText": "GPS Tracking"
       }
     ]
   },
 
-    "smartBuild":{
+  "trackingPlatform": {
+    "title": "Tracking Platform available on Web & Smartphone",
+    "buttonText": "Watch the video"
+  },
+
+  "serviceOffer": {
+    "title": "A",
+    "titleHighlight": "diversified service",
+    "title2": "offering",
+    "title3": ", tailored to your needs",
+    "viewMore": "Learn more",
+    "services": [
+      {
+        "title": "IT Services & DATA Processing",
+        "description": "Custom solutions for data analysis, program design, as well as network and database management."
+      },
+      {
+        "title": "Design Office: Engineering & Conception",
+        "description": "Design, optimization and implementation of your technical projects. Needs analysis and deployment of tailored solutions."
+      },
+      {
+        "title": "24/7 After-Sales Service",
+        "description": "Technical services to ensure reliability, durability and optimal performance of equipment after commissioning."
+      }
+    ]
+  },
+  "realBanner": {
+    "titlePart1": "Achievements that meet your",
+    "highlightWord": "expectations",
+    "titlePart2": ""
+  },
+
+  "servicesCarousel": {
+    "services": [
+      {
+        "title": "IT Services & DATA Processing",
+        "description": "Custom solutions for data analysis, program design, as well as network and database management."
+      },
+      {
+        "title": "Smart Building Solutions",
+        "description": "Innovative solutions for intelligent building management and energy optimization."
+      },
+      {
+        "title": "GPS & Tracking",
+        "description": "Real-time location and tracking systems for optimal resource management."
+      },
+      {
+        "title": "Access Control & Security",
+        "description": "Complete security and access control solutions to protect your facilities."
+      },
+      {
+        "title": "Engineering Consulting",
+        "description": "Technical expertise and consulting for the design of your technology projects."
+      },
+      {
+        "title": "After-Sales Service",
+        "description": "Technical support and maintenance to ensure the sustainability of your installations."
+      }
+    ]
+  },
+
+  "smartBuild": {
+    "title": "Solutions Exhibition and Smart Building",
+    "buttonText": "Visit the showroom"
+  },
+  "blogBanner": {
+    "titlePart1": "Stay up to date with our ",
+    "highlightWord": "news",
+    "titlePart2": " by visiting our blog"
+  },
+
+  "blog": {
+  "preview": {
+    "banner": {
+      "titlePart1": "Stay up to date with our ",
+      "highlightWord": "news",
+      "titlePart2": " by visiting our blog"
+    },
+    "articles": [
+      {
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+        "title": "Why Custom Manufacturing is a Game-Changer in Cameroonian Industry?",
+        "description": "In many industrial sectors in Cameroon, companies face a recurring challenge...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+        "title": "5 Ways a Smart Hotel Saves Energy and Builds Customer Loyalty",
+        "description": "In an increasingly competitive hotel market in Cameroon, the question is twofold..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+        "title": "The Tracking Revolution: When AI Monitors Your Vehicles",
+        "description": "Transportation and logistics are at the heart of Cameroon's economy, but this sector faces major challenges...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+        "title": "Smart Irrigation: Technology for Sustainable Agriculture",
+        "description": "Cameroonian agriculture, the engine of the national economy, faces a major challenge..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+        "title": "From Raw Metal to Innovation: How We Shape Sustainable Infrastructure",
+        "description": "Transforming raw material into an innovative and functional product is the art of modern metallurgy..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+        "title": "Data Processing and Security: Protecting Your Company's Digital Gold",
+        "description": "Every company, regardless of size, generates considerable volumes of information daily...."
+      }
+    ]
+  },
+  "seeMore": "See more",
+  "realBanner": {
+    "titlePart1": "Achievements that meet your",
+    "highlightWord": "expectations",
+    "titlePart2": ""
+  }
+},
+
+"servicesCarousel": {
+  "seeMore": "See more",
+  "services": [
+    {
+      "title": "Mobile Banking",
+      "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions."
+    },
+    {
+      "title": "Personnel Transport Truck",
+      "description": "Technical and functional restructuring of a truck intended for personnel transportation."
+    },
+    {
+      "title": "Brick Making Machine (Brick Press)",
+      "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms."
+    },
+    {
+      "title": "Metal Warehouse Construction",
+      "description": "Study, design and construction of a metal warehouse intended for industrial and logistics use."
+    },
+    {
+      "title": "Home Automation Installation in a Villa",
+      "description": "Complete installation of a residential home automation system including intelligent management."
+    },
+    {
+      "title": "Home Automation Installation in a Bank",
+      "description": "Deployment of a professional home automation system for a bank, including intelligent management."
+    },
+    {
+      "title": "Manufacturing of a 3-in-1 Stepladder",
+      "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations."
+    },
+    {
+      "title": "Creation and Layout of the Showroom",
+      "description": "Design, layout and commissioning of a showroom dedicated to the presentation of home automation solutions."
+    },
+    {
+      "title": "Opening of the Display Store",
+      "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials."
+    }
+  ]
+},
+
+"smartBuild": {
   "title": "Solutions Exhibition and Smart Building",
   "buttonText": "Visit the showroom"
 },
+
 "blogBanner": {
   "titlePart1": "Stay up to date with our ",
   "highlightWord": "news",
   "titlePart2": " by visiting our blog"
-},
-
-"blog": {
-  "seeMore": "See more",
-  "articles": [
-    {
-      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-      "title": "Why Custom Manufacturing is a Game-Changer in Cameroonian Industry?",
-      "description": "In many industrial sectors in Cameroon, companies face a recurring challenge...."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-      "title": "5 Ways a Smart Hotel Saves Energy and Builds Customer Loyalty",
-      "description": "In an increasingly competitive hotel market in Cameroon, the question is twofold..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-      "title": "The Tracking Revolution: When AI Monitors Your Vehicles",
-      "description": "Transportation and logistics are at the heart of Cameroon's economy, but this sector faces major challenges...."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-      "title": "Smart Irrigation: Technology for Sustainable Agriculture",
-      "description": "Cameroonian agriculture, the engine of the national economy, faces a major challenge..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-      "title": "From Raw Metal to Innovation: How We Shape Sustainable Infrastructure",
-      "description": "Transforming raw material into an innovative and functional product is the art of modern metallurgy..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      "title": "Data Processing and Security: Protecting Your Company's Digital Gold",
-      "description": "Every company, regardless of size, generates considerable volumes of information daily...."
-    }
-  ]
 },
 
 "testimonialsBanner": {
@@ -221,695 +285,54 @@
 },
 
 "testimonials": {
-    "items": [
-      {
-        "id": 1,
-        "text": "AFB expresses its satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
-        "author": "General Manager",
-        "company": "AFB",
-        "rating": 5
-      },
-      {
-        "id": 2,
-        "text": "Individual customers' satisfaction is palpable regarding the wireless home automation and smart building project. This demonstrates the success and positive impact.",
-        "author": "Individual Customers",
-        "company": "",
-        "rating": 5
-      },
-      {
-        "id": 3,
-        "text": "AFB BEKOKO is fully satisfied with the installation of two power sources and an inverter, as well as smoke and flood detectors. Quality service!",
-        "author": "AFB BEKOKO",
-        "company": "",
-        "rating": 5
-      },
-      {
-        "id": 4,
-        "text": "SGC expresses its satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
-        "author": "General Manager",
-        "company": "SGC",
-        "rating": 5
-      },
-      {
-        "id": 5,
-        "text": "Elecit delivered an exceptional home automation installation at KILO FORCE. We are delighted with the quality of service and the modernization provided. Thank you for this experience!",
-        "author": "General Manager",
-        "company": "KILO FORCE",
-        "rating": 5
-      },
-      {
-        "id": 6,
-        "text": "The maintenance and repair of our air conditioning systems by ElecIT brings us complete satisfaction. Their professionalism and efficiency have significantly improved our experience. We highly recommend ElecIT for their exceptional services.",
-        "author": "SAAR ASSURANCE",
-        "company": "",
-        "rating": 5
-      }
-    ],
-    "ariaLabels": {
-      "previous": "Previous",
-      "next": "Next",
-      "goToTestimonial": "Go to testimonial"
-    }
-  },
-
-"footer": {
-    "banner": {
-      "availableEverywhere": "Service available everywhere",
-      "phoneNumber": "+237 650 416 640",
-      "phoneLabel": "Phone"
-    },
-    "company": {
-      "description": "All our technical and technological potential at the service of your imagination"
-    },
-    "services": {
-      "title": "SERVICES",
-      "mechanicalFabrication": "Design, Mechanical & Metal Fabrication",
-      "smartBuilding": "Smart Buildings & Automation",
-      "gpsTracking": "GPS & Tracking (More Than Track)",
-      "itServices": "IT Services & DATA Processing",
-      "designOffice": "Design Office: Engineering & Design",
-      "afterSales": "24/7 After-Sales Service"
-    },
-    "usefulLinks": {
-      "title": "USEFUL LINKS",
-      "mangoBoutique": "MANGO BOUTIQUE",
-      "foczou": "FOCZOU",
-      "moreThanTrack": "MORE THAN TRACK",
-      "matoa": "MATOA"
-    },
-    "newsletter": {
-      "title": "NEWSLETTER",
-      "description": "Future partner, job seeker, other? Subscribe to our newsletter and don't miss our latest news",
-      "emailLabel": "Email",
-      "emailPlaceholder": "Enter your email",
-      "submitButton": "Join"
-    },
-    "copyright": {
-      "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
-      "privacyPolicy": "Privacy Policy",
-      "legalNotice": "Legal Notice"
-    },
-    "contact": {
-      "floatingButton": "Contact us",
-      "popup": {
-        "title": "Contact Us",
-        "subtitle": "We will respond as soon as possible",
-        "availability": " ",
-        "messagePlaceholder": "Write your message...",
-        "openWhatsApp": "Open WhatsApp"
-      }
-    }
-  },
-
-  "keySolutions": {
-    "bannerTitle": "Key solutions for specific needs",
-    "viewMore": "View more",
-    "items": [
-      {
-        "title": "Smart Buildings & Automation",
-        "description": "Intelligent management of all equipment in public or private buildings and energy consumption.",
-        "imagePlaceholderText": "Smart Building"
-      },
-      {
-        "title": "Design, Mechanical & Metal Fabrication",
-        "description": "Fabrication of metal infrastructures, agricultural machinery, rolling equipment, new machine parts and spare parts.",
-        "imagePlaceholderText": "Mechanical Fabrication"
-      },
-      {
-        "title": "GPS & Tracking (More Than Track)",
-        "description": "Precise real-time tracking of vehicle fleets and other assets. Sustainable analysis and optimization of the entire portfolio.",
-        "imagePlaceholderText": "GPS Tracking"
-      }
-    ]
-  },
-  "projets": {
-    "title": "Our Realizations",
-    "subtitle": "Discover some of the projects we have designed and realized for our clients",
-    "buttonText": "white paper",
-    "titleRound1": "A ",
-    "titleRound2": "leading",
-    "titleRound3": " project",
-    "subtitleRound": "Let's build it together from today",
-    "buttonRound": "Contact us"
-  },
-
-  
-"projet": {
-  "title": "OUR REALIZATIONS",
-  "subtitle": "Discover some of the projects we have designed and realized for our clients.",
-  "buttonText": "White paper"
-},
-
-  "jobOffers": {
-  "previous": "Previous",
-  "next": "Next",
-  "title": "All job offers",
-  "filterTitle": "Filter offers",
-  "filterPoste": "Position",
-  "filterPostePlaceholder": "Ex: Engineer, Technician...",
-  "filterLocation": "Location",
-  "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
-  "filterDateFrom": "Start date",
-  "filterDateTo": "End date",
-  "resetFilters": "Reset filters",
-  "viewButton": "View all",
-  "noResults": "No offers match your search criteria",
-  "modal": {
-    "back": "Back to offers",
-    "typePoste": "Position type:",
-    "lieuPoste": "Location:",
-    "datePublication": "Publication date:",
-    "validJusquau": "Valid until:",
-    "description": "Description",
-    "responsibilities": "Responsibilities",
-    "activities": "Activities:",
-    "profile": "Required profile",
-    "applyButton": "Apply now",
-    "formTitle": "APPLY ONLINE",
-    "name": "First name",
-    "namePlaceholder": "Enter your first name",
-    "lastName": "Last name",
-    "lastNamePlaceholder": "Enter your last name",
-    "email": "Email *",
-    "emailPlaceholder": "Enter your email",
-    "phone": "Phone *",
-    "phonePlaceholder": "Enter your phone...",
-    "sex": "Gender *",
-    "male": "Male",
-    "female": "Female",
-    "dateOfBirth": "Date of birth *",
-    "day": "Day",
-    "month": "Month",
-    "year": "Year",
-    "position": "Position *",
-    "positionPlaceholder": "Enter the position name",
-    "motivation": "Why do you think you have the best profile? *",
-    "motivationPlaceholder": "Type your message",
-    "joinCV": "Attach your CV *",
-    "addFile": "Add file",
-    "sendApplication": "Send application"
-  }
-},
-
-
-"recruitment": {
-  "titleRound": "No offers at the moment",
-  "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
-  "buttonText": "Apply here",
-  "heroTitle1": "For job seekers,",
-  "heroTitle2": "we recruit",
-  "heroSubtitle": "Join a young and talented team and contribute with your expertise to a vision focused on technological innovation, professionalism and progress.",
-  "processTitle": "Recruitment process",
-  "step1Title": "Attachments",
-  "step1Description": "We evaluate the compliance of your CV (in French and English), cover letter and diplomas.",
-  "step2Title": "1st Interview",
-  "step2Description": "A phone interview is conducted beforehand to get to know you better.",
-  "step3Title": "2nd Interview",
-  "step3Description": "An in-person interview will take place between managers and you on various topics.",
-  "step4Title": "Practical case",
-  "step4Description": "Candidates may be given a test to measure their technical skills.",
-  "step5Title": "Decision making",
-  "step5Description": "The selected candidate(s) will be called back for a job offer."
-},
-
-
-
-  "smartBuilding": {
-    "title": "SMART BUILDING",
-    "subtitle": "Custom solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy efficiency and connectivity combined in intelligent architecture.",
-    "buttonText": "Visit the showroom",
-    "tabs": {
-      "smartHome": "Smart home",
-      "smartHotel": "Smart hotel",
-      "smartOffice": "Smart office",
-      "smartCommercial": "Smart commercial",
-      "smartEvents": "Smart events"
-    }
-  },
-  "smartHome": {
-    "title": "Intelligent comfort for everyday life",
-    "featureTitle": "Smart living",
-    "featureDescription": "The Smart Home solution transforms homes into intelligent, comfortable and secure spaces through the integration of connected systems. It enables centralized and remote control of lighting, air conditioning, shutters, video surveillance, access control and energy management via smartphone, tablet or wall screen.",
-    "buttonText": "Have a project in mind?"
-  },
-  "smartHotel": {
-    "title": "The intelligent hotel experience",
-    "featureTitle": "Automated hotel service",
-    "featureDescription": "The Smart Hotel solution is dedicated to hotel establishments and covers guest rooms, public spaces, reception and concierge services. It enables intelligent control of lighting, air conditioning, access and audiovisual equipment, with scenarios adapted to guest arrivals and departures.",
-    "buttonText": "Have a project in mind?"
-  },
-  "smartOffice": {
-    "title": "Connected and efficient offices",
-    "featureTitle": "Maximum productivity",
-    "featureDescription": "Create an optimal work environment with spaces that adapt to your team's needs. Intelligent management of energy, security and comfort.",
-    "buttonText": "Have a project in mind?"
-  },
-  "smartCommercial": {
-    "title": "Intelligent and attractive retail spaces",
-    "featureTitle": "Supermarket, shop, restaurant...",
-    "featureDescription": "The Smart Commercial solution meets the specific needs of commercial spaces by combining automation, security and enhanced customer experience. It enables intelligent management of lighting, air conditioning, video surveillance, sound systems and dynamic displays.",
-    "buttonText": "Have a project in mind?"
-  },
-  "smartEvents": {
-    "title": "Connected and immersive events",
-    "featureTitle": "Weddings, conferences, cinemas, birthdays, nightclubs...",
-    "featureDescription": "The Smart Events solution brings intelligent and automated event management through centralized control of lighting, sound, video and scenographic effects. It enables the creation of dynamic and personalized atmospheres adapted to each type of event.",
-    "buttonText": "Have a project in mind?"
-  },
-
-
-
-
-"interfaceCommande": {
-  "title": "Control interfaces",
-  "featureTitle": "Centralized control",
-  "featureDescription": "Control your lighting, shutters, air conditioning, cameras and sound systems from home or remotely.",
-  "buttonText": "Visit the shop",
-  "slides": [
-    "/images/interface1.jpg",
-    "/images/interface2.jpg",
-    "/images/interface3.jpg"
-  ]
-},
-"prestations": {
-  "title": "Associated services",
-  "subtitle": "Our services cover the entire mechanical and metal fabrication process, from technical study to final coating, ensuring reliable, durable and customized realizations.",
-  "prestations": [
-    {
-      "number": "1",
-      "title": "Design &\nEngineering office",
-      "description": "3D modeling and numerical simulation, custom manufacturing plans, rapid prototyping."
-    },
-    {
-      "number": "2",
-      "title": "Fabrication &\nAssembly",
-      "description": "Milling, welding, laser cutting, machining, assembly of metal structures in workshop or on site."
-    },
-    {
-      "number": "3",
-      "title": "Treatments\n& Finishes",
-      "description": "Surface coating (painting, anodizing, galvanizing); quality control and metrology."
-    }
-  ],
-  "description": "These services accompany every project step, from initial audit to real-time supervision, transforming traditional infrastructures into intelligent, secure and energy-efficient environments.",
-  "buttonText": "Visit FOCZOU",
-  "services": {
-    "audit": {
-      "title": "Infrastructure audit & diagnosis",
-      "description": "Evaluation of existing systems (electrical, HVAC, security, etc.); Energy analysis and optimization levers identification."
-    },
-    "conception": {
-      "title": "Design & intelligent solutions engineering",
-      "description": "Technical study and modeling; Integration of sensors, controllers, and regulation systems."
-    },
-    "automatisation": {
-      "title": "Building systems automation",
-      "description": "Centralized technical management: lighting, heating, ventilation, security; intelligent scenario programming"
-    },
-    "securite": {
-      "title": "Smart security & access control",
-      "description": "Intelligent video surveillance, connected alarm, biometrics; Traceability and people flow management"
-    },
-    "supervision": {
-      "title": "Remote supervision & predictive maintenance",
-      "description": "Cloud platforms for 24/7 monitoring; Early anomaly detection and preventive maintenance."
-    },
-    "formation": {
-      "title": "User training",
-      "description": "Team training on system operation; Documentation and dedicated technical support."
-    },
-    "evolution": {
-      "title": "System evolution & scalability",
-      "description": "Ability to add new features (modularity); Software updates and adaptation to new needs."
-    }
-  }
-},
-"FabriMeca": {
-  "heroTitle1": "DESIGN, MECHANICAL & METAL FABRICATION",
-  "heroSubtitle": "Our workshop designs standard or customized devices and machines according to your specifications",
-  "heroSubtitle2": "Click the button to visit the dedicated mechanical workshop site",
-  "heroButtonText": "Visit MATOA"
-},
-"expertise": {
-  "title": "Our areas of expertise",
-  "subtitle": "We offer comprehensive solutions for the design, fabrication and assembly of metal and mechanical parts, as well as rolling equipment and containers, combining quality and precision.",
-  "expertises": [
-    {
-      "title": "Rolling equipment",
-      "description": "Design and fabrication of carts, trailers, motorized or manual platforms.",
-      "imagePosition": "right"
-    },
-    {
-      "title": "Machines",
-      "description": "Industrial, sanitary and commercial machines designed according to your specific needs",
-      "imagePosition": "left"
-    },
-    {
-      "title": "Infrastructures & Metal parts",
-      "description": "Metal structures, stairs, railings, machined or welded mechanical parts.",
-      "imagePosition": "right"
-    }
-  ]
-},
-"production": {
-  "title": "Our production scope",
   "items": [
     {
-      "title": "CAB WORKSHOP"
-    },
-    {
-      "title": "DIGITAL TERMINAL"
-    },
-    {
-      "title": "MINI TRACTOR"
-    },
-    {
-      "title": "METAL STRUCTURE"
-    }
-  ]
-},
-"fab": {
-  "titleRound": "Got a project in mind",
-  "titleRound2": "Need a solution",
-  "sub": "on demand",
-  "subtitleRound": "Our team is ready to listen to bring your ideas to life and offer personalized support.",
-  "buttonRound": "Contact us"
-},
-
-
- "gpsT": {
-    "titlehero": "GPS & TRACKING",
-    "descriptionhero": "Modern, scalable tracking solutions tailored to the needs of individuals, businesses and institutions, both nationally and internationally (within the CEMAC area).",
-    "buttonhero": "Our visuals",
-    "TitleFeatures": "Our areas of intervention",
-    "DescriptionFeatures": "Solutions designed for precise tracking, in-depth analysis and sustainable optimization of your vehicle fleet and all your assets, all centralized within a single platform.",
-    "BanderTitle": "More information on our",
-    "BanderTitle2": "Youtube Channel",
-    "BanderDescription": "Real-time vehicle tracking platform with advanced geolocation",
-    "BanderButton": "Learn more",
-    "titleRound": "Need a",
-    "titleRound2": "Custom Solution?",
-    "descriptionRound": "Our experts support you from study to complete implementation of your tracking devices",
-        "domaines": {
-      "title": "Our areas of intervention",
-      "subtitle": "Solutions designed for precise tracking, in-depth analysis and sustainable optimization of your vehicle fleet and all your assets, all centralized within a single platform.",
-      "items": {
-        "videoSurveillance": {
-          "title": "Video Surveillance Driver Tracking",
-          "description": "Real-time monitoring via in-cabin camera of operations carried out by drivers and their travel routes."
-        },
-        "objetsValeur": {
-          "title": "Valuable Objects Tracking",
-          "description": "Discreet and secure real-time tracking of sensitive goods (container, suitcase, safe...) via portable, rechargeable mini GPS"
-        },
-        "gestionFlottes": {
-          "title": "Fleet Management",
-          "description": "Real-time GPS tracking, centralized management of the entire fleet via the platform, route optimization, alert creation."
-        },
-        "antivol": {
-          "title": "Anti-theft Solutions",
-          "description": "Remote engine immobilization system via platform, alerts, active vehicle protection."
-        },
-        "badge": {
-          "title": "Badge Tracking",
-          "description": "Individual geolocation solution via smart badge suitable for monitoring elderly or vulnerable people, children, isolated workers..."
-        },
-        "conduiteAssistee": {
-          "title": "AI Camera Assisted Driving",
-          "description": "Detection, capture and recording of risky driving behavior (phone use, drowsiness...); Visual or audible alert."
-        },
-        "carburant": {
-          "title": "Fuel Management",
-          "description": "Fuel level monitoring by integrated sensors to prevent theft and leaks/ Diagnosis of consumption curve and generation of its graphs."
-        },
-        "rapports": {
-          "title": "Report Management",
-          "description": "Generation of periodic reports (logbook, routes, anomalies, consumption...)/ Export of reports in EXCEL, PDF, images, videos format."
-        }
-      }
-    }  
-  },
-"whyChooseUs": {
-  "title": "Why choose us?",
-  "subtitle": "Our tracking solutions offer concrete benefits in visibility, security and operations optimization, for better real-time control of your resources.",
-  "feature1": "Remote immobilization/anti-theft system included free of charge.",
-  "feature2": "Access to licensed web platform and/or dedicated mobile app.",
-  "feature3": "All parameters and management tools accessible without additional fees.",
-  "feature4": "Free international coverage (CEMAC zone).",
-  "feature5": "Maintenance, servicing and after-sales intervention offered in Douala and Yaoundé.",
-  "feature6": "Up to 1 year warranty on equipment."
-},
-
-"projects": {
-  "categories": [
-    { "id": "all", "label": "All projects" },
-    { "id": "smart", "label": "Smart building" },
-    { "id": "fabrication", "label": "Mechanical manufacturing" },
-    { "id": "genie", "label": "Civil engineering"},
-    { "id": "interne", "label": "Internal project" }
-  ],
-  "projectCard": {
-    "seeMore": "See more"
-  },
-  "projectModal": {
-    "mechanicalFabrication": "Mechanical manufacturing",
-    "project": "Project:",
-    "dateRealisation": "Completion date:",
-    "projectStatus": "Project status:",
-    "projectDescription": "Project description:",
-    "utility": "Benefits:",
-    "clientFeedback": "Client feedback:",
-    "haveProject": "Do you have a project?",
-    "close": "Close"
-  },
-  "projectsData": [
-    {
       "id": 1,
-      "number": "1",
-      "title": "Mobile Bank",
-      "category": "Mechanical manufacturing",
-      
-      "shortDescription": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions.",
-      "dateRealisation": "12/06/23",
-      "statut": "completed",
-      "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions",
-      "utilite": "This project addresses the critical need for smooth internal mobility, reducing on-site team travel time while ensuring their safety and comfort.",
-      "retourClient": "Thanks to these new means of transport, we have reduced internal travel delays by 30%, while improving the comfort of our employees.",
-      "responsable": "Logistics Manager"
+      "text": "AFB expresses their satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
+      "author": "General Manager",
+      "company": "AFB",
+      "rating": 5
     },
     {
       "id": 2,
-      "number": "2",
-      "title": "Personnel Transport Truck",
-      "category": "Mechanical manufacturing",
-      
-      "shortDescription": "Technical and functional restructuring of a truck for personnel transportation.",
-      "dateRealisation": "15/08/23",
-      "statut": "completed",
-      "description": "Technical and functional restructuring of a truck for personnel transportation.",
-      "utilite": "Improved productivity and decision-making through advanced analytics tools.",
-      "retourClient": "The implementation of this solution has transformed our way of working and increased our efficiency by 40%.",
-      "responsable": "IT Director"
+      "text": "Individual customers' satisfaction is palpable regarding the wireless home automation and smart building project. This demonstrates the success and positive impact.",
+      "author": "Individual Customers",
+      "company": "",
+      "rating": 5
     },
     {
       "id": 3,
-      "number": "3",
-      "title": "Brick Making Machine (Brick Press)",
-      "category": "Mechanical manufacturing",
-      
-      "shortDescription": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
-      "dateRealisation": "20/09/23",
-      "statut": "in progress",
-      "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
-      "utilite": "Ensure the safety of occupants and property while optimizing access management.",
-      "retourClient": "The peace of mind provided by this system is invaluable to our organization.",
-      "responsable": "Security Chief"
+      "text": "AFB BEKOKO is fully satisfied with the installation of two power sources and an inverter, as well as smoke and flood detectors. Quality service!",
+      "author": "AFB BEKOKO",
+      "company": "",
+      "rating": 5
     },
     {
       "id": 4,
-      "number": "4",
-      "title": "Metal Warehouse Construction",
-      "category": "Civil engineering",
-      
-      "shortDescription": "Study, design and construction of a metal warehouse for industrial and logistics use.",
-      "dateRealisation": "05/10/23",
-      "statut": "completed",
-      "description": "Study, design and construction of a metal warehouse for industrial and logistics use.",
-      "utilite": "Reduced downtime and improved operational efficiency.",
-      "retourClient": "This solution allowed us to reduce our maintenance costs by 25%.",
-      "responsable": "Production Director"
+      "text": "SGC expresses its satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
+      "author": "General Manager",
+      "company": "SGC",
+      "rating": 5
     },
     {
       "id": 5,
-      "number": "5",
-      "title": "Home Automation Installation in a Villa",
-      "category": "Smart building",
-      
-      "shortDescription": "Complete installation of a residential home automation system including intelligent management.",
-      "dateRealisation": "12/11/23",
-      "statut": "in progress",
-      "description": "Complete installation of a residential home automation system including intelligent management.",
-      "utilite": "Ensure reliable and high-performance connectivity for all services.",
-      "retourClient": "The new network has significantly improved our daily productivity.",
-      "responsable": "Infrastructure Manager"
+      "text": "Elecit delivered an exceptional home automation installation to KILO FORCE. We are delighted with the quality of service and the modernization provided. Thank you for this experience!",
+      "author": "General Manager",
+      "company": "KILO FORCE",
+      "rating": 5
     },
     {
       "id": 6,
-      "number": "6",
-      "title": "Home Automation Installation in a Bank",
-      "category": "Smart building",
-      
-      "shortDescription": "Deployment of a professional home automation system for a bank, including intelligent management.",
-      "dateRealisation": "18/12/23",
-      "statut": "completed",
-      "description": "Deployment of a professional home automation system for a bank, including intelligent management.",
-      "utilite": "Free up time for teams and reduce human errors.",
-      "retourClient": "Automation has transformed our daily way of working.",
-      "responsable": "Operations Director"
-    },
-    {
-      "id": 7,
-      "number": "7",
-      "title": "Manufacturing of a 3-in-1 Stepladder",
-      "category": "Mechanical manufacturing",
-      
-      "shortDescription": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
-      "dateRealisation": "18/12/23",
-      "statut": "completed",
-      "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
-      "utilite": "Free up time for teams and reduce human errors.",
-      "retourClient": "Automation has transformed our daily way of working.",
-      "responsable": "Operations Director"
-    },
-    {
-      "id": 8,
-      "number": "8",
-      "title": "Creation and Layout of the Showroom",
-      "category": "Internal project",
-      
-      "shortDescription": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
-      "dateRealisation": "18/12/23",
-      "statut": "completed",
-      "description": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
-      "utilite": "Free up time for teams and reduce human errors.",
-      "retourClient": "Automation has transformed our daily way of working.",
-      "responsable": "Operations Director"
-    },
-    {
-      "id": 9,
-      "number": "9",
-      "title": "Opening of the Display Store",
-      "category": "Internal project",
-      
-      "shortDescription": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
-      "dateRealisation": "18/12/23",
-      "statut": "completed",
-      "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
-      "utilite": "Free up time for teams and reduce human errors.",
-      "retourClient": "Automation has transformed our daily way of working.",
-      "responsable": "Operations Director"
+      "text": "The maintenance and repair of our air conditioning systems by ElecIT brings us complete satisfaction. Their professionalism and efficiency have significantly improved our experience. We highly recommend ElecIT for their exceptional services.",
+      "author": "SAAR ASSURANCE",
+      "company": "SAAR ASSURANCE",
+      "rating": 5
     }
-  ]
-},
-
-"smartVilla": {
-  "title1": "PROJECT:",
-  "title2": "VILLA 2 YASSA",
-  "subtitle": "Installation of a home automation system for centralized control of all household equipment.",
-  "buttonText": "More projects",
-  "titleRound": "Let’s build together your",
-  "titleRound2": "Smart Building",
-  "descriptionRound": "Do you have a house, a hotel, an office, a commercial space, or an events hall to transform? Let’s talk about it.",
-  "buttonRound": "Contact us"
-},
-
-"fabriMeca": {
-    "hero": {
-      "title1": "Mechanical & Metallic Fabrication",
-      "subtitle": "Excellence in design and manufacturing",
-      "subtitle2": "Custom solutions for your industrial needs",
-      "buttonText": "Discover our achievements"
-    },
-    "expertise": {
-      "title": "Our areas of expertise",
-      "subtitle": "We offer comprehensive solutions for the design, manufacturing and assembly of metal and mechanical parts, as well as rolling equipment and containers, combining quality and precision.",
-      "items": {
-        "engins": {
-          "title": "Rolling Equipment",
-          "description": "Design and manufacture of trolleys, trailers, motorized or manual platforms."
-        },
-        "machines": {
-          "title": "Machines",
-          "description": "Industrial, sanitary and commercial machines, designed according to your specific needs"
-        },
-        "pieces": {
-          "title": "Infrastructure & Metal Parts",
-          "description": "Metal structures, stairs, guardrails, machined or welded mechanical parts."
-        }
-      }
-    },
-    "prestations": {
-      "title": "Associated services",
-      "subtitle": "Our services cover the entire mechanical and metallic manufacturing process, from technical study to final coating, to guarantee reliable, durable solutions tailored to each need.",
-      "items": {
-        "conception": {
-          "title": "Design &\nEngineering Office",
-          "description": "3D modeling and numerical simulation, custom manufacturing plans, rapid prototyping."
-        },
-        "fabrication": {
-          "title": "Manufacturing &\nAssembly",
-          "description": "Milling, welding, laser cutting, machining, assembly of metal structures in workshop or on site."
-        },
-        "traitements": {
-          "title": "Treatments\n& Finishes",
-          "description": "Surface coating (painting, anodizing, galvanizing); quality control and metrology."
-        }
-      }
-    },
-    "production": {
-      "title": "Our production field",
-      "items": {
-        "citernes": "TANKS",
-        "borneNumerique": "DIGITAL TERMINAL",
-        "benne": "DUMP TRUCK",
-        "camionFrigo": "REFRIGERATED TRUCK",
-        "structureMetallique": "METAL STRUCTURE"
-      }
-    },
-    "bander": {
-      "title": "More information on our",
-      "title2": "Youtube Channel",
-      "description": "Discover our achievements and manufacturing processes",
-      "button": "Continue"
-    },
-    "round": {
-      "title": "Need a",
-      "title2": "Custom Solution?",
-      "description": "Our experts support you from study to complete implementation of your manufacturing projects"
-    }
-
-    
-  },
-   "fm": {
-    "title": "Explore interesting content",
-    "subtitle": "The mechanical workshop",
-    "description": "Dive into the heart of mechanical and metallic engineering",
-    "buttonText": "Visit MATOA"
-  },
-  "smartVill": {
-    "title1": "PROJECT:",
-    "title2": "Mobile Bank",
-    "subtitle": "Itinerant banking agency, fully equipped and fitted in a metal structure mounted on a tractor.",
-    "buttonText": "More projects"
+  ],
+  "ariaLabels": {
+    "previous": "Previous",
+    "next": "Next",
+    "goToTestimonial": "Go to testimonial"
   }
-
-
-
-
-   
-
-
-
-    
-  }
-  
+}
+}

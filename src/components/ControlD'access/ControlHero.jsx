@@ -1,70 +1,81 @@
-import React from 'react'
-import { HERO,ICONS } from '../../asset/assets';
-import { MY_COLORS } from '../../utils/colors';
-import CTAButton from '../CTA/CTAButton';
-
+import React from "react";
+import { HERO, ICONS } from "../../asset/assets";
+import { MY_COLORS } from "../../utils/colors";
+import CTAButton from "../CTA/CTAButton";
+import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const ControlHero = () => {
-   return (
-      <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
-        {/* Background Image */}
-        <img
-          src={HERO.security} // <-- put the hero image here
-          alt="Data Processing"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-  
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-  
-        {/* ANGLED BLACK PNG MASK (correct height control) */}
-        <img
-          src={ICONS.formeSombre}
-          alt=""
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 w-full max-h-[420px]
-                 object-cover pointer-events-none"
-          style={{ objectFit: "cover" }}
-        />
-  
-        {/* TECH PATTERN - FULL WIDTH + BEHIND TEXT (corrected) */}
-        <img
-          src={ICONS.formTech}
-          alt=""
-          aria-hidden="true"
-          className="
-                            absolute inset-0 m-auto 
-                            w-[120%] max-w-[1400px] 
-                            opacity-10 
-                            pointer-events-none 
-                            z-10
-                          "
-          style={{
-            top: "10%",
-            color: "gray",
-          }}
-        />
-  
-        {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-3xl">
-          <h1 
-          style={{color:MY_COLORS.secondaryGreen}}
-          className="text-3xl md:text-5xl font-extrabold  mb-6">
-            IT & DATA PROCESSING
-          </h1>
-  
-          <p className="text-white text-base md:text-lg leading-relaxed mb-8">
-            Nous aidons les entreprises à gérer efficacement leurs systèmes
-            informatiques et à tirer le meilleur parti de leurs données.
-          </p>
-  
-          {/* CTA BUTTON */}
-          <CTAButton onClick={() => alert("Video clicked!")}>
-            Publireportage 
-          </CTAButton>
-        </div>
-      </section>
-    );
-}
+  const { t } = useTranslation();
 
-export default ControlHero
+  return (
+    <section className="relative w-full h-[65vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
+      
+      {/* Background Image */}
+      <img
+        src={HERO.control}
+        alt={t("control.hero.title")}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
+
+      {/* Angled Black PNG Mask */}
+      <img
+        src={ICONS.formeSombre}
+        alt=""
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 w-full max-h-[420px] object-cover pointer-events-none"
+      />
+
+      {/* TECH PATTERN */}
+      <img
+        src={ICONS.formTech}
+        alt=""
+        aria-hidden="true"
+        className="hidden sm:block absolute inset-0 m-auto w-[120%] sm:w-[130%] md:w-[120%] lg:w-[110%] max-w-[1400px] opacity-10 pointer-events-none z-10"
+        style={{ top: "10%" }}
+      />
+
+      {/* Content */}
+      <div className="relative z-20 text-center px-4 sm:px-6 md:px-12 lg:px-16 flex flex-col items-center justify-center">
+        
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 text-white">
+          <span style={{ color: MY_COLORS.secondaryGreen }}>
+            {t("control.hero.title")}
+          </span>
+        </h1>
+
+        <p className="text-white text-sm sm:text-base md:text-lg lg:text-2xl leading-relaxed mb-6 max-w-3xl">
+          {t("control.hero.description")}
+        </p>
+
+         {/* CTA + Arrow */}
+        <div className="flex items-center gap-4 lg:mt-20">
+          <CTAButton onClick={() => alert("Video clicked!")}>
+            {t("entreprise.hero.button")}
+          </CTAButton>
+
+          <motion.img
+            src={ICONS.flech_icon}
+            alt="Arrow"
+            className="w-10 sm:w-22 opacity-100 origin-top"
+            animate={{
+              rotate: [-15, 15, -15],
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default ControlHero;
