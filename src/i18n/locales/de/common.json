@@ -1464,5 +1464,12 @@
         }
       ]
     }
-  }
+  },
+ "fab": {
+  "titleRound": "Ein Projekt im Kopf",
+  "titleRound2": "Brauchen Sie eine Lösung",
+  "sub": "auf Anfrage",
+  "subtitleRound": "Unser Team hört zu und erweckt Ihre Ideen zum Leben.",
+  "buttonRound": "Kontaktieren Sie uns"
+}
 }
