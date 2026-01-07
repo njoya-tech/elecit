@@ -508,6 +508,12 @@
         }
       ]
     },
+      "interfaceCommande": {
+  "title": "Interfaces de commande",
+  "featureTitle": "Le pilotage centralisé",
+  "featureDescription": "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
+  "buttonText": "Visitez la boutique"
+},
  
 
   "prestations": {
