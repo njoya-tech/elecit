@@ -27,60 +27,58 @@
     }
   },
 
+  "seeMore": "Learn more",
 
-"seeMore": "Learn more",
-
-"hero": {
-  "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
-  "submitProject": "Submit a project",
-  "slide1": {
-    "title": "Welcome to the hub of",
-    "highlighted": "Research",
-    "title2": "and",
-    "highlighted2": "Excellence",
-   "title3": "in engineering in Central Africa."
-},
-"hero": {
+  "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Submit a project",
     "slide1": {
+      "title": "Welcome to the hub of",
+      "highlighted": "Research",
+      "title2": "and",
+      "highlighted2": "Excellence",
+      "title3": "in engineering in Central Africa."
+    },
+    "hero": {
+      "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+      "submitProject": "Submit a project",
+      "slide1": {
+        "title": "All our",
+        "highlighted": "technical",
+        "title2": "and",
+        "highlighted2": "technological",
+        "title3": "potential at the service of your imagination"
+      },
+      "slide2": {
+        "title": "Innovation and",
+        "highlighted": "expertise",
+        "title2": "for your",
+        "highlighted2": "most ambitious",
+        "title3": "projects"
+      },
+      "slide3": {
+        "title": "Smart and",
+        "highlighted": "sustainable",
+        "title2": "solutions",
+        "highlighted2": "",
+        "title3": "for your future"
+      }
+    },
+    "slide2": {
       "title": "All our",
       "highlighted": "technical",
       "title2": "and",
       "highlighted2": "technological",
       "title3": "potential at the service of your imagination"
     },
-    "slide2": {
-      "title": "Innovation and",
-      "highlighted": "expertise",
-      "title2": "for your",
-      "highlighted2": "most ambitious",
-      "title3": "projects"
-    },
     "slide3": {
-      "title": "Smart and",
-      "highlighted": "sustainable",
-      "title2": "solutions",
+      "title": "Opt for",
+      "highlighted": "innovative",
+      "title2": "",
       "highlighted2": "",
-      "title3": "for your future"
+      "title4": "A tailor-made approach, mindful of your well-being and respectful of its professional commitments"
     }
   },
-  "slide2": {
-    "title": "All our",
-    "highlighted": "technical",
-    "title2": "and",
-    "highlighted2": "technological",
-    "title3": "potential at the service of your imagination"
-  },
-  "slide3": {
-    "title": "Opt for",
-    "highlighted": "innovative",
-    "title2": "",
-    "highlighted2": "",
-    "title4": "A tailor-made approach, mindful of your well-being and respectful of its professional commitments"
-  }
-},
-
 
   "solution": {
     "bannerTitle": "Smart",
@@ -178,161 +176,741 @@
   },
 
   "blog": {
-  "preview": {
-    "banner": {
-      "titlePart1": "Stay up to date with our ",
-      "highlightWord": "news",
-      "titlePart2": " by visiting our blog"
+    "preview": {
+      "banner": {
+        "titlePart1": "Stay up to date with our ",
+        "highlightWord": "news",
+        "titlePart2": " by visiting our blog"
+      },
+      "articles": [
+        {
+          "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+          "title": "Why Custom Manufacturing is a Game-Changer in Cameroonian Industry?",
+          "description": "In many industrial sectors in Cameroon, companies face a recurring challenge...."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+          "title": "5 Ways a Smart Hotel Saves Energy and Builds Customer Loyalty",
+          "description": "In an increasingly competitive hotel market in Cameroon, the question is twofold..."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+          "title": "The Tracking Revolution: When AI Monitors Your Vehicles",
+          "description": "Transportation and logistics are at the heart of Cameroon's economy, but this sector faces major challenges...."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+          "title": "Smart Irrigation: Technology for Sustainable Agriculture",
+          "description": "Cameroonian agriculture, the engine of the national economy, faces a major challenge..."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+          "title": "From Raw Metal to Innovation: How We Shape Sustainable Infrastructure",
+          "description": "Transforming raw material into an innovative and functional product is the art of modern metallurgy..."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+          "title": "Data Processing and Security: Protecting Your Company's Digital Gold",
+          "description": "Every company, regardless of size, generates considerable volumes of information daily...."
+        }
+      ]
     },
-    "articles": [
+    "seeMore": "See more",
+    "realBanner": {
+      "titlePart1": "Achievements that meet your",
+      "highlightWord": "expectations",
+      "titlePart2": ""
+    }
+  },
+
+  "servicesCarousel": {
+    "seeMore": "See more",
+    "services": [
       {
-        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-        "title": "Why Custom Manufacturing is a Game-Changer in Cameroonian Industry?",
-        "description": "In many industrial sectors in Cameroon, companies face a recurring challenge...."
+        "title": "Mobile Banking",
+        "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions."
       },
       {
-        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-        "title": "5 Ways a Smart Hotel Saves Energy and Builds Customer Loyalty",
-        "description": "In an increasingly competitive hotel market in Cameroon, the question is twofold..."
+        "title": "Personnel Transport Truck",
+        "description": "Technical and functional restructuring of a truck intended for personnel transportation."
       },
       {
-        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-        "title": "The Tracking Revolution: When AI Monitors Your Vehicles",
-        "description": "Transportation and logistics are at the heart of Cameroon's economy, but this sector faces major challenges...."
+        "title": "Brick Making Machine (Brick Press)",
+        "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms."
       },
       {
-        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-        "title": "Smart Irrigation: Technology for Sustainable Agriculture",
-        "description": "Cameroonian agriculture, the engine of the national economy, faces a major challenge..."
+        "title": "Metal Warehouse Construction",
+        "description": "Study, design and construction of a metal warehouse intended for industrial and logistics use."
       },
       {
-        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-        "title": "From Raw Metal to Innovation: How We Shape Sustainable Infrastructure",
-        "description": "Transforming raw material into an innovative and functional product is the art of modern metallurgy..."
+        "title": "Home Automation Installation in a Villa",
+        "description": "Complete installation of a residential home automation system including intelligent management."
       },
       {
-        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-        "title": "Data Processing and Security: Protecting Your Company's Digital Gold",
-        "description": "Every company, regardless of size, generates considerable volumes of information daily...."
+        "title": "Home Automation Installation in a Bank",
+        "description": "Deployment of a professional home automation system for a bank, including intelligent management."
+      },
+      {
+        "title": "Manufacturing of a 3-in-1 Stepladder",
+        "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations."
+      },
+      {
+        "title": "Creation and Layout of the Showroom",
+        "description": "Design, layout and commissioning of a showroom dedicated to the presentation of home automation solutions."
+      },
+      {
+        "title": "Opening of the Display Store",
+        "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials."
       }
     ]
   },
-  "seeMore": "See more",
-  "realBanner": {
-    "titlePart1": "Achievements that meet your",
-    "highlightWord": "expectations",
-    "titlePart2": ""
-  }
-},
 
-"servicesCarousel": {
-  "seeMore": "See more",
-  "services": [
-    {
-      "title": "Mobile Banking",
-      "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions."
-    },
-    {
-      "title": "Personnel Transport Truck",
-      "description": "Technical and functional restructuring of a truck intended for personnel transportation."
-    },
-    {
-      "title": "Brick Making Machine (Brick Press)",
-      "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms."
-    },
-    {
-      "title": "Metal Warehouse Construction",
-      "description": "Study, design and construction of a metal warehouse intended for industrial and logistics use."
-    },
-    {
-      "title": "Home Automation Installation in a Villa",
-      "description": "Complete installation of a residential home automation system including intelligent management."
-    },
-    {
-      "title": "Home Automation Installation in a Bank",
-      "description": "Deployment of a professional home automation system for a bank, including intelligent management."
-    },
-    {
-      "title": "Manufacturing of a 3-in-1 Stepladder",
-      "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations."
-    },
-    {
-      "title": "Creation and Layout of the Showroom",
-      "description": "Design, layout and commissioning of a showroom dedicated to the presentation of home automation solutions."
-    },
-    {
-      "title": "Opening of the Display Store",
-      "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials."
+  "smartBuild": {
+    "title": "Solutions Exhibition and Smart Building",
+    "buttonText": "Visit the showroom"
+  },
+
+  "blogBanner": {
+    "titlePart1": "Stay up to date with our ",
+    "highlightWord": "news",
+    "titlePart2": " by visiting our blog"
+  },
+
+  "testimonialsBanner": {
+    "titlePart1": "What our clients say about their ",
+    "highlightWord": "experience",
+    "titlePart2": " with us"
+  },
+
+  "testimonials": {
+    "items": [
+      {
+        "id": 1,
+        "text": "AFB expresses their satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
+        "author": "General Manager",
+        "company": "AFB",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "text": "Individual customers' satisfaction is palpable regarding the wireless home automation and smart building project. This demonstrates the success and positive impact.",
+        "author": "Individual Customers",
+        "company": "",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "text": "AFB BEKOKO is fully satisfied with the installation of two power sources and an inverter, as well as smoke and flood detectors. Quality service!",
+        "author": "AFB BEKOKO",
+        "company": "",
+        "rating": 5
+      },
+      {
+        "id": 4,
+        "text": "SGC expresses its satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
+        "author": "General Manager",
+        "company": "SGC",
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "text": "Elecit delivered an exceptional home automation installation to KILO FORCE. We are delighted with the quality of service and the modernization provided. Thank you for this experience!",
+        "author": "General Manager",
+        "company": "KILO FORCE",
+        "rating": 5
+      },
+      {
+        "id": 6,
+        "text": "The maintenance and repair of our air conditioning systems by ElecIT brings us complete satisfaction. Their professionalism and efficiency have significantly improved our experience. We highly recommend ElecIT for their exceptional services.",
+        "author": "SAAR ASSURANCE",
+        "company": "SAAR ASSURANCE",
+        "rating": 5
+      }
+    ],
+    "ariaLabels": {
+      "previous": "Previous",
+      "next": "Next",
+      "goToTestimonial": "Go to testimonial"
     }
-  ]
-},
+  },
 
-"smartBuild": {
-  "title": "Solutions Exhibition and Smart Building",
-  "buttonText": "Visit the showroom"
-},
-
-"blogBanner": {
-  "titlePart1": "Stay up to date with our ",
-  "highlightWord": "news",
-  "titlePart2": " by visiting our blog"
-},
-
-"testimonialsBanner": {
-  "titlePart1": "What our clients say about their ",
-  "highlightWord": "experience",
-  "titlePart2": " with us"
-},
-
-"testimonials": {
-  "items": [
-    {
-      "id": 1,
-      "text": "AFB expresses their satisfaction with our services with a rating of 16/20. It is an honor to exceed their expectations and contribute positively to their experience.",
-      "author": "General Manager",
-      "company": "AFB",
-      "rating": 5
+  "entreprise": {
+    "hero": {
+      "title": "What you need to know about",
+      "titleHighlight": "ELECIT?",
+      "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+      "description": "Because beyond the Cameroonian market, we want to develop all of Africa through our services.",
+      "button": "Watch Video"
     },
-    {
-      "id": 2,
-      "text": "Individual customers' satisfaction is palpable regarding the wireless home automation and smart building project. This demonstrates the success and positive impact.",
-      "author": "Individual Customers",
-      "company": "",
-      "rating": 5
+    "entrepriseCards": {
+      "bannerTitle": "Our values",
+      "bannerSubtitle": "03 keywords",
+      "bannerSubtitle2": "define us",
+      "items": [
+        {
+          "title": "Innovation",
+          "description": "Through continuous technology monitoring and a culture of creativity, we develop innovative approaches to meet our partners' needs."
+        },
+        {
+          "title": "Transformation",
+          "description": "We support our clients in their transition towards more efficient and sustainable models through the integration of new technologies and process optimization."
+        },
+        {
+          "title": "Excellence",
+          "description": "Through high quality standards, sharp expertise and attention to detail, we guarantee results that meet the most demanding expectations."
+        }
+      ]
     },
-    {
-      "id": 3,
-      "text": "AFB BEKOKO is fully satisfied with the installation of two power sources and an inverter, as well as smoke and flood detectors. Quality service!",
-      "author": "AFB BEKOKO",
-      "company": "",
-      "rating": 5
+    "entrepriseTeam": {
+      "title": "The team",
+      "subtitle": "These actors who unite to meet your needs",
+      "description": "We mobilize the right skills at the right time. This human and technical wealth allows us to respond with agility and precision to the most varied challenges of our clients, from consulting to implementation.",
+      "button": "Watch Video",
+      "members": [
+        { "title": "Home Automation Specialists" },
+        { "title": "Mechatronics Engineers" },
+        { "title": "Fleet Managers" },
+        { "title": "IT Engineers" },
+        { "title": "Civil Engineers" },
+        { "title": "Manufacturing Technicians" },
+        { "title": "IT Technicians" },
+        { "title": "Maintenance Agents" },
+        { "title": "Renewable Energy Engineers" },
+        { "title": "High and Low Current Technicians" }
+      ]
     },
-    {
-      "id": 4,
-      "text": "SGC expresses its satisfaction with the improvement of lighting and air conditioning in their buildings. The intervention fully met their expectations.",
-      "author": "General Manager",
-      "company": "SGC",
-      "rating": 5
+    "entrepriseAcc": {
+      "title": "Frequently asked questions",
+      "contactTitle": "Get more information",
+      "contactSubtitle": "We will be happy to answer your questions.",
+      "contactButton": "Contact us",
+      "items": [
+        {
+          "question": "Where are you located and in which regions do you operate?",
+          "answer": "Our headquarters are based in Douala and Yaoundé; but we operate throughout the national territory and in certain areas of West Africa. For specific projects, we also study international interventions."
+        },
+        {
+          "question": "What are your average project timelines?",
+          "answer": "Timelines vary depending on project complexity. Generally, we deliver standard projects in 2-4 weeks."
+        },
+        {
+          "question": "How to get a personalized quote?",
+          "answer": "You can contact us via the online form or by phone. We will send you a quote within 48 hours."
+        },
+        {
+          "question": "Do you offer support after delivery?",
+          "answer": "Yes, we offer complete after-sales service including maintenance and 24/7 technical support."
+        }
+      ]
     },
-    {
-      "id": 5,
-      "text": "Elecit delivered an exceptional home automation installation to KILO FORCE. We are delighted with the quality of service and the modernization provided. Thank you for this experience!",
-      "author": "General Manager",
-      "company": "KILO FORCE",
-      "rating": 5
-    },
-    {
-      "id": 6,
-      "text": "The maintenance and repair of our air conditioning systems by ElecIT brings us complete satisfaction. Their professionalism and efficiency have significantly improved our experience. We highly recommend ElecIT for their exceptional services.",
-      "author": "SAAR ASSURANCE",
-      "company": "SAAR ASSURANCE",
-      "rating": 5
+    "entreprisePartner": {
+      "title": "Our partners",
+      "ctaTitle": "Do you have a need?",
+      "ctaTitle2": "We have the",
+      "ctaHighlight": "solutions",
+      "ctaButton": "Contact Us"
     }
-  ],
-  "ariaLabels": {
-    "previous": "Previous",
-    "next": "Next",
-    "goToTestimonial": "Go to testimonial"
+  },
+  "contact": {
+    "floatingButton": "Contact Us",
+    "popup": {
+      "title": "Contact Us",
+      "subtitle": "We will respond as soon as possible",
+      "availability": "We are available on WhatsApp Monday to Friday from 8 AM to 6 PM. Feel free to contact us.",
+      "openWhatsApp": "Open WhatsApp",
+      "messagePlaceholder": "Write your message...",
+      "leftButton": "Back",
+      "rightButton": "Send"
+    },
+    "hero": {
+      "title": "Contact Us.",
+      "subtitle": "Our team of experts provides you with a solution!",
+      "button": "More Content"
+    },
+    "form": {
+      "title": "Contact Form",
+      "subtitle": "A question, need, or project to discuss?",
+      "subtitle2": "Fill out the form below",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "phone": "Phone",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "message": "Message",
+      "messagePlaceholder": "Answer in a few words",
+      "submit": "Send",
+      "imageAlt": "Professional in an industrial environment"
+    },
+    "location": {
+      "title": "Our services are accessible throughout",
+      "highlight1": "Cameroon",
+      "title2": ", but also throughout",
+      "highlight2": "Central Africa."
+    },
+    "blog": {
+      "title": "Stay updated on our",
+      "highlight": "news",
+      "title2": "by visiting our blog",
+      "readMore": "Read More",
+      "prevPage": "Previous Page",
+      "nextPage": "Next Page",
+      "goToPage": "Go to page",
+      "articles": [
+        {
+          "id": 1,
+          "title": "Why custom manufacturing is a game-changer in the Cameroonian industry?",
+          "excerpt": "In many industrial sectors in Cameroon, companies face a recurring challenge..."
+        },
+        {
+          "id": 2,
+          "title": "5 ways a smart hotel saves energy and builds customer loyalty",
+          "excerpt": "In an increasingly competitive hotel market in Cameroon, the question is twofold..."
+        },
+        {
+          "id": 3,
+          "title": "The tracking revolution: when AI monitors your vehicles",
+          "excerpt": "Transport and logistics are at the heart of Cameroon's economy, but this sector faces major challenges..."
+        },
+        {
+          "id": 4,
+          "title": "Smart irrigation: technology for sustainable agriculture",
+          "excerpt": "Cameroonian agriculture, the engine of the national economy, faces a major challenge..."
+        },
+        {
+          "id": 5,
+          "title": "From raw metal to innovation: how we shape sustainable infrastructure",
+          "excerpt": "Transforming raw materials into an innovative and functional product is the art of modern metallurgy..."
+        },
+        {
+          "id": 6,
+          "title": "Data Processing and security: protecting your company's digital gold",
+          "excerpt": "Every company generates considerable amounts of sensitive information daily..."
+        }
+      ]
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "Inside ElecIT",
+      "subtitle": "Innovation, Expertise & Company Life",
+      "description1": "An open window into our expertise and culture.",
+      "description2": "Explore our projects, innovations and vision of modern engineering.",
+      "description3": "Dive into ElecIT's daily life, where technology meets people."
+    },
+    "featured": {
+      "authorName": "Therese Egoutou",
+      "date": "Nov 17",
+      "title": "The building that adapts to you",
+      "excerpt": "Every project starts with an idea, but it's the design that transforms that idea into a real solution."
+    },
+    "categories": {
+      "all": "All posts",
+      "smartSpaces": "Smart spaces",
+      "workshop": "Workshop of Ingenuity",
+      "moreThanTrack": "More Than Track",
+      "advancedSecurity": "Advanced Security",
+      "toolBoxMeeting": "Toolbox meeting",
+      "companyLife": "Company Life",
+      "more": "More"
+    },
+    "cards": {
+      "views": "views",
+      "view": "view",
+      "comments": "comments",
+      "comment": "comment",
+      "readMore": "Read more",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "detail": {
+      "readTime": "min read",
+      "share": "Share post",
+      "cancel": "Cancel",
+      "publish": "Publish",
+      "loginPrompt": "to post as a member",
+      "login": "Log in",
+      "commentPlaceholder": "Write a comment...",
+      "commentsTitle": "Comments",
+      "shareModal": {
+        "title": "Share this post",
+        "copyLink": "Or copy link",
+        "copy": "Copy",
+        "copied": "Link copied!",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
+      }
+    },
+    "posts": [
+      {
+        "id": 1,
+        "category": "Toolbox meeting",
+        "title": "The building that adapts to you",
+        "excerpt": "Every project starts with an idea, but it's the design that transforms that...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "Nov 19"
+        },
+        "content": {
+          "heading1": "Smart design from the ground up",
+          "paragraph1": "Every project starts with an idea, but it's the <strong>design</strong> that transforms that idea into a real solution. Thanks to <strong>Computer-Aided Design (CAD)</strong>, we model parts and structures with millimeter precision.",
+          "listIntro": "This step allows us to:",
+          "listItems": [
+            "anticipate mechanical constraints,",
+            "optimize shapes and thicknesses,",
+            "reduce material waste,",
+            "and ensure compliance before manufacturing."
+          ],
+          "paragraph2": "We thus gain in <strong>efficiency</strong>, <strong>cost</strong> and <strong>overall quality</strong>.",
+          "heading2": "How we shape sustainable infrastructure",
+          "paragraph3": "Metal, an ancient material, is one of the major pillars of human evolution. From the first artisanal tools to modern industrial structures, it accompanies every stage of progress.",
+          "paragraph4": "At <strong>ElecIT ENGINEERING</strong>, we make metal more than just a raw material: we make it a <strong>sustainable engineering solution</strong>, designed to last."
+        }
+      },
+      {
+        "id": 2,
+        "category": "Advanced Security",
+        "title": "From raw metal to technological innovation",
+        "excerpt": "Every project starts with an idea, but it's the design that transforms that...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "Nov 19"
+        }
+      },
+      {
+        "id": 3,
+        "category": "Company Life",
+        "title": "The building that adapts to you",
+        "excerpt": "Every project starts with an idea, but it's the design that transforms that...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "Nov 19"
+        }
+      }
+    ]
+  },
+  
+  "sav": {
+    "hero": {
+      "title": "AFTER-SALES SERVICE",
+      "subtitle": "We ensure customer satisfaction, guarantee equipment longevity and strengthen customer trust.",
+      "button": "Watch Video"
+    },
+    "cards": {
+      "heading": "Our Services",
+      "description": "From feasibility study to turnkey delivery, we support our clients at every stage of the project, ensuring a high level of technical expertise and regulatory compliance.",
+      "items": [
+        {
+          "title": "Studies",
+          "subtitle": "& Design",
+          "description": "Needs analysis and architectural program/ Technical studies/ 2D/3D modeling/ Planning, provisional costing and authorizations"
+        },
+        {
+          "title": "Project Management",
+          "subtitle": "& Site Monitoring",
+          "description": "Work planning and stakeholder coordination/ Site monitoring, technical and quality controls/ Strict adherence to deadlines and contractual budget/ Transparent communication with the client"
+        },
+        {
+          "title": "Construction",
+          "subtitle": "& Delivery",
+          "description": "Structural and finishing works/ Integration of technical lots (electricity, plumbing, HVAC)/ Interior and exterior finishes according to specifications/ Work acceptance"
+        },
+        {
+          "title": "Maintenance",
+          "subtitle": "& Renovation",
+          "description": "Preventive and corrective building maintenance/ Renovation and standards compliance/ Energy improvement/ After-sales service and ten-year warranty"
+        },
+        {
+          "title": "Consulting",
+          "subtitle": "& Expertise",
+          "description": "Technical audit and property diagnosis/ Project management consulting/ Legal and administrative assistance/ Construction cost optimization"
+        },
+        {
+          "title": "Turnkey",
+          "subtitle": "Solutions",
+          "description": "Complete project management/ Coordination of all trades/ Single warranty and global responsibility/ Delivery within agreed deadlines"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Our Key Commitments",
+      "subtitle": "Benefit from an integrated, profitable and structured after-sales service, designed to ensure the sustainability of your projects.",
+      "services": [
+        {
+          "title": "IT Infrastructure Management",
+          "description": "Implementation, maintenance and supervision of IT environments (servers, networks, cloud, security, etc.)."
+        },
+        {
+          "title": "Technical Support & Assistance",
+          "description": "Helpdesk service, remote or on-site troubleshooting, preventive and corrective maintenance."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Implementation of security policies, firewalls, backup, access control, vulnerability audits."
+        },
+        {
+          "title": "Virtualization & Cloud Computing",
+          "description": "Cloud migration, deployment of virtual environments, hybrid solutions."
+        },
+        {
+          "title": "Application Development",
+          "description": "Design and deployment of custom software solutions adapted to your business processes."
+        }
+      ],
+      "cta": {
+        "title": "Choose",
+        "titleHighlight": "reliable, sustainable and profitable support.",
+        "subtitle": "\" Contact our after-sales service now to guarantee the continuity and efficiency of your installations!\"",
+        "button": "Contact Us"
+      }
+    }
+  },
+   "bureau": {
+    "hero": {
+      "title": "BUILDING ENGINEERING & PUBLIC WORKS",
+      "description": "We offer a complete range for the construction of public and private buildings, hydraulic structures.",
+      "button": "Watch Video"
+    },
+    "cards": {
+      "heading": "Our Services",
+      "description": "From feasibility study to turnkey delivery, we support our clients at every stage of the project, ensuring a high level of technical expertise and regulatory compliance.",
+      "items": [
+        {
+          "title": "Studies",
+          "subtitle": "& Design",
+          "description": "Needs analysis and architectural program Technical studies 2D/3D modeling/ Planning, provisional costing and authorizations"
+        },
+        {
+          "title": "Project Management",
+          "subtitle": "& Site Monitoring",
+          "description": "Work planning and stakeholder coordination Site monitoring, technical and quality controls Strict adherence to deadlines and contractual budget Transparent communication with the client"
+        },
+        {
+          "title": "Construction",
+          "subtitle": "& Delivery",
+          "description": "Structural and finishing works Integration of technical lots (electricity, plumbing, HVAC) Interior and exterior finishes according to specifications Work acceptance"
+        }
+      ],
+      "project": {
+        "title": "PROJECT:",
+        "subtitle": "Warehouse Construction",
+        "description": "Whether it's public, residential, educational or industrial buildings, each structure demonstrates our commitment to excellence, meeting deadlines and the most demanding standards.",
+        "button": "View Project"
+      }
+    },
+    "carousel": {
+      "heading": "Types of hydraulic structures supported",
+      "projects": [
+        { "title": "Tunnel" },
+        { "title": "Dam" },
+        { "title": "Drilling" },
+        { "title": "Canal" },
+        { "title": "Pumping" },
+        { "title": "Drainage" }
+      ],
+      "cta": {
+        "title": "Have a",
+        "titleHighlight": "construction",
+        "title2": "project in mind?",
+        "subtitle": "Let's build it together from today.",
+        "button": "Contact Us"
+      },
+      "navigation": {
+        "previous": "Previous slide",
+        "next": "Next slide",
+        "goToSlide": "Go to slide"
+      }
+    }
+  },
+  "control": {
+    "hero": {
+      "title": "Access Control & Security",
+      "description": "Thanks to advanced technologies, we ensure access management, real-time monitoring, and the protection of people and property against intrusions and threats.",
+      "button": "Download the flyer"
+    },
+    "cards": {
+      "heading": "Our Services",
+      "subtitle": "We provide high-performance solutions to secure buildings, infrastructures, and sensitive areas.",
+      "featured": {
+        "title": "Immersive visit of the construction materials and electrical equipment store",
+        "button": "Mango boutique"
+      },
+      "items": [
+        {
+          "title": "Smart Access Control",
+          "features": [
+            "Badge systems, RFID cards, and biometrics",
+            "Automatic gates with entry and exit management",
+            "Electronic locks and secure locking systems"
+          ]
+        },
+        {
+          "title": "Video Surveillance & Intrusion Detection",
+          "features": [
+            "Installation of high-definition cameras and IP video surveillance",
+            "Motion detection systems and connected alarms",
+            "Real-time monitoring and secure recording"
+          ]
+        },
+        {
+          "title": "Security & Risk Management",
+          "features": [
+            "Protection against intrusions, theft, and vandalism",
+            "Cybersecurity solutions for access control systems",
+            "Fire detection and integration with alert systems"
+          ]
+        },
+        {
+          "title": "Centralized Management & Automation",
+          "features": [
+            "Access supervision via management software",
+            "Cloud solutions for remote control",
+            "Access history and detailed activity reports"
+          ]
+        }
+      ]
+    },
+    "carousel": {
+      "quote": "Tailored solutions for securing offices and professional premises, managing access to buildings and parking areas, and advanced surveillance",
+      "cta": {
+        "title": "Secure your buildings with our",
+        "titleHighlight": "certified solutions.",
+        "subtitle": "Effectively protect your premises and control access with high-performance security solutions!",
+        "button": "Contact Us"
+      },
+      "navigation": {
+        "goToSlide": "Go to slide"
+      }
+    }
+  },
+  "dataProcessing": {
+    "hero": {
+      "title": "IT & DATA PROCESSING",
+      "description": "We help businesses effectively manage their IT systems and make the most of their data.",
+      "button": "Press Release"
+    },
+    "projects": {
+      "title": "Our IT Projects",
+      "subtitle": "innovation, performance and impact",
+      "description": "Each project presented reflects our commitment to innovation, rigor and customer satisfaction.",
+      "seeMore": "See more",
+      "items": [
+        {
+          "id": 1,
+          "title": "Content Management System (CMS) Software",
+          "excerpt": "We designed and developed a custom content management system (CMS)…",
+          "description": "We designed and developed a custom content management system (CMS), designed to offer simple, fast and fully customizable administration.",
+          "utility": "This solution allows the company to effectively manage its information, services and updates without depending on external technical support",
+          "clientFeedback": "The CMS designed by ElecIT Engineering simplified our content management. The tool is intuitive, fast and perfectly adapted to our needs. A real time-saver on a daily basis.",
+          "clientRole": "General Manager",
+          "date": "06/12/23",
+          "status": "completed"
+        },
+        {
+          "id": 2,
+          "title": "Customer Relationship Management (CRM) Software",
+          "excerpt": "Development of CRM software fully adapted to the company's needs...",
+          "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
+          "utility": "Improvement of customer relationship management and sales tracking",
+          "clientFeedback": "A powerful tool that transformed our customer approach.",
+          "clientRole": "Sales Director",
+          "date": "08/15/23",
+          "status": "completed"
+        },
+        {
+          "id": 3,
+          "title": "Customer Relationship Management (CRM) Software",
+          "excerpt": "Development of CRM software fully adapted to the company's needs...",
+          "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
+          "utility": "Improvement of customer relationship management and sales tracking",
+          "clientFeedback": "A powerful tool that transformed our customer approach.",
+          "clientRole": "Sales Director",
+          "date": "09/20/23",
+          "status": "in progress"
+        }
+      ],
+      "modal": {
+        "category": "IT and DATA PROCESSING",
+        "projectLabel": "Project:",
+        "dateLabel": "Completion date:",
+        "statusLabel": "Project status:",
+        "descriptionLabel": "Project description:",
+        "utilityLabel": "Purpose:",
+        "feedbackLabel": "Client feedback:",
+        "haveProject": "Have a project?",
+        "close": "Close"
+      },
+      "cta": {
+        "title": "Choose support that is",
+        "titleHighlight": "reliable, sustainable and cost-effective.",
+        "description": "\" Contact our after-sales service now to ensure the continuity and efficiency of your installations!\"",
+        "button": "Contact Us"
+      }
+    },
+    "services": {
+      "title": "IT Services",
+      "description": "We offer a complete range of IT services to support your organization's digital transformation, combining performance, security and scalability.",
+      "items": [
+        {
+          "title": "IT Infrastructure Management",
+          "description": "Setup, maintenance and supervision of IT environments (servers, networks, cloud, security, etc.)."
+        },
+        {
+          "title": "Technical Support & Assistance",
+          "description": "Helpdesk service, remote or on-site troubleshooting, preventive and corrective maintenance."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Implementation of security policies, firewall, backup, access control, vulnerability audits."
+        },
+        {
+          "title": "Virtualization & Cloud Computing",
+          "description": "Cloud migration, deployment of virtual environments, hybrid solutions."
+        },
+        {
+          "title": "Application Development",
+          "description": "Design and deployment of custom software solutions adapted to your business processes."
+        }
+      ]
+    },
+    "advantages": {
+      "headerTitle": "Key Advantages",
+      "description": "Thanks to our expertise, we support you in your company's digital transformation and help you make better decisions with your data.",
+      "documentationButton": "Documentation",
+      "items": [
+        {
+          "title": "System Reliability",
+          "description": "Stable, high-performance IT infrastructures that are always operational"
+        },
+        {
+          "title": "Enhanced Security",
+          "description": "Complete protection of data and systems against cyber threats."
+        },
+        {
+          "title": "Time Savings",
+          "description": "Task automation and responsive technical support so you can focus on what matters."
+        },
+        {
+          "title": "Cost Optimization",
+          "description": "Reduction of expenses related to maintenance, infrastructure and data management."
+        },
+        {
+          "title": "Smarter Decisions",
+          "description": "Access to clear and structured data to guide your strategic choices."
+        },
+        {
+          "title": "Flexibility and Scalability",
+          "description": "Solutions adapted to your growth and changing needs."
+        },
+        {
+          "title": "Regulatory Compliance",
+          "description": "Compliance with standards (such as GDPR) for legal data management."
+        }
+      ]
+    }
   }
-}
+
 }
