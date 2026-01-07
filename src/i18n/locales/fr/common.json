@@ -561,6 +561,7 @@
       }
     }
   },
+  
   "FabriMeca": {
     "heroTitle1": "CONCEPTION, FABRICATION MECANIQUE & METALLIQUE",
     "heroSubtitle": " Notre atelier concoit des appareils et machines standards ou personnalisés selon les spécifications de vos besoins",
@@ -674,7 +675,8 @@
         }
       }
     }
-  },
+  }
+},
   "whyChooseUs": {
     "title": "Pourquoi nous choisir?",
     "subtitle": "Nos solutions de tracking offrent des avantages concrets en matière de visibilité, de sécurité et d'optimisation des opérations, pour un meilleur contrôle de vos ressources en temps réel.",
@@ -819,7 +821,8 @@
         "responsable": "Directeur des opérations"
       }
     ]
-  },
+  }
+},
 
   "entreprise": {
     "hero": {
@@ -1100,8 +1103,8 @@
           "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
         }
       ]
-    },
-
+    }
+  },
     "fabriMeca": {
     "hero": {
       "title1": "Fabrication Mécanique & Métallique",
@@ -1650,3 +1653,4 @@
     }
   }
 }
+    
