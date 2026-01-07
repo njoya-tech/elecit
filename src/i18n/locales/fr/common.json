@@ -30,30 +30,27 @@
   "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Soumettre un projet",
-   "slide1": {
-  "title": "Bienvenue au pôle de la",
-  "highlighted": "Recherche",
-  "title2": "et de l'",
-  "highlighted2": "Excellence",
-  "title3": "dans l'ingénierie en Afrique centrale."
-},
-
-"slide2": {
-  "title": "Tout notre potentiel",
-  "highlighted": "technique",
-  "title2": "et",
-  "highlighted2": "technologique",
-  "title3": "au service de votre imagination"
-},
-
-"slide3": {
-  "title": "Optez pour des solutions",
-  "highlighted": "innovantes",
-  "title2": "",
-  "highlighted2": "",
-  "title4": "Une approche sur mesure, soucieuse de votre bien être et respectueuse de ses engagements professionnels"
-}
-
+    "slide1": {
+      "title": "Bienvenue au pôle de la",
+      "highlighted": "Recherche",
+      "title2": "et de l'",
+      "highlighted2": "Excellence",
+      "title3": "dans l'ingénierie en Afrique centrale."
+    },
+    "slide2": {
+      "title": "Tout notre potentiel",
+      "highlighted": "technique",
+      "title2": "et",
+      "highlighted2": "technologique",
+      "title3": "au service de votre imagination"
+    },
+    "slide3": {
+      "title": "Optez pour des solutions",
+      "highlighted": "innovantes",
+      "title2": "",
+      "highlighted2": "",
+      "title4": "Une approche sur mesure, soucieuse de votre bien être et respectueuse de ses engagements professionnels"
+    }
   },
 
   "solution": {
@@ -1652,4 +1649,4 @@
       ]
     }
   }
-  }
+}
