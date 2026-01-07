@@ -2,11 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
-
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 const BureauCards = () => {
   const { t } = useTranslation();
 
-  const cards = t('bureau.cards.items', { returnObjects: true });
+  const cards = t("bureau.cards.items", { returnObjects: true });
 
   return (
     <section
@@ -19,11 +20,18 @@ const BureauCards = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-6 md:mb-8">
           {/* Helmet Icon */}
           <div className="shrink-0">
-            <img
+            <motion.img
               src={ICONS.Casque}
               alt="Casque de chantier"
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40
-                      animate-[bounce_3s_ease-in-out_infinite]"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 -scale-x-100"
+              animate={{
+                y: [0, -40, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
           </div>
 
@@ -34,10 +42,10 @@ const BureauCards = () => {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 md:-mt-10 text-center"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
-              {t('bureau.cards.heading')}
+              {t("bureau.cards.heading")}
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-900 leading-relaxed text-center max-w-3xl mx-auto px-2">
-              {t('bureau.cards.description')}
+              {t("bureau.cards.description")}
             </p>
           </div>
         </div>
@@ -64,7 +72,8 @@ const BureauCards = () => {
           src={ICONS.Engrenage_plan}
           alt=""
           aria-hidden="true"
-          className="hidden lg:block absolute -right-20 bottom-10 z-0 w-32 opacity-100 pointer-events-none"
+          className="hidden lg:block absolute -right-5 top-68 
+          z-0 w-32 opacity-100 pointer-events-none"
           style={{
             animation: "spin 8s linear infinite reverse",
             willChange: "transform",
@@ -126,7 +135,7 @@ const BureauCards = () => {
         <div className="relative h-[350px] sm:h-[400px] md:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
           {/* Background Image */}
           <img
-            src={IMAGES.IMG4}
+            src={IMAGES.IMG1}
             alt="Chantier de construction d'un hangar"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
@@ -142,13 +151,15 @@ const BureauCards = () => {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:-mt-20">
               <span style={{ color: MY_COLORS.secondaryGreen }}>
-                {t('bureau.cards.project.title')}
+                {t("bureau.cards.project.title")}
               </span>{" "}
-              <span className="text-white">{t('bureau.cards.project.subtitle')}</span>
+              <span className="text-white">
+                {t("bureau.cards.project.subtitle")}
+              </span>
             </h2>
 
             <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-2xl">
-              {t('bureau.cards.project.description')}
+              {t("bureau.cards.project.description")}
             </p>
 
             <div>
@@ -164,7 +175,7 @@ const BureauCards = () => {
                   e.currentTarget.style.color = "#0f172a";
                 }}
               >
-                {t('bureau.cards.project.button')}
+                {t("bureau.cards.project.button")}
               </button>
             </div>
           </div>

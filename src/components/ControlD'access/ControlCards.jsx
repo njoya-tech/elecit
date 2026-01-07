@@ -3,6 +3,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ICONS, OBJECTS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const ControlCards = () => {
   const { t } = useTranslation();
@@ -38,7 +40,7 @@ const ControlCards = () => {
     }
   }, [currentIndex, carouselImages.length]);
 
-  const cards = t('control.cards.items', { returnObjects: true });
+  const cards = t("control.cards.items", { returnObjects: true });
 
   return (
     <div className="w-full py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20">
@@ -65,7 +67,7 @@ const ControlCards = () => {
            sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 lg:py-8"
           style={{ color: MY_COLORS.secondaryGreen }}
         >
-          {t('control.cards.heading')}
+          {t("control.cards.heading")}
         </h2>
       </div>
 
@@ -77,7 +79,7 @@ const ControlCards = () => {
          sm:px-6 max-w-4xl mx-auto leading-relaxed"
         style={{ color: MY_COLORS.black }}
       >
-        {t('control.cards.subtitle')}
+        {t("control.cards.subtitle")}
       </p>
 
       {/* Main Grid Layout */}
@@ -98,18 +100,18 @@ const ControlCards = () => {
               className="h-full flex flex-col justify-between min-h-[400px] 
             sm:min-h-[450px] md:min-h-[500px]"
             >
-              {/* Green Card with Carousel */}
+              {/* Green Card with Carousel - UPDATED PADDING */}
               <div
-                className="rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 
+                className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-8 lg:p-12 
                 shadow-lg mb-4 sm:mb-5 md:mb-6 flex items-center justify-center"
                 style={{
                   background: `linear-gradient(135deg, ${MY_COLORS.secondaryGreen} 0%, ${MY_COLORS.green} 100%)`,
                 }}
               >
                 <div
-                  className="w-[160px] sm:w-[180px] md:w-[200px] 
-                  lg:w-[220px] xl:w-[250px] h-[160px] sm:h-[180px] md:h-[200px] 
-                  lg:h-[220px] xl:h-[250px] flex items-center justify-center
+                  className="w-[140px] sm:w-40 md:w-[180px] 
+                  lg:w-[200px] xl:w-[220px] h-[140px] sm:h-40 md:h-[180px] 
+                  lg:h-[200px] xl:h-[220px] flex items-center justify-center
                    overflow-hidden relative"
                 >
                   <div
@@ -140,34 +142,54 @@ const ControlCards = () => {
                 md:text-xl mb-3 sm:mb-4 px-2 sm:px-4 leading-snug"
                 style={{ color: MY_COLORS.green }}
               >
-                {t('control.cards.featured.title')}
+                {t("control.cards.featured.title")}
               </h3>
 
               {/* Black Button */}
-              <button
-                className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full
-                font-semibold text-sm sm:text-base transition-opacity 
-                hover:opacity-90 flex items-center justify-center mx-auto gap-2"
-                style={{
-                  backgroundColor: MY_COLORS.black,
-                  color: MY_COLORS.white,
-                }}
-              >
-                {t('control.cards.featured.button')}
-                <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="relative mt-4 sm:mt-6 flex items-center justify-center gap-4 left-10">
+                <button
+                  className="px-6 sm:px-8 py-2 sm:py-3 rounded-full 
+    text-sm sm:text-base font-semibold transition-all duration-300
+    border-2"
+                  style={{
+                    backgroundColor: "black",
+                    color: "white",
+                    borderColor: "black",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "white";
+                    e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+                    e.currentTarget.style.borderColor =
+                      MY_COLORS.secondaryGreen;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "black";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.borderColor = "black";
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
+                  {t("control.cards.featured.button")}
+                </button>
+
+                <motion.img
+                  src={ICONS.flech_icon}
+                  alt="Arrow"
+                  className="w-10 sm:w-22 opacity-100 origin-top"
+                  style={{
+                    position: "relative",
+                    top: "28px",
+                    right: "20px",
+                  }}
+                  animate={{
+                    rotate: [-15, 15, -15],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                  }}
+                />
+              </div>
             </div>
           </div>
 
@@ -191,84 +213,71 @@ const ControlCards = () => {
                 style={{ borderColor: MY_COLORS.secondaryGreen }}
               ></div>
 
-              {cards.map((card, index) => {
-                const isTopRow = index < 2;
+              {cards.map((card, index) => (
+                <div
+                  key={index}
+                  className={`relative pt-8 sm:pt-10 p-4 sm:p-5 md:p-8 lg:p-12 
+                  rounded-lg sm:rounded-xl shadow-lg 
+                  bg-white hover:shadow-xl transition-shadow duration-300 
+                  border border-gray-100 z-10 ${
+                    index >= 2 ? "mt-8 sm:mt-12 md:mt-16 lg:mt-20" : ""
+                  }`}
+                >
+                  {/* Badge Icon - UPDATED POSITIONING */}
+                  <div className="absolute -top-8 sm:-top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
+                    <img
+                      src={
+                        [
+                          ICONS.badge,
+                          ICONS.stockage,
+                          ICONS.securite_icon,
+                          ICONS.decision_icon,
+                        ][index]
+                      }
+                      alt={card.title}
+                      className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
+                    />
+                  </div>
 
-                return (
-                  <div
-                    key={index}
-                    className="relative rounded-lg 
-                    sm:rounded-xl p-4 
-                    sm:p-5 md:p-6 pt-10
-                    sm:pt-12 shadow-lg hover:shadow-xl
-                     transition-shadow z-10"
-                    style={{
-                      backgroundColor: MY_COLORS.white,
-                      border: `1px solid #e5e7eb`,
-                      transform:
-                        window.innerWidth >= 1024
-                          ? isTopRow
-                            ? "translateY(-10px)"
-                            : "translateY(10px)"
-                          : "none",
-                    }}
-                  >
-                    {/* Badge Icon */}
-                    <div
-                      className="absolute left-1/2 -translate-x-1/2 w-24 
-                      sm:w-28 h-16 sm:h-20 flex items-center justify-center"
-                      style={{
-                        top: "-38px",
-                      }}
+                  {/* Card Content */}
+                  <div className="flex flex-col items-center text-center">
+                    <h3
+                      className="text-base sm:text-lg md:text-xl font-bold 
+                      mb-2 sm:mb-3 text-center mt-4"
+                      style={{ color: MY_COLORS.black }}
                     >
-                      <img
-                        src={[ICONS.badge, ICONS.stockage, ICONS.securite_icon, ICONS.decision_icon][index]}
-                        alt={card.title}
-                        className="w-14 h-20 sm:w-16 sm:h-24 object-contain"
-                        style={{
-                          filter: `brightness(0) saturate(100%) invert(56%) sepia(18%) saturate(1367%) hue-rotate(34deg) brightness(91%) contrast(87%)`,
-                        }}
-                      />
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="flex flex-col items-center text-center">
-                      <h3
-                        className="text-base sm:text-lg md:text-xl font-bold 
-                        mb-3 sm:mb-4 md:mb-4 leading-snug"
-                        style={{ color: MY_COLORS.black }}
-                      >
-                        {card.title}
-                      </h3>
-                      <div
-                        className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm 
-                        md:text-base text-slate-950"
-                        style={{ color: "#6b7280" }}
-                      >
-                        {card.features.map((feature, idx) => (
-                          <p key={idx} className="leading-relaxed">
-                            {feature}
-                            {idx < card.features.length - 1 && "/"}
-                          </p>
-                        ))}
-                      </div>
+                      {card.title}
+                    </h3>
+                    <div className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
+                      {card.features.map((feature, idx) => (
+                        <p key={idx} className="leading-relaxed">
+                          {feature}
+                          {idx < card.features.length - 1 && " / "}
+                        </p>
+                      ))}
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
-            {/* Decorative Helmet Icon (Desktop Only) */}
+            {/* Decorative Helmet Icon (Desktop Only) - FIXED CLASS */}
             <div
-              className="hidden xl:block absolute -right-54 top-1/2 
+              className="hidden xl:block absolute top-1/2 
             -translate-y-1/2 z-0"
+              style={{ right: "-216px" }}
             >
-              <img
+              <motion.img
                 src={ICONS.Casque}
                 alt="Helmet decoration"
-                className="w-36 h-36 opacity-100 animate-bounce"
-                style={{
-                  animationDuration: "4s",
+                className="w-36 h-36 opacity-100"
+                animate={{
+                  y: [0, -50, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
                 }}
               />
             </div>

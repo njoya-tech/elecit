@@ -8,8 +8,6 @@ import EntrepriseAcc from "../../components/EntrepriseCompo/EntrepriseAcc.jsx";
 import EntreprisePartner from "../../components/EntrepriseCompo/EntreprisePartner.jsx";
 import Footer from "../../components/features/Footer.jsx";
 
- 
-
 const Entreprise = () => {
   return (
     <div className="relative w-full min-h-screen">
@@ -27,26 +25,27 @@ const Entreprise = () => {
         {/* CONTENT SECTIONS - CONTAINER */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
           {/* Cards Section */}
-          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <section>
             <ElecITCarouselCard />
           </section>
+          
           {/* Cards Section */}
-          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <section>
             <EntrepriseCards />
           </section>
 
           {/* Team Section */}
-          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <section>
             <EntrepriseTeam />
           </section>
 
           {/* Acc Section */}
-          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <section>
             <EntrepriseAcc />
           </section>
 
           {/* Partner Section */}
-          <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <section>
             <EntreprisePartner />
           </section>
         </div>

@@ -3,6 +3,8 @@ import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const HeroData = () => {
   const { t } = useTranslation();
@@ -52,7 +54,6 @@ const HeroData = () => {
 
       {/* ================= CENTERED CONTENT ================= */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
-        
         <h1
           className="
             font-extrabold 
@@ -76,9 +77,26 @@ const HeroData = () => {
           {t("dataProcessing.hero.description")}
         </p>
 
-        <CTAButton onClick={() => alert("Video clicked!")}>
-          {t("dataProcessing.hero.button")}
-        </CTAButton>
+        {/* CTA + Arrow */}
+        <div className="flex items-center gap-4 lg:mt-20">
+          <CTAButton onClick={() => alert("Video clicked!")}>
+            {t("entreprise.hero.button")}
+          </CTAButton>
+
+          <motion.img
+            src={ICONS.flech_icon}
+            alt="Arrow"
+            className="w-10 sm:w-22 opacity-100 origin-top"
+            animate={{
+              rotate: [-15, 15, -15],
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+        </div>
       </div>
     </section>
   );

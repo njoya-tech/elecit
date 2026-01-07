@@ -118,12 +118,15 @@ const ControlCarousel = () => {
               src={ICONS.formTech}
               alt=""
               aria-hidden="true"
-              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[180%]"
+              className="absolute z-0 pointer-events-none opacity-30 
+              top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[80%]"
             />
 
             <h3
-              className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
-              style={{ color: MY_COLORS.white, top: "24%" }}
+              className="relative z-20 text-center text-2xl 
+              md:text-4xl lg:text-2xl xl:text-3xl 
+              font-bold leading-tight mb-8 md:mb-10"
+              style={{ color: MY_COLORS.white, top: "20%" }}
             >
               {t("control.carousel.cta.title")}{" "}
               <span style={{ color: MY_COLORS.secondaryGreen }}>
@@ -131,12 +134,13 @@ const ControlCarousel = () => {
               </span>
             </h3>
 
-            <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
+            <p className="text-center md:text-lg lg:text-xl
+             text-white/90 max-w-2xl mx-auto mt-10">
               {t("control.carousel.cta.subtitle")}
             </p>
 
             <CTAButton
-              className="absolute top-10 md:top-5 md:w-60"
+              className="absolute top-10 md:top-2 md:w-60"
               onClick={() => alert("Video clicked!")}
             >
               {t("control.carousel.cta.button")}

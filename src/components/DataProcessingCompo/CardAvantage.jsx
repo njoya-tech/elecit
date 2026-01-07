@@ -2,10 +2,14 @@ import React from "react";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const CardAvantage = () => {
   const { t } = useTranslation();
-  const advantages = t("dataProcessing.advantages.items", { returnObjects: true });
+  const advantages = t("dataProcessing.advantages.items", {
+    returnObjects: true,
+  });
 
   return (
     <>
@@ -33,15 +37,49 @@ const CardAvantage = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
             {/* Left: Description Text */}
             <div className="w-full md:w-1/2">
-              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
+              <p className="text-gray-900 text-sm sm:text-base md:text-lg leading-relaxed">
                 {t("dataProcessing.advantages.description")}
               </p>
 
               {/* Documentation Button with curved arrow */}
               <div className="mt-4 sm:mt-6 flex items-center gap-4">
-                <button className="bg-black text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-gray-800 transition">
+                <button
+                  className="px-6 sm:px-8 py-2 sm:py-3 rounded-full 
+  text-sm sm:text-base font-semibold transition-all duration-300
+  border-2"
+                  style={{
+                    backgroundColor: "black",
+                    color: "white",
+                    borderColor: "black",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "white";
+                    e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+                    e.currentTarget.style.borderColor =
+                      MY_COLORS.secondaryGreen;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "black";
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.borderColor = "black";
+                  }}
+                >
                   {t("dataProcessing.advantages.documentationButton")}
                 </button>
+
+                <motion.img
+                  src={ICONS.flech_icon}
+                  alt="Arrow"
+                  className="w-10 sm:w-22 opacity-100 origin-top"
+                  animate={{
+                    rotate: [-15, 15, -15],
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                  }}
+                />
               </div>
             </div>
 
@@ -141,8 +179,10 @@ const CardAvantage = () => {
               }}
             ></div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 
-             md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-6 lg:-top-9 relative">
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 
+             md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-6 lg:-top-9 relative"
+            >
               {/* Card 1: Sécurité renforcée - GREEN */}
               <div
                 className="rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5"

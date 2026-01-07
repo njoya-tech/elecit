@@ -2,12 +2,13 @@
 
 // ===== HERO IMAGES =====
 import heroBlog from "./hero/blog-hero.JPG";
-import heroBureauEtude from "./hero/bureauetude-hero.jpg";
+import heroBureauEtude from "./hero/bureau_e1.png";
 import heroContact from "./hero/contact-hero.JPG";
 import heroDataProcessing from "./hero/dataprocessing-hero.jpg";
 import heroEntreprise from "./hero/entreprise-hero.JPG";
 import heroSav from "./hero/sav-hero.jpg";
 import heroSecurity from "./hero/security-hero.JPG";
+import heroControl from "./hero/control_d'access.png";
 
 // ===== ICONS =====
 import formTech from "./icons/form_tech.svg"; // ✅ path is correct
@@ -40,7 +41,7 @@ import IMG4 from "./images/image_4.JPG";
 import IMG5 from "./images/image_5.jpg";
 import IMG6 from "./images/image_6.jpg";
 import IMG7 from "./images/image_7.jpg";
-import IMG8 from "./images/image_8.JPG";
+import IMG8 from "./images/bureau_card.png";
 import IMG9 from "./images/image_9.JPG";
 import IMG10 from "./images/image_10.jpg";
 import IMG11 from "./images/image_11.JPG";
@@ -90,6 +91,8 @@ export const HERO = {
   entreprise: heroEntreprise,
   sav: heroSav,
   security: heroSecurity,
+  control: heroControl,
+  
 };
 
 export const ICONS = {

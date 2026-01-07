@@ -127,7 +127,7 @@ const BlogDetail = ({ postId, onBack }) => {
           <button
             key={categoryKey}
             onClick={() => handleCategoryClick(categoryKey)}
-            className="text-sm sm:text-base md:text-lg font-medium px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 flex-shrink-0"
+            className="text-sm sm:text-base md:text-lg font-medium px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 shrink-0"
             style={{
               color:
                 post.category === categoryKey ? MY_COLORS.secondaryGreen : "#000",
@@ -146,7 +146,7 @@ const BlogDetail = ({ postId, onBack }) => {
         ))}
 
         {/* Plus Dropdown */}
-        <div className="relative flex-shrink-0" ref={categoryDropdownRef}>
+        <div className="relative shrink-0" ref={categoryDropdownRef}>
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex items-center gap-1 sm:gap-2 text-sm sm:text-base md:text-lg font-medium px-3 py-2 transition-colors duration-300 whitespace-nowrap"
@@ -178,7 +178,7 @@ const BlogDetail = ({ postId, onBack }) => {
 
           {/* Dropdown Menu */}
           {isDropdownOpen && (
-            <div className="absolute top-full right-0 mt-2 w-48 sm:w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 min-w-[160px]">
+            <div className="absolute top-full right-0 mt-2 w-48 sm:w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 min-w-40">
               {dropdownCategoriesKeys.map((categoryKey) => (
                 <button
                   key={categoryKey}
@@ -214,7 +214,7 @@ const BlogDetail = ({ postId, onBack }) => {
             <img
               src={post.author.avatar}
               alt={post.author.name}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shrink-0"
             />
             <div className="min-w-0">
               <p
@@ -230,7 +230,7 @@ const BlogDetail = ({ postId, onBack }) => {
           </div>
 
           {/* Three-dot menu */}
-          <div className="relative flex-shrink-0" ref={menuRef}>
+          <div className="relative shrink-0" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-400 hover:text-gray-600 transition-colors p-1 sm:p-0"
@@ -416,7 +416,7 @@ const BlogDetail = ({ postId, onBack }) => {
                       setComment("");
                     }}
                     disabled={!comment.trim()}
-                    className="px-4 sm:px-6 py-2 rounded-md font-semibold text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 whitespace-nowrap flex-shrink-0"
+                    className="px-4 sm:px-6 py-2 rounded-md font-semibold text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 whitespace-nowrap shrink-0"
                     style={{
                       backgroundColor: comment.trim()
                         ? MY_COLORS.secondaryGreen
@@ -531,11 +531,11 @@ const BlogDetail = ({ postId, onBack }) => {
                   type="text"
                   value={window.location.href}
                   readOnly
-                  className="flex-1 px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm text-gray-600 bg-gray-50 min-h-[40px]"
+                  className="flex-1 px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm text-gray-600 bg-gray-50 min-h-10"
                 />
                 <button
                   onClick={handleCopyLink}
-                  className="px-4 sm:px-6 py-2 rounded-lg font-medium text-white transition-colors whitespace-nowrap flex-shrink-0 mt-2 sm:mt-0"
+                  className="px-4 sm:px-6 py-2 rounded-lg font-medium text-white transition-colors whitespace-nowrap shrink-0 mt-2 sm:mt-0"
                   style={{ backgroundColor: MY_COLORS.secondaryGreen }}
                 >
                   {copySuccess ? t('blogPage.detail.shareModal.copied') : t('blogPage.detail.shareModal.copy')}
