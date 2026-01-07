@@ -7,5 +7,12 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss()],
     base: '/elecit/',
-  
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[hash][extname]'
+      }
+    }
+  }
 })
