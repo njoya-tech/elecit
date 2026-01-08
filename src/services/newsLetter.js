@@ -1,13 +1,12 @@
 // src/services/newsletter.service.js
 import { directus } from './api/directus';
-import { createItem, readItems } from '@directus/sdk';
+import { createItem, readItems, updateItem } from '@directus/sdk';
 
 /**
  * Service de gestion de la newsletter
  * Gère les inscriptions multilingues (fr, en, de)
  */
 const NewsletterService = {
-  
   /**
    * Inscription à la newsletter
    * @param {string} email - Email de l'abonné
@@ -27,7 +26,7 @@ const NewsletterService = {
 
       // Vérifier si l'email existe déjà
       const existing = await this.checkExisting(email);
-      
+
       if (existing) {
         // Réactiver si inactif
         if (existing.status === 'inactive') {
@@ -42,21 +41,20 @@ const NewsletterService = {
           email: email.toLowerCase().trim(),
           language,
           status: 'active',
-          created_at: new Date().toISOString()
+          created_at: new Date().toISOString(),
         })
       );
 
       return {
         success: true,
         message: 'Inscription réussie',
-        data: result
+        data: result,
       };
-
     } catch (error) {
       console.error('Erreur inscription newsletter:', error);
       return {
         success: false,
-        message: error.message || 'Erreur lors de l\'inscription'
+        message: error.message || 'Erreur lors de l\'inscription',
       };
     }
   },
@@ -72,10 +70,10 @@ const NewsletterService = {
         readItems('newsletter_subscriptions', {
           filter: {
             email: {
-              _eq: email.toLowerCase().trim()
-            }
+              _eq: email.toLowerCase().trim(),
+            },
           },
-          limit: 1
+          limit: 1,
         })
       );
 
@@ -95,18 +93,18 @@ const NewsletterService = {
     try {
       await directus.request(
         updateItem('newsletter_subscriptions', id, {
-          status: 'active'
+          status: 'active',
         })
       );
 
       return {
         success: true,
-        message: 'Abonnement réactivé'
+        message: 'Abonnement réactivé',
       };
     } catch (error) {
       return {
         success: false,
-        message: 'Erreur lors de la réactivation'
+        message: 'Erreur lors de la réactivation',
       };
     }
   },
@@ -119,26 +117,25 @@ const NewsletterService = {
   async unsubscribe(email) {
     try {
       const existing = await this.checkExisting(email);
-      
+
       if (!existing) {
         throw new Error('Email non trouvé');
       }
 
       await directus.request(
         updateItem('newsletter_subscriptions', existing.id, {
-          status: 'inactive'
+          status: 'inactive',
         })
       );
 
       return {
         success: true,
-        message: 'Désinscription réussie'
+        message: 'Désinscription réussie',
       };
-
     } catch (error) {
       return {
         success: false,
-        message: error.message || 'Erreur lors de la désinscription'
+        message: error.message || 'Erreur lors de la désinscription',
       };
     }
   },
@@ -162,23 +159,23 @@ const NewsletterService = {
       const all = await directus.request(
         readItems('newsletter_subscriptions', {
           aggregate: {
-            count: '*'
+            count: '*',
           },
-          groupBy: ['language', 'status']
+          groupBy: ['language', 'status'],
         })
       );
 
       return {
         success: true,
-        data: all
+        data: all,
       };
     } catch (error) {
       return {
         success: false,
-        message: 'Erreur récupération stats'
+        message: 'Erreur récupération stats',
       };
     }
-  }
+  },
 };
 
 export default NewsletterService;
