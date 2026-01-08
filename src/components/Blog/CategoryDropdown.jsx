@@ -23,12 +23,12 @@ export const CategoryDropdown = ({ categories, onCategorySelect, activeCategory 
       {/* Dropdown Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 text-base md:text-lg font-bold transition-colors hover:opacity-80"
+        className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-lg font-bold transition-colors hover:opacity-80 px-2 sm:px-0"
         style={{ color: MY_COLORS.secondaryGreen }}
       >
         <span>Plus</span>
         <svg
-          className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -44,7 +44,7 @@ export const CategoryDropdown = ({ categories, onCategorySelect, activeCategory 
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+        <div className="absolute top-full right-0 mt-2 w-48 sm:w-52 md:w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
           {categories.map((category) => (
             <button
               key={category}
@@ -52,7 +52,7 @@ export const CategoryDropdown = ({ categories, onCategorySelect, activeCategory 
                 onCategorySelect(category);
                 setIsOpen(false);
               }}
-              className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors ${
+              className={`w-full text-left px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-medium transition-colors ${
                 activeCategory === category
                   ? 'bg-green-50'
                   : 'hover:bg-gray-50'
@@ -70,18 +70,18 @@ export const CategoryDropdown = ({ categories, onCategorySelect, activeCategory 
   );
 };
 
-// SIDEBAR COMPONENT for category list (like in Image 3)
+// SIDEBAR COMPONENT for category list
 export const CategorySidebar = ({ categories, onCategorySelect, activeCategory }) => {
   return (
-    <aside className="w-full lg:w-64 bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-bold text-gray-900 mb-4">Catégories</h3>
+    <aside className="w-full lg:w-64 bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6">
+      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Catégories</h3>
       
-      <nav className="space-y-2">
+      <nav className="space-y-1.5 sm:space-y-2">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => onCategorySelect(category)}
-            className={`w-full text-left px-4 py-2.5 rounded-lg font-medium transition-all duration-300 ${
+            className={`w-full text-left px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
               activeCategory === category
                 ? 'bg-green-50 shadow-sm'
                 : 'hover:bg-gray-50'
@@ -117,17 +117,19 @@ export const BlogCardsWithDropdown = () => {
   ];
 
   return (
-    <section className="w-full py-12 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="w-full py-8 sm:py-10 md:py-12 bg-white">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* CATEGORY NAVIGATION */}
-        <nav className="flex items-center justify-center gap-8 mb-12 flex-wrap">
+        <nav className="flex items-center justify-center gap-3 
+        sm:gap-4 md:gap-6 lg:gap-8 mb-8 
+        sm:mb-10 md:mb-12 flex-wrap">
           {/* Main Categories */}
           {mainCategories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`text-base md:text-lg font-bold transition-colors duration-300 ${
+              className={`text-sm sm:text-base md:text-lg font-bold transition-colors duration-300 px-2 sm:px-0 whitespace-nowrap ${
                 activeCategory === category
                   ? 'text-green-600'
                   : 'text-black hover:text-gray-600'
@@ -150,7 +152,7 @@ export const BlogCardsWithDropdown = () => {
 
         {/* Main Content Area */}
         <div className="flex-1">
-          <p className="text-center text-gray-500 py-20">
+          <p className="text-center text-gray-500 py-12 sm:py-16 md:py-20 text-sm sm:text-base">
             Content for: <strong>{activeCategory}</strong>
           </p>
         </div>

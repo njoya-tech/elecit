@@ -1,6 +1,5 @@
 {
-    
-"nav": {
+  "nav": {
     "accueil": "Startseite",
     "entreprise": "Unternehmen",
     "solutions": "Lösungen",
@@ -27,79 +26,66 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
-    "contact": {
-      "floatingButton": "Kontaktieren Sie uns",
-      "popup": {
-        "title": "Kontaktieren Sie uns",
-        "subtitle": "Wir antworten so schnell wie möglich",
-        "availability": "Wir sind von Montag bis Freitag von 8 bis 18 Uhr auf WhatsApp erreichbar. Zögern Sie nicht, uns zu kontaktieren.",
-        "openWhatsApp": "WhatsApp öffnen",
-        "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
-      "leftButton":"Zurück",
-"rightButton":"Senden"
 
-
-      }
+  "hero": {
+    "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+    "submitProject": "Projekt einreichen",
+    "slide1": {
+      "title": "Unser gesamtes",
+      "highlighted": "technisches",
+      "title2": "und",
+      "highlighted2": "technologisches",
+      "title3": "Potenzial im Dienste Ihrer Vorstellungskraft"
     },
+    "slide2": {
+      "title": "Innovation und",
+      "highlighted": "Expertise",
+      "title2": "für Ihre",
+      "highlighted2": "ambitioniertesten",
+      "title3": "Projekte"
+    },
+    "slide3": {
+      "title": "Intelligente und",
+      "highlighted": "nachhaltige",
+      "title2": "Lösungen",
+      "highlighted2": "",
+      "title3": "für Ihre Zukunft"
+    }
+  },
 
-    "seeMore": "Mehr anzeigen",
-"hero": {
-  "subtitle": "AFRIKA'S ERSTES HIGH-TECH-UNTERNEHMEN",
-  "submitProject": "Projekt einreichen",
-  "slide1": {
-    "title": "Willkommen im Zentrum für",
-    "highlighted": "Forschung",
-    "title2": "und",
-    "highlighted2": "Exzellenz",
-    "title3": "im Ingenieurwesen in Zentralafrika."
-  },
-  "slide2": {
-    "title": "Unser gesamtes",
-    "highlighted": "technisches",
-    "title2": "und",
-    "highlighted2": "technologisches",
-    "title3": "Potenzial steht Ihrer Vorstellungskraft zur Verfügung"
-  },
-  "slide3": {
-    "title": "Setzen Sie auf",
-    "highlighted": "innovative",
-    "title2": "",
-    "highlighted2": "",
-    "title4": "Ein maßgeschneiderter Ansatz, der Ihr Wohlbefinden berücksichtigt und seine beruflichen Verpflichtungen respektiert"
-  }
-},
+
 
 
   "solution": {
-     "bannerTitle": "Intelligente",
-  "bannerHighlight": "Lösungen für",
-  "bannerTitle2": "spezifische Bedürfnisse",
-  "viewMore": "Mehr anzeigen",
-  "items": [
-    {
-      "title": "Intelligente Gebäude & Automatisierung",
-      "description": "Intelligente Verwaltung aller Ausrüstungen in öffentlichen oder privaten Gebäuden und des Energieverbrauchs.",
-      "imagePlaceholderText": "Gebäude"
-    },
-    {
-      "title": "Design, Mechanische & Metallische Fertigung",
-      "description": "Fertigung von Metallinfrastrukturen, landwirtschaftlichen Maschinen, rollendem Gerät, neuen Maschinenteilen und Ersatzteilen.",
-      "imagePlaceholderText": "Fertigung"
-    },
-    {
-      "title": "GPS & Tracking (More Than Track)",
-      "description": "Präzises Echtzeit-Tracking von Fahrzeugflotten und anderen Assets. Nachhaltige Analyse und Optimierung des gesamten Portfolios.",
-      "imagePlaceholderText": "GPS Tracking"
-    }
-  ]
+    "bannerTitle": "Intelligente",
+    "bannerHighlight": "Lösungen für",
+    "bannerTitle2": "spezifische Bedürfnisse",
+    "viewMore": "Mehr anzeigen",
+    "items": [
+      {
+        "title": "Intelligente Gebäude & Automatisierung",
+        "description": "Intelligente Verwaltung aller Ausrüstungen in öffentlichen oder privaten Gebäuden und des Energieverbrauchs.",
+        "imagePlaceholderText": "Gebäude"
+      },
+      {
+        "title": "Design, Mechanische & Metallische Fertigung",
+        "description": "Fertigung von Metallinfrastrukturen, landwirtschaftlichen Maschinen, rollendem Gerät, neuen Maschinenteilen und Ersatzteilen.",
+        "imagePlaceholderText": "Fertigung"
+      },
+      {
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Präzises Echtzeit-Tracking von Fahrzeugflotten und anderen Assets. Nachhaltige Analyse und Optimierung des gesamten Portfolios.",
+        "imagePlaceholderText": "GPS Tracking"
+      }
+    ]
   },
 
   "trackingPlatform": {
-  "title": "Tracking-Plattform verfügbar auf Web & Smartphone",
-  "buttonText": "Video ansehen"
-},
+    "title": "Tracking-Plattform verfügbar auf Web & Smartphone",
+    "buttonText": "Video ansehen"
+  },
 
-"serviceOffer": {
+  "serviceOffer": {
     "title": "Ein",
     "titleHighlight": "vielfältiges Dienstleistungsangebot",
     "title2": "",
@@ -170,101 +156,103 @@
     ]
   },
 
-    "smartBuild":{
-  "title": "Ausstellung von Lösungen und intelligentes Gebäude",
-  "buttonText": "Besuchen Sie den Showroom"
-},
 
-"blogBanner": {
-  "titlePart1": "Bleiben Sie auf dem Laufenden über unsere ",
-  "highlightWord": "Neuigkeiten",
-  "titlePart2": ", indem Sie unseren Blog besuchen"
-},
+  
 
-"blog": {
-  "seeMore": "Mehr anzeigen",
-  "articles": [
-    {
-      "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
-      "title": "Warum maßgeschneiderte Fertigung die kamerunische Industrie verändert?",
-      "description": "In vielen Industriebereichen in Kamerun stoßen Unternehmen auf eine wiederkehrende Schwierigkeit...."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-      "title": "5 Wege, wie ein intelligentes Hotel Energie spart und Kunden bindet",
-      "description": "In einem zunehmend wettbewerbsorientierten Hotelmarkt in Kamerun ist die Frage zweifach..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
-      "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
-      "description": "Transport und Logistik sind das Herzstück der kamerunischen Wirtschaft, aber dieser Sektor steht vor großen Herausforderungen...."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-      "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
-      "description": "Die kamerunische Landwirtschaft, Motor der Volkswirtschaft, steht vor einer großen Herausforderung..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
-      "title": "Von Rohmetall zur Innovation: Wie wir nachhaltige Infrastrukturen gestalten",
-      "description": "Rohmaterial in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallurgie..."
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      "title": "Datenverarbeitung und Sicherheit: Das digitale Gold Ihres Unternehmens schützen",
-      "description": "Jedes Unternehmen, unabhängig von seiner Größe, generiert täglich erhebliche Mengen an Informationen...."
-    }
-  ]
-},
+  "smartBuild": {
+    "title": "Ausstellung von Lösungen und intelligentes Gebäude",
+    "buttonText": "Besuchen Sie den Showroom"
+  },
 
-"testimonialsBanner": {
-  "titlePart1": "Was unsere Kunden über ihre ",
-  "highlightWord": "Erfahrung",
-  "titlePart2": " mit uns sagen"
-},
+  "blogBanner": {
+    "titlePart1": "Bleiben Sie auf dem Laufenden über unsere ",
+    "highlightWord": "Neuigkeiten",
+    "titlePart2": ", indem Sie unseren Blog besuchen"
+  },
 
-"testimonials": {
+  "blog": {
+    "articles": [
+      {
+        "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop",
+        "title": "Warum maßgeschneiderte Fertigung die kamerunische Industrie verändert?",
+        "description": "In vielen Industriebereichen in Kamerun stoßen Unternehmen auf eine wiederkehrende Schwierigkeit...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+        "title": "5 Wege, wie ein intelligentes Hotel Energie spart und Kunden bindet",
+        "description": "In einem zunehmend wettbewerbsorientierten Hotelmarkt in Kamerun ist die Frage zweifach..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=300&fit=crop",
+        "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
+        "description": "Transport und Logistik sind das Herzstück der kamerunischen Wirtschaft, aber dieser Sektor steht vor großen Herausforderungen...."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
+        "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
+        "description": "Die kamerunische Landwirtschaft, Motor der Volkswirtschaft, steht vor einer großen Herausforderung..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop",
+        "title": "Von Rohmetall zur Innovation: Wie wir nachhaltige Infrastrukturen gestalten",
+        "description": "Rohmaterial in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallurgie..."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+        "title": "Datenverarbeitung und Sicherheit: Das digitale Gold Ihres Unternehmens schützen",
+        "description": "Jedes Unternehmen, unabhängig von seiner Größe, generiert täglich erhebliche Mengen an Informationen...."
+      }
+    ]
+  },
+
+  "testimonialsBanner": {
+    "titlePart1": "Was unsere Kunden über ihre ",
+    "highlightWord": "Erfahrung",
+    "titlePart2": " mit uns sagen"
+  },
+
+  "testimonials": {
     "items": [
       {
         "id": 1,
-        "text": "AFB äußert seine Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist uns eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
-        "author": "Generaldirektor",
+        "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+        "author": "Geschäftsführer",
         "company": "AFB",
         "rating": 5
       },
       {
         "id": 2,
-        "text": "Die Zufriedenheit der Privatkunden ist spürbar bezüglich des kabellosen Hausautomations- und Smart-Building-Projekts. Dies zeigt den Erfolg und die positive Wirkung.",
-        "author": "Privatkunden",
-        "company": "",
+        "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+        "author": "Geschäftsführer",
+        "company": "AFB",
         "rating": 5
       },
       {
         "id": 3,
-        "text": "AFB BEKOKO ist vollständig zufrieden mit der Installation von zwei Stromquellen und einem Wechselrichter sowie Rauch- und Überflutungsmeldern. Qualitätsservice!",
-        "author": "AFB BEKOKO",
-        "company": "",
+        "text": "AFB äußert ihre Zufriedenheit mit unseren Dienstleistungen mit einer Bewertung von 16/20. Es ist eine Ehre, ihre Erwartungen zu übertreffen und positiv zu ihrer Erfahrung beizutragen.",
+        "author": "Geschäftsführer",
+        "company": "AFB",
         "rating": 5
       },
       {
         "id": 4,
-        "text": "SGC äußert seine Zufriedenheit mit der Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention hat ihre Erwartungen vollständig erfüllt.",
-        "author": "Generaldirektor",
+        "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
+        "author": "Geschäftsführer",
         "company": "SGC",
         "rating": 5
       },
       {
         "id": 5,
-        "text": "Elecit hat bei KILO FORCE eine außergewöhnliche Hausautomationsinstallation geliefert. Wir sind begeistert von der Servicequalität und der eingebrachten Modernisierung. Vielen Dank für diese Erfahrung!",
-        "author": "Generaldirektor",
+        "text": "Elecit hat eine außergewöhnliche Hausautomationsinstallation für KILO FORCE geliefert. Wir sind begeistert von der Servicequalität und der gebotenen Modernisierung. Vielen Dank für diese Erfahrung!",
+        "author": "Geschäftsführer",
         "company": "KILO FORCE",
         "rating": 5
       },
       {
         "id": 6,
-        "text": "Die Wartung und Reparatur unserer Klimaanlagen durch ElecIT bringt uns vollständige Zufriedenheit. Ihre Professionalität und Effizienz haben unsere Erfahrung erheblich verbessert. Wir empfehlen ElecIT nachdrücklich für ihre außergewöhnlichen Dienstleistungen.",
-        "author": "SAAR ASSURANCE",
-        "company": "",
+        "text": "SGC äußert ihre Zufriedenheit über die Verbesserung der Beleuchtung und Klimatisierung ihrer Gebäude. Die Intervention entsprach vollständig ihren Erwartungen.",
+        "author": "Geschäftsführer",
+        "company": "SGC",
         "rating": 5
       }
     ],
@@ -275,7 +263,7 @@
     }
   },
 
-"footer": {
+  "footer": {
     "banner": {
       "availableEverywhere": "Service überall verfügbar",
       "phoneNumber": "+237 650 416 640",
@@ -356,10 +344,10 @@
     "buttonRound": "Kontaktieren Sie uns"
   },
   "projet": {
-  "title": "UNSERE REALISIERUNGEN",
-  "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben.",
-  "buttonText": "Weißbuch"
-},
+    "title": "UNSERE REALISIERUNGEN",
+    "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben.",
+    "buttonText": "Weißbuch"
+  },
 
 "projects": {
   "categories": [
@@ -850,18 +838,638 @@
   "feature4": "Kostenlose internationale Abdeckung (CEMAC-Region).",
   "feature5": "Wartung, Instandhaltung und Kundendienst in den Städten Douala und Yaoundé inklusive.",
   "feature6": "Bis zu 1 Jahr Garantie auf die Geräte."
+},
+
+
+
+
+
+
+
+
+  "entreprise": {
+    "hero": {
+      "title": "Wat u moet weten over",
+      "titleHighlight": "ELECIT?",
+      "subtitle": "AFRIKA'S 1E HIGH TECH BEDRIJF",
+      "description": "Omdat we naast de Kameroense markt heel Afrika willen ontwikkelen door middel van onze diensten.",
+      "button": "Bekijk Video"
+    },
+    "entrepriseCards": {
+      "bannerTitle": "Onze waarden",
+      "bannerSubtitle": "03 sleutelwoorden",
+      "bannerSubtitle2": "definiëren ons",
+      "items": [
+        {
+          "title": "Innovatie",
+          "description": "Door voortdurende technologiebewaking en een cultuur van creativiteit ontwikkelen we innovatieve benaderingen om aan de behoeften van onze partners te voldoen."
+        },
+        {
+          "title": "Transformatie",
+          "description": "We ondersteunen onze klanten bij hun transitie naar efficiëntere en duurzamere modellen door de integratie van nieuwe technologieën en procesoptimalisatie."
+        },
+        {
+          "title": "Uitmuntendheid",
+          "description": "Door hoge kwaliteitsnormen, scherpe expertise en aandacht voor detail garanderen we resultaten die aan de meest veeleisende verwachtingen voldoen."
+        }
+      ]
+    },
+    "entrepriseTeam": {
+      "title": "Het team",
+      "subtitle": "Deze actoren die zich verenigen om aan uw behoeften te voldoen",
+      "description": "We mobiliseren de juiste vaardigheden op het juiste moment. Deze menselijke en technische rijkdom stelt ons in staat om met behendigheid en precisie te reageren op de meest uiteenlopende uitdagingen van onze klanten, van advies tot implementatie.",
+      "button": "Bekijk Video",
+      "members": [
+        { "title": "Domotica Specialisten" },
+        { "title": "Mechatronica Ingenieurs" },
+        { "title": "Wagenpark Managers" },
+        { "title": "IT Ingenieurs" },
+        { "title": "Civiele Ingenieurs" },
+        { "title": "Productie Technici" },
+        { "title": "IT Technici" },
+        { "title": "Onderhouds Agenten" },
+        { "title": "Duurzame Energie Ingenieurs" },
+        { "title": "Hoog en Laag Stroom Technici" }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "Veelgestelde vragen",
+      "contactTitle": "Krijg meer informatie",
+      "contactSubtitle": "We beantwoorden graag uw vragen.",
+      "contactButton": "Neem contact op",
+      "items": [
+        {
+          "question": "Waar bent u gevestigd en in welke regio's bent u actief?",
+          "answer": "Ons hoofdkantoor is gevestigd in Douala en Yaoundé; maar we zijn actief in het hele nationale grondgebied en in bepaalde gebieden van West-Afrika. Voor specifieke projecten bestuderen we ook internationale interventies."
+        },
+        {
+          "question": "Wat zijn uw gemiddelde projecttijdlijnen?",
+          "answer": "Tijdlijnen variëren afhankelijk van de complexiteit van het project. Over het algemeen leveren we standaardprojecten in 2-4 weken."
+        },
+        {
+          "question": "Hoe krijg ik een persoonlijke offerte?",
+          "answer": "U kunt contact met ons opnemen via het online formulier of telefonisch. We sturen u binnen 48 uur een offerte."
+        },
+        {
+          "question": "Bieden jullie ondersteuning na levering?",
+          "answer": "Ja, we bieden volledige after-sales service inclusief onderhoud en 24/7 technische ondersteuning."
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "Onze partners",
+      "ctaTitle": "Heeft u een behoefte?",
+      "ctaTitle2": "Wij hebben de",
+      "ctaHighlight": "oplossingen",
+      "ctaButton": "Neem Contact Op"
+    }
+  },
+
+  "contact": {
+    "floatingButton": "Neem contact op",
+    "popup": {
+      "title": "Neem contact op",
+      "subtitle": "We reageren zo snel mogelijk",
+      "availability": "We zijn van maandag tot vrijdag van 8 tot 18 uur bereikbaar via WhatsApp. Aarzel niet om contact met ons op te nemen.",
+      "openWhatsApp": "WhatsApp openen",
+      "messagePlaceholder": "Schrijf uw bericht...",
+      "leftButton": "Terug",
+      "rightButton": "Verzenden"
+    },
+    "hero": {
+      "title": "Neem Contact Op.",
+      "subtitle": "Ons team van experts biedt u een oplossing!",
+      "button": "Meer Inhoud"
+    },
+    "form": {
+      "title": "Contactformulier",
+      "subtitle": "Een vraag, behoefte of project om te bespreken?",
+      "subtitle2": "Vul het onderstaande formulier in",
+      "lastName": "Achternaam",
+      "lastNamePlaceholder": "Voer uw achternaam in",
+      "firstName": "Voornaam",
+      "firstNamePlaceholder": "Voer uw voornaam in",
+      "phone": "Telefoon",
+      "email": "E-mail",
+      "emailPlaceholder": "Voer uw e-mail in",
+      "message": "Bericht",
+      "messagePlaceholder": "Antwoord in enkele woorden",
+      "submit": "Versturen",
+      "imageAlt": "Professional in een industriële omgeving"
+    },
+    "location": {
+      "title": "Onze diensten zijn toegankelijk in heel",
+      "highlight1": "Kameroen",
+      "title2": ", maar ook in heel",
+      "highlight2": "Centraal-Afrika."
+    },
+    "blog": {
+      "title": "Blijf op de hoogte van ons",
+      "highlight": "nieuws",
+      "title2": "door onze blog te bezoeken",
+      "readMore": "Lees meer",
+      "prevPage": "Vorige pagina",
+      "nextPage": "Volgende pagina",
+      "goToPage": "Ga naar pagina",
+      "articles": [
+        {
+          "id": 1,
+          "title": "Waarom maatwerkproductie een game-changer is in de Kameroense industrie?",
+          "excerpt": "In veel industriële sectoren in Kameroen staan bedrijven voor een terugkerende uitdaging..."
+        },
+        {
+          "id": 2,
+          "title": "5 manieren waarop een slim hotel energie bespaart en klantenloyaliteit opbouwt",
+          "excerpt": "Op een steeds competitievere hotelmarkt in Kameroen is de vraag tweeledig..."
+        },
+        {
+          "id": 3,
+          "title": "De trackingrevolutie: wanneer AI uw voertuigen bewaakt",
+          "excerpt": "Transport en logistiek staan centraal in de economie van Kameroen, maar deze sector ondervindt grote uitdagingen..."
+        },
+        {
+          "id": 4,
+          "title": "Slimme irrigatie: technologie voor duurzame landbouw",
+          "excerpt": "De Kameroense landbouw, de motor van de nationale economie, staat voor een grote uitdaging..."
+        },
+        {
+          "id": 5,
+          "title": "Van ruw metaal naar innovatie: hoe we duurzame infrastructuur vormgeven",
+          "excerpt": "Het transformeren van grondstoffen naar een innovatief en functioneel product is de kunst van moderne metallurgie..."
+        },
+        {
+          "id": 6,
+          "title": "Gegevensverwerking en beveiliging: het digitale goud van uw bedrijf beschermen",
+          "excerpt": "Elk bedrijf genereert dagelijks aanzienlijke hoeveelheden gevoelige informatie..."
+        }
+      ]
+    }
+  },
+
+  "blogPage": {
+    "hero": {
+      "title": "Inside ElecIT",
+      "subtitle": "Innovatie, Expertise & Bedrijfsleven",
+      "description1": "Een open venster op onze expertise en cultuur.",
+      "description2": "Ontdek onze projecten, innovaties en visie op moderne engineering.",
+      "description3": "Duik in het dagelijks leven van ElecIT, waar technologie mensen ontmoet."
+    },
+    "featured": {
+      "authorName": "Therese Egoutou",
+      "date": "17 nov",
+      "title": "Het gebouw dat zich aan u aanpast",
+      "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat idee omzet in een echte oplossing."
+    },
+    "categories": {
+      "all": "Alle berichten",
+      "smartSpaces": "Smart spaces",
+      "workshop": "Workshop van Vindingrijkheid",
+      "moreThanTrack": "More Than Track",
+      "advancedSecurity": "Geavanceerde Beveiliging",
+      "toolBoxMeeting": "Toolbox vergadering",
+      "companyLife": "Bedrijfsleven",
+      "more": "Meer"
+    },
+    "cards": {
+      "views": "weergaven",
+      "view": "weergave",
+      "comments": "reacties",
+      "comment": "reactie",
+      "readMore": "Lees meer",
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "detail": {
+      "readTime": "min leestijd",
+      "share": "Deel bericht",
+      "cancel": "Annuleren",
+      "publish": "Publiceren",
+      "loginPrompt": "om te posten als lid",
+      "login": "Inloggen",
+      "commentPlaceholder": "Schrijf een reactie...",
+      "commentsTitle": "Reacties",
+      "shareModal": {
+        "title": "Deel dit bericht",
+        "copyLink": "Of kopieer link",
+        "copy": "Kopiëren",
+        "copied": "Link gekopieerd!",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
+      }
+    },
+    "posts": [
+      {
+        "id": 1,
+        "category": "Toolbox vergadering",
+        "title": "Het gebouw dat zich aan u aanpast",
+        "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov"
+        },
+        "content": {
+          "heading1": "Slim ontwerp vanaf de basis",
+          "paragraph1": "Elk project begint met een idee, maar het is het <strong>ontwerp</strong> dat dat idee omzet in een echte oplossing. Dankzij <strong>Computer-Aided Design (CAD)</strong> modelleren we onderdelen en structuren met millimeterprecisie.",
+          "listIntro": "Deze stap stelt ons in staat om:",
+          "listItems": [
+            "mechanische beperkingen te anticiperen,",
+            "vormen en diktes te optimaliseren,",
+            "materiaalverspilling te verminderen,",
+            "en naleving te garanderen vóór de productie."
+          ],
+          "paragraph2": "We winnen dus aan <strong>efficiëntie</strong>, <strong>kosten</strong> en <strong>algehele kwaliteit</strong>.",
+          "heading2": "Hoe we duurzame infrastructuur vormgeven",
+          "paragraph3": "Metaal, een oud materiaal, is een van de belangrijkste pijlers van menselijke evolutie. Van de eerste ambachtelijke gereedschappen tot moderne industriële structuren, het begeleidt elke fase van vooruitgang.",
+          "paragraph4": "Bij <strong>ElecIT ENGINEERING</strong> maken we van metaal meer dan alleen een grondstof: we maken het een <strong>duurzame engineering oplossing</strong>, ontworpen om lang mee te gaan."
+        }
+      },
+      {
+        "id": 2,
+        "category": "Geavanceerde Beveiliging",
+        "title": "Van ruw metaal tot technologische innovatie",
+        "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov"
+        }
+      },
+      {
+        "id": 3,
+        "category": "Bedrijfsleven",
+        "title": "Het gebouw dat zich aan u aanpast",
+        "excerpt": "Elk project begint met een idee, maar het is het ontwerp dat dat...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov"
+        }
+      }
+    ]
+  },
+
+  "sav": {
+    "hero": {
+      "title": "KUNDENDIENST",
+      "subtitle": "Wir gewährleisten Kundenzufriedenheit, garantieren die Langlebigkeit der Ausrüstung und stärken das Kundenvertrauen.",
+      "button": "Video ansehen"
+    },
+    "cards": {
+      "heading": "Unsere Dienstleistungen",
+      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und Einhaltung gesetzlicher Vorschriften.",
+      "items": [
+        {
+          "title": "Studien",
+          "subtitle": "& Konzeption",
+          "description": "Bedarfsanalyse und Architekturprogramm/ Technische Studien/ 2D/3D-Modellierung/ Planung, vorläufige Kostenschätzung und Genehmigungen"
+        },
+        {
+          "title": "Projektmanagement",
+          "subtitle": "& Baustellenüberwachung",
+          "description": "Arbeitsplanung und Stakeholder-Koordination/ Baustellenüberwachung, technische und Qualitätskontrollen/ Strikte Einhaltung von Fristen und vertraglich vereinbartem Budget/ Transparente Kommunikation mit dem Auftraggeber"
+        },
+        {
+          "title": "Realisierung",
+          "subtitle": "& Übergabe",
+          "description": "Rohbau- und Ausbauarbeiten/ Integration technischer Gewerke (Elektrizität, Sanitär, HLK)/ Innen- und Außenverarbeitung nach Leistungsverzeichnis/ Abnahme der Arbeiten"
+        },
+        {
+          "title": "Wartung",
+          "subtitle": "& Renovierung",
+          "description": "Vorbeugende und korrektive Gebäudewartung/ Renovierung und Normenanpassung/ Energetische Verbesserung/ Kundendienst und zehnjährige Garantie"
+        },
+        {
+          "title": "Beratung",
+          "subtitle": "& Expertise",
+          "description": "Technische Prüfung und Immobiliendiagnose/ Bauherrenberatung/ Rechtliche und administrative Unterstützung/ Optimierung der Baukosten"
+        },
+        {
+          "title": "Schlüsselfertige",
+          "subtitle": "Lösungen",
+          "description": "Vollständige Projektübernahme/ Koordination aller Gewerke/ Einheitliche Garantie und globale Verantwortung/ Lieferung innerhalb vereinbarter Fristen"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Unsere wichtigsten Verpflichtungen",
+      "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierenden Kundendienst, der darauf ausgelegt ist, die Nachhaltigkeit Ihrer Projekte zu gewährleisten.",
+      "services": [
+        {
+          "title": "IT-Infrastruktur-Management",
+          "description": "Implementierung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
+        },
+        {
+          "title": "Technischer Support & Unterstützung",
+          "description": "Helpdesk-Service, Fernwartung oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
+        },
+        {
+          "title": "Cybersicherheit",
+          "description": "Umsetzung von Sicherheitsrichtlinien, Firewalls, Backups, Zugangskontrollen, Schwachstellenprüfungen."
+        },
+        {
+          "title": "Virtualisierung & Cloud Computing",
+          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybrid-Lösungen."
+        },
+        {
+          "title": "Anwendungsentwicklung",
+          "description": "Konzeption und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
+        }
+      ],
+      "cta": {
+        "title": "Wählen Sie eine",
+        "titleHighlight": "zuverlässige, nachhaltige und rentable Begleitung.",
+        "subtitle": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
+        "button": "Kontaktieren Sie uns"
+      }
+    }
+  },
+
+  "bureau": {
+    "hero": {
+      "title": "GEBÄUDETECHNIK & ÖFFENTLICHE ARBEITEN",
+      "description": "Wir bieten ein komplettes Angebot für den Bau öffentlicher und privater Gebäude sowie hydraulischer Bauwerke.",
+      "button": "Video ansehen"
+    },
+    "cards": {
+      "heading": "Unsere Dienstleistungen",
+      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und Einhaltung gesetzlicher Vorschriften.",
+      "items": [
+        {
+          "title": "Studien",
+          "subtitle": "& Konzeption",
+          "description": "Bedarfsanalyse und Architekturprogramm Technische Studien 2D/3D-Modellierung/ Planung, vorläufige Kostenschätzung und Genehmigungen"
+        },
+        {
+          "title": "Projektmanagement",
+          "subtitle": "& Baustellenüberwachung",
+          "description": "Arbeitsplanung und Stakeholder-Koordination Baustellenüberwachung, technische und Qualitätskontrollen Strikte Einhaltung von Fristen und vertraglich vereinbartem Budget Transparente Kommunikation mit dem Auftraggeber"
+        },
+        {
+          "title": "Realisierung",
+          "subtitle": "& Übergabe",
+          "description": "Rohbau- und Ausbauarbeiten Integration technischer Gewerke (Elektrizität, Sanitär, HLK) Innen- und Außenverarbeitung nach Leistungsverzeichnis Abnahme der Arbeiten"
+        }
+      ],
+      "project": {
+        "title": "PROJEKT:",
+        "subtitle": "Lagerhallenbau",
+        "description": "Ob öffentliche, Wohn-, Schul- oder Industriegebäude – jedes Bauwerk zeugt von unserem Engagement für Exzellenz, Termintreue und höchste Standards.",
+        "button": "Projekt ansehen"
+      }
+    },
+    "carousel": {
+      "heading": "Unterstützte Arten von hydraulischen Bauwerken",
+      "projects": [
+        { "title": "Tunnel" },
+        { "title": "Staudamm" },
+        { "title": "Bohrung" },
+        { "title": "Kanal" },
+        { "title": "Pumpen" },
+        { "title": "Entwässerung" }
+      ],
+      "cta": {
+        "title": "Ein",
+        "titleHighlight": "Bauprojekt",
+        "title2": "im Kopf?",
+        "subtitle": "Lassen Sie es uns gemeinsam ab heute bauen.",
+        "button": "Kontaktieren Sie uns"
+      },
+      "navigation": {
+        "previous": "Vorherige Folie",
+        "next": "Nächste Folie",
+        "goToSlide": "Zur Folie gehen"
+      }
+    }
+  },
+
+  "control": {
+    "hero": {
+      "title": "Toegangscontrole & Beveiliging",
+      "description": "Dankzij geavanceerde technologieën garanderen wij toegangsbeheer, realtime bewaking en de bescherming van personen en eigendommen tegen indringers en bedreigingen.",
+      "button": "Flyer downloaden"
+    },
+    "cards": {
+      "heading": "Onze Diensten",
+      "subtitle": "Wij bieden krachtige oplossingen voor het beveiligen van gebouwen, infrastructuren en gevoelige ruimtes.",
+      "featured": {
+        "title": "Virtuele rondleiding door de winkel voor bouwmaterialen en elektrische apparatuur",
+        "button": "Mango boutique"
+      },
+      "items": [
+        {
+          "title": "Slimme Toegangscontrole",
+          "features": [
+            "Badgesystemen, RFID-kaarten en biometrie",
+            "Automatische poorten met in- en uitgangsbeheer",
+            "Elektronische sloten en veilige vergrendelingssystemen"
+          ]
+        },
+        {
+          "title": "Videobewaking & Inbraakdetectie",
+          "features": [
+            "Installatie van HD-camera’s en IP-videobewaking",
+            "Bewegingsdetectiesystemen en gekoppelde alarmsystemen",
+            "Realtime bewaking en veilige opslag van opnames"
+          ]
+        },
+        {
+          "title": "Beveiliging & Risicobeheer",
+          "features": [
+            "Bescherming tegen inbraak, diefstal en vandalisme",
+            "Cyberbeveiligingsoplossingen voor toegangscontrolesystemen",
+            "Branddetectie en integratie met alarmsystemen"
+          ]
+        },
+        {
+          "title": "Gecentraliseerd Beheer & Automatisering",
+          "features": [
+            "Toegangsbeheer via beheersoftware",
+            "Cloudoplossingen voor bediening op afstand",
+            "Toegangsgeschiedenis en gedetailleerde activiteitsrapporten"
+          ]
+        }
+      ]
+    },
+    "carousel": {
+      "quote": "Oplossingen op maat voor de beveiliging van kantoren en professionele ruimtes, toegangsbeheer tot gebouwen en parkeergarages en geavanceerde bewaking",
+      "cta": {
+        "title": "Beveilig uw gebouwen met onze",
+        "titleHighlight": "gecertificeerde oplossingen.",
+        "subtitle": "Bescherm uw panden effectief en beheer de toegang met krachtige beveiligingsoplossingen!",
+        "button": "Neem contact op"
+      },
+      "navigation": {
+        "goToSlide": "Ga naar dia"
+      }
+    }
+  },
+
+  "dataProcessing": {
+    "hero": {
+      "title": "IT & DATENVERARBEITUNG",
+      "description": "Wir helfen Unternehmen, ihre IT-Systeme effektiv zu verwalten und das Beste aus ihren Daten herauszuholen.",
+      "button": "Pressemitteilung"
+    },
+    "projects": {
+      "title": "Unsere IT-Projekte",
+      "subtitle": "Innovation, Leistung und Wirkung",
+      "description": "Jedes vorgestellte Projekt spiegelt unser Engagement für Innovation, Strenge und Kundenzufriedenheit wider.",
+      "seeMore": "Mehr sehen",
+      "items": [
+        {
+          "id": 1,
+          "title": "Content Management System (CMS) Software",
+          "excerpt": "Wir haben ein maßgeschneidertes Content-Management-System (CMS) entwickelt…",
+          "description": "Wir haben ein maßgeschneidertes Content-Management-System (CMS) entwickelt, das eine einfache, schnelle und vollständig anpassbare Verwaltung bietet.",
+          "utility": "Diese Lösung ermöglicht es dem Unternehmen, seine Informationen, Dienstleistungen und Aktualisierungen effektiv zu verwalten, ohne auf externen technischen Support angewiesen zu sein",
+          "clientFeedback": "Das von ElecIT Engineering entwickelte CMS hat unsere Content-Verwaltung vereinfacht. Das Tool ist intuitiv, schnell und perfekt an unsere Bedürfnisse angepasst. Eine echte Zeitersparnis im Alltag.",
+          "clientRole": "Geschäftsführer",
+          "date": "12.06.23",
+          "status": "abgeschlossen"
+        },
+        {
+          "id": 2,
+          "title": "Kundenbeziehungsmanagement (CRM) Software",
+          "excerpt": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+          "description": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens zur Verwaltung von Kundenbeziehungen angepasst ist.",
+          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Verkaufsverfolgung",
+          "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
+          "clientRole": "Vertriebsleiter",
+          "date": "15.08.23",
+          "status": "abgeschlossen"
+        },
+        {
+          "id": 3,
+          "title": "Kundenbeziehungsmanagement (CRM) Software",
+          "excerpt": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+          "description": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens zur Verwaltung von Kundenbeziehungen angepasst ist.",
+          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Verkaufsverfolgung",
+          "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
+          "clientRole": "Vertriebsleiter",
+          "date": "20.09.23",
+          "status": "in Bearbeitung"
+        }
+      ],
+      "modal": {
+        "category": "IT und DATENVERARBEITUNG",
+        "projectLabel": "Projekt:",
+        "dateLabel": "Fertigstellungsdatum:",
+        "statusLabel": "Projektstatus:",
+        "descriptionLabel": "Projektbeschreibung:",
+        "utilityLabel": "Zweck:",
+        "feedbackLabel": "Kundenfeedback:",
+        "haveProject": "Haben Sie ein Projekt?",
+        "close": "Schließen"
+      },
+      "cta": {
+        "title": "Wählen Sie eine Unterstützung, die",
+        "titleHighlight": "zuverlässig, nachhaltig und kosteneffektiv ist.",
+        "description": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
+        "button": "Kontaktieren Sie uns"
+      }
+    },
+    "services": {
+      "title": "IT-Dienstleistungen",
+      "description": "Wir bieten eine vollständige Palette von IT-Dienstleistungen zur Unterstützung der digitalen Transformation Ihrer Organisation, die Leistung, Sicherheit und Skalierbarkeit kombiniert.",
+      "items": [
+        {
+          "title": "IT-Infrastruktur-Management",
+          "description": "Einrichtung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
+        },
+        {
+          "title": "Technischer Support & Assistenz",
+          "description": "Helpdesk-Service, Remote- oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
+        },
+        {
+          "title": "Cybersicherheit",
+          "description": "Implementierung von Sicherheitsrichtlinien, Firewall, Backup, Zugriffskontrolle, Schwachstellenaudits."
+        },
+        {
+          "title": "Virtualisierung & Cloud Computing",
+          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybridlösungen."
+        },
+        {
+          "title": "Anwendungsentwicklung",
+          "description": "Design und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
+        }
+      ]
+    },
+    "advantages": {
+      "headerTitle": "Hauptvorteile",
+      "description": "Dank unserer Expertise unterstützen wir Sie bei der digitalen Transformation Ihres Unternehmens und helfen Ihnen, bessere Entscheidungen mit Ihren Daten zu treffen.",
+      "documentationButton": "Dokumentation",
+      "items": [
+        {
+          "title": "Systemzuverlässigkeit",
+          "description": "Stabile, leistungsstarke IT-Infrastrukturen, die immer betriebsbereit sind"
+        },
+        {
+          "title": "Verstärkte Sicherheit",
+          "description": "Vollständiger Schutz von Daten und Systemen gegen Cyber-Bedrohungen."
+        },
+        {
+          "title": "Zeitersparnis",
+          "description": "Aufgabenautomatisierung und reaktionsschneller technischer Support, damit Sie sich auf das Wesentliche konzentrieren können."
+        },
+        {
+          "title": "Kostenoptimierung",
+          "description": "Reduzierung der Ausgaben für Wartung, Infrastruktur und Datenverwaltung."
+        },
+        {
+          "title": "Intelligentere Entscheidungen",
+          "description": "Zugang zu klaren und strukturierten Daten zur Steuerung Ihrer strategischen Entscheidungen."
+        },
+        {
+          "title": "Flexibilität und Skalierbarkeit",
+          "description": "Lösungen, die an Ihr Wachstum und sich ändernde Bedürfnisse angepasst sind."
+        },
+        {
+          "title": "Einhaltung von Vorschriften",
+          "description": "Einhaltung von Standards (wie DSGVO) für eine rechtmäßige Datenverwaltung."
+        }
+      ]
+    }
+  },
+  "controlAccess": {
+    "hero": {
+      "title": "Zugangskontrolle & Sicherheit",
+      "description": "Dank fortschrittlicher Technologien garantieren wir Zugangsmanagement, Echtzeitüberwachung und Schutz von Menschen und Eigentum vor Eindringlingen und Bedrohungen.",
+      "button": "Flyer herunterladen"
+    },
+    "header": {
+      "title": "Datenverarbeitung und -aufwertung"
+    },
+    "services": {
+      "description": "Wir sichern Ihre Gebäude, Infrastrukturen und sensiblen Bereiche mit leistungsstarken Zugangskontroll- und Videoüberwachungslösungen.",
+      "items": [
+        {
+          "title": "Intelligente Zugangskontrolle",
+          "description": "Badge-Systeme, RFID-Karten und Biometrie, automatische Tore und elektronische Schlösser."
+        },
+        {
+          "title": "Videoüberwachung & Einbruch",
+          "description": "HD-Kameras, Bewegungserkennung, vernetzte Alarme und Echtzeitüberwachung."
+        },
+        {
+          "title": "Sicherheit & Risikomanagement",
+          "description": "Schutz vor Eindringlingen, Cybersicherheit und Branderkennung, integriert in Alarmsysteme."
+        },
+        {
+          "title": "Zentralisierte Verwaltung & Automatisierung",
+          "description": "Zugangsüberwachung, Fernsteuerung, Cloud-Lösungen und detaillierte Aktivitätsberichte."
+        },
+        {
+          "title": "Sicherheitsaudit & Beratung",
+          "description": "Schwachstellenanalyse, Definition von Sicherheitsrichtlinien und Compliance-Unterstützung."
+        }
+      ]
+    }
+  },
+ "fab": {
+  "titleRound": "Ein Projekt im Kopf",
+  "titleRound2": "Brauchen Sie eine Lösung",
+  "sub": "auf Anfrage",
+  "subtitleRound": "Unser Team hört zu und erweckt Ihre Ideen zum Leben.",
+  "buttonRound": "Kontaktieren Sie uns"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,233 +1,212 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
 
 const SavGreenCards = () => {
-  const services = {
-    row1: [
-      {
-        icon: ICONS.laptop, // Replace with actual icon
-        title: "Gestion des Infrastructures IT",
-        description:
-          "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.).",
-      },
-      {
-        icon: ICONS.stockage,
-        title: "Support Technique & Assistance",
-        description:
-          "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective.",
-      },
-    ],
-    row2: [
-      {
-        icon: ICONS.badge,
-        title: "Cybersécurité",
-        description:
-          "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité.",
-      },
-      {
-        icon: ICONS.business_icon,
-        title: "Virtualisation & Cloud Computing",
-        description:
-        "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides.",
-    },
-    {
-        icon: ICONS.badge,
-        title: "Développement d'applications",
-        description:
-        "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers.",
-    },
-],
-};
+  const { t } = useTranslation();
+
+  const services = t('sav.greenCards.services', { returnObjects: true });
+
   return (
-<>  
-      <section className="w-full bg-white pt-0 pb-16 px-2">
-       <div
-        className="relative w-full mb-8 overflow-hidden"
-        style={{ backgroundColor: MY_COLORS.black }}
-      >
-        <h2
-          className="relative text-3xl md:text-4xl lg:text-5xl 
-          font-bold px-8 py-6 md:py-8 text-right"
-          style={{ color: MY_COLORS.secondaryGreen }}
+    <>
+      <section className="w-full bg-white pt-0 pb-16 px-2 overflow-hidden">
+        {/* ============================================ */}
+        {/* HEADER SECTION                              */}
+        {/* ============================================ */}
+        <div
+          className="relative w-full mb-8 overflow-hidden"
+          style={{ backgroundColor: MY_COLORS.black }}
         >
-          Nos engagements clés
-        </h2>
-        <div className="absolute -top-10 left-0 w-1/3 h-full opacity-100 scale-125">
-          <img src={ICONS.formTech} alt="" />
-        </div>
-      </div>
-
-      <div className="relative text-center mb-20">
-        {/* DECORATIVE GEARS - Top left */}
-<div className="absolute left-0 top-0 hidden lg:block">
-  {/* Large Gear */}
-  <img
-  src={ICONS.Engrenage_plan}
-  alt=""
-  aria-hidden="true"
-  className="relative w-40 h-40 opacity-100 animate-spin [animation-duration:5s] [animation-timing-function:linear]"
-  style={{
-      top: "-30px",
-      left: "30px",
-  }}
-/>
-
-</div>
-
-
-        {/* TITLE */}
-
-        {/* SUBTITLE */}
-        <p
-          style={{ color: MY_COLORS.black }}
-          className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
+          <h2
+            className="relative text-lg sm:text-2xl md:text-4xl lg:text-5xl 
+          font-bold px-4 sm:px-8 py-6 md:py-8 text-right z-10"
+            style={{ color: MY_COLORS.secondaryGreen }}
           >
-          Bénéficiez d’un SAV intégré, rentable et structurant, pensé pour
-          assurer la <br/> pérennité de vos projets.
-        </p>
-      </div>
-
-      {/* ============================================ */}
-      {/* CONTAINER 3: SERVICES GRID                 */}
-      {/* ============================================ */}
-      <div className="relative">
-        {/* HORIZONTAL DOTTED LINE - Between rows */}
-        <div
-          className="absolute left-0 right-0 hidden md:block"
-          style={{
-              top: "54%",
-              borderTop: "2px dashed #8CC63F",
-            }}
+            {t('sav.greenCards.heading')}
+          </h2>
+          <div
+            className="absolute -top-1 -left-20 w-3/4 sm:w-1/5
+           md:w-3/4  md:-left-50 md:scale-125 lg:scale-130 lg:w-2/3 h-full opacity-100"
+          >
+            <img
+              src={ICONS.formTech}
+              alt=""
+              className="w-full h-full object-contain"
             />
+          </div>
+        </div>
 
-        {/* VERTICAL DOTTED LINES - Between columns */}
-        <div
-          className="hidden lg:block absolute top-0 bottom-0"
-          style={{
-            left: "33.333%",
-            borderLeft: "2px dashed #8CC63F",
-        }}
-        />
-        <div
-          className="hidden lg:block absolute top-0 bottom-0"
-          style={{
+        {/* ============================================ */}
+        {/* SUBTITLE WITH DECORATIVE GEAR               */}
+        {/* ============================================ */}
+        <div className="relative text-center mb-12 md:mb-20 px-4">
+          {/* DECORATIVE GEAR - Top left (Desktop only) */}
+          <div className="absolute left-0 top-0 hidden xl:block pointer-events-none">
+            <img
+              src={ICONS.Engrenage_plan}
+              alt=""
+              aria-hidden="true"
+              className="w-32 h-32 xl:w-40 xl:h-40 opacity-100 animate-spin"
+              style={{
+                animationDuration: "5s",
+                animationTimingFunction: "linear",
+              }}
+            />
+          </div>
+
+          {/* SUBTITLE TEXT */}
+          <p
+            style={{ color: MY_COLORS.black }}
+            className="text-slate-900 text-base 
+            md:text-lg max-w-3xl mx-auto leading-relaxed"
+          >
+            {t('sav.greenCards.subtitle')}
+          </p>
+        </div>
+
+        {/* ============================================ */}
+        {/* SERVICES GRID WITH DOTTED LINES             */}
+        {/* ============================================ */}
+        <div className="relative px-4 lg:px-8">
+          {/* HORIZONTAL DOTTED LINE - Between rows (Desktop only) */}
+          <div
+            className="absolute left-0 right-0 hidden lg:block pointer-events-none"
+            style={{
+              top: "calc(52.5% + 2rem)",
+              borderTop: "2px dashed #8CC63F",
+              zIndex: 0,
+            }}
+          />
+
+          {/* VERTICAL DOTTED LINES - Between columns (Desktop only) */}
+          <div
+            className="hidden lg:block absolute top-0 bottom-0 pointer-events-none"
+            style={{
+              left: "33.333%",
+              borderLeft: "2px dashed #8CC63F",
+              zIndex: 0,
+            }}
+          />
+          <div
+            className="hidden lg:block absolute top-0 bottom-0 pointer-events-none"
+            style={{
               left: "66.666%",
               borderLeft: "2px dashed #8CC63F",
+              zIndex: 0,
             }}
-            />
+          />
 
-        {/* ============================================ */}
-        {/* ROW 1: Image + 2 Cards                     */}
-        {/* ============================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 relative z-10">
-          {/* IMAGE (Left Side) */}
-          <div className="flex justify-center items-center p-4">
-            <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-sm">
-              <img
-                src={IMAGES.IMG5} // ✅ Fixed: Use specific image
-                alt="IT Services Illustration"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* CARD 1 - Icon WITHOUT circle */}
-          <div className="relative pt-10 p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            {/* ICON - No circle, just the icon */}
-            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-              <img
-                src={services.row1[0].icon}
-                alt=""
-                className="w-24 h-24" // ⬅️ CONTROL SIZE HERE
-                />
-            </div>
-
-            <h3
-              className="text-xl font-bold mb-3 text-center mt-4"
-              style={{ color: MY_COLORS.black }}
-            >
-              {services.row1[0].title}
-            </h3>
-            <p className="text-gray-600 text-center text-sm leading-relaxed">
-              {services.row1[0].description}
-            </p>
-          </div>
-
-          {/* CARD 2 - With icon half in/out */}
-          <div className="relative pt-10 p-6 rounded-xl shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-            {/* ICON - Positioned HALF IN, HALF OUT */}
-            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-              <img
-                src={services.row1[1].icon}
-                alt=""
-                className="w-24 h-24"
-                style={{ filter: "brightness(0)" }}
-                />
-            </div>
-
-            <h3
-              className="text-xl font-bold mb-3 text-center mt-4"
-              style={{ color: MY_COLORS.black }}
-            >
-              {services.row1[1].title}
-            </h3>
-            <p className="text-black text-center text-sm leading-relaxed">
-              {services.row1[1].description}
-            </p>
-          </div>
-        </div>
-
-        {/* ============================================ */}
-        {/* ROW 2: 3 Cards                             */}
-        {/* ============================================ */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pt-8 relative z-10">
-          {services.row2.map((service, index) => (
-              <div
-              key={index}
-              className={`
-    relative pt-10 p-6 rounded-xl shadow-2xl 
-    hover:shadow-xl transition-shadow duration-300 border border-gray-100
-    ${index === 1 ? "bg-[#7FA946]" : "bg-white"}
-    `}
-    >
-              {/* ICON - Positioned HALF IN, HALF OUT */}
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+          {/* ============================================ */}
+          {/* ALL 6 CARDS IN ONE GRID                    */}
+          {/* Mobile: 1 col | Tablet: 2 cols | Desktop: 3 cols */}
+          {/* ============================================ */}
+          <div className="grid grid-cols-1 md:grid-cols-2 
+          lg:grid-cols-3 gap-6 md:gap-8 relative z-10">
+            {/* CARD 1 - IMAGE */}
+            <div className="flex justify-center items-center p-4">
+              <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-sm">
                 <img
-                  src={service.icon}
+                  src={IMAGES.IMG5}
+                  alt="IT Services Illustration"
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+              </div>
+            </div>
+
+            {/* CARD 2 - White background */}
+            <div className="relative pt-16 md:pt-20 p-6 rounded-xl 
+            shadow-xl bg-white hover:shadow-2xl transition-shadow 
+            duration-300 border border-gray-200">
+              <div className="absolute -top-10 md:-top-12 left-1/2 
+              transform -translate-x-1/2">
+                <img
+                  src={ICONS.laptop}
                   alt=""
-                  className={`
-                    w-24 h-24
-                    ${index === 1 ? "brightness-0" : ""}
-                    `}
-                    />
+                  className="w-20 h-20 md:w-24 md:h-24"
+                />
               </div>
 
               <h3
-                className="text-xl font-bold mb-3 text-center mt-4"
+                className="text-lg md:text-xl font-bold mb-3 text-center"
                 style={{ color: MY_COLORS.black }}
-                >
-                {service.title}
+              >
+                {services[0].title}
               </h3>
-              <p className="text-black text-center text-sm leading-relaxed">
-                {service.description}
+              <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed">
+                {services[0].description}
               </p>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
 
-    <section>
-        <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0">
-          {/* BLACK BLOCK PNG - Background layer */}
-          <div
-            className="w-full overflow-hidden"
-            style={{
-              height: "440px",
-            }}
-           >
+            {/* CARD 3 - Green background */}
+            <div className="relative pt-16 md:pt-20 p-6 rounded-xl shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
+                <img
+                  src={ICONS.stockage}
+                  alt=""
+                  className="w-20 h-20 md:w-24 md:h-24"
+                  style={{ filter: "brightness(0)" }}
+                />
+              </div>
+
+              <h3
+                className="text-lg md:text-xl font-bold mb-3 text-center"
+                style={{ color: MY_COLORS.black }}
+              >
+                {services[1].title}
+              </h3>
+              <p className="text-black text-center text-sm md:text-base leading-relaxed">
+                {services[1].description}
+              </p>
+            </div>
+
+            {/* CARDS 4, 5, 6 - From services array */}
+            {services.slice(2).map((service, index) => (
+              <div
+                key={index}
+                className={`
+                  relative pt-16 md:pt-20 p-6 rounded-xl shadow-lg lg:top-5
+                  hover:shadow-xl transition-shadow duration-300 border border-gray-100
+                  ${index === 1 ? "bg-[#7FA946]" : "bg-white"}
+                `}
+              >
+                <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
+                  <img
+                    src={ICONS.badge}
+                    alt=""
+                    className={`
+                      w-20 h-20 md:w-24 md:h-24
+                      ${index === 1 ? "brightness-0" : ""}
+                    `}
+                  />
+                </div>
+
+                <h3
+                  className="text-lg md:text-xl font-bold mb-3 text-center"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className={`text-center text-sm md:text-base leading-relaxed ${
+                    index === 1 ? "text-black" : "text-gray-600"
+                  }`}
+                >
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* CTA SECTION WITH BACKGROUND                 */}
+      {/* ============================================ */}
+      <section className="hidden lg:block">
+        <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0 md:top-10">
+          <div className="w-full overflow-hidden" style={{ height: "440px" }}>
             <img
               src={ICONS.formePlan}
               className="w-full object-cover block"
@@ -235,9 +214,7 @@ const SavGreenCards = () => {
             />
           </div>
 
-          {/* CONTENT OVERLAY - Positioned absolutely on top of PNG */}
           <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16">
-            {/* TECH PATTERN - Behind text */}
             <img
               style={{
                 top: "12em",
@@ -246,44 +223,35 @@ const SavGreenCards = () => {
               src={ICONS.formTech}
               alt=""
               aria-hidden="true"
-              className="absolute z-0 pointer-events-none opacity-30 
-             top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em]  // Use Tailwind transform
-             w-[150%] md:w-full lg:w-[180%] h-auto"
+              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[180%] h-auto"
             />
 
-            {/* TEXT */}
             <h3
-              className="relative z-20 text-center text-2xl 
-            md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
+              className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-             Faites le choix d’un accompagnement <br />
-               <span style={{color:MY_COLORS.secondaryGreen}}>fiable, durable et rentable.</span>
+              {t('sav.greenCards.cta.title')} <br />
+              <span style={{ color: MY_COLORS.secondaryGreen }}>
+                {t('sav.greenCards.cta.titleHighlight')}
+              </span>
             </h3>
 
-            {/* Subtitle/Description */}
-            <p
-              className="text-center md:text-lg lg:text-l text-white/90 
-           max-w-2xl mx-auto mt-15"
-            >
-             " Contactez notre service après-vente dès maintenant pour garantir la  <br/> 
-              continuité et l’efficacité de vos installations!"
+            <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
+              {t('sav.greenCards.cta.subtitle')}
             </p>
 
-            {/* BUTTON */}
             <CTAButton
-              className=" absolute top-10 "
+              className="absolute top-10 md:top-2 md:w-70"
               onClick={() => alert("Video clicked!")}
             >
-              Contactez Nous
+              {t('sav.greenCards.cta.button')}
             </CTAButton>
           </div>
 
-          {/* ROTATING GEAR - Top priority overlay */}
           <div
-            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40"
+            className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
             style={{
-              animation: "rotateClockwise 8s linear infinite",
+              animationDuration:"4s",
               top: "65%",
               right: "1%",
             }}
@@ -314,7 +282,6 @@ const SavGreenCards = () => {
         </div>
       </section>
     </>
-    
   );
 };
 

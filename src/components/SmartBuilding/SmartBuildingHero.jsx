@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import fi from '../../assets/fi.svg'
+// eslint-disable-next-line no-unused-vars
 import {motion} from 'framer-motion'
 
 const MY_COLORS = {
