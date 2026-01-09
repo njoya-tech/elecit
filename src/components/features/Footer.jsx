@@ -6,9 +6,14 @@ import g1 from '../../assets/g1.svg'
 import rail from '../../assets/rail.svg'
 import te from '../../assets/te.svg'
 
+import { useState, useEffect} from 'react';
+
+import NewsletterService from '../../services/newsLetter.js'
+
 import ContactPopup from './ContactPopup';
 
 import { motion } from 'framer-motion'
+import { text } from 'framer-motion/client';
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -20,14 +25,46 @@ const MY_COLORS = {
 };
 
 const Footer = () => {
-  const { t } = useTranslation();
+ const { t, i18n } = useTranslation(); // ✅ Ajoute i18n ici
   const [email, setEmail] = React.useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '',
+    text: ''
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Newsletter email:', email);
-    setEmail('');
-  };
+
+  })
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Réinitialiser le message
+  setMessage({ type: '', text: '' });
+
+  // Vérifier que l'email n’est pas vide
+  if (!email.trim()) {
+    setMessage({ type: 'error', text: t('footer.newsletter.errors.emptyEmail') });
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    // Utiliser le service newsletter
+    const result = await NewsletterService.subscribe(email, i18n.language);
+
+    if (result.success) {
+      setMessage({ type: 'success', text: t('footer.newsletter.messages.success') });
+      setEmail(''); // Vider le champ après succès
+    } else {
+      setMessage({ type: 'error', text: result.message });
+    }
+  } catch (error) {
+    setMessage({ type: 'error', text: t('footer.newsletter.errors.generic') });
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <footer style={{ backgroundColor: MY_COLORS.black }} className="text-white relative overflow-hidden">
@@ -270,14 +307,28 @@ const Footer = () => {
                       placeholder={t('footer.newsletter.emailPlaceholder')}
                       className="w-full px-3 py-2 sm:px-4 sm:py-2 rounded bg-white text-gray-900 text-xs sm:text-sm focus:outline-none focus:ring-2"
                       style={{ borderColor: MY_COLORS.green }}
+                      disabled={loading}
                     />
                   </div>
+                   {/* Message d’erreur / succès */}
+    {message.text && (
+      <p
+        className={`text-xs sm:text-sm ${
+          message.type === 'success'
+            ? 'text-green-400'
+            : 'text-red-400'
+        }`}
+      >
+        {message.text}
+      </p>
+    )}
                   <button
                     onClick={handleSubmit}
+                    disabled={loading}
                     className="w-full py-1.5 sm:py-2 rounded border-2 font-semibold text-xs sm:text-sm hover:bg-opacity-20 transition"
                     style={{ borderColor: MY_COLORS.green, backgroundColor: 'transparent', color: MY_COLORS.green }}
                   >
-                    {t('footer.newsletter.submitButton')}
+                  {loading ? t('footer.newsletter.submitting') : t('footer.newsletter.submitButton')}
                   </button>
                 </div>
               </div>

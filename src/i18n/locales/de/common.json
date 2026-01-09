@@ -156,7 +156,62 @@
     ]
   },
 
-
+"footer": {
+  "banner": {
+    "availableEverywhere": "Service überall verfügbar",
+    "phoneNumber": "+237 650 416 640",
+    "phoneLabel": "Telefon"
+  },
+  "company": {
+    "description": "Unser gesamtes technisches und technologisches Potenzial im Dienste Ihrer Vorstellungskraft"
+  },
+  "services": {
+    "title": "DIENSTLEISTUNGEN",
+    "mechanicalFabrication": "Design, Mechanische & Metallische Fertigung",
+    "smartBuilding": "Intelligente Gebäude & Automatisierung",
+    "gpsTracking": "GPS & Tracking (More Than Track)",
+    "itServices": "IT-Dienstleistungen & Datenverarbeitung",
+    "designOffice": "Planungsbüro: Konzeption & Ingenieurwesen",
+    "afterSales": "Kundendienst 24/7 verfügbar"
+  },
+  "usefulLinks": {
+    "title": "NÜTZLICHE LINKS",
+    "mangoBoutique": "MANGO BOUTIQUE",
+    "foczou": "FOCZOU",
+    "moreThanTrack": "MORE THAN TRACK",
+    "matoa": "MATOA"
+  },
+  "newsletter": {
+    "title": "NEWSLETTER",
+    "description": "Zukünftiger Partner, Arbeitssuchender oder anderes? Abonnieren Sie unseren Newsletter und verpassen Sie keine Neuigkeiten",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "submitButton": "Beitreten",
+    "submitting": "Wird gesendet...",
+    "errors": {
+      "emptyEmail": "Bitte geben Sie eine E-Mail-Adresse ein",
+      "generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    },
+    "messages": {
+      "success": "Vielen Dank! Ihre Anmeldung wurde registriert."
+    }
+  },
+  "copyright": {
+    "text": "Copyright 2025 by ElecIT Engineering. Alle Rechte vorbehalten",
+    "privacyPolicy": "Datenschutzerklärung",
+    "legalNotice": "Impressum"
+  },
+  "contact": {
+    "floatingButton": "Kontaktieren Sie uns",
+    "popup": {
+      "title": "Kontaktieren Sie uns",
+      "subtitle": "Wir antworten so schnell wie möglich",
+      "availability": " ",
+      "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+      "openWhatsApp": "WhatsApp öffnen"
+    }
+  }
+},
   
 
   "smartBuild": {
@@ -263,54 +318,7 @@
     }
   },
 
-  "footer": {
-    "banner": {
-      "availableEverywhere": "Service überall verfügbar",
-      "phoneNumber": "+237 650 416 640",
-      "phoneLabel": "Telefon"
-    },
-    "company": {
-      "description": "Unser gesamtes technisches und technologisches Potenzial im Dienst Ihrer Vorstellungskraft"
-    },
-    "services": {
-      "title": "DIENSTLEISTUNGEN",
-      "mechanicalFabrication": "Design, Mechanische & Metallische Fertigung",
-      "smartBuilding": "Intelligente Gebäude & Automatisierung",
-      "gpsTracking": "GPS & Tracking (More Than Track)",
-      "itServices": "IT-Dienste & DATA Processing",
-      "designOffice": "Planungsbüro: Konstruktion & Ingenieurwesen",
-      "afterSales": "24/7 Kundendienst"
-    },
-    "usefulLinks": {
-      "title": "NÜTZLICHE LINKS",
-      "mangoBoutique": "MANGO BOUTIQUE",
-      "foczou": "FOCZOU",
-      "moreThanTrack": "MORE THAN TRACK",
-      "matoa": "MATOA"
-    },
-    "newsletter": {
-      "title": "NEWSLETTER",
-      "description": "Zukünftiger Partner, Jobsuchender, anderes? Abonnieren Sie unseren Newsletter und verpassen Sie keine aktuellen Neuigkeiten",
-      "emailLabel": "E-Mail",
-      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
-      "submitButton": "Beitreten"
-    },
-    "copyright": {
-      "text": "Copyright 2025 by ElecIT Engineering. Alle Rechte vorbehalten",
-      "privacyPolicy": "Datenschutzrichtlinie",
-      "legalNotice": "Rechtliche Hinweise"
-    },
-    "contact": {
-      "floatingButton": "Kontaktieren Sie uns",
-      "popup": {
-        "title": "Kontaktieren Sie uns",
-        "subtitle": "Wir antworten so schnell wie möglich",
-        "availability": " ",
-        "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
-        "openWhatsApp": "WhatsApp öffnen"
-      }
-    }
-  },
+
 
   "keySolutions": {
     "bannerTitle": "Schlüssellösungen für spezifische Bedürfnisse",

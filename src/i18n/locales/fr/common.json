@@ -301,7 +301,15 @@
       "description": "Futur partenaire, chercheur d'emploi, autre? Abonnez vous à notre newsletter et ne manquez pas nos dernières actualités",
       "emailLabel": "Email",
       "emailPlaceholder": "Saisissez votre e-mail",
-      "submitButton": "Rejoindre"
+      "submitButton": "Rejoindre",
+       "submitting": "Envoi en cours...",
+    "messages": {
+      "success": "Merci ! Vous êtes inscrit à la newsletter."
+    },
+    "errors": {
+      "emptyEmail": "Veuillez entrer un email.",
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    }
     },
     "copyright": {
       "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
