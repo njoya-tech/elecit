@@ -3,213 +3,232 @@ import { directus } from './api/directus';
 import { readItems } from '@directus/sdk';
 
 /**
- * Service de gestion des projets
- * Gère la récupération multilingue des projets et catégories
+ * Mapping des codes de langue vers les IDs Directus
+ * IMPORTANT : Vérifiez dans votre table 'languages' pour confirmer ces IDs
  */
-const ProjectsService = {
+const LANGUAGE_MAP = {
+  'en': 1,
+  'fr': 2,
+  'de': 3
+};
+
+class ProjectsService {
   
   /**
-   * Récupérer toutes les catégories traduites
-   * @param {string} language - Langue (fr, en, de)
-   * @returns {Promise<Array>}
+   * Récupère toutes les catégories avec traductions
    */
-  async getCategories(language = 'fr') {
+  async getCategories(locale = 'fr') {
     try {
+      const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
+
       const categories = await directus.request(
         readItems('project_categories', {
           filter: {
             status: { _eq: 'published' }
           },
-          fields: [
-            'id',
-            'sort',
-            'translations.*'
-          ],
+          fields: ['*', 'translations.*'],
           sort: ['sort']
         })
       );
 
-      // Vérifier que les catégories existent
-      if (!categories || categories.length === 0) {
-        console.warn('Aucune catégorie trouvée dans Directus');
-        return [];
-      }
+      console.log('📦 Categories from Directus:', categories);
 
-      // Mapper pour extraire uniquement la traduction correspondante
-      return categories.map(cat => {
-        // Vérifier que translations existe et est un tableau
-        const translations = Array.isArray(cat.translations) ? cat.translations : [];
-        const translation = translations.find(t => t.language === language);
-        const fallback = translations.find(t => t.language === 'fr');
-        
+      // Filtrer les traductions par langue côté client
+      return categories.map(category => {
+        const translation = category.translations?.find(
+          t => t.languages_id === languageId
+        );
+
         return {
-          id: cat.id,
-          label: translation?.label || fallback?.label || 'Sans catégorie',
-          sort: cat.sort
+          id: category.id,
+          label: translation?.name || 'Sans nom',
+          slug: translation?.slug || ''
         };
       });
 
     } catch (error) {
-      console.error('Erreur récupération catégories:', error);
-      console.error('Détails:', error.message);
+      console.error('❌ Erreur getCategories:', error);
       return [];
     }
-  },
+  }
 
   /**
-   * Récupérer tous les projets avec traductions et images
-   * @param {string} language - Langue (fr, en, de)
-   * @param {string|null} categoryId - Filtrer par catégorie (optionnel)
-   * @returns {Promise<Array>}
+   * Récupère tous les projets avec traductions et images
    */
-  async getProjects(language = 'fr', categoryId = null) {
+  async getProjects(locale = 'fr', categoryId = null) {
     try {
+      const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
+
       const filter = {
         status: { _eq: 'published' }
       };
 
-      // Ajouter filtre catégorie si spécifié (et différent de 'all')
       if (categoryId && categoryId !== 'all') {
-        filter.category_id = { _eq: categoryId };
+        filter.category = { _eq: categoryId };
       }
 
       const projects = await directus.request(
         readItems('projects', {
           filter,
-          fields: [
-            'id',
-            'number',
-            'date_realisation',
-            'status_project',
-            'sort',
-            'category_id.id',
-            'category_id.translations.*',
-            'translations.*',
-            'images.*'
-          ],
-          sort: ['sort']
+   fields: [
+        '*',
+        'category.*',
+        'category.translations.*',
+        'translations.*',
+       'images.*',                    // ← images (pas project_images)
+  'images.directus_files_id.*'   // ← Votre champ ✓
+      ],
+
+          sort: ['-realization_date', 'sort']
         })
       );
 
-      // Vérifier que les projets existent
-      if (!projects || projects.length === 0) {
-        console.warn('Aucun projet trouvé dans Directus');
-        return [];
-      }
+      console.log('📦 Projects from Directus:', projects);
 
-      // Mapper les données pour le frontend
-      return projects.map(project => {
-        const translations = Array.isArray(project.translations) ? project.translations : [];
-        const translation = translations.find(t => t.language === language);
-        const fallback = translations.find(t => t.language === 'fr');
-        
-        // Gérer la catégorie
-        const categoryTranslations = Array.isArray(project.category_id?.translations) 
-          ? project.category_id.translations 
-          : [];
-        const categoryTranslation = categoryTranslations.find(t => t.language === language);
-        const categoryFallback = categoryTranslations.find(t => t.language === 'fr');
-        
-        // Trier les images : principale en premier
-        const images = Array.isArray(project.images) ? project.images : [];
-        const sortedImages = images.sort((a, b) => {
-          if (a.is_main) return -1;
-          if (b.is_main) return 1;
-          return (a.sort || 0) - (b.sort || 0);
-        });
-
-        return {
-          id: project.id,
-          number: project.number,
-          title: translation?.title || fallback?.title || 'Sans titre',
-          shortDescription: translation?.short_description || fallback?.short_description || '',
-          description: translation?.description || fallback?.description || '',
-          utilite: translation?.utility || fallback?.utility || '',
-          retourClient: translation?.client_feedback || fallback?.client_feedback || '',
-          responsable: translation?.responsible || fallback?.responsible || '',
-          dateRealisation: this.formatDate(project.date_realisation, language),
-          statut: project.status_project || 'En cours',
-          category: categoryTranslation?.label || categoryFallback?.label || 'Sans catégorie',
-          categoryId: project.category_id?.id,
-          images: sortedImages.map(img => ({
-            id: img.id,
-            url: `${import.meta.env.VITE_DIRECTUS_URL}/assets/${img.image}`,
-            isMain: img.is_main
-          }))
-        };
-      });
+      return projects.map((project, index) => 
+        this._formatProject(project, index + 1, languageId)
+      );
 
     } catch (error) {
-      console.error('Erreur récupération projets:', error);
-      console.error('Détails:', error.message);
+      console.error('❌ Erreur getProjects:', error);
       return [];
     }
-  },
+  }
 
   /**
-   * Récupérer un projet spécifique
-   * @param {string} projectId - ID du projet
-   * @param {string} language - Langue
-   * @returns {Promise<Object|null>}
+   * Récupère un projet spécifique par son slug
    */
-  async getProjectById(projectId, language = 'fr') {
+  async getProjectBySlug(slug, locale = 'fr') {
     try {
-      const projects = await this.getProjects(language);
-      return projects.find(p => p.id === projectId) || null;
-    } catch (error) {
-      console.error('Erreur récupération projet:', error);
-      return null;
-    }
-  },
+      const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
 
-  /**
-   * Formater une date selon la langue
-   * @param {string} date - Date ISO
-   * @param {string} language - Langue
-   * @returns {string}
-   */
-  formatDate(date, language) {
-    if (!date) return '';
-    
-    const locales = {
-      fr: 'fr-FR',
-      en: 'en-US',
-      de: 'de-DE'
-    };
-
-    return new Date(date).toLocaleDateString(locales[language] || 'fr-FR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  },
-
-  /**
-   * Statistiques (pour backoffice)
-   * @returns {Promise<Object>}
-   */
-  async getStats() {
-    try {
       const projects = await directus.request(
         readItems('projects', {
-          aggregate: {
-            count: '*'
+          filter: {
+            status: { _eq: 'published' }
           },
-          groupBy: ['status', 'category_id']
+    fields: [
+        '*',
+        'category.*',
+        'category.translations.*',
+        'translations.*',
+        'images.*',                    // ← images (pas project_images)
+  'images.directus_files_id.*'   // ← Votre champ ✓
+      ],
+
+          limit: 1000 // Charger tous pour filtrer par slug côté client
         })
       );
+console.log('📦 Projects RAW:', projects[0]);     // ← images brut
+console.log('🎨 Projects FORMATÉES:', formatted);
+      // Filtrer par slug côté client
+      const project = projects.find(p => {
+        const translation = p.translations?.find(t => t.languages_id === languageId);
+        return translation?.slug === slug;
+      });
 
-      return {
-        success: true,
-        data: projects
-      };
+      if (!project) return null;
+
+      return this._formatProject(project, 1, languageId);
     } catch (error) {
-      return {
-        success: false,
-        message: 'Erreur récupération stats'
-      };
+      console.error('❌ Erreur getProjectBySlug:', error);
+      return null;
     }
   }
-};
 
-export default ProjectsService;
+  /**
+   * Formate un projet pour l'UI
+   * @private
+   */
+_formatProject(project, number, languageId) {
+  const translation = project.translations?.find(t => t.languages_id === languageId) || {};
+  const categoryTranslation = project.category?.translations?.find(t => t.languages_id === languageId) || {};
+
+  // 🔧 CORRECTION IMAGES - REMPLACEZ CE BLOC COMPLET
+  const sortedImages = (project.images || [])
+    .map(img => {
+      const fileId = img.directus_files_id?.id || img.directus_files_id;
+      return {
+        id: img.id,
+        fileId: fileId,
+        isFeatured: img.is_featured || false,
+        url: fileId ? `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}` : null
+      };
+    })
+    .filter(img => img.url);  // Garde seulement les images avec URL
+
+  const featuredImage = sortedImages.find(img => img.isFeatured) || sortedImages[0];
+
+  const statusMap = {
+    'completed': 'Terminé',
+    'in_progress': 'En cours',
+    'planned': 'Planifié'
+  };
+
+  return {
+    id: project.id,
+    number: number,
+    title: translation.title || 'Sans titre',
+    slug: translation.slug || '',
+    shortDescription: this._truncateText(translation.description, 150),
+    description: translation.description || '',
+    utilite: translation.utility || '',
+    retourClient: translation.client_feedback || '',
+    responsable: project.responsible_name || '',
+    dateRealisation: this._formatDate(project.realization_date),
+    statut: statusMap[project.project_status] || project.project_status,
+    categoryId: project.category?.id || null,
+    categoryName: categoryTranslation.name || '',
+    mainImage: featuredImage?.url || null,      // ✅ "http://192.168.50.46:8055/assets/6d6548db..."
+    gallery: sortedImages.map(img => img.url)    // ✅ ["http://192.168.50.46:8055/assets/6d6548db..."]
+  };
+}
+
+
+  /**
+   * Génère l'URL d'une image Directus
+   * @private
+   */
+  _getImageUrl(fileId, transforms = {}) {
+    if (!fileId) return null;
+
+    const baseUrl = `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}`;
+    
+    const params = new URLSearchParams();
+    if (transforms.width) params.append('width', transforms.width);
+    if (transforms.height) params.append('height', transforms.height);
+    if (transforms.quality) params.append('quality', transforms.quality || 80);
+    if (transforms.fit) params.append('fit', transforms.fit || 'cover');
+    if (transforms.format) params.append('format', transforms.format || 'webp');
+
+    const queryString = params.toString();
+    return queryString ? `${baseUrl}?${queryString}` : baseUrl;
+  }
+
+  /**
+   * Tronque un texte
+   * @private
+   */
+  _truncateText(text, maxLength) {
+    if (!text || text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + '...';
+  }
+
+  /**
+   * Formate une date
+   * @private
+   */
+  _formatDate(dateString) {
+    if (!dateString) return '';
+    
+    const date = new Date(dateString);
+    return date.toLocaleDateString('fr-FR', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric'
+    });
+  }
+}
+
+export default new ProjectsService();
+

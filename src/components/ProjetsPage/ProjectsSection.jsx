@@ -31,63 +31,13 @@ const MY_COLORS = {
   lightGray: '#F5F5F5'
 };
 
-// Mapping des images pour chaque projet
-const PROJECT_IMAGES = {
-  1: {
-    main: BM3,
-     gallery: [
-  BM3 ]
-  },
-  2: {
-    main: an5,
-     gallery: [
-  an5]
-  },
-  3: {
-    main: c2,
-    gallery: [
-     c2 ]
-  },
-  4: {
-    main: an7,
-     gallery: [
-an7]
-  },
-  5: {
-    main: an10,
-    gallery: [
-  an10
-]
-  },
-  6: {
-    main: an9,
-    gallery: [
-an9]
-  },
-  7: {
-    main: an8,
-    gallery: [
- an8]
-  },
-  8: {
-    main: an12,
-    gallery: [
- an12
-]
-  },
-  9: {
-    main: an11, 
-    gallery: [
-  an11
-]
-  }
-};
+
 
 
 
 const ProjectCard = ({ project, onClick }) => {
   const { t } = useTranslation();
-  const projectImage = PROJECT_IMAGES[project.id]?.main || 'https://via.placeholder.com/400x300';
+  const projectImage = project.mainImage || 'https://via.placeholder.com/400x300';
   
   return (
     <div 
@@ -187,11 +137,9 @@ const ProjectModal = ({ project, onClose }) => {
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const carouselImages = PROJECT_IMAGES[project.id]?.gallery || [
-    'https://via.placeholder.com/800x600',
-    'https://via.placeholder.com/800x600',
-    'https://via.placeholder.com/800x600'
-  ];
+  const carouselImages = project.gallery && project.gallery.length > 0 
+    ? project.gallery 
+    : ['https://via.placeholder.com/800x600'];
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
