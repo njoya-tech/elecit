@@ -865,169 +865,47 @@
     },
 
     "blog": {
-      "title": "Restez à jour sur nos",
-      "highlight": "actualités",
-      "title2": "en consultant notre blog",
-      "readMore": "Lire plus",
-      "prevPage": "Page précédente",
-      "nextPage": "Page suivante",
-      "goToPage": "Aller à la page",
-      "articles": [
-        {
-          "id": 1,
-          "number": "1",
-          "title": "Banque Mobile",
-          "category": "Fabrication mécanique",
-
-          "shortDescription": "Conception, développement et déploiement d’une plateforme de banque mobile permettant aux utilisateurs d’effectuer des opérations financières. ",
-          "dateRealisation": "12/06/23",
-          "statut": "terminé",
-          "description": "Conception, développement et déploiement d’une plateforme de banque mobile permettant aux utilisateurs d’effectuer des opérations financières",
-          "utilite": "Ce projet répond au besoin critique de mobilité interne fluide, réduction du temps de déplacement des équipes sur site, tout en assurant leur sécurité et leur confort.",
-          "retourClient": "Grâce à ces nouveaux moyens de transport, nous avons réduit de 30 % les retards liés aux déplacements internes, tout en améliorant le confort de nos collaborateurs.",
-          "responsable": "Responsable Logistique"
-        },
-        {
-          "id": 2,
-          "number": "2",
-          "title": "Camion de transport du personnel",
-          "category": "Fabrication mécanique",
-
-          "shortDescription": "Restructuration technique et fonctionnel d’un camion destiné au transport du personnel.",
-          "dateRealisation": "15/08/23",
-          "statut": "terminé",
-          "description": "Restructuration technique et fonctionnel d’un camion destiné au transport du personnel.",
-          "utilite": "Amélioration de la productivité et de la prise de décision grâce à des outils d'analyse avancés.",
-          "retourClient": "L'implémentation de cette solution a transformé notre façon de travailler et augmenté notre efficacité de 40%.",
-          "responsable": "Directeur IT"
-        },
-        {
-          "id": 3,
-          "number": "3",
-          "title": "Machine de fabrication de briques (presse à brique)",
-          "category": "Fabrication mécanique",
-
-          "shortDescription": "Conception et fabrication d’une machine industrielle de production de briques, intégrant des mécanismes robustes.",
-          "dateRealisation": "20/09/23",
-          "statut": "en cours",
-          "description": "Conception et fabrication d’une machine industrielle de production de briques, intégrant des mécanismes robustes..",
-          "utilite": "Assurer la sécurité des occupants et des biens tout en optimisant la gestion des accès.",
-          "retourClient": "La tranquillité d'esprit apportée par ce système est inestimable pour notre organisation.",
-          "responsable": "Chef de la sécurité"
-        },
-        {
-          "id": 4,
-          "number": "4",
-          "title": "Construction d’un hangar métallique",
-          "category": "Génie civil",
-
-          "shortDescription": "Étude, conception et construction d’un hangar métallique destiné à des usages industriels et logistiques.",
-          "dateRealisation": "05/10/23",
-          "statut": "terminé",
-          "description": "Étude, conception et construction d’un hangar métallique destiné à des usages industriels et logistiques..",
-          "utilite": "Réduction des temps d'arrêt et amélioration de l'efficacité opérationnelle.",
-          "retourClient": "Cette solution nous a permis de réduire nos coûts de maintenance de 25%.",
-          "responsable": "Directeur de production"
-        },
-        {
-          "id": 5,
-          "number": "5",
-          "title": "Installation domotique dans une villa",
-          "category": "Smart building",
-
-          "shortDescription": "Installation complète d’un système domotique résidentiel comprenant la gestion intelligente.",
-          "dateRealisation": "12/11/23",
-          "statut": "en cours",
-          "description": "Installation complète d’un système domotique résidentiel comprenant la gestion intelligente..",
-          "utilite": "Garantir une connectivité fiable et performante pour tous les services.",
-          "retourClient": "Le nouveau réseau a considérablement amélioré notre productivité quotidienne.",
-          "responsable": "Responsable Infrastructure"
-        },
-        {
-          "id": 6,
-          "number": "6",
-          "title": "Installation domotique dans une banque",
-          "category": "Smart building",
-
-          "shortDescription": "Déploiement d’un système domotique professionnel pour une banque, incluant la gestion intelligente.",
-          "dateRealisation": "18/12/23",
-          "statut": "terminé",
-          "description": "Déploiement d’un système domotique professionnel pour une banque, incluant la gestion intelligente..",
-          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
-          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
-          "responsable": "Directeur des opérations"
-        },
-        {
-          "id": 7,
-          "number": "7",
-          "title": "Fabrication d’un escabeau en 1",
-          "category": "Fabrication mécanique",
-
-          "shortDescription": "Conception et fabrication d’un escabeau multifonction 3 en 1, capable de s’adapter à plusieurs configurations d’utilisation.",
-          "dateRealisation": "18/12/23",
-          "statut": "terminé",
-          "description": "Conception et fabrication d’un escabeau multifonction 3 en 1, capable de s’adapter à plusieurs configurations d’utilisation..",
-          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
-          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
-          "responsable": "Directeur des opérations"
-        },
-        {
-          "id": 8,
-          "number": "8",
-          "title": "Création et aménagement du showroom ",
-          "category": "Projet interne",
-          
-          "shortDescription": "Conception, aménagement et mise en service d’un showroom dédié à la présentation des solutions domotiques.",
-          "dateRealisation": "18/12/23",
-          "statut": "terminé",
-          "description": "Conception, aménagement et mise en service d’un showroom dédié à la présentation des solutions domotiques..",
-          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
-          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
-          "responsable": "Directeur des opérations"
-        },
-        {
-          "id": 9,
-          "number": "9",
-          "title": "Ouverture de la boutique vitrine ",
-          "category": "Projet interne",
-          
-          "shortDescription": "Création et aménagement d’une boutique vitrine dédiée à la vente d’équipements électriques, réseaux et autres matériaux.",
-          "dateRealisation": "18/12/23",
-          "statut": "terminé",
-          "description": "Création et aménagement d’une boutique vitrine dédiée à la vente d’équipements électriques, réseaux et autres matériaux..",
-          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
-          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
-          "responsable": "Directeur des opérations",
-          "title": "Pourquoi la fabrication sur mesure est un game-changer dans l'industrie camerounaise ?",
-          "excerpt": "Dans de nombreux secteurs industriels au Cameroun, les entreprises font face à un défi récurrent..."
-        },
-        {
-          "id": 2,
-          "title": "5 façons dont un hôtel intelligent économise de l'énergie et fidélise sa clientèle",
-          "excerpt": "Sur un marché hôtelier camerounais de plus en plus compétitif, la question est double..."
-        },
-        {
-          "id": 3,
-          "title": "La révolution du tracking : quand l'IA surveille vos véhicules",
-          "excerpt": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à des défis majeurs..."
-        },
-        {
-          "id": 4,
-          "title": "Irrigation intelligente : la technologie au service de l'agriculture durable",
-          "excerpt": "L'agriculture camerounaise, moteur de l'économie nationale, est confrontée à un défi de taille..."
-        },
-        {
-          "id": 5,
-          "title": "Du métal brut à l'innovation : comment nous façonnons des infrastructures durables",
-          "excerpt": "Transformer une matière brute en un produit innovant et fonctionnel, voilà l'art de la métallurgie moderne..."
-        },
-        {
-          "id": 6,
-          "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
-          "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
-        }
-      ]
+  "title": "Restez informé de nos",
+  "highlight": "actualités",
+  "title2": "en visitant notre blog",
+  "readMore": "Lire la suite",
+  "prevPage": "Page précédente",
+  "nextPage": "Page suivante",
+  "goToPage": "Aller à la page",
+  "articles": [
+    {
+      "id": 1,
+      "title": "Pourquoi la fabrication sur mesure est un levier clé pour l’industrie camerounaise ?",
+      "excerpt": "Dans de nombreux secteurs industriels au Cameroun, les entreprises font face à un défi récurrent..."
+    },
+    {
+      "id": 2,
+      "title": "5 façons dont un hôtel intelligent économise l’énergie et fidélise ses clients",
+      "excerpt": "Dans un marché hôtelier de plus en plus concurrentiel au Cameroun, la problématique est double..."
+    },
+    {
+      "id": 3,
+      "title": "La révolution du suivi : quand l’IA surveille vos véhicules",
+      "excerpt": "Le transport et la logistique sont au cœur de l’économie camerounaise, mais ce secteur fait face à de grands défis..."
+    },
+    {
+      "id": 4,
+      "title": "Irrigation intelligente : la technologie au service d’une agriculture durable",
+      "excerpt": "L’agriculture camerounaise, moteur de l’économie nationale, fait face à un défi majeur..."
+    },
+    {
+      "id": 5,
+      "title": "Du métal brut à l’innovation : comment nous façonnons des infrastructures durables",
+      "excerpt": "Transformer les matières premières en un produit innovant et fonctionnel est l’art de la métallurgie moderne..."
+    },
+    {
+      "id": 6,
+      "title": "Traitement des données et sécurité : protéger l’or numérique de votre entreprise",
+      "excerpt": "Chaque entreprise génère quotidiennement d’importantes quantités d’informations sensibles..."
     }
+  ]
+}
+
   },
 
   "fabriMeca": {
