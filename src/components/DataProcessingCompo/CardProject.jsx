@@ -4,11 +4,13 @@ import { MY_COLORS } from "../../constants/colors.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 import ProjectModal from "./ProjectModal.jsx";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const CardProject = () => {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   const visiblePosts = t("dataProcessing.projects.items", {
     returnObjects: true,
@@ -25,7 +27,7 @@ const CardProject = () => {
         />
 
         {/* DARK GRADIENT OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
 
         {/* ANGLED BLACK PNG MASK */}
         <img
@@ -45,9 +47,12 @@ const CardProject = () => {
           <h3
             style={{
               color: MY_COLORS.secondaryGreen,
+              
             }}
-            className="text-white font-extrabold text-[28px] sm:text-[32px] md:text-4xl 
-          lg:text-5xl xl:text-6xl leading-tight mb-6 sm:mb-8 md:mb-10"
+            className="text-white font-extrabold 
+            text-[28px] sm:text-[32px] md:text-3xl 
+          lg:text-4xl xl:text-5xl leading-tight
+           mb-6 sm:mb-8 md:mb-10 -mt-9"
           >
             <span>{t("dataProcessing.projects.title")}</span>
             <br />
@@ -55,7 +60,8 @@ const CardProject = () => {
           </h3>
 
           {/* SUBTITLE */}
-          <p className="text-white text-sm md:text-base lg:text-lg tracking-wide font-semibold mb-2 px-4">
+          <p className="text-white text-sm md:text-base lg:text-lg 
+          tracking-wide font-semibold mb-12 px-4">
             {t("dataProcessing.projects.description")}
           </p>
 
@@ -128,7 +134,7 @@ const CardProject = () => {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject}
       />
-      
+
       {/* ============================================ */}
       {/* CTA SECTION WITH BACKGROUND                 */}
       {/* ============================================ */}
@@ -155,7 +161,10 @@ const CardProject = () => {
             />
 
             <h3
-              className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
+              className="relative z-20 text-center text-2xl
+               md:text-4xl lg:text-2xl
+                xl:text-4xl font-bold 
+                leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
               {t("dataProcessing.projects.cta.title")} <br />
@@ -170,7 +179,7 @@ const CardProject = () => {
 
             <CTAButton
               className="absolute top-10 md:top-2 md:w-70"
-              onClick={() => alert("Video clicked!")}
+              onClick={() => navigate("/contacts")}
             >
               {t("dataProcessing.projects.cta.button")}
             </CTAButton>

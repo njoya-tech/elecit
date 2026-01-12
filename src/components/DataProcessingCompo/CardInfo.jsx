@@ -94,7 +94,7 @@ const CardInfo = () => {
                     <img
                       src={card.src}
                       alt="Illustration"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-bottom"
                     />
                   </div>
                 );

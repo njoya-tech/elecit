@@ -58,7 +58,7 @@ const Hero = () => {
         </p>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ml-18 sm:ml-4 md:ml-8 lg:ml-22">
           <CTAButton onClick={() => alert("Video clicked!")}>
             {t("entreprise.hero.button")}
           </CTAButton>

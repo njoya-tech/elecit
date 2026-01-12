@@ -4,6 +4,8 @@ import { MY_COLORS } from "../../constants/colors";
 import { Plus, Minus } from "lucide-react";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const EntrepriseAcc = () => {
   const { t } = useTranslation();
@@ -17,23 +19,29 @@ const EntrepriseAcc = () => {
 
   return (
     <section
-      className="w-screen py-12 md:py-16 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
+      className="w-screen pt-20 lg:pt-24 pb-10 relative -mx-[50vw] left-1/2 right-1/2"
       style={{
         backgroundColor: MY_COLORS.gray,
       }}
-    >
+     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-0">
           {/* LEFT BLOCK - FAQ */}
           <div className="space-y-6 md:space-y-8 relative">
             {/* Hard Hat Icon */}
             <div className="absolute w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 -top-12 md:-top-20 -left-8 md:-left-16 lg:-left-24">
-              <img
+              <motion.img
                 src={ICONS.Casque}
-                alt="Casque"
-                className="w-full h-full object-contain animate-bounce"
-                style={{
-                  animationDuration:"3s"
+                alt=""
+                aria-hidden="true"
+                className="md:block absolute -left-2 md:-left-4 -top-4 md:-top-8 w-20 md:w-24 lg:w-32 opacity-100 z-20"
+                animate={{
+                  y: [20, -40, 20],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
                 }}
               />
             </div>
@@ -52,7 +60,7 @@ const EntrepriseAcc = () => {
                 <div
                   key={index}
                   className="border-b pb-3 md:pb-4"
-                  style={{ borderColor: MY_COLORS.creamDark }}
+                  style={{ borderColor: MY_COLORS.secondaryGreen }}
                 >
                   {/* Question Button */}
                   <button
@@ -176,9 +184,27 @@ const EntrepriseAcc = () => {
             </div>
 
             {/* CTA Section: Button + Gears */}
-            <div className="px-2 md:px-4 mt-6 md:mt-8 flex items-center justify-between ml-0 lg:ml-40">
+            <div
+              className="px-2 md:px-4 mt-6 md:mt-8 flex
+             items-center justify-between ml-0 lg:ml-40"
+            >
               {/* Left Side: Button */}
+
               <div className="flex items-center gap-3 md:gap-4  shrink-0">
+                <motion.img
+                src={ICONS.flech_icon}
+                alt="Arrow"
+                className="w-10 sm:w-12 opacity-80 origin-top scale-X-1"
+                
+                animate={{
+                  rotate: [-15, 15, -15],
+                }}
+                transition={{
+                  duration: 2.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                }}
+               />
                 <CTAButton
                   onClick={() => alert("Video clicked!")}
                   className="whitespace-nowrap min-w-fit"
@@ -193,7 +219,7 @@ const EntrepriseAcc = () => {
                 <div
                   className="hidden lg:block  absolute w-14 h-14 md:w-24 md:h-24 lg:w-[100px] lg:h-[100px]"
                   style={{
-                    top: "-10%",
+                    top: "-17%",
                     right: "-9%",
                     animation: "rotateClockwise 20s linear infinite",
                   }}

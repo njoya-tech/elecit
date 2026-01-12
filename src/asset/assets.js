@@ -38,7 +38,7 @@ import IMG1 from "./images/image_1.JPG";
 import IMG2 from "./images/image_2.JPG";
 import IMG3 from "./images/image_3.JPG";
 import IMG4 from "./images/image_4.JPG";
-import IMG5 from "./images/image_5.jpg";
+import IMG5 from "./images/Tablet.jpg";
 import IMG6 from "./images/image_6.jpg";
 import IMG7 from "./images/image_7.jpg";
 import IMG8 from "./images/bureau_card.png";
