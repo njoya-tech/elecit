@@ -1,11 +1,6 @@
 // src/services/projects.service.js
 import { directus } from './api/directus';
-import { readItems } from '@directus/sdk';
 
-/**
- * Mapping des codes de langue vers les IDs Directus
- * IMPORTANT : Vérifiez dans votre table 'languages' pour confirmer ces IDs
- */
 const LANGUAGE_MAP = {
   'en': 1,
   'fr': 2,
@@ -14,26 +9,15 @@ const LANGUAGE_MAP = {
 
 class ProjectsService {
   
-  /**
-   * Récupère toutes les catégories avec traductions
-   */
   async getCategories(locale = 'fr') {
     try {
       const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
 
-      const categories = await directus.request(
-        readItems('project_categories', {
-          filter: {
-            status: { _eq: 'published' }
-          },
-          fields: ['*', 'translations.*'],
-          sort: ['sort']
-        })
-      );
+      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/project_categories?filter[status][_eq]=published&fields=*,translations.*&sort=sort`;
+      const response = await fetch(url);
+      const result = await response.json();
+      const categories = result.data || [];
 
-      console.log('📦 Categories from Directus:', categories);
-
-      // Filtrer les traductions par langue côté client
       return categories.map(category => {
         const translation = category.translations?.find(
           t => t.languages_id === languageId
@@ -52,38 +36,39 @@ class ProjectsService {
     }
   }
 
-  /**
-   * Récupère tous les projets avec traductions et images
-   */
   async getProjects(locale = 'fr', categoryId = null) {
     try {
       const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
 
-      const filter = {
-        status: { _eq: 'published' }
-      };
-
+      // Filtres
+      let filterQuery = 'filter[status][_eq]=published';
       if (categoryId && categoryId !== 'all') {
-        filter.category = { _eq: categoryId };
+        filterQuery += `&filter[category_id][_eq]=${categoryId}`;
       }
 
-      const projects = await directus.request(
-        readItems('projects', {
-          filter,
-   fields: [
-        '*',
-        'category.*',
-        'category.translations.*',
-        'translations.*',
-       'images.*',                    // ← images (pas project_images)
-  'images.directus_files_id.*'   // ← Votre champ ✓
-      ],
+      // 🎯 CORRECTION FINALE : Le champ s'appelle "images" mais pointe vers "projects_files"
+      // On doit donc demander : images.directus_files_id.*
+      const fieldsQuery = 'fields=*,translations.*,images.id,images.directus_files_id.*';
+      const sortQuery = 'sort[]=-realization_date&sort[]=sort';
 
-          sort: ['-realization_date', 'sort']
-        })
-      );
+      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/projects?${filterQuery}&${fieldsQuery}&${sortQuery}`;
+      
+      console.log('🌐 URL:', url);
 
-      console.log('📦 Projects from Directus:', projects);
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        console.error('❌ Réponse HTTP:', response.status, response.statusText);
+        return [];
+      }
+
+      const result = await response.json();
+      const projects = result.data || [];
+
+      console.log('📦 Projects bruts:', projects);
+      if (projects.length > 0) {
+        console.log('🖼️ Images du premier projet:', projects[0].images);
+      }
 
       return projects.map((project, index) => 
         this._formatProject(project, index + 1, languageId)
@@ -95,33 +80,16 @@ class ProjectsService {
     }
   }
 
-  /**
-   * Récupère un projet spécifique par son slug
-   */
   async getProjectBySlug(slug, locale = 'fr') {
     try {
       const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
 
-      const projects = await directus.request(
-        readItems('projects', {
-          filter: {
-            status: { _eq: 'published' }
-          },
-    fields: [
-        '*',
-        'category.*',
-        'category.translations.*',
-        'translations.*',
-        'images.*',                    // ← images (pas project_images)
-  'images.directus_files_id.*'   // ← Votre champ ✓
-      ],
+      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/projects?filter[status][_eq]=published&fields=*,translations.*,images.id,images.directus_files_id.*`;
+      
+      const response = await fetch(url);
+      const result = await response.json();
+      const projects = result.data || [];
 
-          limit: 1000 // Charger tous pour filtrer par slug côté client
-        })
-      );
-console.log('📦 Projects RAW:', projects[0]);     // ← images brut
-console.log('🎨 Projects FORMATÉES:', formatted);
-      // Filtrer par slug côté client
       const project = projects.find(p => {
         const translation = p.translations?.find(t => t.languages_id === languageId);
         return translation?.slug === slug;
@@ -136,88 +104,72 @@ console.log('🎨 Projects FORMATÉES:', formatted);
     }
   }
 
-  /**
-   * Formate un projet pour l'UI
-   * @private
-   */
-_formatProject(project, number, languageId) {
-  const translation = project.translations?.find(t => t.languages_id === languageId) || {};
-  const categoryTranslation = project.category?.translations?.find(t => t.languages_id === languageId) || {};
+  _formatProject(project, number, languageId) {
+    const translation = project.translations?.find(t => t.languages_id === languageId) || {};
 
-  // 🔧 CORRECTION IMAGES - REMPLACEZ CE BLOC COMPLET
-  const sortedImages = (project.images || [])
-    .map(img => {
-      const fileId = img.directus_files_id?.id || img.directus_files_id;
-      return {
-        id: img.id,
-        fileId: fileId,
-        isFeatured: img.is_featured || false,
-        url: fileId ? `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}` : null
-      };
-    })
-    .filter(img => img.url);  // Garde seulement les images avec URL
+    console.log('🔍 Formatage projet:', project.id);
+    console.log('🖼️ Images brutes:', project.images);
 
-  const featuredImage = sortedImages.find(img => img.isFeatured) || sortedImages[0];
+    // Traiter les images depuis le champ "images" (qui est lié à projects_files)
+    const images = (project.images || [])
+      .map(item => {
+        // item.directus_files_id peut être un objet ou un ID
+        const file = item.directus_files_id;
+        const fileId = file?.id || file;
 
-  const statusMap = {
-    'completed': 'Terminé',
-    'in_progress': 'En cours',
-    'planned': 'Planifié'
-  };
+        if (!fileId) {
+          console.warn('⚠️ Image sans fileId:', item);
+          return null;
+        }
 
-  return {
-    id: project.id,
-    number: number,
-    title: translation.title || 'Sans titre',
-    slug: translation.slug || '',
-    shortDescription: this._truncateText(translation.description, 150),
-    description: translation.description || '',
-    utilite: translation.utility || '',
-    retourClient: translation.client_feedback || '',
-    responsable: project.responsible_name || '',
-    dateRealisation: this._formatDate(project.realization_date),
-    statut: statusMap[project.project_status] || project.project_status,
-    categoryId: project.category?.id || null,
-    categoryName: categoryTranslation.name || '',
-    mainImage: featuredImage?.url || null,      // ✅ "http://192.168.50.46:8055/assets/6d6548db..."
-    gallery: sortedImages.map(img => img.url)    // ✅ ["http://192.168.50.46:8055/assets/6d6548db..."]
-  };
-}
+        return {
+          id: item.id,
+          fileId: fileId,
+          url: `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}`
+        };
+      })
+      .filter(img => img !== null);
 
+    console.log('✅ Images formatées:', images);
 
-  /**
-   * Génère l'URL d'une image Directus
-   * @private
-   */
-  _getImageUrl(fileId, transforms = {}) {
-    if (!fileId) return null;
+    const statusMap = {
+      'completed': 'Terminé',
+      'in_progress': 'En cours',
+      'planned': 'Planifié'
+    };
 
-    const baseUrl = `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}`;
-    
-    const params = new URLSearchParams();
-    if (transforms.width) params.append('width', transforms.width);
-    if (transforms.height) params.append('height', transforms.height);
-    if (transforms.quality) params.append('quality', transforms.quality || 80);
-    if (transforms.fit) params.append('fit', transforms.fit || 'cover');
-    if (transforms.format) params.append('format', transforms.format || 'webp');
+    const formatted = {
+      id: project.id,
+      number: number,
+      title: translation.title || 'Sans titre',
+      slug: translation.slug || '',
+      shortDescription: this._truncateText(translation.description, 150),
+      description: translation.description || '',
+      utilite: translation.utility || '',
+      retourClient: translation.client_feedback || '',
+      responsable: project.responsible_name || '',
+      dateRealisation: this._formatDate(project.realization_date),
+      statut: statusMap[project.project_status] || project.project_status,
+      categoryId: project.category_id || null,
+      categoryName: '',
+      mainImage: images[0]?.url || null,
+      gallery: images.map(img => img.url)
+    };
 
-    const queryString = params.toString();
-    return queryString ? `${baseUrl}?${queryString}` : baseUrl;
+    console.log('📦 Projet formaté:', {
+      title: formatted.title,
+      mainImage: formatted.mainImage,
+      galleryCount: formatted.gallery.length
+    });
+
+    return formatted;
   }
 
-  /**
-   * Tronque un texte
-   * @private
-   */
   _truncateText(text, maxLength) {
     if (!text || text.length <= maxLength) return text;
     return text.substring(0, maxLength).trim() + '...';
   }
 
-  /**
-   * Formate une date
-   * @private
-   */
   _formatDate(dateString) {
     if (!dateString) return '';
     
@@ -231,4 +183,3 @@ _formatProject(project, number, languageId) {
 }
 
 export default new ProjectsService();
-

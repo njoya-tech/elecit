@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import RecruitmentHero from '../../components/Carriere/RecruitmentHero';
 import RecruitmentProcess from '../../components/Carriere/RecruitmentProcess';
 import Footer from '../../components/features/Footer'
@@ -7,62 +7,44 @@ import bgImage from '../../assets/bgImage.jpg'
 import JobOffersList from '../../components/Carriere/jobOffersList';
 import FormRoundCar from '../../components/Carriere/formRoundCar';
 import car from '../../assets/car.png'
-
+import jobOffersServices from '../../services/jobOffers.services';
+import { useTranslation } from 'react-i18next'
 const Carriere = () => {
+  const { i18n }= useTranslation();
+  const [jobOffersData, setJobOffersData ] = useState([]);
+  const [ loading, setLoading] = useState(true)
 
-    const jobOffersData = [
-  {
-    id: 1,
-    title: "Ingénieur en mécatronique",
-    subtitle: "INGENIEUR EN MECATRONIQUE INDUSTRIELLE",
-    location: "Akwa Beach, Douala, Cameroun",
-    type: "Stage professionnel",
-    publicationDate: "12 février 2025",
-    validUntil: "28 février 2025",
-    tags: ["CDD", "fabrication mécanique"],
-    description: "Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche.Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embaucheNous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche",
-    responsibilities: "Concevoir et produire les solutions innovantes selon le cahier de charge.",
-    activities: [
-      "Analyser le schéma et le tableau électrique",
-      "Contribuer à l'installation des équipements électriques"
-    ],
-    profile: "Diplôme en mécatronique industrielle ou équivalent..."
-  },
-   {
-    id: 2,
-    title: "Ingénieur devOps",
-    subtitle: "INGENIEUR ",
-    location: "Akwa Beach, Douala, Cameroun",
-    type: "Stage professionnel",
-    publicationDate: "12 février 2025",
-    validUntil: "28 février 2025",
-    tags: ["CDD", "fabrication mécanique"],
-    description: "Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche.",
-    responsibilities: "Concevoir et produire les solutions innovantes selon le cahier de charge.",
-    activities: [
-      "Analyser le schéma et le tableau électrique",
-      "Contribuer à l'installation des équipements électriques"
-    ],
-    profile: "Diplôme en mécatronique industrielle ou équivalent..."
-  },
-   {
-    id: 2,
-    title: "Ingénieur devOps",
-    subtitle: "INGENIEUR ",
-    location: "Akwa Beach, Douala, Cameroun",
-    type: "Stage professionnel",
-    publicationDate: "12 février 2025",
-    validUntil: "28 février 2025",
-    tags: ["CDD", "fabrication mécanique"],
-    description: "Nous sommes à la recherche d'un stagiaire professionnel technicien en mécatronique industrielle talentueux pour rejoindre notre équipe et contribuer à la réalisation des projets passionnants. Si vous êtes passionné par cet emploi, ce poste est le vôtre, avec possibilité d'embauche.",
-    responsibilities: "Concevoir et produire les solutions innovantes selon le cahier de charge.",
-    activities: [
-      "Analyser le schéma et le tableau électrique",
-      "Contribuer à l'installation des équipements électriques"
-    ],
-    profile: "Diplôme en mécatronique industrielle ou équivalent..."
+
+   // Charger les offres depuis Directus
+  useEffect(() => {
+    const fetchJobOffers = async () => {
+      setLoading(true);
+      try {
+        const offers = await jobOffersServices.getJobOffers(i18n.language);
+        setJobOffersData(offers);
+        console.log('✅ Job Offers chargées:', offers);
+      } catch (error) {
+        console.error('❌ Erreur chargement job offers:', error);
+        setJobOffersData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobOffers();
+  }, [i18n.language]); 
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-xl">Chargement des offres d'emploi...</div>
+      </div>
+    );
   }
-];
+             
+
+
+    
 
 
    const processSteps = [

@@ -1,6 +1,4 @@
 
-
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import rail from '../../assets/rail.svg';
@@ -357,7 +355,11 @@ const ProjectsSection = () => {
   const [categories, setCategories] = useState([]);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-
+useEffect(() => {
+  console.log('🎯 VITE_DIRECTUS_URL:', import.meta.env.VITE_DIRECTUS_URL);
+  console.log('🎯 Projets chargés:', projects);
+  console.log('🎯 Premier projet mainImage:', projects[0]?.mainImage);
+}, [projects]);
   // Charger les catégories et projets depuis Directus
   useEffect(() => {
     const fetchData = async () => {
