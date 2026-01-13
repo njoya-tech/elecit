@@ -9,14 +9,13 @@ import { useState } from "react";
 
 const Hero = () => {
   const { t } = useTranslation();
- 
 
   const [showVideo, setShowVideo] = useState(false);
 
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "60vh" }}
+      style={{ height: "55vh" }}
     >
       {/* Background Image */}
       <img
@@ -46,8 +45,8 @@ const Hero = () => {
       >
         <h1
           className="font-extrabold text-3xl 
-  sm:text-4xl md:text-5xl lg:text-5xl
-   xl:text-6xl leading-tight mb-3 sm:mb-4 md:mb-6"
+  sm:text-4xl md:text-4xl lg:text-5xl
+   xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
           style={{ color: MY_COLORS.white }}
         >
           {t("entreprise.hero.title")}{" "}
@@ -72,7 +71,6 @@ const Hero = () => {
           {t("entreprise.hero.descriptionLine2")}
         </p>
 
-        
         {/* CTA + Arrow */}
         <div className="flex items-center gap-4 ml-18 sm:ml-4 md:ml-8 lg:ml-22">
           <CTAButton onClick={() => setShowVideo(true)}>
@@ -88,12 +86,12 @@ const Hero = () => {
               <div
                 className="relative w-[90%] max-w-3xl aspect-video bg-black rounded-xl overflow-hidden shadow-xl"
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside video
-              >
+               >
                 {/* Close Button */}
                 <button
                   onClick={() => setShowVideo(false)}
                   className="absolute top-2 right-2 text-white text-3xl z-10"
-                >
+                 >
                   &times;
                 </button>
 
