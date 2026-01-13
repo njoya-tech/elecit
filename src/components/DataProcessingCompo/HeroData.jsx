@@ -12,7 +12,7 @@ const HeroData = () => {
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "75vh" }}
+      style={{ height: "60vh" }}
     >
       {/* ================= BACKGROUND IMAGE ================= */}
       <img
@@ -57,7 +57,7 @@ const HeroData = () => {
         <h1
           className="
             font-extrabold 
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
+            text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 
             leading-tight mb-3 sm:mb-4 md:mb-6
           "
           style={{ color: MY_COLORS.secondaryGreen }}
@@ -74,11 +74,13 @@ const HeroData = () => {
             max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl
           "
         >
-          {t("dataProcessing.hero.description")}
+          {t("dataProcessing.hero.descriptionLine1")}
+          <br />
+          {t("dataProcessing.hero.descriptionLine2")}
         </p>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 lg:mt-20">
+        <div className="flex items-center gap-4 lg:mt-10 ml-30">
           <CTAButton onClick={() => alert("Video clicked!")}>
             {t("entreprise.hero.button")}
           </CTAButton>

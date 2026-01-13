@@ -111,9 +111,9 @@ const EntrepriseCards = () => {
                 {/* CARD */}
                 <article
   className="relative bg-white rounded-2xl shadow-lg w-full 
-    pt-14 sm:pt-16 md:pt-20 p-5 sm:p-6 md:p-7 lg:p-8 text-center
+    pt-14 sm:pt-16 md:pt-20 p-5 sm:p-6 md:p-7 lg:p-10 text-center
     hover:shadow-xl transition-all duration-300 hover:-translate-y-1
-    min-h-[280px] sm:min-h-[300px] md:min-h-80"
+    min-h-[280px] sm:min-h-[300px] md:min-h-70 "
 >
                   {/* BADGE */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">

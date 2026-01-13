@@ -1108,87 +1108,92 @@
     ]
   },
 
-  "sav": {
-    "hero": {
-      "title": "KUNDENDIENST",
-      "subtitle": "Wir gewährleisten Kundenzufriedenheit, garantieren die Langlebigkeit der Ausrüstung und stärken das Kundenvertrauen.",
-      "button": "Video ansehen"
-    },
-    "cards": {
-      "heading": "Unsere Dienstleistungen",
-      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und Einhaltung gesetzlicher Vorschriften.",
-      "items": [
-        {
-          "title": "Studien",
-          "subtitle": "& Konzeption",
-          "description": "Bedarfsanalyse und Architekturprogramm/ Technische Studien/ 2D/3D-Modellierung/ Planung, vorläufige Kostenschätzung und Genehmigungen"
-        },
-        {
-          "title": "Projektmanagement",
-          "subtitle": "& Baustellenüberwachung",
-          "description": "Arbeitsplanung und Stakeholder-Koordination/ Baustellenüberwachung, technische und Qualitätskontrollen/ Strikte Einhaltung von Fristen und vertraglich vereinbartem Budget/ Transparente Kommunikation mit dem Auftraggeber"
-        },
-        {
-          "title": "Realisierung",
-          "subtitle": "& Übergabe",
-          "description": "Rohbau- und Ausbauarbeiten/ Integration technischer Gewerke (Elektrizität, Sanitär, HLK)/ Innen- und Außenverarbeitung nach Leistungsverzeichnis/ Abnahme der Arbeiten"
-        },
-        {
-          "title": "Wartung",
-          "subtitle": "& Renovierung",
-          "description": "Vorbeugende und korrektive Gebäudewartung/ Renovierung und Normenanpassung/ Energetische Verbesserung/ Kundendienst und zehnjährige Garantie"
-        },
-        {
-          "title": "Beratung",
-          "subtitle": "& Expertise",
-          "description": "Technische Prüfung und Immobiliendiagnose/ Bauherrenberatung/ Rechtliche und administrative Unterstützung/ Optimierung der Baukosten"
-        },
-        {
-          "title": "Schlüsselfertige",
-          "subtitle": "Lösungen",
-          "description": "Vollständige Projektübernahme/ Koordination aller Gewerke/ Einheitliche Garantie und globale Verantwortung/ Lieferung innerhalb vereinbarter Fristen"
-        }
-      ]
-    },
-    "greenCards": {
-      "heading": "Unsere wichtigsten Verpflichtungen",
-      "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierenden Kundendienst, der darauf ausgelegt ist, die Nachhaltigkeit Ihrer Projekte zu gewährleisten.",
-      "services": [
-        {
-          "title": "IT-Infrastruktur-Management",
-          "description": "Implementierung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
-        },
-        {
-          "title": "Technischer Support & Unterstützung",
-          "description": "Helpdesk-Service, Fernwartung oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
-        },
-        {
-          "title": "Cybersicherheit",
-          "description": "Umsetzung von Sicherheitsrichtlinien, Firewalls, Backups, Zugangskontrollen, Schwachstellenprüfungen."
-        },
-        {
-          "title": "Virtualisierung & Cloud Computing",
-          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybrid-Lösungen."
-        },
-        {
-          "title": "Anwendungsentwicklung",
-          "description": "Konzeption und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
-        }
-      ],
-      "cta": {
-        "title": "Wählen Sie eine",
-        "titleHighlight": "zuverlässige, nachhaltige und rentable Begleitung.",
-        "subtitle": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
-        "button": "Kontaktieren Sie uns"
+ "sav": {
+  "hero": {
+  "title": "Was sollten Sie über",
+  "titleHighlight": "ELECIT wissen",
+  "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
+  "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
+  "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen weiterentwickeln.",
+  "button": "Video ansehen"
+},
+
+  "cards": {
+    "heading": "Unsere Leistungen",
+    "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und gesetzlicher Konformität.",
+    "items": [
+      {
+        "title": "Studien",
+        "subtitle": "& Planung",
+        "description": "Bedarfsanalyse und architektonisches Konzept / Technische Studien / 2D/3D-Modellierung / Planung, Kostenschätzung und Genehmigungen"
+      },
+      {
+        "title": "Projektmanagement",
+        "subtitle": "& Bauüberwachung",
+        "description": "Arbeitsplanung und Koordination aller Beteiligten / Bauüberwachung, technische und qualitative Kontrollen / Strikte Einhaltung von Terminen und Budget / Transparente Kommunikation mit dem Bauherrn"
+      },
+      {
+        "title": "Ausführung",
+        "subtitle": "& Übergabe",
+        "description": "Roh- und Ausbauarbeiten / Integration technischer Gewerke (Elektro, Sanitär, HLK) / Innen- und Außenarbeiten gemäß Lastenheft / Abnahme der Arbeiten"
+      },
+      {
+        "title": "Wartung",
+        "subtitle": "& Renovierung",
+        "description": "Vorbeugende und corrective Wartung / Renovierung und Normkonformität / Energieeffizienz-Optimierung / Kundendienst und zehnjährige Garantie"
+      },
+      {
+        "title": "Beratung",
+        "subtitle": "& Expertise",
+        "description": "Technische Audits und Immobilien-Diagnosen / Bauherrenberatung / Juristische und administrative Unterstützung / Kostenoptimierung"
+      },
+      {
+        "title": "Schlüsselfertige",
+        "subtitle": "Lösungen",
+        "description": "Komplette Projektübernahme / Koordination aller Gewerke / Eine Garantie und Gesamtverantwortung / Termingerechte Lieferung"
       }
-    }
+    ]
   },
+  "greenCards": {
+    "heading": "Unsere Kernversprechen",
+    "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierten Kundendienst, der die Nachhaltigkeit Ihrer Projekte sicherstellt.",
+    "services": [
+      {
+        "title": "Schnelligkeit & Nähe",
+        "description": "Unser engagiertes Kundendienstteam steht Ihnen rund um die Uhr für schnelle Einsätze vor Ort oder aus der Ferne zur Verfügung."
+      },
+      {
+        "title": "Multitechnische Kompetenz",
+        "description": "Dank unserer breiten Fachkenntnisse beherrschen wir unsere Lösungen perfekt für eine schnelle Diagnose und gezielte Eingriffe."
+      },
+      {
+        "title": "Präventive & Korrektive Wartung",
+        "description": "Wir sichern den langfristigen Betrieb Ihrer Anlagen durch geplante Einsätze und maßgeschneiderte Wartungsverträge."
+      },
+      {
+        "title": "Wirtschaftlichkeit für Kunden",
+        "description": "Unser Kundendienst ist darauf ausgelegt, unerwartete Kosten zu minimieren und den Wert Ihrer Investition zu maximieren."
+      },
+      {
+        "title": "Zufriedenheit & Loyalität",
+        "description": "Persönliche Betreuung, aktives Zuhören und kontrollierte Zeitpläne stärken das Vertrauen und fördern langfristige Kundenbeziehungen."
+      }
+    ],
+    "cta": {
+      "title": "Entscheiden Sie sich für",
+      "titleHighlight": "zuverlässige, nachhaltige und rentable Unterstützung.",
+      "subtitle": "\"Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Anlagen zu gewährleisten!\"",
+      "button": "Kontaktieren Sie uns"
+    }
+  }
+}
+,
 
   "bureau": {
     "hero": {
       "title": "GEBÄUDETECHNIK & ÖFFENTLICHE ARBEITEN",
       "description": "Wir bieten ein komplettes Angebot für den Bau öffentlicher und privater Gebäude sowie hydraulischer Bauwerke.",
-      "button": "Video ansehen"
+      "button": "Inhalt ansehen"
     },
     "cards": {
       "heading": "Unsere Dienstleistungen",
@@ -1306,10 +1311,13 @@
 
   "dataProcessing": {
     "hero": {
-      "title": "IT & DATENVERARBEITUNG",
-      "description": "Wir helfen Unternehmen, ihre IT-Systeme effektiv zu verwalten und das Beste aus ihren Daten herauszuholen.",
-      "button": "Pressemitteilung"
-    },
+  "titleLine1": "BAUINGENIEURWESEN ",
+  "titleLine2": "& TIEFBAU",
+  "descriptionLine1": "Wir bieten ein umfassendes Leistungsangebot für den Bau von",
+  "descriptionLine2": "öffentlichen und privaten Gebäuden sowie Wasserbauwerken.",
+  "button": "Advertorial"
+},
+
     "projects": {
       "title": "Unsere IT-Projekte",
       "subtitle": "Innovation, Leistung und Wirkung",

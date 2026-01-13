@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
 
 const HeroContact = () => {
   const { t } = useTranslation();
@@ -9,7 +12,7 @@ const HeroContact = () => {
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "70vh" }}
+      style={{ height: "55vh" }}
     >
       {/* Background Image */}
       <img
@@ -19,7 +22,10 @@ const HeroContact = () => {
       />
 
       {/* DARK GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      <div
+        className="absolute inset-0 bg-linear-to-b
+       from-black/70 via-black/50 to-black/80"
+      />
 
       {/* TECH PATTERN */}
       <img
@@ -33,10 +39,8 @@ const HeroContact = () => {
       {/* CENTERED TEXT CONTENT */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
         <h1
-          className="font-extrabold text-3xl sm:text-4xl md:text-5xl 
-          
-          
-          lg:text-6xl xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
+          className="font-extrabold text-2xl sm:text-3xl md:text-4xl 
+            lg:text-4xl xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
           style={{ color: MY_COLORS.primaryBlue }}
         >
           {t("contact.hero.title")}
@@ -50,24 +54,47 @@ const HeroContact = () => {
           {t("contact.hero.subtitle")}
         </h2>
 
-        <button
-          className="relative z-20 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full border-2 transition-all duration-300 font-semibold text-sm sm:text-base md:text-lg hover:scale-105 active:scale-95 mt-6 whitespace-nowrap"
-          style={{
-            borderColor: MY_COLORS.primaryBlue,
-            color: MY_COLORS.primaryBlue,
-            backgroundColor: "transparent",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = MY_COLORS.primaryBlue;
-            e.currentTarget.style.color = MY_COLORS.white;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "transparent";
-            e.currentTarget.style.color = MY_COLORS.primaryBlue;
-          }}
-        >
-          {t("contact.hero.button")}
-        </button>
+        <div className="flex items-center gap-4 lg:mt-10 ml-30">
+          <button
+            className="relative z-20 px-6 sm:px-8 md:px-10 
+          py-2.5 sm:py-3 md:py-3.5 rounded-full 
+          border-2 transition-all duration-300 font-semibold 
+          text-sm sm:text-base md:text-lg hover:scale-105 
+          active:scale-95 mt-6 whitespace-nowrap"
+            style={{
+              borderColor: MY_COLORS.primaryBlue,
+              color: MY_COLORS.primaryBlue,
+              backgroundColor: "transparent",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = MY_COLORS.primaryBlue;
+              e.currentTarget.style.color = MY_COLORS.white;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = MY_COLORS.primaryBlue;
+            }}
+          >
+            {t("contact.hero.button")}
+          </button>
+
+          
+          <motion.img
+            src={ICONS.flech_icon}
+            alt="Arrow"
+            className="w-10 sm:w-22 opacity-100 origin-top brightness-0 invert"  
+            animate={{
+              rotate: [-15, 15, -15],
+            }}
+            transition={{
+              duration: 2.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+          />
+
+
+        </div>
       </div>
     </section>
   );

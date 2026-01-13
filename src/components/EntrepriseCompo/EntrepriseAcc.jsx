@@ -23,7 +23,7 @@ const EntrepriseAcc = () => {
       style={{
         backgroundColor: MY_COLORS.gray,
       }}
-     >
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-0">
           {/* LEFT BLOCK - FAQ */}
@@ -192,19 +192,19 @@ const EntrepriseAcc = () => {
 
               <div className="flex items-center gap-3 md:gap-4  shrink-0">
                 <motion.img
-                src={ICONS.flech_icon}
-                alt="Arrow"
-                className="w-10 sm:w-12 opacity-80 origin-top scale-X-1"
-                
-                animate={{
-                  rotate: [-15, 15, -15],
-                }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-               />
+                  src={ICONS.flech_icon}
+                  alt="Arrow"
+                  className="w-10 sm:w-12 opacity-80 origin-center scale-x-[-1]" // flip horizontally
+                  animate={{
+                    rotate: [-15, 15, -15], // optional swing
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                  }}
+                />
+
                 <CTAButton
                   onClick={() => alert("Video clicked!")}
                   className="whitespace-nowrap min-w-fit"

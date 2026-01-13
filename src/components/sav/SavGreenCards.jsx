@@ -3,11 +3,13 @@ import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
+import { useNavigate } from "react-router-dom";
 
 const SavGreenCards = () => {
   const { t } = useTranslation();
 
-  const services = t('sav.greenCards.services', { returnObjects: true });
+  const services = t("sav.greenCards.services", { returnObjects: true });
+  const navigate = useNavigate();
 
   return (
     <>
@@ -24,7 +26,7 @@ const SavGreenCards = () => {
           font-bold px-4 sm:px-8 py-6 md:py-8 text-right z-10"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
-            {t('sav.greenCards.heading')}
+            {t("sav.greenCards.heading")}
           </h2>
           <div
             className="absolute -top-1 -left-20 w-3/4 sm:w-1/5
@@ -62,7 +64,7 @@ const SavGreenCards = () => {
             className="text-slate-900 text-base 
             md:text-lg max-w-3xl mx-auto leading-relaxed"
           >
-            {t('sav.greenCards.subtitle')}
+            {t("sav.greenCards.subtitle")}
           </p>
         </div>
 
@@ -102,8 +104,10 @@ const SavGreenCards = () => {
           {/* ALL 6 CARDS IN ONE GRID                    */}
           {/* Mobile: 1 col | Tablet: 2 cols | Desktop: 3 cols */}
           {/* ============================================ */}
-          <div className="grid grid-cols-1 md:grid-cols-2 
-          lg:grid-cols-3 gap-6 md:gap-8 relative z-10">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 
+          lg:grid-cols-3 gap-6 md:gap-8 relative z-10"
+          >
             {/* CARD 1 - IMAGE */}
             <div className="flex justify-center items-center p-4">
               <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-sm">
@@ -116,11 +120,15 @@ const SavGreenCards = () => {
             </div>
 
             {/* CARD 2 - White background */}
-            <div className="relative pt-16 md:pt-20 p-6 rounded-xl 
-            shadow-xl bg-white hover:shadow-2xl transition-shadow 
-            duration-300 border border-gray-200">
-              <div className="absolute -top-10 md:-top-12 left-1/2 
-              transform -translate-x-1/2">
+            <div
+              className="relative pt-16 md:pt-20 p-6 rounded-xl 
+shadow-xl bg-white hover:shadow-2xl transition-shadow 
+duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px]"
+            >
+              <div
+                className="absolute -top-10 md:-top-12 left-1/2 
+              transform -translate-x-1/2"
+              >
                 <img
                   src={ICONS.laptop}
                   alt=""
@@ -134,13 +142,20 @@ const SavGreenCards = () => {
               >
                 {services[0].title}
               </h3>
-              <p className="text-gray-600 text-center text-sm md:text-base leading-relaxed">
+              <p
+                className="text-gray-600 text-center text-sm 
+              md:text-base leading-relaxed"
+              >
                 {services[0].description}
               </p>
             </div>
 
             {/* CARD 3 - Green background */}
-            <div className="relative pt-16 md:pt-20 p-6 rounded-xl shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div
+              className="relative pt-16 md:pt-20 p-6 rounded-xl 
+            shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow
+             duration-300 border border-gray-100 max-h-[350px] md:max-h-[300px]"
+            >
               <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
                 <img
                   src={ICONS.stockage}
@@ -166,12 +181,14 @@ const SavGreenCards = () => {
               <div
                 key={index}
                 className={`
-                  relative pt-16 md:pt-20 p-6 rounded-xl shadow-lg lg:top-5
-                  hover:shadow-xl transition-shadow duration-300 border border-gray-100
+                  relative pt-14 md:pt-16 p-4 rounded-xl shadow-lg lg:top-10
+                  hover:shadow-xl transition-shadow duration-300 
+                  border border-gray-100 max-h-[350px] md:max-h-[300px]
                   ${index === 1 ? "bg-[#7FA946]" : "bg-white"}
                 `}
               >
-                <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-10 md:-top-12 left-1/2 
+                transform -translate-x-1/2">
                   <img
                     src={ICONS.badge}
                     alt=""
@@ -189,8 +206,8 @@ const SavGreenCards = () => {
                   {service.title}
                 </h3>
                 <p
-                  className={`text-center text-sm md:text-base leading-relaxed ${
-                    index === 1 ? "text-black" : "text-gray-600"
+                  className={`text-center text-sm md:text-center leading-relaxed ${
+                    index === 1 ? "text-black" : "text-gray-900"
                   }`}
                 >
                   {service.description}
@@ -223,35 +240,36 @@ const SavGreenCards = () => {
               src={ICONS.formTech}
               alt=""
               aria-hidden="true"
-              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[180%] h-auto"
+              className="absolute z-0 pointer-events-none opacity-30 top-1/2 left-1/2 
+              -translate-x-1/2 -translate-y-[12em] w-[150%] md:w-full lg:w-[180%] h-auto"
             />
 
             <h3
               className="relative z-20 text-center text-2xl md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              {t('sav.greenCards.cta.title')} <br />
+              {t("sav.greenCards.cta.title")} <br />
               <span style={{ color: MY_COLORS.secondaryGreen }}>
-                {t('sav.greenCards.cta.titleHighlight')}
+                {t("sav.greenCards.cta.titleHighlight")}
               </span>
             </h3>
 
             <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              {t('sav.greenCards.cta.subtitle')}
+              {t("sav.greenCards.cta.subtitle")}
             </p>
 
             <CTAButton
               className="absolute top-10 md:top-2 md:w-70"
-              onClick={() => alert("Video clicked!")}
+              onClick={() => navigate("/contacts")}
             >
-              {t('sav.greenCards.cta.button')}
+              {t("sav.greenCards.cta.button")}
             </CTAButton>
           </div>
 
           <div
             className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
             style={{
-              animationDuration:"4s",
+              animationDuration: "4s",
               top: "65%",
               right: "1%",
             }}

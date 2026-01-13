@@ -5,12 +5,16 @@ import CTAButton from "../CTA/CTAButton";
 import { useTranslation } from "react-i18next";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const ControlHero = () => {
   const { t } = useTranslation();
+  const[showVideo, setShowVideo] = useState(false);
 
   return (
-    <section className="relative w-full h-[65vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[65vh] 
+    sm:h-[70vh] md:h-[75vh] lg:h-[55vh] 
+    flex items-center justify-center overflow-hidden">
       
       {/* Background Image */}
       <img
@@ -40,23 +44,61 @@ const ControlHero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-4 sm:px-6 md:px-12 lg:px-16 flex flex-col items-center justify-center">
+      <div className="relative z-20 text-center px-4 sm:px-6
+       md:px-12 lg:px-16 flex flex-col 
+       items-center justify-center">
         
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl 
+        lg:text-6xl xl:text-5xl
+         font-extrabold mb-10 mt-30 text-white">
+
+
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t("control.hero.title")}
           </span>
         </h1>
 
-        <p className="text-white text-sm sm:text-base md:text-lg lg:text-2xl leading-relaxed mb-6 max-w-3xl">
+        <p className="text-white text-sm
+         sm:text-base md:text-lg lg:text-lg xl:text-xl 
+         leading-relaxed mb-6 max-w-3xl">
           {t("control.hero.description")}
         </p>
 
          {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 lg:mt-20">
-          <CTAButton onClick={() => alert("Video clicked!")}>
+        <div className="flex items-center gap-4 lg:mt-0 ml-20">
+          <CTAButton onClick={() => setShowVideo(true)}>
             {t("entreprise.hero.button")}
           </CTAButton>
+
+          {showVideo && (
+            <div
+              className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+              onClick={() => setShowVideo(false)} // Click outside closes the video
+            >
+              {/* Video Container */}
+              <div
+                className="relative w-[90%] max-w-3xl aspect-video
+                 bg-black rounded-xl overflow-hidden shadow-xl"
+                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside video
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowVideo(false)}
+                  className="absolute top-2 right-2 text-white text-3xl z-10"
+                >
+                  &times;
+                </button>
+
+                <iframe
+               src="https://www.youtube.com/embed/geUNzc0cVuY?autoplay=1" 
+                  title="YouTube video"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          )}
 
           <motion.img
             src={ICONS.flech_icon}
