@@ -1425,11 +1425,22 @@
       "description": "Nous aidons les entreprises à gérer efficacement leurs systèmes informatiques et à tirer le meilleur parti de leurs données.",
       "button": "Publireportage"
     },
-    "projects": {
+
+  "projects": {
+    "categories": {
+      "all": "Tous les projets",
+      "smart": "Smart building",
+      "fabrication": "Fabrication mécanique",
+      "genie": "Génie civil",
+      "interne": "Projet interne"
+    },
+    "projectCard": {
+      "seeMore": "Voir plus"
+    },
       "title": "Nos projects IT",
       "subtitle": "innovation, performance et impact",
       "description": "Chaque projet présenté reflète notre engagement envers l'innovation, la rigueur et la satisfaction client.",
-      "seeMore": "Voir plus",
+      
       "items": [
         {
           "id": 1,
@@ -1608,7 +1619,11 @@
       "activities": "Activités :",
       "profile": "Profil recherché",
       "applyButton": "Postuler maintenant",
-
+     "submitError": "Erreur lors de l'envoi",
+      "submitSuccess": "Candidature envoyée avec succès !",
+      "submitSuccessMessage": "Nous vous contacterons bientôt.",
+      "alreadyApplied": "Vous avez déjà postulé pour cette offre.",
+      "recentSpontaneousApplication": "Vous avez déjà envoyé une candidature spontanée récemment. Veuillez patienter avant d'en soumettre une nouvelle.",
       "formTitle": "POSTULEZ EN LIGNE",
       "name": "Nom ",
       "namePlaceholder": "Saisissez votre prénom",

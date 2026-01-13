@@ -358,13 +358,13 @@
   },
 
 "projects": {
-  "categories": [
-    { "id": "all", "label": "Alle Projekte" },
-    { "id": "smart", "label": "Smart Building" },
-    { "id": "fabrication", "label": "Mechanische Fertigung" },
-    { "id": "genie", "label": "Tiefbau"},
-    { "id": "interne", "label": "Internes Projekt" }
-  ],
+ "categories": {
+      "all": "Alle Projekte",
+      "smart": "Smart Building",
+      "fabrication": "Mechanische Fertigung",
+      "genie": "Tiefbau",
+      "interne": "Internes Projekt"
+    },
   "projectCard": {
     "seeMore": "Mehr erfahren"
   },
@@ -511,6 +511,8 @@
 
 
   "recruitment": {
+    "spontaneousTitle": "Unsolicited Application",
+"spontaneousSubtitle": "Become part of our team and share the adventure",
   "titleRound": "Zurzeit keine Stellenangebote",
   "subtitleRound": "Du möchtest Teil von ElecIT Engineering werden, aber kein aktuelles Angebot passt zu deinem Profil.",
   "buttonText": "Hier bewerben",
@@ -545,6 +547,11 @@
   "viewButton": "Alle anzeigen",
   "noResults": "Keine Angebote entsprechen deinen Suchkriterien",
   "modal": {
+      "submitError": "Fehler beim Senden",
+      "submitSuccess": "Bewerbung erfolgreich gesendet!",
+      "submitSuccessMessage": "Wir werden Sie bald kontaktieren.",
+      "alreadyApplied": "Sie haben sich bereits für diese Stelle beworben.",
+      "recentSpontaneousApplication": "Sie haben kürzlich bereits eine Initiativbewerbung eingereicht. Bitte warten Sie, bevor Sie eine neue einreichen.",
     "back": "Zurück zu den Angeboten",
     "typePoste": "Positionstyp:",
     "lieuPoste": "Ort:",

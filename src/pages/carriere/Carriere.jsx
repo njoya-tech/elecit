@@ -34,14 +34,7 @@ const Carriere = () => {
     fetchJobOffers();
   }, [i18n.language]); 
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="text-xl">Chargement des offres d'emploi...</div>
-      </div>
-    );
-  }
-             
+       
 
 
     

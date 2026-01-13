@@ -370,9 +370,11 @@ useEffect(() => {
           ProjectsService.getProjects(i18n.language)
         ]);
 
-        // Ajouter "Tous" en première catégorie
-        setCategories([
-          
+ setCategories([
+          { 
+            id: 'all', 
+            label: t('projects.categories.all') // 🔥 Traduction dynamique
+          },
           ...categoriesData
         ]);
 

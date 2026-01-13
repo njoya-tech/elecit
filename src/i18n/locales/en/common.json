@@ -1282,13 +1282,13 @@
 },
 
 "projects": {
-  "categories": [
-    { "id": "all", "label": "All projects" },
-    { "id": "smart", "label": "Smart building" },
-    { "id": "fabrication", "label": "Mechanical manufacturing" },
-    { "id": "genie", "label": "Civil engineering"},
-    { "id": "interne", "label": "Internal project" }
-  ],
+   "categories": {
+      "all": "All projects",
+      "smart": "Smart building",
+      "fabrication": "Mechanical manufacturing",
+      "genie": "Civil engineering",
+      "interne": "Internal project"
+    },
   "projectCard": {
     "seeMore": "See more"
   },
@@ -1462,6 +1462,11 @@
   "viewButton": "View all",
   "noResults": "No offers match your search criteria",
   "modal": {
+    "submitError": "Submission error",
+      "submitSuccess": "Application sent successfully!",
+      "submitSuccessMessage": "We will contact you soon.",
+      "alreadyApplied": "You have already applied for this position.",
+      "recentSpontaneousApplication": "You have already submitted a spontaneous application recently. Please wait before submitting another one.",
     "back": "Back to offers",
     "typePoste": "Position type:",
     "lieuPoste": "Location:",
@@ -1498,6 +1503,8 @@
   }
 },
   "recruitment": {
+    "spontaneousTitle": "Apply Spontaneously",
+"spontaneousSubtitle": "Join our team and be part of something great",
   "titleRound": "No offers at the moment",
   "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
   "buttonText": "Apply here",

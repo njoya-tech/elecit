@@ -1,16 +1,15 @@
-// src/services/job-applications.service.js
+// src/services/spontaneous-applications.service.js
 
-class JobApplicationsService {
+class SpontaneousApplicationsService {
   
   /**
-   * Soumettre une candidature
+   * Soumettre une candidature spontanée (SANS offre d'emploi liée)
    * @param {Object} applicationData - Données du formulaire
-   * @param {number} jobOfferId - ID de l'offre d'emploi
    * @returns {Promise<Object>}
    */
-  async submitApplication(applicationData, jobOfferId) {
+  async submitSpontaneousApplication(applicationData) {
     try {
-      console.log('📤 Envoi candidature pour offre:', jobOfferId);
+      console.log('📤 Envoi candidature spontanée');
       console.log('📋 Données:', applicationData);
 
       // 1. Upload du CV d'abord (si fichier présent)
@@ -29,18 +28,21 @@ class JobApplicationsService {
         applicationData.year
       );
 
-      // 3. Créer l'objet de candidature
+      // 3. Créer l'objet de candidature spontanée
       const payload = {
         // Informations personnelles
-        first_name: applicationData.firstName || applicationData.name, // Support ancien format
+        first_name: applicationData.firstName || applicationData.name,
         last_name: applicationData.lastName,
         email: applicationData.email,
         phone: applicationData.phone,
         sex: applicationData.sex,
         birth_date: birthDate,
         
-        // Relation avec l'offre d'emploi
-        job_offer: jobOfferId, // Relation M2O vers job_offers
+        // ⚠️ PAS de relation job_offer (candidature spontanée)
+        job_offer: null,
+        
+        // Poste souhaité (texte libre)
+        desired_position: applicationData.position,
         
         // Motivation
         motivation: applicationData.motivation,
@@ -49,9 +51,10 @@ class JobApplicationsService {
         cv_file: cvFileId,
         
         // Métadonnées
-        status: 'published', // Directus system status
-        application_status: 'pending', // pending, reviewed, accepted, rejected
-        application_date: new Date().toISOString()
+        status: 'published',
+        application_status: 'pending',
+        application_date: new Date().toISOString(),
+        is_spontaneous: true // ⚠️ Flag pour distinguer les candidatures spontanées
       };
 
       console.log('📦 Payload final:', payload);
@@ -74,16 +77,16 @@ class JobApplicationsService {
       }
 
       const result = await response.json();
-      console.log('✅ Candidature envoyée:', result);
+      console.log('✅ Candidature spontanée envoyée:', result);
 
       return {
         success: true,
         data: result.data,
-        message: 'Candidature envoyée avec succès'
+        message: 'Candidature spontanée envoyée avec succès'
       };
 
     } catch (error) {
-      console.error('❌ Erreur submitApplication:', error);
+      console.error('❌ Erreur submitSpontaneousApplication:', error);
       return {
         success: false,
         error: error.message,
@@ -133,7 +136,6 @@ class JobApplicationsService {
   _formatBirthDate(day, month, year) {
     if (!day || !month || !year) return null;
     
-    // Formater en YYYY-MM-DD pour Directus
     const paddedDay = day.toString().padStart(2, '0');
     const paddedMonth = month.toString().padStart(2, '0');
     
@@ -141,18 +143,18 @@ class JobApplicationsService {
   }
 
   /**
-   * Récupérer les candidatures d'un utilisateur par email
+   * Récupérer les candidatures spontanées par email
    * @param {string} email - Email du candidat
    * @returns {Promise<Array>}
    */
-  async getApplicationsByEmail(email) {
+  async getSpontaneousApplicationsByEmail(email) {
     try {
-      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/job_applications?filter[email][_eq]=${email}&filter[status][_eq]=published&fields=*,job_offer.id,job_offer.translations.*&sort[]=-application_date`;
+      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/job_applications?filter[email][_eq]=${email}&filter[is_spontaneous][_eq]=true&filter[status][_eq]=published&fields=*&sort[]=-application_date`;
       
       const response = await fetch(url);
       
       if (!response.ok) {
-        console.error('❌ Erreur récupération candidatures');
+        console.error('❌ Erreur récupération candidatures spontanées');
         return [];
       }
 
@@ -160,20 +162,24 @@ class JobApplicationsService {
       return result.data || [];
 
     } catch (error) {
-      console.error('❌ Erreur getApplicationsByEmail:', error);
+      console.error('❌ Erreur getSpontaneousApplicationsByEmail:', error);
       return [];
     }
   }
 
   /**
-   * Vérifier si un email a déjà postulé pour une offre
+   * Vérifier si un email a déjà envoyé une candidature spontanée récemment
    * @param {string} email - Email du candidat
-   * @param {number} jobOfferId - ID de l'offre
+   * @param {number} daysLimit - Nombre de jours (défaut: 30)
    * @returns {Promise<boolean>}
    */
-  async hasAlreadyApplied(email, jobOfferId) {
+  async hasRecentSpontaneousApplication(email, daysLimit = 30) {
     try {
-      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/job_applications?filter[email][_eq]=${email}&filter[job_offer][_eq]=${jobOfferId}&filter[status][_eq]=published&limit=1`;
+      const limitDate = new Date();
+      limitDate.setDate(limitDate.getDate() - daysLimit);
+      const limitDateISO = limitDate.toISOString();
+
+      const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/job_applications?filter[email][_eq]=${email}&filter[is_spontaneous][_eq]=true&filter[application_date][_gte]=${limitDateISO}&limit=1`;
       
       const response = await fetch(url);
       const result = await response.json();
@@ -181,13 +187,13 @@ class JobApplicationsService {
       return (result.data || []).length > 0;
 
     } catch (error) {
-      console.error('❌ Erreur hasAlreadyApplied:', error);
+      console.error('❌ Erreur hasRecentSpontaneousApplication:', error);
       return false;
     }
   }
 
   /**
-   * Valider les données du formulaire
+   * Valider les données du formulaire de candidature spontanée
    * @param {Object} formData - Données du formulaire
    * @returns {Object} { valid: boolean, errors: Array }
    */
@@ -212,7 +218,7 @@ class JobApplicationsService {
     }
 
     // Validation téléphone
-    const phoneRegex = /^[\d\s\+\-\(\)]{8,}$/; // Minimum 8 chiffres (format international flexible)
+    const phoneRegex = /^[\d\s\+\-\(\)]{8,}$/;
     if (!formData.phone || !phoneRegex.test(formData.phone)) {
       errors.push('Numéro de téléphone invalide (minimum 8 chiffres)');
     }
@@ -235,6 +241,11 @@ class JobApplicationsService {
     }
     if (!year || year < 1940 || year > new Date().getFullYear() - 16) {
       errors.push('Année de naissance invalide (vous devez avoir au moins 16 ans)');
+    }
+
+    // Validation poste souhaité (⚠️ REQUIS pour candidature spontanée)
+    if (!formData.position || formData.position.trim().length < 3) {
+      errors.push('Veuillez préciser le poste souhaité (minimum 3 caractères)');
     }
 
     // Validation motivation
@@ -264,4 +275,4 @@ class JobApplicationsService {
   }
 }
 
-export default new JobApplicationsService();
+export default new SpontaneousApplicationsService();
