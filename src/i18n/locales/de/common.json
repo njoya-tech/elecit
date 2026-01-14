@@ -1108,87 +1108,92 @@
     ]
   },
 
-  "sav": {
-    "hero": {
-      "title": "KUNDENDIENST",
-      "subtitle": "Wir gewährleisten Kundenzufriedenheit, garantieren die Langlebigkeit der Ausrüstung und stärken das Kundenvertrauen.",
-      "button": "Video ansehen"
-    },
-    "cards": {
-      "heading": "Unsere Dienstleistungen",
-      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und Einhaltung gesetzlicher Vorschriften.",
-      "items": [
-        {
-          "title": "Studien",
-          "subtitle": "& Konzeption",
-          "description": "Bedarfsanalyse und Architekturprogramm/ Technische Studien/ 2D/3D-Modellierung/ Planung, vorläufige Kostenschätzung und Genehmigungen"
-        },
-        {
-          "title": "Projektmanagement",
-          "subtitle": "& Baustellenüberwachung",
-          "description": "Arbeitsplanung und Stakeholder-Koordination/ Baustellenüberwachung, technische und Qualitätskontrollen/ Strikte Einhaltung von Fristen und vertraglich vereinbartem Budget/ Transparente Kommunikation mit dem Auftraggeber"
-        },
-        {
-          "title": "Realisierung",
-          "subtitle": "& Übergabe",
-          "description": "Rohbau- und Ausbauarbeiten/ Integration technischer Gewerke (Elektrizität, Sanitär, HLK)/ Innen- und Außenverarbeitung nach Leistungsverzeichnis/ Abnahme der Arbeiten"
-        },
-        {
-          "title": "Wartung",
-          "subtitle": "& Renovierung",
-          "description": "Vorbeugende und korrektive Gebäudewartung/ Renovierung und Normenanpassung/ Energetische Verbesserung/ Kundendienst und zehnjährige Garantie"
-        },
-        {
-          "title": "Beratung",
-          "subtitle": "& Expertise",
-          "description": "Technische Prüfung und Immobiliendiagnose/ Bauherrenberatung/ Rechtliche und administrative Unterstützung/ Optimierung der Baukosten"
-        },
-        {
-          "title": "Schlüsselfertige",
-          "subtitle": "Lösungen",
-          "description": "Vollständige Projektübernahme/ Koordination aller Gewerke/ Einheitliche Garantie und globale Verantwortung/ Lieferung innerhalb vereinbarter Fristen"
-        }
-      ]
-    },
-    "greenCards": {
-      "heading": "Unsere wichtigsten Verpflichtungen",
-      "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierenden Kundendienst, der darauf ausgelegt ist, die Nachhaltigkeit Ihrer Projekte zu gewährleisten.",
-      "services": [
-        {
-          "title": "IT-Infrastruktur-Management",
-          "description": "Implementierung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
-        },
-        {
-          "title": "Technischer Support & Unterstützung",
-          "description": "Helpdesk-Service, Fernwartung oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
-        },
-        {
-          "title": "Cybersicherheit",
-          "description": "Umsetzung von Sicherheitsrichtlinien, Firewalls, Backups, Zugangskontrollen, Schwachstellenprüfungen."
-        },
-        {
-          "title": "Virtualisierung & Cloud Computing",
-          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybrid-Lösungen."
-        },
-        {
-          "title": "Anwendungsentwicklung",
-          "description": "Konzeption und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
-        }
-      ],
-      "cta": {
-        "title": "Wählen Sie eine",
-        "titleHighlight": "zuverlässige, nachhaltige und rentable Begleitung.",
-        "subtitle": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
-        "button": "Kontaktieren Sie uns"
+ "sav": {
+  "hero": {
+  "title": "Was sollten Sie über",
+  "titleHighlight": "ELECIT wissen",
+  "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
+  "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
+  "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen weiterentwickeln.",
+  "button": "Video ansehen"
+},
+
+  "cards": {
+    "heading": "Unsere Leistungen",
+    "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und gesetzlicher Konformität.",
+    "items": [
+      {
+        "title": "Studien",
+        "subtitle": "& Planung",
+        "description": "Bedarfsanalyse und architektonisches Konzept / Technische Studien / 2D/3D-Modellierung / Planung, Kostenschätzung und Genehmigungen"
+      },
+      {
+        "title": "Projektmanagement",
+        "subtitle": "& Bauüberwachung",
+        "description": "Arbeitsplanung und Koordination aller Beteiligten / Bauüberwachung, technische und qualitative Kontrollen / Strikte Einhaltung von Terminen und Budget / Transparente Kommunikation mit dem Bauherrn"
+      },
+      {
+        "title": "Ausführung",
+        "subtitle": "& Übergabe",
+        "description": "Roh- und Ausbauarbeiten / Integration technischer Gewerke (Elektro, Sanitär, HLK) / Innen- und Außenarbeiten gemäß Lastenheft / Abnahme der Arbeiten"
+      },
+      {
+        "title": "Wartung",
+        "subtitle": "& Renovierung",
+        "description": "Vorbeugende und corrective Wartung / Renovierung und Normkonformität / Energieeffizienz-Optimierung / Kundendienst und zehnjährige Garantie"
+      },
+      {
+        "title": "Beratung",
+        "subtitle": "& Expertise",
+        "description": "Technische Audits und Immobilien-Diagnosen / Bauherrenberatung / Juristische und administrative Unterstützung / Kostenoptimierung"
+      },
+      {
+        "title": "Schlüsselfertige",
+        "subtitle": "Lösungen",
+        "description": "Komplette Projektübernahme / Koordination aller Gewerke / Eine Garantie und Gesamtverantwortung / Termingerechte Lieferung"
       }
-    }
+    ]
   },
+  "greenCards": {
+    "heading": "Unsere Kernversprechen",
+    "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierten Kundendienst, der die Nachhaltigkeit Ihrer Projekte sicherstellt.",
+    "services": [
+      {
+        "title": "Schnelligkeit & Nähe",
+        "description": "Unser engagiertes Kundendienstteam steht Ihnen rund um die Uhr für schnelle Einsätze vor Ort oder aus der Ferne zur Verfügung."
+      },
+      {
+        "title": "Multitechnische Kompetenz",
+        "description": "Dank unserer breiten Fachkenntnisse beherrschen wir unsere Lösungen perfekt für eine schnelle Diagnose und gezielte Eingriffe."
+      },
+      {
+        "title": "Präventive & Korrektive Wartung",
+        "description": "Wir sichern den langfristigen Betrieb Ihrer Anlagen durch geplante Einsätze und maßgeschneiderte Wartungsverträge."
+      },
+      {
+        "title": "Wirtschaftlichkeit für Kunden",
+        "description": "Unser Kundendienst ist darauf ausgelegt, unerwartete Kosten zu minimieren und den Wert Ihrer Investition zu maximieren."
+      },
+      {
+        "title": "Zufriedenheit & Loyalität",
+        "description": "Persönliche Betreuung, aktives Zuhören und kontrollierte Zeitpläne stärken das Vertrauen und fördern langfristige Kundenbeziehungen."
+      }
+    ],
+    "cta": {
+      "title": "Entscheiden Sie sich für",
+      "titleHighlight": "zuverlässige, nachhaltige und rentable Unterstützung.",
+      "subtitle": "\"Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Anlagen zu gewährleisten!\"",
+      "button": "Kontaktieren Sie uns"
+    }
+  }
+}
+,
 
   "bureau": {
     "hero": {
       "title": "GEBÄUDETECHNIK & ÖFFENTLICHE ARBEITEN",
       "description": "Wir bieten ein komplettes Angebot für den Bau öffentlicher und privater Gebäude sowie hydraulischer Bauwerke.",
-      "button": "Video ansehen"
+      "button": "Inhalt ansehen"
     },
     "cards": {
       "heading": "Unsere Dienstleistungen",
@@ -1303,36 +1308,36 @@
       }
     }
   },
-
-  "dataProcessing": {
+"dataProcessing": {
     "hero": {
       "title": "IT & DATENVERARBEITUNG",
-      "description": "Wir helfen Unternehmen, ihre IT-Systeme effektiv zu verwalten und das Beste aus ihren Daten herauszuholen.",
+      "descriptionLine1": "Denn über den kamerunischen Markt hinaus wollen wir",
+      "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen entwickeln.",
       "button": "Pressemitteilung"
     },
     "projects": {
       "title": "Unsere IT-Projekte",
       "subtitle": "Innovation, Leistung und Wirkung",
-      "description": "Jedes vorgestellte Projekt spiegelt unser Engagement für Innovation, Strenge und Kundenzufriedenheit wider.",
-      "seeMore": "Mehr sehen",
+      "description": "Jedes vorgestellte Projekt spiegelt unser Engagement für Innovation, Präzision und Kundenzufriedenheit wider.",
+      "seeMore": "Mehr anzeigen",
       "items": [
         {
           "id": 1,
           "title": "Content Management System (CMS) Software",
-          "excerpt": "Wir haben ein maßgeschneidertes Content-Management-System (CMS) entwickelt…",
-          "description": "Wir haben ein maßgeschneidertes Content-Management-System (CMS) entwickelt, das eine einfache, schnelle und vollständig anpassbare Verwaltung bietet.",
-          "utility": "Diese Lösung ermöglicht es dem Unternehmen, seine Informationen, Dienstleistungen und Aktualisierungen effektiv zu verwalten, ohne auf externen technischen Support angewiesen zu sein",
+          "excerpt": "Wir haben ein maßgeschneidertes Content Management System (CMS) entworfen und entwickelt…",
+          "description": "Wir haben ein maßgeschneidertes Content Management System (CMS) entworfen und entwickelt, das eine einfache, schnelle und vollständig anpassbare Verwaltung bietet.",
+          "utility": "Diese Lösung ermöglicht es dem Unternehmen, seine Informationen, Dienstleistungen und Updates effektiv zu verwalten, ohne von externem technischen Support abhängig zu sein",
           "clientFeedback": "Das von ElecIT Engineering entwickelte CMS hat unsere Content-Verwaltung vereinfacht. Das Tool ist intuitiv, schnell und perfekt an unsere Bedürfnisse angepasst. Eine echte Zeitersparnis im Alltag.",
           "clientRole": "Geschäftsführer",
-          "date": "12.06.23",
+          "date": "06.12.23",
           "status": "abgeschlossen"
         },
         {
           "id": 2,
-          "title": "Kundenbeziehungsmanagement (CRM) Software",
-          "excerpt": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
-          "description": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens zur Verwaltung von Kundenbeziehungen angepasst ist.",
-          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Verkaufsverfolgung",
+          "title": "Customer Relationship Management (CRM) Software",
+          "excerpt": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+          "description": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist, um Kundenbeziehungen zu verwalten.",
+          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Vertriebsverfolgung",
           "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
           "clientRole": "Vertriebsleiter",
           "date": "15.08.23",
@@ -1340,10 +1345,10 @@
         },
         {
           "id": 3,
-          "title": "Kundenbeziehungsmanagement (CRM) Software",
-          "excerpt": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
-          "description": "Entwicklung von CRM-Software, die vollständig an die Bedürfnisse des Unternehmens zur Verwaltung von Kundenbeziehungen angepasst ist.",
-          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Verkaufsverfolgung",
+          "title": "Customer Relationship Management (CRM) Software",
+          "excerpt": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+          "description": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist, um Kundenbeziehungen zu verwalten.",
+          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Vertriebsverfolgung",
           "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
           "clientRole": "Vertriebsleiter",
           "date": "20.09.23",
@@ -1353,7 +1358,7 @@
       "modal": {
         "category": "IT und DATENVERARBEITUNG",
         "projectLabel": "Projekt:",
-        "dateLabel": "Fertigstellungsdatum:",
+        "dateLabel": "Abschlussdatum:",
         "statusLabel": "Projektstatus:",
         "descriptionLabel": "Projektbeschreibung:",
         "utilityLabel": "Zweck:",
@@ -1363,22 +1368,22 @@
       },
       "cta": {
         "title": "Wählen Sie eine Unterstützung, die",
-        "titleHighlight": "zuverlässig, nachhaltig und kosteneffektiv ist.",
+        "titleHighlight": "zuverlässig, nachhaltig und wirtschaftlich ist.",
         "description": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
         "button": "Kontaktieren Sie uns"
       }
     },
     "services": {
       "title": "IT-Dienstleistungen",
-      "description": "Wir bieten eine vollständige Palette von IT-Dienstleistungen zur Unterstützung der digitalen Transformation Ihrer Organisation, die Leistung, Sicherheit und Skalierbarkeit kombiniert.",
+      "description": "Wir bieten ein umfassendes Angebot an IT-Dienstleistungen zur Unterstützung der digitalen Transformation Ihrer Organisation und kombinieren dabei Leistung, Sicherheit und Skalierbarkeit.",
       "items": [
         {
-          "title": "IT-Infrastruktur-Management",
+          "title": "IT-Infrastrukturmanagement",
           "description": "Einrichtung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
         },
         {
           "title": "Technischer Support & Assistenz",
-          "description": "Helpdesk-Service, Remote- oder Vor-Ort-Fehlerbehebung, vorbeugende und korrektive Wartung."
+          "description": "Helpdesk-Service, Remote- oder Vor-Ort-Fehlerbehebung, präventive und korrektive Wartung."
         },
         {
           "title": "Cybersicherheit",
@@ -1404,8 +1409,8 @@
           "description": "Stabile, leistungsstarke IT-Infrastrukturen, die immer betriebsbereit sind"
         },
         {
-          "title": "Verstärkte Sicherheit",
-          "description": "Vollständiger Schutz von Daten und Systemen gegen Cyber-Bedrohungen."
+          "title": "Erhöhte Sicherheit",
+          "description": "Vollständiger Schutz von Daten und Systemen vor Cyber-Bedrohungen."
         },
         {
           "title": "Zeitersparnis",
@@ -1413,7 +1418,7 @@
         },
         {
           "title": "Kostenoptimierung",
-          "description": "Reduzierung der Ausgaben für Wartung, Infrastruktur und Datenverwaltung."
+          "description": "Reduzierung der Ausgaben im Zusammenhang mit Wartung, Infrastruktur und Datenverwaltung."
         },
         {
           "title": "Intelligentere Entscheidungen",
@@ -1425,7 +1430,7 @@
         },
         {
           "title": "Einhaltung von Vorschriften",
-          "description": "Einhaltung von Standards (wie DSGVO) für eine rechtmäßige Datenverwaltung."
+          "description": "Einhaltung von Standards (wie DSGVO) für eine rechtskonforme Datenverwaltung."
         }
       ]
     }

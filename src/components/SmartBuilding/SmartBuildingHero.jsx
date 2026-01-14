@@ -46,7 +46,7 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
 
 <div className='flex flex-row lg:-translate-x-10 gap-2'>
   <motion.div 
-    className="flex-shrink-0"
+    className="shrink-0"
     animate={{
       x: [0, -12, 0], // Position normale → Gauche → Position normale
     }}

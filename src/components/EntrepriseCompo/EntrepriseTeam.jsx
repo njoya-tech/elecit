@@ -36,10 +36,12 @@ const EntrepriseTeam = () => {
   };
 
   return (
-    <section
-      className="w-full py-8 sm:py-12 md:py-16"
-      style={{ backgroundColor: MY_COLORS.white }}
-    >
+   <section
+  className="w-screen pt-20 lg:pt-24 pb-4 relative -mx-[50vw] left-1/2 right-1/2"
+  style={{
+    backgroundColor: MY_COLORS.white,
+  }}
+>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 items-center">
           {/* LEFT SIDE - Text Content */}

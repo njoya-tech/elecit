@@ -1,10 +1,24 @@
+/* eslint-disable no-unsafe-finally */
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { MY_COLORS } from "../../constants/colors";
+import { useNavigate } from "react-router-dom";
+import {
+  fetchAllPosts,
+  fetchFeaturedPost,
+  getAssetUrl,
+  getTranslation,
+} from "../../../src/services/blog.js";
 
 const BlogCards = ({ onPostClick, initialCategory }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const handlePostClick = (post) => {
+    onPostClick(post.id);
+  };
 
   // Category key mapping (internal logic stays in French keys)
   const categoryKeys = {
@@ -50,6 +64,10 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [featuredPost, setFeaturedPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const dropdownRef = useRef(null);
 
   // Close dropdown when clicking outside
@@ -64,28 +82,136 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Get translated posts
-  const translatedPosts = t("blogPage.posts", { returnObjects: true });
+  // Format date helper
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("fr-FR", {
+      month: "short",
+      day: "numeric",
+    });
+  };
 
-  // Sample blog posts data with translations merged
-  const [posts] = useState(
-    translatedPosts.map((post, index) => ({
-      ...post,
-      image:
-        index === 0
-          ? "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500"
-          : index === 1
-          ? "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500"
-          : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500",
-      author: {
-        ...post.author,
-        avatar: "https://i.pravatar.cc/150?img=1",
-      },
-      views: index === 0 ? 2 : index === 1 ? 3 : 12,
-      comments: 0,
-      liked: false,
-    }))
-  );
+  // Fetch posts from Directus
+  useEffect(() => {
+    let isActive = true;
+    const loadPosts = async () => {
+      console.log("Current i18n language:", i18n.language);
+
+      try {
+        setLoading(true);
+        setError(null);
+
+        // Fetch posts based on active category
+        const directusPosts = await fetchAllPosts({
+          category: activeCategory,
+          limit: 100,
+        });
+
+        console.log("First post from Directus:", directusPosts[0]);
+        if (directusPosts[0]?.translations) {
+          console.log("Translations array:", directusPosts[0].translations);
+        }
+
+        // Transform Directus data to match component structure
+        // IMPORTANT: We call getTranslation() ONCE per post to get the entire translated post
+        // Then we extract the fields we need from that translated version
+        const transformedPosts = directusPosts.map((post) => {
+          console.log("Calling getTranslation with language:", i18n.language);
+
+          // Step 1: Get the translated version of the entire post based on current language
+          // This function looks at post.translations array and finds a match for i18n.language
+          // If it finds one, it returns a new post object with title, excerpt, and content replaced
+          // If no translation exists for this language, it just returns the original post unchanged
+          const translatedPost = getTranslation(post, i18n.language);
+          // ADD THIS TO SEE WHAT CAME BACK
+          console.log("Original title:", post.title);
+          console.log("Translated title:", translatedPost.title);
+          console.log(
+            "Are they different?",
+            post.title !== translatedPost.title
+          );
+
+          // Step 2: Now build our display object using the translated post
+          // At this point, translatedPost.title is already in the correct language
+          // Same with translatedPost.excerpt and translatedPost.content
+          return {
+            id: translatedPost.id,
+            title: translatedPost.title, // Already translated if translation exists
+            excerpt: translatedPost.excerpt, // Already translated if translation exists
+            category: translatedPost.category?.name || "",
+            image: getAssetUrl(translatedPost.cover_image),
+            views: translatedPost.views || 0,
+            comments: translatedPost.comments_count || 0,
+            liked: false,
+            author: {
+              name: translatedPost.author?.full_name || "Unknown Author",
+              avatar:
+                getAssetUrl(translatedPost.author?.avatar) ||
+                "https://i.pravatar.cc/150?img=1",
+              date: formatDate(translatedPost.created_at),
+            },
+          };
+        });
+
+        setPosts(transformedPosts);
+
+        // Fetch featured post for category views
+        if (activeCategory !== "Tous les postes") {
+          const featured = await fetchFeaturedPost(activeCategory);
+          if (!isActive) return;
+
+          if (featured) {
+            // Same pattern here: translate the entire featured post first
+            // then extract the fields we need from the translated version
+            const translatedFeatured = getTranslation(featured, i18n.language);
+
+            setFeaturedPost({
+              id: translatedFeatured.id,
+              title: translatedFeatured.title, // Already translated
+              excerpt: translatedFeatured.excerpt, // Already translated
+              image: getAssetUrl(translatedFeatured.cover_image),
+              views: translatedFeatured.views || 0,
+              comments: translatedFeatured.comments_count || 0,
+              authorName:
+                translatedFeatured.author?.full_name || "Unknown Author",
+              avatar:
+                getAssetUrl(translatedFeatured.author?.avatar) ||
+                "https://i.pravatar.cc/150?img=1",
+              date: formatDate(translatedFeatured.created_at),
+            });
+          } else if (transformedPosts.length > 0) {
+            // Fallback to first post if no featured post
+            // Note: transformedPosts are already translated, so we can use them directly
+            const firstPost = transformedPosts[0];
+            setFeaturedPost({
+              id: firstPost.id,
+              title: firstPost.title,
+              excerpt: firstPost.excerpt,
+              image: firstPost.image,
+              views: firstPost.views,
+              comments: firstPost.comments,
+              authorName: firstPost.author.name,
+              avatar: firstPost.author.avatar,
+              date: firstPost.author.date,
+            });
+          }
+        }
+      } catch (err) {
+        if (!isActive) return;
+        console.error("Error fetching posts:", err);
+        setError("Failed to load blog posts. Please try again later.");
+      } finally {
+        if (!isActive) return;
+        setLoading(false);
+      }
+    };
+
+    loadPosts();
+    return () => {
+      isActive = false;
+    };
+  }, [activeCategory, i18n.language]);
 
   // ------------------- PAGINATION LOGIC -------------------
   const POSTS_PER_PAGE = 6;
@@ -100,14 +226,56 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
     setIsDropdownOpen(false);
   };
 
-  // Get featured post data
-  const featuredPost = {
-    ...t("blogPage.featured", { returnObjects: true }),
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
-    avatar: "https://i.pravatar.cc/150?img=1",
-    views: 2,
-    comments: 0,
-  };
+  // Loading state
+  if (loading) {
+    return (
+      <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
+        <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-20">
+            <div
+              className="animate-spin rounded-full h-12 w-12 border-b-2"
+              style={{ borderColor: MY_COLORS.secondaryGreen }}
+            ></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
+        <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center py-20">
+            <p className="text-red-600 text-lg mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-6 py-2 rounded-lg text-white font-semibold"
+              style={{ backgroundColor: MY_COLORS.secondaryGreen }}
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Empty state
+  if (!loading && posts.length === 0) {
+    return (
+      <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
+        <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="text-center py-20">
+            <p className="text-gray-600 text-lg">
+              No posts available in this category.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
@@ -190,17 +358,20 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
         </div>
 
         {/* BLOCK 2 & 3: Show Featured Post OR Blog Cards Grid */}
-        {activeCategory !== "Tous les postes" ? (
+        {activeCategory !== "Tous les postes" && featuredPost ? (
           // FEATURED POST VIEW
           <div className="mb-8 sm:mb-10 md:mb-12">
             <div
-              onClick={() => onPostClick && onPostClick(1)}
+              onClick={() => onPostClick && onPostClick(featuredPost.id)}
               className="max-w-[1200px] mx-auto cursor-pointer"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="relative h-48 sm:h-[280px] md:h-[300px] lg:h-[400px]">
                   <img
-                    src={featuredPost.image}
+                    src={
+                      featuredPost.image ||
+                      "https://via.placeholder.com/800x400"
+                    }
                     alt={featuredPost.title}
                     className="w-full h-full object-cover"
                   />
@@ -293,12 +464,12 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
             {paginatedPosts.map((post) => (
               <article
                 key={post.id}
-                onClick={() => onPostClick && onPostClick(post.id)}
+                onClick={() => handlePostClick(post)}
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer h-full flex flex-col select-none"
               >
                 <div className="relative h-40 sm:h-44 md:h-48 lg:h-56 overflow-hidden shrink-0">
                   <img
-                    src={post.image}
+                    src={post.image || "https://via.placeholder.com/500x400"}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -444,7 +615,10 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               </svg>
             </button>
 
-            <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide flex-1 max-w-full">
+            <div
+              className="flex items-center gap-1 sm:gap-2 overflow-x-auto 
+            pb-1 scrollbar-hide flex-1 max-w-full"
+            >
               {currentPage > 3 && (
                 <>
                   <button

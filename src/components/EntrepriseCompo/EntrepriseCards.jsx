@@ -28,11 +28,12 @@ const EntrepriseCards = () => {
 
   return (
     <section
-      className="w-screen py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
-      style={{
-        backgroundColor: MY_COLORS.gray,
-      }}
-    >
+  className="w-screen pt-20 lg:pt-24 pb-4 relative 
+  -mx-[50vw] left-1/2 right-1/2"
+  style={{
+    backgroundColor: MY_COLORS.gray,
+  }}
+>
       <div className="relative w-full flex justify-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
         <div className="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 relative">
           <motion.img
@@ -110,9 +111,9 @@ const EntrepriseCards = () => {
                 {/* CARD */}
                 <article
   className="relative bg-white rounded-2xl shadow-lg w-full 
-    pt-14 sm:pt-16 md:pt-20 p-5 sm:p-6 md:p-7 lg:p-8 text-center
+    pt-14 sm:pt-16 md:pt-20 p-5 sm:p-6 md:p-7 lg:p-10 text-center
     hover:shadow-xl transition-all duration-300 hover:-translate-y-1
-    min-h-[280px] sm:min-h-[300px] md:min-h-80"
+    min-h-[280px] sm:min-h-[300px] md:min-h-70 "
 >
                   {/* BADGE */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
@@ -157,20 +158,20 @@ const EntrepriseCards = () => {
           </div>
         </div>
 
-        <div className="w-full flex justify-center mt-auto pt-20 sm:pt-24 md:pt-32 lg:pt-40">
-            <div
-              className="w-full max-w-xl sm:max-w-2xl h-[2px] sm:h-px"
-              style={{
-                backgroundImage: `repeating-linear-gradient(
-                  to right,
-                  ${MY_COLORS.green} 4px,
-                  ${MY_COLORS.green} 8px,
-                  transparent 1px,
-                  transparent 11px
-                )`,
-              }}
-            />
-          </div>
+        <div className="w-full flex justify-center mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+          <div
+            className="w-full max-w-xl sm:max-w-2xl h-0.5 sm:h-px"
+            style={{
+              backgroundImage: `repeating-linear-gradient(
+                to right,
+                ${MY_COLORS.green} 4px,
+                ${MY_COLORS.green} 8px,
+                transparent 1px,
+                transparent 11px
+              )`,
+            }}
+          />
+        </div>
       </div>
     </section>
   );

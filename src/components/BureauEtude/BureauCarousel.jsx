@@ -3,11 +3,13 @@ import { useTranslation } from "react-i18next";
 import { IMAGES, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton";
+import { useNavigate } from "react-router-dom";
 
 const BureauCarousel = () => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const navigate = useNavigate();
 
   const projectsData = t('bureau.carousel.projects', { returnObjects: true });
   
@@ -254,7 +256,7 @@ const BureauCarousel = () => {
 
             <CTAButton
               className="absolute top-10 md:top-2 md:w-70"
-              onClick={() => alert("Video clicked!")}
+              onClick={() => navigate("/contacts")}
             >
               {t('bureau.carousel.cta.button')}
             </CTAButton>

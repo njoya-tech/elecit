@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -74,7 +75,8 @@ const TrackingPlatformSection = ({ title, buttonText, images }) => {
 </h2>
 
 <motion.button
-  className="group flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg border-2"
+  className="group flex items-center gap-3 px-6 py-3
+   md:px-8 md:py-4 rounded-full font-semibold text-sm sm:text-base md:text-lg border-2"
   style={{
     backgroundColor: 'transparent',
     color: MY_COLORS.green,

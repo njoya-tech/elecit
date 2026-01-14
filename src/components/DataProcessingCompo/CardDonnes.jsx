@@ -156,14 +156,11 @@ const ControlCards = () => {
 
               {/* STATIC IMAGE */}
               <div className="flex justify-center items-center p-4">
-                <div
-                  className="rounded-lg sm:rounded-2xl overflow-hidden 
-                shadow-lg w-full max-w-sm"
-                >
+                <div className="rounded-lg sm:rounded-2xl overflow-hidden shadow-lg w-full max-w-sm h-64 md:h-72">
                   <img
-                    src={IMAGES.IMG5}
+                    src={IMAGES.IMG27}
                     alt="Contrôle & sécurité"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-bottom"
                   />
                 </div>
               </div>

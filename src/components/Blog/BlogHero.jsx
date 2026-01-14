@@ -9,7 +9,7 @@ const BlogHero = () => {
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "70vh" }}
+      style={{ height: "55vh" }}
     >
       {/* Background Image */}
       <img
@@ -19,7 +19,7 @@ const BlogHero = () => {
       />
       
       {/* DARK GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
       
       {/* TECH PATTERN - Hidden on mobile for performance */}
       <img
@@ -31,9 +31,11 @@ const BlogHero = () => {
       />
 
       {/* CENTERED TEXT CONTENT */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
+      <div className="absolute inset-0 flex flex-col items-center
+       justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
         <h1
-          className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
+          className="font-extrabold text-3xl sm:text-4xl
+           md:text-5xl lg:text-6xl xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
           style={{ color: MY_COLORS.white }}
         >
           <span style={{ color: MY_COLORS.secondaryGreen }}>
@@ -42,13 +44,17 @@ const BlogHero = () => {
         </h1>
 
         <h3
-          style={{ color: MY_COLORS.secondaryGreen }}
-          className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+          style={{ color: MY_COLORS.white }}
+          className="text-white text-sm sm:text-base md:text-lg 
+          lg:text-lg xl:text-2xl tracking-wide uppercase font-extrabold mb-4 
+          sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
         >
           {t('blogPage.hero.subtitle')}
         </h3>
 
-        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl">
+        <p className="text-white text-sm sm:text-base
+         md:text-lg leading-relaxed mb-6 max-w-xs 
+         sm:max-w-md md:max-w-2xl lg:max-w-4xl">
           {t('blogPage.hero.description1')} {t('blogPage.hero.description2')} {t('blogPage.hero.description3')}
         </p>
       </div>

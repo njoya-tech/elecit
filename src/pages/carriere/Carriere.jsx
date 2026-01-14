@@ -5,7 +5,7 @@ import Footer from '../../components/features/Footer'
 import NavBar from '../../components/features/NavBar';
 import bgImage from '../../assets/bgImage.jpg'
 import JobOffersList from '../../components/Carriere/jobOffersList';
-import FormRoundCar from '../../components/Carriere/formRoundCar';
+import FormRoundCar from '../../components/Carriere/FormRoundCar';
 import car from '../../assets/car.png'
 
 const Carriere = () => {

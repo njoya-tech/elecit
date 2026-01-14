@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const ProjectModal = ({ isOpen, onClose, project }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpen) {
@@ -167,7 +169,7 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
                   text-xs sm:text-sm text-white transition-all duration-300 hover:scale-105"
                   style={{ backgroundColor: MY_COLORS.green }}
                   onClick={() => {
-                    alert(t("dataProcessing.projects.modal.haveProject"));
+                    navigate("/contacts");
                   }}
                 >
                   {t("dataProcessing.projects.modal.haveProject")}

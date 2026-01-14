@@ -1,8 +1,7 @@
-import { HashRouter, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/acceuil/HomePage'
 import ProjetsPage from './pages/projets/ProjetsPage';
 import Carriere from './pages/carriere/Carriere';
-import LanguageSwitcher from './components/features/LanguageSwitcher'
 import SmartBuildingPage from './pages/solution/SmartBuildingPage';
 import FabriMecaPage from './pages/solution/FabriMecaPage';
 import GpsTracking from './pages/solution/GpsTracking';
@@ -14,8 +13,8 @@ import ControlPage from './pages/solution/ControlPage';
 import BureauPage from './pages/bureau\'etude/BureauPage';
 import SavPage from "./pages/sav/SavPage"
 import BlogPage from './pages/blog/BlogPage';
-import JobOfferFormOnlyModal from './components/Carriere/jobOfferformonlyModal';
 import JobOffersOnly from './pages/job/JobOffersOnly';
+import BlogDetailPage from './components/Blog/BlogDetailPage.jsx';
 
 function App() {
   return (
@@ -36,6 +35,7 @@ function App() {
         <Route path="/solutions/bureau-etude" element={<BureauPage />} />
         <Route path="/solutions/sav" element={<SavPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:postId" element={<BlogDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
