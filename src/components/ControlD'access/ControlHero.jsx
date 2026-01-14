@@ -9,13 +9,14 @@ import { useState } from "react";
 
 const ControlHero = () => {
   const { t } = useTranslation();
-  const[showVideo, setShowVideo] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <section className="relative w-full h-[65vh] 
-    sm:h-[70vh] md:h-[75vh] lg:h-[55vh] 
-    flex items-center justify-center overflow-hidden">
-      
+    <section
+      className="relative w-full h-[50vh] 
+    sm:h-[40vh] md:h-[35vh] lg:h-[55vh] 
+    flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <img
         src={HERO.control}
@@ -44,28 +45,31 @@ const ControlHero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-4 sm:px-6
+      <div
+        className="relative z-20 text-center px-4 sm:px-6
        md:px-12 lg:px-16 flex flex-col 
-       items-center justify-center">
-        
-        <h1 className="text-3xl sm:text-4xl md:text-5xl 
+       items-center justify-center"
+      >
+        <h1
+          className="text-3xl sm:text-4xl md:text-5xl 
         lg:text-6xl xl:text-5xl
-         font-extrabold mb-10 mt-30 text-white">
-
-
+         font-extrabold mb-10 mt-30 text-white"
+        >
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t("control.hero.title")}
           </span>
         </h1>
 
-        <p className="text-white text-sm
+        <p
+          className="text-white text-sm
          sm:text-base md:text-lg lg:text-lg xl:text-xl 
-         leading-relaxed mb-6 max-w-3xl">
+         leading-relaxed mb-6 max-w-3xl"
+        >
           {t("control.hero.description")}
         </p>
 
-         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 lg:mt-0 ml-20">
+        {/* CTA + Arrow */}
+        <div className="flex items-center gap-4 p-0 lg:mt-0 ml-4 md:ml-10 lg:ml-20">
           <CTAButton onClick={() => setShowVideo(true)}>
             {t("entreprise.hero.button")}
           </CTAButton>
@@ -90,7 +94,7 @@ const ControlHero = () => {
                 </button>
 
                 <iframe
-               src="https://www.youtube.com/embed/geUNzc0cVuY?autoplay=1" 
+                  src="https://www.youtube.com/embed/geUNzc0cVuY?autoplay=1"
                   title="YouTube video"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -114,7 +118,6 @@ const ControlHero = () => {
             }}
           />
         </div>
-
       </div>
     </section>
   );

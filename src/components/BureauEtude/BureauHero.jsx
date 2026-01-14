@@ -102,7 +102,7 @@ const BureauHero = () => {
         </p>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 lg:mt-0 ml-20">
+        <div className="flex items-center gap-4 p-0 lg:mt-0 ml-4 md:ml-10 lg:ml-20">
           <CTAButton onClick={() => setShowVideo(true)}>
             {t("bureau.hero.button")}
           </CTAButton>

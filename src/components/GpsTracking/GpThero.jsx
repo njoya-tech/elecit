@@ -11,14 +11,17 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
  
   return (
     <div 
-      className="relative w-screen mx-auto h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] flex items-center justify-center md:w-[800px] lg:w-[1800px]"
+      className="relative w-screen mx-auto h-[60vh]
+       sm:h-[500px] md:h-[600px] lg:h-[55vh] 
+       flex items-center justify-center md:w-[800px] lg:w-[1800px]"
+       
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
-    >
+     >
       {/* Overlay sombre */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
       
@@ -56,7 +59,11 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
           {/* Bouton Livre blanc */}
           <div className="flex items-center gap-3">
             <button 
-              className="px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-4 border-2 text-white text-xs sm:text-sm md:text-base font-semibold rounded-full transition-all duration-300"
+              className="px-6 py-2 sm:px-8 sm:py-3 md:px-10 
+              md:py-3 lg:px-12 lg:py-4 border-2 text-white text-xs 
+              sm:text-sm md:text-base font-semibold 
+              rounded-full transition-all duration-300"
+
               style={{
                 borderColor: MY_COLORS.secondaryGreen,
                 color: MY_COLORS.secondaryGreen
@@ -75,7 +82,7 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
           </div>
         </div>
           <motion.div 
-                          className="flex-shrink-0"
+                          className="shrink-0"
                           animate={{
                             x: [0, -12, 0], // Position normale → Gauche → Position normale
                           }}
@@ -89,7 +96,9 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
                           <img 
                             src={fi} 
                             alt="Fleche"
-                            className="w-8 h-8 sm:w-6 sm:h-6 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain "
+                            className="w-8 h-8 sm:w-6 sm:h-6 md:w-10
+                             md:h-10 lg:w-10 lg:h-10 
+                             xl:w-15 xl:h-15 object-contain "
                           />
                         </motion.div>
                           </div>

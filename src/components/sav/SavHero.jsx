@@ -11,7 +11,7 @@ const SavHero = () => {
 
   return (
     <section 
-      className="relative w-full overflow-hidden min-h-[500px]" 
+      className="relative w-full overflow-hidden min-h-[500px] " 
       style={{height: "55vh"}}
     >
       {/* Background Image */}
@@ -58,8 +58,8 @@ const SavHero = () => {
         </h2>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 lg:mt-10 ml-30">
-          <CTAButton onClick={() => alert("Video clicked!")}>
+        <div className="flex items-center gap-4 p-0 mt-10 lg:mt-10 ml-14 md:ml-10 lg:ml-20">
+          <CTAButton>
             {t("sav.hero.button")}
           </CTAButton>
 

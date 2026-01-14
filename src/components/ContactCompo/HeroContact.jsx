@@ -60,7 +60,7 @@ const HeroContact = () => {
           py-2.5 sm:py-3 md:py-3.5 rounded-full 
           border-2 transition-all duration-300 font-semibold 
           text-sm sm:text-base md:text-lg hover:scale-105 
-          active:scale-95 mt-6 whitespace-nowrap"
+          active:scale-95 mt-6 whitespace-nowrap lg:mt-0 -ml-10 md:ml-10 lg:ml-20"
             style={{
               borderColor: MY_COLORS.primaryBlue,
               color: MY_COLORS.primaryBlue,
