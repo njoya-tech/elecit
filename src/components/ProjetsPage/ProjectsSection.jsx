@@ -373,7 +373,7 @@ useEffect(() => {
  setCategories([
           { 
             id: 'all', 
-            label: t('projects.categories.all') // 🔥 Traduction dynamique
+            label: t('p.all1') // 🔥 Traduction dynamique
           },
           ...categoriesData
         ]);

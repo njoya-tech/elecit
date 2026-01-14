@@ -356,7 +356,10 @@
     "subtitle": "Entdecken Sie einige der Projekte, die wir für unsere Kunden konzipiert und umgesetzt haben.",
     "buttonText": "Weißbuch"
   },
+  "p":{
+    "all1":"Alle Projekte"
 
+  },
 "projects": {
  "categories": {
       "all": "Alle Projekte",
