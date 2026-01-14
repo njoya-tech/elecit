@@ -1,44 +1,54 @@
 import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
+import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const EntrepriseCards = () => {
-  const cards = [
-    {
-      title: "Innovation",
-      icon: ICONS.innovation,
-      description:
-        "Grâce à une veille technologique permanente et à une culture de créativité, nous développons des approches novatrices pour répondre aux besoins de nos partenaires.",
-    },
-    {
-      title: "Transformation",
-      icon: ICONS.transformation,
-      description:
-        "Nous accompagnons nos clients dans leur mutation vers des modèles plus performants et durables par l'intégration de nouvelles technologies et par l'optimisation des processus.",
-    },
-    {
-      title: "Excellence",
-      icon: ICONS.excellence,
-      description:
-        "À travers des standards de qualité élevés, une expertise pointue et un souci du détail, nous garantissons des résultats qui répondent aux attentes les plus exigeantes.",
-    },
+  const { t } = useTranslation();
+
+  // Get translated cards data
+  const cardsData = t("entreprise.entrepriseCards.items", {
+    returnObjects: true,
+  });
+
+  // Map icons to cards using index (language-independent)
+  const iconMap = [
+    ICONS.innovation, // Card 0: Innovation
+    ICONS.transformation, // Card 1: Transformation
+    ICONS.excellence, // Card 2: Excellence
   ];
+
+  // Combine translated data with icons
+  const cards = cardsData.map((card, index) => ({
+    ...card,
+    icon: iconMap[index],
+  }));
 
   return (
     <section
-      className="w-full py-6 sm:py-8 md:py-12 lg:py-16 lg:mt-10"
-      style={{ backgroundColor: MY_COLORS.gray }}
+      className="w-screen py-20 lg:py-24 relative -mx-[50vw] left-1/2 right-1/2"
+      style={{
+        backgroundColor: MY_COLORS.gray,
+      }}
     >
       <div className="relative w-full flex justify-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
         <div className="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 relative">
-          <img
+          <motion.img
             src={ICONS.Casque}
             alt=""
             aria-hidden="true"
-            className=" md:block absolute -left-2 md:-left-4 -top-4 md:-top-8 w-20 md:w-24 lg:w-32 opacity-80 z-20 animate-bounce"
-            style={{ animationDuration: "4s" }}
+            className="md:block absolute -left-2 md:-left-4 -top-4 md:-top-8 w-20 md:w-24 lg:w-32 opacity-100 z-20"
+            animate={{
+              y: [0, -20, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
-
           <div className="w-full h-32 sm:h-40 md:h-[200px] lg:h-[220px] relative overflow-hidden rounded-lg shadow-xl">
             <img
               src={HERO.entreprise}
@@ -49,22 +59,28 @@ const EntrepriseCards = () => {
 
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4 sm:px-6">
               <h3 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-2 md:mb-3">
-                Nos valeurs
+                {t("entreprise.entrepriseCards.bannerTitle")}
               </h3>
               <p
                 className="text-base sm:text-lg md:text-2xl font-bold px-2"
                 style={{ color: MY_COLORS.secondaryGreen }}
               >
-                <span className="font-bold">03 mots clés</span>{" "}
-                <span className="text-white">nous définissent</span>
+                <span className="font-bold">
+                  {t("entreprise.entrepriseCards.bannerSubtitle")}
+                </span>{" "}
+                <span className="text-white">
+                  {t("entreprise.entrepriseCards.bannerSubtitle2")}
+                </span>
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20">
-        <div className="relative">
+      <div className="max-w-[1200px] mx-auto px-4 
+      sm:px-6 lg:px-8 -mt-8 sm:-mt-12
+       md:-mt-16 lg:-mt-17 flex flex-col h-full">
+        <div className="relative flex-1">
           <img
             src={ICONS.Engrenage_plan}
             alt=""
@@ -81,47 +97,67 @@ const EntrepriseCards = () => {
             style={{ animationDuration: "4s", animationDirection: "reverse" }}
           />
 
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12 place-items-center">
+          <div
+            className="relative z-10 grid grid-cols-1 
+          md:grid-cols-2 lg:grid-cols-3 gap-6 
+          md:gap-8 lg:gap-12 place-items-center"
+          >
             {cards.map((card, index) => (
-              <div key={index} className="relative flex flex-col items-center w-full max-w-xs sm:max-w-sm">
-                <div className="absolute -top-10 sm:-top-12 md:-top-14 lg:-top-16 left-1/2 -translate-x-1/2 z-20">
-                  <div className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20">
-                    <img
-                      src={ICONS.cercle}
-                      alt=""
-                      aria-hidden="true"
-                      className="absolute inset-0 w-full h-full animate-pulse"
-                      style={{ animationDuration: "8s" }}
-                    />
-
+              <div
+                key={index}
+                className="relative flex flex-col items-center w-full max-w-xs sm:max-w-sm"
+              >
+                {/* CARD */}
+                <article
+  className="relative bg-white rounded-2xl shadow-lg w-full 
+    pt-14 sm:pt-16 md:pt-20 p-5 sm:p-6 md:p-7 lg:p-8 text-center
+    hover:shadow-xl transition-all duration-300 hover:-translate-y-1
+    min-h-[280px] sm:min-h-[300px] md:min-h-80"
+>
+                  {/* BADGE */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <div
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg relative z-10"
-                      style={{ background: MY_COLORS.secondaryGreen }}
+                      className="relative flex items-center justify-center
+        w-14 h-14 sm:w-16 sm:h-16 md:w-22 md:h-22"
                     >
                       <img
-                        src={card.icon}
-                        alt={`${card.title} icon`}
-                        className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
+                        src={ICONS.cercle}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full animate-pulse"
+                        style={{ animationDuration: "8s" }}
                       />
+
+                      <div
+                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full 
+          flex items-center justify-center shadow-lg relative z-10"
+                        style={{ background: MY_COLORS.secondaryGreen }}
+                      >
+                        <img
+                          src={card.icon}
+                          alt={`${card.title} icon`}
+                          className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <article className="mt-10 sm:mt-12
-                 md:mt-14 lg:mt-16 bg-white rounded-2xl shadow-lg w-full p-5 sm:p-6 
-                 md:p-7 lg:p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <h4 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 mb-3 sm:mb-4 leading-tight">
+                  {/* CONTENT */}
+                  <h4 className="text-base sm:text-lg 
+                  md:text-xl font-bold text-slate-900 mb-8">
                     {card.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm md:text-sm text-slate-600 leading-relaxed px-2">
+                   </h4>
+
+                   <p className="text-xs sm:text-sm text-slate-900 leading-relaxed px-1 ">
                     {card.description}
                   </p>
                 </article>
               </div>
             ))}
           </div>
+        </div>
 
-          <div className="w-full flex justify-center mt-10 sm:mt-12 md:mt-16 lg:mt-24">
+        <div className="w-full flex justify-center mt-auto pt-20 sm:pt-24 md:pt-32 lg:pt-40">
             <div
               className="w-full max-w-xl sm:max-w-2xl h-[2px] sm:h-px"
               style={{
@@ -135,7 +171,6 @@ const EntrepriseCards = () => {
               }}
             />
           </div>
-        </div>
       </div>
     </section>
   );

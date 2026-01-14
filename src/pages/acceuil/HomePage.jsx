@@ -1,8 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
-import LanguageSwitcher from '../../components/features/LanguageSwitcher'
 import NavBar from '../../components/features/NavBar'
 import Footer from '../../components/features/Footer'
-import ImageWithTextOverlay from '../../components/ImageWithTextOverlay'
 import BlogCarousel from '../../components/HomePage/BlogCaroussel'
 import BlogBanner from '../../components/HomePage/BlogBanner'
 
@@ -18,7 +17,6 @@ import ordi1 from '../../assets/ordi1.png';
 import c2 from '../../assets/c2.jpg';
 import st1 from '../../assets/st1.png';
 import st2 from '../../assets/st2.png';
-// eslint-disable-next-line no-unused-vars
 import st3 from '../../assets/st3.png';
 import s from '../../assets/s.png'
 
@@ -48,15 +46,10 @@ import an18 from '../../assets/new/an18.jpg'
 import an19 from '../../assets/new/an19.jpg'
 import an20 from '../../assets/new/an20.jpg'
 
-
-
-
-
 const HomePage = () => {
-
   const { t } = useTranslation();
 
-   // Récupération des traductions
+  // Récupération des traductions pour services
   const servicesData = t('servicesCarousel.services', { returnObjects: true });
    const serviceImages = [
    BM3,
@@ -70,6 +63,7 @@ const HomePage = () => {
    an11
   ];
 
+ 
 
   // Fusion traductions + images
   const services = servicesData.map((service, index) => ({
@@ -128,106 +122,87 @@ const blog = blogData.map((blog, index) => ({
     }
   ];
 
-
   return (
     <>
-    <div className='min-h-screen'>
-                  <header className='fixed top-0 left-0 right-0 z-50'>
+      <div className='min-h-screen'>
+        <header className='fixed top-0 left-0 right-0 z-50'>
+          <NavBar/>
+        </header>
 
-                         <NavBar/>
-                  </header>
+        <main className='pt-46'>
+          <HeroSection slides={heroSlides} />
+          <br/>
+          <br/>
+          
+          <div>
+            <SolutionsSection />
+          </div>
+       
+          <TrackingPlatformSection 
+            title={t('trackingPlatform.title')}
+            buttonText={t('trackingPlatform.buttonText')}
+            images={{
+              loc1: loca1,
+              loc2: loca2,
+              ordi1: ordi1,
+              phonegps: phonegps
+            }}
+          />
+          <br/>
+          <br/>
+          
+          <ServicesSection />
 
- <main className='pt-46'>
+          <div>
+            <RealBanner 
+              titlePart1={t('realBanner.titlePart1')}
+              highlightWord={t('realBanner.highlightWord')}
+              titlePart2={t('realBanner.titlePart2')}
+            />
+            <div className=''>
+              <ServicesCarousel services={services} />
+            </div>
+          </div>
 
+          <div>
+            <SmartBuilding
+              title={t('smartBuild.title')}
+              buttonText={t('smartBuild.buttonText')}
+              images={{
+                loc2: st1,
+                ordi1: st2,
+                phonegps: s
+              }}
+            />
+          </div>
 
-     <HeroSection slides={heroSlides} />
-      <br/>
-      <br/>
-      <div>
-                <SolutionsSection
-      />
+          <div className='mt-20'>
+            <BlogBanner 
+              titlePart1={t("blogBanner.titlePart1")}
+              highlightWord={t("blogBanner.highlightWord")}
+              titlePart2={t("blogBanner.titlePart2")}
+            />
+          </div>
 
+          <div>
+            <BlogCarousel services={blog} />
+          </div>
+
+          <div className='mt-20'>
+            <BlogBanner 
+              titlePart1={t("testimonialsBanner.titlePart1")}
+              highlightWord={t("testimonialsBanner.highlightWord")}
+              titlePart2={t("testimonialsBanner.titlePart2")}
+            />
+          </div>
+
+          <div>
+            <TestimonialsCarousel />
+          </div>
+        </main>
+
+        <Footer/> 
       </div>
-   
-    <TrackingPlatformSection 
-      title={t('trackingPlatform.title')}
-      buttonText={t('trackingPlatform.buttonText')}
-      images={{
-        loc1: loca1,
-        loc2: loca2,
-        ordi1: ordi1,
-        phonegps: phonegps
-      }}
-    />
-    <br/>
-    <br/>
-    
-    <ServicesSection
-      />
-
-       <div>
-     <RealBanner 
-        titlePart1={t('realBanner.titlePart1')}
-        highlightWord={t('realBanner.highlightWord')}
-        titlePart2={t('realBanner.titlePart2')}
-      />
-      <div className=''>
-           <ServicesCarousel services={services} />
-      </div>
-    
-    </div>
-
-    <div>
-         <SmartBuilding
-      title={t('smartBuild.title')}
-      buttonText={t('smartBuild.buttonText')}
-      images={{
-    
-        loc2: st1,
-        ordi1: st2,
-        phonegps: s
-      }}
-    />
-    </div>
-
-    <div className='mt-20 '>
-       <BlogBanner 
-  titlePart1={t("blogBanner.titlePart1")}
-  highlightWord={t("blogBanner.highlightWord")}
-  titlePart2={t("blogBanner.titlePart2")}
-/>
-    </div>
-
-    <div>
-      <BlogCarousel services={blog}></BlogCarousel>
-    </div>
-
-  
-
-    <div className='mt-20'>
-      <BlogBanner 
-  titlePart1={t("testimonialsBanner.titlePart1")}
-  highlightWord={t("testimonialsBanner.highlightWord")}
-  titlePart2={t("testimonialsBanner.titlePart2")}
-/>
-    
-    </div>
-
-    <div>
-      <TestimonialsCarousel></TestimonialsCarousel>
-    </div>
-
-
-
- </main>
-
- <Footer/> 
- 
-    </div>
-
-
-  
-
     </>
   )
 }

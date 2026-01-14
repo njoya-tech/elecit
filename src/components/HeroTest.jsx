@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { IMAGES, ICONS } from "../asset/assets";
 import { MY_COLORS } from "../constants/colors";
+import { motion } from "framer-motion";
 
 // Use YOUR images
 const images = [IMAGES.IMG1, IMAGES.IMG2, IMAGES.IMG3];
@@ -56,7 +57,7 @@ const ElecITCarouselCard = () => {
       <div
         className="elecit-green-block-wrapper relative flex-none w-full 
         max-w-[320px] sm:max-w-[420px] md:max-w-[400px] 
-        lg:max-w-[440px] mx-auto md:mx-0 md:w-[400px] md:h-[500px] h-64 sm:h-80 md:h-[450px]
+        lg:max-w-[440px] mx-auto md:mx-0 md:w-[400px] md:h-[500px] h-64 sm:h-80 
         lg:h-[500px]"
         data-component="elecit-green-block"
       >
@@ -146,14 +147,21 @@ const ElecITCarouselCard = () => {
             transformOrigin: "center",
           }}
         >
-          <img
+          <motion.img
             src={ICONS.Casque}
             alt="helmet"
-            className="w-full animate-bounce"
+            className="w-full"
             style={{
               color: MY_COLORS.secondaryGreen,
-              animationDelay: "0s",
-              opacity: 0.7,
+              opacity: 100,
+            }}
+            animate={{
+              y: [0, -55, 0], // floating up & down
+            }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+              repeat: Infinity,
             }}
           />
         </div>
@@ -180,7 +188,7 @@ const ElecITCarouselCard = () => {
         </div>
 
         {/* Paragraph 1 */}
-        <p className="text-gray-600 mb-3 sm:mb-4 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20">
+        <p className="text-gray-900 mb-3 sm:mb-4 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20">
           Depuis sa création en <span className="font-bold">2015</span>, ElecIT
           Engineering s'est imposée comme un acteur pluridisciplinaire, capable
           de piloter des projets complexes, alliant savoir-faire technique,

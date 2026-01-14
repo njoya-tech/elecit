@@ -1,4 +1,6 @@
-// Composant Carousel de Services
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable no-unused-vars */
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';

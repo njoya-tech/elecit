@@ -26,128 +26,90 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
-    "contact": {
-      "floatingButton": "Contactez-nous",
-      "popup": {
-        "title": "Contactez-nous",
-        "subtitle": "Nous vous répondrons dès que possible",
-        "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
-        "openWhatsApp": "Ouvrir WhatsApp",
-        "messagePlaceholder": "Rédigez votre message...",
-        "leftButton":"Retour",
-        "rightButton":"Envoyer"
-      }
-    },
-
-  "contact": {
-    "floatingButton": "Contactez-nous",
-    "popup": {
-      "title": "Contactez-nous",
-      "subtitle": "Nous vous répondrons dès que possible",
-      "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
-      "openWhatsApp": "Ouvrir WhatsApp",
-      "messagePlaceholder": "Rédigez votre message..."
-    }
-  },
 
   "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Soumettre un projet",
-   "slide1": {
-  "title": "Bienvenue au pôle de la",
-  "highlighted": "Recherche",
-  "title2": "et de l'",
-  "highlighted2": "Excellence",
-  "title3": "dans l'ingénierie en Afrique centrale."
-},
-
-"slide2": {
-  "title": "Tout notre potentiel",
-  "highlighted": "technique",
-  "title2": "et",
-  "highlighted2": "technologique",
-  "title3": "au service de votre imagination"
-},
-
-"slide3": {
-  "title": "Optez pour des solutions",
-  "highlighted": "innovantes",
-  "title2": "",
-  "highlighted2": "",
-  "title4": "Une approche sur mesure, soucieuse de votre bien être et respectueuse de ses engagements professionnels"
-}
-
+    "slide1": {
+      "title": "Bienvenue au pôle de la",
+      "highlighted": "Recherche",
+      "title2": "et de l'",
+      "highlighted2": "Excellence",
+      "title3": "dans l'ingénierie en Afrique centrale."
+    },
+    "slide2": {
+      "title": "Tout notre potentiel",
+      "highlighted": "technique",
+      "title2": "et",
+      "highlighted2": "technologique",
+      "title3": "au service de votre imagination"
+    },
+    "slide3": {
+      "title": "Optez pour des solutions",
+      "highlighted": "innovantes",
+      "title2": "",
+      "highlighted2": "",
+      "title4": "Une approche sur mesure, soucieuse de votre bien être et respectueuse de ses engagements professionnels"
+    }
   },
 
   "solution": {
-     "bannerTitle": "Des solutions",
-        "bannerHighlight": "clés pour des",
-        "bannerTitle2": "besoins spécifiques",
-        "viewMore": "Voir plus",
-        "items": [
-            {
-                "title": "Bâtiments intelligents & automatisation",
-                "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
-                "imagePlaceholderText": "Bâtiments"
-            
-            },
-            {
-                "title": "Conception, Fabrication mécanique & métallique",
-                "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
-                "imagePlaceholderText": "Fabrication"
-               
-            },
-            {
-                "title": "GPS & Tracking (More Than Track)",
-                "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
-                "imagePlaceholderText": "GPS Tracking"
-           
-            }
-        ]
-    },
- 
-
-
-
-
-
-
+    "bannerTitle": "Des solutions",
+    "bannerHighlight": "clés pour des",
+    "bannerTitle2": "besoins spécifiques",
+    "viewMore": "Voir plus",
+    "items": [
+      {
+        "title": "Bâtiments intelligents & automatisation",
+        "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
+        "imagePlaceholderText": "Bâtiments"
+      },
+      {
+        "title": "Conception, Fabrication mécanique & métallique",
+        "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
+        "imagePlaceholderText": "Fabrication"
+      },
+      {
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
+        "imagePlaceholderText": "GPS Tracking"
+      }
+    ]
+  },
 
   "trackingPlatform": {
-  "title": "Plateforme de Tracking disponible sur Web & Smartphone",
-  "buttonText": "Regardez la vidéo"
-}, 
+    "title": "Plateforme de Tracking disponible sur Web & Smartphone",
+    "buttonText": "Regardez la vidéo"
+  },
 
- "serviceOffer": {
-      "title": "Une offre de",
-      "titleHighlight": "service",
-      "title2": "diversifiée",
-      "title3": ", adaptée à vos besoins",
-      "viewMore": "Voir plus",
-      "services": [
-        {
-          "title": "Services informatiques & DATA Processing",
-          "description": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données."
-        },
-        {
-          "title": "Bureau d'étude: conception & ingénierie",
-          "description": "Conception, optimisation et réalisation de vos projets techniques. Analyse des besoins et mise en œuvre des solutions sur mesure."
-        },
-        {
-          "title": "Service après vente disponible 24/7",
-          "description": "Des prestations techniques pour garantir la fiabilité, la durabilité et la performance optimale des équipements après leur mise en service."
-        }
-        
-      ]
-    },
+  "serviceOffer": {
+    "title": "Une offre de",
+    "titleHighlight": "service",
+    "title2": "diversifiée",
+    "title3": ", adaptée à vos besoins",
+    "viewMore": "Voir plus",
+    "services": [
+      {
+        "title": "Services informatiques & DATA Processing",
+        "description": "Des solutions sur mesure pour l'analyse des données, la conception de programmes, ainsi que la gestion des réseaux et bases de données."
+      },
+      {
+        "title": "Bureau d'étude: conception & ingénierie",
+        "description": "Conception, optimisation et réalisation de vos projets techniques. Analyse des besoins et mise en œuvre des solutions sur mesure."
+      },
+      {
+        "title": "Service après vente disponible 24/7",
+        "description": "Des prestations techniques pour garantir la fiabilité, la durabilité et la performance optimale des équipements après leur mise en service."
+      }
+    ]
+  },
 
-    "realBanner": {
-      "titlePart1": "Des réalisations à la hauteur de vos",
-      "highlightWord": "espérances",
-      "titlePart2": ""
-    },
+  "realBanner": {
+    "titlePart1": "Des réalisations à la hauteur de vos",
+    "highlightWord": "espérances",
+    "titlePart2": ""
+  },
 
- 
   "servicesCarousel": {
     "seeMore": "Voir plus",
     "services": [
@@ -190,298 +152,19 @@
     ]
   },
 
-
-
-
-
-"seeMore": "Voir plus",
+  "seeMore": "Voir plus",
 
   "smartBuild": {
     "title": "Exposition des solutions et bâtiment intellignet",
     "buttonText": "Visitez le showroom"
   },
 
-"blogBanner": {
-  "titlePart1": "Restez à jour sur nos ",
-  "highlightWord": "actualités",
-  "titlePart2": " en consultant notre blog"
-},
-
-"blog": {
-  "seeMore": "Voir plus",
-  "articles": [
-    {
-      
-      "title": "Pourquoi la fabrication sur mesure change la donne dans l'industrie camerounaise?",
-      "description": "Dans de nombreux secteurs industriels au Cameroun, les entreprises se heurtent à une difficulté récurrente...."
-    },
-    {
-
-      "title": "5 manières dont un hôtel intelligent économise énergie et fidélise ses clients",
-      "description": "Dans un contexte hôtelier de plus en plus compétitif au Cameroun, la question est double..."
-    },
-    {
-      
-      "title": "La révolution du tracking : quand l'IA surveille vos véhicules",
-      "description": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à des défis majeurs...."
-    },
-    {
-
-      "title": "Irrigation intelligente : la technologie au service de l'agriculture durable",
-      "description": "L'agriculture camerounaise, moteur de l'économie nationale, est confrontée à un défi de taille..."
-    },
-    {
-      
-      "title": "Du métal brut à l'innovation : comment nous façonnons des infrastructures durables",
-      "description": "Transformer une matière brute en un produit innovant et fonctionnel, voilà l'art de la métallurgie moderne..."
-    },
-    {
-
-      "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
-      "description": "Chaque entreprise, quelle que soit sa taille, génère quotidiennement des volumes considérables d'informations...."
-    },
-    {
-      "title": "Vidéosurveillance centralisée : le cerveau numérique de vos bâtiments",
-      "description":"La sécurité n’est plus une option, c’est une nécessité et protéger ses bâtiments ne se limite plus à poser des caméras ici et là…"
-    },
-    {
-      "title":"Maintenance préventive vs curative : le match qui fait gagner vos projets",
-      "description":"Dans le monde industriel comme dans celui du bâtiment, les machines et équipements sont au cœur de la productivité… "
-    },
-    {
-      "title":"Ingénierie made in Cameroun : des solutions locales pour des défis globaux",
-      "description":"Le Cameroun regorge d’ingénieurs et de ressources. Pourtant, les entreprises locales font recours à des solutions importées…"
-    }
-  ]
-},
-
-
-"testimonialsBanner": {
-  "titlePart1": "Ce que disent nos clients de leur ",
-  "highlightWord": "expérience",
-  "titlePart2": " avec nous"
-},
-
-"footer": {
-    "banner": {
-      "availableEverywhere": "Service disponible partout",
-      "phoneNumber": "+237 650 416 640",
-      "phoneLabel": "Téléphone"
-    },
-    "company": {
-      "description": "Tout notre potentiel technique et technologique au service de votre imagination"
-    },
-    "services": {
-      "title": "SERVICES",
-      "mechanicalFabrication": "Conception, Fabrication mécanique & métallique",
-      "smartBuilding": "Bâtiments intelligents & automatisation",
-      "gpsTracking": "GPS & Tracking (More Than Track)",
-      "itServices": "Services informatiques & DATA Processing",
-      "designOffice": "Bureau d'étude: conception & ingénierie",
-      "afterSales": "Service après vente disponible 24/7"
-    },
-    "usefulLinks": {
-      "title": "LIENS UTILES",
-      "mangoBoutique": "MANGO BOUTIQUE",
-      "foczou": "FOCZOU",
-      "moreThanTrack": "MORE THAN TRACK",
-      "matoa": "MATOA"
-    },
-    "newsletter": {
-      "title": "NEWSLETTER",
-      "description": "Futur partenaire, chercheur d'emploi, autre? Abonnez vous à notre newsletter et ne manquez pas nos dernières actualités",
-      "emailLabel": "Email",
-      "emailPlaceholder": "Saisissez votre e-mail",
-      "submitButton": "Rejoindre"
-    },
-    "copyright": {
-      "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
-      "privacyPolicy": "Politique de confidentialité",
-      "legalNotice": "Mentions légales"
-    },
-    "contact": {
-      "floatingButton": "Contactez-nous",
-      "popup": {
-        "title":"Nous Contactez",
-        "subtitle":"Nous vous repondrons dès que possible",
-        "availability": " ",
-        "messagePlaceholder": "Redigez votre message...",
-        "openWhatsApp": "Ouvrez whatsapp"
-      }
-    }
+  "blogBanner": {
+    "titlePart1": "Restez à jour sur nos ",
+    "highlightWord": "actualités",
+    "titlePart2": " en consultant notre blog"
   },
 
-  "keySolutions": {
-    "bannerTitle": "Des solutions clés pour des besoins spécifiques",
-    "viewMore": "Voir plus",
-    "items": [
-      {
-        "title": "Bâtiments intelligents & automatisation",
-        "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
-        "imagePlaceholderText": "Smart Building"
-      },
-      {
-        "title": "Conception, Fabrication mécanique & métallique",
-        "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
-        "imagePlaceholderText": "Fabrication Mécanique"
-      },
-      {
-        "title": "GPS & Tracking (More Than Track)",
-        "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
-        "imagePlaceholderText": "GPS Tracking"
-      }
-    ]
-  },
-
-
-  "entreprise": {
-    "hero": {
-      "title": "",
-      "subtitle": "",
-      "button": ""
-    },
-    "elecITCarouselCard": {
-      "items": [
-        {
-          "title": "",
-          "description": ""
-        }
-      ]
-    },
-    "entrepriseCards": {
-      "items": [
-        {
-          "title": "",
-                   "description": ""
-        }
-      ]
-    },
-    "entrepriseTeam": {
-      "title": "",
-      "members": [
-        {
-          "name": "",
-          "role": "",
-          "bio": ""
-        }
-      ]
-    },
-    "entrepriseAcc": {
-      "title": "",
-      "items": [
-        {
-          "question": "",
-          "answer": ""
-        }
-      ]
-    },
-    "entreprisePartner": {
-      "title": "",
-      "partners": [
-        {
-          "name": "",
-          "logo": ""
-        }
-      ]
-    }
-  },
-
-  "projets": {
-    "title": "Nos Realisations",
-    "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",
-    "buttonText": "livre blanc",
-    "titleRound1":  " Un ",
-    "titleRound2": " en tête",
-    "titleRound3": " projet",
-    "subtitleRound": "Bâtissons-le ensemble des aujourd'hui",
-    "buttonRound": "Contactez-nous"
-
-  },
-  "projet": {
-  "title": "NOS RÉALISATIONS",
-  "subtitle": "Découvrez quelques-uns des projets que nous avons conçus et réalisés pour nos clients.",
-  "buttonText": "Livre blanc"
-},
-
-
-  "jobOffers": {
- 
-    "previous": "Précédent",
-  "next": "Suivant",
-    "title": "Toutes les offres d'emplois",
-    "filterTitle": "Filtrer les offres",
-    "filterPoste": "Poste",
-    "filterPostePlaceholder": "Ex: Ingénieur, Technicien...",
-    "filterLocation": "Lieu",
-    "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
-    "filterDateFrom": "Date de début",
-    "filterDateTo": "Date de fin",
-    "resetFilters": "Réinitialiser les filtres",
-    "viewButton": "Voir tout",
-    "noResults": "Aucune offre ne correspond à vos critères de recherche",
-    "modal": {
-       "back": "Retour aux offres",
-      "typePoste": "Type de poste:",
-      "lieuPoste": "Lieu du poste:",
-      "datePublication": "Date de publication:",
-      "validJusquau": "Valide jusqu'au:",
-      "description": "Description",
-      "responsibilities": "Responsabilités",
-      "activities": "Activités :",
-      "profile": "Profil recherché",
-      "applyButton": "Postuler maintenant",
-
-      "formTitle": "POSTULEZ EN LIGNE",
-      "name": "Nom ",
-      "namePlaceholder": "Saisissez votre prénom",
-      "lastName": "Prénom ",
-      "lastNamePlaceholder": "Saisissez votre nom de famille",
-      "email": "Email *",
-      "emailPlaceholder": "Saisissez votre e-mail",
-      "phone": "Téléphone *",
-      "phonePlaceholder": "Saisissez votre n...",
-      "sex": "Sexe *",
-      "male": "Masculin",
-      "female": "Féminin",
-      "dateOfBirth": "Date de naissance *",
-      "day": "Jour",
-      "month": "Mois",
-      "year": "Année",
-      "position": "Poste *",
-      "positionPlaceholder": "Saisissez le nom du poste demandé",
-      "motivation": "Pourquoi pensez-vous avoir le profil le plus indiqué? *",
-      "motivationPlaceholder": "Tapez votre message",
-      "joinCV": "Joindre votre CV *",
-      "addFile": "Ajouter un fichier",
-      "sendApplication": "Envoyer la candidature"
-    }
-  },
-
-
-   "recruitment": {
-    "spontaneousTitle": "Candidature ",
-    "spontaneousSubtitle": "Rejoignez notre équipe et faites partie de l'aventure",
-    "titleRound": "Pas d'offres pour le moment",
-    "subtitleRound": "Vous souhaitez rejoindre ElecIT Engineering mais aucune offre actuelle ne correspond à votre profil ",
-    "buttonText":"Déposez ici",
-    "heroTitle1": "Pour les chercheurs d'emploi,",
-    "heroTitle2": "nous recrutons",
-    "heroSubtitle": "Rejoignez une équipe jeune et talentueuse et contribuez par votre savoir-faire à une vision axée vers l'innovation technologique, le professionnalisme et le progrès.",
-    "processTitle": "Processus de recrutement",
-    "step1Title": "Les pièces jointes",
-    "step1Description": "Nous évaluons la conformité de vos CV (en français et en anglais), lettre de motivation et diplômes.",
-    "step2Title": "1er Entretien",
-    "step2Description": "Un entretien téléphonique est au préalable effectué avec vous afin de mieux vous connaître.",
-    "step3Title": "2ème Entretien",
-    "step3Description": "Un entretien en présentiel se déroulera entre les responsables et vous sur divers sujets.",
-    "step4Title": "Cas pratique",
-    "step4Description": "Un éventuel test est soumis aux candidats pour mesurer leurs compétences techniques.",
-    "step5Title": "Prise de décision",
-    "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour proposition d’embauche."
-  },
-
-
- 
   "smartBuilding": {
     "title": "SMART BUILDING",
     "subtitle": "Des solutions sur mesure pour les habitations, les bureaux, les hôtels et les espaces commerciaux. Confort, sécurité, performance énergétique et connectivité réunis dans une architecture intelligente.",
@@ -539,239 +222,141 @@
 
   },
 
-  "interfaceCommande": {
-  "title": "Interfaces de commande",
-  "featureTitle": "Le pilotage centralisé",
-  "featureDescription": "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
-  "buttonText": "Visitez la boutique"
-},
 
- "prestations": {
-      "title": "Prestations associées",
-    "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
-    "prestations": [
+  "blog": {
+    "seeMore": "Voir plus",
+    "articles": [
       {
-        "number": "1",
-        "title": "Conception &\nBureau d'études",
-        "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+        "title": "Pourquoi la fabrication sur mesure change la donne dans l'industrie camerounaise?",
+        "description": "Dans de nombreux secteurs industriels au Cameroun, les entreprises se heurtent à une difficulté récurrente...."
       },
       {
-        "number": "2",
-        "title": "Fabrication &\nAssemblage",
-        "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+        "title": "5 manières dont un hôtel intelligent économise énergie et fidélise ses clients",
+        "description": "Dans un contexte hôtelier de plus en plus compétitif au Cameroun, la question est double..."
       },
       {
-        "number": "3",
-        "title": "Traitements\n& Finitions",
-        "description": "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
-      }
-    ],
-    "title": "Prestations associées",
-    "description": "Ces services accompagnent chaque étape du projet, depuis l'audit initial jusqu'à la supervision en temps réel, pour transformer les infrastructures traditionnelles en environnements intelligents, sécurisés et écoénergétiques.",
-    "buttonText": "Visitez FOCZOU",
-    "services": {
-      "audit": {
-        "title": "Audit & diagnostic des infrastructures",
-        "description": "Évaluation des systèmes existants (électriques, CVC, sécurité, etc.); Analyse énergétique et identification des leviers d'optimisation."
-      },
-      "conception": {
-        "title": "Conception & ingénierie de solutions intelligentes",
-        "description": "Étude technique et modélisation; Intégration de capteurs, automates, et systèmes de régulation."
-      },
-      "automatisation": {
-        "title": "Automatisation des systèmes du bâtiment",
-        "description": "Gestion technique centralisée: éclairage, chauffage, ventilation, sécurité; programmation de scénarios intelligents"
-      },
-      "securite": {
-        "title": "Sécurité & contrôle d'accès intelligents",
-        "description": "Vidéosurveillance intelligente, alarme connectée, biométrie; Traçabilité et gestion des flux de personnes"
-      },
-      "supervision": {
-        "title": "Supervision à distance & maintenance prédictive",
-        "description": "Plateformes cloud pour le monitoring 24/7; Détection précoce des anomalies et maintenance préventive."
-      },
-      "formation": {
-        "title": "Formation à l'utilisation",
-        "description": "Formation des équipes à l'exploitation du système;Documentation et support technique dédié."
-      },
-      "evolution": {
-        "title": "Évolution & évolutivité des systèmes",
-        "description": "Possibilité d'ajouter de nouvelles fonctionnalités (modularité); Mises à jour logicielles et adaptation aux nouveaux besoins."
-      }
-    }
-  },
-  "FabriMeca": {
-    "heroTitle1":"CONCEPTION, FABRICATION MECANIQUE & METALLIQUE",
-    "heroSubtitle": " Notre atelier concoit des appareils et machines standards ou personnalisés selon les spécifications de vos besoins",
-    "heroSubtitle2": "Cliquez sur le bouton pour consultez le site dedié à l'atelier mécanique",
-    "heroButtonText":"Visitez MATOA"
-  },
-
-  "expertise": {
-    "title": "Nos domaines d'expertise",
-    "subtitle": "Nous offrons des solutions globales pour la conception, la fabrication et l'assemblage de pièces métalliques et mécaniques, ainsi que d'engins roulants et de contenants, alliant qualité et précision.",
-    "expertises": [
-      {
-        "title": "Engins roulants",
-        "description": "Conception et fabrication de chariots, remorques, plateformes motorisées ou manuelles.",
-        "imagePosition": "right"
+        "title": "La révolution du tracking : quand l'IA surveille vos véhicules",
+        "description": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à des défis majeurs...."
       },
       {
-        "title": "Machines",
-        "description": "Machines industrielles, sanitaires et commerciales, conçues selon vos besoins spécifiques",
-        "imagePosition": "left"
+        "title": "Irrigation intelligente : la technologie au service de l'agriculture durable",
+        "description": "L'agriculture camerounaise, moteur de l'économie nationale, est confrontée à un défi de taille..."
       },
       {
-        "title": "Infrastructures & Pièces métalliques",
-        "description": "Structures métalliques, escaliers, garde-corps, pièces mécaniques usinées ou soudées.",
-        "imagePosition": "right"
+        "title": "Du métal brut à l'innovation : comment nous façonnons des infrastructures durables",
+        "description": "Transformer une matière brute en un produit innovant et fonctionnel, voilà l'art de la métallurgie moderne..."
+      },
+      {
+        "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
+        "description": "Chaque entreprise, quelle que soit sa taille, génère quotidiennement des volumes considérables d'informations...."
+      },
+      {
+        "title": "Vidéosurveillance centralisée : le cerveau numérique de vos bâtiments",
+        "description": "La sécurité n’est plus une option, c’est une nécessité et protéger ses bâtiments ne se limite plus à poser des caméras ici et là…"
+      },
+      {
+        "title": "Maintenance préventive vs curative : le match qui fait gagner vos projets",
+        "description": "Dans le monde industriel comme dans celui du bâtiment, les machines et équipements sont au cœur de la productivité… "
+      },
+      {
+        "title": "Ingénierie made in Cameroun : des solutions locales pour des défis globaux",
+        "description": "Le Cameroun regorge d’ingénieurs et de ressources. Pourtant, les entreprises locales font recours à des solutions importées…"
       }
     ]
   },
 
-  "production": {
-    "title": "Notre champ de production",
+  "testimonialsBanner": {
+    "titlePart1": "Ce que disent nos clients de leur ",
+    "highlightWord": "expérience",
+    "titlePart2": " avec nous"
+  },
+
+  "footer": {
+    "banner": {
+      "availableEverywhere": "Service disponible partout",
+      "phoneNumber": "+237 650 416 640",
+      "phoneLabel": "Téléphone"
+    },
+    "company": {
+      "description": "Tout notre potentiel technique et technologique au service de votre imagination"
+    },
+    "services": {
+      "title": "SERVICES",
+      "mechanicalFabrication": "Conception, Fabrication mécanique & métallique",
+      "smartBuilding": "Bâtiments intelligents & automatisation",
+      "gpsTracking": "GPS & Tracking (More Than Track)",
+      "itServices": "Services informatiques & DATA Processing",
+      "designOffice": "Bureau d'étude: conception & ingénierie",
+      "afterSales": "Service après vente disponible 24/7"
+    },
+    "usefulLinks": {
+      "title": "LIENS UTILES",
+      "mangoBoutique": "MANGO BOUTIQUE",
+      "foczou": "FOCZOU",
+      "moreThanTrack": "MORE THAN TRACK",
+      "matoa": "MATOA"
+    },
+    "newsletter": {
+      "title": "NEWSLETTER",
+      "description": "Futur partenaire, chercheur d'emploi, autre? Abonnez vous à notre newsletter et ne manquez pas nos dernières actualités",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Saisissez votre e-mail",
+      "submitButton": "Rejoindre"
+    },
+    "copyright": {
+      "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
+      "privacyPolicy": "Politique de confidentialité",
+      "legalNotice": "Mentions légales"
+    },
+    "contact": {
+      "floatingButton": "Contactez-nous",
+      "popup": {
+        "title": "Nous Contactez",
+        "subtitle": "Nous vous repondrons dès que possible",
+        "availability": " ",
+        "messagePlaceholder": "Redigez votre message...",
+        "openWhatsApp": "Ouvrez whatsapp"
+      }
+    }
+  },
+
+  "keySolutions": {
+    "bannerTitle": "Des solutions clés pour des besoins spécifiques",
+    "viewMore": "Voir plus",
     "items": [
       {
-        "title": "CAB ATELIER"
+        "title": "Bâtiments intelligents & automatisation",
+        "description": "Gestion intelligente de l'ensemble des équipements d'un bâtiment public ou privé et de la consommation énergétique.",
+        "imagePlaceholderText": "Smart Building"
       },
       {
-        "title": "BORNE NUMÉRIQUE"
+        "title": "Conception, Fabrication mécanique & métallique",
+        "description": "Fabrication des infrastructures métalliques, des machines agricoles, engins roulants, de nouvelles pièces machines et pièces de rechanges.",
+        "imagePlaceholderText": "Fabrication Mécanique"
       },
       {
-        "title": "MINI TRACTEUR"
-      },
-      {
-        "title": "STRUCTURE MÉTALLIQUE"
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Suivi précis et en temps réel, de flotte de véhicules et autres actifs. Analyse et optimisation durable de l'ensemble du patrimoine.",
+        "imagePlaceholderText": "GPS Tracking"
       }
     ]
   },
-  "fab": {
-    "titleRound": "Un projet en tête ",
-    "titleRound2": "Besoin d'une solution",
-    "sub": "sur mesure",
-    "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
+
+  "projets": {
+    "title": "Nos Realisations",
+    "subtitle": "Decouvrez quelques un des projets que nous avons concus et realisés pour nos clients",
+    "buttonText": "livre blanc",
+    "titleRound1": " Un ",
+    "titleRound2": " en tête",
+    "titleRound3": " projet",
+    "subtitleRound": "Bâtissons-le ensemble des aujourd'hui",
     "buttonRound": "Contactez-nous"
   },
-
-  
-"gpsT": {
-    "titlehero": "GPS & TRACKING",
-    "descriptionhero": "Solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu'international (dans l'espace CEMAC).",
-    "buttonhero": "Nos visuels",
-    "TitleFeatures": "Nos domaines d'intervention",
-    "DescriptionFeatures": "Des solutions pensées pour le suivi précis, l'analyse approfondie et l'optimisation durable de votre flotte de véhicules et de l'ensemble de vos actifs, le tout de manière centralisée au sein d'une plateforme unique.",
-    "BanderTitle": "Plus d'informations sur notre chaîne",
-    "BanderTitle2": "Youtube",
-    "BanderDescription": "Plateforme de suivi de véhicule en temps réel avec géolocalisation avancée",
-    "BanderButton": "En savoir plus",
-    "titleRound": "Besoin dune solution",
-    "titleRound2": "Personnalisée ?",
-    "descriptionRound": "Nos experts vous accompagnent de l'étude à la mise en œuvre complète de vos dispositifs de tracking",
-       "domaines": {
-      "title": "Nos domaines d'intervention",
-      "subtitle": "Des solutions pensées pour le suivi précis, l'analyse approfondie et l'optimisation durable de votre flotte de véhicules et de l'ensemble de vos actifs, le tout de manière centralisée au sein d'une plateforme unique.",
-      "items": {
-        "videoSurveillance": {
-          "title": "Tracking par Vidéosurveillance-chauffeurs",
-          "description": "Suivi en temps réel via caméra en cabine des opérations menées par les chauffeurs et de leur itinéraire de déplacement."
-        },
-        "objetsValeur": {
-          "title": "Tracking des Objets de Valeur",
-          "description": "Suivi en temps réel discret et sécurisé de biens sensibles (conteneur, valise, coffre fort…) via mini GPS portable, rechargeable"
-        },
-        "gestionFlottes": {
-          "title": "Gestion de Flottes",
-          "description": "Suivi GPS en temps réel, gestion centralisée de l'ensemble de la flotte via la plateforme, optimisation des trajets, création des alertes."
-        },
-        "antivol": {
-          "title": "Solutions Antivols",
-          "description": "Système de blocage moteur à distance via plateforme, alertes, protection active des véhicules."
-        },
-        "badge": {
-          "title": "Tracking par badge",
-          "description": "Solution de géolocalisation individuelle via badge intelligent adaptée au suivi de personnes âgées ou vulnérables, des enfants, des travailleurs isolés…"
-        },
-        "conduiteAssistee": {
-          "title": "Conduite Assistée par Caméra IA",
-          "description": "Détection, capture et enregistrement du comportement de conduite à risque (usage du téléphone, somnolence…); Alerte visuelle ou sonore."
-        },
-        "carburant": {
-          "title": "Gestion de Carburant",
-          "description": "Suivi du niveau de carburant par capteurs intégrés en vue d'éviter les vols et fuites/ Diagnostique de la courbe de consommation et génération de ses graphiques."
-        },
-        "rapports": {
-          "title": "Gestion des Rapports",
-          "description": "Génération des rapports périodiques (journal de bord, trajets, anomalies, consommation..)/ Export des rapports sous format EXCEL, PDF, images, vidéos."
-        }
-      }
-    }
+  "projet": {
+    "title": "NOS RÉALISATIONS",
+    "subtitle": "Découvrez quelques-uns des projets que nous avons conçus et réalisés pour nos clients.",
+    "buttonText": "Livre blanc"
   },
-
-  "whyChooseUs": {
-    "title": "Pourquoi nous choisir?",
-    "subtitle": "Nos solutions de tracking offrent des avantages concrets en matière de visibilité, de sécurité et d'optimisation des opérations, pour un meilleur contrôle de vos ressources en temps réel.",
-    "feature1": "Système d'immobilisation/antivol à distance inclus gratuitement.",
-    "feature2": "Accès à une plateforme web sous licence et/ou application mobile dédiée.",
-    "feature3": "Tous les paramètres et outils de gestion sont accessibles sans frais supplémentaires.",
-    "feature4": "Couverture internationale gratuite (zone CEMAC).",
-    "feature5": "Entretien, maintenance et intervention SAV offerts dans les villes de Douala et Yaoundé.",
-    "feature6": "Jusqu'à 1 an de garantie sur les équipements."
-   
-  },
-
-
-  "testimonials": {
-  "items": [
-    {
-      "id": 1,
-      "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
-      "author": "Directeur Général",
-      "company": "AFB",
-      "rating": 5
-    },
-    {
-      "id": 2,
-      "text": "La satisfaction des particuliers est palpable à l’égard du projet de domotique sans fil et des bâtiments intelligents. Cela témoigne du succès et de l’impact positif.",
-      "author": "Particuliers",
-      "company": "",
-      "rating": 5
-    },
-    {
-      "id": 3,
-      "text": "AFB BEKOKO est pleinement satisfait de l’installation de deux sources d’alimentation et d’un inverseur, ainsi que des détecteurs de fumée et d’inondation. Un service de qualité !",
-      "author": "AFB BEKOKO",
-      "company": "",
-      "rating": 5
-    },
-    {
-      "id": 4,
-      "text": "SGC exprime sa satisfaction quant à l'amélioration de l'éclairage et de la climatisation de leurs bâtiments. L'intervention a pleinement répondu à leurs attentes.",
-      "author": "Directeur Général",
-      "company": "SGC",
-      "rating": 5
-    },
-    {
-      "id": 5,
-      "text": "Elecit a délivré une installation domotique exceptionnelle à KILO FORCE. Nous sommes ravis de la qualité du service et de la modernisation apportée. Merci pour cette expérience !",
-      "author": "Directeur Général",
-      "company": "KILO FORCE",
-      "rating": 5
-    },
-    {
-      "id": 6,
-      "text": "La maintenance et le dépannage de nos climatisations par ElecIT nous apportent une satisfaction totale. Leur professionnalisme et efficacité ont considérablement amélioré notre expérience. Nous recommandons vivement ElecIT pour leurs services exceptionnels.",
-      "author": "SAAR ASSURANCE",
-      "company": "",
-      "rating": 5
-    }
-  ],
-  "ariaLabels": {
-    "previous": "Précédent",
-    "next": "Suivant",
-    "goToTestimonial": "Aller au témoignage"
-  }
-},
     "projects": {
       "categories": [
         { "id": "all", "label": "Tous les projets" },
@@ -923,8 +508,529 @@
         }
       ]
     },
+      "interfaceCommande": {
+  "title": "Interfaces de commande",
+  "featureTitle": "Le pilotage centralisé",
+  "featureDescription": "Pilotez vos éclairages, volets, climatisation, caméras et appareils de sonorisation depuis chez vous ou à distance.",
+  "buttonText": "Visitez la boutique"
+},
+ 
 
-    "fabriMeca": {
+  "prestations": {
+    "title": "Prestations associées",
+    "subtitle": "Nos prestations couvrent l'ensemble du processus de fabrication mécanique et métallique, de l'étude technique au revêtement final, pour garantir des réalisations fiables, durables et adaptées à chaque besoin.",
+    "prestations": [
+      {
+        "number": "1",
+        "title": "Conception &\nBureau d'études",
+        "description": "Modélisation 3D et simulation numérique, plans de fabrication sur mesure, Prototypage rapide."
+      },
+      {
+        "number": "2",
+        "title": "Fabrication &\nAssemblage",
+        "description": "Fraisage, soudure, découpe Laser, usinage, montage des structures métalliques en atelier ou sur site."
+      },
+      {
+        "number": "3",
+        "title": "Traitements\n& Finitions",
+        "description": "revêtement de surface (peinture, anodisation, galvanisation); contrôle qualité et métrologie."
+      }
+    ],
+
+    "description": "Ces services accompagnent chaque étape du projet, depuis l'audit initial jusqu'à la supervision en temps réel, pour transformer les infrastructures traditionnelles en environnements intelligents, sécurisés et écoénergétiques.",
+    "buttonText": "Visitez FOCZOU",
+    "services": {
+      "audit": {
+        "title": "Audit & diagnostic des infrastructures",
+        "description": "Évaluation des systèmes existants (électriques, CVC, sécurité, etc.); Analyse énergétique et identification des leviers d'optimisation."
+      },
+      "conception": {
+        "title": "Conception & ingénierie de solutions intelligentes",
+        "description": "Étude technique et modélisation; Intégration de capteurs, automates, et systèmes de régulation."
+      },
+      "automatisation": {
+        "title": "Automatisation des systèmes du bâtiment",
+        "description": "Gestion technique centralisée: éclairage, chauffage, ventilation, sécurité; programmation de scénarios intelligents"
+      },
+      "securite": {
+        "title": "Sécurité & contrôle d'accès intelligents",
+        "description": "Vidéosurveillance intelligente, alarme connectée, biométrie; Traçabilité et gestion des flux de personnes"
+      },
+      "supervision": {
+        "title": "Supervision à distance & maintenance prédictive",
+        "description": "Plateformes cloud pour le monitoring 24/7; Détection précoce des anomalies et maintenance préventive."
+      },
+      "formation": {
+        "title": "Formation à l'utilisation",
+        "description": "Formation des équipes à l'exploitation du système;Documentation et support technique dédié."
+      },
+      "evolution": {
+        "title": "Évolution & évolutivité des systèmes",
+        "description": "Possibilité d'ajouter de nouvelles fonctionnalités (modularité); Mises à jour logicielles et adaptation aux nouveaux besoins."
+      }
+    }
+  },
+  
+  "FabriMeca": {
+    "heroTitle1": "CONCEPTION, FABRICATION MECANIQUE & METALLIQUE",
+    "heroSubtitle": " Notre atelier concoit des appareils et machines standards ou personnalisés selon les spécifications de vos besoins",
+    "heroSubtitle2": "Cliquez sur le bouton pour consultez le site dedié à l'atelier mécanique",
+    "heroButtonText": "Visitez MATOA"
+  },
+
+  "expertise": {
+    "title": "Nos domaines d'expertise",
+    "subtitle": "Nous offrons des solutions globales pour la conception, la fabrication et l'assemblage de pièces métalliques et mécaniques, ainsi que d'engins roulants et de contenants, alliant qualité et précision.",
+    "expertises": [
+      {
+        "title": "Engins roulants",
+        "description": "Conception et fabrication de chariots, remorques, plateformes motorisées ou manuelles.",
+        "imagePosition": "right"
+      },
+      {
+        "title": "Machines",
+        "description": "Machines industrielles, sanitaires et commerciales, conçues selon vos besoins spécifiques",
+        "imagePosition": "left"
+      },
+      {
+        "title": "Infrastructures & Pièces métalliques",
+        "description": "Structures métalliques, escaliers, garde-corps, pièces mécaniques usinées ou soudées.",
+        "imagePosition": "right"
+      }
+    ]
+  },
+
+  "production": {
+    "title": "Notre champ de production",
+    "items": [
+      {
+        "title": "CAB ATELIER"
+      },
+      {
+        "title": "BORNE NUMÉRIQUE"
+      },
+      {
+        "title": "MINI TRACTEUR"
+      },
+      {
+        "title": "STRUCTURE MÉTALLIQUE"
+      }
+    ]
+  },
+  "fab": {
+    "titleRound": "Un projet en tête ",
+    "titleRound2": "Besoin d'une solution",
+    "sub": "sur mesure",
+    "subtitleRound": "Notre équipe est à votre écoute pour concrétiser vos idées et vous offrir un accompagnement personnalisé.",
+    "buttonRound": "Contactez-nous"
+  },
+
+"gpsT": {
+    "titlehero": "GPS & TRACKING",
+    "descriptionhero": "Solutions de tracking modernes, évolutives et adaptées aux besoins des particuliers, entreprises et institutions, tant au niveau national qu'international (dans l'espace CEMAC).",
+    "buttonhero": "Nos visuels",
+    "TitleFeatures": "Nos domaines d'intervention",
+    "DescriptionFeatures": "Des solutions pensées pour le suivi précis, l'analyse approfondie et l'optimisation durable de votre flotte de véhicules et de l'ensemble de vos actifs, le tout de manière centralisée au sein d'une plateforme unique.",
+    "BanderTitle": "Plus d'informations sur notre chaîne",
+    "BanderTitle2": "Youtube",
+    "BanderDescription": "Plateforme de suivi de véhicule en temps réel avec géolocalisation avancée",
+    "BanderButton": "En savoir plus",
+    "titleRound": "Besoin dune solution",
+    "titleRound2": "Personnalisée ?",
+    "descriptionRound": "Nos experts vous accompagnent de l'étude à la mise en œuvre complète de vos dispositifs de tracking",
+       "domaines": {
+      "title": "Nos domaines d'intervention",
+      "subtitle": "Des solutions pensées pour le suivi précis, l'analyse approfondie et l'optimisation durable de votre flotte de véhicules et de l'ensemble de vos actifs, le tout de manière centralisée au sein d'une plateforme unique.",
+      "items": {
+        "videoSurveillance": {
+          "title": "Tracking par Vidéosurveillance-chauffeurs",
+          "description": "Suivi en temps réel via caméra en cabine des opérations menées par les chauffeurs et de leur itinéraire de déplacement."
+        },
+        "objetsValeur": {
+          "title": "Tracking des Objets de Valeur",
+          "description": "Suivi en temps réel discret et sécurisé de biens sensibles (conteneur, valise, coffre fort…) via mini GPS portable, rechargeable"
+        },
+        "gestionFlottes": {
+          "title": "Gestion de Flottes",
+          "description": "Suivi GPS en temps réel, gestion centralisée de l'ensemble de la flotte via la plateforme, optimisation des trajets, création des alertes."
+        },
+        "antivol": {
+          "title": "Solutions Antivols",
+          "description": "Système de blocage moteur à distance via plateforme, alertes, protection active des véhicules."
+        },
+        "badge": {
+          "title": "Tracking par badge",
+          "description": "Solution de géolocalisation individuelle via badge intelligent adaptée au suivi de personnes âgées ou vulnérables, des enfants, des travailleurs isolés…"
+        },
+        "conduiteAssistee": {
+          "title": "Conduite Assistée par Caméra IA",
+          "description": "Détection, capture et enregistrement du comportement de conduite à risque (usage du téléphone, somnolence…); Alerte visuelle ou sonore."
+        },
+        "carburant": {
+          "title": "Gestion de Carburant",
+          "description": "Suivi du niveau de carburant par capteurs intégrés en vue d'éviter les vols et fuites/ Diagnostique de la courbe de consommation et génération de ses graphiques."
+        },
+        "rapports": {
+          "title": "Gestion des Rapports",
+          "description": "Génération des rapports périodiques (journal de bord, trajets, anomalies, consommation..)/ Export des rapports sous format EXCEL, PDF, images, vidéos."
+        }
+      }
+    }
+  },
+
+  "whyChooseUs": {
+    "title": "Pourquoi nous choisir?",
+    "subtitle": "Nos solutions de tracking offrent des avantages concrets en matière de visibilité, de sécurité et d'optimisation des opérations, pour un meilleur contrôle de vos ressources en temps réel.",
+    "feature1": "Système d'immobilisation/antivol à distance inclus gratuitement.",
+    "feature2": "Accès à une plateforme web sous licence et/ou application mobile dédiée.",
+    "feature3": "Tous les paramètres et outils de gestion sont accessibles sans frais supplémentaires.",
+    "feature4": "Couverture internationale gratuite (zone CEMAC).",
+    "feature5": "Entretien, maintenance et intervention SAV offerts dans les villes de Douala et Yaoundé.",
+    "feature6": "Jusqu'à 1 an de garantie sur les équipements."
+   
+  },
+
+
+  "testimonials": {
+    "items": [
+      {
+        "id": 1,
+              "text": "AFB exprime sa satisfaction envers nos services avec une note de 16/20. C'est un honneur de dépasser leurs attentes et de contribuer positivement à leur expérience.",
+      
+        "author": "Directeur Général",
+        "company": "AFB",
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "text": "La satisfaction des particuliers est palpable à l’égard du projet de domotique sans fil et des bâtiments intelligents. Cela témoigne du succès et de l’impact positif.",
+        "author": "Particuliers",
+        "company": "",
+        "rating": 5
+      },
+      {
+        "id": 3,
+        "text": "AFB BEKOKO est pleinement satisfait de l’installation de deux sources d’alimentation et d’un inverseur, ainsi que des détecteurs de fumée et d’inondation. Un service de qualité !",
+        "author": "AFB BEKOKO",
+        "company": "",
+        "rating": 5
+      },
+      {
+        "id": 4,
+        "text": "SGC exprime sa satisfaction quant à l'amélioration de l'éclairage et de la climatisation de leurs bâtiments. L'intervention a pleinement répondu à leurs attentes.",
+        "author": "Directeur Général",
+        "company": "SGC",
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "text": "Elecit a délivré une installation domotique exceptionnelle à KILO FORCE. Nous sommes ravis de la qualité du service et de la modernisation apportée. Merci pour cette expérience !",
+        "author": "Directeur Général",
+        "company": "KILO FORCE",
+        "rating": 5
+      },
+      {
+        "id": 6,
+        "text": "La maintenance et le dépannage de nos climatisations par ElecIT nous apportent une satisfaction totale. Leur professionnalisme et efficacité ont considérablement amélioré notre expérience. Nous recommandons vivement ElecIT pour leurs services exceptionnels.",
+        "author": "SAAR ASSURANCE",
+        "company": "",
+        "rating": 5
+      }
+    ],
+    "ariaLabels": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "goToTestimonial": "Aller au témoignage"
+    }
+  },
+
+
+  
+
+  "entreprise": {
+    "hero": {
+      "title": "Que faut-il savoir sur",
+      "titleHighlight": "ELECIT?",
+      "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+      "description": "Parce qu'au-delà du marché camerounais, nous souhaitons développer toute l'Afrique à travers nos services.",
+      "button": "Publireportage"
+    },
+    "entrepriseCards": {
+      "bannerTitle": "Nos valeurs",
+      "bannerSubtitle": "03 mots clés",
+      "bannerSubtitle2": "nous définissent",
+      "items": [
+        {
+          "title": "Innovation",
+          "description": "Grâce à une veille technologique permanente et à une culture de créativité, nous développons des approches novatrices pour répondre aux besoins de nos partenaires."
+        },
+        {
+          "title": "Transformation",
+          "description": "Nous accompagnons nos clients dans leur mutation vers des modèles plus performants et durables par l'intégration de nouvelles technologies et par l'optimisation des processus."
+        },
+        {
+          "title": "Excellence",
+          "description": "À travers des standards de qualité élevés, une expertise pointue et un souci du détail, nous garantissons des résultats qui répondent aux attentes les plus exigeantes."
+        }
+      ]
+    },
+    "entrepriseTeam": {
+      "title": "L'équipe",
+      "subtitle": "Ces acteurs là qui s'unissent pour répondre à vos besoins",
+      "description": "Nous mobilisons les bonnes compétences au bon moment. Cette richesse humaine et technique nous permet de répondre avec agilité et précision aux enjeux les plus variés de nos clients, du conseil à la réalisation.",
+      "button": "Publireportage",
+      "members": [
+        { "title": "Domoticiens" },
+        { "title": "Mécatroniciens" },
+        { "title": "Gestionnaires de flotte" },
+        { "title": "Ingénieurs informatique" },
+        { "title": "Ingénieurs génie civil" },
+        { "title": "Techniciens de fabrication" },
+        { "title": "Soudeur" },
+        { "title": "Agents de maintenance" },
+        { "title": "Ingénieurs énergie renouvelable" },
+        { "title": "Techniciens courant fort et faible" }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "Questions fréquemment posées",
+      "contactTitle": "Obtenez d'autres informations",
+      "contactSubtitle": "Nous serons heureux d'apporter des réponses à vos questions.",
+      "contactButton": "Nous joindre",
+      "items": [
+        {
+          "question": "Où êtes-vous implantés et dans quelles régions intervenez-vous ?",
+          "answer": "Notre siège est basé à Douala et à Yaoundé; mais nous intervenons sur l'ensemble du territoire national et dans certaines zones d'Afrique de l'Ouest. Pour des projets spécifiques, nous étudions aussi les interventions à l'international."
+        },
+        {
+          "question": "Quels sont vos délais moyens pour un projet ?",
+          "answer": "Les délais varient selon la complexité du projet. En général, nous livrons les projets standards en 2-4 semaines."
+        },
+        {
+          "question": "Comment obtenir un devis personnalisé ?",
+          "answer": "Vous pouvez nous contacter via le formulaire en ligne ou par téléphone. Nous vous envoyons un devis sous 48h."
+        },
+        {
+          "question": "Est-ce que vous proposez un accompagnement après la livraison ?",
+          "answer": "Oui, nous offrons un service après-vente complet incluant maintenance et support technique 24/7."
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "Nos partenaires",
+      "ctaTitle": "Vous avez un Bession ?",
+      "ctaTitle2": "Nous avons les",
+      "ctaHighlight": "solutions",
+      "ctaButton": "Contactez Nous"
+    }
+  },
+
+  "contact": {
+    "floatingButton": "Contactez-nous",
+    "popup": {
+      "title": "Contactez-nous",
+      "subtitle": "Nous vous répondrons dès que possible",
+      "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
+      "openWhatsApp": "Ouvrir WhatsApp",
+      "messagePlaceholder": "Rédigez votre message...",
+      "leftButton": "Retour",
+      "rightButton": "Envoyer"
+    },
+    "hero": {
+      "title": "Contactez-Nous.",
+      "subtitle": "Notre équipe d'experts vous apporte une solution !",
+      "button": "Plus de Contenus"
+    },
+    "form": {
+      "title": "Formulaire de contact",
+      "subtitle": "Une question, un besoin ou un projet à discuter ?",
+      "subtitle2": "Remplissez le formulaire ci-dessous",
+      "lastName": "Nom de famille",
+      "lastNamePlaceholder": "Saisissez votre nom de famille",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Saisissez votre prénom",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "emailPlaceholder": "Saisissez votre e-mail",
+      "message": "Message",
+      "messagePlaceholder": "Répondez en quelques mots",
+      "submit": "Envoyer",
+      "imageAlt": "Professionnel dans un environnement industriel"
+    },
+    "location": {
+      "title": "Nos services sont accessibles dans tout",
+      "highlight1": "le territoire camerounais",
+      "title2": ", mais également dans toute",
+      "highlight2": "l'Afrique centrale."
+    },
+
+    "blog": {
+      "title": "Restez à jour sur nos",
+      "highlight": "actualités",
+      "title2": "en consultant notre blog",
+      "readMore": "Lire plus",
+      "prevPage": "Page précédente",
+      "nextPage": "Page suivante",
+      "goToPage": "Aller à la page",
+      "articles": [
+        {
+          "id": 1,
+          "number": "1",
+          "title": "Banque Mobile",
+          "category": "Fabrication mécanique",
+
+          "shortDescription": "Conception, développement et déploiement d’une plateforme de banque mobile permettant aux utilisateurs d’effectuer des opérations financières. ",
+          "dateRealisation": "12/06/23",
+          "statut": "terminé",
+          "description": "Conception, développement et déploiement d’une plateforme de banque mobile permettant aux utilisateurs d’effectuer des opérations financières",
+          "utilite": "Ce projet répond au besoin critique de mobilité interne fluide, réduction du temps de déplacement des équipes sur site, tout en assurant leur sécurité et leur confort.",
+          "retourClient": "Grâce à ces nouveaux moyens de transport, nous avons réduit de 30 % les retards liés aux déplacements internes, tout en améliorant le confort de nos collaborateurs.",
+          "responsable": "Responsable Logistique"
+        },
+        {
+          "id": 2,
+          "number": "2",
+          "title": "Camion de transport du personnel",
+          "category": "Fabrication mécanique",
+
+          "shortDescription": "Restructuration technique et fonctionnel d’un camion destiné au transport du personnel.",
+          "dateRealisation": "15/08/23",
+          "statut": "terminé",
+          "description": "Restructuration technique et fonctionnel d’un camion destiné au transport du personnel.",
+          "utilite": "Amélioration de la productivité et de la prise de décision grâce à des outils d'analyse avancés.",
+          "retourClient": "L'implémentation de cette solution a transformé notre façon de travailler et augmenté notre efficacité de 40%.",
+          "responsable": "Directeur IT"
+        },
+        {
+          "id": 3,
+          "number": "3",
+          "title": "Machine de fabrication de briques (presse à brique)",
+          "category": "Fabrication mécanique",
+
+          "shortDescription": "Conception et fabrication d’une machine industrielle de production de briques, intégrant des mécanismes robustes.",
+          "dateRealisation": "20/09/23",
+          "statut": "en cours",
+          "description": "Conception et fabrication d’une machine industrielle de production de briques, intégrant des mécanismes robustes..",
+          "utilite": "Assurer la sécurité des occupants et des biens tout en optimisant la gestion des accès.",
+          "retourClient": "La tranquillité d'esprit apportée par ce système est inestimable pour notre organisation.",
+          "responsable": "Chef de la sécurité"
+        },
+        {
+          "id": 4,
+          "number": "4",
+          "title": "Construction d’un hangar métallique",
+          "category": "Génie civil",
+
+          "shortDescription": "Étude, conception et construction d’un hangar métallique destiné à des usages industriels et logistiques.",
+          "dateRealisation": "05/10/23",
+          "statut": "terminé",
+          "description": "Étude, conception et construction d’un hangar métallique destiné à des usages industriels et logistiques..",
+          "utilite": "Réduction des temps d'arrêt et amélioration de l'efficacité opérationnelle.",
+          "retourClient": "Cette solution nous a permis de réduire nos coûts de maintenance de 25%.",
+          "responsable": "Directeur de production"
+        },
+        {
+          "id": 5,
+          "number": "5",
+          "title": "Installation domotique dans une villa",
+          "category": "Smart building",
+
+          "shortDescription": "Installation complète d’un système domotique résidentiel comprenant la gestion intelligente.",
+          "dateRealisation": "12/11/23",
+          "statut": "en cours",
+          "description": "Installation complète d’un système domotique résidentiel comprenant la gestion intelligente..",
+          "utilite": "Garantir une connectivité fiable et performante pour tous les services.",
+          "retourClient": "Le nouveau réseau a considérablement amélioré notre productivité quotidienne.",
+          "responsable": "Responsable Infrastructure"
+        },
+        {
+          "id": 6,
+          "number": "6",
+          "title": "Installation domotique dans une banque",
+          "category": "Smart building",
+
+          "shortDescription": "Déploiement d’un système domotique professionnel pour une banque, incluant la gestion intelligente.",
+          "dateRealisation": "18/12/23",
+          "statut": "terminé",
+          "description": "Déploiement d’un système domotique professionnel pour une banque, incluant la gestion intelligente..",
+          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
+          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
+          "responsable": "Directeur des opérations"
+        },
+        {
+          "id": 7,
+          "number": "7",
+          "title": "Fabrication d’un escabeau en 1",
+          "category": "Fabrication mécanique",
+
+          "shortDescription": "Conception et fabrication d’un escabeau multifonction 3 en 1, capable de s’adapter à plusieurs configurations d’utilisation.",
+          "dateRealisation": "18/12/23",
+          "statut": "terminé",
+          "description": "Conception et fabrication d’un escabeau multifonction 3 en 1, capable de s’adapter à plusieurs configurations d’utilisation..",
+          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
+          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
+          "responsable": "Directeur des opérations"
+        },
+        {
+          "id": 8,
+          "number": "8",
+          "title": "Création et aménagement du showroom ",
+          "category": "Projet interne",
+          
+          "shortDescription": "Conception, aménagement et mise en service d’un showroom dédié à la présentation des solutions domotiques.",
+          "dateRealisation": "18/12/23",
+          "statut": "terminé",
+          "description": "Conception, aménagement et mise en service d’un showroom dédié à la présentation des solutions domotiques..",
+          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
+          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
+          "responsable": "Directeur des opérations"
+        },
+        {
+          "id": 9,
+          "number": "9",
+          "title": "Ouverture de la boutique vitrine ",
+          "category": "Projet interne",
+          
+          "shortDescription": "Création et aménagement d’une boutique vitrine dédiée à la vente d’équipements électriques, réseaux et autres matériaux.",
+          "dateRealisation": "18/12/23",
+          "statut": "terminé",
+          "description": "Création et aménagement d’une boutique vitrine dédiée à la vente d’équipements électriques, réseaux et autres matériaux..",
+          "utilite": "Libérer du temps pour les équipes et réduire les erreurs humaines.",
+          "retourClient": "L'automatisation a transformé notre façon de travailler au quotidien.",
+          "responsable": "Directeur des opérations",
+          "title": "Pourquoi la fabrication sur mesure est un game-changer dans l'industrie camerounaise ?",
+          "excerpt": "Dans de nombreux secteurs industriels au Cameroun, les entreprises font face à un défi récurrent..."
+        },
+        {
+          "id": 2,
+          "title": "5 façons dont un hôtel intelligent économise de l'énergie et fidélise sa clientèle",
+          "excerpt": "Sur un marché hôtelier camerounais de plus en plus compétitif, la question est double..."
+        },
+        {
+          "id": 3,
+          "title": "La révolution du tracking : quand l'IA surveille vos véhicules",
+          "excerpt": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à des défis majeurs..."
+        },
+        {
+          "id": 4,
+          "title": "Irrigation intelligente : la technologie au service de l'agriculture durable",
+          "excerpt": "L'agriculture camerounaise, moteur de l'économie nationale, est confrontée à un défi de taille..."
+        },
+        {
+          "id": 5,
+          "title": "Du métal brut à l'innovation : comment nous façonnons des infrastructures durables",
+          "excerpt": "Transformer une matière brute en un produit innovant et fonctionnel, voilà l'art de la métallurgie moderne..."
+        },
+        {
+          "id": 6,
+          "title": "Data Processing et sécurité : protéger l'or numérique de votre entreprise",
+          "excerpt": "Chaque entreprise génère quotidiennement des volumes considérables d'informations sensibles..."
+        }
+      ]
+    }
+  },
+
+  "fabriMeca": {
     "hero": {
       "title1": "Fabrication Mécanique & Métallique",
       "subtitle": "Excellence en conception et fabrication",
@@ -970,17 +1076,15 @@
     "production": {
       "title": "Notre champ de production",
       "items": {
-         "benne": "BENNE",
-         "camionFrigo": "CAMION FRIGORIFIQUE",
-         "structureMetallique": "PLATEAU SIMPLE",
-         "PlateauRidelle":"PLATEAU RIDELLE",
-         "citernes": "CITERNES",
-         "porteEngins": "PORTE-ENGINS",
-         "presseBrique":"PRESSE A BRIQUE",
-         "broyeurMarteau":"BROYEUR A MARTEAU",
-         "borneNumerique": "BORNE NUMÉRIQUE"
-    
-       
+        "benne": "BENNE",
+        "camionFrigo": "CAMION FRIGORIFIQUE",
+        "structureMetallique": "PLATEAU SIMPLE",
+        "PlateauRidelle": "PLATEAU RIDELLE",
+        "citernes": "CITERNES",
+        "porteEngins": "PORTE-ENGINS",
+        "presseBrique": "PRESSE A BRIQUE",
+        "broyeurMarteau": "BROYEUR A MARTEAU",
+        "borneNumerique": "BORNE NUMÉRIQUE"
       }
     },
     "bander": {
@@ -996,7 +1100,7 @@
     }
   },
 
-   "fm": {
+  "fm": {
     "title": "Explorez du contenu intéressant",
     "subtitle": "L'atelier mécanique",
     "description": "Plongez vous au cœur de l'ingénierie mécanique et métallique",
@@ -1007,10 +1111,544 @@
     "title2": "Banque mobile",
     "subtitle": "Agence bancaire itinérante, entièrement équipée et aménagée dans une structure métallique montée sur un tracteur.",
     "buttonText": "Plus de projets"
-  }
-  
- 
-  
+  },
 
+  "blogPage": {
+    "hero": {
+      "title": "Inside ElecIT",
+      "subtitle": "Innovation, Expertise & Vie d'Entreprise",
+      "description1": "Une fenêtre ouverte sur notre savoir-faire et notre culture.",
+      "description2": "Explorez nos projets, nos innovations et notre vision de l'ingénierie moderne.",
+      "description3": "Plongez dans le quotidien d'ElecIT, là où la technique rencontre l'humain."
+    },
+    "featured": {
+      "authorName": "Therese Egoutou",
+      "date": "17 nov.",
+      "title": "Le bâtiment qui s'adapte à vous",
+      "excerpt": "Tout projet commence par une idée, mais c'est la conception qui transforme cette idée en solution réelle."
+    },
+    "categories": {
+      "all": "Tous les postes",
+      "smartSpaces": "Smart spaces",
+      "workshop": "Atelier d'Ingéniosité",
+      "moreThanTrack": "More Than Track",
+      "advancedSecurity": "Sécurité avancée",
+      "toolBoxMeeting": "Tool box meeting",
+      "companyLife": "Vie d'entreprise",
+      "more": "Plus"
+    },
+    "cards": {
+      "views": "vues",
+      "view": "vue",
+      "comments": "commentaires",
+      "comment": "commentaire",
+      "readMore": "Lire plus",
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "detail": {
+      "readTime": "min de lecture",
+      "share": "Partager le post",
+      "cancel": "Annuler",
+      "publish": "Publier",
+      "loginPrompt": "pour publier en tant que membre",
+      "login": "Se connecter",
+      "commentPlaceholder": "Rédigez un commentaire...",
+      "commentsTitle": "Commentaires",
+      "shareModal": {
+        "title": "Partager ce post",
+        "copyLink": "Ou copier le lien",
+        "copy": "Copier",
+        "copied": "Lien copié !",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
+      }
+    },
+    "posts": [
+      {
+        "id": 1,
+        "category": "Tool box meeting",
+        "title": "Le bâtiment qui s'adapte à vous",
+        "excerpt": "Tout projet commence par une idée, mais c'est la conception qui transforme cett...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov."
+        },
+        "content": {
+          "heading1": "Une conception intelligente dès la base",
+          "paragraph1": "Tout projet commence par une idée, mais c'est la <strong>conception</strong> qui transforme cette idée en solution réelle. Grâce à la <strong>Conception Assistée par Ordinateur (CAO)</strong>, nous modélisons les pièces et structures avec une précision millimétrique.",
+          "listIntro": "Cette étape permet :",
+          "listItems": [
+            "d'anticiper les contraintes mécaniques,",
+            "d'optimiser les formes et épaisseurs,",
+            "de réduire les pertes de matière,",
+            "et d'assurer la conformité avant même la fabrication."
+          ],
+          "paragraph2": "Nous gagnons ainsi en <strong>efficacité</strong>, en <strong>coût</strong> et en <strong>qualité globale</strong>.",
+          "heading2": "Comment nous façonnons des infrastructures durables",
+          "paragraph3": "Le métal, matériau millénaire, est l'un des piliers majeurs de l'évolution humaine. Des premiers outils artisanaux jusqu'aux structures industrielles modernes, il accompagne chaque étape du progrès.",
+          "paragraph4": "Chez <strong>ElecIT ENGINEERING</strong>, nous faisons du métal bien plus qu'une matière première : nous en faisons une <strong>solution d'ingénierie durable</strong>, pensée pour durer."
+        }
+      },
+      {
+        "id": 2,
+        "category": "Sécurité avancée",
+        "title": "Du métal brut à l'innovation technologie",
+        "excerpt": "Tout projet commence par une idée, mais c'est la conception qui transforme cett...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov."
+        }
+      },
+      {
+        "id": 3,
+        "category": "Vie d'entreprise",
+        "title": "Le bâtiment qui s'adapte à vous",
+        "excerpt": "Tout projet commence par une idée, mais c'est la conception qui transforme cett...",
+        "author": {
+          "name": "Therese Egoutou",
+          "date": "19 nov."
+        }
+      }
+    ]
+  },
+
+  "sav": {
+    "hero": {
+      "title": "SERVICE APRES-VENTE",
+      "subtitle": "Nous assurons la satisfaction du client, garantissons la longévité des équipements et renforçons la confiance client.",
+      "button": "Publireportage"
+    },
+    "cards": {
+      "heading": "Nos prestations",
+      "description": "De l'étude de faisabilité à la livraison clé en main, nous accompagnons nos clients à chaque étape du projet, en assurant un haut niveau de technicité et de conformité réglementaire.",
+      "items": [
+        {
+          "title": "Études",
+          "subtitle": "& Conception",
+          "description": "Analyse des besoins et du programme architectural/ Études techniques/ Modélisation 2D/3D/ Planification, chiffrage prévisionnel et autorisations"
+        },
+        {
+          "title": "Gestion de Projet",
+          "subtitle": "& Suivi de Chantier",
+          "description": "Planification des travaux et coordination des intervenants/ Suivi de chantier, contrôles techniques et qualité/ Respect strict des délais et du budget contractuel/ Communication transparente avec le maître d'ouvrage"
+        },
+        {
+          "title": "Réalisation",
+          "subtitle": "& Livraison",
+          "description": "Travaux de gros œuvre et second œuvre/ Intégration des lots techniques (électricité, plomberie, CVC)/ Finitions intérieures et extérieures selon cahier des charges/ Reception des travaux"
+        },
+        {
+          "title": "Maintenance",
+          "subtitle": "& Rénovation",
+          "description": "Entretien préventif et curatif des bâtiments/ Rénovation et mise aux normes/ Amélioration énergétique/ Service après-vente et garantie décennale"
+        },
+        {
+          "title": "Conseil",
+          "subtitle": "& Expertise",
+          "description": "Audit technique et diagnostic immobilier/ Conseil en maîtrise d'ouvrage/ Assistance juridique et administrative/ Optimisation des coûts de construction"
+        },
+        {
+          "title": "Solutions",
+          "subtitle": "Clé en Main",
+          "description": "Prise en charge complète du projet/ Coordination de tous les corps de métier/ Garantie unique et responsabilité globale/ Livraison dans les délais convenus"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Nos engagements clés",
+      "subtitle": "Bénéficiez d'un SAV intégré, rentable et structurant, pensé pour assurer la pérennité de vos projets.",
+      "services": [
+        {
+          "title": "Gestion des Infrastructures IT",
+          "description": "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.)."
+        },
+        {
+          "title": "Support Technique & Assistance",
+          "description": "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective."
+        },
+        {
+          "title": "Cybersécurité",
+          "description": "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité."
+        },
+        {
+          "title": "Virtualisation & Cloud Computing",
+          "description": "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides."
+        },
+        {
+          "title": "Développement d'applications",
+          "description": "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers."
+        }
+      ],
+      "cta": {
+        "title": "Faites le choix d'un accompagnement",
+        "titleHighlight": "fiable, durable et rentable.",
+        "subtitle": "\" Contactez notre service après-vente dès maintenant pour garantir la continuité et l'efficacité de vos installations!\"",
+        "button": "Contactez Nous"
+      }
+    }
+  },
+
+  "bureau": {
+    "hero": {
+      "title": "INGÉNIERIE BÂTIMENT & TRAVAUX PUBLICS",
+      "description": "Nous proposons une offre complète pour la construction de bâtiments publics et privés, des ouvrages hydrauliques.",
+      "button": "Publireportage"
+    },
+    "cards": {
+      "heading": "Nos prestations",
+      "description": "De l'étude de faisabilité à la livraison clé en main, nous accompagnons nos clients à chaque étape du projet, en assurant un haut niveau de technicité et de conformité réglementaire.",
+      "items": [
+        {
+          "title": "Études",
+          "subtitle": "& Conception",
+          "description": "Analyse des besoins et du programme architectural Études techniques Modélisation 2D/3D/ Planification, chiffrage prévisionnel et autorisations"
+        },
+        {
+          "title": "Gestion de Projet",
+          "subtitle": "& Suivi de Chantier",
+          "description": "Planification des travaux et coordination des intervenants Suivi de chantier, contrôles techniques et qualité Respect strict des délais et du budget contractuel Communication transparente avec le maître d'ouvrage"
+        },
+        {
+          "title": "Réalisation",
+          "subtitle": "& Livraison",
+          "description": "Travaux de gros œuvre et second œuvre Intégration des lots techniques (électricité, plomberie, CVC) Finitions intérieures et extérieures selon cahier des charges Reception des travaux"
+        }
+      ],
+      "project": {
+        "title": "PROJET:",
+        "subtitle": "Construction hangar",
+        "description": "Qu'il s'agisse de bâtiments publics, résidentiels, scolaires ou industriels, chaque ouvrage témoigne de notre engagement pour l'excellence, du respect des délais et des normes les plus exigeantes.",
+        "button": "Voir le projet"
+      }
+    },
+    "carousel": {
+      "heading": "Types d'ouvrages hydrauliques pris en charge",
+      "projects": [
+        { "title": "Tunnel" },
+        { "title": "Barrage" },
+        { "title": "Forage" },
+        { "title": "Canal" },
+        { "title": "Pompage" },
+        { "title": "Drainage" }
+      ],
+      "cta": {
+        "title": "Un projet de",
+        "titleHighlight": "construction",
+        "title2": "en tête ?",
+        "subtitle": "Bâtissons-le ensemble dès aujourd'hui.",
+        "button": "Contactez Nous"
+      },
+      "navigation": {
+        "previous": "Diapositive précédente",
+        "next": "Diapositive suivante",
+        "goToSlide": "Aller à la diapositive"
+      }
+    }
+  },
+
+  "control": {
+    "hero": {
+      "title": "Contrôle d'accès & Sécurité",
+      "description": "Grâce à des technologies avancées, nous garantissons la gestion des accès, la surveillance en temps réel et la protection des personnes et des biens contre les intrusions et les menaces.",
+      "button": "Télécharger le flyer"
+    },
+    "cards": {
+      "heading": "Nos prestations",
+      "subtitle": "Nous proposons des solutions performantes pour sécuriser les bâtiments, les infrastructures et les espaces sensibles.",
+      "featured": {
+        "title": "Visite immersive de la boutique de vente de matériaux de construction et d'équipements électriques",
+        "button": "Mango boutique"
+      },
+      "items": [
+        {
+          "title": "Contrôle d'Accès Intelligent",
+          "features": [
+            "Systèmes de badges, cartes RFID et biométrie",
+            "Portails automatiques avec gestion des entrées et sorties",
+            "Serrures électroniques et systèmes de verrouillage sécurisé"
+          ]
+        },
+        {
+          "title": "Vidéosurveillance et Détection d'Intrusion",
+          "features": [
+            "Installation de caméras haute définition et vidéosurveillance IP",
+            "Systèmes de détection de mouvement et alarmes connectées",
+            "Surveillance en temps réel et enregistrement sécurisé"
+          ]
+        },
+        {
+          "title": "Sécurité et Gestion des Risques",
+          "features": [
+            "Protection contre les intrusions, le vol et le vandalisme",
+            "Solutions de cybersécurité pour les systèmes de contrôle d'accès",
+            "Détection des incendies et intégration avec les systèmes d'alerte"
+          ]
+        },
+        {
+          "title": "Gestion Centralisée et Automatisation",
+          "features": [
+            "Supervision des accès via des logiciels de gestion",
+            "Solutions cloud pour le contrôle à distance",
+            "Historique des accès et rapports d'activité détaillés"
+          ]
+        }
+      ]
+    },
+    "carousel": {
+      "quote": "Solutions adaptées pour la sécurisation des bureaux et locaux professionnels, la gestion des accès aux immeubles et parkings et une surveillance avancée",
+      "cta": {
+        "title": "Sécurisez vos bâtiments avec nos",
+        "titleHighlight": "solutions certifiées.",
+        "subtitle": "Protégez efficacement vos locaux et contrôlez les accès avec des solutions de sécurité performantes !",
+        "button": "Contactez Nous"
+      },
+      "navigation": {
+        "goToSlide": "Aller à la diapositive"
+      }
+    }
+  },
+
+  "dataProcessing": {
+    "hero": {
+      "title": "IT & DATA PROCESSING",
+      "description": "Nous aidons les entreprises à gérer efficacement leurs systèmes informatiques et à tirer le meilleur parti de leurs données.",
+      "button": "Publireportage"
+    },
+    "projects": {
+      "title": "Nos projects IT",
+      "subtitle": "innovation, performance et impact",
+      "description": "Chaque projet présenté reflète notre engagement envers l'innovation, la rigueur et la satisfaction client.",
+      "seeMore": "Voir plus",
+      "items": [
+        {
+          "id": 1,
+          "title": "Logiciel de Content Management System (CMS)",
+          "excerpt": "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure…",
+          "description": "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure, pensé pour offrir une administration simple, rapide et totalement personnalisable.",
+          "utility": "Cette solution permet à l'entreprise de gérer efficacement ses informations, ses services et ses mises à jour sans dépendre d'un support technique externe",
+          "clientFeedback": "Le CMS conçu par ElecIT Engineering nous a simplifié la gestion de nos contenus. L'outil est intuitif, rapide et parfaitement adapté à nos besoins. Un vrai gain de temps au quotidien.",
+          "clientRole": "Directeur général",
+          "date": "12/06/23",
+          "status": "terminé"
+        },
+        {
+          "id": 2,
+          "title": "Logiciel de gestion de la relation client(CRM)",
+          "excerpt": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
+          "description": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise pour gérer les relations clients.",
+          "utility": "Amélioration de la gestion de la relation client et du suivi commercial",
+          "clientFeedback": "Un outil performant qui a transformé notre approche client.",
+          "clientRole": "Directeur commercial",
+          "date": "15/08/23",
+          "status": "terminé"
+        },
+        {
+          "id": 3,
+          "title": "Logiciel de gestion de la relation client (CRM)",
+          "excerpt": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
+          "description": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise pour gérer les relations clients.",
+          "utility": "Amélioration de la gestion de la relation client et du suivi commercial",
+          "clientFeedback": "Un outil performant qui a transformé notre approche client.",
+          "clientRole": "Directeur commercial",
+          "date": "20/09/23",
+          "status": "en cours"
+        }
+      ],
+      "modal": {
+        "category": "IT and DATA PROCESSING",
+        "projectLabel": "Projet :",
+        "dateLabel": "Date de réalisation:",
+        "statusLabel": "Statut du projet:",
+        "descriptionLabel": "Description du projet:",
+        "utilityLabel": "Utilité:",
+        "feedbackLabel": "Retour client:",
+        "haveProject": "Vous avez un projet?",
+        "close": "Fermer"
+      },
+      "cta": {
+        "title": "Faites le choix d'un accompagnement",
+        "titleHighlight": "fiable, durable et rentable.",
+        "description": "\" Contactez notre service après-vente dès maintenant pour garantir la continuité et l'efficacité de vos installations!\"",
+        "button": "Contactez Nous"
+      }
+    },
+    "services": {
+      "title": "Les services informatiques",
+      "description": "Nous proposons une gamme complète de services informatiques pour accompagner la transformation numérique de votre organisation, en alliant performance, sécurité et évolutivité.",
+      "items": [
+        {
+          "title": "Gestion des Infrastructures IT",
+          "description": "Mise en place, maintenance et supervision d'environnements informatiques (serveurs, réseaux, cloud, sécurité, etc.)."
+        },
+        {
+          "title": "Support Technique & Assistance",
+          "description": "Service helpdesk, dépannage à distance ou sur site, maintenance préventive et corrective."
+        },
+        {
+          "title": "Cybersécurité",
+          "description": "Mise en œuvre de politiques de sécurité, pare-feu, sauvegarde, contrôle d'accès, audits de vulnérabilité."
+        },
+        {
+          "title": "Virtualisation & Cloud Computing",
+          "description": "Migration vers le cloud, déploiement d'environnements virtuels, solutions hybrides."
+        },
+        {
+          "title": "Développement d'applications",
+          "description": "Conception et déploiement de solutions logicielles sur mesure adaptées à vos processus métiers."
+        }
+      ]
+    },
+    "advantages": {
+      "headerTitle": "Les avantages clés",
+      "description": "Grâce à notre expertise, nous vous accompagnons dans la transformation numérique de votre entreprise et vous aidons à prendre de meilleures décisions grâce à vos données.",
+      "documentationButton": "Documentation",
+      "items": [
+        {
+          "title": "Fiabilité des systèmes",
+          "description": "Des infrastructures informatiques stables, performantes et toujours opérationnelles"
+        },
+        {
+          "title": "Sécurité renforcée",
+          "description": "Protection complète des données et des systèmes contre les cybermenaces."
+        },
+        {
+          "title": "Gain de temps",
+          "description": "Automatisation des tâches et support technique réactif pour vous concentrer sur l'essentiel."
+        },
+        {
+          "title": "Optimisation des coûts",
+          "description": "Réduction des dépenses liées à la maintenance, à l'infrastructure et à la gestion des données."
+        },
+        {
+          "title": "Décisions plus intelligentes",
+          "description": "Accès à des données claires et structurées pour guider vos choix stratégiques."
+        },
+        {
+          "title": "Flexibilité et évolutivité",
+          "description": "Des solutions adaptées à votre croissance et à l'évolution de vos besoins."
+        },
+        {
+          "title": "Conformité réglementaire",
+          "description": "Respect des normes (comme le RGPD) pour une gestion des données en toute légalité."
+        }
+      ]
+    }
+  },
+
+  "controlAccess": {
+    "hero": {
+      "title": "Contrôle d'accès & Sécurité",
+      "description": "Grâce à des technologies avancées, nous garantissons la gestion des accès, la surveillance en temps réel et la protection des personnes et des biens contre les intrusions et les menaces.",
+      "button": "Télécharger le flyer"
+    },
+    "header": {
+      "title": "Traitement et Valorisation des Données"
+    },
+    "services": {
+      "description": "Nous sécurisons vos bâtiments, infrastructures et espaces sensibles grâce à des solutions de contrôle d'accès et de vidéosurveillance performantes.",
+      "items": [
+        {
+          "title": "Contrôle d'Accès Intelligent",
+          "description": "Systèmes de badges, cartes RFID et biométrie, portails automatiques et serrures électroniques."
+        },
+        {
+          "title": "Vidéosurveillance & Intrusion",
+          "description": "Caméras HD, détection de mouvement, alarmes connectées et surveillance en temps réel."
+        },
+        {
+          "title": "Sécurité & Gestion des Risques",
+          "description": "Protection contre les intrusions, cybersécurité et détection incendie intégrée aux systèmes d'alerte."
+        },
+        {
+          "title": "Gestion Centralisée & Automatisation",
+          "description": "Supervision des accès, contrôle à distance, solutions cloud et rapports d'activité détaillés."
+        },
+        {
+          "title": "Audit & Conseil en Sécurité",
+          "description": "Analyse des vulnérabilités, définition de politiques de sécurité et accompagnement à la mise en conformité."
+        }
+      ]
+    }
+  },
   
+  "jobOffers": {
+ 
+    "previous": "Précédent",
+  "next": "Suivant",
+    "title": "Toutes les offres d'emplois",
+    "filterTitle": "Filtrer les offres",
+    "filterPoste": "Poste",
+    "filterPostePlaceholder": "Ex: Ingénieur, Technicien...",
+    "filterLocation": "Lieu",
+    "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
+    "filterDateFrom": "Date de début",
+    "filterDateTo": "Date de fin",
+    "resetFilters": "Réinitialiser les filtres",
+    "viewButton": "Voir tout",
+    "noResults": "Aucune offre ne correspond à vos critères de recherche",
+    "modal": {
+       "back": "Retour aux offres",
+      "typePoste": "Type de poste:",
+      "lieuPoste": "Lieu du poste:",
+      "datePublication": "Date de publication:",
+      "validJusquau": "Valide jusqu'au:",
+      "description": "Description",
+      "responsibilities": "Responsabilités",
+      "activities": "Activités :",
+      "profile": "Profil recherché",
+      "applyButton": "Postuler maintenant",
+
+      "formTitle": "POSTULEZ EN LIGNE",
+      "name": "Nom ",
+      "namePlaceholder": "Saisissez votre prénom",
+      "lastName": "Prénom ",
+      "lastNamePlaceholder": "Saisissez votre nom de famille",
+      "email": "Email *",
+      "emailPlaceholder": "Saisissez votre e-mail",
+      "phone": "Téléphone *",
+      "phonePlaceholder": "Saisissez votre n...",
+      "sex": "Sexe *",
+      "male": "Masculin",
+      "female": "Féminin",
+      "dateOfBirth": "Date de naissance *",
+      "day": "Jour",
+      "month": "Mois",
+      "year": "Année",
+      "position": "Poste *",
+      "positionPlaceholder": "Saisissez le nom du poste demandé",
+      "motivation": "Pourquoi pensez-vous avoir le profil le plus indiqué? *",
+      "motivationPlaceholder": "Tapez votre message",
+      "joinCV": "Joindre votre CV *",
+      "addFile": "Ajouter un fichier",
+      "sendApplication": "Envoyer la candidature"
+    }
+  },
+
+
+   "recruitment": {
+    "spontaneousTitle": "Candidature ",
+    "spontaneousSubtitle": "Rejoignez notre équipe et faites partie de l'aventure",
+    "titleRound": "Pas d'offres pour le moment",
+    "subtitleRound": "Vous souhaitez rejoindre ElecIT Engineering mais aucune offre actuelle ne correspond à votre profil ",
+    "buttonText":"Déposez ici",
+    "heroTitle1": "Pour les chercheurs d'emploi,",
+    "heroTitle2": "nous recrutons",
+    "heroSubtitle": "Rejoignez une équipe jeune et talentueuse et contribuez par votre savoir-faire à une vision axée vers l'innovation technologique, le professionnalisme et le progrès.",
+    "processTitle": "Processus de recrutement",
+    "step1Title": "Les pièces jointes",
+    "step1Description": "Nous évaluons la conformité de vos CV (en français et en anglais), lettre de motivation et diplômes.",
+    "step2Title": "1er Entretien",
+    "step2Description": "Un entretien téléphonique est au préalable effectué avec vous afin de mieux vous connaître.",
+    "step3Title": "2ème Entretien",
+    "step3Description": "Un entretien en présentiel se déroulera entre les responsables et vous sur divers sujets.",
+    "step4Title": "Cas pratique",
+    "step4Description": "Un éventuel test est soumis aux candidats pour mesurer leurs compétences techniques.",
+    "step5Title": "Prise de décision",
+    "step5Description": "Le (s) candidat (s) retenue (s) sera rappelé pour proposition d’embauche."
+  }
+
 }
+    

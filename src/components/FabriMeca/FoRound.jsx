@@ -35,7 +35,7 @@ const FoRound = () => {
           >
             {t('fab.titleRound2')}{' '}
             <span style={{ color: MY_COLORS.green }}>
-              {t('fab.sub')} ?
+              {t('fab.sub')}?
             </span>
           </h1>
 

@@ -1,71 +1,55 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import { ICONS, HERO } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 
 const BlogHero = () => {
+  const { t } = useTranslation();
+  
   return (
-    <section className="relative w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
+    <section
+      className="relative w-full overflow-hidden min-h-[500px]"
+      style={{ height: "70vh" }}
+    >
       {/* Background Image */}
       <img
-        src={HERO.security} // <-- put the hero image here
-        alt="Data Processing"
-        className="absolute inset-0 w-full h-full object-cover"
+        src={HERO.blog}
+        alt="Blog Hero Background"
+        className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
       />
-
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
-
-      {/* ANGLED BLACK PNG MASK (correct height control) */}
-      <img
-        src={ICONS.formeSombre}
-        alt=""
-        aria-hidden="true"
-        className="absolute bottom-0 left-0 w-full max-h-[420px]
-                 object-cover pointer-events-none"
-        style={{ objectFit: "cover" }}
-      />
-
-      {/* TECH PATTERN - FULL WIDTH + BEHIND TEXT (corrected) */}
+      
+      {/* DARK GRADIENT OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      
+      {/* TECH PATTERN - Hidden on mobile for performance */}
       <img
         src={ICONS.formTech}
         alt=""
         aria-hidden="true"
-        className="
-                            absolute inset-0 m-auto 
-                            w-[120%] max-w-[1400px] 
-                            opacity-10 
-                            pointer-events-none 
-                            z-10
-                          "
-        style={{
-          top: "10%",
-          color: "gray",
-        }}
+        className="hidden sm:block absolute inset-0 m-auto w-[150%] sm:w-[130%] md:w-[120%] lg:w-[110%] max-w-[1400px] opacity-10 pointer-events-none z-10"
+        style={{ top: "10%" }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl">
+      {/* CENTERED TEXT CONTENT */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
         <h1
-          style={{ color: MY_COLORS.secondaryGreen, lineHeight: "1.5em" }}
-          className="text-3xl md:text-5xl font-extrabold  mb-6"
+          className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-3 sm:mb-4 md:mb-6"
+          style={{ color: MY_COLORS.white }}
         >
-          Inside ElecIT <br />
-        </h1>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-5">
-          <span style={{ color: MY_COLORS.white }}>
-            Innovation, Expertise & Vie d’Entreprise
+          <span style={{ color: MY_COLORS.secondaryGreen }}>
+            {t('blogPage.hero.title')}
           </span>
-        </h2>
+        </h1>
 
-        <p 
-        style={{
-            
-        }}
-        className="text-white text-2xl md:text-lg leading-relaxed mb-8 ">
-          Une fenêtre ouverte sur notre savoir-faire et notre culture.<br/> Explorez
-          nos projets, nos innovations et notre vision de l’ingénierie moderne.<br/>
-          Plongez dans le quotidien d’ElecIT, là où la technique rencontre
-          l’humain.
+        <h3
+          style={{ color: MY_COLORS.secondaryGreen }}
+          className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+        >
+          {t('blogPage.hero.subtitle')}
+        </h3>
+
+        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl">
+          {t('blogPage.hero.description1')} {t('blogPage.hero.description2')} {t('blogPage.hero.description3')}
         </p>
       </div>
     </section>

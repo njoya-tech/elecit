@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import p2 from '../../assets/p2.svg'
 import p3 from '../../assets/p3.svg'
