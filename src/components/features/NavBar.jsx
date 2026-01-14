@@ -25,9 +25,9 @@ const NavBar = () => {
   ];
 
   const subsidiariesItems = [
-    { key: 'submenus.subsidiaries.foczou', path: '/filiales/foczou' },
-    { key: 'submenus.subsidiaries.mangoSmart', path: '/filiales/mango-smart' },
-    { key: 'submenus.subsidiaries.moreThanTrack', path: '/filiales/more-than-track' }
+    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net' },
+    { key: 'submenus.subsidiaries.mangoSmart', path: 'htpps://mango.elecit.net ' },
+    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net' }
   ];
 
   const navItems = [

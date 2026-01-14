@@ -266,22 +266,22 @@ const handleSubmit = async (e) => {
                 <h3 className="text-white font-bold text-base sm:text-lg mb-3 sm:mb-4">{t('footer.usefulLinks.title')}</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
-                    <a href="/filiales/mango-boutique" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
+                    <a href="htpps://mango.elecit.net" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
                       {t('footer.usefulLinks.mangoBoutique')}
                     </a>
                   </li>
                   <li>
-                    <a href="/filiales/foczou" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
+                    <a href="https://foczou.elecit.net" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
                       {t('footer.usefulLinks.foczou')}
                     </a>
                   </li>
                   <li>
-                    <a href="/filiales/more-than-track" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
+                    <a href="https://automotive.elecit.net" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
                       {t('footer.usefulLinks.moreThanTrack')}
                     </a>
                   </li>
                   <li>
-                    <a href="/filiales/matoa" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
+                    <a href="" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
                       {t('footer.usefulLinks.matoa')}
                     </a>
                   </li>
