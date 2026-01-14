@@ -3,15 +3,20 @@ import { MY_COLORS } from "../../constants/colors";
 import { PARTNERS, ICONS } from "../../asset/assets.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from 'react-i18next';
+import {  useNavigate } from "react-router-dom";
 
 // ============================================================================
 // CONSTANTS
 // ============================================================================
+
+
 const ANIMATION_CONFIG = {
   exitDuration: 600,
   autoPlayInterval: 4000,
   staggerDelay: 120,
 };
+
+
 
 const CAROUSEL_CONFIG = {
   logosPerView: 3,
@@ -76,6 +81,10 @@ const ArrowButton = ({ direction, onClick, disabled }) => {
   const isLeft = direction === "left";
   const arrowPath = isLeft ? "M15 18l-6-6 6-6" : "M9 18l6-6-6-6";
 
+  
+
+
+  
   return (
     <button
       onClick={onClick}
@@ -148,6 +157,7 @@ const EnterprisePartners = () => {
   const [isExiting, setIsExiting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef(null);
+  const navigate = useNavigate();
 
   const partners = [
     { id: 1, logo: PARTNERS.partner1, alt: "Partner company logo 1" },
@@ -230,7 +240,8 @@ const EnterprisePartners = () => {
               color: MY_COLORS.secondaryGreen,
               marginTop: "20px",
             }}
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 sm:mb-12 md:mb-16"
+            className="text-2xl sm:text-3xl md:text-4xl
+             font-bold text-center mb-10 sm:mb-12 md:mb-16"
           >
             {t('entreprise.entreprisePartner.title')}
           </h2>
@@ -320,7 +331,8 @@ const EnterprisePartners = () => {
           {/* CTA SECTION WITH BACKGROUND                 */}
           {/* ============================================ */}
           <section className="hidden lg:block">
-            <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0 top-20">
+            <div className="relative mx-auto w-[90%] 
+            lg:w-6/6 max-w-6xl -mt-15 p-0 top-25">
               <div
                 className="w-full overflow-hidden"
                 style={{ height: "440px" }}
@@ -332,7 +344,8 @@ const EnterprisePartners = () => {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 md:p-16">
+              <div className="absolute inset-0 flex flex-col items-center
+               justify-center p-8 md:p-16">
                 <img
                   style={{
                     top: "12em",
@@ -348,7 +361,9 @@ const EnterprisePartners = () => {
 
                 <h3
                   className="relative z-20 text-center text-2xl
-                   md:text-4xl lg:text-2xl xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
+                   md:text-4xl lg:text-2xl xl:text-4xl font-bold 
+                   leading-tight mb-8 md:mb-12 -mt-20"
+
                   style={{ color: MY_COLORS.white, top: "24%" }}
                 >
                   {t('entreprise.entreprisePartner.ctaTitle')} <br /> 
@@ -361,17 +376,21 @@ const EnterprisePartners = () => {
 
                 <CTAButton
                   className="absolute top-10 md:top-15 md:w-60"
-                  onClick={() => alert("Video clicked!")}
+                  onClick={() => navigate("/contacts")}
                 >
                   {t('entreprise.entreprisePartner.ctaButton')}
                 </CTAButton>
               </div>
 
               <div
-                className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
+                className="absolute w-24 h-24 
+                md:w-32 
+                md:h-32 lg:w-40 
+                lg:h-40 z-40 animate-spin"
+
                 style={{
                   animationDuration: "4s",
-                  top: "65%",
+                  top: "45%",
                   right: "1%",
                 }}
                 aria-hidden="true"

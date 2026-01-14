@@ -38,7 +38,7 @@ import IMG1 from "./images/image_1.JPG";
 import IMG2 from "./images/image_2.JPG";
 import IMG3 from "./images/image_3.JPG";
 import IMG4 from "./images/image_4.JPG";
-import IMG5 from "./images/image_5.jpg";
+import IMG5 from "./images/Tablet.jpg";
 import IMG6 from "./images/image_6.jpg";
 import IMG7 from "./images/image_7.jpg";
 import IMG8 from "./images/bureau_card.png";
@@ -60,6 +60,7 @@ import IMG23 from "./images/fabrication.jpg";
 import IMG24 from "./images/courant_faible.jpg";
 import IMG25 from "./images/agent_maintenace.jpg";
 import IMG26 from "./images/energy_renouvelable.jpg";
+import IMG27 from "./images/computer.jpg";
 
 //========== PARTNERS IMAGES ==========
 
@@ -145,6 +146,7 @@ export const IMAGES = {
   IMG24: IMG24,
   IMG25: IMG25,
   IMG26: IMG26,
+  IMG27: IMG27,
 };
 
 export const PARTNERS = {

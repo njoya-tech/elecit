@@ -82,7 +82,8 @@ const BureauCards = () => {
 
         {/* Cards Grid - Overlapping Banner */}
         <div className="relative -mt-16 sm:-mt-20 md:-mt-32 z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3
+           gap-6 md:gap-8 lg:gap-10 justify-items-center">
             {cards.map((card, index) => (
               <div
                 key={index}
@@ -132,7 +133,9 @@ const BureauCards = () => {
 
       {/* PROJECT SHOWCASE SECTION */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 mt-16 md:mt-24">
-        <div className="relative h-[350px] sm:h-[400px] md:h-[500px] rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative h-[250px] sm:h-[350px] md:h-[380px] 
+        rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
+
           {/* Background Image */}
           <img
             src={IMAGES.IMG1}
@@ -149,7 +152,10 @@ const BureauCards = () => {
             className="relative z-10 h-full flex flex-col 
           justify-center px-6 sm:px-8 md:px-16 max-w-3xl"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 lg:-mt-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl 
+            lg:text-4xl font-bold mb-4 
+            sm:mb-6 md:mb-8 lg:-mt-5 text-start">
+
               <span style={{ color: MY_COLORS.secondaryGreen }}>
                 {t("bureau.cards.project.title")}
               </span>{" "}

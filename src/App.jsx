@@ -14,6 +14,7 @@ import BureauPage from './pages/bureau\'etude/BureauPage';
 import SavPage from "./pages/sav/SavPage"
 import BlogPage from './pages/blog/BlogPage';
 import JobOffersOnly from './pages/job/JobOffersOnly';
+import BlogDetailPage from './components/Blog/BlogDetailPage.jsx';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/solutions/bureau-etude" element={<BureauPage />} />
         <Route path="/solutions/sav" element={<SavPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:postId" element={<BlogDetailPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -50,7 +50,7 @@ const ElecITCarouselCard = () => {
     <div
       className="relative bg-white flex flex-col
      md:flex-row items-start justify-center p-4 sm:p-6 md:p-8 py-6 
-     md:py-12 top-0 w-full gap-6 sm:gap-8 
+     md:py-12 top-10 w-full gap-6 sm:gap-8 
      md:gap-12 lg:gap-16"
     >
       {/* === GROUP: GREEN BLOCK + TOP GEARS === */}
@@ -65,7 +65,7 @@ const ElecITCarouselCard = () => {
         <img
           src={ICONS.Engrenage_plan}
           alt="gear"
-          className="absolute -top-8 
+          className="hidden lg:block absolute -top-8 
           sm:-top-8 md:-top-12 lg:-top-16 xl:-top-17 
           -left-9 sm:-left-10 
           md:-left-15 lg:-left-6 
@@ -78,7 +78,7 @@ const ElecITCarouselCard = () => {
         <img
           src={ICONS.Engrenage_plan}
           alt="gear"
-          className="absolute -top-12 sm:-top-10 
+          className="hidden lg:block absolute -top-12 sm:-top-10 
           md:-top-20
           lg:-top-20 
           xl:-top-24 left-5 sm:left-2 
@@ -141,7 +141,10 @@ const ElecITCarouselCard = () => {
       >
         {/* Helmet Icon - visible on all screens */}
         <div
-          className="absolute -top-6 sm:-top-10 md:-top-16 lg:-top-20 xl:-top-24 -right-4 sm:-right-6 md:-right-8 lg:-right-12 xl:-right-14 w-16 sm:w-24 md:w-32 lg:w-36 xl:w-44 origin-center z-0"
+          className="hidden lg:block absolute -top-6 sm:-top-10 md:-top-16 
+          lg:-top-20 xl:-top-24 -right-4 sm:-right-6 md:-right-8
+          lg:-right-12 xl:-right-14 w-16 sm:w-24 md:w-32 
+          lg:w-36 xl:w-44 origin-center z-0"
           style={{
             transform: "scaleX(-1)",
             transformOrigin: "center",
@@ -240,7 +243,7 @@ const ElecITCarouselCard = () => {
         <img
           src={ICONS.Engrenage_plan}
           alt="gear"
-          className="absolute -bottom-12 sm:-bottom-16 md:-bottom-24 lg:-bottom-32 xl:-bottom-40 -right-4 sm:-right-6 md:-right-10 lg:-right-16 xl:-right-20 w-8 sm:w-12 md:w-16 lg:w-24 xl:w-32 opacity-60 sm:opacity-80 md:opacity-100 rotate-45 animate-spin z-0"
+          className="hidden lg:block absolute -bottom-12 sm:-bottom-16 md:-bottom-24 lg:-bottom-32 xl:-bottom-40 -right-4 sm:-right-6 md:-right-10 lg:-right-16 xl:-right-20 w-8 sm:w-12 md:w-16 lg:w-24 xl:w-32 opacity-60 sm:opacity-80 md:opacity-100 rotate-45 animate-spin z-0"
           style={{ animationDuration: "4s" }}
         />
       </div>

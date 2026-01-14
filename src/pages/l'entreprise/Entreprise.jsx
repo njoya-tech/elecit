@@ -12,40 +12,49 @@ const Entreprise = () => {
   return (
     <div className="relative w-full min-h-screen">
       {/* NAVBAR - Fixed with background */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      <div
+        className="fixed top-0 left-0 right-0 z-50
+       bg-white shadow-sm"
+      >
         <NavBar />
       </div>
 
       <main className="w-full">
         {/* HERO - FULL WIDTH WITH MARGINS */}
-        <section className="pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 md:px-8 lg:px-20">
+        <section
+          className="pt-16 sm:pt-20 md:pt-24
+         px-4 sm:px-6 md:px-8 lg:px-20"
+        >
           <Hero height="60vh sm:65vh md:70vh lg:75vh" />
         </section>
 
         {/* CONTENT SECTIONS - CONTAINER */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
+        <div
+          className="mx-auto max-w-7xl px-4 sm:px-6 
+        md:px-8 lg:px-12"
+        >
           {/* Cards Section */}
-          <section>
+          <section className="mb-16 md:mb-20 lg:mb-24">
             <ElecITCarouselCard />
           </section>
-          
-          {/* Cards Section */}
-          <section>
+
+          {/* Cards Section - NO bottom margin so line touches edge */}
+          <section className="mb-0">
             <EntrepriseCards />
           </section>
 
           {/* Team Section */}
-          <section>
+          <section >
             <EntrepriseTeam />
           </section>
 
           {/* Acc Section */}
-          <section>
+          <section >
             <EntrepriseAcc />
           </section>
 
           {/* Partner Section */}
-          <section>
+          <section className="mb-16 md:mb-20 lg:mb-24">
             <EntreprisePartner />
           </section>
         </div>
