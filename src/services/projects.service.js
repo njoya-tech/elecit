@@ -104,66 +104,66 @@ class ProjectsService {
     }
   }
 
-  _formatProject(project, number, languageId) {
-    const translation = project.translations?.find(t => t.languages_id === languageId) || {};
+_formatProject(project, number, languageId) {
+  const translation = project.translations?.find(t => t.languages_id === languageId) || {};
 
-    console.log('🔍 Formatage projet:', project.id);
-    console.log('🖼️ Images brutes:', project.images);
+  console.log('🔍 Formatage projet:', project.id);
+  console.log('🖼️ Images brutes:', project.images);
 
-    // Traiter les images depuis le champ "images" (qui est lié à projects_files)
-    const images = (project.images || [])
-      .map(item => {
-        // item.directus_files_id peut être un objet ou un ID
-        const file = item.directus_files_id;
-        const fileId = file?.id || file;
+  // Traiter les images depuis le champ "images" (qui est lié à projects_files)
+  const images = (project.images || [])
+    .map(item => {
+      const file = item.directus_files_id;
+      const fileId = file?.id || file;
 
-        if (!fileId) {
-          console.warn('⚠️ Image sans fileId:', item);
-          return null;
-        }
+      if (!fileId) {
+        console.warn('⚠️ Image sans fileId:', item);
+        return null;
+      }
 
-        return {
-          id: item.id,
-          fileId: fileId,
-          url: `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}`
-        };
-      })
-      .filter(img => img !== null);
+      return {
+        id: item.id,
+        fileId: fileId,
+        url: `${import.meta.env.VITE_DIRECTUS_URL}/assets/${fileId}`
+      };
+    })
+    .filter(img => img !== null);
 
-    console.log('✅ Images formatées:', images);
+  console.log('✅ Images formatées:', images);
 
-    const statusMap = {
-      'completed': 'Terminé',
-      'in_progress': 'En cours',
-      'planned': 'Planifié'
-    };
+  const statusMap = {
+    'completed': 'Terminé',
+    'in_progress': 'En cours',
+    'planned': 'Planifié'
+  };
 
-    const formatted = {
-      id: project.id,
-      number: number,
-      title: translation.title || 'Sans titre',
-      slug: translation.slug || '',
-      shortDescription: this._truncateText(translation.description, 150),
-      description: translation.description || '',
-      utilite: translation.utility || '',
-      retourClient: translation.client_feedback || '',
-      responsable: project.responsible_name || '',
-      dateRealisation: this._formatDate(project.realization_date),
-      statut: statusMap[project.project_status] || project.project_status,
-      categoryId: project.category_id || null,
-      categoryName: '',
-      mainImage: images[0]?.url || null,
-      gallery: images.map(img => img.url)
-    };
+  const formatted = {
+    id: project.id,
+    number: number,
+    title: translation.title || 'Sans titre',
+    slug: translation.slug || '',
+    shortDescription: this._truncateText(translation.description, 150),
+    description: translation.description || '',
+    utilite: translation.utility || '',
+    retourClient: translation.client_feedback || '',
+    responsable: translation.responsible_name || '',  // ✅ Maintenant depuis translation
+    dateRealisation: this._formatDate(project.realization_date),
+    statut: statusMap[project.project_status] || project.project_status,
+    categoryId: project.category_id || null,
+    categoryName: '',
+    mainImage: images[0]?.url || null,
+    gallery: images.map(img => img.url)
+  };
 
-    console.log('📦 Projet formaté:', {
-      title: formatted.title,
-      mainImage: formatted.mainImage,
-      galleryCount: formatted.gallery.length
-    });
+  console.log('📦 Projet formaté:', {
+    title: formatted.title,
+    mainImage: formatted.mainImage,
+    galleryCount: formatted.gallery.length,
+    responsable: formatted.responsable  // ✅ Ajoutez ceci pour débugger
+  });
 
-    return formatted;
-  }
+  return formatted;
+}
 
   _truncateText(text, maxLength) {
     if (!text || text.length <= maxLength) return text;
