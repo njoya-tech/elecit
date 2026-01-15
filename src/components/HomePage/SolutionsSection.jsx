@@ -3,7 +3,7 @@ import c1 from '../../assets/c1.jpg'
 import c2 from '../../assets/c2.jpg'
 import c3 from '../../assets/c3.jpg'
 import cercle_interomp from '../../assets/cercle_interomp.svg'
-
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion'
 
 import { useTranslation } from 'react-i18next';
@@ -139,16 +139,34 @@ const SolutionCard = ({ solution, onSeeMore, imageSrc }) => {
 // --- Composant Principal de la Section ---
 const SolutionsSection = () => {
     const { t } = useTranslation();
-    
+
+    const navigate = useNavigate()
+
+const paths = [
+  '/solutions/smart-building',        // Carte 0 (c1)
+  '/solutions/fabrication-mecanique', // Carte 1 (c2) 
+  '/solutions/gps-tracking'           // Carte 2 (c3)
+];
+     
+  const handleSeeMore = (solutionTitle, index ) => {
+      
+    console.log(`Navigation vers : ${solutionTitle} (${paths[index]})`);
+    navigate(paths[index]);
+
+
+  }
+
+
+
+
+
     // Récupération des données de traduction avec le préfixe 'solution.'
     const bannerTitle = t('solution.bannerTitle');
     const bannerHighlight = t('solution.bannerHighlight');
     const bannerTitle2 = t('solution.bannerTitle2');
     const solutions = t('solution.items', { returnObjects: true }); 
 
-    const handleSeeMore = (solutionTitle) => {
-        console.log(`Navigation vers la solution: ${solutionTitle}`);
-    };
+
 
     return (
         <section 
@@ -177,7 +195,7 @@ const SolutionsSection = () => {
                             key={index}
                             solution={solution}
                             imageSrc={imageMap[index]}
-                            onSeeMore={() => handleSeeMore(solution.title)}
+                            onSeeMore={() => handleSeeMore(solution.title, index)}
                         />
                     ))}
                 </div>

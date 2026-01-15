@@ -7,11 +7,18 @@ import fleche from '../../assets/fleche.png';
 import {motion } from 'framer-motion'
 import { MY_COLORS } from '../../utils/colors';
 import fi from '../../assets/fi.svg'
+import { useNavigate } from 'react-router-dom'
+
+
+
 
 const HeroSection = ({ slides }) => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate()
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -173,7 +180,7 @@ const HeroSection = ({ slides }) => {
                   }}
                   onMouseOver={e => e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen}
                   onMouseOut={e => e.currentTarget.style.backgroundColor = 'transparent'}
-                >
+onClick={() => navigate('/contacts')}>
                   {t('hero.submitProject')}
                 </button>
                 

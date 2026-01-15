@@ -86,6 +86,7 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
                           e.currentTarget.style.backgroundColor = 'transparent';
                           e.currentTarget.style.color = MY_COLORS.secondaryGreen;
                         }}
+                        
                       >
                         {t(buttonText)}
                       </button>

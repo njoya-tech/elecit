@@ -5,9 +5,11 @@ import rail from '../../assets/rail.svg'
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Ground = () => {
     const {t} = useTranslation();
+      const navigate = useNavigate()
     
     return (
       <div className='relative w-full flex items-center justify-center'>
@@ -62,6 +64,7 @@ const Ground = () => {
                 e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.color = MY_COLORS.secondaryGreen;
               }}
+                onClick={() => navigate('/contacts')}
             >
               {t('smartVilla.buttonRound')}
             </button>
