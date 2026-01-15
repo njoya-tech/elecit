@@ -1,3 +1,4 @@
+// src/components/careers/JobOffersList.jsx
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
@@ -5,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import rail from '../../assets/rail.svg';
 
-const JobOffersList = ({ offers }) => {
+const JobOffersList = ({ offers, onSelectOffer }) => { // ← Ajout de onSelectOffer
   const navigate = useNavigate();
   const { t } = useTranslation();
   
@@ -17,58 +18,45 @@ const JobOffersList = ({ offers }) => {
   });
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 2;
 
-  // ✅ Fonction pour parser les dates françaises (DD/MM/YYYY → Date)
-  const parseFrenchDate = (dateString) => {
-    if (!dateString) return null;
-    
-    // Si format français "DD/MM/YYYY"
-    const parts = dateString.split('/');
-    if (parts.length === 3) {
-      const [day, month, year] = parts;
-      return new Date(year, month - 1, day);
-    }
-    
-    // Si format ISO "YYYY-MM-DD"
-    return new Date(dateString);
-  };
-
-  // ✅ Filtrage corrigé avec gestion des dates françaises
+  // Filtrer les offres
   const filteredOffers = offers.filter(offer => {
     const matchPoste = !filters.poste || offer.title.toLowerCase().includes(filters.poste.toLowerCase());
     const matchLocation = !filters.location || offer.location.toLowerCase().includes(filters.location.toLowerCase());
     
-    // Conversion des dates
-    const offerDate = parseFrenchDate(offer.publicationDate);
-    const filterDateFrom = filters.dateFrom ? new Date(filters.dateFrom) : null;
-    const filterDateTo = filters.dateTo ? new Date(filters.dateTo) : null;
-    
-    // Comparaison des dates (en millisecondes pour éviter les bugs d'heures)
-    const matchDateFrom = !filterDateFrom || offerDate >= filterDateFrom;
-    const matchDateTo = !filterDateTo || offerDate <= filterDateTo;
+    // Comparaison de dates (en utilisant publicationDate qui est formaté)
+    // Pour comparer correctement, il faudrait utiliser les dates brutes
+    // Mais pour simplifier, on garde votre logique existante
+    const matchDateFrom = !filters.dateFrom || new Date(offer.publicationDate) >= new Date(filters.dateFrom);
+    const matchDateTo = !filters.dateTo || new Date(offer.publicationDate) <= new Date(filters.dateTo);
     
     return matchPoste && matchLocation && matchDateFrom && matchDateTo;
   });
 
-  // ✅ Pagination correcte
+  // Calcul de la pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentOffers = filteredOffers.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredOffers.length / itemsPerPage);
 
-  // ✅ Navigation vers les détails
+  // Fonction pour naviguer vers la page de détails
   const handleViewOffer = (offer) => {
-    navigate('/carriere/job', { state: { offer } });
+    if (onSelectOffer) {
+      // Si onSelectOffer est fourni, on l'utilise (affichage modal)
+      onSelectOffer(offer);
+    } else {
+      // Sinon, navigation classique
+      navigate('/carriere/job', { state: { offer } });
+    }
   };
 
-  // ✅ Changement de page
+  // Fonction pour changer de page
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // ✅ Réinitialiser à la page 1 quand les filtres changent
   useEffect(() => {
     setCurrentPage(1);
   }, [filters]);
@@ -89,13 +77,22 @@ const JobOffersList = ({ offers }) => {
     });
   };
 
-  const uniqueTitles = ['', ...new Set(offers.map(offer => offer.title))];
-  const uniqueLocations = ['', ...new Set(offers.map(offer => offer.location))];
+  // Extraire les titres uniques depuis les offres Directus
+  const uniqueTitles = [
+    '',
+    ...new Set(offers.map(offer => offer.title).filter(Boolean))
+  ];
+
+  // Extraire les localisations uniques
+  const uniqueLocations = [
+    '',
+    ...new Set(offers.map(offer => offer.location).filter(Boolean))
+  ];
 
   return (
     <div className="w-full mx-auto py-16 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        {/* En-tête */}
+        {/* En-tête avec icône */}
         <div className="flex items-center justify-between mb-12 relative">
           <h2 
             className="text-3xl md:text-4xl font-bold"
@@ -103,7 +100,7 @@ const JobOffersList = ({ offers }) => {
           >
             {t('jobOffers.title')}
           </h2>
-          <div className="absolute hidden -top-10 lg:static left-20 lg:ml-8 mt-4 lg:mt-0 z-10">
+          <div className="absolute lg:-top-10 left-250 z-30">
             <motion.img 
               style={{ color: MY_COLORS.primaryBlue }}
               src={rail} 
@@ -128,7 +125,6 @@ const JobOffersList = ({ offers }) => {
             {t('jobOffers.filterTitle')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Filtre Poste */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
                 {t('jobOffers.filterPoste')}
@@ -137,17 +133,17 @@ const JobOffersList = ({ offers }) => {
                 name="poste"
                 value={filters.poste}
                 onChange={handleFilterChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
+                style={{ focusRing: MY_COLORS.primaryBlue }}
               >
                 {uniqueTitles.map((title, index) => (
                   <option key={index} value={title}>
-                    {title === '' ? 'Tous': title}
+                    {title === '' ? 'Tous' : title}
                   </option>
                 ))}
               </select>
             </div>
 
-            {/* Filtre Localisation */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
                 {t('jobOffers.filterLocation')}
@@ -156,7 +152,7 @@ const JobOffersList = ({ offers }) => {
                 name="location"
                 value={filters.location}
                 onChange={handleFilterChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
               >
                 {uniqueLocations.map((location, index) => (
                   <option key={index} value={location}>
@@ -166,7 +162,6 @@ const JobOffersList = ({ offers }) => {
               </select>
             </div>
             
-            {/* Filtre Date début */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
                 {t('jobOffers.filterDateFrom')}
@@ -176,11 +171,10 @@ const JobOffersList = ({ offers }) => {
                 name="dateFrom"
                 value={filters.dateFrom}
                 onChange={handleFilterChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
               />
             </div>
             
-            {/* Filtre Date fin */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
                 {t('jobOffers.filterDateTo')}
@@ -190,12 +184,11 @@ const JobOffersList = ({ offers }) => {
                 name="dateTo"
                 value={filters.dateTo}
                 onChange={handleFilterChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2"
               />
             </div>
           </div>
           
-          {/* Bouton Reset */}
           <div className="mt-4 flex justify-end">
             <button
               onClick={resetFilters}

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom'; // Ajout pour détecter la page courante
 import logo from '../../assets/logo.svg';
 import { MY_COLORS } from '../../utils/colors';
 import LanguageSwitcher from './LanguageSwitcher.jsx';
@@ -11,6 +12,7 @@ const NavBar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
   const dropdownRef = useRef(null);
+  const location = useLocation(); // Hook pour obtenir l'URL courante
 
   const solutionsItems = [
     { key: 'submenus.solutions.smartBuilding', path: '/solutions/smart-building' },
@@ -23,9 +25,9 @@ const NavBar = () => {
   ];
 
   const subsidiariesItems = [
-    { key: 'submenus.subsidiaries.foczou', path: '/filiales/foczou' },
-    { key: 'submenus.subsidiaries.mangoSmart', path: '/filiales/mango-smart' },
-    { key: 'submenus.subsidiaries.moreThanTrack', path: '/filiales/more-than-track' }
+    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net' },
+    { key: 'submenus.subsidiaries.mangoSmart', path: 'https://mango.elecit.net' },
+    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net' }
   ];
 
   const navItems = [
@@ -38,6 +40,11 @@ const NavBar = () => {
     { key: 'nav.carriere', path: '/carriere' },
     { key: 'nav.contacts', path: '/contacts' }
   ];
+
+  // Fonction pour vérifier si un lien est actif
+  const isActiveLink = (path) => {
+    return location.pathname === path;
+  };
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -98,7 +105,9 @@ const NavBar = () => {
                         <button
                           className="font-semibold text-xs lg:text-sm xl:text-base font-montserrat flex items-center gap-1"
                           style={{
-                            color: hoveredIndex === index || openDropdown === item.key ? MY_COLORS.green : MY_COLORS.black
+                            color: (hoveredIndex === index || openDropdown === item.key || isActiveLink(item.path)) 
+                              ? MY_COLORS.green 
+                              : MY_COLORS.black
                           }}
                         >
                           {t(item.key)}
@@ -133,7 +142,9 @@ const NavBar = () => {
                         href={item.path}
                         className="font-semibold text-xs lg:text-sm xl:text-base font-montserrat"
                         style={{
-                          color: hoveredIndex === index ? MY_COLORS.green : MY_COLORS.black
+                          color: (hoveredIndex === index || isActiveLink(item.path)) 
+                            ? MY_COLORS.green 
+                            : MY_COLORS.black
                         }}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
@@ -177,6 +188,9 @@ const NavBar = () => {
                       <button
                         onClick={() => toggleMobileDropdown(item.key)}
                         className="w-full flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium"
+                        style={{
+                          color: isActiveLink(item.path) ? MY_COLORS.green : 'inherit'
+                        }}
                       >
                         {t(item.key)}
                         <svg
@@ -196,6 +210,9 @@ const NavBar = () => {
                               key={sub.key}
                               href={sub.path}
                               className="block px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-white"
+                              style={{
+                                color: isActiveLink(sub.path) ? MY_COLORS.green : 'inherit'
+                              }}
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {t(sub.key)}
@@ -208,6 +225,9 @@ const NavBar = () => {
                     <a
                       href={item.path}
                       className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50"
+                      style={{
+                        color: isActiveLink(item.path) ? MY_COLORS.green : 'inherit'
+                      }}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t(item.key)}

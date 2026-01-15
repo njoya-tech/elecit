@@ -1,13 +1,15 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import JobOfferModal from '../../components/Carriere/jobOfferModal';
+import { useNavigate } from 'react-router-dom';
 import JobOfferFormOnlyModal from '../../components/Carriere/jobOfferformonlyModal';
 import NavBar from '../../components/features/NavBar';
 import Footer from '../../components/features/Footer';
 
 const JobOffersOnly = () => {
-  const location = useLocation();
   const navigate = useNavigate();
+
+  const handleClose = () => {
+    navigate('/carriere'); // Retour vers la page carrière
+  };
 
   return (
     <>
@@ -16,12 +18,8 @@ const JobOffersOnly = () => {
           <NavBar />
         </header>
 
-        <main className='pt-50 pb-20'> {/* Ajuster selon la hauteur de votre NavBar */}
-     
-     <JobOfferFormOnlyModal/>
-
-
-
+        <main className='pt-50 pb-20'>
+          <JobOfferFormOnlyModal onClose={handleClose} />
         </main>
         
         <Footer />
