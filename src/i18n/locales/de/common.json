@@ -152,8 +152,6 @@
     ]
   },
 
-<<<<<<< HEAD
-=======
 "footer": {
   "banner": {
     "availableEverywhere": "Service überall verfügbar",
@@ -212,7 +210,6 @@
 },
   
 
->>>>>>> junior
   "smartBuild": {
     "title": "Ausstellung von Lösungen und intelligentes Gebäude",
     "buttonText": "Besuchen Sie den Showroom"
@@ -358,18 +355,6 @@
   "p":{
     "all1":"Alle Projekte"
 
-<<<<<<< HEAD
-  "projects": {
-    "categories": [
-      { "id": "all", "label": "Alle Projekte" },
-      { "id": "smart", "label": "Smart Building" },
-      { "id": "fabrication", "label": "Mechanische Fertigung" },
-      { "id": "genie", "label": "Tiefbau" },
-      { "id": "interne", "label": "Internes Projekt" }
-    ],
-    "projectCard": {
-      "seeMore": "Mehr erfahren"
-=======
   },
 "projects": {
  "categories": {
@@ -393,235 +378,10 @@
     "haveProject": "Haben Sie ein Projekt?",
     "close": "Schließen"
   },
-  "projectsData": [
-    {
-      "id": 1,
-      "number": "1",
-      "title": "Mobile Bank",
-      "category": "Mechanische Fertigung",
-      
-      "shortDescription": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen.",
-      "dateRealisation": "12.06.23",
-      "statut": "abgeschlossen",
-      "description": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen",
-      "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
-      "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
-      "responsable": "Logistikleiter"
->>>>>>> junior
-    },
-    "projectModal": {
-      "mechanicalFabrication": "Mechanische Fertigung",
-      "project": "Projekt:",
-      "dateRealisation": "Fertigstellungsdatum:",
-      "projectStatus": "Projektstatus:",
-      "projectDescription": "Projektbeschreibung:",
-      "utility": "Nutzen:",
-      "clientFeedback": "Kundenfeedback:",
-      "haveProject": "Haben Sie ein Projekt?",
-      "close": "Schließen"
-    },
-    "projectsData": [
-      {
-        "id": 1,
-        "number": "1",
-        "title": "Mobile Bank",
-        "category": "Mechanische Fertigung",
 
-        "shortDescription": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen.",
-        "dateRealisation": "12.06.23",
-        "statut": "abgeschlossen",
-        "description": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen",
-        "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
-        "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
-        "responsable": "Logistikleiter"
-      },
-      {
-        "id": 2,
-        "number": "2",
-        "title": "Personaltransport-LKW",
-        "category": "Mechanische Fertigung",
-
-        "shortDescription": "Technische und funktionale Umstrukturierung eines LKWs für den Personaltransport.",
-        "dateRealisation": "15.08.23",
-        "statut": "abgeschlossen",
-        "description": "Technische und funktionale Umstrukturierung eines LKWs für den Personaltransport.",
-        "utilite": "Verbesserte Produktivität und Entscheidungsfindung durch fortschrittliche Analysetools.",
-        "retourClient": "Die Implementierung dieser Lösung hat unsere Arbeitsweise transformiert und unsere Effizienz um 40% gesteigert.",
-        "responsable": "IT-Direktor"
-      },
-      {
-        "id": 3,
-        "number": "3",
-        "title": "Ziegelherstellungsmaschine (Ziegelpresse)",
-        "category": "Mechanische Fertigung",
-
-        "shortDescription": "Konzeption und Herstellung einer industriellen Ziegelproduktionsmaschine mit robusten Mechanismen.",
-        "dateRealisation": "20.09.23",
-        "statut": "in Bearbeitung",
-        "description": "Konzeption und Herstellung einer industriellen Ziegelproduktionsmaschine mit robusten Mechanismen.",
-        "utilite": "Gewährleistung der Sicherheit von Bewohnern und Eigentum bei gleichzeitiger Optimierung des Zugriffsmanagements.",
-        "retourClient": "Die Sicherheit, die dieses System bietet, ist für unsere Organisation von unschätzbarem Wert.",
-        "responsable": "Sicherheitschef"
-      },
-      {
-        "id": 4,
-        "number": "4",
-        "title": "Bau einer Metallhalle",
-        "category": "Tiefbau",
-
-        "shortDescription": "Studie, Konzeption und Bau einer Metallhalle für industrielle und logistische Zwecke.",
-        "dateRealisation": "05.10.23",
-        "statut": "abgeschlossen",
-        "description": "Studie, Konzeption und Bau einer Metallhalle für industrielle und logistische Zwecke.",
-        "utilite": "Reduzierte Ausfallzeiten und verbesserte Betriebseffizienz.",
-        "retourClient": "Diese Lösung hat es uns ermöglicht, unsere Wartungskosten um 25% zu senken.",
-        "responsable": "Produktionsdirektor"
-      },
-      {
-        "id": 5,
-        "number": "5",
-        "title": "Hausautomationsinstallation in einer Villa",
-        "category": "Smart Building",
-
-        "shortDescription": "Komplette Installation eines Hausautomationssystems für Wohngebäude mit intelligenter Verwaltung.",
-        "dateRealisation": "12.11.23",
-        "statut": "in Bearbeitung",
-        "description": "Komplette Installation eines Hausautomationssystems für Wohngebäude mit intelligenter Verwaltung.",
-        "utilite": "Gewährleistung zuverlässiger und leistungsstarker Konnektivität für alle Dienste.",
-        "retourClient": "Das neue Netzwerk hat unsere tägliche Produktivität erheblich verbessert.",
-        "responsable": "Infrastrukturleiter"
-      },
-      {
-        "id": 6,
-        "number": "6",
-        "title": "Hausautomationsinstallation in einer Bank",
-        "category": "Smart Building",
-
-        "shortDescription": "Bereitstellung eines professionellen Hausautomationssystems für eine Bank, einschließlich intelligenter Verwaltung.",
-        "dateRealisation": "18.12.23",
-        "statut": "abgeschlossen",
-        "description": "Bereitstellung eines professionellen Hausautomationssystems für eine Bank, einschließlich intelligenter Verwaltung.",
-        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-        "responsable": "Betriebsdirektor"
-      },
-      {
-        "id": 7,
-        "number": "7",
-        "title": "Herstellung einer 3-in-1 Trittleiter",
-        "category": "Mechanische Fertigung",
-
-        "shortDescription": "Konzeption und Herstellung einer multifunktionalen 3-in-1 Trittleiter, die sich an mehrere Nutzungskonfigurationen anpassen lässt.",
-        "dateRealisation": "18.12.23",
-        "statut": "abgeschlossen",
-        "description": "Konzeption und Herstellung einer multifunktionalen 3-in-1 Trittleiter, die sich an mehrere Nutzungskonfigurationen anpassen lässt.",
-        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-        "responsable": "Betriebsdirektor"
-      },
-      {
-        "id": 8,
-        "number": "8",
-        "title": "Erstellung und Gestaltung des Showrooms",
-        "category": "Internes Projekt",
-
-        "shortDescription": "Konzeption, Gestaltung und Inbetriebnahme eines Showrooms zur Präsentation von Hausautomationslösungen.",
-        "dateRealisation": "18.12.23",
-        "statut": "abgeschlossen",
-        "description": "Konzeption, Gestaltung und Inbetriebnahme eines Showrooms zur Präsentation von Hausautomationslösungen.",
-        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-        "responsable": "Betriebsdirektor"
-      },
-      {
-        "id": 9,
-        "number": "9",
-        "title": "Eröffnung des Ausstellungsgeschäfts",
-        "category": "Internes Projekt",
-
-        "shortDescription": "Erstellung und Gestaltung eines Ausstellungsgeschäfts für den Verkauf von elektrischen Geräten, Netzwerken und anderen Materialien.",
-        "dateRealisation": "18.12.23",
-        "statut": "abgeschlossen",
-        "description": "Erstellung und Gestaltung eines Ausstellungsgeschäfts für den Verkauf von elektrischen Geräten, Netzwerken und anderen Materialien.",
-        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-        "responsable": "Betriebsdirektor"
-      }
-    ]
-  },
+ 
 
   "recruitment": {
-<<<<<<< HEAD
-    "titleRound": "Zurzeit keine Stellenangebote",
-    "subtitleRound": "Du möchtest Teil von ElecIT Engineering werden, aber kein aktuelles Angebot passt zu deinem Profil.",
-    "buttonText": "Hier bewerben",
-    "heroTitle1": "Für Arbeitssuchende,",
-    "heroTitle2": "wir stellen ein",
-    "heroSubtitle": "Schließe dich einem jungen und talentierten Team an und trage mit deiner Expertise zu einer Vision bei, die sich auf technologische Innovation, Professionalität und Fortschritt konzentriert.",
-    "processTitle": "Bewerbungsprozess",
-    "step1Title": "Unterlagen",
-    "step1Description": "Wir prüfen die Übereinstimmung deines Lebenslaufs (auf Französisch und Englisch), deines Motivationsschreibens und deiner Diplome.",
-    "step2Title": "Erstes Interview",
-    "step2Description": "Ein Telefongespräch wird geführt, um dich besser kennenzulernen.",
-    "step3Title": "Zweites Interview",
-    "step3Description": "Ein persönliches Gespräch findet zwischen den Verantwortlichen und dir zu verschiedenen Themen statt.",
-    "step4Title": "Praktischer Test",
-    "step4Description": "Bewerber können eine Aufgabe erhalten, um ihre technischen Fähigkeiten zu prüfen.",
-    "step5Title": "Entscheidung",
-    "step5Description": "Die ausgewählten Kandidaten werden für ein Jobangebot zurückgerufen."
-  },
-
-  "jobOffers": {
-    "previous": "Zurück",
-    "next": "Weiter",
-    "title": "Alle Stellenangebote",
-    "filterTitle": "Angebote filtern",
-    "filterPoste": "Position",
-    "filterPostePlaceholder": "Z. B.: Ingenieur, Techniker...",
-    "filterLocation": "Ort",
-    "filterLocationPlaceholder": "Z. B.: Douala, Yaoundé...",
-    "filterDateFrom": "Startdatum",
-    "filterDateTo": "Enddatum",
-    "resetFilters": "Filter zurücksetzen",
-    "viewButton": "Alle anzeigen",
-    "noResults": "Keine Angebote entsprechen deinen Suchkriterien",
-    "modal": {
-      "back": "Zurück zu den Angeboten",
-      "typePoste": "Positionstyp:",
-      "lieuPoste": "Ort:",
-      "datePublication": "Veröffentlichungsdatum:",
-      "validJusquau": "Gültig bis:",
-      "description": "Beschreibung",
-      "responsibilities": "Verantwortlichkeiten",
-      "activities": "Aufgaben:",
-      "profile": "Erforderliches Profil",
-      "applyButton": "Jetzt bewerben",
-      "formTitle": "ONLINE BEWERBEN",
-      "name": "Vorname",
-      "namePlaceholder": "Gib deinen Vornamen ein",
-      "lastName": "Nachname",
-      "lastNamePlaceholder": "Gib deinen Nachnamen ein",
-      "email": "E-Mail *",
-      "emailPlaceholder": "Gib deine E-Mail-Adresse ein",
-      "phone": "Telefon *",
-      "phonePlaceholder": "Gib deine Telefonnummer ein...",
-      "sex": "Geschlecht *",
-      "male": "Männlich",
-      "female": "Weiblich",
-      "dateOfBirth": "Geburtsdatum *",
-      "day": "Tag",
-      "month": "Monat",
-      "year": "Jahr",
-      "position": "Position *",
-      "positionPlaceholder": "Gib den Namen der Position ein",
-      "motivation": "Warum glaubst du, dass du das beste Profil hast? *",
-      "motivationPlaceholder": "Schreibe deine Nachricht hier",
-      "joinCV": "Lebenslauf anhängen *",
-      "addFile": "Datei hinzufügen",
-      "sendApplication": "Bewerbung senden"
-    }
-  },
-=======
     "spontaneousTitle": "Unsolicited Application",
 "spontaneousSubtitle": "Become part of our team and share the adventure",
   "titleRound": "Zurzeit keine Stellenangebote",
@@ -698,7 +458,6 @@
     "sendApplication": "Bewerbung senden"
   }
 },
->>>>>>> junior
 
   "smartBuilding": {
     "title": "SMART BUILDING",
@@ -1660,4 +1419,5 @@
     "subtitleRound": "Unser Team hört zu und erweckt Ihre Ideen zum Leben.",
     "buttonRound": "Kontaktieren Sie uns"
   }
+}
 }
