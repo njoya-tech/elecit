@@ -53,9 +53,6 @@
     }
   },
 
-
-
-
   "solution": {
     "bannerTitle": "Intelligente",
     "bannerHighlight": "Lösungen für",
@@ -107,14 +104,13 @@
     ]
   },
 
+  "realBanner": {
+    "titlePart1": "Realisierungen, die Ihre",
+    "highlightWord": "Erwartungen",
+    "titlePart2": ""
+  },
 
-   "realBanner": {
-      "titlePart1": "Realisierungen, die Ihre",
-      "highlightWord": "Erwartungen",
-      "titlePart2": ""
-    },
-
-"servicesCarousel": {
+  "servicesCarousel": {
     "seeMore": "Mehr sehen",
     "services": [
       {
@@ -155,9 +151,6 @@
       }
     ]
   },
-
-
-  
 
   "smartBuild": {
     "title": "Ausstellung von Lösungen und intelligentes Gebäude",
@@ -349,232 +342,230 @@
     "buttonText": "Weißbuch"
   },
 
-"projects": {
-  "categories": [
-    { "id": "all", "label": "Alle Projekte" },
-    { "id": "smart", "label": "Smart Building" },
-    { "id": "fabrication", "label": "Mechanische Fertigung" },
-    { "id": "genie", "label": "Tiefbau"},
-    { "id": "interne", "label": "Internes Projekt" }
-  ],
-  "projectCard": {
-    "seeMore": "Mehr erfahren"
-  },
-  "projectModal": {
-    "mechanicalFabrication": "Mechanische Fertigung",
-    "project": "Projekt:",
-    "dateRealisation": "Fertigstellungsdatum:",
-    "projectStatus": "Projektstatus:",
-    "projectDescription": "Projektbeschreibung:",
-    "utility": "Nutzen:",
-    "clientFeedback": "Kundenfeedback:",
-    "haveProject": "Haben Sie ein Projekt?",
-    "close": "Schließen"
-  },
-  "projectsData": [
-    {
-      "id": 1,
-      "number": "1",
-      "title": "Mobile Bank",
-      "category": "Mechanische Fertigung",
-      
-      "shortDescription": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen.",
-      "dateRealisation": "12.06.23",
-      "statut": "abgeschlossen",
-      "description": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen",
-      "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
-      "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
-      "responsable": "Logistikleiter"
+  "projects": {
+    "categories": [
+      { "id": "all", "label": "Alle Projekte" },
+      { "id": "smart", "label": "Smart Building" },
+      { "id": "fabrication", "label": "Mechanische Fertigung" },
+      { "id": "genie", "label": "Tiefbau" },
+      { "id": "interne", "label": "Internes Projekt" }
+    ],
+    "projectCard": {
+      "seeMore": "Mehr erfahren"
     },
-    {
-      "id": 2,
-      "number": "2",
-      "title": "Personaltransport-LKW",
-      "category": "Mechanische Fertigung",
-      
-      "shortDescription": "Technische und funktionale Umstrukturierung eines LKWs für den Personaltransport.",
-      "dateRealisation": "15.08.23",
-      "statut": "abgeschlossen",
-      "description": "Technische und funktionale Umstrukturierung eines LKWs für den Personaltransport.",
-      "utilite": "Verbesserte Produktivität und Entscheidungsfindung durch fortschrittliche Analysetools.",
-      "retourClient": "Die Implementierung dieser Lösung hat unsere Arbeitsweise transformiert und unsere Effizienz um 40% gesteigert.",
-      "responsable": "IT-Direktor"
+    "projectModal": {
+      "mechanicalFabrication": "Mechanische Fertigung",
+      "project": "Projekt:",
+      "dateRealisation": "Fertigstellungsdatum:",
+      "projectStatus": "Projektstatus:",
+      "projectDescription": "Projektbeschreibung:",
+      "utility": "Nutzen:",
+      "clientFeedback": "Kundenfeedback:",
+      "haveProject": "Haben Sie ein Projekt?",
+      "close": "Schließen"
     },
-    {
-      "id": 3,
-      "number": "3",
-      "title": "Ziegelherstellungsmaschine (Ziegelpresse)",
-      "category": "Mechanische Fertigung",
-      
-      "shortDescription": "Konzeption und Herstellung einer industriellen Ziegelproduktionsmaschine mit robusten Mechanismen.",
-      "dateRealisation": "20.09.23",
-      "statut": "in Bearbeitung",
-      "description": "Konzeption und Herstellung einer industriellen Ziegelproduktionsmaschine mit robusten Mechanismen.",
-      "utilite": "Gewährleistung der Sicherheit von Bewohnern und Eigentum bei gleichzeitiger Optimierung des Zugriffsmanagements.",
-      "retourClient": "Die Sicherheit, die dieses System bietet, ist für unsere Organisation von unschätzbarem Wert.",
-      "responsable": "Sicherheitschef"
-    },
-    {
-      "id": 4,
-      "number": "4",
-      "title": "Bau einer Metallhalle",
-      "category": "Tiefbau",
-      
-      "shortDescription": "Studie, Konzeption und Bau einer Metallhalle für industrielle und logistische Zwecke.",
-      "dateRealisation": "05.10.23",
-      "statut": "abgeschlossen",
-      "description": "Studie, Konzeption und Bau einer Metallhalle für industrielle und logistische Zwecke.",
-      "utilite": "Reduzierte Ausfallzeiten und verbesserte Betriebseffizienz.",
-      "retourClient": "Diese Lösung hat es uns ermöglicht, unsere Wartungskosten um 25% zu senken.",
-      "responsable": "Produktionsdirektor"
-    },
-    {
-      "id": 5,
-      "number": "5",
-      "title": "Hausautomationsinstallation in einer Villa",
-      "category": "Smart Building",
-      
-      "shortDescription": "Komplette Installation eines Hausautomationssystems für Wohngebäude mit intelligenter Verwaltung.",
-      "dateRealisation": "12.11.23",
-      "statut": "in Bearbeitung",
-      "description": "Komplette Installation eines Hausautomationssystems für Wohngebäude mit intelligenter Verwaltung.",
-      "utilite": "Gewährleistung zuverlässiger und leistungsstarker Konnektivität für alle Dienste.",
-      "retourClient": "Das neue Netzwerk hat unsere tägliche Produktivität erheblich verbessert.",
-      "responsable": "Infrastrukturleiter"
-    },
-    {
-      "id": 6,
-      "number": "6",
-      "title": "Hausautomationsinstallation in einer Bank",
-      "category": "Smart Building",
-      
-      "shortDescription": "Bereitstellung eines professionellen Hausautomationssystems für eine Bank, einschließlich intelligenter Verwaltung.",
-      "dateRealisation": "18.12.23",
-      "statut": "abgeschlossen",
-      "description": "Bereitstellung eines professionellen Hausautomationssystems für eine Bank, einschließlich intelligenter Verwaltung.",
-      "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-      "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-      "responsable": "Betriebsdirektor"
-    },
-    {
-      "id": 7,
-      "number": "7",
-      "title": "Herstellung einer 3-in-1 Trittleiter",
-      "category": "Mechanische Fertigung",
-      
-      "shortDescription": "Konzeption und Herstellung einer multifunktionalen 3-in-1 Trittleiter, die sich an mehrere Nutzungskonfigurationen anpassen lässt.",
-      "dateRealisation": "18.12.23",
-      "statut": "abgeschlossen",
-      "description": "Konzeption und Herstellung einer multifunktionalen 3-in-1 Trittleiter, die sich an mehrere Nutzungskonfigurationen anpassen lässt.",
-      "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-      "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-      "responsable": "Betriebsdirektor"
-    },
-    {
-      "id": 8,
-      "number": "8",
-      "title": "Erstellung und Gestaltung des Showrooms",
-      "category": "Internes Projekt",
-      
-      "shortDescription": "Konzeption, Gestaltung und Inbetriebnahme eines Showrooms zur Präsentation von Hausautomationslösungen.",
-      "dateRealisation": "18.12.23",
-      "statut": "abgeschlossen",
-      "description": "Konzeption, Gestaltung und Inbetriebnahme eines Showrooms zur Präsentation von Hausautomationslösungen.",
-      "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-      "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-      "responsable": "Betriebsdirektor"
-    },
-    {
-      "id": 9,
-      "number": "9",
-      "title": "Eröffnung des Ausstellungsgeschäfts",
-      "category": "Internes Projekt",
-      
-      "shortDescription": "Erstellung und Gestaltung eines Ausstellungsgeschäfts für den Verkauf von elektrischen Geräten, Netzwerken und anderen Materialien.",
-      "dateRealisation": "18.12.23",
-      "statut": "abgeschlossen",
-      "description": "Erstellung und Gestaltung eines Ausstellungsgeschäfts für den Verkauf von elektrischen Geräten, Netzwerken und anderen Materialien.",
-      "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
-      "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
-      "responsable": "Betriebsdirektor"
-    }
-  ]
-},
+    "projectsData": [
+      {
+        "id": 1,
+        "number": "1",
+        "title": "Mobile Bank",
+        "category": "Mechanische Fertigung",
 
+        "shortDescription": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen.",
+        "dateRealisation": "12.06.23",
+        "statut": "abgeschlossen",
+        "description": "Konzeption, Entwicklung und Bereitstellung einer Mobile-Banking-Plattform, die es Nutzern ermöglicht, Finanztransaktionen durchzuführen",
+        "utilite": "Dieses Projekt erfüllt den kritischen Bedarf an reibungsloser interner Mobilität, Reduzierung der Reisezeit der Teams vor Ort und gleichzeitiger Gewährleistung ihrer Sicherheit und ihres Komforts.",
+        "retourClient": "Dank dieser neuen Transportmittel haben wir interne Reiseverzögerungen um 30% reduziert und gleichzeitig den Komfort unserer Mitarbeiter verbessert.",
+        "responsable": "Logistikleiter"
+      },
+      {
+        "id": 2,
+        "number": "2",
+        "title": "Personaltransport-LKW",
+        "category": "Mechanische Fertigung",
+
+        "shortDescription": "Technische und funktionale Umstrukturierung eines LKWs für den Personaltransport.",
+        "dateRealisation": "15.08.23",
+        "statut": "abgeschlossen",
+        "description": "Technische und funktionale Umstrukturierung eines LKWs für den Personaltransport.",
+        "utilite": "Verbesserte Produktivität und Entscheidungsfindung durch fortschrittliche Analysetools.",
+        "retourClient": "Die Implementierung dieser Lösung hat unsere Arbeitsweise transformiert und unsere Effizienz um 40% gesteigert.",
+        "responsable": "IT-Direktor"
+      },
+      {
+        "id": 3,
+        "number": "3",
+        "title": "Ziegelherstellungsmaschine (Ziegelpresse)",
+        "category": "Mechanische Fertigung",
+
+        "shortDescription": "Konzeption und Herstellung einer industriellen Ziegelproduktionsmaschine mit robusten Mechanismen.",
+        "dateRealisation": "20.09.23",
+        "statut": "in Bearbeitung",
+        "description": "Konzeption und Herstellung einer industriellen Ziegelproduktionsmaschine mit robusten Mechanismen.",
+        "utilite": "Gewährleistung der Sicherheit von Bewohnern und Eigentum bei gleichzeitiger Optimierung des Zugriffsmanagements.",
+        "retourClient": "Die Sicherheit, die dieses System bietet, ist für unsere Organisation von unschätzbarem Wert.",
+        "responsable": "Sicherheitschef"
+      },
+      {
+        "id": 4,
+        "number": "4",
+        "title": "Bau einer Metallhalle",
+        "category": "Tiefbau",
+
+        "shortDescription": "Studie, Konzeption und Bau einer Metallhalle für industrielle und logistische Zwecke.",
+        "dateRealisation": "05.10.23",
+        "statut": "abgeschlossen",
+        "description": "Studie, Konzeption und Bau einer Metallhalle für industrielle und logistische Zwecke.",
+        "utilite": "Reduzierte Ausfallzeiten und verbesserte Betriebseffizienz.",
+        "retourClient": "Diese Lösung hat es uns ermöglicht, unsere Wartungskosten um 25% zu senken.",
+        "responsable": "Produktionsdirektor"
+      },
+      {
+        "id": 5,
+        "number": "5",
+        "title": "Hausautomationsinstallation in einer Villa",
+        "category": "Smart Building",
+
+        "shortDescription": "Komplette Installation eines Hausautomationssystems für Wohngebäude mit intelligenter Verwaltung.",
+        "dateRealisation": "12.11.23",
+        "statut": "in Bearbeitung",
+        "description": "Komplette Installation eines Hausautomationssystems für Wohngebäude mit intelligenter Verwaltung.",
+        "utilite": "Gewährleistung zuverlässiger und leistungsstarker Konnektivität für alle Dienste.",
+        "retourClient": "Das neue Netzwerk hat unsere tägliche Produktivität erheblich verbessert.",
+        "responsable": "Infrastrukturleiter"
+      },
+      {
+        "id": 6,
+        "number": "6",
+        "title": "Hausautomationsinstallation in einer Bank",
+        "category": "Smart Building",
+
+        "shortDescription": "Bereitstellung eines professionellen Hausautomationssystems für eine Bank, einschließlich intelligenter Verwaltung.",
+        "dateRealisation": "18.12.23",
+        "statut": "abgeschlossen",
+        "description": "Bereitstellung eines professionellen Hausautomationssystems für eine Bank, einschließlich intelligenter Verwaltung.",
+        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
+        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
+        "responsable": "Betriebsdirektor"
+      },
+      {
+        "id": 7,
+        "number": "7",
+        "title": "Herstellung einer 3-in-1 Trittleiter",
+        "category": "Mechanische Fertigung",
+
+        "shortDescription": "Konzeption und Herstellung einer multifunktionalen 3-in-1 Trittleiter, die sich an mehrere Nutzungskonfigurationen anpassen lässt.",
+        "dateRealisation": "18.12.23",
+        "statut": "abgeschlossen",
+        "description": "Konzeption und Herstellung einer multifunktionalen 3-in-1 Trittleiter, die sich an mehrere Nutzungskonfigurationen anpassen lässt.",
+        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
+        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
+        "responsable": "Betriebsdirektor"
+      },
+      {
+        "id": 8,
+        "number": "8",
+        "title": "Erstellung und Gestaltung des Showrooms",
+        "category": "Internes Projekt",
+
+        "shortDescription": "Konzeption, Gestaltung und Inbetriebnahme eines Showrooms zur Präsentation von Hausautomationslösungen.",
+        "dateRealisation": "18.12.23",
+        "statut": "abgeschlossen",
+        "description": "Konzeption, Gestaltung und Inbetriebnahme eines Showrooms zur Präsentation von Hausautomationslösungen.",
+        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
+        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
+        "responsable": "Betriebsdirektor"
+      },
+      {
+        "id": 9,
+        "number": "9",
+        "title": "Eröffnung des Ausstellungsgeschäfts",
+        "category": "Internes Projekt",
+
+        "shortDescription": "Erstellung und Gestaltung eines Ausstellungsgeschäfts für den Verkauf von elektrischen Geräten, Netzwerken und anderen Materialien.",
+        "dateRealisation": "18.12.23",
+        "statut": "abgeschlossen",
+        "description": "Erstellung und Gestaltung eines Ausstellungsgeschäfts für den Verkauf von elektrischen Geräten, Netzwerken und anderen Materialien.",
+        "utilite": "Zeitersparnis für Teams und Reduzierung menschlicher Fehler.",
+        "retourClient": "Die Automatisierung hat unsere tägliche Arbeitsweise transformiert.",
+        "responsable": "Betriebsdirektor"
+      }
+    ]
+  },
 
   "recruitment": {
-  "titleRound": "Zurzeit keine Stellenangebote",
-  "subtitleRound": "Du möchtest Teil von ElecIT Engineering werden, aber kein aktuelles Angebot passt zu deinem Profil.",
-  "buttonText": "Hier bewerben",
-  "heroTitle1": "Für Arbeitssuchende,",
-  "heroTitle2": "wir stellen ein",
-  "heroSubtitle": "Schließe dich einem jungen und talentierten Team an und trage mit deiner Expertise zu einer Vision bei, die sich auf technologische Innovation, Professionalität und Fortschritt konzentriert.",
-  "processTitle": "Bewerbungsprozess",
-  "step1Title": "Unterlagen",
-  "step1Description": "Wir prüfen die Übereinstimmung deines Lebenslaufs (auf Französisch und Englisch), deines Motivationsschreibens und deiner Diplome.",
-  "step2Title": "Erstes Interview",
-  "step2Description": "Ein Telefongespräch wird geführt, um dich besser kennenzulernen.",
-  "step3Title": "Zweites Interview",
-  "step3Description": "Ein persönliches Gespräch findet zwischen den Verantwortlichen und dir zu verschiedenen Themen statt.",
-  "step4Title": "Praktischer Test",
-  "step4Description": "Bewerber können eine Aufgabe erhalten, um ihre technischen Fähigkeiten zu prüfen.",
-  "step5Title": "Entscheidung",
-  "step5Description": "Die ausgewählten Kandidaten werden für ein Jobangebot zurückgerufen."
-},
+    "titleRound": "Zurzeit keine Stellenangebote",
+    "subtitleRound": "Du möchtest Teil von ElecIT Engineering werden, aber kein aktuelles Angebot passt zu deinem Profil.",
+    "buttonText": "Hier bewerben",
+    "heroTitle1": "Für Arbeitssuchende,",
+    "heroTitle2": "wir stellen ein",
+    "heroSubtitle": "Schließe dich einem jungen und talentierten Team an und trage mit deiner Expertise zu einer Vision bei, die sich auf technologische Innovation, Professionalität und Fortschritt konzentriert.",
+    "processTitle": "Bewerbungsprozess",
+    "step1Title": "Unterlagen",
+    "step1Description": "Wir prüfen die Übereinstimmung deines Lebenslaufs (auf Französisch und Englisch), deines Motivationsschreibens und deiner Diplome.",
+    "step2Title": "Erstes Interview",
+    "step2Description": "Ein Telefongespräch wird geführt, um dich besser kennenzulernen.",
+    "step3Title": "Zweites Interview",
+    "step3Description": "Ein persönliches Gespräch findet zwischen den Verantwortlichen und dir zu verschiedenen Themen statt.",
+    "step4Title": "Praktischer Test",
+    "step4Description": "Bewerber können eine Aufgabe erhalten, um ihre technischen Fähigkeiten zu prüfen.",
+    "step5Title": "Entscheidung",
+    "step5Description": "Die ausgewählten Kandidaten werden für ein Jobangebot zurückgerufen."
+  },
 
-"jobOffers": {
-  "previous": "Zurück",
-  "next": "Weiter",
-  "title": "Alle Stellenangebote",
-  "filterTitle": "Angebote filtern",
-  "filterPoste": "Position",
-  "filterPostePlaceholder": "Z. B.: Ingenieur, Techniker...",
-  "filterLocation": "Ort",
-  "filterLocationPlaceholder": "Z. B.: Douala, Yaoundé...",
-  "filterDateFrom": "Startdatum",
-  "filterDateTo": "Enddatum",
-  "resetFilters": "Filter zurücksetzen",
-  "viewButton": "Alle anzeigen",
-  "noResults": "Keine Angebote entsprechen deinen Suchkriterien",
-  "modal": {
-    "back": "Zurück zu den Angeboten",
-    "typePoste": "Positionstyp:",
-    "lieuPoste": "Ort:",
-    "datePublication": "Veröffentlichungsdatum:",
-    "validJusquau": "Gültig bis:",
-    "description": "Beschreibung",
-    "responsibilities": "Verantwortlichkeiten",
-    "activities": "Aufgaben:",
-    "profile": "Erforderliches Profil",
-    "applyButton": "Jetzt bewerben",
-    "formTitle": "ONLINE BEWERBEN",
-    "name": "Vorname",
-    "namePlaceholder": "Gib deinen Vornamen ein",
-    "lastName": "Nachname",
-    "lastNamePlaceholder": "Gib deinen Nachnamen ein",
-    "email": "E-Mail *",
-    "emailPlaceholder": "Gib deine E-Mail-Adresse ein",
-    "phone": "Telefon *",
-    "phonePlaceholder": "Gib deine Telefonnummer ein...",
-    "sex": "Geschlecht *",
-    "male": "Männlich",
-    "female": "Weiblich",
-    "dateOfBirth": "Geburtsdatum *",
-    "day": "Tag",
-    "month": "Monat",
-    "year": "Jahr",
-    "position": "Position *",
-    "positionPlaceholder": "Gib den Namen der Position ein",
-    "motivation": "Warum glaubst du, dass du das beste Profil hast? *",
-    "motivationPlaceholder": "Schreibe deine Nachricht hier",
-    "joinCV": "Lebenslauf anhängen *",
-    "addFile": "Datei hinzufügen",
-    "sendApplication": "Bewerbung senden"
-  }
-},
+  "jobOffers": {
+    "previous": "Zurück",
+    "next": "Weiter",
+    "title": "Alle Stellenangebote",
+    "filterTitle": "Angebote filtern",
+    "filterPoste": "Position",
+    "filterPostePlaceholder": "Z. B.: Ingenieur, Techniker...",
+    "filterLocation": "Ort",
+    "filterLocationPlaceholder": "Z. B.: Douala, Yaoundé...",
+    "filterDateFrom": "Startdatum",
+    "filterDateTo": "Enddatum",
+    "resetFilters": "Filter zurücksetzen",
+    "viewButton": "Alle anzeigen",
+    "noResults": "Keine Angebote entsprechen deinen Suchkriterien",
+    "modal": {
+      "back": "Zurück zu den Angeboten",
+      "typePoste": "Positionstyp:",
+      "lieuPoste": "Ort:",
+      "datePublication": "Veröffentlichungsdatum:",
+      "validJusquau": "Gültig bis:",
+      "description": "Beschreibung",
+      "responsibilities": "Verantwortlichkeiten",
+      "activities": "Aufgaben:",
+      "profile": "Erforderliches Profil",
+      "applyButton": "Jetzt bewerben",
+      "formTitle": "ONLINE BEWERBEN",
+      "name": "Vorname",
+      "namePlaceholder": "Gib deinen Vornamen ein",
+      "lastName": "Nachname",
+      "lastNamePlaceholder": "Gib deinen Nachnamen ein",
+      "email": "E-Mail *",
+      "emailPlaceholder": "Gib deine E-Mail-Adresse ein",
+      "phone": "Telefon *",
+      "phonePlaceholder": "Gib deine Telefonnummer ein...",
+      "sex": "Geschlecht *",
+      "male": "Männlich",
+      "female": "Weiblich",
+      "dateOfBirth": "Geburtsdatum *",
+      "day": "Tag",
+      "month": "Monat",
+      "year": "Jahr",
+      "position": "Position *",
+      "positionPlaceholder": "Gib den Namen der Position ein",
+      "motivation": "Warum glaubst du, dass du das beste Profil hast? *",
+      "motivationPlaceholder": "Schreibe deine Nachricht hier",
+      "joinCV": "Lebenslauf anhängen *",
+      "addFile": "Datei hinzufügen",
+      "sendApplication": "Bewerbung senden"
+    }
+  },
 
-
-"smartBuilding": {
+  "smartBuilding": {
     "title": "SMART BUILDING",
     "subtitle": "Maßgeschneiderte Lösungen für Wohnungen, Büros, Hotels und Gewerbeflächen. Komfort, Sicherheit, Energieeffizienz und Konnektivität vereint in intelligenter Architektur.",
     "buttonText": "Besuchen Sie den Showroom",
@@ -618,88 +609,88 @@
   },
 
   "interfaceCommande": {
-  "title": "Steuerungsschnittstellen",
-  "featureTitle": "Zentralisierte Steuerung",
-  "featureDescription": "Steuern Sie Ihre Beleuchtung, Rollläden, Klimaanlage, Kameras und Audiogeräte von zu Hause oder aus der Ferne.",
-  "buttonText": "Shop besuchen",
-  "slides": [
-    "/images/interface1.jpg",
-    "/images/interface2.jpg",
-    "/images/interface3.jpg"
-  ]
-},
+    "title": "Steuerungsschnittstellen",
+    "featureTitle": "Zentralisierte Steuerung",
+    "featureDescription": "Steuern Sie Ihre Beleuchtung, Rollläden, Klimaanlage, Kameras und Audiogeräte von zu Hause oder aus der Ferne.",
+    "buttonText": "Shop besuchen",
+    "slides": [
+      "/images/interface1.jpg",
+      "/images/interface2.jpg",
+      "/images/interface3.jpg"
+    ]
+  },
 
-"prestations": {
-  "title": "Verbundene Dienstleistungen",
-  "subtitle": "Unsere Dienstleistungen decken den gesamten Prozess der mechanischen und metallischen Fertigung ab – von der technischen Planung bis zur Endbeschichtung – um zuverlässige, langlebige und maßgeschneiderte Lösungen zu gewährleisten.",
-  "prestations": [
-    {
-      "number": "1",
-      "title": "Konstruktion &\nTechnisches Büro",
-      "description": "3D-Modellierung und numerische Simulation, maßgeschneiderte Fertigungspläne, Rapid Prototyping."
-    },
-    {
-      "number": "2",
-      "title": "Fertigung &\nMontage",
-      "description": "Fräsen, Schweißen, Laserschneiden, Bearbeitung und Montage von Metallkonstruktionen in der Werkstatt oder vor Ort."
-    },
-    {
-      "number": "3",
-      "title": "Behandlungen\n& Oberflächenveredelung",
-      "description": "Oberflächenbeschichtung (Lackierung, Anodisierung, Verzinkung); Qualitätskontrolle und Messtechnik."
+  "prestations": {
+    "title": "Verbundene Dienstleistungen",
+    "subtitle": "Unsere Dienstleistungen decken den gesamten Prozess der mechanischen und metallischen Fertigung ab – von der technischen Planung bis zur Endbeschichtung – um zuverlässige, langlebige und maßgeschneiderte Lösungen zu gewährleisten.",
+    "prestations": [
+      {
+        "number": "1",
+        "title": "Konstruktion &\nTechnisches Büro",
+        "description": "3D-Modellierung und numerische Simulation, maßgeschneiderte Fertigungspläne, Rapid Prototyping."
+      },
+      {
+        "number": "2",
+        "title": "Fertigung &\nMontage",
+        "description": "Fräsen, Schweißen, Laserschneiden, Bearbeitung und Montage von Metallkonstruktionen in der Werkstatt oder vor Ort."
+      },
+      {
+        "number": "3",
+        "title": "Behandlungen\n& Oberflächenveredelung",
+        "description": "Oberflächenbeschichtung (Lackierung, Anodisierung, Verzinkung); Qualitätskontrolle und Messtechnik."
+      }
+    ],
+    "description": "Diese Dienstleistungen begleiten jede Phase des Projekts – von der ersten Analyse bis zur Echtzeitüberwachung – und verwandeln herkömmliche Infrastrukturen in intelligente, sichere und energieeffiziente Umgebungen.",
+    "buttonText": "Besuchen Sie FOCZOU",
+    "services": {
+      "audit": {
+        "title": "Audit & Diagnostik der Infrastrukturen",
+        "description": "Bewertung bestehender Systeme (elektrisch, HLK, Sicherheit usw.); Energieanalyse und Identifizierung von Optimierungspotenzialen."
+      },
+      "conception": {
+        "title": "Konzeption & Ingenieurwesen intelligenter Lösungen",
+        "description": "Technische Studien und Modellierung; Integration von Sensoren, Steuerungen und Regelsystemen."
+      },
+      "automatisation": {
+        "title": "Automatisierung von Gebäudesystemen",
+        "description": "Zentralisierte technische Verwaltung: Beleuchtung, Heizung, Lüftung, Sicherheit; Programmierung intelligenter Szenarien."
+      },
+      "securite": {
+        "title": "Intelligente Sicherheits- & Zutrittskontrolle",
+        "description": "Intelligente Videoüberwachung, vernetzter Alarm, Biometrie; Rückverfolgbarkeit und Verwaltung des Personenflusses."
+      },
+      "supervision": {
+        "title": "Fernüberwachung & Vorausschauende Wartung",
+        "description": "Cloud-Plattformen für 24/7-Monitoring; Früherkennung von Anomalien und vorbeugende Wartung."
+      },
+      "formation": {
+        "title": "Benutzerschulung",
+        "description": "Schulung der Teams in der Systemnutzung; Bereitstellung von Dokumentation und technischem Support."
+      },
+      "evolution": {
+        "title": "Weiterentwicklung & Skalierbarkeit der Systeme",
+        "description": "Möglichkeit, neue Funktionen hinzuzufügen (Modularität); Software-Updates und Anpassung an neue Anforderungen."
+      }
     }
-  ],
-  "description": "Diese Dienstleistungen begleiten jede Phase des Projekts – von der ersten Analyse bis zur Echtzeitüberwachung – und verwandeln herkömmliche Infrastrukturen in intelligente, sichere und energieeffiziente Umgebungen.",
-  "buttonText": "Besuchen Sie FOCZOU",
-  "services": {
-    "audit": {
-      "title": "Audit & Diagnostik der Infrastrukturen",
-      "description": "Bewertung bestehender Systeme (elektrisch, HLK, Sicherheit usw.); Energieanalyse und Identifizierung von Optimierungspotenzialen."
-    },
-    "conception": {
-      "title": "Konzeption & Ingenieurwesen intelligenter Lösungen",
-      "description": "Technische Studien und Modellierung; Integration von Sensoren, Steuerungen und Regelsystemen."
-    },
-    "automatisation": {
-      "title": "Automatisierung von Gebäudesystemen",
-      "description": "Zentralisierte technische Verwaltung: Beleuchtung, Heizung, Lüftung, Sicherheit; Programmierung intelligenter Szenarien."
-    },
-    "securite": {
-      "title": "Intelligente Sicherheits- & Zutrittskontrolle",
-      "description": "Intelligente Videoüberwachung, vernetzter Alarm, Biometrie; Rückverfolgbarkeit und Verwaltung des Personenflusses."
-    },
-    "supervision": {
-      "title": "Fernüberwachung & Vorausschauende Wartung",
-      "description": "Cloud-Plattformen für 24/7-Monitoring; Früherkennung von Anomalien und vorbeugende Wartung."
-    },
-    "formation": {
-      "title": "Benutzerschulung",
-      "description": "Schulung der Teams in der Systemnutzung; Bereitstellung von Dokumentation und technischem Support."
-    },
-    "evolution": {
-      "title": "Weiterentwicklung & Skalierbarkeit der Systeme",
-      "description": "Möglichkeit, neue Funktionen hinzuzufügen (Modularität); Software-Updates und Anpassung an neue Anforderungen."
-    }
-  }
-},
-"smartVilla": {
-  "title1": "PROJEKT:",
-  "title2": "VILLA 2 YASSA",
-  "subtitle": "Installation eines Hausautomationssystems zur zentralen Steuerung aller Geräte im Gebäude.",
-  "buttonText": "Weitere Projekte",
-  "titleRound": "Lassen Sie uns gemeinsam Ihr",
-  "titleRound2": "Smart Building",
-  "descriptionRound": "Haben Sie ein Haus, ein Hotel, ein Büro, eine Gewerbefläche oder einen Veranstaltungsraum, den Sie modernisieren möchten? Sprechen wir darüber.",
-  "buttonRound": "Kontaktieren Sie uns"
-},
-"FabriMeca": {
-  "heroTitle1": "KONSTRUKTION, MECHANISCHE UND METALLISCHE FERTIGUNG",
-  "heroSubtitle": "Unsere Werkstatt entwirft Standard- oder maßgeschneiderte Maschinen und Geräte nach Ihren spezifischen Anforderungen.",
-  "heroSubtitle2": "Klicken Sie auf die Schaltfläche, um die Website unserer mechanischen Werkstatt zu besuchen.",
-  "heroButtonText": "MATOA besuchen"
-},
+  },
+  "smartVilla": {
+    "title1": "PROJEKT:",
+    "title2": "VILLA 2 YASSA",
+    "subtitle": "Installation eines Hausautomationssystems zur zentralen Steuerung aller Geräte im Gebäude.",
+    "buttonText": "Weitere Projekte",
+    "titleRound": "Lassen Sie uns gemeinsam Ihr",
+    "titleRound2": "Smart Building",
+    "descriptionRound": "Haben Sie ein Haus, ein Hotel, ein Büro, eine Gewerbefläche oder einen Veranstaltungsraum, den Sie modernisieren möchten? Sprechen wir darüber.",
+    "buttonRound": "Kontaktieren Sie uns"
+  },
+  "FabriMeca": {
+    "heroTitle1": "KONSTRUKTION, MECHANISCHE UND METALLISCHE FERTIGUNG",
+    "heroSubtitle": "Unsere Werkstatt entwirft Standard- oder maßgeschneiderte Maschinen und Geräte nach Ihren spezifischen Anforderungen.",
+    "heroSubtitle2": "Klicken Sie auf die Schaltfläche, um die Website unserer mechanischen Werkstatt zu besuchen.",
+    "heroButtonText": "MATOA besuchen"
+  },
 
- "fabriMeca": {
+  "fabriMeca": {
     "hero": {
       "title1": "Mechanische & Metallische Fertigung",
       "subtitle": "Exzellenz in Design und Fertigung",
@@ -764,7 +755,7 @@
       "description": "Unsere Experten begleiten Sie von der Studie bis zur vollständigen Umsetzung Ihrer Fertigungsprojekte"
     }
   },
-    "fm": {
+  "fm": {
     "title": "Entdecken Sie interessante Inhalte",
     "subtitle": "Die mechanische Werkstatt",
     "description": "Tauchen Sie ein in das Herz der mechanischen und metallischen Technik",
@@ -777,7 +768,7 @@
     "buttonText": "Weitere Projekte"
   },
 
-   "gpsT": {
+  "gpsT": {
     "titlehero": "GPS & TRACKING",
     "descriptionhero": "Moderne, skalierbare Tracking-Lösungen, die auf die Bedürfnisse von Privatpersonen, Unternehmen und Institutionen zugeschnitten sind, sowohl national als auch international (im CEMAC-Raum).",
     "buttonhero": "Unsere Visuals",
@@ -790,7 +781,7 @@
     "titleRound": "Benötigen Sie eine",
     "titleRound2": "Maßgeschneiderte Lösung?",
     "descriptionRound": "Unsere Experten begleiten Sie von der Studie bis zur vollständigen Implementierung Ihrer Tracking-Geräte",
-     "domaines": {
+    "domaines": {
       "title": "Unsere Interventionsbereiche",
       "subtitle": "Lösungen für präzise Verfolgung, vertiefte Analyse und nachhaltige Optimierung Ihrer Fahrzeugflotte und all Ihrer Assets, alles zentralisiert auf einer einzigen Plattform.",
       "items": {
@@ -830,22 +821,15 @@
     }
   },
   "whyChooseUs": {
-  "title": "Warum uns wählen?",
-  "subtitle": "Unsere Tracking-Lösungen bieten greifbare Vorteile in Bezug auf Sichtbarkeit, Sicherheit und Optimierung der Abläufe – für eine bessere Kontrolle Ihrer Ressourcen in Echtzeit.",
-  "feature1": "Fernverriegelungs- bzw. Diebstahlschutzsystem kostenlos enthalten.",
-  "feature2": "Zugang zu einer lizenzierten Webplattform und/oder einer dedizierten mobilen Anwendung.",
-  "feature3": "Alle Verwaltungsparameter und -werkzeuge sind ohne zusätzliche Kosten zugänglich.",
-  "feature4": "Kostenlose internationale Abdeckung (CEMAC-Region).",
-  "feature5": "Wartung, Instandhaltung und Kundendienst in den Städten Douala und Yaoundé inklusive.",
-  "feature6": "Bis zu 1 Jahr Garantie auf die Geräte."
-},
-
-
-
-
-
-
-
+    "title": "Warum uns wählen?",
+    "subtitle": "Unsere Tracking-Lösungen bieten greifbare Vorteile in Bezug auf Sichtbarkeit, Sicherheit und Optimierung der Abläufe – für eine bessere Kontrolle Ihrer Ressourcen in Echtzeit.",
+    "feature1": "Fernverriegelungs- bzw. Diebstahlschutzsystem kostenlos enthalten.",
+    "feature2": "Zugang zu einer lizenzierten Webplattform und/oder einer dedizierten mobilen Anwendung.",
+    "feature3": "Alle Verwaltungsparameter und -werkzeuge sind ohne zusätzliche Kosten zugänglich.",
+    "feature4": "Kostenlose internationale Abdeckung (CEMAC-Region).",
+    "feature5": "Wartung, Instandhaltung und Kundendienst in den Städten Douala und Yaoundé inklusive.",
+    "feature6": "Bis zu 1 Jahr Garantie auf die Geräte."
+  },
 
   "entreprise": {
     "hero": {
@@ -926,86 +910,152 @@
   },
 
   "contact": {
-    "floatingButton": "Neem contact op",
+    "floatingButton": "Kontakt",
     "popup": {
-      "title": "Neem contact op",
-      "subtitle": "We reageren zo snel mogelijk",
-      "availability": "We zijn van maandag tot vrijdag van 8 tot 18 uur bereikbaar via WhatsApp. Aarzel niet om contact met ons op te nemen.",
-      "openWhatsApp": "WhatsApp openen",
-      "messagePlaceholder": "Schrijf uw bericht...",
-      "leftButton": "Terug",
-      "rightButton": "Verzenden"
+      "title": "Kontakt",
+      "subtitle": "Wir werden Ihnen so schnell wie möglich antworten",
+      "availability": "Wir sind von Montag bis Freitag von 8 bis 18 Uhr über WhatsApp erreichbar. Kontaktieren Sie uns gerne.",
+      "openWhatsApp": "WhatsApp öffnen",
+      "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+      "leftButton": "Zurück",
+      "rightButton": "Senden"
     },
     "hero": {
-      "title": "Neem Contact Op.",
-      "subtitle": "Ons team van experts biedt u een oplossing!",
-      "button": "Meer Inhoud"
+      "title": "Kontaktieren Sie uns.",
+      "subtitle": "Unser Expertenteam bietet Ihnen die passende Lösung!",
+      "button": "Mehr Inhalte"
     },
     "form": {
-      "title": "Contactformulier",
-      "subtitle": "Een vraag, behoefte of project om te bespreken?",
-      "subtitle2": "Vul het onderstaande formulier in",
-      "lastName": "Achternaam",
-      "lastNamePlaceholder": "Voer uw achternaam in",
-      "firstName": "Voornaam",
-      "firstNamePlaceholder": "Voer uw voornaam in",
-      "phone": "Telefoon",
-      "email": "E-mail",
-      "emailPlaceholder": "Voer uw e-mail in",
-      "message": "Bericht",
-      "messagePlaceholder": "Antwoord in enkele woorden",
-      "submit": "Versturen",
-      "imageAlt": "Professional in een industriële omgeving"
+      "title": "Kontaktformular",
+      "subtitle": "Eine Frage, ein Anliegen oder ein Projekt?",
+      "subtitle2": "Füllen Sie das Formular unten aus",
+      "lastName": "Nachname",
+      "lastNamePlaceholder": "Geben Sie Ihren Nachnamen ein",
+      "firstName": "Vorname",
+      "firstNamePlaceholder": "Geben Sie Ihren Vornamen ein",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "message": "Nachricht",
+      "messagePlaceholder": "Antworten Sie in wenigen Worten",
+      "submit": "Senden",
+      "imageAlt": "Fachkraft in industrieller Umgebung",
+      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      "sending": "Wird gesendet...",
+      "errors": {
+        "lastNameRequired": "Nachname ist erforderlich",
+        "firstNameRequired": "Vorname ist erforderlich",
+        "phoneRequired": "Telefonnummer ist erforderlich",
+        "phoneInvalid": "Ungültige Telefonnummer",
+        "emailRequired": "E-Mail ist erforderlich",
+        "emailInvalid": "Ungültige E-Mail-Adresse",
+        "messageRequired": "Nachricht ist erforderlich"
+      }
+      },
+      "location": {
+        "title": "Unsere Dienstleistungen sind verfügbar in",
+        "highlight1": "Kamerun",
+        "title2": ", sowie in ganz",
+        "highlight2": "Zentralafrika."
+      },
+      "blog": {
+        "title": "Bleiben Sie auf dem Laufenden mit unseren",
+        "highlight": "Neuigkeiten",
+        "title2": "in unserem Blog",
+        "readMore": "Mehr lesen",
+        "prevPage": "Vorherige Seite",
+        "nextPage": "Nächste Seite",
+        "goToPage": "Zur Seite",
+        "articles": [
+          {
+            "id": 1,
+            "title": "Warum maßgeschneiderte Fertigung ein Wendepunkt für die kamerunische Industrie ist",
+            "excerpt": "In vielen Industriesektoren Kameruns stehen Unternehmen vor einer wiederkehrenden Herausforderung..."
+          },
+          {
+            "id": 2,
+            "title": "5 Wege, wie ein Smart-Hotel Energie spart und Kunden bindet",
+            "excerpt": "In einem zunehmend wettbewerbsintensiven Hotelmarkt in Kamerun stellt sich die Frage zweifach..."
+          },
+          {
+            "id": 3,
+            "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
+            "excerpt": "Transport und Logistik stehen im Zentrum der kamerunischen Wirtschaft, doch dieser Sektor steht vor großen Herausforderungen..."
+          },
+          {
+            "id": 4,
+            "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
+            "excerpt": "Die kamerunische Landwirtschaft, Motor der nationalen Wirtschaft, steht vor einer großen Herausforderung..."
+          },
+          {
+            "id": 5,
+            "title": "Von Rohmetall zu Innovation: Wie wir nachhaltige Infrastruktur gestalten",
+            "excerpt": "Rohstoffe in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallverarbeitung..."
+          },
+          {
+            "id": 6,
+            "title": "Datenverarbeitung und Sicherheit: Schutz des digitalen Goldes Ihres Unternehmens",
+            "excerpt": "Jeden Tag erzeugen Unternehmen große Mengen sensibler Informationen..."
+          }
+        ]
+      }
     },
-    "location": {
-      "title": "Onze diensten zijn toegankelijk in heel",
-      "highlight1": "Kameroen",
-      "title2": ", maar ook in heel",
-      "highlight2": "Centraal-Afrika."
-    },
-    "blog": {
-      "title": "Blijf op de hoogte van ons",
-      "highlight": "nieuws",
-      "title2": "door onze blog te bezoeken",
-      "readMore": "Lees meer",
-      "prevPage": "Vorige pagina",
-      "nextPage": "Volgende pagina",
-      "goToPage": "Ga naar pagina",
-      "articles": [
-        {
-          "id": 1,
-          "title": "Waarom maatwerkproductie een game-changer is in de Kameroense industrie?",
-          "excerpt": "In veel industriële sectoren in Kameroen staan bedrijven voor een terugkerende uitdaging..."
-        },
-        {
-          "id": 2,
-          "title": "5 manieren waarop een slim hotel energie bespaart en klantenloyaliteit opbouwt",
-          "excerpt": "Op een steeds competitievere hotelmarkt in Kameroen is de vraag tweeledig..."
-        },
-        {
-          "id": 3,
-          "title": "De trackingrevolutie: wanneer AI uw voertuigen bewaakt",
-          "excerpt": "Transport en logistiek staan centraal in de economie van Kameroen, maar deze sector ondervindt grote uitdagingen..."
-        },
-        {
-          "id": 4,
-          "title": "Slimme irrigatie: technologie voor duurzame landbouw",
-          "excerpt": "De Kameroense landbouw, de motor van de nationale economie, staat voor een grote uitdaging..."
-        },
-        {
-          "id": 5,
-          "title": "Van ruw metaal naar innovatie: hoe we duurzame infrastructuur vormgeven",
-          "excerpt": "Het transformeren van grondstoffen naar een innovatief en functioneel product is de kunst van moderne metallurgie..."
-        },
-        {
-          "id": 6,
-          "title": "Gegevensverwerking en beveiliging: het digitale goud van uw bedrijf beschermen",
-          "excerpt": "Elk bedrijf genereert dagelijks aanzienlijke hoeveelheden gevoelige informatie..."
+    "blogPage": {
+      "hero": {
+        "title": "Einblicke in ElecIT",
+        "subtitle": "Innovation, Fachwissen & Unternehmensleben",
+        "description1": "Ein offenes Fenster zu unserer Expertise und Kultur.",
+        "description2": "Entdecken Sie unsere Projekte, Innovationen und unsere Vision moderner Ingenieurskunst.",
+        "description3": "Tauchen Sie ein in den Alltag von ElecIT, wo Technologie auf Menschen trifft."
+      },
+      "featured": {
+        "authorName": "Therese Egoutou",
+        "date": "17. Nov.",
+        "title": "Das Gebäude, das sich an Sie anpasst",
+        "excerpt": "Jedes Projekt beginnt mit einer Idee, doch erst das Design macht daraus eine echte Lösung."
+      },
+      "categories": {
+        "all": "Alle Beiträge",
+        "smartSpaces": "Intelligente Räume",
+        "workshop": "Werkstatt der Kreativität",
+        "moreThanTrack": "Mehr als Tracking",
+        "advancedSecurity": "Erweiterte Sicherheit",
+        "toolBoxMeeting": "Toolbox-Meeting",
+        "companyLife": "Unternehmensleben",
+        "more": "Mehr"
+      },
+      "cards": {
+        "views": "Aufrufe",
+        "view": "Aufruf",
+        "comments": "Kommentare",
+        "comment": "Kommentar",
+        "readMore": "Weiterlesen",
+        "previous": "Zurück",
+        "next": "Weiter"
+      },
+      "detail": {
+        "readTime": "Min. Lesezeit",
+        "share": "Beitrag teilen",
+        "cancel": "Abbrechen",
+        "publish": "Veröffentlichen",
+        "loginPrompt": "um als Mitglied zu posten",
+        "login": "Anmelden",
+        "commentPlaceholder": "Kommentar schreiben...",
+        "commentsTitle": "Kommentare",
+        "shareModal": {
+          "title": "Diesen Beitrag teilen",
+          "copyLink": "Oder Link kopieren",
+          "copy": "Kopieren",
+          "copied": "Link kopiert!",
+          "facebook": "Facebook",
+          "twitter": "Twitter",
+          "linkedin": "LinkedIn",
+          "whatsapp": "WhatsApp"
         }
-      ]
-    }
-  },
-
+      }
+    },
+  
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -1108,87 +1158,85 @@
     ]
   },
 
- "sav": {
-  "hero": {
-  "title": "Was sollten Sie über",
-  "titleHighlight": "ELECIT wissen",
-  "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
-  "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
-  "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen weiterentwickeln.",
-  "button": "Video ansehen"
-},
+  "sav": {
+    "hero": {
+      "title": "Was sollten Sie über",
+      "titleHighlight": "ELECIT wissen",
+      "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
+      "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
+      "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen weiterentwickeln.",
+      "button": "Video ansehen"
+    },
 
-  "cards": {
-    "heading": "Unsere Leistungen",
-    "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und gesetzlicher Konformität.",
-    "items": [
-      {
-        "title": "Studien",
-        "subtitle": "& Planung",
-        "description": "Bedarfsanalyse und architektonisches Konzept / Technische Studien / 2D/3D-Modellierung / Planung, Kostenschätzung und Genehmigungen"
-      },
-      {
-        "title": "Projektmanagement",
-        "subtitle": "& Bauüberwachung",
-        "description": "Arbeitsplanung und Koordination aller Beteiligten / Bauüberwachung, technische und qualitative Kontrollen / Strikte Einhaltung von Terminen und Budget / Transparente Kommunikation mit dem Bauherrn"
-      },
-      {
-        "title": "Ausführung",
-        "subtitle": "& Übergabe",
-        "description": "Roh- und Ausbauarbeiten / Integration technischer Gewerke (Elektro, Sanitär, HLK) / Innen- und Außenarbeiten gemäß Lastenheft / Abnahme der Arbeiten"
-      },
-      {
-        "title": "Wartung",
-        "subtitle": "& Renovierung",
-        "description": "Vorbeugende und corrective Wartung / Renovierung und Normkonformität / Energieeffizienz-Optimierung / Kundendienst und zehnjährige Garantie"
-      },
-      {
-        "title": "Beratung",
-        "subtitle": "& Expertise",
-        "description": "Technische Audits und Immobilien-Diagnosen / Bauherrenberatung / Juristische und administrative Unterstützung / Kostenoptimierung"
-      },
-      {
-        "title": "Schlüsselfertige",
-        "subtitle": "Lösungen",
-        "description": "Komplette Projektübernahme / Koordination aller Gewerke / Eine Garantie und Gesamtverantwortung / Termingerechte Lieferung"
+    "cards": {
+      "heading": "Unsere Leistungen",
+      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und gesetzlicher Konformität.",
+      "items": [
+        {
+          "title": "Studien",
+          "subtitle": "& Planung",
+          "description": "Bedarfsanalyse und architektonisches Konzept / Technische Studien / 2D/3D-Modellierung / Planung, Kostenschätzung und Genehmigungen"
+        },
+        {
+          "title": "Projektmanagement",
+          "subtitle": "& Bauüberwachung",
+          "description": "Arbeitsplanung und Koordination aller Beteiligten / Bauüberwachung, technische und qualitative Kontrollen / Strikte Einhaltung von Terminen und Budget / Transparente Kommunikation mit dem Bauherrn"
+        },
+        {
+          "title": "Ausführung",
+          "subtitle": "& Übergabe",
+          "description": "Roh- und Ausbauarbeiten / Integration technischer Gewerke (Elektro, Sanitär, HLK) / Innen- und Außenarbeiten gemäß Lastenheft / Abnahme der Arbeiten"
+        },
+        {
+          "title": "Wartung",
+          "subtitle": "& Renovierung",
+          "description": "Vorbeugende und corrective Wartung / Renovierung und Normkonformität / Energieeffizienz-Optimierung / Kundendienst und zehnjährige Garantie"
+        },
+        {
+          "title": "Beratung",
+          "subtitle": "& Expertise",
+          "description": "Technische Audits und Immobilien-Diagnosen / Bauherrenberatung / Juristische und administrative Unterstützung / Kostenoptimierung"
+        },
+        {
+          "title": "Schlüsselfertige",
+          "subtitle": "Lösungen",
+          "description": "Komplette Projektübernahme / Koordination aller Gewerke / Eine Garantie und Gesamtverantwortung / Termingerechte Lieferung"
+        }
+      ]
+    },
+    "greenCards": {
+      "heading": "Unsere Kernversprechen",
+      "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierten Kundendienst, der die Nachhaltigkeit Ihrer Projekte sicherstellt.",
+      "services": [
+        {
+          "title": "Schnelligkeit & Nähe",
+          "description": "Unser engagiertes Kundendienstteam steht Ihnen rund um die Uhr für schnelle Einsätze vor Ort oder aus der Ferne zur Verfügung."
+        },
+        {
+          "title": "Multitechnische Kompetenz",
+          "description": "Dank unserer breiten Fachkenntnisse beherrschen wir unsere Lösungen perfekt für eine schnelle Diagnose und gezielte Eingriffe."
+        },
+        {
+          "title": "Präventive & Korrektive Wartung",
+          "description": "Wir sichern den langfristigen Betrieb Ihrer Anlagen durch geplante Einsätze und maßgeschneiderte Wartungsverträge."
+        },
+        {
+          "title": "Wirtschaftlichkeit für Kunden",
+          "description": "Unser Kundendienst ist darauf ausgelegt, unerwartete Kosten zu minimieren und den Wert Ihrer Investition zu maximieren."
+        },
+        {
+          "title": "Zufriedenheit & Loyalität",
+          "description": "Persönliche Betreuung, aktives Zuhören und kontrollierte Zeitpläne stärken das Vertrauen und fördern langfristige Kundenbeziehungen."
+        }
+      ],
+      "cta": {
+        "title": "Entscheiden Sie sich für",
+        "titleHighlight": "zuverlässige, nachhaltige und rentable Unterstützung.",
+        "subtitle": "\"Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Anlagen zu gewährleisten!\"",
+        "button": "Kontaktieren Sie uns"
       }
-    ]
-  },
-  "greenCards": {
-    "heading": "Unsere Kernversprechen",
-    "subtitle": "Profitieren Sie von einem integrierten, rentablen und strukturierten Kundendienst, der die Nachhaltigkeit Ihrer Projekte sicherstellt.",
-    "services": [
-      {
-        "title": "Schnelligkeit & Nähe",
-        "description": "Unser engagiertes Kundendienstteam steht Ihnen rund um die Uhr für schnelle Einsätze vor Ort oder aus der Ferne zur Verfügung."
-      },
-      {
-        "title": "Multitechnische Kompetenz",
-        "description": "Dank unserer breiten Fachkenntnisse beherrschen wir unsere Lösungen perfekt für eine schnelle Diagnose und gezielte Eingriffe."
-      },
-      {
-        "title": "Präventive & Korrektive Wartung",
-        "description": "Wir sichern den langfristigen Betrieb Ihrer Anlagen durch geplante Einsätze und maßgeschneiderte Wartungsverträge."
-      },
-      {
-        "title": "Wirtschaftlichkeit für Kunden",
-        "description": "Unser Kundendienst ist darauf ausgelegt, unerwartete Kosten zu minimieren und den Wert Ihrer Investition zu maximieren."
-      },
-      {
-        "title": "Zufriedenheit & Loyalität",
-        "description": "Persönliche Betreuung, aktives Zuhören und kontrollierte Zeitpläne stärken das Vertrauen und fördern langfristige Kundenbeziehungen."
-      }
-    ],
-    "cta": {
-      "title": "Entscheiden Sie sich für",
-      "titleHighlight": "zuverlässige, nachhaltige und rentable Unterstützung.",
-      "subtitle": "\"Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Anlagen zu gewährleisten!\"",
-      "button": "Kontaktieren Sie uns"
     }
-  }
-}
-,
-
+  },
   "bureau": {
     "hero": {
       "title": "GEBÄUDETECHNIK & ÖFFENTLICHE ARBEITEN",
@@ -1308,7 +1356,7 @@
       }
     }
   },
-"dataProcessing": {
+  "dataProcessing": {
     "hero": {
       "title": "IT & DATENVERARBEITUNG",
       "descriptionLine1": "Denn über den kamerunischen Markt hinaus wollen wir",
@@ -1470,11 +1518,11 @@
       ]
     }
   },
- "fab": {
-  "titleRound": "Ein Projekt im Kopf",
-  "titleRound2": "Brauchen Sie eine Lösung",
-  "sub": "auf Anfrage",
-  "subtitleRound": "Unser Team hört zu und erweckt Ihre Ideen zum Leben.",
-  "buttonRound": "Kontaktieren Sie uns"
-}
+  "fab": {
+    "titleRound": "Ein Projekt im Kopf",
+    "titleRound2": "Brauchen Sie eine Lösung",
+    "sub": "auf Anfrage",
+    "subtitleRound": "Unser Team hört zu und erweckt Ihre Ideen zum Leben.",
+    "buttonRound": "Kontaktieren Sie uns"
+  }
 }

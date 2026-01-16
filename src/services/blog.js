@@ -1,6 +1,6 @@
 // src/service/blog.js
 import { directus } from "./api/directus";
-import { readItems, readItem, updateItem } from "@directus/sdk";
+import { readItems, readItem, updateItem, createItem } from "@directus/sdk";
 
 /**
  * Get asset URL from Directus file ID
@@ -13,13 +13,12 @@ export const getAssetUrl = (fileId) => {
 /**
  * Common fields for blog post queries
  * Adjust these based on your actual Directus schema
+ * 
  */
+
 const POST_FIELDS = [
   "id",
-  "title",
   "slug",
-  "excerpt",
-  "content",
   "cover_image",
   "created_at",
   "views",
@@ -31,14 +30,19 @@ const POST_FIELDS = [
   "category.id",
   "category.name",
   "category.slug",
+  // Translation fields with expanded language relation
   "translations.id",
-  "translations.languages_code.id", // include the relation ID
-  "translations.languages_code.code", // critical: this must be here
-  "translations.languages_code.name",
+  "translations.blog_post_id",
   "translations.title",
   "translations.excerpt",
   "translations.content",
+  "translations.languages_id.id",      // ✅ Add these three lines
+  "translations.languages_id.code",    // ✅ This is crucial for language matching
+  "translations.languages_id.name",    // ✅ Optional but useful
 ];
+
+
+
 
 /**
  * Fetch all blog posts
@@ -71,16 +75,17 @@ export const fetchAllPosts = async (options = {}) => {
       });
     }
 
-    // Search filter
-    if (search) {
-      filter._and.push({
-        _or: [
-          { title: { _contains: search } },
-          { excerpt: { _contains: search } },
-          { content: { _contains: search } },
-        ],
-      });
-    }
+   // Search filter
+if (search) {
+  filter._and.push({
+    _or: [
+      { slug: { _contains: search } },
+      { translations: { title: { _contains: search } } },
+      { translations: { excerpt: { _contains: search } } },
+      { translations: { content: { _contains: search } } },
+    ],
+  });
+}
 
     // Remove _and if empty
     const finalFilter = filter._and.length > 0 ? filter : undefined;
@@ -294,74 +299,216 @@ export const incrementPostViews = async (postId) => {
     return false;
   }
 };
-
 /**
  * Get translated content for a post
  * @param {Object} post - Blog post object with translations
- * @param {string} languageCode - Language code (e.g., 'en', 'fr')
+ * @param {string} languageCode - Language code (e.g., 'en', 'fr', 'de')
  * @returns {Object} Post with translated content or original if translation not found
  */
 export const getTranslation = (post, languageCode) => {
-  if (!post) return post;
+  if (!post || !post.translations || post.translations.length === 0) {
+    return post;
+  }
 
-  // If no translations exist, return the original post
-  if (!post.translations) return post;
-
-  // Normalize translations to always be an array
-  // Directus might return a single object instead of an array
   const translations = Array.isArray(post.translations)
     ? post.translations
     : [post.translations];
 
-  console.log("Normalized translations:", translations);
-
-  // Debug: Check what languages_code actually contains
-  if (translations.length > 0) {
-    console.log(
-      "First translation languages_code:",
-      translations[0].languages_code
-    );
-    console.log(
-      "Type of languages_code:",
-      typeof translations[0].languages_code
-    );
-  }
-
-  if (translations.length === 0) return post;
+  console.log(`Looking for translation with code: "${languageCode}"`);
+  console.log("Available translations:", translations);
 
   // Find translation matching the requested language
   const translation = translations.find((t) => {
-    // Handle three possible structures for languages_code:
-    // 1. Direct string: "en"
-    // 2. Nested object: {code: "en", name: "English"}
-    // 3. Just the code property: could be anywhere in the object
-    const langCode =
-      typeof t.languages_code === "string"
-        ? t.languages_code // Direct string
-        : t.languages_code?.code || // Nested object
-          t.languages_code?.id || // ID reference
-          null;
-
-    console.log("Comparing:", langCode, "with requested:", languageCode);
+    const langCode = t.languages_id?.code;
+    console.log(`Comparing: "${langCode}" === "${languageCode}"`, langCode === languageCode);
     return langCode === languageCode;
   });
 
-  console.log("Found translation:", translation);
-
   if (!translation) {
-    console.log(
-      "No translation found for",
-      languageCode,
-      "- returning original"
-    );
-    return post;
+    console.log(`No translation found for "${languageCode}"`);
+    // Return first translation as fallback, or the post as-is
+    return translations.length > 0 
+      ? { ...post, title: translations[0].title, excerpt: translations[0].excerpt, content: translations[0].content }
+      : post;
   }
+
+  console.log(`✅ Found translation:`, translation);
 
   // Return the post with translated content
   return {
     ...post,
-    title: translation.title || post.title,
-    excerpt: translation.excerpt || post.excerpt,
-    content: translation.content || post.content,
+    title: translation.title,
+    excerpt: translation.excerpt,
+    content: translation.content,
   };
+};
+
+/**
+ * Fetch comments for a specific blog post
+ * @param {string|number} blogPostId - Blog post ID
+ * @returns {Promise<Array>} Array of comments
+ */
+export const fetchComments = async (blogPostId) => {
+  try {
+    const comments = await directus.request(
+      readItems("comments", {
+        fields: [
+          "id",
+          "author_name",
+          "author_email",
+          "comment_text",
+          "created_at",
+          "status",
+        ],
+        filter: {
+          _and: [
+            { blog_post: { _eq: blogPostId } },
+            { status: { _eq: "published" } },
+          ],
+        },
+        sort: ["-created_at"],
+      })
+    );
+
+    return comments;
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    return [];
+  }
+};
+
+/**
+ * Submit a new comment
+ * @param {string|number} blogPostId - Blog post ID
+ * @param {Object} commentData - Comment data
+ * @param {string} commentData.author_name - Commenter's name
+ * @param {string} commentData.author_email - Commenter's email
+ * @param {string} commentData.comment_text - Comment text
+ * @returns {Promise<Object>} Created comment
+ */
+export const submitComment = async (blogPostId, commentData) => {
+  try {
+    // Create the comment with status 'draft' for moderation
+    const comment = await directus.request(
+      createItem("comments", {
+        blog_post: blogPostId,
+        author_name: commentData.author_name,
+        author_email: commentData.author_email,
+        comment_text: commentData.comment_text,
+        status: "draft", // Set to 'draft' for moderation
+        created_at: new Date().toISOString(),
+      })
+    );
+
+    // Increment comment count in blog post
+    await incrementCommentCount(blogPostId);
+
+    return comment;
+  } catch (error) {
+    console.error("Error submitting comment:", error);
+    throw error;
+  }
+};
+
+/**
+ * Increment comment count for a blog post
+ * @param {string|number} blogPostId - Blog post ID
+ * @returns {Promise<boolean>} Success status
+ */
+const incrementCommentCount = async (blogPostId) => {
+  try {
+    // First fetch current count
+    const post = await directus.request(
+      readItem("blog_post", blogPostId, {
+        fields: ["comments_count"],
+      })
+    );
+
+    const currentCount = post.comments_count || 0;
+
+    // Update with incremented count
+    await directus.request(
+      updateItem("blog_post", blogPostId, {
+        comments_count: currentCount + 1,
+      })
+    );
+
+    return true;
+  } catch (error) {
+    console.error("Error incrementing comment count:", error);
+    return false;
+  }
+};
+
+/**
+ * Increment view count for a blog post
+ * @param {string|number} blogPostId - Blog post ID
+ * @returns {Promise<boolean>} Success status
+ */
+export const incrementViewCount = async (blogPostId) => {
+  try {
+    // First fetch current count
+    const post = await directus.request(
+      readItem("blog_post", blogPostId, {
+        fields: ["views"],
+      })
+    );
+
+    const currentViews = post.views || 0;
+
+    // Update with incremented count
+    await directus.request(
+      updateItem("blog_post", blogPostId, {
+        views: currentViews + 1,
+      })
+    );
+
+    return true;
+  } catch (error) {
+    console.error("Error incrementing view count:", error);
+    return false;
+  }
+};
+
+/**
+ * Toggle like for a blog post (like/unlike)
+ * @param {string|number} blogPostId - Blog post ID
+ * @param {boolean} isCurrentlyLiked - Whether the post is currently liked by user
+ * @returns {Promise<{likes: number, isLiked: boolean}>} New like count and liked status
+ */
+export const toggleLike = async (blogPostId, isCurrentlyLiked) => {
+  try {
+    // First fetch current likes count
+    const post = await directus.request(
+      readItem("blog_post", blogPostId, {
+        fields: ["likes"],
+      })
+    );
+
+    const currentLikes = post.likes || 0;
+    let newLikes;
+
+    if (isCurrentlyLiked) {
+      // Unlike: decrease count
+      newLikes = Math.max(0, currentLikes - 1); // Never go below 0
+    } else {
+      // Like: increase count
+      newLikes = currentLikes + 1;
+    }
+
+    // Update like count
+    await directus.request(
+      updateItem("blog_post", blogPostId, {
+        likes: newLikes,
+      })
+    );
+
+    return {
+      likes: newLikes,
+      isLiked: !isCurrentlyLiked,
+    };
+  } catch (error) {
+    console.error("Error toggling like:", error);
+    throw error;
+  }
 };

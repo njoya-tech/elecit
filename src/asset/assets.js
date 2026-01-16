@@ -61,6 +61,11 @@ import IMG24 from "./images/courant_faible.jpg";
 import IMG25 from "./images/agent_maintenace.jpg";
 import IMG26 from "./images/energy_renouvelable.jpg";
 import IMG27 from "./images/computer.jpg";
+import IMG28 from "./images/office_1.jpg";
+import IMG29 from "./images/office_2.jpg";
+import IMG30 from "./images/office_3.jpg";
+
+
 
 //========== PARTNERS IMAGES ==========
 
@@ -147,6 +152,9 @@ export const IMAGES = {
   IMG25: IMG25,
   IMG26: IMG26,
   IMG27: IMG27,
+  IMG28: IMG28,
+  IMG29: IMG29,
+  IMG30: IMG30,
 };
 
 export const PARTNERS = {

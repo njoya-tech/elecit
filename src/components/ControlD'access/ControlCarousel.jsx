@@ -9,9 +9,9 @@ const ControlCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { image: IMAGES.IMG1 },
-    { image: IMAGES.IMG2 },
-    { image: IMAGES.IMG3 },
+    { image: IMAGES.IMG28 },
+    { image: IMAGES.IMG29 },
+    { image: IMAGES.IMG30 },
   ];
 
   // Auto-play carousel

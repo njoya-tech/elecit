@@ -1,23 +1,62 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState, useRef, useEffect, useMemo } from "react";
-import { useTranslation } from 'react-i18next';
-import { MY_COLORS } from "../../constants/colors";
-import { fetchPostById, getAssetUrl } from "../../../src/services/blog.js"
+import {
+  fetchPostById,
+  getAssetUrl,
+  getTranslation,
+  fetchComments, // ADD THIS
+  submitComment, // ADD THIS
+  incrementViewCount, // ADD THIS
+  toggleLike,
+} from "../../../src/services/blog.js";
+import { useEffect, useState, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { MY_COLORS } from "../../constants/colors.js";
 
-const BlogDetail = ({ postId, onBack = () => window.history.back() }) => { 
-  const { t } = useTranslation();
-  
+// Helper to check if user has liked a post (using localStorage)
+const hasUserLikedPost = (postId) => {
+  try {
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "[]");
+    return likedPosts.includes(postId);
+  } catch {
+    return false;
+  }
+};
+
+// Helper to save liked status
+const setUserLikedPost = (postId, isLiked) => {
+  try {
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "[]");
+    if (isLiked && !likedPosts.includes(postId)) {
+      likedPosts.push(postId);
+    } else if (!isLiked) {
+      const index = likedPosts.indexOf(postId);
+      if (index > -1) likedPosts.splice(index, 1);
+    }
+    localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+  } catch (error) {
+    console.error("Error saving liked post:", error);
+  }
+};
+
+const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
+  const { t, i18n } = useTranslation();
+
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isLiked, setIsLiked] = useState(false);
-  const [comment, setComment] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const menuRef = useRef(null);
   const categoryDropdownRef = useRef(null);
+  // Comment states
+  const [comment, setComment] = useState("");
+  const [commentAuthorName, setCommentAuthorName] = useState("");
+  const [commentAuthorEmail, setCommentAuthorEmail] = useState("");
+  const [comments, setComments] = useState([]);
+  const [submittingComment, setSubmittingComment] = useState(false);
 
   const categoryLabels = useMemo(
     () => ({
@@ -34,7 +73,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
 
   // --- FIXED: Ensure loading stops even if postId is missing
   useEffect(() => {
-    console.log("BlogDetail postId:", postId); // Debug log
+    console.log("BlogDetail postId:", postId);
 
     const loadPost = async () => {
       try {
@@ -45,8 +84,17 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
           throw new Error("No postId provided");
         }
 
+        // Fetch post
         const postData = await fetchPostById(postId);
-        setPost(postData);
+        const translatedPost = getTranslation(postData, i18n.language);
+        setPost(translatedPost);
+
+        // Fetch comments - ADD THIS
+        const commentsData = await fetchComments(postId);
+        setComments(commentsData);
+
+        // Increment view count - ADD THIS
+        await incrementViewCount(postId);
       } catch (err) {
         console.error("Error loading post:", err);
         setError("Failed to load post");
@@ -56,7 +104,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
     };
 
     loadPost();
-  }, [postId]);
+  }, [postId, i18n.language]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -80,6 +128,81 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const formatCommentDate = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 1) return "Just now";
+    if (diffMins < 60) return `${diffMins}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays < 7) return `${diffDays}d ago`;
+
+    return date.toLocaleDateString("fr-FR", {
+      month: "short",
+      day: "numeric",
+    });
+  };
+
+  //handle submit comment - ADD THIS
+  const handleSubmitComment = async () => {
+    if (
+      !comment.trim() ||
+      !commentAuthorName.trim() ||
+      !commentAuthorEmail.trim()
+    ) {
+      alert("Please fill in all fields (Name, Email, and Comment)");
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(commentAuthorEmail)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    try {
+      setSubmittingComment(true);
+
+      await submitComment(postId, {
+        author_name: commentAuthorName,
+        author_email: commentAuthorEmail,
+        comment_text: comment,
+      });
+
+      // Refresh comments
+      const updatedComments = await fetchComments(postId);
+      setComments(updatedComments);
+
+      // Refresh post to get updated comment count
+      // Fetch post
+      const postData = await fetchPostById(postId);
+      const translatedPost = getTranslation(postData, i18n.language);
+      setPost(translatedPost);
+
+      // Set initial liked status
+      setIsLiked(hasUserLikedPost(postId));
+
+      // Clear form
+      setComment("");
+      setCommentAuthorName("");
+      setCommentAuthorEmail("");
+
+      alert(
+        "Comment submitted successfully! It will be visible after moderation."
+      );
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+      alert("Failed to submit comment. Please try again.");
+    } finally {
+      setSubmittingComment(false);
+    }
+  };
 
   const mainCategoriesKeys = [
     "Tous les postes",
@@ -106,17 +229,17 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('fr-FR', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString("fr-FR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
   const calculateReadTime = (content) => {
-    if (!content) return '1 min';
+    if (!content) return "1 min";
     const wordsPerMinute = 200;
-    const words = content.replace(/<[^>]*>/g, '').split(/\s+/).length;
+    const words = content.replace(/<[^>]*>/g, "").split(/\s+/).length;
     const minutes = Math.ceil(words / wordsPerMinute);
     return `${minutes} min`;
   };
@@ -125,7 +248,10 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
     return (
       <div className="w-full min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4" style={{ borderColor: MY_COLORS.secondaryGreen }}></div>
+          <div
+            className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4"
+            style={{ borderColor: MY_COLORS.secondaryGreen }}
+          ></div>
           <p className="text-gray-600">Loading post...</p>
         </div>
       </div>
@@ -136,7 +262,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
     return (
       <div className="w-full min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <p className="text-red-600 mb-4">{error || 'Post not found'}</p>
+          <p className="text-red-600 mb-4">{error || "Post not found"}</p>
           <button
             onClick={() => onBack()}
             className="px-6 py-2 rounded-md font-semibold text-white"
@@ -150,7 +276,9 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
   }
 
   const coverImageUrl = getAssetUrl(post.cover_image);
-  const authorAvatarUrl = post.author?.avatar ? getAssetUrl(post.author.avatar) : "https://i.pravatar.cc/150?img=1";
+  const authorAvatarUrl = post.author?.avatar
+    ? getAssetUrl(post.author.avatar)
+    : "https://i.pravatar.cc/150?img=1";
   const categoryName = post.category?.name || "Uncategorized";
   const readTime = calculateReadTime(post.content);
 
@@ -164,7 +292,9 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
             className="text-sm sm:text-base md:text-lg font-medium px-2 sm:px-3 py-2 whitespace-nowrap transition-colors duration-300 shrink-0"
             style={{
               color:
-                categoryName === categoryKey ? MY_COLORS.secondaryGreen : "#000",
+                categoryName === categoryKey
+                  ? MY_COLORS.secondaryGreen
+                  : "#000",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
@@ -191,7 +321,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
               e.currentTarget.style.opacity = "1";
             }}
           >
-            <span>{t('blogPage.categories.more')}</span>
+            <span>{t("blogPage.categories.more")}</span>
             <svg
               className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${
                 isDropdownOpen ? "rotate-180" : ""
@@ -243,7 +373,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
           <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
             <img
               src={authorAvatarUrl}
-              alt={post.author?.full_name || 'Author'}
+              alt={post.author?.full_name || "Author"}
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shrink-0"
             />
             <div className="min-w-0">
@@ -251,7 +381,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
                 className="font-bold text-xs sm:text-sm truncate"
                 style={{ color: MY_COLORS.secondaryGreen }}
               >
-                {post.author?.full_name || 'Anonymous'}
+                {post.author?.full_name || "Anonymous"}
               </p>
               <p className="text-xs text-gray-600">
                 {formatDate(post.created_at)} · {readTime}
@@ -282,7 +412,7 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
                   }}
                   className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 >
-                  {t('blogPage.detail.share')}
+                  {t("blogPage.detail.share")}
                 </button>
               </div>
             )}
@@ -321,28 +451,63 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
-          <button className="text-gray-600 hover:text-blue-600 transition-colors p-2" aria-label="Share on Facebook">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+          <button
+            className="text-gray-600 hover:text-blue-600 transition-colors p-2"
+            aria-label="Share on Facebook"
+          >
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
             </svg>
           </button>
 
-          <button className="text-gray-600 hover:text-gray-900 transition-colors p-2" aria-label="Share on Twitter">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+          <button
+            className="text-gray-600 hover:text-gray-900 transition-colors p-2"
+            aria-label="Share on Twitter"
+          >
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
             </svg>
           </button>
 
-          <button className="text-gray-600 hover:text-blue-700 transition-colors p-2" aria-label="Share on LinkedIn">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+          <button
+            className="text-gray-600 hover:text-blue-700 transition-colors p-2"
+            aria-label="Share on LinkedIn"
+          >
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
               <circle cx="4" cy="4" r="2" />
             </svg>
           </button>
 
-          <button onClick={handleCopyLink} className="text-gray-600 hover:text-gray-900 transition-colors p-2" aria-label="Copy link">
-            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          <button
+            onClick={handleCopyLink}
+            className="text-gray-600 hover:text-gray-900 transition-colors p-2"
+            aria-label="Copy link"
+          >
+            <svg
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+              />
             </svg>
           </button>
         </div>
@@ -350,105 +515,191 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12 pb-8 sm:pb-12 border-b border-gray-200 gap-4 sm:gap-0">
           <div className="flex items-center flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600">
             <span>
-              {post.views || 0} {post.views === 1 ? t('blogPage.cards.view') : t('blogPage.cards.views')}
+              {post.views || 0}{" "}
+              {post.views === 1
+                ? t("blogPage.cards.view")
+                : t("blogPage.cards.views")}
             </span>
             <span>
-              {post.comments_count || 0} {post.comments_count === 1 ? t('blogPage.cards.comment') : t('blogPage.cards.comments')}
+              {post.comments_count || 0}{" "}
+              {post.comments_count === 1
+                ? t("blogPage.cards.comment")
+                : t("blogPage.cards.comments")}
+            </span>
+            <span>
+              {post.likes || 0} {post.likes === 1 ? "Like" : "Likes"}
             </span>
           </div>
 
           <button
-            onClick={() => setIsLiked(!isLiked)}
+            onClick={async () => {
+              const currentLikedStatus = isLiked;
+              const currentLikes = post.likes || 0;
+
+              try {
+                // Optimistic update
+                setIsLiked(!currentLikedStatus);
+                setPost((prevPost) => ({
+                  ...prevPost,
+                  likes: currentLikedStatus
+                    ? currentLikes - 1
+                    : currentLikes + 1,
+                }));
+
+                // Update backend
+                const result = await toggleLike(postId, currentLikedStatus);
+
+                // Save to localStorage
+                setUserLikedPost(postId, result.isLiked);
+
+                // Update with actual values
+                setIsLiked(result.isLiked);
+                setPost((prevPost) => ({
+                  ...prevPost,
+                  likes: result.likes,
+                }));
+              } catch (error) {
+                console.error("Failed to toggle like:", error);
+                // Revert on error
+                setIsLiked(currentLikedStatus);
+                setPost((prevPost) => ({
+                  ...prevPost,
+                  likes: currentLikes,
+                }));
+              }
+            }}
             className={`flex items-center gap-2 transition-all duration-300 p-2 sm:p-0 ${
               isLiked ? "text-red-500" : "text-gray-400 hover:text-red-500"
             }`}
           >
-            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill={isLiked ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            <svg
+              className="w-5 h-5 sm:w-6 sm:h-6"
+              fill={isLiked ? "currentColor" : "none"}
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
             </svg>
           </button>
         </div>
 
+        {/* COMMENTS SECTION */}
         <div className="mb-8 sm:mb-12">
           <h3 className="text-lg sm:text-xl font-bold text-black mb-4 sm:mb-6">
-            {t('blogPage.detail.commentsTitle')}
+            Comments ({comments.length})
           </h3>
 
-          <div className="border-t border-gray-200 pt-4 sm:pt-6">
+          {/* Comment Form */}
+          <div className="border-t border-gray-200 pt-4 sm:pt-6 mb-8">
             <div className="border border-gray-300 rounded-lg p-3 sm:p-4 mb-4">
+              {/* Name and Email Inputs */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                <input
+                  type="text"
+                  value={commentAuthorName}
+                  onChange={(e) => setCommentAuthorName(e.target.value)}
+                  placeholder="Your Name *"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none focus:border-gray-400 text-sm sm:text-base"
+                />
+                <input
+                  type="email"
+                  value={commentAuthorEmail}
+                  onChange={(e) => setCommentAuthorEmail(e.target.value)}
+                  placeholder="Your Email *"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none focus:border-gray-400 text-sm sm:text-base"
+                />
+              </div>
+
+              {/* Comment Textarea */}
               <textarea
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder={t('blogPage.detail.commentPlaceholder')}
-                className="w-full min-h-20 outline-none resize-none text-gray-700 text-sm sm:text-base px-3 py-2"
+                placeholder="Write your comment... *"
+                className="w-full min-h-20 outline-none resize-none text-gray-700 text-sm sm:text-base px-3 py-2 border border-gray-300 rounded-md focus:border-gray-400"
               />
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between mt-3 pt-3 border-t border-gray-200 gap-3 sm:gap-0">
-                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-                  <button className="text-gray-500 hover:text-gray-700 transition-colors p-2" aria-label="Add emoji">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </button>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end mt-3 pt-3 border-t border-gray-200 gap-3 sm:gap-4">
+                <button
+                  onClick={() => {
+                    setComment("");
+                    setCommentAuthorName("");
+                    setCommentAuthorEmail("");
+                  }}
+                  className="text-sm font-medium hover:underline whitespace-nowrap"
+                  style={{ color: MY_COLORS.secondaryGreen }}
+                >
+                  Cancel
+                </button>
 
-                  <button className="text-gray-500 hover:text-gray-700 transition-colors p-2" aria-label="Upload image">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </button>
-
-                  <button className="text-gray-500 hover:text-gray-700 transition-colors p-2" aria-label="Add GIF">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-                    </svg>
-                  </button>
-
-                  <button className="text-gray-500 hover:text-gray-700 transition-colors p-2" aria-label="Upload video">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div className="flex items-center justify-end gap-3 sm:gap-4">
-                  <button
-                    onClick={() => setComment("")}
-                    className="text-sm font-medium hover:underline whitespace-nowrap"
-                    style={{ color: MY_COLORS.secondaryGreen }}
-                  >
-                    {t('blogPage.detail.cancel')}
-                  </button>
-
-                  <button
-                    onClick={() => {
-                      console.log("Comment:", comment);
-                      setComment("");
-                    }}
-                    disabled={!comment.trim()}
-                    className="px-4 sm:px-6 py-2 rounded-md font-semibold text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 whitespace-nowrap shrink-0"
-                    style={{
-                      backgroundColor: comment.trim()
+                <button
+                  onClick={handleSubmitComment}
+                  disabled={
+                    !comment.trim() ||
+                    !commentAuthorName.trim() ||
+                    !commentAuthorEmail.trim() ||
+                    submittingComment
+                  }
+                  className="px-4 sm:px-6 py-2 rounded-md font-semibold text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 whitespace-nowrap shrink-0"
+                  style={{
+                    backgroundColor:
+                      comment.trim() &&
+                      commentAuthorName.trim() &&
+                      commentAuthorEmail.trim() &&
+                      !submittingComment
                         ? MY_COLORS.secondaryGreen
                         : "#9ca3af",
-                    }}
-                  >
-                    {t('blogPage.detail.publish')}
-                  </button>
-                </div>
+                  }}
+                >
+                  {submittingComment ? "Submitting..." : "Publish Comment"}
+                </button>
               </div>
             </div>
 
-            <div className="text-xs sm:text-sm text-gray-600 text-center sm:text-left">
-              <a
-                href="#"
-                className="font-medium hover:underline"
-                style={{ color: MY_COLORS.secondaryGreen }}
-              >
-                {t('blogPage.detail.login')}
-              </a>{" "}
-              {t('blogPage.detail.loginPrompt')}
+            <div className="text-xs sm:text-sm text-gray-600">
+              <p className="mb-1">* All fields are required</p>
+              <p>Comments are moderated and will appear after approval.</p>
             </div>
           </div>
+
+          {/* Display Comments */}
+          {comments.length > 0 ? (
+            <div className="space-y-6">
+              {comments.map((commentItem) => (
+                <div
+                  key={commentItem.id}
+                  className="border-b border-gray-200 pb-6 last:border-b-0"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-white font-bold shrink-0">
+                      {commentItem.author_name?.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="font-bold text-sm text-gray-900">
+                          {commentItem.author_name}
+                        </p>
+                        <span className="text-xs text-gray-500">
+                          {formatCommentDate(commentItem.created_at)}
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {commentItem.comment_text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8 text-gray-500">
+              <p>No comments yet. Be the first to comment!</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -465,65 +716,91 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
               onClick={() => setIsShareModalOpen(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors p-1"
             >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
-              {t('blogPage.detail.shareModal.title')}
+              {t("blogPage.detail.shareModal.title")}
             </h3>
 
             <div className="grid grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <button className="flex flex-col items-center gap-2 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition-colors group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                   </svg>
                 </div>
                 <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                  {t('blogPage.detail.shareModal.facebook')}
+                  {t("blogPage.detail.shareModal.facebook")}
                 </span>
               </button>
 
               <button className="flex flex-col items-center gap-2 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition-colors group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-900 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
                   </svg>
                 </div>
                 <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                  {t('blogPage.detail.shareModal.twitter')}
+                  {t("blogPage.detail.shareModal.twitter")}
                 </span>
               </button>
 
               <button className="flex flex-col items-center gap-2 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition-colors group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-700 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
                     <circle cx="4" cy="4" r="2" />
                   </svg>
                 </div>
                 <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                  {t('blogPage.detail.shareModal.linkedin')}
+                  {t("blogPage.detail.shareModal.linkedin")}
                 </span>
               </button>
 
               <button className="flex flex-col items-center gap-2 p-3 sm:p-4 rounded-xl hover:bg-gray-50 transition-colors group">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                   </svg>
                 </div>
                 <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                  {t('blogPage.detail.shareModal.whatsapp')}
+                  {t("blogPage.detail.shareModal.whatsapp")}
                 </span>
               </button>
             </div>
 
             <div className="border-t border-gray-200 pt-4 sm:pt-6">
               <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2 sm:mb-3">
-                {t('blogPage.detail.shareModal.copyLink')}
+                {t("blogPage.detail.shareModal.copyLink")}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                 <input
@@ -537,7 +814,9 @@ const BlogDetail = ({ postId, onBack = () => window.history.back() }) => {
                   className="px-4 sm:px-6 py-2 rounded-lg font-medium text-white transition-colors whitespace-nowrap shrink-0 mt-2 sm:mt-0"
                   style={{ backgroundColor: MY_COLORS.secondaryGreen }}
                 >
-                  {copySuccess ? t('blogPage.detail.shareModal.copied') : t('blogPage.detail.shareModal.copy')}
+                  {copySuccess
+                    ? t("blogPage.detail.shareModal.copied")
+                    : t("blogPage.detail.shareModal.copy")}
                 </button>
               </div>
             </div>

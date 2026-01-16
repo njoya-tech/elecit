@@ -1,34 +1,53 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useMemo } from "react";
-import { IMAGES } from "../../asset/assets";
 import { useTranslation } from 'react-i18next';
+import { fetchAllPosts, getAssetUrl, getTranslation } from "../../services/blog.js";
 
-const BlogContact = () => {
+const BlogContact = ({ onPostClick }) => {
   const { t, i18n } = useTranslation();
   const [page, setPage] = useState(0);
   const [animate, setAnimate] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Get translated blog articles - add i18n.language as dependency
-  const blogArticles = useMemo(() => {
-  return t('contact.blog.articles', { returnObjects: true }) || [];
-}, [t,]);
+  // Fetch real blog posts from Directus
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        setLoading(true);
+        
+        // Fetch all posts (you can limit to 6 or 9 for the carousel)
+        const directusPosts = await fetchAllPosts({
+          limit: 6,
+          sort: "-created_at"
+        });
 
+        // Transform and translate posts
+        const transformedPosts = directusPosts.map((post) => {
+          const translatedPost = getTranslation(post, i18n.language);
+          
+          return {
+            id: translatedPost.id,
+            title: translatedPost.title,
+            excerpt: translatedPost.excerpt,
+            image: getAssetUrl(translatedPost.cover_image) || "https://via.placeholder.com/500x400",
+            author: {
+              name: translatedPost.author?.full_name || "Unknown Author",
+              avatar: getAssetUrl(translatedPost.author?.avatar) || "https://i.pravatar.cc/150?img=1",
+            },
+          };
+        });
 
-  // Map images to articles
-  const BLOG_POSTS = useMemo(() => {
-    const imageMap = [
-      IMAGES.IMG1,
-      IMAGES.IMG2,
-      IMAGES.IMG3,
-      IMAGES.IMG4,
-      IMAGES.IMG5,
-      IMAGES.IMG6,
-    ];
+        setPosts(transformedPosts);
+      } catch (error) {
+        console.error("Error loading blog posts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    return blogArticles.map((article, index) => ({
-      ...article,
-      image: imageMap[index % imageMap.length],
-    }));
-  }, [blogArticles]);
+    loadPosts();
+  }, [i18n.language]); // Reload when language changes
 
   // Responsive posts per page
   const [postsPerPage, setPostsPerPage] = useState(3);
@@ -50,10 +69,10 @@ const BlogContact = () => {
     return () => window.removeEventListener("resize", updatePostsPerPage);
   }, []);
 
-  const totalPages = Math.ceil(BLOG_POSTS.length / postsPerPage);
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
   const startIndex = page * postsPerPage;
-  const visiblePosts = BLOG_POSTS.slice(startIndex, startIndex + postsPerPage);
+  const visiblePosts = posts.slice(startIndex, startIndex + postsPerPage);
 
   const nextPage = () => {
     setPage((prev) => (prev + 1) % totalPages);
@@ -82,12 +101,47 @@ const BlogContact = () => {
 
   // auto slide
   useEffect(() => {
+    if (posts.length === 0) return;
+    
     const interval = setInterval(() => {
       handleNext();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [page, totalPages]);
+  }, [page, totalPages, posts.length]);
+
+  // Handle post click
+  const handlePostClick = (postId) => {
+    if (onPostClick) {
+      onPostClick(postId);
+    }
+  };
+
+  // Loading state
+  if (loading) {
+    return (
+      <section className="w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00729B]"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Empty state
+  if (posts.length === 0) {
+    return (
+      <section className="w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-20">
+            <p className="text-gray-600 text-lg">No blog posts available.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6">
@@ -112,15 +166,16 @@ const BlogContact = () => {
                 : "translate-x-0 opacity-100"
             }`}
           >
-            {visiblePosts.map((post) => (
+            {visiblePosts.map((post, index) => (
               <article
                 key={`${post.id}-${i18n.language}`}
-                className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8"
+                onClick={() => handlePostClick(post.id)}
+                className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8 cursor-pointer"
               >
                 {/* Number badge */}
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
                   <div className="h-12 w-12 rounded-full bg-[#00729B] text-white flex items-center justify-center text-lg font-bold shadow-md">
-                    {post.id}
+                    {startIndex + index + 1}
                   </div>
                 </div>
 
