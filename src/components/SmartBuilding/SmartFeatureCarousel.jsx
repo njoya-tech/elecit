@@ -19,6 +19,7 @@ import sm14 from '../../assets/new/sm14.jpg'
 import sm15 from '../../assets/new/sm15.jpg'
 import sm16 from '../../assets/new/sm16.jpg'
 import sm17 from '../../assets/new/sm17.jpg'
+import { useNavigate } from 'react-router-dom';
 
 import an15 from '../../assets/new/an15.jpg'
 
@@ -34,6 +35,7 @@ const MY_COLORS = {
 const SmartFeatureCarousel = ({ activeTab = 'smartHome' }) => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate()
 
   // Images définies localement (ne changent pas avec la langue)
   const slideImages = {
@@ -198,6 +200,7 @@ const SmartFeatureCarousel = ({ activeTab = 'smartHome' }) => {
             <button 
               className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium hover:opacity-90 transition-all"
               style={{ backgroundColor: MY_COLORS.black }}
+              onClick={() => navigate('/projets')}
             >
               {t(`${activeTab}.buttonText`)}
             </button>

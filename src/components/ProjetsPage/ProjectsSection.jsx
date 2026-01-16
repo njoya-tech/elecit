@@ -1,7 +1,5 @@
 
-
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import rail from '../../assets/rail.svg';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +12,7 @@ import an9 from '../../assets/new/an9.jpg'
 import an12 from '../../assets/new/an12.jpeg'
 import an11 from '../../assets/new/an11.jpg'
 import an8 from '../../assets/new/an8.jpg'
+import ProjectsService from '../../services/projects.service';
 
 
 
@@ -30,63 +29,13 @@ const MY_COLORS = {
   lightGray: '#F5F5F5'
 };
 
-// Mapping des images pour chaque projet
-const PROJECT_IMAGES = {
-  1: {
-    main: BM3,
-     gallery: [
-  BM3 ]
-  },
-  2: {
-    main: an5,
-     gallery: [
-  an5]
-  },
-  3: {
-    main: c2,
-    gallery: [
-     c2 ]
-  },
-  4: {
-    main: an7,
-     gallery: [
-an7]
-  },
-  5: {
-    main: an10,
-    gallery: [
-  an10
-]
-  },
-  6: {
-    main: an9,
-    gallery: [
-an9]
-  },
-  7: {
-    main: an8,
-    gallery: [
- an8]
-  },
-  8: {
-    main: an12,
-    gallery: [
- an12
-]
-  },
-  9: {
-    main: an11, 
-    gallery: [
-  an11
-]
-  }
-};
+
 
 
 
 const ProjectCard = ({ project, onClick }) => {
   const { t } = useTranslation();
-  const projectImage = PROJECT_IMAGES[project.id]?.main || 'https://via.placeholder.com/400x300';
+  const projectImage = project.mainImage || 'https://via.placeholder.com/400x300';
   
   return (
     <div 
@@ -186,11 +135,9 @@ const ProjectModal = ({ project, onClose }) => {
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const carouselImages = PROJECT_IMAGES[project.id]?.gallery || [
-    'https://via.placeholder.com/800x600',
-    'https://via.placeholder.com/800x600',
-    'https://via.placeholder.com/800x600'
-  ];
+  const carouselImages = project.gallery && project.gallery.length > 0 
+    ? project.gallery 
+    : ['https://via.placeholder.com/800x600'];
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
@@ -402,44 +349,71 @@ const ProjectModal = ({ project, onClose }) => {
 };
 
 const ProjectsSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [categories, setCategories] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+useEffect(() => {
+  console.log('🎯 VITE_DIRECTUS_URL:', import.meta.env.VITE_DIRECTUS_URL);
+  console.log('🎯 Projets chargés:', projects);
+  console.log('🎯 Premier projet mainImage:', projects[0]?.mainImage);
+}, [projects]);
+  // Charger les catégories et projets depuis Directus
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const [categoriesData, projectsData] = await Promise.all([
+          ProjectsService.getCategories(i18n.language),
+          ProjectsService.getProjects(i18n.language)
+        ]);
 
-  const categories = t('projects.categories', { returnObjects: true });
-  const projectsData = t('projects.projectsData', { returnObjects: true });
+ setCategories([
+          { 
+            id: 'all', 
+            label: t('p.all1') // 🔥 Traduction dynamique
+          },
+          ...categoriesData
+        ]);
 
+        setProjects(projectsData);
+      } catch (error) {
+        console.error('Erreur chargement données:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [i18n.language, t]);
+
+  // Filtrer les projets par catégorie
   const filteredProjects = activeCategory === 'all' 
-    ? projectsData
-    : projectsData.filter(p => {
-        const categoryLabel = categories.find(cat => cat.id === activeCategory)?.label;
-        return p.category === categoryLabel;
-      });
+    ? projects
+    : projects.filter(p => p.categoryId === activeCategory);
+
+  if (loading) {
+    return (
+      <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6 flex justify-center items-center" style={{backgroundColor: MY_COLORS.white}}>
+        <div className="text-xl" style={{ color: MY_COLORS.primaryGreen }}>
+          {t('projects.loading')}...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6" style={{backgroundColor: MY_COLORS.white}}>
       <div className="max-w-7xl mx-auto">
         {/* Tabs de catégories */}
-        <div className="
-          flex flex-wrap 
-          justify-center 
-          gap-2 xs:gap-3 sm:gap-4 
-          mb-8 sm:mb-12 md:mb-16
-        ">
+        <div className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4 mb-8 sm:mb-12 md:mb-16">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className="
-                px-3 xs:px-4 sm:px-5 md:px-6 
-                py-2 sm:py-2.5 md:py-3 
-                text-xs xs:text-sm sm:text-base
-                font-semibold 
-                transition-all duration-300 
-                relative
-                whitespace-nowrap
-                hover:scale-105
-              "
+              className="px-3 xs:px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs xs:text-sm sm:text-base font-semibold transition-all duration-300 relative whitespace-nowrap hover:scale-105"
               style={{
                 color: activeCategory === category.id 
                   ? MY_COLORS.secondaryGreen 

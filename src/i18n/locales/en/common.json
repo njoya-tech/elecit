@@ -10,7 +10,69 @@
     "contacts": "Contact"
   },
 
+<<<<<<< HEAD
   "smartBuilding": {
+=======
+  "footer": {
+  "banner": {
+    "availableEverywhere": "Service available everywhere",
+    "phoneNumber": "+237 650 416 640",
+    "phoneLabel": "Phone"
+  },
+  "company": {
+    "description": "All our technical and technological potential at the service of your imagination"
+  },
+  "services": {
+    "title": "SERVICES",
+    "mechanicalFabrication": "Design, Mechanical & Metal Fabrication",
+    "smartBuilding": "Smart Buildings & Automation",
+    "gpsTracking": "GPS & Tracking (More Than Track)",
+    "itServices": "IT Services & Data Processing",
+    "designOffice": "Design Office: Engineering & Conception",
+    "afterSales": "After-sales service available 24/7"
+  },
+  "usefulLinks": {
+    "title": "USEFUL LINKS",
+    "mangoBoutique": "MANGO BOUTIQUE",
+    "foczou": "FOCZOU",
+    "moreThanTrack": "MORE THAN TRACK",
+    "matoa": "MATOA"
+  },
+  "newsletter": {
+    "title": "NEWSLETTER",
+    "description": "Future partner, job seeker, or other? Subscribe to our newsletter and don't miss our latest news",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "submitButton": "Join",
+    "submitting": "Submitting...",
+    "errors": {
+      "emptyEmail": "Please enter an email address",
+      "generic": "An error occurred. Please try again."
+    },
+    "messages": {
+      "success": "Thank you! Your subscription has been registered."
+    }
+  },
+  "copyright": {
+    "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "legalNotice": "Legal Notice"
+  },
+  "contact": {
+    "floatingButton": "Contact us",
+    "popup": {
+      "title": "Contact Us",
+      "subtitle": "We will respond as soon as possible",
+      "availability": " ",
+      "messagePlaceholder": "Write your message...",
+      "openWhatsApp": "Open WhatsApp"
+    }
+  }
+},
+
+
+    "smartBuilding": {
+>>>>>>> junior
     "title": "SMART BUILDING",
     "subtitle": "Custom solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy efficiency and connectivity combined in intelligent architecture.",
     "buttonText": "Visit the showroom",
@@ -1285,6 +1347,174 @@
           "description": "Generation of periodic reports (logbook, routes, anomalies, consumption...)/ Export of reports in EXCEL, PDF, images, videos format."
         }
       }
+<<<<<<< HEAD
+=======
+    }  
+  },
+"whyChooseUs": {
+  "title": "Why choose us?",
+  "subtitle": "Our tracking solutions offer concrete benefits in visibility, security and operations optimization, for better real-time control of your resources.",
+  "feature1": "Remote immobilization/anti-theft system included free of charge.",
+  "feature2": "Access to licensed web platform and/or dedicated mobile app.",
+  "feature3": "All parameters and management tools accessible without additional fees.",
+  "feature4": "Free international coverage (CEMAC zone).",
+  "feature5": "Maintenance, servicing and after-sales intervention offered in Douala and Yaoundé.",
+  "feature6": "Up to 1 year warranty on equipment."
+},
+  "p":{
+    "all1":"All projects"
+
+  },
+
+"projects": {
+   "categories": {
+      "all": "All projects",
+      "smart": "Smart building",
+      "fabrication": "Mechanical manufacturing",
+      "genie": "Civil engineering",
+      "interne": "Internal project"
+    },
+  "projectCard": {
+    "seeMore": "See more"
+  },
+  "projectModal": {
+    "mechanicalFabrication": "Mechanical manufacturing",
+    "project": "Project:",
+    "dateRealisation": "Completion date:",
+    "projectStatus": "Project status:",
+    "projectDescription": "Project description:",
+    "utility": "Benefits:",
+    "clientFeedback": "Client feedback:",
+    "haveProject": "Do you have a project?",
+    "close": "Close"
+  },
+  "projectsData": [
+    {
+      "id": 1,
+      "number": "1",
+      "title": "Mobile Bank",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions.",
+      "dateRealisation": "12/06/23",
+      "statut": "completed",
+      "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions",
+      "utilite": "This project addresses the critical need for smooth internal mobility, reducing on-site team travel time while ensuring their safety and comfort.",
+      "retourClient": "Thanks to these new means of transport, we have reduced internal travel delays by 30%, while improving the comfort of our employees.",
+      "responsable": "Logistics Manager"
+    },
+    {
+      "id": 2,
+      "number": "2",
+      "title": "Personnel Transport Truck",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Technical and functional restructuring of a truck for personnel transportation.",
+      "dateRealisation": "15/08/23",
+      "statut": "completed",
+      "description": "Technical and functional restructuring of a truck for personnel transportation.",
+      "utilite": "Improved productivity and decision-making through advanced analytics tools.",
+      "retourClient": "The implementation of this solution has transformed our way of working and increased our efficiency by 40%.",
+      "responsable": "IT Director"
+    },
+    {
+      "id": 3,
+      "number": "3",
+      "title": "Brick Making Machine (Brick Press)",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
+      "dateRealisation": "20/09/23",
+      "statut": "in progress",
+      "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
+      "utilite": "Ensure the safety of occupants and property while optimizing access management.",
+      "retourClient": "The peace of mind provided by this system is invaluable to our organization.",
+      "responsable": "Security Chief"
+    },
+    {
+      "id": 4,
+      "number": "4",
+      "title": "Metal Warehouse Construction",
+      "category": "Civil engineering",
+      
+      "shortDescription": "Study, design and construction of a metal warehouse for industrial and logistics use.",
+      "dateRealisation": "05/10/23",
+      "statut": "completed",
+      "description": "Study, design and construction of a metal warehouse for industrial and logistics use.",
+      "utilite": "Reduced downtime and improved operational efficiency.",
+      "retourClient": "This solution allowed us to reduce our maintenance costs by 25%.",
+      "responsable": "Production Director"
+    },
+    {
+      "id": 5,
+      "number": "5",
+      "title": "Home Automation Installation in a Villa",
+      "category": "Smart building",
+      
+      "shortDescription": "Complete installation of a residential home automation system including intelligent management.",
+      "dateRealisation": "12/11/23",
+      "statut": "in progress",
+      "description": "Complete installation of a residential home automation system including intelligent management.",
+      "utilite": "Ensure reliable and high-performance connectivity for all services.",
+      "retourClient": "The new network has significantly improved our daily productivity.",
+      "responsable": "Infrastructure Manager"
+    },
+    {
+      "id": 6,
+      "number": "6",
+      "title": "Home Automation Installation in a Bank",
+      "category": "Smart building",
+      
+      "shortDescription": "Deployment of a professional home automation system for a bank, including intelligent management.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Deployment of a professional home automation system for a bank, including intelligent management.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    },
+    {
+      "id": 7,
+      "number": "7",
+      "title": "Manufacturing of a 3-in-1 Stepladder",
+      "category": "Mechanical manufacturing",
+      
+      "shortDescription": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    },
+    {
+      "id": 8,
+      "number": "8",
+      "title": "Creation and Layout of the Showroom",
+      "category": "Internal project",
+      
+      "shortDescription": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+    },
+    {
+      "id": 9,
+      "number": "9",
+      "title": "Opening of the Display Store",
+      "category": "Internal project",
+      
+      "shortDescription": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
+      "dateRealisation": "18/12/23",
+      "statut": "completed",
+      "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
+      "utilite": "Free up time for teams and reduce human errors.",
+      "retourClient": "Automation has transformed our daily way of working.",
+      "responsable": "Operations Director"
+>>>>>>> junior
     }
   },
   "whyChooseUs": {
@@ -1464,6 +1694,7 @@
     "subtitleRound": "Let's build it together from today",
     "buttonRound": "Contact us"
   },
+<<<<<<< HEAD
   "jobOffers": {
     "previous": "Previous",
     "next": "Next",
@@ -1533,4 +1764,84 @@
     "step5Title": "Decision making",
     "step5Description": "The selected candidate(s) will be called back for a job offer."
   }
+=======
+    "jobOffers": {
+  "previous": "Previous",
+  "next": "Next",
+  "title": "All job offers",
+  "filterTitle": "Filter offers",
+  "filterPoste": "Position",
+  "filterPostePlaceholder": "Ex: Engineer, Technician...",
+  "filterLocation": "Location",
+  "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
+  "filterDateFrom": "Start date",
+  "filterDateTo": "End date",
+  "resetFilters": "Reset filters",
+  "viewButton": "View all",
+  "noResults": "No offers match your search criteria",
+  "modal": {
+    "submitError": "Submission error",
+      "submitSuccess": "Application sent successfully!",
+      "submitSuccessMessage": "We will contact you soon.",
+      "alreadyApplied": "You have already applied for this position.",
+      "recentSpontaneousApplication": "You have already submitted a spontaneous application recently. Please wait before submitting another one.",
+    "back": "Back to offers",
+    "typePoste": "Position type:",
+    "lieuPoste": "Location:",
+    "datePublication": "Publication date:",
+    "validJusquau": "Valid until:",
+    "description": "Description",
+    "responsibilities": "Responsibilities",
+    "activities": "Activities:",
+    "profile": "Required profile",
+    "applyButton": "Apply now",
+    "formTitle": "APPLY ONLINE",
+    "name": "First name",
+    "namePlaceholder": "Enter your first name",
+    "lastName": "Last name",
+    "lastNamePlaceholder": "Enter your last name",
+    "email": "Email *",
+    "emailPlaceholder": "Enter your email",
+    "phone": "Phone *",
+    "phonePlaceholder": "Enter your phone...",
+    "sex": "Gender *",
+    "male": "Male",
+    "female": "Female",
+    "dateOfBirth": "Date of birth *",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "position": "Position *",
+    "positionPlaceholder": "Enter the position name",
+    "motivation": "Why do you think you have the best profile? *",
+    "motivationPlaceholder": "Type your message",
+    "joinCV": "Attach your CV *",
+    "addFile": "Add file",
+    "sendApplication": "Send application"
+  }
+},
+  "recruitment": {
+    "spontaneousTitle": "Apply Spontaneously",
+"spontaneousSubtitle": "Join our team and be part of something great",
+  "titleRound": "No offers at the moment",
+  "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
+  "buttonText": "Apply here",
+  "heroTitle1": "For job seekers,",
+  "heroTitle2": "we recruit",
+  "heroSubtitle": "Join a young and talented team and contribute with your expertise to a vision focused on technological innovation, professionalism and progress.",
+  "processTitle": "Recruitment process",
+  "step1Title": "Attachments",
+  "step1Description": "We evaluate the compliance of your CV (in French and English), cover letter and diplomas.",
+  "step2Title": "1st Interview",
+  "step2Description": "A phone interview is conducted beforehand to get to know you better.",
+  "step3Title": "2nd Interview",
+  "step3Description": "An in-person interview will take place between managers and you on various topics.",
+  "step4Title": "Practical case",
+  "step4Description": "Candidates may be given a test to measure their technical skills.",
+  "step5Title": "Decision making",
+  "step5Description": "The selected candidate(s) will be called back for a job offer."
+}
+
+
+>>>>>>> junior
 }

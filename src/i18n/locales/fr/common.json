@@ -26,6 +26,10 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
+  "p":{
+    "all1":"Tous les projets"
+
+  },
 
   "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
@@ -297,7 +301,15 @@
       "description": "Futur partenaire, chercheur d'emploi, autre? Abonnez vous à notre newsletter et ne manquez pas nos dernières actualités",
       "emailLabel": "Email",
       "emailPlaceholder": "Saisissez votre e-mail",
-      "submitButton": "Rejoindre"
+      "submitButton": "Rejoindre",
+       "submitting": "Envoi en cours...",
+    "messages": {
+      "success": "Merci ! Vous êtes inscrit à la newsletter."
+    },
+    "errors": {
+      "emptyEmail": "Veuillez entrer un email.",
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    }
     },
     "copyright": {
       "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
@@ -1356,11 +1368,22 @@
       "descriptionLine2": "informatiques et à tirer le meilleur parti de leurs données.",
       "button": "Publireportage"
     },
-    "projects": {
+
+  "projects": {
+    "categories": {
+      "all": "Tous les projets",
+      "smart": "Smart building",
+      "fabrication": "Fabrication mécanique",
+      "genie": "Génie civil",
+      "interne": "Projet interne"
+    },
+    "projectCard": {
+      "seeMore": "Voir plus"
+    },
       "title": "Nos projects IT",
       "subtitle": "innovation, performance et impact",
       "description": "Chaque projet présenté reflète notre engagement envers l'innovation, la rigueur et la satisfaction client.",
-      "seeMore": "Voir plus",
+      
       "items": [
         {
           "id": 1,
@@ -1538,7 +1561,11 @@
       "activities": "Activités :",
       "profile": "Profil recherché",
       "applyButton": "Postuler maintenant",
-
+     "submitError": "Erreur lors de l'envoi",
+      "submitSuccess": "Candidature envoyée avec succès !",
+      "submitSuccessMessage": "Nous vous contacterons bientôt.",
+      "alreadyApplied": "Vous avez déjà postulé pour cette offre.",
+      "recentSpontaneousApplication": "Vous avez déjà envoyé une candidature spontanée récemment. Veuillez patienter avant d'en soumettre une nouvelle.",
       "formTitle": "POSTULEZ EN LIGNE",
       "name": "Nom ",
       "namePlaceholder": "Saisissez votre prénom",

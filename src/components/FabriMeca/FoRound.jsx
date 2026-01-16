@@ -6,12 +6,13 @@ import { useTranslation } from 'react-i18next'
 import { color } from 'framer-motion'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const FoRound = () => {
   const { t } = useTranslation();
-  
+  const navigate = useNavigate()
   return (
     <div className='relative w-full flex items-center justify-center'>
       {/* Image de fond */}
@@ -69,6 +70,7 @@ const FoRound = () => {
               e.currentTarget.style.backgroundColor = 'transparent';
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
             }}
+            onClick={() => navigate('/contacts')}
           >
             {t('fab.buttonRound')}
           </button>

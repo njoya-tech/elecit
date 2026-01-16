@@ -27,12 +27,12 @@ const SmartBuildingPage = () => {
         
           <div>
             <SmartBuildingHero activeTab={activeTab} setActiveTab={setActiveTab} />
-      <SmartFeatureCarousel activeTab={activeTab} />
+                 <SmartFeatureCarousel activeTab={activeTab} />
           </div>
 
-           {/* <div className="min-h-screen" style={{ backgroundColor: '#2c3e50' }} >
-      <InterfaceCommandeCarousel />
-    </div> */}
+               {/* <div className="min-h-screen" style={{ backgroundColor: '#2c3e50' }} >
+                 <InterfaceCommandeCarousel />
+               div> */}
     <div>
       <SmartBander></SmartBander>
     </div>

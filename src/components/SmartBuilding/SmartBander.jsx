@@ -1,7 +1,7 @@
 import React from 'react'
 import sma from '../../assets/sma.png'
 import smart1 from '../../assets/smart1.jpg'
-
+import { useNavigate } from 'react-router-dom'
 import casq from '../../assets/casq.svg'
 import st1 from '../../assets/st1.png'
 import st2 from '../../assets/st2.png'
@@ -45,6 +45,8 @@ const SmartBander = () => {
      const { t } = useTranslation();
       const [currentSlide, setCurrentSlide] = useState(0);
       const [fadeIn, setFadeIn] = useState(true);
+
+      const navigate= useNavigate()
     
 const slideImages = [
     st1,
@@ -152,6 +154,7 @@ const changeSlide = (direction) => {
                       e.target.style.backgroundColor = 'transparent';
                       e.target.style.color = MY_COLORS.secondaryGreen;
                     }}
+                    onClick={() => navigate('https://mango.elecit.net')}
                   >
                     {t('interfaceCommande.buttonText')}
                   </button>

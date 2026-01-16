@@ -1,9 +1,8 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable no-unused-vars */
-// Composant Carousel de Services
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import ProjectsService from '../../services/projects.service';
 
 export const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -14,16 +13,38 @@ export const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-const ServicesCarousel = ({ services }) => {
-  const { t } = useTranslation(); // Ajout de useTranslation ici
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [isPaused, setIsPaused] = React.useState(false);
-  const [direction, setDirection] = React.useState(0);
+const ServicesCarousel = () => {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [direction, setDirection] = useState(0);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const totalSlides = services.length;
+  // Charger les projets depuis Directus
+  useEffect(() => {
+    const fetchProjects = async () => {
+      setLoading(true);
+      try {
+        const projectsData = await ProjectsService.getProjects(i18n.language);
+        // Inverser l'ordre des projets
+        setProjects(projectsData);
+      } catch (error) {
+        console.error('Erreur chargement projets:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  React.useEffect(() => {
-    if (isPaused) return;
+    fetchProjects();
+  }, [i18n.language]);
+
+  const totalSlides = projects.length;
+
+  // Auto-play du carousel
+  useEffect(() => {
+    if (isPaused || totalSlides === 0) return;
 
     const interval = setInterval(() => {
       setDirection(1);
@@ -52,7 +73,7 @@ const ServicesCarousel = ({ services }) => {
     const cards = [];
     for (let i = 0; i < 3; i++) {
       const index = (currentIndex + i) % totalSlides;
-      cards.push({ ...services[index], originalIndex: index });
+      cards.push({ ...projects[index], originalIndex: index });
     }
     return cards;
   };
@@ -73,6 +94,32 @@ const ServicesCarousel = ({ services }) => {
       opacity: 0
     })
   };
+
+  if (loading) {
+    return (
+      <div 
+        className="w-full py-16 px-4 flex justify-center items-center"
+        style={{ backgroundColor: MY_COLORS.white }}
+      >
+        <div className="text-xl" style={{ color: MY_COLORS.green }}>
+          {t('projects.loading')}...
+        </div>
+      </div>
+    );
+  }
+
+  if (projects.length === 0) {
+    return (
+      <div 
+        className="w-full py-16 px-4 flex justify-center items-center"
+        style={{ backgroundColor: MY_COLORS.white }}
+      >
+        <div className="text-xl" style={{ color: MY_COLORS.black }}>
+          Aucun projet disponible
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div 
@@ -112,70 +159,76 @@ const ServicesCarousel = ({ services }) => {
               transition={{ duration: 0.9, ease: "easeInOut" }}
               className="grid grid-cols-1 md:grid-cols-3 gap-6 px-12"
             >
-              {visibleCards.map((service, idx) => (
-                <div 
-                  key={`${currentIndex}-${idx}`}
-                  className="relative p-1 h-[480px] rounded-xl"
-                  style={{ border: `2px solid ${MY_COLORS.green}` }}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="bg-white rounded-lg shadow-lg h-full flex flex-col relative"
+              {visibleCards.map((project, idx) => {
+                const projectImage = project?.mainImage || 'https://via.placeholder.com/400x300';
+                
+                return (
+                  <div 
+                    key={`${currentIndex}-${idx}`}
+                    className="relative p-1 h-[480px] rounded-xl"
+                    style={{ border: `2px solid ${MY_COLORS.green}` }}
                   >
-                    {/* Badge */}
-                    <div
-                      className="absolute left-1/2 -translate-x-1/2 -top-6 z-20 
-                                 w-12 h-12 rounded-full flex items-center justify-center 
-                                 text-white font-bold text-xl shadow-lg"
-                      style={{ backgroundColor: MY_COLORS.green }}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      className="bg-white rounded-lg shadow-lg h-full flex flex-col relative"
                     >
-                      {((currentIndex + idx) % totalSlides) + 1}
-                    </div>
-
-                    {/* IMAGE */}
-                    <div className="relative h-64 overflow-hidden">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    {/* CONTENT */}
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <motion.h3
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-xl font-bold text-center"
+                      {/* Badge numéro */}
+                      <div
+                        className="absolute left-1/2 -translate-x-1/2 -top-6 z-20 
+                                   w-12 h-12 rounded-full flex items-center justify-center 
+                                   text-white font-bold text-xl shadow-lg"
+                        style={{ backgroundColor: MY_COLORS.green }}
                       >
-                        {service.title}
-                      </motion.h3>
-
-                      <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.35 }}
-                        className="text-sm text-center leading-relaxed"
-                      >
-                        {service.description}
-                      </motion.p>
-
-                      <div className="flex justify-center mt-4">
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          className="px-6 py-2 rounded-full text-white font-semibold"
-                          style={{ backgroundColor: MY_COLORS.green }}
-                        >
-                          {t('servicesCarousel.seeMore')}
-                        </motion.button>
+                        {project?.number || ((currentIndex + idx) % totalSlides) + 1}
                       </div>
-                    </div>
-                  </motion.div>
-                </div>
-              ))}
+
+                      {/* IMAGE */}
+                      <div className="relative h-64 overflow-hidden rounded-t-lg">
+                        <img
+                          src={projectImage}
+                          alt={project?.title || 'Projet'}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* CONTENT */}
+                      <div className="p-6 flex-1 flex flex-col justify-between">
+                        <motion.h3
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className="text-xl font-bold text-center mb-3"
+                          style={{ color: MY_COLORS.black }}
+                        >
+                          {project?.title || 'Sans titre'}
+                        </motion.h3>
+
+                        <motion.p
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.35 }}
+                          className="text-sm text-center leading-relaxed text-gray-700 line-clamp-3"
+                        >
+                          {project?.shortDescription || project?.description || ''}
+                        </motion.p>
+
+                        <div className="flex justify-center mt-4">
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            onClick={() => navigate('/projets')}
+                            className="px-6 py-2 rounded-full text-white font-semibold transition-all cursor-pointer"
+                            style={{ backgroundColor: MY_COLORS.green }}
+                          >
+                            {t('servicesCarousel.seeMore')}
+                          </motion.button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                );
+              })}
             </motion.div>
           </AnimatePresence>
 
@@ -199,7 +252,7 @@ const ServicesCarousel = ({ services }) => {
 
         {/* Indicateurs de pagination (pointillés) */}
         <div className="flex justify-center items-center gap-2 mt-8">
-          {services.map((_, index) => (
+          {projects.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}

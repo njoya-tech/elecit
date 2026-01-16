@@ -10,6 +10,7 @@ import pres6 from '../../assets/pres6.svg'
 import pres7 from '../../assets/pres7.svg'
 import rail from '../../assets/rail.svg'
 import fi from '../../assets/fi.svg'
+import { useNavigate } from 'react-router-dom';
 
 
 const MY_COLORS = {
@@ -37,6 +38,7 @@ const ServiceCard = ({ icon, title, description }) => (
 
 const Prestations = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate()
 
   const services = [
     { id: 'conception', icon: pres4 },
@@ -81,8 +83,10 @@ const Prestations = () => {
               <button 
                 className="px-8 py-3 rounded-full font-semibold text-white text-sm uppercase tracking-wide hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: MY_COLORS.black }}
+                onClick={() => navigate('https://foczou.elecit.net')}
               >
                 {t('prestations.buttonText')}
+           
               </button>
 
                  <motion.div 

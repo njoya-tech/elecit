@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 import { motion } from 'framer-motion';
 import rail from '../../assets/rail.svg';
-import SpontaneousApplicationsService from '../../services/spontaneous-applications.service';
+import JobApplicationsService from '../../services/job-applications.service';
 
-const JobOfferFormOnlyModal = ({ onClose }) => {
+const JobOfferModal = ({ offer, onClose }) => {
   const { t } = useTranslation();
   
   const [formData, setFormData] = useState({
-    firstName: '',
+    name: '',
     lastName: '',
     email: '',
     phone: '',
@@ -17,7 +17,7 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
     day: '',
     month: '',
     year: '',
-    position: '',
+    position: offer.title || '',
     motivation: '',
     cvFile: null,
   });
@@ -27,6 +27,7 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
   const [errorMessage, setErrorMessage] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
 
+  // Scroll vers le haut lors de l'ouverture
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -37,7 +38,7 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
       ...prev,
       [name]: type === 'file' ? files[0] : value,
     }));
-
+    
     // Réinitialiser les erreurs lors de la modification
     if (validationErrors.length > 0) {
       setValidationErrors([]);
@@ -53,33 +54,30 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
     setValidationErrors([]);
 
     // 1. Validation côté client
-    const validation = SpontaneousApplicationsService.validateFormData(formData);
+    const validation = JobApplicationsService.validateFormData(formData);
     if (!validation.valid) {
       setValidationErrors(validation.errors);
       setSubmitStatus('error');
       return;
     }
 
-    // 2. Vérifier si candidature spontanée récente (optionnel)
-    const hasRecent = await SpontaneousApplicationsService.hasRecentSpontaneousApplication(
+    // 2. Vérifier si déjà postulé (optionnel)
+    const alreadyApplied = await JobApplicationsService.hasAlreadyApplied(
       formData.email,
-      30 // 30 jours
+      offer.id
     );
 
-    if (hasRecent) {
-      setErrorMessage(
-        t('jobOffers.modal.recentSpontaneousApplication') || 
-        'Vous avez déjà envoyé une candidature spontanée récemment. Veuillez patienter avant d\'en soumettre une nouvelle.'
-      );
+    if (alreadyApplied) {
+      setErrorMessage(t('jobOffers.modal.alreadyApplied') || 'Vous avez déjà postulé pour cette offre');
       setSubmitStatus('error');
       return;
     }
 
-    // 3. Soumettre la candidature spontanée
+    // 3. Soumettre la candidature
     setIsSubmitting(true);
 
     try {
-      const result = await SpontaneousApplicationsService.submitSpontaneousApplication(formData);
+      const result = await JobApplicationsService.submitApplication(formData, offer.id);
 
       if (result.success) {
         setSubmitStatus('success');
@@ -87,7 +85,7 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
         // Réinitialiser le formulaire après 3 secondes
         setTimeout(() => {
           setFormData({
-            firstName: '',
+            name: '',
             lastName: '',
             email: '',
             phone: '',
@@ -95,7 +93,7 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
             day: '',
             month: '',
             year: '',
-            position: '',
+            position: offer.title || '',
             motivation: '',
             cvFile: null,
           });
@@ -117,20 +115,18 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-5">
+    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Bouton retour */}
-        {onClose && (
-          <button
-            onClick={onClose}
-            className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors font-medium"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
-            </svg>
-            {t('jobOffers.modal.back') || 'Retour'}
-          </button>
-        )}
+        <button
+          onClick={onClose}
+          className="mb-6 flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors font-medium"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+          </svg>
+          {t('jobOffers.modal.back') || 'Retour aux offres'}
+        </button>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -152,20 +148,112 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
               />
               <div className="flex-1 min-w-0">
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 break-words">
-                  {t('recruitment.spontaneousTitle') || 'Candidature Spontanée'}
+                  {offer.title}
                 </h1>
                 <p className="text-base sm:text-lg text-white opacity-90 break-words">
-                  {t('recruitment.spontaneousSubtitle') || 'Rejoignez notre équipe et faites partie de l\'aventure'}
+                  {offer.subtitle}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Formulaire centré */}
-          <div className="w-full p-6 sm:p-8 lg:p-12 bg-gray-50 flex justify-center">
-            <div className="w-full max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8" style={{ color: MY_COLORS.primaryBlue }}>
-                {t('jobOffers.modal.formTitle') || 'Formulaire de Candidature'}
+          {/* Conteneur Flex pour les deux colonnes */}
+          <div className="flex flex-col lg:flex-row">
+            {/* COLONNE 1 : Détails de l'offre */}
+            <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r">
+              {/* Informations clés */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <p className="text-sm font-semibold mb-2" style={{ color: MY_COLORS.primaryBlue }}>
+                    {t('jobOffers.modal.typePoste')}
+                  </p>
+                  <p className="text-base text-gray-800">{offer.type}</p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold mb-2" style={{ color: MY_COLORS.primaryBlue }}>
+                    {t('jobOffers.modal.lieuPoste')}
+                  </p>
+                  <p className="text-base text-gray-800">{offer.location}</p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold mb-2" style={{ color: MY_COLORS.primaryBlue }}>
+                    {t('jobOffers.modal.datePublication')}
+                  </p>
+                  <p className="text-base text-gray-800">{offer.publicationDate}</p>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold mb-2" style={{ color: MY_COLORS.primaryBlue }}>
+                    {t('jobOffers.modal.validJusquau')}
+                  </p>
+                  <p className="text-base text-gray-800">{offer.validUntil}</p>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: MY_COLORS.black }}>
+                  {t('jobOffers.modal.description')}
+                </h3>
+                <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line">
+                  {offer.description}
+                </p>
+              </div>
+
+              {/* Responsabilités */}
+              {offer.responsibilities && (
+                <div className="mb-8">
+                  <h3 
+                    className="text-xl sm:text-2xl font-bold mb-4"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {t('jobOffers.modal.responsibilities')}
+                  </h3>
+                  <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line">
+                    {offer.responsibilities}
+                  </p>
+                </div>
+              )}
+
+              {/* Activités */}
+              {offer.activities && offer.activities.length > 0 && (
+                <div className="mb-8">
+                  <h3 
+                    className="text-xl sm:text-2xl font-bold mb-4"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {t('jobOffers.modal.activities')}
+                  </h3>
+                  <ul className="space-y-3">
+                    {offer.activities.map((activity, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <span style={{ color: MY_COLORS.secondaryGreen }} className="flex-shrink-0 text-xl">•</span>
+                        <span className="text-base text-gray-700">{activity}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Profil recherché */}
+              {offer.profile && (
+                <div className="mb-8">
+                  <h3 
+                    className="text-xl sm:text-2xl font-bold mb-4"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {t('jobOffers.modal.profile')}
+                  </h3>
+                  <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line">
+                    {offer.profile}
+                  </p>
+                </div>
+              )}
+            </div>
+            
+            {/* COLONNE 2 : Formulaire de candidature */}
+            <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 bg-gray-50">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6" style={{ color: MY_COLORS.primaryBlue }}>
+                {t('jobOffers.modal.formTitle')}
               </h2>
 
               {/* Messages de statut */}
@@ -190,34 +278,30 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
               )}
               
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Prénom */}
+                {/* Nom */}
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-700">
-                    {t('jobOffers.modal.name') || 'Prénom'}
-                  </label>
+                  <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.name')}</label>
                   <input
                     type="text"
-                    name="firstName"
-                    value={formData.firstName}
+                    name="name"
+                    value={formData.name}
                     onChange={handleFormChange}
-                    placeholder={t('jobOffers.modal.namePlaceholder') || 'Jean'}
+                    placeholder={t('jobOffers.modal.namePlaceholder')}
                     required
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                   />
                 </div>
 
-                {/* Nom de famille */}
+                {/* Prénom */}
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-700">
-                    {t('jobOffers.modal.lastName') || 'Nom de famille'}
-                  </label>
+                  <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.lastName')}</label>
                   <input
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleFormChange}
-                    placeholder={t('jobOffers.modal.lastNamePlaceholder') || 'Dupont'}
+                    placeholder={t('jobOffers.modal.lastNamePlaceholder')}
                     required
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
@@ -291,13 +375,8 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
 
                 {/* Date de naissance */}
                 <div>
-  <label className="block text-sm font-medium mb-2 text-gray-700">
-    {t('jobOffers.modal.dateOfBirth')}
-    <span className="text-xs text-gray-500 ml-2 font-normal">
-      (ex: 15 / 03 / 1990)
-    </span>
-  </label>
-  <div className="grid grid-cols-3 gap-3">
+                  <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.dateOfBirth')}</label>
+                  <div className="grid grid-cols-3 gap-3">
                     <input 
                       type="text" 
                       name="day" 
@@ -305,7 +384,6 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
                       onChange={handleFormChange} 
                       placeholder={t('jobOffers.modal.day')} 
                       required 
-                      maxLength="2"
                       disabled={isSubmitting}
                       className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200" 
                     />
@@ -316,7 +394,6 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
                       onChange={handleFormChange} 
                       placeholder={t('jobOffers.modal.month')} 
                       required 
-                      maxLength="2"
                       disabled={isSubmitting}
                       className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200" 
                     />
@@ -327,27 +404,25 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
                       onChange={handleFormChange} 
                       placeholder={t('jobOffers.modal.year')} 
                       required 
-                      maxLength="4"
                       disabled={isSubmitting}
                       className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200" 
                     />
                   </div>
                 </div>
 
-                {/* Poste souhaité - MODIFIABLE */}
+                {/* Poste demandé */}
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-700">
-                    {t('jobOffers.modal.position') || 'Poste souhaité'}
-                  </label>
+                  <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.position')}</label>
                   <input
                     type="text"
                     name="position"
                     value={formData.position}
                     onChange={handleFormChange}
-                    placeholder={t('jobOffers.modal.positionPlaceholder') || "Ex: Développeur Full Stack, Chef de projet..."}
+                    placeholder={t('jobOffers.modal.positionPlaceholder')}
                     required
+                    readOnly={!!offer.title}
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
+                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100" 
                   />
                 </div>
 
@@ -360,7 +435,7 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
                     onChange={handleFormChange}
                     placeholder={t('jobOffers.modal.motivationPlaceholder')}
                     required
-                    rows="6"
+                    rows="4"
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                   />
@@ -381,18 +456,14 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
                   />
                   <label 
                     htmlFor="cv-upload" 
-                    className={`inline-block w-full px-4 py-3 text-base border-2 border-dashed border-gray-400 rounded-lg cursor-pointer text-gray-600 hover:border-blue-500 transition-colors text-center ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                    className={`inline-block px-4 py-3 text-base border border-dashed border-gray-400 rounded-lg cursor-pointer text-gray-600 hover:border-blue-500 transition-colors break-all ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
-                    {formData.cvFile ? (
-                      <span className="text-green-600 font-medium">✓ {formData.cvFile.name}</span>
-                    ) : (
-                      t('jobOffers.modal.addFile') || '📎 Cliquez pour ajouter votre CV'
-                    )}
+                    {formData.cvFile ? formData.cvFile.name : t('jobOffers.modal.addFile')}
                   </label>
                 </div>
 
                 {/* Bouton de soumission */}
-                <div className="flex justify-center pt-6">
+                <div className="flex justify-center pt-4">
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -418,6 +489,6 @@ const JobOfferFormOnlyModal = ({ onClose }) => {
       </div>
     </div>
   );
-};
+}
 
-export default JobOfferFormOnlyModal;
+export default JobOfferModal;

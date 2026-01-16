@@ -2,25 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 import { motion } from 'framer-motion';
-import rail from '../../assets/rail.svg'
+import rail from '../../assets/rail.svg';
+import JobApplicationsService from '../../services/job-applications.service';
 
 const JobOfferModal = ({ offer, onClose }) => {
-    
   const { t } = useTranslation();
   
   const [formData, setFormData] = useState({
-    name: '',
-    lastName: '',
+    firstName: '',  // Prénom (était "name")
+    lastName: '',   // Nom de famille
     email: '',
     phone: '',
     sex: '',
     day: '',
     month: '',
     year: '',
-    position: offer.title || '',
     motivation: '',
     cvFile: null,
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // null | 'success' | 'error'
+  const [errorMessage, setErrorMessage] = useState('');
+  const [validationErrors, setValidationErrors] = useState([]);
 
   // Scroll vers le haut lors de l'ouverture
   useEffect(() => {
@@ -33,15 +37,83 @@ const JobOfferModal = ({ offer, onClose }) => {
       ...prev,
       [name]: type === 'file' ? files[0] : value,
     }));
+    
+    // Réinitialiser les erreurs lors de la modification
+    if (validationErrors.length > 0) {
+      setValidationErrors([]);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Données de candidature soumises:", formData);
+    
+    // Réinitialiser les états
+    setSubmitStatus(null);
+    setErrorMessage('');
+    setValidationErrors([]);
+
+    // 1. Validation côté client
+    const validation = JobApplicationsService.validateFormData(formData);
+    if (!validation.valid) {
+      setValidationErrors(validation.errors);
+      setSubmitStatus('error');
+      return;
+    }
+
+    // 2. Vérifier si déjà postulé (optionnel)
+    const alreadyApplied = await JobApplicationsService.hasAlreadyApplied(
+      formData.email,
+      offer.id
+    );
+
+    if (alreadyApplied) {
+      setErrorMessage(t('jobOffers.modal.alreadyApplied') || 'Vous avez déjà postulé pour cette offre');
+      setSubmitStatus('error');
+      return;
+    }
+
+    // 3. Soumettre la candidature
+    setIsSubmitting(true);
+
+    try {
+      const result = await JobApplicationsService.submitApplication(formData, offer.id);
+
+      if (result.success) {
+        setSubmitStatus('success');
+        
+        // Réinitialiser le formulaire après 3 secondes
+        setTimeout(() => {
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            sex: '',
+            day: '',
+            month: '',
+            year: '',
+            motivation: '',
+            cvFile: null,
+          });
+          setSubmitStatus(null);
+        }, 3000);
+
+      } else {
+        setErrorMessage(result.message || t('jobOffers.modal.submitError'));
+        setSubmitStatus('error');
+      }
+
+    } catch (error) {
+      console.error('❌ Erreur soumission:', error);
+      setErrorMessage(t('jobOffers.modal.submitError') || 'Erreur lors de l\'envoi');
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Bouton retour */}
         <button
@@ -153,7 +225,7 @@ const JobOfferModal = ({ offer, onClose }) => {
                     {offer.activities.map((activity, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <span style={{ color: MY_COLORS.secondaryGreen }} className="flex-shrink-0 text-xl">•</span>
-                        <span className="text-base text-gray-700">{activity}</span> 
+                        <span className="text-base text-gray-700">{activity}</span>
                       </li>
                     ))}
                   </ul>
@@ -181,23 +253,45 @@ const JobOfferModal = ({ offer, onClose }) => {
               <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6" style={{ color: MY_COLORS.primaryBlue }}>
                 {t('jobOffers.modal.formTitle')}
               </h2>
+
+              {/* Messages de statut */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                  <p className="font-semibold">✅ {t('jobOffers.modal.submitSuccess') || 'Candidature envoyée avec succès !'}</p>
+                  <p className="text-sm mt-1">{t('jobOffers.modal.submitSuccessMessage') || 'Nous vous contacterons bientôt.'}</p>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                  <p className="font-semibold">❌ {errorMessage || t('jobOffers.modal.submitError')}</p>
+                  {validationErrors.length > 0 && (
+                    <ul className="mt-2 text-sm space-y-1">
+                      {validationErrors.map((error, idx) => (
+                        <li key={idx}>• {error}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Nom */}
+                {/* Prénom */}
                 <div>
                   <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.name')}</label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleFormChange}
                     placeholder={t('jobOffers.modal.namePlaceholder')}
                     required
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                   />
                 </div>
 
-                {/* Prénom */}
+                {/* Nom de famille */}
                 <div>
                   <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.lastName')}</label>
                   <input
@@ -207,7 +301,8 @@ const JobOfferModal = ({ offer, onClose }) => {
                     onChange={handleFormChange}
                     placeholder={t('jobOffers.modal.lastNamePlaceholder')}
                     required
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                   />
                 </div>
 
@@ -222,7 +317,8 @@ const JobOfferModal = ({ offer, onClose }) => {
                       onChange={handleFormChange}
                       placeholder={t('jobOffers.modal.emailPlaceholder')}
                       required
-                      className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                     />
                   </div>
 
@@ -236,7 +332,8 @@ const JobOfferModal = ({ offer, onClose }) => {
                       onChange={handleFormChange}
                       placeholder={t('jobOffers.modal.phonePlaceholder')}
                       required
-                      className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                     />
                   </div>
                 </div>
@@ -253,6 +350,7 @@ const JobOfferModal = ({ offer, onClose }) => {
                         checked={formData.sex === 'Masculin'}
                         onChange={handleFormChange}
                         required
+                        disabled={isSubmitting}
                         className="form-radio text-blue-600 w-4 h-4"
                       />
                       <span className="ml-2 text-base text-gray-700">{t('jobOffers.modal.male')}</span>
@@ -265,6 +363,7 @@ const JobOfferModal = ({ offer, onClose }) => {
                         checked={formData.sex === 'Féminin'}
                         onChange={handleFormChange}
                         required
+                        disabled={isSubmitting}
                         className="form-radio text-blue-600 w-4 h-4"
                       />
                       <span className="ml-2 text-base text-gray-700">{t('jobOffers.modal.female')}</span>
@@ -274,27 +373,43 @@ const JobOfferModal = ({ offer, onClose }) => {
 
                 {/* Date de naissance */}
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.dateOfBirth')}</label>
-                  <div className="grid grid-cols-3 gap-3">
-                    <input type="text" name="day" value={formData.day} onChange={handleFormChange} placeholder={t('jobOffers.modal.day')} required className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
-                    <input type="text" name="month" value={formData.month} onChange={handleFormChange} placeholder={t('jobOffers.modal.month')} required className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
-                    <input type="text" name="year" value={formData.year} onChange={handleFormChange} placeholder={t('jobOffers.modal.year')} required className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
+  <label className="block text-sm font-medium mb-2 text-gray-700">
+    {t('jobOffers.modal.dateOfBirth')}
+    <span className="text-xs text-gray-500 ml-2 font-normal">
+      (ex: 15 / 03 / 1990)
+    </span>
+  </label> <div className="grid grid-cols-3 gap-3">
+                    <input 
+                      type="text" 
+                      name="day" 
+                      value={formData.day} 
+                      onChange={handleFormChange} 
+                      placeholder={t('jobOffers.modal.day')} 
+                      required 
+                      disabled={isSubmitting}
+                      className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200" 
+                    />
+                    <input 
+                      type="text" 
+                      name="month" 
+                      value={formData.month} 
+                      onChange={handleFormChange} 
+                      placeholder={t('jobOffers.modal.month')} 
+                      required 
+                      disabled={isSubmitting}
+                      className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200" 
+                    />
+                    <input 
+                      type="text" 
+                      name="year" 
+                      value={formData.year} 
+                      onChange={handleFormChange} 
+                      placeholder={t('jobOffers.modal.year')} 
+                      required 
+                      disabled={isSubmitting}
+                      className="px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200" 
+                    />
                   </div>
-                </div>
-
-                {/* Poste demandé */}
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-gray-700">{t('jobOffers.modal.position')}</label>
-                  <input
-                    type="text"
-                    name="position"
-                    value={formData.position}
-                    onChange={handleFormChange}
-                    placeholder={t('jobOffers.modal.positionPlaceholder')}
-                    required
-                    readOnly={!!offer.title} 
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100" 
-                  />
                 </div>
 
                 {/* Motivation */}
@@ -307,7 +422,8 @@ const JobOfferModal = ({ offer, onClose }) => {
                     placeholder={t('jobOffers.modal.motivationPlaceholder')}
                     required
                     rows="4"
-                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
                   />
                 </div>
 
@@ -319,12 +435,14 @@ const JobOfferModal = ({ offer, onClose }) => {
                     name="cvFile"
                     onChange={handleFormChange}
                     required
+                    disabled={isSubmitting}
+                    accept=".pdf,.doc,.docx"
                     className="hidden" 
                     id="cv-upload"
                   />
                   <label 
                     htmlFor="cv-upload" 
-                    className="inline-block px-4 py-3 text-base border border-dashed border-gray-400 rounded-lg cursor-pointer text-gray-600 hover:border-blue-500 transition-colors break-all"
+                    className={`inline-block px-4 py-3 text-base border border-dashed border-gray-400 rounded-lg cursor-pointer text-gray-600 hover:border-blue-500 transition-colors break-all ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
                     {formData.cvFile ? formData.cvFile.name : t('jobOffers.modal.addFile')}
                   </label>
@@ -334,12 +452,20 @@ const JobOfferModal = ({ offer, onClose }) => {
                 <div className="flex justify-center pt-4">
                   <button
                     type="submit"
-                    className="px-8 py-3 rounded-lg text-white font-bold text-lg transition-all w-full sm:w-auto"
+                    disabled={isSubmitting}
+                    className="px-8 py-3 rounded-lg text-white font-bold text-lg transition-all w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ backgroundColor: MY_COLORS.secondaryGreen }}
-                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = MY_COLORS.primaryBlue; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen; }}
+                    onMouseEnter={(e) => { 
+                      if (!isSubmitting) e.currentTarget.style.backgroundColor = MY_COLORS.primaryBlue; 
+                    }}
+                    onMouseLeave={(e) => { 
+                      if (!isSubmitting) e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen; 
+                    }}
                   >
-                    {t('jobOffers.modal.sendApplication')}
+                    {isSubmitting 
+                      ? (t('jobOffers.modal.sending') || 'Envoi en cours...') 
+                      : (t('jobOffers.modal.sendApplication') || 'Envoyer ma candidature')
+                    }
                   </button>
                 </div>
               </form>

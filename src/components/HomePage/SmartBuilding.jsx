@@ -84,6 +84,8 @@ const SmartBuilding = ({ title, buttonText, images }) => {
                     scale: [1, 0.96, 1.06, 1],
                   }}
                   whileTap={{ scale: 0.95 }}
+                    onClick={() => window.open('https://www.linkedin.com/company/109542475/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3', '_blank')}
+
                 >
                   {buttonText}
                 </motion.button>
