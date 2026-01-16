@@ -1,4 +1,5 @@
-import React from 'react';
+/* TESTIMONIALS CAROUSEL - OPTIMISÉ */
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import comm from '../../assets/comm.png'
 import { useTranslation } from 'react-i18next';
@@ -12,7 +13,6 @@ const MY_COLORS = {
   white: '#FFFFFF'
 };
 
-// Icône guillemets pour le témoignage
 const QuoteIcon = () => (
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
     <circle cx="24" cy="24" r="24" fill={MY_COLORS.green} />
@@ -21,8 +21,7 @@ const QuoteIcon = () => (
   </svg>
 );
 
-// Composant Étoiles
-const StarRating = ({ rating = 5 }) => {
+const StarRating = React.memo(({ rating = 5 }) => {
   return (
     <div className="flex justify-center gap-1 my-4">
       {[...Array(5)].map((_, i) => (
@@ -37,25 +36,32 @@ const StarRating = ({ rating = 5 }) => {
       ))}
     </div>
   );
-};
+});
 
 const TestimonialsCarousel = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [isPaused, setIsPaused] = React.useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const { t } = useTranslation();
+  
+  // ✅ Mémoiser les témoignages pour éviter les re-renders
+  const testimonials = useMemo(() => 
+    t('testimonials.items', { returnObjects: true }), 
+    [t]
+  );
 
-const { t } = useTranslation();
-const testimonials = t('testimonials.items', { returnObjects: true });
-
-// Pour les aria-labels :
-
-
+  // ✅ Mémoiser les aria-labels
+  const ariaLabels = useMemo(() => ({
+    previous: t('testimonials.ariaLabels.previous'),
+    next: t('testimonials.ariaLabels.next'),
+    goTo: t('testimonials.ariaLabels.goToTestimonial')
+  }), [t]);
 
   const totalSlides = testimonials.length;
-  const totalGroups = Math.ceil(totalSlides / 3); // Nombre de groupes
+  const totalGroups = Math.ceil(totalSlides / 3);
 
-  // Auto-slide toutes les 5 secondes
-  React.useEffect(() => {
-    if (isPaused) return;
+  // ✅ Auto-slide avec cleanup
+  useEffect(() => {
+    if (isPaused || totalSlides === 0) return;
     
     const interval = setInterval(() => {
       setCurrentIndex((prev) => {
@@ -85,17 +91,15 @@ const testimonials = t('testimonials.items', { returnObjects: true });
     });
   };
 
-  // Calculer quelles cartes afficher (3 cartes visibles)
-  const getVisibleCards = () => {
+  // ✅ Mémoiser les cartes visibles
+  const visibleCards = useMemo(() => {
     const cards = [];
     for (let i = 0; i < 3; i++) {
       const index = (currentIndex + i) % totalSlides;
       cards.push({ ...testimonials[index], originalIndex: index });
     }
     return cards;
-  };
-
-  const visibleCards = getVisibleCards();
+  }, [currentIndex, testimonials, totalSlides]);
 
   return (
     <div 
@@ -105,26 +109,18 @@ const testimonials = t('testimonials.items', { returnObjects: true });
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Conteneur principal du carousel */}
         <div className="relative">
-          {/* Bouton Gauche */}
           <button
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110"
             style={{ marginLeft: '-20px' }}
-           aria-label={t('testimonials.ariaLabels.previous')}
+            aria-label={ariaLabels.previous}
           >
-            <svg 
-              className="w-6 h-6" 
-              fill="none" 
-              stroke={MY_COLORS.black} 
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="none" stroke={MY_COLORS.black} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
 
-          {/* Cartes Témoignages */}
           <motion.div
             key={currentIndex}
             initial={{ x: 300, opacity: 0.8 }}
@@ -137,7 +133,7 @@ const testimonials = t('testimonials.items', { returnObjects: true });
               <div 
                 key={testimonial.id}
                 className="relative p-6 rounded-xl bg-white shadow-lg"
-                  style={{ border: `2px solid ${MY_COLORS.green}` }}
+                style={{ border: `2px solid ${MY_COLORS.green}` }}
               >
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
@@ -145,8 +141,6 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="h-full flex flex-col"
                 >
-                  {/* Icône Guillemets */}
-                {/* Icône Commentaire avec cercle vert */}
                   <div className="flex justify-center -mt-12 mb-4">
                     <div 
                       className="rounded-full flex items-center justify-center"
@@ -165,7 +159,6 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                     </div>
                   </div>
 
-                  {/* Ligne décorative en pointillés au-dessus */}
                   <div 
                     className="w-full mb-6"
                     style={{
@@ -176,7 +169,6 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                     }}
                   />
 
-                  {/* Texte du témoignage */}
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -187,10 +179,8 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                     {testimonial.text}
                   </motion.p>
 
-                  {/* Étoiles */}
                   <StarRating rating={testimonial.rating} />
 
-                  {/* Ligne décorative en pointillés en bas */}
                   <div 
                     className="w-full my-4"
                     style={{
@@ -201,7 +191,6 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                     }}
                   />
 
-                  {/* Auteur */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -220,25 +209,18 @@ const testimonials = t('testimonials.items', { returnObjects: true });
             ))}
           </motion.div>
 
-          {/* Bouton Droite */}
           <button
             onClick={nextSlide}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110"
             style={{ marginRight: '-20px' }}
-           aria-label={t('testimonials.ariaLabels.next')}
+            aria-label={ariaLabels.next}
           >
-            <svg 
-              className="w-6 h-6" 
-              fill="none" 
-              stroke={MY_COLORS.black} 
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-6 h-6" fill="none" stroke={MY_COLORS.black} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
 
-        {/* Indicateurs de pagination (pointillés) */}
         <div className="flex justify-center items-center gap-2 mt-8">
           {[...Array(totalGroups)].map((_, index) => {
             const groupIndex = Math.floor(currentIndex / 3);
@@ -254,7 +236,7 @@ const testimonials = t('testimonials.items', { returnObjects: true });
                   height: '8px',
                   backgroundColor: isActive ? MY_COLORS.green : '#CCCCCC',
                 }}
-                aria-label={`${t('testimonials.ariaLabels.goToTestimonial')} ${index + 1}`}
+                aria-label={`${ariaLabels.goTo} ${index + 1}`}
               />
             );
           })}
@@ -264,4 +246,4 @@ const testimonials = t('testimonials.items', { returnObjects: true });
   );
 };
 
-export default TestimonialsCarousel;
+export default React.memo(TestimonialsCarousel);

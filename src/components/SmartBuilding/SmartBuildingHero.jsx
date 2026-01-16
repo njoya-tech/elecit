@@ -67,6 +67,8 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
           <button 
             className="px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-3 text-sm sm:text-base rounded-full border-2 text-white font-medium hover:bg-white transition-all"
             style={{ borderColor: MY_COLORS.secondaryGreen, color: MY_COLORS.secondaryGreen }}
+                      onClick={() => window.open('https://www.linkedin.com/company/109542475/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3', '_blank')}
+
           >
             {t('smartBuilding.buttonText')}
           </button>

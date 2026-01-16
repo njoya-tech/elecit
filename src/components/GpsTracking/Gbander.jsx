@@ -133,6 +133,8 @@ const Gbander = ({ images, casqIcon }) => {
                     scale: [1, 0.96, 1.06, 1],
                   }}
                   whileTap={{ scale: 0.95 }}
+                    onClick={() => window.open('https://www.linkedin.com/company/110107869/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D', '_blank')}
+
                 >
                   {t('gpsT.BanderButton')}
                 </motion.button>
