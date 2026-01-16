@@ -816,87 +816,155 @@
     }
   },
 
-  "contact": {
-    "floatingButton": "Contactez-nous",
-    "popup": {
-      "title": "Contactez-nous",
-      "subtitle": "Nous vous répondrons dès que possible",
-      "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8 h à 18 h. N'hésitez pas à nous contacter.",
-      "openWhatsApp": "Ouvrir WhatsApp",
-      "messagePlaceholder": "Rédigez votre message...",
-      "leftButton": "Retour",
-      "rightButton": "Envoyer"
-    },
-    "hero": {
-      "title": "Contactez-Nous.",
-      "subtitle": "Notre équipe d'experts vous apporte une solution !",
-      "button": "Plus de Contenus"
-    },
-    "form": {
-      "title": "Formulaire de contact",
-      "subtitle": "Une question, un besoin ou un projet à discuter ?",
-      "subtitle2": "Remplissez le formulaire ci-dessous",
-      "lastName": "Nom de famille",
-      "lastNamePlaceholder": "Saisissez votre nom de famille",
-      "firstName": "Prénom",
-      "firstNamePlaceholder": "Saisissez votre prénom",
-      "phone": "Téléphone",
-      "email": "E-mail",
-      "emailPlaceholder": "Saisissez votre e-mail",
-      "message": "Message",
-      "messagePlaceholder": "Répondez en quelques mots",
-      "submit": "Envoyer",
-      "imageAlt": "Professionnel dans un environnement industriel"
-    },
+ "contact": {
+  "floatingButton": "Nous contacter",
+  "popup": {
+    "title": "Nous contacter",
+    "subtitle": "Nous vous répondrons dans les plus brefs délais",
+    "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8h à 18h. N'hésitez pas à nous contacter.",
+    "openWhatsApp": "Ouvrir WhatsApp",
+    "messagePlaceholder": "Écrivez votre message...",
+    "leftButton": "Retour",
+    "rightButton": "Envoyer"
+  },
+  "hero": {
+    "title": "Contactez-nous.",
+    "subtitle": "Notre équipe d'experts vous apporte une solution !",
+    "button": "Plus de contenu"
+  },
+  "form": {
+    "title": "Formulaire de contact",
+    "subtitle": "Une question, un besoin ou un projet à discuter ?",
+    "subtitle2": "Remplissez le formulaire ci-dessous",
+    "lastName": "Nom",
+    "lastNamePlaceholder": "Entrez votre nom",
+    "firstName": "Prénom",
+    "firstNamePlaceholder": "Entrez votre prénom",
+    "phone": "Téléphone",
+    "email": "Email",
+    "emailPlaceholder": "Entrez votre email",
+    "message": "Message",
+    "messagePlaceholder": "Répondez en quelques mots",
+    "submit": "Envoyer",
+    "imageAlt": "Professionnel dans un environnement industriel",
+    "success": "Merci ! Votre message a été envoyé avec succès.",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "sending": "Envoi en cours...",
+    "errors": {
+      "lastNameRequired": "Le nom est requis",
+      "firstNameRequired": "Le prénom est requis",
+      "phoneRequired": "Le téléphone est requis",
+      "phoneInvalid": "Numéro de téléphone invalide",
+      "emailRequired": "L'email est requis",
+      "emailInvalid": "Email invalide",
+      "messageRequired": "Le message est requis"
+    }
+  },
     "location": {
-      "title": "Nos services sont accessibles dans tout",
-      "highlight1": "le territoire camerounais",
-      "title2": ", mais également dans toute",
-      "highlight2": "l'Afrique centrale."
+      "title": "Nos services sont accessibles dans tout le",
+      "highlight1": "Cameroun",
+      "title2": ", mais aussi dans toute l'",
+      "highlight2": "Afrique centrale."
     },
-
     "blog": {
       "title": "Restez informé de nos",
       "highlight": "actualités",
       "title2": "en visitant notre blog",
-      "readMore": "Lire la suite",
+      "readMore": "Lire plus",
       "prevPage": "Page précédente",
       "nextPage": "Page suivante",
       "goToPage": "Aller à la page",
       "articles": [
         {
           "id": 1,
-          "title": "Pourquoi la fabrication sur mesure est un levier clé pour l’industrie camerounaise ?",
+          "title": "Pourquoi la fabrication sur mesure change la donne dans l'industrie camerounaise ?",
           "excerpt": "Dans de nombreux secteurs industriels au Cameroun, les entreprises font face à un défi récurrent..."
         },
         {
           "id": 2,
-          "title": "5 façons dont un hôtel intelligent économise l’énergie et fidélise ses clients",
-          "excerpt": "Dans un marché hôtelier de plus en plus concurrentiel au Cameroun, la problématique est double..."
+          "title": "5 façons dont un hôtel intelligent économise de l'énergie et fidélise ses clients",
+          "excerpt": "Dans un marché hôtelier de plus en plus compétitif au Cameroun, la question est double..."
         },
         {
           "id": 3,
-          "title": "La révolution du suivi : quand l’IA surveille vos véhicules",
-          "excerpt": "Le transport et la logistique sont au cœur de l’économie camerounaise, mais ce secteur fait face à de grands défis..."
+          "title": "La révolution du suivi : quand l'IA surveille vos véhicules",
+          "excerpt": "Le transport et la logistique sont au cœur de l'économie camerounaise, mais ce secteur fait face à de grands défis..."
         },
         {
           "id": 4,
-          "title": "Irrigation intelligente : la technologie au service d’une agriculture durable",
-          "excerpt": "L’agriculture camerounaise, moteur de l’économie nationale, fait face à un défi majeur..."
+          "title": "Irrigation intelligente : la technologie au service d'une agriculture durable",
+          "excerpt": "L'agriculture camerounaise, moteur de l'économie nationale, fait face à un défi majeur..."
         },
         {
           "id": 5,
-          "title": "Du métal brut à l’innovation : comment nous façonnons des infrastructures durables",
-          "excerpt": "Transformer les matières premières en un produit innovant et fonctionnel est l’art de la métallurgie moderne..."
+          "title": "Du métal brut à l'innovation : comment nous façonnons des infrastructures durables",
+          "excerpt": "Transformer des matières premières en un produit innovant et fonctionnel est l'art de la métallurgie moderne..."
         },
         {
           "id": 6,
-          "title": "Traitement des données et sécurité : protéger l’or numérique de votre entreprise",
-          "excerpt": "Chaque entreprise génère quotidiennement d’importantes quantités d’informations sensibles..."
+          "title": "Traitement des données et sécurité : protéger l'or numérique de votre entreprise",
+          "excerpt": "Chaque entreprise génère quotidiennement d'importantes quantités d'informations sensibles..."
         }
       ]
     }
   },
+
+  "blogPage": {
+    "hero": {
+      "title": "Dans les coulisses d’ElecIT",
+      "subtitle": "Innovation, Expertise & Vie d’entreprise",
+      "description1": "Une fenêtre ouverte sur notre expertise et notre culture.",
+      "description2": "Explorez nos projets, innovations et notre vision de l’ingénierie moderne.",
+      "description3": "Plongez dans le quotidien d’ElecIT, là où la technologie rencontre l’humain."
+    },
+    "featured": {
+      "authorName": "Therese Egoutou",
+      "date": "17 nov.",
+      "title": "Le bâtiment qui s’adapte à vous",
+      "excerpt": "Chaque projet commence par une idée, mais c’est la conception qui transforme cette idée en solution réelle."
+    },
+    "categories": {
+      "all": "Tous les articles",
+      "smartSpaces": "Espaces intelligents",
+      "workshop": "Atelier d’ingéniosité",
+      "moreThanTrack": "Bien plus que le suivi",
+      "advancedSecurity": "Sécurité avancée",
+      "toolBoxMeeting": "Réunion Toolbox",
+      "companyLife": "Vie d’entreprise",
+      "more": "Plus"
+    },
+    "cards": {
+      "views": "vues",
+      "view": "vue",
+      "comments": "commentaires",
+      "comment": "commentaire",
+      "readMore": "Lire la suite",
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "detail": {
+      "readTime": "min de lecture",
+      "share": "Partager l’article",
+      "cancel": "Annuler",
+      "publish": "Publier",
+      "loginPrompt": "pour publier en tant que membre",
+      "login": "Se connecter",
+      "commentPlaceholder": "Écrire un commentaire...",
+      "commentsTitle": "Commentaires",
+      "shareModal": {
+        "title": "Partager cet article",
+        "copyLink": "Ou copier le lien",
+        "copy": "Copier",
+        "copied": "Lien copié !",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
+      }
+    }
+  },
+
+
 
   "fabriMeca": {
     "hero": {
@@ -1419,27 +1487,27 @@
       "title": "Traitement et Valorisation des Données"
     },
     "services": {
-      "description": "Nous sécurisons vos bâtiments, infrastructures et espaces sensibles grâce à des solutions de contrôle d'accès et de vidéosurveillance performantes.",
+      "description": "Nous transformons les données brutes en informations exploitables pour aider nos clients à prendre des décisions éclairées, optimiser leurs performances et créer de la valeur à chaque étape de leur activité.",
       "items": [
         {
-          "title": "Contrôle d'Accès Intelligent",
-          "description": "Systèmes de badges, cartes RFID et biométrie, portails automatiques et serrures électroniques."
+          "title": "Collecte et Nettoyage de Données",
+          "description": "Agrégation de données brutes, normalisation, traitement des valeurs manquantes et anomalies."
         },
         {
-          "title": "Vidéosurveillance & Intrusion",
-          "description": "Caméras HD, détection de mouvement, alarmes connectées et surveillance en temps réel."
+          "title": "Stockage et Organisation",
+          "description": "Mise en place de bases de données performantes, architecture data Lake / data Warehouse."
         },
         {
-          "title": "Sécurité & Gestion des Risques",
-          "description": "Protection contre les intrusions, cybersécurité et détection incendie intégrée aux systèmes d'alerte."
+          "title": "Analyse de Données",
+          "description": "Tableaux de bord, indicateurs clés (KPI), reporting automatisé."
         },
         {
-          "title": "Gestion Centralisée & Automatisation",
-          "description": "Supervision des accès, contrôle à distance, solutions cloud et rapports d'activité détaillés."
+          "title": "Business Intelligence & Data Visualization",
+          "description": "Solutions d’aide à la décision, modélisation de données, visualisation interactive."
         },
         {
-          "title": "Audit & Conseil en Sécurité",
-          "description": "Analyse des vulnérabilités, définition de politiques de sécurité et accompagnement à la mise en conformité."
+          "title": "Data Science & Machine Learning",
+          "description": "Exploration avancée, prévision, segmentation client, détection de tendances ou anomalies."
         }
       ]
     }
