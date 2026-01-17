@@ -746,6 +746,17 @@
       "descriptionLine2": "développer toute l'Afrique à travers nos services.",
       "button": "Regarder la vidéo"
     },
+    "elecitCarousel": {
+    "title": "L'essentiel d'Elec",
+    "titleHighlight": "IT",
+    "carouselAriaLabel": "Carrousel d'images",
+    "goToImage": "Aller à l'image",
+    "paragraph1": "Depuis sa création en <strong>2015</strong>, ElecIT Engineering s'est imposée comme un acteur pluridisciplinaire, capable de piloter des projets complexes, alliant savoir-faire technique, innovation et engagement sur le terrain.",
+    "paragraph2": "Animée par une volonté constante d'apporter des réponses concrètes aux besoins de ses clients, l'entreprise s'est construite autour de la mission de son promoteur : <strong>mettre la technologie et l'ingénierie au service du développement durable, de la performance et du bien-être collectif au Cameroun et à l'international.</strong>",
+    "documentsTitle": "Documents à lire:",
+    "document1": "Certification ISO 9001 V 2015",
+    "document2": "Politique de qualité"
+  },
     "entrepriseCards": {
       "bannerTitle": "Nos valeurs",
       "bannerSubtitle": "03 mots clés",

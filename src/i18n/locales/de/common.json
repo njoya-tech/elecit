@@ -839,6 +839,19 @@
       "description": "Omdat we naast de Kameroense markt heel Afrika willen ontwikkelen door middel van onze diensten.",
       "button": "Bekijk Video"
     },
+    "entreprise": {
+  "elecitCarousel": {
+    "title": "Das Wesentliche von Elec",
+    "titleHighlight": "IT",
+    "carouselAriaLabel": "Bildkarussell",
+    "goToImage": "Zum Bild gehen",
+    "paragraph1": "Seit seiner Gründung im Jahr <strong>2015</strong> hat sich ElecIT Engineering als multidisziplinärer Akteur etabliert, der in der Lage ist, komplexe Projekte zu leiten und dabei technisches Know-how, Innovation und Engagement vor Ort zu kombinieren.",
+    "paragraph2": "Getrieben von dem ständigen Wunsch, konkrete Lösungen für die Bedürfnisse seiner Kunden zu bieten, wurde das Unternehmen um die Mission seines Gründers herum aufgebaut: <strong>Technologie und Ingenieurwesen in den Dienst nachhaltiger Entwicklung, Leistung und kollektiven Wohlergehens in Kamerun und international zu stellen.</strong>",
+    "documentsTitle": "Zu lesende Dokumente:",
+    "document1": "ISO 9001 V 2015 Zertifizierung",
+    "document2": "Qualitätspolitik"
+  }
+},
     "entrepriseCards": {
       "bannerTitle": "Onze waarden",
       "bannerSubtitle": "03 sleutelwoorden",
