@@ -77,7 +77,7 @@ const HeroSection = ({ slides }) => {
         </div>
 
         <div className="relative z-10 h-full flex items-center">
-          <div className="w-[60%] sm:w-1/2 md:w-[48%] lg:w-[35%] py-8 md:py-0">
+          <div className="w-[60%] sm:w-1/2 md:w-[50%] lg:w-[40%] py-8 md:py-0">
             <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 flex-shrink-0" viewBox="0 0 24 24" fill="none">
                 <path d="M13 5L20 12L13 19" stroke={MY_COLORS.secondaryGreen} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

@@ -117,6 +117,7 @@ const HomePage = () => {
       </header>
 
       <main className='pt-40'>
+    
         <HeroSection slides={heroSlides} />
         <br/>
         <br/>

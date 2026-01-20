@@ -363,6 +363,13 @@
     "titlePart2": ""
   },
 
+  "smartV": {
+    "title1": "Smart home installation",
+    "title2": "in a villa",
+    "subtitle": "Complete installation of a residential smart home system.",
+    "buttonText": "More projects"
+  },
+
   "servicesCarousel": {
     "services": [
       {

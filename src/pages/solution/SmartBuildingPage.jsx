@@ -30,9 +30,7 @@ const SmartBuildingPage = () => {
                  <SmartFeatureCarousel activeTab={activeTab} />
           </div>
 
-               {/* <div className="min-h-screen" style={{ backgroundColor: '#2c3e50' }} >
-                 <InterfaceCommandeCarousel />
-               div> */}
+            
     <div>
       <SmartBander></SmartBander>
     </div>
@@ -41,9 +39,9 @@ const SmartBuildingPage = () => {
       <Prestations/>
     </div>
 
-    {/* <div  className=''>
+    <div  className=''>
       <SmartBander2></SmartBander2>
-    </div> */}
+    </div>
 
          <div>
           <FormRoundSmart className=''></FormRoundSmart>

@@ -25,9 +25,9 @@ const NavBar = () => {
   ];
 
   const subsidiariesItems = [
-    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net' },
-    { key: 'submenus.subsidiaries.mangoSmart', path: 'htpps://mango.elecit.net ' },
-    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net' }
+    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net'},
+    { key: 'submenus.subsidiaries.mangoSmart', path: 'https://www.linkedin.com/company/110098841/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D'},
+    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net'}
   ];
 
   const navItems = [

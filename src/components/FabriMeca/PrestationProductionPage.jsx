@@ -63,7 +63,7 @@ const PrestationsSection = ({ data }) => {
             <h2 className="text-4xl md:text-5xl font-bold" style={{ color: MY_COLORS.secondaryGreen }}>
               {data.title}
             </h2>
-                       <div className='absolute -bottom-20 -right-50 -scale-x-[1]' >
+                       <div className='absolute -bottom-20 lg:-right-50 hidden -scale-x-[1]' >
                           <motion.img src={data.icon} alt="" className="w-45 h-45  "
                            // Animation: Uniquement le mouvement vertical (flottement)
                animate={{ 

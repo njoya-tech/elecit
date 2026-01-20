@@ -36,9 +36,9 @@
     "submitProject": "Soumettre un projet",
     "slide1": {
       "title": "Bienvenue au pôle de la",
-      "highlighted": "Recherche",
-      "title2": "et de l'",
-      "highlighted2": "Excellence",
+      "highlighted": "Recherche   ",
+      "title2": "et de",
+      "highlighted2": "l'Excellence",
       "title3": "dans l'ingénierie en Afrique centrale."
     },
     "slide2": {
@@ -224,6 +224,13 @@
     "buttonRound": "Contactez-nous"
     
 
+  },
+
+   "smartV": {
+    "title1": "Installation domotique",
+    "title2": "dans une villa",
+    "subtitle": "Installation complète d'un système domotique résidentiel.",
+    "buttonText": "Plus de projets"
   },
 
 

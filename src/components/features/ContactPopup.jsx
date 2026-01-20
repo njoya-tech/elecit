@@ -19,14 +19,14 @@ const ContactPopup = () => {
   const [message, setMessage] = React.useState('');
 
   const handleOpenWhatsApp = () => {
-    const phoneNumber = '237650416640';
+    const phoneNumber = '237650263982';
     const whatsappUrl = `https://wa.me/${phoneNumber}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleSendMessage = () => {
     if (message.trim()) {
-      const phoneNumber = '237650416640';
+      const phoneNumber = '237650263982';
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       setMessage('');
