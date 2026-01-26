@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const CardAvantage = () => {
@@ -11,10 +11,86 @@ const CardAvantage = () => {
     returnObjects: true,
   });
 
+  // Icon mapping for advantages (in order, starting from index 0)
+  const advantageIcons = [
+    ICONS.update_icon,      // 0: Fiabilité (separate card)
+    ICONS.door_icon,       // 1: Sécurité renforcée
+    ICONS.time_icon,     // 2: Gain de temps
+    ICONS.stockage,   // 3: Optimisation des coûts
+    ICONS.bulb_icon,       // 4: Décisions plus intelligentes
+    ICONS.arrow_circle_icon,    // 5: Flexibilité et évolutivité
+    ICONS.regulatory_icon,     // 6: Conformité réglementaire
+  ];
+
+  // Grid card configurations (for cards 1-6 in the grid)
+  const gridCardConfigs = [
+    { isGreen: true, topClass: "lg:-top-5", leftClass: "" },                    // Card 1: Green
+    { isGreen: false, topClass: "lg:-top-5", leftClass: "lg:left-2.5" },        // Card 2: White
+    { isGreen: true, topClass: "lg:-top-5", leftClass: "lg:left-2.5" },         // Card 3: Green
+    { isGreen: false, topClass: "lg:top-5", leftClass: "" },                    // Card 4: White
+    { isGreen: true, topClass: "lg:top-3.5", leftClass: "lg:left-3.5" },        // Card 5: Green
+    { isGreen: false, topClass: "lg:top-3.5", leftClass: "lg:left-3.5" },       // Card 6: White
+  ];
+
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0,
+      },
+    },
+  };
+
+  const badgeVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.4,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.7,
+      },
+    },
+  };
+
   return (
     <>
       {/* CONTAINER 1: HEADER */}
-      <header className="w-full bg-slate-900">
+      <motion.header
+        className="w-full bg-slate-900"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
+      >
         <div
           className="relative w-full mb-4 sm:mb-6 md:mb-8 overflow-hidden"
           style={{ backgroundColor: MY_COLORS.black }}
@@ -29,14 +105,20 @@ const CardAvantage = () => {
             {t("dataProcessing.advantages.headerTitle")}
           </h2>
         </div>
-      </header>
+      </motion.header>
 
       {/* CONTAINER 2: TOP SECTION - Text, Button, and Fiabilité Card */}
       <section className="w-full py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
             {/* Left: Description Text */}
-            <div className="w-full md:w-1/2">
+            <motion.div
+              className="w-full md:w-1/2"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={slideDown}
+            >
               <p className="text-gray-900 text-sm sm:text-base md:text-lg leading-relaxed">
                 {t("dataProcessing.advantages.description")}
               </p>
@@ -55,8 +137,7 @@ const CardAvantage = () => {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = "white";
                     e.currentTarget.style.color = MY_COLORS.secondaryGreen;
-                    e.currentTarget.style.borderColor =
-                      MY_COLORS.secondaryGreen;
+                    e.currentTarget.style.borderColor = MY_COLORS.secondaryGreen;
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "black";
@@ -81,33 +162,45 @@ const CardAvantage = () => {
                   }}
                 />
               </div>
-            </div>
+            </motion.div>
 
-            {/* Right: Fiabilité Card */}
-            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-              <div
-                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
-              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 w-full max-w-sm md:max-w-none md:w-80 relative"
-              >
-                {/* Icon half in/out - no circle, just icon */}
-                <div
-                  className="absolute -top-7 sm:-top-8 left-1/2 
-                transform -translate-x-1/2"
+            {/* Right: Fiabilité Card (advantages[0]) */}
+            <motion.div
+              className="w-full md:w-1/2 flex justify-center md:justify-end"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <div className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 w-full max-w-sm md:max-w-none md:w-80 relative">
+                <motion.div
+                  className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={badgeVariants}
                 >
                   <img
-                    src={ICONS.faibilite_icon}
+                    src={advantageIcons[0]}
                     alt="Fiabilité"
                     className="w-14 h-14 sm:w-16 sm:h-16"
                   />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3">
-                  {advantages[0].title}
-                </h3>
-                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[0].description}
-                </p>
+                </motion.div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={textVariants}
+                >
+                  <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3">
+                    {advantages[0].title}
+                  </h3>
+                  <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
+                    {advantages[0].description}
+                  </p>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -141,178 +234,101 @@ const CardAvantage = () => {
 
           {/* Grid of 6 Cards with dotted dividers */}
           <div className="relative">
-            {/* Horizontal dotted divider line (between rows) - goes up to cards */}
+            {/* Horizontal dotted divider lines */}
             <div
-              className="absolute left-0 right-0 border-t-2 
-              border-dashed hidden lg:block"
+              className="absolute left-0 right-0 border-t-2 border-dashed hidden lg:block"
               style={{
                 top: "calc(50% - 3rem)",
                 color: MY_COLORS.secondaryGreen,
                 borderLeft: "2px dashed #8CC63F",
               }}
-            ></div>
+            />
 
             <div
-              className="absolute left-0 right-0 border-t-2 
-              border-dashed hidden lg:block"
+              className="absolute left-0 right-0 border-t-2 border-dashed hidden lg:block"
               style={{
                 top: "calc(10% - 9rem)",
                 color: MY_COLORS.secondaryGreen,
               }}
-            ></div>
+            />
 
-            {/* Vertical dotted divider lines (between columns) - goes up to cards */}
+            {/* Vertical dotted divider lines */}
             <div
-              className="absolute -top-25 bottom-0 border-l-2
-               border-dashed hidden lg:block"
+              className="absolute -top-25 bottom-0 border-l-2 border-dashed hidden lg:block"
               style={{
                 left: "calc(33.333% + 0.05rem)",
                 color: MY_COLORS.secondaryGreen,
               }}
-            ></div>
+            />
             <div
-              className="absolute -top-80 bottom-0 border-l-2 
-              border-dashed  hidden lg:block"
+              className="absolute -top-80 bottom-0 border-l-2 border-dashed hidden lg:block"
               style={{
                 left: "calc(66.666% + 0.95rem)",
                 color: MY_COLORS.secondaryGreen,
               }}
-            ></div>
+            />
 
-            <div
-              className="grid grid-cols-1 sm:grid-cols-2 
-             md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-6 lg:-top-9 relative"
-            >
-              {/* Card 1: Sécurité renforcée - GREEN */}
-              <div
-                className="rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5"
-                style={{
-                  backgroundColor: "#7FA946",
-                  boxShadow: "0,4px,10px  rgba (0,0,0,0.15)",
-                }}
-              >
-                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={ICONS.securite_icon}
-                    alt="Sécurité"
-                    className="w-14 h-14 sm:w-16 sm:h-16"
-                    style={{ filter: "brightness(0)" }}
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  {advantages[1].title}
-                </h3>
-                <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[1].description}
-                </p>
-              </div>
+            {/* Grid Container */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-6 lg:-top-9 relative">
+              {/* Map through grid cards (advantages 1-6) */}
+              {advantages.slice(1, 7).map((advantage, index) => {
+                const config = gridCardConfigs[index];
+                const iconIndex = index + 1; // Icons start at index 1 for grid cards
+                
+                return (
+                  <motion.div
+                    key={index}
+                    className={`rounded-xl sm:rounded-2xl shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative ${config.topClass} ${config.leftClass} ${
+                      config.isGreen ? "" : "bg-white border border-gray-200"
+                    }`}
+                    style={
+                      config.isGreen
+                        ? {
+                            backgroundColor: "#7FA946",
+                            boxShadow: index === 0 ? "0,4px,10px rgba(0,0,0,0.15)" : undefined,
+                          }
+                        : {}
+                    }
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={cardVariants}
+                  >
+                    {/* Badge Icon */}
+                    <motion.div
+                      className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.3 }}
+                      variants={badgeVariants}
+                    >
+                      <img
+                        src={advantageIcons[iconIndex]}
+                        alt={advantage.title}
+                        className="w-14 h-14 sm:w-16 sm:h-16"
+                        style={config.isGreen ? { filter: "brightness(0)" } : {}}
+                      />
+                    </motion.div>
 
-              {/* Card 2: Gain de temps - WHITE */}
-              <div
-                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
-              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5 lg:left-2.5"
-              >
-                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={ICONS.gain_temps_icon}
-                    alt="Gain de temps"
-                    className="w-14 h-14 sm:w-16 sm:h-16"
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  {advantages[2].title}
-                </h3>
-                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[2].description}
-                </p>
-              </div>
-
-              {/* Card 3: Optimisation des coûts - GREEN */}
-              <div
-                className="rounded-xl sm:rounded-2xl shadow-md p-5 sm:p-6 pt-14 sm:pt-16 relative lg:-top-5 lg:left-2.5"
-                style={{
-                  backgroundColor: "#7FA946",
-                }}
-              >
-                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={ICONS.optimisation_icon}
-                    alt="Optimisation"
-                    className="w-14 h-14 sm:w-16 sm:h-16"
-                    style={{ filter: "brightness(0)" }}
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  {advantages[3].title}
-                </h3>
-                <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[3].description}
-                </p>
-              </div>
-
-              {/* Card 4: Décisions plus intelligentes - WHITE */}
-              <div
-                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
-              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-5"
-              >
-                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={ICONS.decision_icon}
-                    alt="Décisions"
-                    className="w-14 h-14 sm:w-16 sm:h-16"
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  {advantages[4].title}
-                </h3>
-                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[4].description}
-                </p>
-              </div>
-
-              {/* Card 5: Flexibilité et évolutivité - GREEN */}
-              <div
-                className="rounded-xl sm:rounded-2xl shadow-md p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-3.5 lg:left-3.5"
-                style={{
-                  backgroundColor: "#7FA946",
-                }}
-              >
-                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={ICONS.flexibilite_icon}
-                    alt="Flexibilité"
-                    className="w-14 h-14 sm:w-16 sm:h-16"
-                    style={{ filter: "brightness(0)" }}
-                  />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  {advantages[5].title}
-                </h3>
-                <p className="text-gray-800 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[5].description}
-                </p>
-              </div>
-
-              {/* Card 6: Conformité réglementaire - WHITE */}
-              <div
-                className="bg-white border border-gray-200 rounded-xl sm:rounded-2xl 
-              shadow-lg p-5 sm:p-6 pt-14 sm:pt-16 relative lg:top-3.5 lg:left-3.5"
-              >
-                <div className="absolute -top-7 sm:-top-8 left-1/2 transform -translate-x-1/2">
-                  <img
-                    src={ICONS.conformite_icon}
-                    alt="Conformité"
-                    className="w-14 h-14 sm:w-16 sm:h-16"
-                  />
-                </div>
-
-                <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
-                  {advantages[6].title}
-                </h3>
-                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
-                  {advantages[6].description}
-                </p>
-              </div>
+                    {/* Text Content */}
+                    <motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.3 }}
+                      variants={textVariants}
+                    >
+                      <h3 className="text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 text-black">
+                        {advantage.title}
+                      </h3>
+                      <p className={`text-center text-xs sm:text-sm leading-relaxed ${
+                        config.isGreen ? "text-gray-800" : "text-gray-600"
+                      }`}>
+                        {advantage.description}
+                      </p>
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>

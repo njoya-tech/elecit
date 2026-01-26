@@ -3,30 +3,72 @@ import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Hero = () => {
   const { t } = useTranslation();
-
   const [showVideo, setShowVideo] = useState(false);
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.5 }
+    }
+  };
 
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "55vh" }}
-    >
+      style={{ height: "65vh" }}
+    > 
       {/* Background Image */}
-      <img
+      <motion.img
         src={HERO.entreprise}
         alt="Hero Background"
         className="absolute inset-0 w-full h-full
          object-cover object-center md:object-top"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
       {/* DARK GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
+      <motion.div
+        className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+      />
 
       {/* TECH PATTERN - Hidden on mobile for performance */}
       <img
@@ -43,36 +85,53 @@ const Hero = () => {
       justify-center px-4 sm:px-6 md:px-12 
       lg:px-16 text-center z-20"
       >
-        <h1
+        <motion.h1
           className="font-extrabold text-3xl 
   sm:text-4xl md:text-4xl lg:text-5xl
    xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
           style={{ color: MY_COLORS.white }}
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
         >
           {t("entreprise.hero.title")}{" "}
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t("entreprise.hero.titleHighlight")}
           </span>{" "}
           ?
-        </h1>
+        </motion.h1>
 
-        <h3
+        <motion.h3
           style={{ color: MY_COLORS.secondaryGreen }}
           className="text-white text-sm sm:text-base md:text-lg 
           lg:text-xl xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl
            lg:max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
+          transition={{ delay: 0.1 }}
         >
           {t("entreprise.hero.subtitle")}
-        </h3>
+        </motion.h3>
 
-        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl">
+        <motion.p
+          className="text-white text-sm sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
+        >
           {t("entreprise.hero.descriptionLine1")}
           <br />
           {t("entreprise.hero.descriptionLine2")}
-        </p>
+        </motion.p>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 ml-18 sm:ml-4 md:ml-8 lg:ml-22">
+        <motion.div
+          className="flex items-center gap-4 ml-18 sm:ml-4 md:ml-8 lg:ml-22"
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+        >
           <CTAButton onClick={() => setShowVideo(true)}>
             {t("entreprise.hero.button")}
           </CTAButton>
@@ -80,12 +139,12 @@ const Hero = () => {
           {showVideo && (
             <div
               className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-              onClick={() => setShowVideo(false)} // Click outside closes the video
+              onClick={() => setShowVideo(false)}
             >
               {/* Video Container */}
               <div
                 className="relative w-[90%] max-w-3xl aspect-video bg-black rounded-xl overflow-hidden shadow-xl"
-                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside video
+                onClick={(e) => e.stopPropagation()}
                >
                 {/* Close Button */}
                 <button
@@ -109,7 +168,7 @@ const Hero = () => {
           <motion.img
             src={ICONS.flech_icon}
             alt="Arrow"
-            className="w-10 sm:w-12 opacity-80 origin-top"
+            className="w-10 sm:w-12 opacity-100 origin-top"
             animate={{
               rotate: [-15, 15, -15],
             }}
@@ -119,7 +178,7 @@ const Hero = () => {
               repeat: Infinity,
             }}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -5,26 +5,67 @@ import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-
 const HeroContact = () => {
   const { t } = useTranslation();
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.5 }
+    }
+  };
 
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "55vh" }}
+      style={{ height: "65vh" }}
     >
       {/* Background Image */}
-      <img
+      <motion.img
         src={HERO.contact}
         alt="Hero Background"
         className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
       {/* DARK GRADIENT OVERLAY */}
-      <div
+      <motion.div
         className="absolute inset-0 bg-linear-to-b
        from-black/70 via-black/50 to-black/80"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
       {/* TECH PATTERN */}
@@ -38,23 +79,34 @@ const HeroContact = () => {
 
       {/* CENTERED TEXT CONTENT */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
-        <h1
+        <motion.h1
           className="font-extrabold text-2xl sm:text-3xl md:text-4xl 
             lg:text-4xl xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
           style={{ color: MY_COLORS.primaryBlue }}
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
         >
           {t("contact.hero.title")}
-        </h1>
+        </motion.h1>
 
-        <h2
+        <motion.h2
           className="text-white text-sm sm:text-base md:text-lg lg:text-xl 
           xl:text-2xl tracking-wide uppercase font-bold mb-4 sm:mb-6 
           px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
         >
           {t("contact.hero.subtitle")}
-        </h2>
+        </motion.h2>
 
-        <div className="flex items-center gap-4 lg:mt-10 ml-30">
+        <motion.div
+          className="flex items-center gap-4 lg:mt-10 ml-30"
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+        >
           <button
             className="relative z-20 px-6 sm:px-8 md:px-10 
           py-2.5 sm:py-3 md:py-3.5 rounded-full 
@@ -78,7 +130,6 @@ const HeroContact = () => {
             {t("contact.hero.button")}
           </button>
 
-          
           <motion.img
             src={ICONS.flech_icon}
             alt="Arrow"
@@ -92,9 +143,7 @@ const HeroContact = () => {
               repeat: Infinity,
             }}
           />
-
-
-        </div>
+        </motion.div>
       </div>
     </section>
   );

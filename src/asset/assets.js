@@ -11,7 +11,7 @@ import heroSecurity from "./hero/security-hero.JPG";
 import heroControl from "./hero/control_d'access.png";
 
 // ===== ICONS =====
-import formTech from "./icons/form_tech.svg"; // ✅ path is correct
+import formTech from "./icons/form_tech.svg";
 import Casque from "./icons/CASQUE.svg";
 import Engrenage_plan from "./icons/engrenage_plan.svg";
 import innovation from "./icons/innovation.svg";
@@ -24,21 +24,57 @@ import laptop from "./icons/laptop_mobile.svg";
 import stockage from "./icons/stockage.svg";
 import business_icon from "./icons/business_inteligence.svg";
 import faibilite_icon from "./icons/faibilite.svg";
-import securite_icon from "./icons/securite_renforcee.svg";
-import optimisation_icon from "./icons/optimisation_des_couts.svg";
+import securite_renforcee_icon from "./icons/securite_renforcee.svg";
 import gain_temps_icon from "./icons/gain_de_temps.svg";
 import flexibilite_icon from "./icons/flexibilite_et_evolution.svg";
 import conformite_icon from "./icons/conformite_reglementaire.svg";
 import decision_icon from "./icons/decision_plus_intelligentes.svg";
 import flech_icon from "./icons/flèche incurvé.svg";
+import Gestion_IT_icon from "./icons/Gestion_IT.svg";
+import Virtualisation_icon from "./icons/virtualisation.svg";
+import Cybersecurite_icon from "./icons/Cybersecurite.svg";
+import controle_icon from "./icons/Contrôle_access.svg";
+import camera_icon from "./icons/video_ccrtv.svg";
+import update_icon from "./icons/update.svg";
+import Developement_icon from "./icons/Developement_application.svg";
+import StorageDB_icon from "./icons/StorageDB.svg";
+import stop_car_icon from "./icons/stop_car.svg";
+import securite_icon from "./icons/Securite.svg";
+import video_icon from "./icons/video_ccrtv.svg"
+import regulatory_icon from "./icons/regulatory.svg";
+import business_intel_icon from "./icons/business_inteligent.svg"
+import collect_et_nettoyage_icon from "./icons/collect_et_nettoyage.svg";
+import door_icon from "./icons/optimisation_des_couts.svg"
+
+
+
+
+
+
+// ⚠️ COMMENTED OUT - Missing files - uncomment when files are added
+// import Datascience_icon from "./icons/Datascience.svg";
+// import Donnes_icon from "./icons/Donnes.svg";
+// import bulb_icon from "./icons/bulb.svg";
+// import business_inteligent_icon from "./icons/business_inteligent.svg";
+// import gestion_centralise_icon from "./icons/gestion_centralise.svg";
+
+import time_icon from "./icons/clock.svg";
+import arrow_circle_icon from "./icons/arrow_circle.svg";
+
+// Temporary substitutes for missing icons (using existing similar icons)
+import Datascience_icon from "./icons/Data_science.svg"; // Using BI icon
+import Donnes_icon from "./icons/Donnes.svg"; // Using database icon
+import bulb_icon from "./icons/bulb.svg"; // Using innovation icon
+import business_inteligent_icon from "./icons/business_inteligence.svg"; // Same as business_icon
+import gestion_centralise_icon from "./icons/Gestion_IT.svg"; // Using IT management icon
 
 //==========IMAGES==================
 
-import IMG1 from "./images/image_1.JPG";
+import IMG1 from "./images/tunnel.jpeg";
 import IMG2 from "./images/image_2.JPG";
-import IMG3 from "./images/image_3.JPG";
-import IMG4 from "./images/image_4.JPG";
-import IMG5 from "./images/Tablet.jpg";
+import IMG3 from "./images/forage.jpeg";
+import IMG4 from "./images/drain.jpeg";
+import IMG5 from "./images/arrosage.jpeg";
 import IMG6 from "./images/image_6.jpg";
 import IMG7 from "./images/image_7.jpg";
 import IMG8 from "./images/bureau_card.png";
@@ -64,8 +100,7 @@ import IMG27 from "./images/computer.jpg";
 import IMG28 from "./images/office_1.jpg";
 import IMG29 from "./images/office_2.jpg";
 import IMG30 from "./images/office_3.jpg";
-
-
+import IMG31 from './images/image_4.JPG'
 
 //========== PARTNERS IMAGES ==========
 
@@ -98,11 +133,10 @@ export const HERO = {
   sav: heroSav,
   security: heroSecurity,
   control: heroControl,
-  
 };
 
 export const ICONS = {
-  formTech: formTech, // must match import name
+  formTech: formTech,
   Casque: Casque,
   Engrenage_plan: Engrenage_plan,
   innovation: innovation,
@@ -115,13 +149,36 @@ export const ICONS = {
   business_icon: business_icon,
   stockage: stockage,
   faibilite_icon: faibilite_icon,
+  securite_renforcee_icon: securite_renforcee_icon,
   securite_icon: securite_icon,
-  optimisation_icon: optimisation_icon,
   gain_temps_icon: gain_temps_icon,
   flexibilite_icon: flexibilite_icon,
   conformite_icon: conformite_icon,
   decision_icon: decision_icon,
   flech_icon: flech_icon,
+  Gestion_IT_icon: Gestion_IT_icon,
+  Cybersecurite_icon: Cybersecurite_icon,
+  Virtualisation_icon: Virtualisation_icon,
+  controle_icon: controle_icon,
+  camera_icon: camera_icon,
+  update_icon: update_icon,
+  Developement_icon: Developement_icon,
+  StorageDB_icon: StorageDB_icon,
+  stop_car_icon: stop_car_icon,
+  regulatory_icon: regulatory_icon,
+  arrow_circle_icon: arrow_circle_icon,
+  Donnes_icon: Donnes_icon,
+  Datascience_icon: Datascience_icon,
+  bulb_icon: bulb_icon,
+  business_inteligence_icon: business_icon, // Using same as business_icon
+  business_inteligent_icon: business_inteligent_icon,
+  gestion_centralise_icon: gestion_centralise_icon,
+  time_icon: time_icon,
+  video_icon:video_icon,
+  business_intel_icon:business_intel_icon,
+  collect_et_nettoyage_icon:collect_et_nettoyage_icon,
+  door_icon:door_icon,
+  
 };
 
 export const IMAGES = {
@@ -155,6 +212,7 @@ export const IMAGES = {
   IMG28: IMG28,
   IMG29: IMG29,
   IMG30: IMG30,
+  IMG31:IMG31
 };
 
 export const PARTNERS = {
@@ -168,8 +226,8 @@ export const PARTNERS = {
   partner8: partner8,
   partner9: partner9,
 };
-// =========== OBJECTS =============
 
+// =========== OBJECTS =============
 export const OBJECTS = {
   obj_1: obj_1,
   obj_2: obj_2,
@@ -185,4 +243,5 @@ export default {
   ICONS,
   IMAGES,
   PARTNERS,
+  OBJECTS,
 };

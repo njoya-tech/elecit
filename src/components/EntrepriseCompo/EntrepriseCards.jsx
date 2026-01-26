@@ -2,7 +2,6 @@ import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { useTranslation } from "react-i18next";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const EntrepriseCards = () => {
@@ -26,15 +25,74 @@ const EntrepriseCards = () => {
     icon: iconMap[index],
   }));
 
+  // Animation variants for different elements
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  // All cards animate together
+  const cardVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0, // All cards start together
+      }
+    }
+  };
+
+  // Animation for badge - starts after cards
+  const badgeVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.4, // All badges appear 0.4s after cards
+      }
+    }
+  };
+
+  // Animation for text content - starts after badges
+  const textVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.7, // All text appears 0.7s after cards
+      }
+    }
+  };
+
   return (
     <section
-  className="w-screen pt-20 lg:pt-24 pb-4 relative 
+      className="w-screen pt-20 lg:pt-24 pb-4 relative 
   -mx-[50vw] left-1/2 right-1/2"
-  style={{
-    backgroundColor: MY_COLORS.gray,
-  }}
->
-      <div className="relative w-full flex justify-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+      style={{
+        backgroundColor: MY_COLORS.gray,
+      }}
+    >
+      {/* Hero Banner Section */}
+      <motion.div
+        className="relative w-full flex justify-center mb-8 sm:mb-12 md:mb-16 lg:mb-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
+      >
         <div className="w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 relative">
           <motion.img
             src={ICONS.Casque}
@@ -76,11 +134,13 @@ const EntrepriseCards = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="max-w-[1200px] mx-auto px-4 
+      <div
+        className="max-w-[1200px] mx-auto px-4 
       sm:px-6 lg:px-8 -mt-8 sm:-mt-12
-       md:-mt-16 lg:-mt-17 flex flex-col h-full">
+       md:-mt-16 lg:-mt-17 flex flex-col h-full"
+      >
         <div className="relative flex-1">
           <img
             src={ICONS.Engrenage_plan}
@@ -108,15 +168,25 @@ const EntrepriseCards = () => {
                 key={index}
                 className="relative flex flex-col items-center w-full max-w-xs sm:max-w-sm"
               >
-                {/* CARD */}
-                <article
-  className="relative bg-white rounded-2xl shadow-lg w-full 
+                {/* CARD with staggered animation */}
+                <motion.article
+                  className="relative bg-white rounded-2xl shadow-lg w-full 
     pt-14 sm:pt-16 md:pt-20 p-5 sm:p-6 md:p-7 lg:p-10 text-center
     hover:shadow-xl transition-all duration-300 hover:-translate-y-1
     min-h-[280px] sm:min-h-[300px] md:min-h-70 "
->
-                  {/* BADGE */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={cardVariants}
+                >
+                  {/* BADGE with separate animation */}
+                  <motion.div
+                    className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={badgeVariants}
+                  >
                     <div
                       className="relative flex items-center justify-center
         w-14 h-14 sm:w-16 sm:h-16 md:w-22 md:h-22"
@@ -141,18 +211,27 @@ const EntrepriseCards = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  {/* CONTENT */}
-                  <h4 className="text-base sm:text-lg 
-                  md:text-xl font-bold text-slate-900 mb-8">
-                    {card.title}
-                   </h4>
+                  {/* CONTENT with separate animation */}
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={textVariants}
+                  >
+                    <h4
+                      className="text-base sm:text-lg 
+                  md:text-xl font-bold text-slate-900 mb-8"
+                    >
+                      {card.title}
+                    </h4>
 
-                   <p className="text-xs sm:text-sm text-slate-900 leading-relaxed px-1 ">
-                    {card.description}
-                  </p>
-                </article>
+                    <p className="text-xs sm:text-sm text-slate-900 leading-relaxed px-1 ">
+                      {card.description}
+                    </p>
+                  </motion.div>
+                </motion.article>
               </div>
             ))}
           </div>

@@ -187,7 +187,7 @@
       "itDataProcessing": "IT & Data Processing",
       "accessControlSecurity": "Access Control & Security",
       "designOffice": "Design Office",
-      "afterSalesService": "After-Sales Service"
+      "afterSalesService": "BUILDING TECHNICAL MAINTENANCE"
     },
     "subsidiaries": {
       "foczou": "FOCZOU",
@@ -789,7 +789,7 @@
   
   "sav": {
     "hero": {
-      "title": "AFTER-SALES SERVICE",
+      "title": "BUILDING TECHNICAL MAINTENANCE",
       "subtitle": "We ensure customer satisfaction, guarantee equipment longevity, and strengthen client trust.",
       "button": "View content"
     },
@@ -903,11 +903,11 @@
       "heading": "Types of hydraulic structures supported",
       "projects": [
         { "title": "Tunnel" },
-        { "title": "Dam" },
+        { "title": "Carnivore" },
         { "title": "Drilling" },
-        { "title": "Canal" },
-        { "title": "Pumping" },
-        { "title": "Drainage" }
+        { "title": "Drain" },
+        { "title": "Irrigation system" }
+      
       ],
       "cta": {
         "title": "Have a",

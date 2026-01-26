@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { MY_COLORS } from "../../constants/colors.js";
 import { IMAGES } from "../../asset/assets.js";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useTranslation } from 'react-i18next';
+import { motion } from "framer-motion";
 import { submitContactForm, isValidEmail, isValidPhone } from "../../services/contact.js";
 
 const FormulaContact = () => {
@@ -21,7 +23,7 @@ const FormulaContact = () => {
   // UI state
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [submitMessage, setSubmitMessage] = useState("");
 
   // Handle input changes
@@ -31,7 +33,6 @@ const FormulaContact = () => {
       ...prev,
       [name]: value
     }));
-    // Clear error for this field when user types
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: "" }));
     }
@@ -84,11 +85,9 @@ const FormulaContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Clear previous status
     setSubmitStatus(null);
     setSubmitMessage("");
 
-    // Validate
     if (!validateForm()) {
       return;
     }
@@ -102,7 +101,6 @@ const FormulaContact = () => {
         setSubmitStatus("success");
         setSubmitMessage(t('contact.form.success') || "Thank you! Your message has been sent successfully.");
         
-        // Reset form
         setFormData({
           firstName: "",
           lastName: "",
@@ -111,7 +109,6 @@ const FormulaContact = () => {
           message: "",
         });
 
-        // Clear success message after 5 seconds
         setTimeout(() => {
           setSubmitStatus(null);
           setSubmitMessage("");
@@ -128,11 +125,45 @@ const FormulaContact = () => {
     }
   };
 
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+  const slideRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
   return (
-    <section className="w-full bg-gray-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+    <section className="w-full bg-white-50 py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* HEADINGS */}
-        <div className="mb-8 sm:mb-10 md:mb-12">
+        <motion.div
+          className="mb-8 sm:mb-10 md:mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideDown}
+        >
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#00729B] leading-tight">
             {t('contact.form.title')}
           </h1>
@@ -142,12 +173,18 @@ const FormulaContact = () => {
           <p className="mt-2 text-base sm:text-lg md:text-xl font-semibold text-[#00729B]">
             {t('contact.form.subtitle2')}
           </p>
-        </div>
+        </motion.div>
 
         {/* TWO-COLUMN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-stretch">
           {/* LEFT: FORM */}
-          <div className="bg-white border border-[#00729B] p-6 sm:p-8 md:p-10 shadow-sm rounded-lg">
+          <motion.div
+            className="bg-white border border-[#00729B] p-6 sm:p-8 md:p-10 shadow-sm rounded-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideLeft}
+           >
             <h2 className="sr-only">{t('contact.form.title')}</h2>
 
             {/* Success/Error Message */}
@@ -164,7 +201,7 @@ const FormulaContact = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
-              {/* Nom de famille */}
+              {/* Form fields remain the same... */}
               <div>
                 <label className="block text-sm font-semibold text-gray-800 mb-1.5">
                   {t('contact.form.lastName')} *
@@ -184,7 +221,6 @@ const FormulaContact = () => {
                 )}
               </div>
 
-              {/* Prénom */}
               <div>
                 <label className="block text-sm font-semibold text-gray-800 mb-1.5">
                   {t('contact.form.firstName')} *
@@ -204,7 +240,6 @@ const FormulaContact = () => {
                 )}
               </div>
 
-              {/* Téléphone */}
               <div>
                 <label className="block text-sm font-semibold text-gray-800 mb-1.5">
                   {t('contact.form.phone')} *
@@ -229,7 +264,6 @@ const FormulaContact = () => {
                 )}
               </div>
 
-              {/* E-mail */}
               <div>
                 <label className="block text-sm font-semibold text-gray-800 mb-1.5">
                   {t('contact.form.email')} *
@@ -249,7 +283,6 @@ const FormulaContact = () => {
                 )}
               </div>
 
-              {/* Message */}
               <div>
                 <label className="block text-sm font-semibold text-gray-800 mb-1.5">
                   {t('contact.form.message')} *
@@ -269,7 +302,6 @@ const FormulaContact = () => {
                 )}
               </div>
 
-              {/* Submit button */}
               <div className="pt-2">
                 <button
                   type="submit"
@@ -308,10 +340,16 @@ const FormulaContact = () => {
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
 
           {/* RIGHT: IMAGE */}
-          <div className="w-full h-64 sm:h-80 md:h-96 lg:h-full min-h-[400px]">
+          <motion.div
+            className="w-full h-64 sm:h-80 md:h-96 lg:h-full min-h-[400px]"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideRight}
+           >
             <img
               src={IMAGES.IMG17}
               alt={t('contact.form.imageAlt')}
@@ -321,7 +359,7 @@ const FormulaContact = () => {
                md:object-[50%_12%]
                lg:object-center"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

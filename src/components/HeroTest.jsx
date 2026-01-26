@@ -48,21 +48,55 @@ const ElecITCarouselCard = () => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
+  // Animation variant for slide down
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+  const slideLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+  const slideRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+
   return (
     <div
       className="relative bg-white flex flex-col
      md:flex-row items-start justify-center p-4 sm:p-6 md:p-8 py-6 
      md:py-12 top-10 w-full gap-6 sm:gap-8 
      md:gap-12 lg:gap-16"
-    >
+      
+     >
       {/* === GROUP: GREEN BLOCK + TOP GEARS === */}
-      <div
+      <motion.div
         className="elecit-green-block-wrapper relative flex-none w-full 
         max-w-[320px] sm:max-w-[420px] md:max-w-[400px] 
         lg:max-w-[440px] mx-auto md:mx-0 md:w-[400px] md:h-[500px] h-64 sm:h-80 
         lg:h-[500px]"
         data-component="elecit-green-block"
-      >
+        initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6}}
+            variants={slideLeft}
+        
+       >
         {/* Top-left gears - visible on all screens but smaller on mobile */}
         <img
           src={ICONS.Engrenage_plan}
@@ -134,13 +168,17 @@ const ElecITCarouselCard = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* === GROUP: RIGHT CONTENT === */}
-      <div
+      <motion.div
         className="elecit-content-wrapper max-w-lg lg:max-w-xl flex-1 relative p-4 sm:p-6 md:p-8 z-10"
         data-component="elecit-content"
-      >
+        initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            variants={slideRight}
+       >
         {/* Helmet Icon - visible on all screens */}
         <div
           className="hidden lg:block absolute -top-6 sm:-top-10 md:-top-16 
@@ -240,7 +278,8 @@ const ElecITCarouselCard = () => {
           className="hidden lg:block absolute -bottom-12 sm:-bottom-16 md:-bottom-24 lg:-bottom-32 xl:-bottom-40 -right-4 sm:-right-6 md:-right-10 lg:-right-16 xl:-right-20 w-8 sm:w-12 md:w-16 lg:w-24 xl:w-32 opacity-60 sm:opacity-80 md:opacity-100 rotate-45 animate-spin z-0"
           style={{ animationDuration: "4s" }}
         />
-      </div>
+      </motion.div>
+
     </div>
   );
 };

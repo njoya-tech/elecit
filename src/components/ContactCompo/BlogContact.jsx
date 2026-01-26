@@ -1,7 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useMemo } from "react";
-import { useTranslation } from 'react-i18next';
-import { fetchAllPosts, getAssetUrl, getTranslation } from "../../services/blog.js";
+import { useTranslation } from "react-i18next";
+import {
+  fetchAllPosts,
+  getAssetUrl,
+  getTranslation,
+} from "../../services/blog.js";
+import { MY_COLORS } from "../../constants/colors.js";
+import { motion } from "framer-motion";
+
 
 const BlogContact = ({ onPostClick }) => {
   const { t, i18n } = useTranslation();
@@ -15,25 +22,29 @@ const BlogContact = ({ onPostClick }) => {
     const loadPosts = async () => {
       try {
         setLoading(true);
-        
+
         // Fetch all posts (you can limit to 6 or 9 for the carousel)
         const directusPosts = await fetchAllPosts({
           limit: 6,
-          sort: "-created_at"
+          sort: "-created_at",
         });
 
         // Transform and translate posts
         const transformedPosts = directusPosts.map((post) => {
           const translatedPost = getTranslation(post, i18n.language);
-          
+
           return {
             id: translatedPost.id,
             title: translatedPost.title,
             excerpt: translatedPost.excerpt,
-            image: getAssetUrl(translatedPost.cover_image) || "https://via.placeholder.com/500x400",
+            image:
+              getAssetUrl(translatedPost.cover_image) ||
+              "https://via.placeholder.com/500x400",
             author: {
               name: translatedPost.author?.full_name || "Unknown Author",
-              avatar: getAssetUrl(translatedPost.author?.avatar) || "https://i.pravatar.cc/150?img=1",
+              avatar:
+                getAssetUrl(translatedPost.author?.avatar) ||
+                "https://i.pravatar.cc/150?img=1",
             },
           };
         });
@@ -102,7 +113,7 @@ const BlogContact = ({ onPostClick }) => {
   // auto slide
   useEffect(() => {
     if (posts.length === 0) return;
-    
+
     const interval = setInterval(() => {
       handleNext();
     }, 5000);
@@ -143,17 +154,51 @@ const BlogContact = ({ onPostClick }) => {
     );
   }
 
+  const slideDown = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+const cardStagger = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+      delay: i * 0.15, // Stagger cards by 0.15s each
+    }
+  })
+};
+
   return (
-    <section className="w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20 px-4 sm:px-6">
+    <section
+      className="w-screen pt-12 sm:pt-14 md:pt-16 lg:pt-20 pb-12 sm:pb-14 md:pb-16 lg:pb-20 relative 
+  -mx-[50vw] left-1/2 right-1/2"
+      style={{ backgroundColor: MY_COLORS.gray }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="mb-8 sm:mb-10 md:mb-12 text-center px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight sm:leading-snug">
-            {t('contact.blog.title')}{" "}
-            <span className="text-[#00729B]">{t('contact.blog.highlight')}</span>{" "}
-            {t('contact.blog.title2')}
-          </h2>
-        </div>
+        <motion.div
+  className="mb-8 sm:mb-10 md:mb-12 text-center px-2"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={slideDown}
+>
+  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight sm:leading-snug">
+    {t("contact.blog.title")}{" "}
+    <span className="text-[#00729B]">
+      {t("contact.blog.highlight")}
+    </span>{" "}
+    {t("contact.blog.title2")}
+  </h2>
+</motion.div>
 
         {/* Cards wrapper */}
         <div className="relative px-4 sm:px-0">
@@ -161,17 +206,20 @@ const BlogContact = ({ onPostClick }) => {
           <div
             className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 transition-all 
             duration-300 transform ${
-              animate
-                ? "-translate-x-4 opacity-0"
-                : "translate-x-0 opacity-100"
+              animate ? "-translate-x-4 opacity-0" : "translate-x-0 opacity-100"
             }`}
           >
-            {visiblePosts.map((post, index) => (
-              <article
-                key={`${post.id}-${i18n.language}`}
-                onClick={() => handlePostClick(post.id)}
-                className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8 cursor-pointer"
-              >
+           {visiblePosts.map((post, index) => (
+  <motion.article
+    key={`${post.id}-${i18n.language}`}
+    onClick={() => handlePostClick(post.id)}
+    className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8 cursor-pointer"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    custom={index}
+    variants={cardStagger}
+  >
                 {/* Number badge */}
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
                   <div className="h-12 w-12 rounded-full bg-[#00729B] text-white flex items-center justify-center text-lg font-bold shadow-md">
@@ -194,7 +242,7 @@ const BlogContact = ({ onPostClick }) => {
                     className={`font-semibold text-sm sm:text-base md:text-lg mb-2 sm:mb-3 text-center transition-all duration-500 transform line-clamp-3
                      ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
                     style={{ transitionDelay: "100ms" }}
-                   >
+                  >
                     {post.title}
                   </h3>
 
@@ -202,7 +250,7 @@ const BlogContact = ({ onPostClick }) => {
                     className={`text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 flex-1 text-center transition-all duration-500 transform line-clamp-3
                        ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
                     style={{ transitionDelay: "200ms" }}
-                   >
+                  >
                     {post.excerpt}
                   </p>
 
@@ -210,17 +258,17 @@ const BlogContact = ({ onPostClick }) => {
                     className={`mt-auto inline-flex items-center justify-center px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#00729B] text-white text-xs sm:text-sm font-semibold hover:bg-[#005d7e] active:bg-[#004a63] transition-all duration-200 transform
                      ${animate ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"}`}
                     style={{ transitionDelay: "300ms" }}
-                   >
-                    {t('contact.blog.readMore')}
+                  >
+                    {t("contact.blog.readMore")}
                   </button>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
 
           {/* Left arrow - hidden on mobile */}
           <button
-            aria-label={t('contact.blog.prevPage')}
+            aria-label={t("contact.blog.prevPage")}
             onClick={handlePrev}
             className="hidden lg:flex items-center justify-center h-10 w-10 xl:h-12 xl:w-12 rounded-full bg-white border-2 border-[#00729B] shadow-md
                        absolute top-1/2 -translate-y-1/2 hover:bg-[#00729B] hover:text-white focus:outline-none transition-colors duration-200 text-2xl font-bold text-[#00729B]"
@@ -231,7 +279,7 @@ const BlogContact = ({ onPostClick }) => {
 
           {/* Right arrow - hidden on mobile */}
           <button
-            aria-label={t('contact.blog.nextPage')}
+            aria-label={t("contact.blog.nextPage")}
             onClick={handleNext}
             className="hidden lg:flex items-center justify-center h-10 w-10 xl:h-12 xl:w-12 rounded-full bg-white border-2 border-[#00729B] shadow-md
                        absolute top-1/2 -translate-y-1/2 hover:bg-[#00729B] hover:text-white focus:outline-none transition-colors duration-200 text-2xl font-bold text-[#00729B]"
@@ -243,14 +291,14 @@ const BlogContact = ({ onPostClick }) => {
           {/* Mobile navigation arrows */}
           <div className="flex lg:hidden justify-center gap-4 mt-6">
             <button
-              aria-label={t('contact.blog.prevPage')}
+              aria-label={t("contact.blog.prevPage")}
               onClick={handlePrev}
               className="flex items-center justify-center h-10 w-10 rounded-full bg-white border-2 border-[#00729B] shadow-md hover:bg-[#00729B] hover:text-white transition-colors duration-200 text-2xl font-bold text-[#00729B]"
             >
               ‹
             </button>
             <button
-              aria-label={t('contact.blog.nextPage')}
+              aria-label={t("contact.blog.nextPage")}
               onClick={handleNext}
               className="flex items-center justify-center h-10 w-10 rounded-full bg-white border-2 border-[#00729B] shadow-md hover:bg-[#00729B] hover:text-white transition-colors duration-200 text-2xl font-bold text-[#00729B]"
             >
@@ -265,9 +313,11 @@ const BlogContact = ({ onPostClick }) => {
             <button
               key={index}
               onClick={() => setPage(index)}
-              aria-label={`${t('contact.blog.goToPage')} ${index + 1}`}
+              aria-label={`${t("contact.blog.goToPage")} ${index + 1}`}
               className={`h-2 rounded-full transition-all ${
-                page === index ? "w-8 bg-[#00729B]" : "w-2 bg-gray-300 hover:bg-gray-400"
+                page === index
+                  ? "w-8 bg-[#00729B]"
+                  : "w-2 bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}

@@ -6,6 +6,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
+body {
+  overflow-x: hidden;
+}
 
 @layer base {
   html, body, #root {

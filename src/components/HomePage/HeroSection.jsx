@@ -248,7 +248,7 @@ const HeroSection = ({ slides }) => {
       </div>
 
       {/* Animation CSS pour la flèche */}
-      <style jsx>{`
+      <style>{`
         @keyframes bounce-horizontal {
           0%,
           100% {

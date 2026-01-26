@@ -3,13 +3,66 @@ import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
-import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import {useNavigate} from "react-router-dom"
 
 const SavGreenCards = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const services = t("sav.greenCards.services", { returnObjects: true });
-  const navigate = useNavigate();
+
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  // All cards animate together
+  const cardVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0,
+      }
+    }
+  };
+
+  // All badges animate together after cards
+  const badgeVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.4,
+      }
+    }
+  };
+
+  // All text animates together after badges
+  const textVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.7,
+      }
+    }
+  };
 
   return (
     <>
@@ -17,9 +70,13 @@ const SavGreenCards = () => {
         {/* ============================================ */}
         {/* HEADER SECTION                              */}
         {/* ============================================ */}
-        <div
+        <motion.div
           className="relative w-full mb-8 overflow-hidden"
           style={{ backgroundColor: MY_COLORS.black }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideDown}
         >
           <h2
             className="relative text-lg sm:text-2xl md:text-4xl lg:text-5xl 
@@ -38,12 +95,18 @@ const SavGreenCards = () => {
               className="w-full h-full object-contain"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* ============================================ */}
         {/* SUBTITLE WITH DECORATIVE GEAR               */}
         {/* ============================================ */}
-        <div className="relative text-center mb-12 md:mb-20 px-4">
+        <motion.div
+          className="relative text-center mb-12 md:mb-20 px-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideDown}
+        >
           {/* DECORATIVE GEAR - Top left (Desktop only) */}
           <div className="absolute left-0 top-0 hidden xl:block pointer-events-none">
             <img
@@ -66,7 +129,7 @@ const SavGreenCards = () => {
           >
             {t("sav.greenCards.subtitle")}
           </p>
-        </div>
+        </motion.div>
 
         {/* ============================================ */}
         {/* SERVICES GRID WITH DOTTED LINES             */}
@@ -102,83 +165,124 @@ const SavGreenCards = () => {
 
           {/* ============================================ */}
           {/* ALL 6 CARDS IN ONE GRID                    */}
-          {/* Mobile: 1 col | Tablet: 2 cols | Desktop: 3 cols */}
           {/* ============================================ */}
           <div
             className="grid grid-cols-1 md:grid-cols-2 
           lg:grid-cols-3 gap-6 md:gap-8 relative z-10"
           >
             {/* CARD 1 - IMAGE */}
-            <div className="flex justify-center items-center p-4">
-              <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-sm">
+            <motion.div
+              className="flex justify-center items-center p-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <div
+                className="rounded-xl  overflow-hidden shadow-xl w-full 
+  max-h-[350px] md:max-h-[300px] border border-gray-200
+  hover:shadow-2xl transition-shadow duration-300 "
+              >
                 <img
                   src={IMAGES.IMG5}
                   alt="IT Services Illustration"
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full h-[350px] md:h-[300px] object-cover object-bottom"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* CARD 2 - White background */}
-            <div
+            <motion.div
               className="relative pt-16 md:pt-20 p-6 rounded-xl 
 shadow-xl bg-white hover:shadow-2xl transition-shadow 
-duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px]"
+duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px] top-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
             >
-              <div
+              <motion.div
                 className="absolute -top-10 md:-top-12 left-1/2 
-              transform -translate-x-1/2"
+  transform -translate-x-1/2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={badgeVariants}
               >
                 <img
                   src={ICONS.laptop}
                   alt=""
                   className="w-20 h-20 md:w-24 md:h-24"
                 />
-              </div>
+              </motion.div>
 
-              <h3
-                className="text-lg md:text-xl font-bold mb-3 text-center"
-                style={{ color: MY_COLORS.black }}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants}
               >
-                {services[0].title}
-              </h3>
-              <p
-                className="text-gray-600 text-center text-sm 
-              md:text-base leading-relaxed"
-              >
-                {services[0].description}
-              </p>
-            </div>
+                <h3
+                  className="text-lg md:text-xl font-bold mb-3 text-center"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {services[0].title}
+                </h3>
+                <p
+                  className="text-gray-900 text-center text-sm 
+  md:text-base leading-relaxed"
+                >
+                  {services[0].description}
+                </p>
+              </motion.div>
+            </motion.div>
 
             {/* CARD 3 - Green background */}
-            <div
+            <motion.div
               className="relative pt-16 md:pt-20 p-6 rounded-xl 
-            shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow
-             duration-300 border border-gray-100 max-h-[350px] md:max-h-[300px]"
+shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow
+ duration-300 border border-gray-100 max-h-[350px] md:max-h-[300px] top-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
             >
-              <div className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
+              <motion.div
+                className="absolute -top-10 md:-top-12 left-1/2 transform -translate-x-1/2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={badgeVariants}
+              >
                 <img
                   src={ICONS.stockage}
                   alt=""
                   className="w-20 h-20 md:w-24 md:h-24"
                   style={{ filter: "brightness(0)" }}
                 />
-              </div>
+              </motion.div>
 
-              <h3
-                className="text-lg md:text-xl font-bold mb-3 text-center"
-                style={{ color: MY_COLORS.black }}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants}
               >
-                {services[1].title}
-              </h3>
-              <p className="text-black text-center text-sm md:text-base leading-relaxed">
-                {services[1].description}
-              </p>
-            </div>
+                <h3
+                  className="text-lg md:text-xl font-bold mb-3 text-center"
+                  style={{ color: MY_COLORS.black }}
+                >
+                  {services[1].title}
+                </h3>
+                <p className="text-black text-center text-sm md:text-base leading-relaxed">
+                  {services[1].description}
+                </p>
+              </motion.div>
+            </motion.div>
 
             {/* CARDS 4, 5, 6 - From services array */}
             {services.slice(2).map((service, index) => (
-              <div
+              <motion.div
                 key={index}
                 className={`
                   relative pt-14 md:pt-16 p-4 rounded-xl shadow-lg lg:top-10
@@ -186,9 +290,19 @@ duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px]"
                   border border-gray-100 max-h-[350px] md:max-h-[300px]
                   ${index === 1 ? "bg-[#7FA946]" : "bg-white"}
                 `}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
               >
-                <div className="absolute -top-10 md:-top-12 left-1/2 
-                transform -translate-x-1/2">
+                <motion.div
+                  className="absolute -top-10 md:-top-12 left-1/2 
+                transform -translate-x-1/2"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={badgeVariants}
+                >
                   <img
                     src={ICONS.badge}
                     alt=""
@@ -197,22 +311,29 @@ duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px]"
                       ${index === 1 ? "brightness-0" : ""}
                     `}
                   />
-                </div>
+                </motion.div>
 
-                <h3
-                  className="text-lg md:text-xl font-bold mb-3 text-center"
-                  style={{ color: MY_COLORS.black }}
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={textVariants}
                 >
-                  {service.title}
-                </h3>
-                <p
-                  className={`text-center text-sm md:text-center leading-relaxed ${
-                    index === 1 ? "text-black" : "text-gray-900"
-                  }`}
-                >
-                  {service.description}
-                </p>
-              </div>
+                  <h3
+                    className="text-lg md:text-xl font-bold mb-3 text-center"
+                    style={{ color: MY_COLORS.black }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p
+                    className={`text-center text-sm md:text-center leading-relaxed ${
+                      index === 1 ? "text-black" : "text-gray-900"
+                    }`}
+                  >
+                    {service.description}
+                  </p>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -221,7 +342,13 @@ duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px]"
       {/* ============================================ */}
       {/* CTA SECTION WITH BACKGROUND                 */}
       {/* ============================================ */}
-      <section className="hidden lg:block">
+      <motion.section
+        className="hidden lg:block"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
+      >
         <div className="relative mx-auto w-[90%] lg:w-6/6 max-w-6xl -mt-15 p-0 md:top-10">
           <div className="w-full overflow-hidden" style={{ height: "440px" }}>
             <img
@@ -298,7 +425,7 @@ duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px]"
             />
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };
