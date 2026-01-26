@@ -76,6 +76,8 @@ const HeroSection = () => {
             >
               {t('projet.buttonText')}
             </button>
+    
+
 
                 <motion.div 
                   className="flex-shrink-0"

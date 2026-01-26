@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import '../FabriMeca/FoRound.css'
 
 const Ground = () => {
     const {t} = useTranslation();
@@ -72,30 +73,20 @@ const Ground = () => {
         </div>
   {/* Engrenages animés */}
        <div className=" absolute lg:bottom-70 lg:left-125 md:left-20 md:bottom-60 sm:left-20 sm:bottom-60 z-30 -left-5 bottom-50">
-                 <motion.img 
+                 <img 
                    src={rail} 
                    alt="engrenage" 
-                   className="w-20 h-20"
-                   animate={{ rotate: 360 }}
-                   transition={{ 
-                     duration: 6, 
-                     ease: "linear", 
-                     repeat: Infinity 
-                   }}
+                   className="w-20 h-20 lg:rotating-gear"
+                
                  />
                </div>
         
        <div className=" absolute lg:bottom-70 lg:left-320 z-30 md:left-140 md:bottom-50 left-80 bottom-50">
-                <motion.img 
+                <img 
                   src={rail} 
                   alt="engrenage" 
-                  className="w-70 h-45"
-                  animate={{ rotate: 360 }}
-                  transition={{ 
-                    duration: 6, 
-                    ease: "linear", 
-                    repeat: Infinity 
-                  }}
+                  className="w-70 h-45 lg:rotating-gear"
+              
                 />
               </div>
     </div>

@@ -1,22 +1,20 @@
-<<<<<<< HEAD
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/acceuil/HomePage'
-import ProjetsPage from './pages/projets/ProjetsPage';
-import Carriere from './pages/carriere/Carriere';
-import SmartBuildingPage from './pages/solution/SmartBuildingPage';
-import FabriMecaPage from './pages/solution/FabriMecaPage';
-import GpsTracking from './pages/solution/GpsTracking';
-import JobOffers from './pages/job/JobOffers';
-import Entreprise from "./pages/l'entreprise/Entreprise"
-import Contact from './pages/contact/Contact';
-import DataProcessing from './pages/solution/DataProcessing';
-import ControlPage from './pages/solution/ControlPage';
-import BureauPage from './pages/bureau\'etude/BureauPage';
-import SavPage from "./pages/sav/SavPage"
-import BlogPage from './pages/blog/BlogPage';
-import JobOffersOnly from './pages/job/JobOffersOnly';
-import BlogDetailPage from './components/Blog/BlogDetailPage.jsx';
-=======
+
+// import HomePage from './pages/acceuil/HomePage'
+// import ProjetsPage from './pages/projets/ProjetsPage';
+// import Carriere from './pages/carriere/Carriere';
+// import SmartBuildingPage from './pages/solution/SmartBuildingPage';
+// import FabriMecaPage from './pages/solution/FabriMecaPage';
+// import GpsTracking from './pages/solution/GpsTracking';
+// // import JobOffers from './pages/job/JobOffers';
+// import Entreprise from "./pages/l'entreprise/Entreprise"
+// import Contact from './pages/contact/Contact';
+// import DataProcessing from './pages/solution/DataProcessing';
+// import ControlPage from './pages/solution/ControlPage';
+// import BureauPage from './pages/bureau\'etude/BureauPage';
+// import SavPage from "./pages/sav/SavPage"
+// import BlogPage from './pages/blog/BlogPage';
+// import JobOffersOnly from './pages/job/JobOffersOnly';
+// import BlogDetailPage from './components/Blog/BlogDetailPage.jsx';
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -55,7 +53,9 @@ const SavPage = lazy(() => import("./pages/sav/SavPage"));
 // Jobs
 const JobOffers = lazy(() => import("./pages/job/JobOffers"));
 const JobOffersOnly = lazy(() => import("./pages/job/JobOffersOnly"));
->>>>>>> hope1
+
+import ProjetsDetail from './pages/projets/ProjetsDetail';
+
 
 function App() {
   return (
@@ -70,7 +70,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projets" element={<ProjetsPage />} />
-          <Route path="/carriere" element={<Carriere />} />
+          <Route path="/projets/:id" element={<ProjetsDetail />} />
+        <Route path="/carriere" element={<Carriere />} />
 
           {/* Solutions */}
           <Route
@@ -110,7 +111,8 @@ function App() {
           {/* Jobs */}
           <Route path="/carriere/job" element={<JobOffers />} />
           <Route path="/carriere/job-only" element={<JobOffersOnly />} />
-        </Routes>
+          <Route path="/blog/:postId" element={<BlogPage />} />
+      </Routes>
       </Suspense>
     </BrowserRouter>
   );

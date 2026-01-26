@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import Hero from "../../components/Hero/Hero.jsx";
 import NavBar from "../../components/features/NavBar.jsx";
@@ -26,6 +26,10 @@ const Entreprise = () => {
     }
   };
 
+
+
+
+
   return (
     <div className="relative w-full min-h-screen">
       {/* NAVBAR - Fixed with background */}
@@ -36,6 +40,7 @@ const Entreprise = () => {
       </div>
 
       <main className="w-full">
+       
         {/* HERO - Animates on page load */}
         <motion.section
           className="pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 md:px-8 lg:px-20"
@@ -81,6 +86,13 @@ const Entreprise = () => {
           >
             <EntreprisePartner />
           </section>
+             
+             
+              
+     
+        
+          
+                
         </div>
 
         {/* FOOTER - Animates on scroll into view */}

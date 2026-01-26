@@ -12,8 +12,8 @@ import an9 from '../../assets/new/an9.jpg'
 import an12 from '../../assets/new/an12.jpeg'
 import an11 from '../../assets/new/an11.jpg'
 import an8 from '../../assets/new/an8.jpg'
-import ProjectsService from '../../services/projects.service';
-
+import ProjectsService from '../../services/projets/projects.service';
+import { useNavigate} from 'react-router-dom'
 
 
 const MY_COLORS = {
@@ -33,10 +33,17 @@ const MY_COLORS = {
 
 
 
-const ProjectCard = ({ project, onClick }) => {
+const ProjectCard = ({ project }) => {
   const { t } = useTranslation();
   const projectImage = project.mainImage || 'https://via.placeholder.com/400x300';
   
+const navigate = useNavigate();
+
+const handleProjectClick = (project) => {
+  sessionStorage.setItem('selectedProject', JSON.stringify(project));
+  navigate(`/projets/${project.id}`);
+};
+
   return (
     <div 
       className="
@@ -50,7 +57,7 @@ const ProjectCard = ({ project, onClick }) => {
         group
       "
       style={{ border: `2px solid ${MY_COLORS.secondaryGreen}` }}
-      onClick={() => onClick(project)}
+onClick={() => handleProjectClick(project)}
     >
       {/* Badge numéro */}
       <div 
@@ -122,6 +129,10 @@ const ProjectCard = ({ project, onClick }) => {
               e.currentTarget.style.backgroundColor = 'transparent';
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
             }}
+             onClick={(e) => {
+    e.stopPropagation(); // ← IMPORTANT : empêche le clic carte
+    handleProjectClick(project); // ← UTILISE la fonction
+  }}
           >
             {t('projects.projectCard.seeMore')}
           </button>
@@ -370,6 +381,8 @@ useEffect(() => {
           ProjectsService.getProjects(i18n.language)
         ]);
 
+// ✅ CORRECTION
+sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
  setCategories([
           { 
             id: 'all', 
@@ -444,19 +457,25 @@ useEffect(() => {
             <ProjectCard 
               key={project.id} 
               project={project}
-              onClick={setSelectedProject}
+       
             />
           ))}
         </div>
       </div>
 
       {/* Modal */}
-      {selectedProject && (
-        <ProjectModal 
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      )}
+{selectedProject && (
+  <>
+    {/* Stocker le projet avant navigation */}
+    {sessionStorage.setItem('selectedProject', JSON.stringify(selectedProject))}
+    {/* Naviguer vers la page détail */}
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `window.location.href = '/projets/${selectedProject.id}';`
+      }}
+    />
+  </>
+)}
     </div>
   );
 };

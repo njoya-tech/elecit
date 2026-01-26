@@ -1,4 +1,4 @@
-// src/service/blog.js
+
 import { directus } from "./api/directus";
 import { readItems, readItem, updateItem, createItem } from "@directus/sdk";
 

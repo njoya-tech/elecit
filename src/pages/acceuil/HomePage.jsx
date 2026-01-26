@@ -33,19 +33,13 @@ import an7 from '../../assets/new/an7.jpg'
 import an8 from '../../assets/new/an8.jpg'
 import an11 from '../../assets/new/an11.jpg'
 import an12 from '../../assets/new/an12.jpeg'
-import an13 from '../../assets/new/an13.JPG'
-import an14 from '../../assets/new/an14.jpg'
-import an15 from '../../assets/new/an15.jpg'
-import an16 from '../../assets/new/an16.jpg'
-import an17 from '../../assets/new/an17.jpg'
-import an18 from '../../assets/new/an18.jpg'
-import an19 from '../../assets/new/an19.jpg'
-import an20 from '../../assets/new/an20.jpg'
+import {useNavigate} from 'react-router-dom'
+
 
 const HomePage = () => {
   const { t } = useTranslation();
 
-  // ✅ SOLUTION : Utiliser useMemo pour éviter la recréation des tableaux à chaque render
+  // Services pour ServicesCarousel (ces données restent locales)
   const services = useMemo(() => {
     const servicesData = t('servicesCarousel.services', { returnObjects: true });
     const serviceImages = [BM3, an5, an8, c2, an10, an9, an7, an12, an11];
@@ -53,16 +47,6 @@ const HomePage = () => {
     return servicesData.map((service, index) => ({
       ...service,
       image: serviceImages[index]
-    }));
-  }, [t]);
-
-  const blog = useMemo(() => {
-    const blogData = t('blog.articles', { returnObjects: true });
-    const blogImages = [c2, an15, an17, an18, an14, an19, an16, an20, an13];
-    
-    return blogData.map((blogItem, index) => ({
-      ...blogItem,
-      image: blogImages[index]
     }));
   }, [t]);
 
@@ -111,12 +95,13 @@ const HomePage = () => {
 
   return (
     <div className='min-h-screen'>
-      {/* ✅ Header fixe comme dans Entreprise */}
+      {/* Header fixe */}
       <header className='fixed top-0 left-0 right-0 z-50 bg-white shadow-sm'>
         <NavBar/>
       </header>
 
       <main className='pt-40'>
+    
         <HeroSection slides={heroSlides} />
         <br/>
         <br/>
@@ -154,6 +139,7 @@ const HomePage = () => {
           />
         </div>
 
+        {/* Section Blog avec données Directus */}
         <div className='mt-20'>
           <BlogBanner 
             titlePart1={t("blogBanner.titlePart1")}
@@ -162,8 +148,9 @@ const HomePage = () => {
           />
         </div>
 
+        {/* ✅ BlogCarousel charge maintenant ses propres données depuis Directus */}
         <div>
-          <BlogCarousel services={blog} />
+          <BlogCarousel />
         </div>
 
         <div className='mt-20'>

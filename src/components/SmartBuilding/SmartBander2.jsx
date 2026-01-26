@@ -1,7 +1,6 @@
 import React from 'react'
 import sma from '../../assets/sma.png'
 import smart1 from '../../assets/smart1.jpg'
-
 import casq from '../../assets/casq.svg'
 import st1 from '../../assets/st1.png'
 import st2 from '../../assets/st2.png'
@@ -10,32 +9,8 @@ import { useState , useEffect} from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion'
 import rail from '../../assets/rail.svg'
-
-
-
-// Simuler useTranslation
-const useTranslation = () => {
-  const translations = {
-    smartVilla: {
-      title1: "PROJET:",
-      title2: "VILLA 2 YASSA",
-      subtitle: "installation système domotique pour le contrôle centralisé de l'ensemble des équipements de l'habitat.",
-      buttonText: "Plus de projets"
-    }
-  };
-
-  return {
-    t: (key) => {
-      const keys = key.split('.');
-      let value = translations;
-      for (const k of keys) {
-        value = value[k];
-        if (!value) return key;
-      }
-      return value;
-    }
-  };
-};
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 
 // Animation flottante keyframes
 const floatingAnimation = `
@@ -51,30 +26,39 @@ const floatingAnimation = `
   .floating {
     animation: floating 3s ease-in-out infinite;
   }
+  
+  @media (max-width: 768px) {
+    .floating {
+      animation: none;
+    }
+  }
 `;
 
 const SmartBander2 = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate()
 
   return (
     <>
       <style>{floatingAnimation}</style>
 
-      <div className='bg-gray-400/20 w-full items-center justify-center flex p-10'>
-        <div className='relative w-[70%] h-[400px]' style={{
-          backgroundImage: `linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${smart1})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-          <div className="flex items-center ">
+      <div className='bg-gray-400/20 w-full items-center justify-center flex md:p-10 p-4'>
+        <div className='relative md:w-[70%] w-full md:h-[400px] h-auto'   
+          style={{
+            backgroundImage: `linear-gradient(rgba(36, 38, 39, 0.7), rgba(58, 61, 63, 0.7)), url(${smart1})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >          
+          <div className="flex md:flex-row flex-col items-center gap-5 md:py-0 py-8">
             {/* Left Content Section */}
-            <div className="flex-1 pl-30 pt-20 relative z-10">
+            <div className="flex-1 md:pl-10 pl-4 pr-4 relative z-10">
               {/* Decorative Gear Left - Symétrie horizontale */}
-              <div className="absolute -left-20 top-0 w-32 h-32">
+              <div className="absolute md:-left-20 -left-4 md:top-0 -top-6 md:w-32 md:h-32 w-16 h-16">
                 <motion.img 
                   src={casq} 
                   alt="engrenage" 
-                  className="w-30 h-30 scale-x-[-1]"
+                  className="md:w-30 md:h-30 w-16 h-16 scale-x-[-1]"
                   animate={{ 
                     y: [0, -15, 0],
                   }}
@@ -89,18 +73,16 @@ const SmartBander2 = () => {
                 /> 
               </div>
 
-              <h1 className='md:text-4xl text-2xl font-bold md:mb-4 text-white'>
-                <span style={{color: MY_COLORS.secondaryGreen}}>
-                  {t('smartVilla.title1')}
-                </span> {t('smartVilla.title2')}
+              <h1 className='md:text-4xl text-2xl font-bold md:mb-4 mb-3 text-white'>
+                {t('smartV.title1')} <br /> {t('smartV.title2')}
               </h1>
 
-              <p className="text-white md:mb-8 mb-4 text-xl   max-w-md mt-5">
-                {t('smartVilla.subtitle')}
+              <p className="text-white md:mb-8 mb-4 md:text-xl text-sm md:max-w-md mt-5">
+                {t('smartV.subtitle')}
               </p>
 
               <button 
-                className="md:px-8 py-3 text-sm mb-15 rounded-full font-bold transition-all bg-white"
+                className="md:px-8 px-6 py-2 text-sm md:mb-15 mb-6 rounded-full font-bold transition-all bg-white"
                 style={{ 
                   color: MY_COLORS.black
                 }}
@@ -112,8 +94,9 @@ const SmartBander2 = () => {
                   e.target.style.backgroundColor = MY_COLORS.white;
                   e.target.style.color = MY_COLORS.black;
                 }}
+                onClick={() => navigate('/projets')}
               >
-                {t('smartVilla.buttonText')}
+                {t('smartV.buttonText')}
               </button>
             </div>
 
