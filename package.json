@@ -9,10 +9,9 @@
     "build:analyze": "vite build --mode analyze",
     "build:production": "vite build",
     "preview": "vite preview",
-<<<<<<< HEAD
+
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-=======
+  
     "lint": "eslint .",
     "deploy": "npm run build && gh-pages -d dist",
     "analyze": "npm run build",
@@ -28,8 +27,9 @@
     "test:perf": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && npm run lighthouse\"",
     "test:a11y": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && npm run a11y\"",
     "test:all": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && npm run lighthouse && npm run a11y && npm run check:contrast\""
->>>>>>> hope1
+    
   },
+
   "dependencies": {
     "@directus/sdk": "^20.2.0",
     "@reduxjs/toolkit": "^2.11.0",
