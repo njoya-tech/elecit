@@ -9,7 +9,7 @@ import all from '../../assets/all.png';
 
 const LanguageSwitcher = ({ onLanguageChange }) => {
   const { i18n } = useTranslation();
-  console.log("rerender")
+
 
   const handleChange = (lang) => {
     i18n.changeLanguage(lang);
