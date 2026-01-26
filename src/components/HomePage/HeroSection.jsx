@@ -1,193 +1,173 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useMemo } from 'react'
+import NavBar from '../../components/features/NavBar'
+import Footer from '../../components/features/Footer'
+import BlogCarousel from '../../components/HomePage/BlogCaroussel'
+import BlogBanner from '../../components/HomePage/BlogBanner'
+import SmartBuilding from '../../components/HomePage/SmartBuilding'
+import HeroSection from '../../components/HomePage/HeroSection'
+import slide1_home from '../../assets/slide1_home.jpg';
+import slide2_home from '../../assets/slide2_home.jpg';
+import slide3_home from '../../assets/slide3_home.jpg';
+import loca1 from '../../assets/loca1.png';
+import loca2 from '../../assets/loca2.png';
+import ordi1 from '../../assets/ordi1.png';
+import c2 from '../../assets/c2.jpg';
+import st1 from '../../assets/st1.png';
+import st2 from '../../assets/st2.png';
+import st3 from '../../assets/st3.png';
+import s from '../../assets/s.png'
+import phonegps from '../../assets/phonegps.png';
+import ServicesSection from '../../components/HomePage/ServicesSection'
+import RealBanner from '../../components/HomePage/RealBanner'
+import ServicesCarousel from '../../components/HomePage/ServicesCarousel'
+import TrackingPlatformSection from '../../components/HomePage/TrackingPlatformSection'
+import TestimonialsCarousel from '../../components/HomePage/TestimonialsCarousel'
+import SolutionsSection from '../../components/HomePage/SolutionsSection'
 import { useTranslation } from 'react-i18next';
-import fond_sombre from '../../assets/fond_sombre.png';
-import design_x from '../../assets/design_x.png';
-import vid from '../../assets/vid.png';
-import { motion } from 'framer-motion';
-import { MY_COLORS } from '../../utils/colors';
-import fi from '../../assets/fi.svg';
-import { useNavigate } from 'react-router-dom';
+import an9 from '../../assets/new/an9.jpg'
+import an5 from '../../assets/new/an5.png'
+import BM3 from '../../assets/new/BM3.PNG'
+import an10 from '../../assets/new/an10.jpg'
+import an7 from '../../assets/new/an7.jpg'
+import an8 from '../../assets/new/an8.jpg'
+import an11 from '../../assets/new/an11.jpg'
+import an12 from '../../assets/new/an12.jpeg'
+import {useNavigate} from 'react-router-dom'
 
-const HeroSection = ({ slides }) => {
+
+const HomePage = () => {
   const { t } = useTranslation();
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate();
 
-  // ✅ Cleanup du setInterval
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  // Services pour ServicesCarousel (ces données restent locales)
+  const services = useMemo(() => {
+    const servicesData = t('servicesCarousel.services', { returnObjects: true });
+    const serviceImages = [BM3, an5, an8, c2, an10, an9, an7, an12, an11];
+    
+    return servicesData.map((service, index) => ({
+      ...service,
+      image: serviceImages[index]
+    }));
+  }, [t]);
 
-    return () => clearInterval(interval);
-  }, [slides.length]);
+  const heroSlides = useMemo(() => [
+    {
+      image: slide1_home,
+      subtitle: 'hero.subtitle',
+      title: 'hero.slide1.title',
+      highlighted: 'hero.slide1.highlighted',
+      title2: 'hero.slide1.title2',
+      highlighted2: 'hero.slide1.highlighted2',
+      title3: 'hero.slide1.title3'
+    },
+    {
+      image: slide2_home,
+      subtitle: 'hero.subtitle',
+      title: 'hero.slide2.title',
+      highlighted: 'hero.slide2.highlighted',
+      title2: 'hero.slide2.title2',
+      highlighted2: 'hero.slide2.highlighted2',
+      title3: 'hero.slide2.title3'
+    },
+    {
+      image: slide3_home,
+      subtitle: 'hero.subtitle',
+      title: 'hero.slide3.title',
+      highlighted: 'hero.slide3.highlighted',
+      title2: 'hero.slide3.title2',
+      highlighted2: 'hero.slide3.highlighted2',
+      title4: 'hero.slide3.title4'
+    }
+  ], []);
 
-  // ✅ Mémoiser la slide courante
-  const currentSlideData = useMemo(() => slides[currentSlide], [slides, currentSlide]);
+  const trackingImages = useMemo(() => ({
+    loc1: loca1,
+    loc2: loca2,
+    ordi1: ordi1,
+    phonegps: phonegps
+  }), []);
 
-  // ✅ Mémoiser les traductions
-  const subtitle = useMemo(() => t(currentSlideData.subtitle), [t, currentSlideData.subtitle]);
-  const title = useMemo(() => t(currentSlideData.title), [t, currentSlideData.title]);
-  const highlighted = useMemo(() => t(currentSlideData.highlighted), [t, currentSlideData.highlighted]);
-  const title2 = useMemo(() => t(currentSlideData.title2), [t, currentSlideData.title2]);
-  const highlighted2 = useMemo(() => t(currentSlideData.highlighted2), [t, currentSlideData.highlighted2]);
-  const title3 = useMemo(() => t(currentSlideData.title3), [t, currentSlideData.title3]);
-  const title4 = useMemo(() => currentSlideData.title4 ? t(currentSlideData.title4) : '', [t, currentSlideData.title4]);
-  const submitProjectText = useMemo(() => t('hero.submitProject'), [t]);
-
-  const handleProjectClick = useCallback(() => {
-    navigate('/contacts');
-  }, [navigate]);
+  const smartBuildingImages = useMemo(() => ({
+    loc2: st1,
+    ordi1: st2,
+    phonegps: s
+  }), []);
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[650px] overflow-hidden">
-      <div className="absolute inset-0 px-4 sm:px-8 md:px-16 lg:px-24">
-        <div className="absolute inset-0">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="absolute inset-0 transition-opacity duration-1000"
-              style={{
-                opacity: currentSlide === index ? 1 : 0,
-                backgroundImage: `url(${slide.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            />
-          ))}
-        </div>
+    <div className='min-h-screen'>
+      {/* Header fixe */}
+      <header className='fixed top-0 left-0 right-0 z-50 bg-white shadow-sm'>
+        <NavBar/>
+      </header>
 
-        <div 
-          className="absolute inset-y-0 -left-10 w-full sm:w-[75%] md:w-[80%] lg:w-[70%]"
-          style={{ 
-            backgroundImage: `url(${fond_sombre})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.8 
-          }}
+      <main className='pt-40'>
+    
+        <HeroSection slides={heroSlides} />
+        <br/>
+        <br/>
+        
+        <div>
+          <SolutionsSection />
+        </div>
+     
+        <TrackingPlatformSection 
+          title={t('trackingPlatform.title')}
+          buttonText={t('trackingPlatform.buttonText')}
+          images={trackingImages}
         />
+        <br/>
+        <br/>
+        
+        <ServicesSection />
 
-        <div className="absolute inset-y-0 right-0 w-1/2 sm:w-2/5 md:w-1/2 flex items-center justify-end transform -translate-x-2 md:-translate-x-18 lg:-translate-x-153">
-          <img
-            src={design_x}
-            alt="Design X"
-            className="w-auto max-h-full sm:max-h-full md:max-h-[120%] lg:max-h-[100%] object-contain"
+        <div>
+          <RealBanner 
+            titlePart1={t('realBanner.titlePart1')}
+            highlightWord={t('realBanner.highlightWord')}
+            titlePart2={t('realBanner.titlePart2')}
           />
-        </div>
-
-        <div className="relative z-10 h-full flex items-center">
-          <div className="w-[60%] sm:w-1/2 md:w-[50%] lg:w-[40%] py-8 md:py-0">
-            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-                <path d="M13 5L20 12L13 19" stroke={MY_COLORS.secondaryGreen} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M6 5L13 12L6 19" stroke={MY_COLORS.secondaryGreen} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span className="font-bold text-xs sm:text-sm md:text-base tracking-wider" style={{color: MY_COLORS.secondaryGreen}}>
-                {subtitle}
-              </span>
-            </div>
-
-            <div className="transition-all duration-700 ease-in-out min-h-[110px] sm:min-h-[130px] md:min-h-[150px] lg:min-h-[180px]"> 
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold text-white leading-tight md:leading-snug mb-4 sm:mb-5 md:mb-3 lg:mb-3">
-                {title}{' '}
-                <span style={{ color: MY_COLORS.secondaryGreen }}>{highlighted}</span>{' '}
-                {title2}{' '}
-                <span style={{ color: MY_COLORS.secondaryGreen }}>{highlighted2}</span>{' '}
-                {title3}{' '}
-              </h1>
-              {title4 && (
-                <p className="text-xs font-bold sm:text-sm md:text-sm lg:text-base text-white max-w-prose mb-4">
-                  {title4}
-                </p>
-              )}
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-              <motion.button
-                className="relative group flex-shrink-0"
-                aria-label="Play video"
-                initial={{ scale: 1 }}
-                animate={{ scale: [1, 0.92, 1.08, 1] }}
-                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-                whileHover={{ scale: 1.12 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full flex items-center justify-center overflow-hidden border-2 transition-colors duration-300 group-hover:bg-transparent"
-                  style={{
-                    backgroundColor: MY_COLORS.secondaryGreen,
-                    borderColor: MY_COLORS.secondaryGreen,
-                  }}
-                >
-                  <img 
-                    src={vid}
-                    alt="Video Icon"
-                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:scale-125"
-                  />
-                </div>
-              </motion.button>
-
-              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
-                <button 
-                  className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 border-2 text-white text-xs sm:text-sm md:text-base font-semibold rounded-full transition-all duration-300 whitespace-nowrap"
-                  style={{ borderColor: MY_COLORS.secondaryGreen }}
-                  onMouseOver={e => e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen}
-                  onMouseOut={e => e.currentTarget.style.backgroundColor = 'transparent'}
-                  onClick={handleProjectClick}
-                >
-                  {submitProjectText}
-                </button>
-                
-                <motion.div 
-                  className="flex-shrink-0 translate-y-5"
-                  animate={{ x: [0, -12, 0] }}
-                  transition={{ duration: 1.5, ease: "easeInOut", repeat: Infinity, repeatDelay: 0.3 }}
-                >
-                  <img 
-                    src={fi} 
-                    alt="Fleche"
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-20 lg:h-20 xl:w-15 xl:h-15 object-contain"
-                  />
-                </motion.div>
-              </div>
-            </div>
+          <div>
+            <ServicesCarousel services={services} />
           </div>
         </div>
-      </div>
 
-      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-10 left-1/2 transform -translate-x-1/2 flex gap-1.5 sm:gap-2 md:gap-3 z-20">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            style={{ background: currentSlide === index ? MY_COLORS.secondaryGreen : 'white' }}
-            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${currentSlide === index ? 'scale-125' : 'opacity-60 hover:opacity-100'}`}     
-            aria-label={`Slide ${index + 1}`}
+        <div>
+          <SmartBuilding
+            title={t('smartBuild.title')}
+            buttonText={t('smartBuild.buttonText')}
+            images={smartBuildingImages}
           />
-        ))}
-      </div>
-<<<<<<< HEAD
-=======
+        </div>
 
-      {/* Animation CSS pour la flèche */}
-      <style>{`
-        @keyframes bounce-horizontal {
-          0%,
-          100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(6px);
-          }
-        }
-        .animate-bounce-horizontal {
-          animation: bounce-horizontal 1.5s ease-in-out infinite;
-        }
-      `}</style>
->>>>>>> hope1
+        {/* Section Blog avec données Directus */}
+        <div className='mt-20'>
+          <BlogBanner 
+            titlePart1={t("blogBanner.titlePart1")}
+            highlightWord={t("blogBanner.highlightWord")}
+            titlePart2={t("blogBanner.titlePart2")}
+          />
+        </div>
+
+        {/* ✅ BlogCarousel charge maintenant ses propres données depuis Directus */}
+        <div>
+          <BlogCarousel />
+        </div>
+
+        <div className='mt-20'>
+          <BlogBanner 
+            titlePart1={t("testimonialsBanner.titlePart1")}
+            highlightWord={t("testimonialsBanner.highlightWord")}
+            titlePart2={t("testimonialsBanner.titlePart2")}
+          />
+        </div>
+
+        <div>
+          <TestimonialsCarousel />
+        </div>
+      </main>
+
+      <Footer/> 
     </div>
-  );
-};
+  )
+}
 
-export default React.memo(HeroSection);
+export default HomePage
