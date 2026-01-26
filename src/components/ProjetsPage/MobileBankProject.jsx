@@ -151,7 +151,7 @@ const MobileBankProject = ({ onClose, projectData }) => {
             <img 
               src={project.coverImage} 
               alt={project.title}
-              className="w-full h-full object-fill"
+              className="w-full h-full object-cover"
               onError={(e) => {
                 console.error('❌ Erreur chargement cover image:', project.coverImage);
                 e.target.src = 'https://via.placeholder.com/800x600?text=Image+non+disponible';
@@ -307,7 +307,7 @@ const MobileBankProject = ({ onClose, projectData }) => {
   </div>
 )}
               {/* Carousel Expertise */}
-        <ExpertiseCarousel categoryId={project.categoryId} />
+   <ExpertiseCarousel projectId={project.id} />
 
       {/* Bouton Projet */}
       <div className="flex justify-center items-center relative  mt-5">

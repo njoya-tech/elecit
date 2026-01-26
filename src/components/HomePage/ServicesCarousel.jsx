@@ -63,6 +63,10 @@ const ServicesCarousel = () => {
   const [loading, setLoading] = useState(true);
   const timeoutRef = useRef(null);
 
+  const handleViewMore = (id) => {
+    navigate(`/projets/${id}`);
+  };
+
   // Charger les projets depuis Directus
   useEffect(() => {
     const fetchProjects = async () => {
@@ -203,7 +207,7 @@ const ServicesCarousel = () => {
 
               <div className="flex justify-center mt-4">
                 <button
-                  onClick={() => navigate(`/projets/${project.id}`)}
+                  onClick={() => handleViewMore(project.id)}
                   className="px-6 py-2 rounded-full text-white font-semibold transition-all cursor-pointer hover:scale-105"
                   style={{ backgroundColor: MY_COLORS.green }}
                 >

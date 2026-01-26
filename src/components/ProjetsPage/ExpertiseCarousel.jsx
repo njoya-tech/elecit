@@ -16,7 +16,7 @@ const MY_COLORS = {
 // Image placeholder SVG
 const PLACEHOLDER_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect width="400" height="300" fill="%23e5e7eb"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%23374151" font-family="Arial" font-size="16"%3EImage non disponible%3C/text%3E%3C/svg%3E';
 
-const ExpertiseCarousel = ({ categoryId = 1 }) => {
+const ExpertiseCarousel = ({ projectId }) => {
   const { t, i18n } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [projects, setProjects] = useState([]);
@@ -24,22 +24,22 @@ const ExpertiseCarousel = ({ categoryId = 1 }) => {
 
   const itemsToShow = 3;
 
-  // Charge les projets expertise
+  // Charge les projets additionnels
   useEffect(() => {
-    const fetchExpertiseProjects = async () => {
+    const fetchAdditionalProjects = async () => {
       try {
         setLoading(true);
-        console.log('🎯 [ExpertiseCarousel] Chargement projets expertise...');
+        console.log('🎯 [ExpertiseCarousel] Chargement projets additionnels...');
         console.log('🌐 [ExpertiseCarousel] Langue:', i18n.language);
-        console.log('📁 [ExpertiseCarousel] Catégorie:', categoryId);
+        console.log('📁 [ExpertiseCarousel] Projet ID:', projectId);
 
-        const expertiseData = await ProjectsService.getExpertiseProjects(
+        const additionalData = await ProjectsService.getAdditionalProjects(
           i18n.language, 
-          categoryId
+          projectId
         );
         
-        console.log('📦 [ExpertiseCarousel] Projets reçus:', expertiseData.length);
-        setProjects(expertiseData);
+        console.log('📦 [ExpertiseCarousel] Projets additionnels reçus:', additionalData.length);
+        setProjects(additionalData);
       } catch (error) {
         console.error('❌ [ExpertiseCarousel] Erreur chargement:', error);
       } finally {
@@ -47,8 +47,10 @@ const ExpertiseCarousel = ({ categoryId = 1 }) => {
       }
     };
 
-    fetchExpertiseProjects();
-  }, [i18n.language, categoryId]);
+    if (projectId) {
+      fetchAdditionalProjects();
+    }
+  }, [i18n.language, projectId]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % projects.length);
@@ -82,7 +84,7 @@ const ExpertiseCarousel = ({ categoryId = 1 }) => {
     return (
       <div className="relative">
         <div className="text-center py-12 text-gray-600">
-          <p className="text-lg">Aucun projet d'expertise disponible.</p>
+          <p className="text-lg">Aucun projet additionnel disponible.</p>
         </div>
       </div>
     );

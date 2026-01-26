@@ -38,6 +38,66 @@ class ProjectsService {
       return [];
     }
   }
+  /**
+ * Récupère les projets additionnels d'un projet spécifique
+ * Pour le carousel d'expertise basé sur l'ID du projet principal
+ */
+async getAdditionalProjects(locale = 'fr', projectId) {
+  try {
+    const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
+    console.log('🔍 [getAdditionalProjects] Langue:', locale, '→ ID:', languageId);
+    console.log('🔍 [getAdditionalProjects] Projet ID:', projectId);
+
+    // Filtrer par project_id
+    const filterQuery = `filter[status][_eq]=published&filter[project_id][_eq]=${projectId}`;
+    
+    // Récupérer les champs nécessaires
+    const fieldsQuery = 'fields=id,project_id,image.directus_files_id.*,translations.title,translations.languages_id';
+    const sortQuery = 'sort[]=sort';
+
+    const url = `${DIRECTUS_URL}/items/additional_projects?${filterQuery}&${fieldsQuery}&${sortQuery}`;
+    console.log('🌐 [getAdditionalProjects] URL:', url);
+
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      console.error('❌ [getAdditionalProjects] Réponse HTTP:', response.status, response.statusText);
+      return [];
+    }
+
+    const result = await response.json();
+    const additionalProjects = result.data || [];
+
+    console.log('📦 [getAdditionalProjects] Projets additionnels reçus:', additionalProjects.length);
+
+    // Formater les projets additionnels
+    return additionalProjects.map((project, index) => {
+      const translation = project.translations?.find(t => t.languages_id === languageId) || {};
+      
+      // Récupérer l'image
+      let imageUrl = null;
+      if (project.image && project.image.length > 0) {
+        const imageFile = project.image[0]?.directus_files_id;
+        const fileId = imageFile?.id || imageFile;
+        
+        if (fileId) {
+          imageUrl = `${DIRECTUS_URL}/assets/${fileId}`;
+        }
+      }
+
+      return {
+        id: project.id,
+        title: translation.title || 'Sans titre',
+        coverImage: imageUrl,
+        projectId: project.project_id
+      };
+    });
+
+  } catch (error) {
+    console.error('❌ [getAdditionalProjects] Erreur:', error);
+    return [];
+  }
+}
 
   /**
    * Récupère les projets expertise (sans description, process, etc.)

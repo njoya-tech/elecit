@@ -46,6 +46,12 @@ const ChevronRight = ({ size = 20, className = "" }) => (
     </svg>
 );
 
+
+  const handleViewMore = (id) => {
+    navigate(`/projets/${id}`);
+  };
+
+
 // --- Composant pour le cercle discontinu animé ---
 const AnimatedCircleBorder = ({ children, isHovered }) => {
     return (
