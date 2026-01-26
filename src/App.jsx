@@ -16,6 +16,9 @@ import SavPage from "./pages/sav/SavPage"
 import BlogPage from './pages/blog/BlogPage';
 import JobOfferFormOnlyModal from './components/Carriere/jobOfferformonlyModal';
 import JobOffersOnly from './pages/job/JobOffersOnly';
+import MobileBankProject from './components/ProjetsPage/MobileBankProject';
+import ProjetsDetail from './pages/projets/ProjetsDetail';
+
 
 function App() {
   return (
@@ -23,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projets" element={<ProjetsPage />} />
+        <Route path="/projets/:id" element={<ProjetsDetail />} />
         <Route path="/carriere" element={<Carriere />} />
         <Route path="/solutions/smart-building" element={<SmartBuildingPage />} />
         <Route path="/solutions/fabrication-mecanique" element={<FabriMecaPage />} />
@@ -36,6 +40,7 @@ function App() {
         <Route path="/solutions/bureau-etude" element={<BureauPage />} />
         <Route path="/solutions/sav" element={<SavPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:postId" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   );

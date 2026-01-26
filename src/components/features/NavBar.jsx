@@ -122,7 +122,7 @@ const NavBar = () => {
                         </button>
 
                         {openDropdown === item.key && (
-                          <div className="absolute top-full left-0 mt-2 w-56 xl:w-64 bg-white rounded-md shadow-lg py-2 z-50 border">
+                          <div className="absolute top-full left-0 mt-2 w-56 xl:w-70 bg-white rounded-md shadow-lg py-2 z-50 border">
                             {item.dropdown.map(sub => (
                               <a
                                 key={sub.key}

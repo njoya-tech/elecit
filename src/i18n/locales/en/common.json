@@ -1,4 +1,55 @@
 {
+   "projectNew": {
+    "category": "Mechanical Manufacturing",
+    "title": "Design and manufacturing of a mobile banking agency",
+    "dateLabel": "Completion date:",
+    "date": "06/23",
+    "statusLabel": "Project status:",
+    "status": "completed",
+    "descriptionTitle": "Project Description",
+    "description": "Design and manufacturing of a mobile banking agency ",
+    "descriptionHighlight": "turnkey",
+    "descriptionContinued": ", integrating a reinforced metal structure, secure layouts and technical equipment adapted to banking operations in urban and remote areas.",
+    "processTitle": "From design to manufacturing to delivery",
+    "processDescription": "The solution was entirely custom-designed: chassis, structure, compartmentalization, security, ergonomics and integration of banking systems.",
+
+     "utility": {
+      "point1": "Deploy banking services where fixed branches are difficult or expensive",
+      "point2": "Bring the bank closer to its customers while strengthening its territorial presence",
+      "point3": "Provide a secure, reliable and comfortable working environment for staff",
+      "point4": "Reduce commissioning times and infrastructure costs",
+      "point5": "Adapt to field realities (roads, climate, frequency of use)"
+    },
+    "valueTitle": "Our added value",
+    "valueDescription": "This project illustrates our ability to design and manufacture complex mobile and mechanical infrastructures, while mastering the entire chain:",
+    "value": {
+      "point1": "engineering and technical design,",
+      "point2": "mechanical and metallic manufacturing,",
+      "point3": "functional integration,",
+      "point4": "commissioning on time and according to standards."
+    },
+    "videoCaption": "Mobile bank: road test",
+     "youtubeButton": "More content on youtube",
+    "testimonialTitle": "Client feedback",
+    "testimonialText": "\"The mobile bank is robust, functional and perfectly adapted to our constraints. It has considerably improved access to banking services for our customers.\"",
+    "testimonialAuthor": "AFB Branch Manager",
+    "expertiseText": "The same expertise is put at the service of agricultural machinery, industrial equipment, rolling stock, metal infrastructures and custom technical solutions, designed according to the specific needs of each customer.",
+    "expertise": {
+      "engines": {
+        "title": "Manufacturing and renovation of rolling stock",
+        "image1": "Rolling stock image"
+      },
+      "machines": {
+        "title": "Design and manufacturing of construction machinery",
+        "image2": "Construction machinery image"
+      },
+      "infrastructures": {
+        "title": "Manufacturing of metal infrastructures",
+        "image3": "Metal infrastructure image"
+      }
+    },
+    "projectButton": "Do you have a project?"
+  },
   "nav": {
     "accueil": "Home",
     "entreprise": "Company",

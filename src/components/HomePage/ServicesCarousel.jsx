@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import ProjectsService from '../../services/projects.service';
+import ProjectsService from '../../services/projets/projects.service';
 
 export const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -203,7 +203,7 @@ const ServicesCarousel = () => {
 
               <div className="flex justify-center mt-4">
                 <button
-                  onClick={() => navigate('/projets')}
+                  onClick={() => navigate(`/projets/${project.id}`)}
                   className="px-6 py-2 rounded-full text-white font-semibold transition-all cursor-pointer hover:scale-105"
                   style={{ backgroundColor: MY_COLORS.green }}
                 >

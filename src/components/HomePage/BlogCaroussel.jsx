@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { fetchAllPosts, getAssetUrl, getTranslation } from '../../services/blog.js';
 
 // ============================================================================
 // CONSTANTS & CONFIG
@@ -15,7 +17,7 @@ export const MY_COLORS = {
 
 const ANIMATION_CONFIG = {
   exitDuration: 600,
-  autoPlayInterval: 2000,
+  autoPlayInterval: 4000,
   staggerDelay: 120,
 };
 
@@ -53,8 +55,9 @@ const animationStyles = `
 // ============================================================================
 // MAIN COMPONENT
 // ============================================================================
-const BlogCarousel = ({ services }) => {
-  const { t } = useTranslation();
+const BlogCarousel = () => {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   
   // -- ETAT DU MOTEUR CARROUSEL --
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,9 +65,70 @@ const BlogCarousel = ({ services }) => {
   const [isExiting, setIsExiting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [cardsPerView, setCardsPerView] = useState(3);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const timeoutRef = useRef(null);
 
-  const totalSlides = Math.ceil(services.length / cardsPerView);
+  const totalSlides = posts.length > 0 ? Math.ceil(posts.length / cardsPerView) : 0;
+
+  // -- FETCH POSTS FROM DIRECTUS --
+  useEffect(() => {
+    let isActive = true;
+
+    const loadPosts = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        console.log('BlogCarousel - Fetching posts from Directus...');
+        
+        // Fetch posts from Directus (limit to 9 for carousel)
+        const directusPosts = await fetchAllPosts({
+          limit: 9,
+          sort: '-created_at'
+        });
+
+        console.log('BlogCarousel - Posts fetched:', directusPosts);
+
+        if (!isActive) return;
+
+        // Transform Directus data
+        const transformedPosts = directusPosts.map((post) => {
+          // Get translated version based on current language
+          const translatedPost = getTranslation(post, i18n.language);
+          
+          return {
+            id: translatedPost.id,
+            slug: post.slug,
+            title: translatedPost.title,
+            excerpt: translatedPost.excerpt,
+            image: getAssetUrl(post.cover_image),
+            category: translatedPost.category?.name || '',
+            views: translatedPost.views || 0,
+            comments: translatedPost.comments_count || 0,
+            likes: translatedPost.likes || 0,
+          };
+        });
+
+        console.log('BlogCarousel - Transformed posts:', transformedPosts);
+        setPosts(transformedPosts);
+      } catch (err) {
+        if (!isActive) return;
+        console.error('BlogCarousel - Error fetching posts:', err);
+        setError('Failed to load blog posts');
+      } finally {
+        if (!isActive) return;
+        setLoading(false);
+      }
+    };
+
+    loadPosts();
+
+    return () => {
+      isActive = false;
+    };
+  }, [i18n.language]);
 
   // -- GESTION RESPONSIVE --
   useEffect(() => {
@@ -125,21 +189,25 @@ const BlogCarousel = ({ services }) => {
     performTransition(currentIndex === totalSlides - 1 ? 0 : currentIndex + 1);
   };
 
+  const handleViewMore = (id) => {
+    navigate(`/blog/${id}`);
+  };
+
   const getVisibleItems = (pageIndex) => {
     const startIndex = pageIndex * cardsPerView;
-    return services.slice(startIndex, startIndex + cardsPerView);
+    return posts.slice(startIndex, startIndex + cardsPerView);
   };
 
   const currentItems = getVisibleItems(currentIndex);
   const nextItems = getVisibleItems(nextIndex);
 
   // -- RENDER CARD FUNCTION --
-  const renderCard = (service, idx, isNextSlide = false) => {
+  const renderCard = (post, idx, isNextSlide = false) => {
     const displayNumber = currentIndex * cardsPerView + idx + 1;
 
     return (
       <div 
-        key={`${service.id || idx}-${idx}-${isNextSlide ? 'next' : 'curr'}`}
+        key={`${post.id}-${idx}-${isNextSlide ? 'next' : 'curr'}`}
         className="flex-1 w-full px-4" 
         style={{
           animation: isNextSlide ? `slideUpReveal 0.6s ease-out forwards` : undefined,
@@ -148,7 +216,7 @@ const BlogCarousel = ({ services }) => {
         }}
       >
         <div 
-          className="relative p-1 rounded-xl"
+          className="relative p-1 h-[480px] rounded-xl"
           style={{ 
             border: `2px solid ${MY_COLORS.green}`,
             minHeight: '480px'
@@ -167,11 +235,24 @@ const BlogCarousel = ({ services }) => {
 
             {/* IMAGE */}
             <div className="relative h-48 md:h-64 overflow-hidden rounded-t-lg">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover"
-              />
+              {post.image ? (
+                <img
+                  src={post.image}
+                  alt={post.title || 'Blog post'}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error('Image failed to load:', post.image);
+                    e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23f3f4f6" width="400" height="300"/%3E%3Ctext fill="%239ca3af" font-family="sans-serif" font-size="18" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage non disponible%3C/text%3E%3C/svg%3E';
+                  }}
+                />
+              ) : (
+                <div 
+                  className="w-full h-full flex items-center justify-center"
+                  style={{ backgroundColor: '#f3f4f6' }}
+                >
+                  <span className="text-gray-400">Pas d'image</span>
+                </div>
+              )}
             </div>
 
             {/* CONTENT */}
@@ -180,19 +261,20 @@ const BlogCarousel = ({ services }) => {
                 className="text-lg md:text-xl font-bold text-center mb-3"
                 style={{ color: MY_COLORS.black }}
               >
-                {service.title}
+                {post.title || 'Sans titre'}
               </h3>
 
-              <p className="text-sm md:text-base text-center leading-relaxed text-gray-700 mb-4">
-                {service.description}
+              <p className="text-sm md:text-base text-center leading-relaxed text-gray-700 mb-4 line-clamp-3">
+                {post.excerpt || 'Aucune description disponible'}
               </p>
 
               <div className="flex justify-center mt-auto">
                 <button
+                  onClick={() => handleViewMore(post.id)}
                   className="px-4 md:px-6 py-2 rounded-full text-white font-semibold text-sm md:text-base transition-all hover:scale-105"
                   style={{ backgroundColor: MY_COLORS.green }}
                 >
-                  {t('blog.seeMore')}
+                  {t('blog.seeMore') || 'Voir plus'}
                 </button>
               </div>
             </div>
@@ -202,14 +284,51 @@ const BlogCarousel = ({ services }) => {
     );
   };
 
-  if (services.length === 0) {
+  // -- LOADING STATE --
+  if (loading) {
+    return (
+      <div 
+        className="w-full py-16 px-4 flex justify-center items-center"
+        style={{ backgroundColor: MY_COLORS.white, minHeight: '650px' }}
+      >
+        <div
+          className="animate-spin rounded-full h-12 w-12 border-b-2"
+          style={{ borderColor: MY_COLORS.green }}
+        ></div>
+      </div>
+    );
+  }
+
+  // -- ERROR STATE --
+  if (error) {
+    return (
+      <div 
+        className="w-full py-16 px-4 flex justify-center items-center"
+        style={{ backgroundColor: MY_COLORS.white, minHeight: '650px' }}
+      >
+        <div className="text-center">
+          <p className="text-red-600 text-lg mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-2 rounded-full text-white font-semibold"
+            style={{ backgroundColor: MY_COLORS.green }}
+          >
+            {t('common.retry') || 'Réessayer'}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // -- EMPTY STATE --
+  if (!posts || posts.length === 0) {
     return (
       <div 
         className="w-full py-16 px-4 flex justify-center items-center"
         style={{ backgroundColor: MY_COLORS.white }}
       >
         <div className="text-xl" style={{ color: MY_COLORS.black }}>
-          Aucun service disponible
+          {t('blog.noArticles') || 'Aucun article disponible'}
         </div>
       </div>
     );

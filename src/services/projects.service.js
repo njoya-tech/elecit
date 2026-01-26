@@ -80,6 +80,7 @@ class ProjectsService {
     }
   }
 
+  
   async getProjectBySlug(slug, locale = 'fr') {
     try {
       const languageId = LANGUAGE_MAP[locale] || LANGUAGE_MAP['fr'];
