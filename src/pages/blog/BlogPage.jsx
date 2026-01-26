@@ -18,7 +18,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen">
+    <div className=" w-screen relative w-full min-h-screen">
       {/* Navbar - Fixed with proper mobile height */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
         <NavBar />

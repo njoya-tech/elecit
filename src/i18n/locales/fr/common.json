@@ -18,7 +18,7 @@
       "itDataProcessing": "IT & Data Processing",
       "accessControlSecurity": "Contrôle d'accès & Sécurité",
       "designOffice": "Bureau d'étude",
-      "afterSalesService": "SAV"
+      "afterSalesService": "MAINTENANCE TECHNIQUE DU BÂTIMENT"
     },
     "subsidiaries": {
       "foczou": "FOCZOU",
@@ -749,84 +749,96 @@
     }
   },
 
-  "entreprise": {
-    "hero": {
-      "title": "Que faut-il savoir sur",
-      "titleHighlight": "ELECIT",
-      "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
-      "descriptionLine1": "Parce qu'au-delà du marché camerounais, nous souhaitons",
-      "descriptionLine2": "développer toute l'Afrique à travers nos services.",
-      "button": "Regarder la vidéo"
-    },
-    "entrepriseCards": {
-      "bannerTitle": "Nos valeurs",
-      "bannerSubtitle": "03 mots clés",
-      "bannerSubtitle2": "nous définissent",
-      "items": [
-        {
-          "title": "Innovation",
-          "description": "Grâce à une veille technologique permanente et à une culture de créativité, nous développons des approches novatrices pour répondre aux besoins de nos partenaires."
-        },
-        {
-          "title": "Transformation",
-          "description": "Nous accompagnons nos clients dans leur mutation vers des modèles plus performants et durables par l'intégration de nouvelles technologies et par l'optimisation des processus."
-        },
-        {
-          "title": "Excellence",
-          "description": "À travers des standards de qualité élevés, une expertise pointue et un souci du détail, nous garantissons des résultats qui répondent aux attentes les plus exigeantes."
-        }
-      ]
-    },
-    "entrepriseTeam": {
-      "title": "L'équipe",
-      "subtitle": "Ces acteurs là qui s'unissent pour répondre à vos besoins",
-      "description": "Nous mobilisons les bonnes compétences au bon moment. Cette richesse humaine et technique nous permet de répondre avec agilité et précision aux enjeux les plus variés de nos clients, du conseil à la réalisation.",
-      "button": "Publireportage",
-      "members": [
-        { "title": "Domoticiens" },
-        { "title": "Mécatroniciens" },
-        { "title": "Gestionnaires de flotte" },
-        { "title": "Ingénieurs informatique" },
-        { "title": "Ingénieurs génie civil" },
-        { "title": "Techniciens de fabrication" },
-        { "title": "Soudeur" },
-        { "title": "Agents de maintenance" },
-        { "title": "Ingénieurs énergie renouvelable" },
-        { "title": "Techniciens courant fort et faible" }
-      ]
-    },
-    "entrepriseAcc": {
-      "title": "Questions fréquemment posées",
-      "contactTitle": "Obtenez d'autres informations",
-      "contactSubtitle": "Nous serons heureux d'apporter des réponses à vos questions.",
-      "contactButton": "Nous joindre",
-      "items": [
-        {
-          "question": "Où êtes-vous implantés et dans quelles régions intervenez-vous ?",
-          "answer": "Notre siège est basé à Douala et à Yaoundé; mais nous intervenons sur l'ensemble du territoire national et dans certaines zones d'Afrique de l'Ouest. Pour des projets spécifiques, nous étudions aussi les interventions à l'international."
-        },
-        {
-          "question": "Quels sont vos délais moyens pour un projet ?",
-          "answer": "Les délais varient selon la complexité du projet. En général, nous livrons les projets standards en 2-4 semaines."
-        },
-        {
-          "question": "Comment obtenir un devis personnalisé ?",
-          "answer": "Vous pouvez nous contacter via le formulaire en ligne ou par téléphone. Nous vous envoyons un devis sous 48h."
-        },
-        {
-          "question": "Est-ce que vous proposez un accompagnement après la livraison ?",
-          "answer": "Oui, nous offrons un service après-vente complet incluant maintenance et support technique 24/7."
-        }
-      ]
-    },
-    "entreprisePartner": {
-      "title": "Nos partenaires",
-      "ctaTitle": "Vous avez un Bession ?",
-      "ctaTitle2": "Nous avons les",
-      "ctaHighlight": "solutions",
-      "ctaButton": "Contactez Nous"
-    }
+ "entreprise": {
+  "hero": {
+    "title": "Que devez-vous savoir sur",
+    "titleHighlight": "ELECIT",
+    "subtitle": "1ÈRE ENTREPRISE HIGH-TECH EN AFRIQUE",
+    "descriptionLine1": "Parce qu’au-delà du marché camerounais, nous visons à",
+    "descriptionLine2": "développer toute l’Afrique à travers nos services.",
+    "button": "Regarder la vidéo"
   },
+  "elecitCarousel": {
+    "title": "L’essence d’Elec",
+    "titleHighlight": "IT",
+    "carouselAriaLabel": "Carrousel d’images",
+    "goToImage": "Aller à l’image",
+    "paragraph1": "Depuis sa création en <strong>2015</strong>, ElecIT Engineering s’est imposée comme un acteur pluridisciplinaire, capable de gérer des projets complexes, alliant expertise technique, innovation et engagement terrain.",
+    "paragraph2": "Animée par une volonté constante d’apporter des solutions concrètes aux besoins de ses clients, l’entreprise s’est construite autour de la mission de son fondateur : <strong>mettre la technologie et l’ingénierie au service du développement durable, de la performance et du bien-être collectif au Cameroun et à l’international.</strong>",
+    "documentsTitle": "Documents à consulter :",
+    "document1": "Certification ISO 9001 V 2015",
+    "document2": "Politique Qualité"
+  },
+  "entrepriseCards": {
+    "bannerTitle": "Nos valeurs",
+    "bannerSubtitle": "03 mots-clés",
+    "bannerSubtitle2": "nous définissent",
+    "items": [
+      {
+        "title": "Innovation",
+        "description": "Grâce à une veille technologique continue et une culture de la créativité, nous développons des approches innovantes pour répondre aux besoins de nos partenaires."
+      },
+      {
+        "title": "Transformation",
+        "description": "Nous accompagnons nos clients dans leur transition vers des modèles plus efficaces et durables grâce à l’intégration de nouvelles technologies et à l’optimisation des processus."
+      },
+      {
+        "title": "Excellence",
+        "description": "Grâce à des standards de qualité élevés, une expertise pointue et une attention aux détails, nous garantissons des résultats à la hauteur des attentes les plus exigeantes."
+      }
+    ]
+  },
+  "entrepriseTeam": {
+    "title": "L’équipe",
+    "subtitle": "Ces acteurs qui s’unissent pour répondre à vos besoins",
+    "description": "Nous mobilisons les bonnes compétences au bon moment. Cette richesse humaine et technique nous permet de répondre avec agilité et précision aux défis les plus variés de nos clients, du conseil à la mise en œuvre.",
+    "button": "Regarder la vidéo",
+    "members": [
+      { "title": "Spécialistes en domotique" },
+      { "title": "Ingénieurs en mécatronique" },
+      { "title": "Gestionnaires de flotte" },
+      { "title": "Ingénieurs informatiques" },
+      { "title": "Ingénieurs civils" },
+      { "title": "Techniciens de fabrication" },
+      { "title": "Techniciens IT" },
+      { "title": "Agents de maintenance" },
+      { "title": "Ingénieurs en énergies renouvelables" },
+      { "title": "Techniciens en courants forts et faibles" }
+    ]
+  },
+  "entrepriseAcc": {
+    "title": "Foire aux questions",
+    "contactTitle": "Obtenir plus d’informations",
+    "contactSubtitle": "Nous serons ravis de répondre à vos questions.",
+    "contactButton": "Nous joindre",
+    "items": [
+      {
+        "question": "Où êtes-vous situés et dans quelles régions intervenez-vous ?",
+        "answer": "Nos sièges sont basés à Douala et Yaoundé, mais nous intervenons sur tout le territoire national et dans certaines zones d’Afrique de l’Ouest. Pour des projets spécifiques, nous étudions également des interventions internationales."
+      },
+      {
+        "question": "Quels sont vos délais moyens de réalisation ?",
+        "answer": "Les délais varient selon la complexité du projet. En général, nous livrons les projets standards en 2 à 4 semaines."
+      },
+      {
+        "question": "Comment obtenir un devis personnalisé ?",
+        "answer": "Vous pouvez nous contacter via le formulaire en ligne ou par téléphone. Nous vous enverrons un devis sous 48 heures."
+      },
+      {
+        "question": "Proposez-vous un suivi après la livraison ?",
+        "answer": "Oui, nous offrons un service après-vente complet incluant la maintenance et une assistance technique 24h/24 et 7j/7."
+      }
+    ]
+  },
+  "entreprisePartner": {
+    "title": "Nos partenaires",
+    "ctaTitle": "Vous avez un besoin ?",
+    "ctaTitle2": "Nous avons les",
+    "ctaHighlight": "solutions",
+    "ctaButton": "Nous contacter"
+  }
+}
+,
 
  "contact": {
   "floatingButton": "Nous contacter",
@@ -1165,7 +1177,7 @@
 
   "sav": {
     "hero": {
-      "title": "SERVICE APRES-VENTE",
+      "title": "MAINTENANCE TECHNIQUE DES BÂTIMENTS",
       "subtitle": "Nous assurons la satisfaction du client, garantissons la longévité des équipements et renforçons la confiance client.",
       "button": "Contenu à voir"
     },
@@ -1278,11 +1290,10 @@
       "heading": "Types d'ouvrages hydrauliques pris en charge",
       "projects": [
         { "title": "Tunnel" },
-        { "title": "Barrage" },
+        { "title": "carnivot" },
         { "title": "Forage" },
-        { "title": "Canal" },
-        { "title": "Pompage" },
-        { "title": "Drainage" }
+        { "title": "Drain" },
+        { "title": "système d'arrosage" }
       ],
       "cta": {
         "title": "Un projet de",

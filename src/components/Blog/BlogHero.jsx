@@ -2,14 +2,34 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import { ICONS, HERO } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
+import { motion } from "framer-motion";
+
 
 const BlogHero = () => {
   const { t } = useTranslation();
+
+   const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
   
   return (
     <section
       className="relative w-full overflow-hidden min-h-[500px]"
-      style={{ height: "55vh" }}
+      style={{ height: "65vh" }}
     >
       {/* Background Image */}
       <img
@@ -33,24 +53,32 @@ const BlogHero = () => {
       {/* CENTERED TEXT CONTENT */}
       <div className="absolute inset-0 flex flex-col items-center
        justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
-        <h1
+        <motion.h1
           className="font-extrabold text-3xl sm:text-4xl
-           md:text-5xl lg:text-6xl xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
+           md:text-5xl lg:text-6xl xl:text-5xl 
+           leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
+           
           style={{ color: MY_COLORS.white }}
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
         >
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t('blogPage.hero.title')}
           </span>
-        </h1>
+        </motion.h1>
 
-        <h3
+        <motion.h3
           style={{ color: MY_COLORS.white }}
           className="text-white text-sm sm:text-base md:text-lg 
           lg:text-lg xl:text-2xl tracking-wide uppercase font-extrabold mb-4 
           sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
         >
           {t('blogPage.hero.subtitle')}
-        </h3>
+        </motion.h3>
 
         <p className="text-white text-sm sm:text-base
          md:text-lg leading-relaxed mb-6 max-w-xs 

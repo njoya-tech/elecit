@@ -18,7 +18,7 @@
       "itDataProcessing": "IT & Datenverarbeitung",
       "accessControlSecurity": "Zutrittskontrolle & Sicherheit",
       "designOffice": "Planungsbüro",
-      "afterSalesService": "Kundendienst"
+      "afterSalesService": "GEBÄUDETECHNISCHE WARTUNG"
     },
     "subsidiaries": {
       "foczou": "FOCZOU",
@@ -726,82 +726,95 @@
   },
 
   "entreprise": {
-    "hero": {
-      "title": "Wat u moet weten over",
-      "titleHighlight": "ELECIT?",
-      "subtitle": "AFRIKA'S 1E HIGH TECH BEDRIJF",
-      "description": "Omdat we naast de Kameroense markt heel Afrika willen ontwikkelen door middel van onze diensten.",
-      "button": "Bekijk Video"
-    },
-    "entrepriseCards": {
-      "bannerTitle": "Onze waarden",
-      "bannerSubtitle": "03 sleutelwoorden",
-      "bannerSubtitle2": "definiëren ons",
-      "items": [
-        {
-          "title": "Innovatie",
-          "description": "Door voortdurende technologiebewaking en een cultuur van creativiteit ontwikkelen we innovatieve benaderingen om aan de behoeften van onze partners te voldoen."
-        },
-        {
-          "title": "Transformatie",
-          "description": "We ondersteunen onze klanten bij hun transitie naar efficiëntere en duurzamere modellen door de integratie van nieuwe technologieën en procesoptimalisatie."
-        },
-        {
-          "title": "Uitmuntendheid",
-          "description": "Door hoge kwaliteitsnormen, scherpe expertise en aandacht voor detail garanderen we resultaten die aan de meest veeleisende verwachtingen voldoen."
-        }
-      ]
-    },
-    "entrepriseTeam": {
-      "title": "Het team",
-      "subtitle": "Deze actoren die zich verenigen om aan uw behoeften te voldoen",
-      "description": "We mobiliseren de juiste vaardigheden op het juiste moment. Deze menselijke en technische rijkdom stelt ons in staat om met behendigheid en precisie te reageren op de meest uiteenlopende uitdagingen van onze klanten, van advies tot implementatie.",
-      "button": "Bekijk Video",
-      "members": [
-        { "title": "Domotica Specialisten" },
-        { "title": "Mechatronica Ingenieurs" },
-        { "title": "Wagenpark Managers" },
-        { "title": "IT Ingenieurs" },
-        { "title": "Civiele Ingenieurs" },
-        { "title": "Productie Technici" },
-        { "title": "IT Technici" },
-        { "title": "Onderhouds Agenten" },
-        { "title": "Duurzame Energie Ingenieurs" },
-        { "title": "Hoog en Laag Stroom Technici" }
-      ]
-    },
-    "entrepriseAcc": {
-      "title": "Veelgestelde vragen",
-      "contactTitle": "Krijg meer informatie",
-      "contactSubtitle": "We beantwoorden graag uw vragen.",
-      "contactButton": "Neem contact op",
-      "items": [
-        {
-          "question": "Waar bent u gevestigd en in welke regio's bent u actief?",
-          "answer": "Ons hoofdkantoor is gevestigd in Douala en Yaoundé; maar we zijn actief in het hele nationale grondgebied en in bepaalde gebieden van West-Afrika. Voor specifieke projecten bestuderen we ook internationale interventies."
-        },
-        {
-          "question": "Wat zijn uw gemiddelde projecttijdlijnen?",
-          "answer": "Tijdlijnen variëren afhankelijk van de complexiteit van het project. Over het algemeen leveren we standaardprojecten in 2-4 weken."
-        },
-        {
-          "question": "Hoe krijg ik een persoonlijke offerte?",
-          "answer": "U kunt contact met ons opnemen via het online formulier of telefonisch. We sturen u binnen 48 uur een offerte."
-        },
-        {
-          "question": "Bieden jullie ondersteuning na levering?",
-          "answer": "Ja, we bieden volledige after-sales service inclusief onderhoud en 24/7 technische ondersteuning."
-        }
-      ]
-    },
-    "entreprisePartner": {
-      "title": "Onze partners",
-      "ctaTitle": "Heeft u een behoefte?",
-      "ctaTitle2": "Wij hebben de",
-      "ctaHighlight": "oplossingen",
-      "ctaButton": "Neem Contact Op"
-    }
+  "hero": {
+    "title": "Was sollten Sie über",
+    "titleHighlight": "ELECIT",
+    "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
+    "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
+    "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen entwickeln.",
+    "button": "Video ansehen"
   },
+  "elecitCarousel": {
+    "title": "Die Essenz von Elec",
+    "titleHighlight": "IT",
+    "carouselAriaLabel": "Bildkarussell",
+    "goToImage": "Zum Bild gehen",
+    "paragraph1": "Seit seiner Gründung im Jahr <strong>2015</strong> hat sich ElecIT Engineering als multidisziplinärer Akteur etabliert, der in der Lage ist, komplexe Projekte zu realisieren – mit technischer Expertise, Innovation und starkem Engagement vor Ort.",
+    "paragraph2": "Angetrieben von dem ständigen Wunsch, konkrete Lösungen für die Bedürfnisse seiner Kunden zu liefern, wurde das Unternehmen rund um die Mission seines Gründers aufgebaut: <strong>Technologie und Ingenieurwesen in den Dienst nachhaltiger Entwicklung, Leistungsfähigkeit und des kollektiven Wohlbefindens in Kamerun und international zu stellen.</strong>",
+    "documentsTitle": "Dokumente zum Lesen:",
+    "document1": "ISO 9001 V 2015 Zertifizierung",
+    "document2": "Qualitätspolitik"
+  },
+  "entrepriseCards": {
+    "bannerTitle": "Unsere Werte",
+    "bannerSubtitle": "03 Schlüsselwörter",
+    "bannerSubtitle2": "definieren uns",
+    "items": [
+      {
+        "title": "Innovation",
+        "description": "Durch kontinuierliche technologische Beobachtung und eine Kultur der Kreativität entwickeln wir innovative Ansätze, um die Bedürfnisse unserer Partner zu erfüllen."
+      },
+      {
+        "title": "Transformation",
+        "description": "Wir begleiten unsere Kunden bei ihrem Übergang zu effizienteren und nachhaltigeren Modellen durch die Integration neuer Technologien und Prozessoptimierung."
+      },
+      {
+        "title": "Exzellenz",
+        "description": "Durch hohe Qualitätsstandards, fundierte Expertise und Liebe zum Detail garantieren wir Ergebnisse, die selbst höchsten Ansprüchen gerecht werden."
+      }
+    ]
+  },
+  "entrepriseTeam": {
+    "title": "Das Team",
+    "subtitle": "Diese Akteure, die sich vereinen, um Ihre Bedürfnisse zu erfüllen",
+    "description": "Wir mobilisieren die richtigen Kompetenzen zur richtigen Zeit. Diese menschliche und technische Stärke ermöglicht es uns, flexibel und präzise auf die vielfältigen Herausforderungen unserer Kunden zu reagieren – von der Beratung bis zur Umsetzung.",
+    "button": "Video ansehen",
+    "members": [
+      { "title": "Smart-Home-Spezialisten" },
+      { "title": "Mechatronik-Ingenieure" },
+      { "title": "Flottenmanager" },
+      { "title": "IT-Ingenieure" },
+      { "title": "Bauingenieure" },
+      { "title": "Fertigungstechniker" },
+      { "title": "IT-Techniker" },
+      { "title": "Wartungstechniker" },
+      { "title": "Ingenieure für erneuerbare Energien" },
+      { "title": "Techniker für Stark- und Schwachstrom" }
+    ]
+  },
+  "entrepriseAcc": {
+    "title": "Häufig gestellte Fragen",
+    "contactTitle": "Weitere Informationen erhalten",
+    "contactSubtitle": "Wir beantworten gerne Ihre Fragen.",
+    "contactButton": "Kontaktieren Sie uns",
+    "items": [
+      {
+        "question": "Wo befinden Sie sich und in welchen Regionen sind Sie tätig?",
+        "answer": "Unsere Hauptsitze befinden sich in Douala und Yaoundé, aber wir sind im gesamten nationalen Gebiet sowie in bestimmten Regionen Westafrikas tätig. Für spezielle Projekte prüfen wir auch internationale Einsätze."
+      },
+      {
+        "question": "Wie lange dauern Ihre Projekte im Durchschnitt?",
+        "answer": "Die Dauer hängt von der Komplexität des Projekts ab. In der Regel liefern wir Standardprojekte in 2–4 Wochen."
+      },
+      {
+        "question": "Wie erhalte ich ein individuelles Angebot?",
+        "answer": "Sie können uns über das Online-Formular oder telefonisch kontaktieren. Wir senden Ihnen innerhalb von 48 Stunden ein Angebot."
+      },
+      {
+        "question": "Bieten Sie Support nach der Lieferung an?",
+        "answer": "Ja, wir bieten einen vollständigen After-Sales-Service inklusive Wartung und 24/7 technischem Support."
+      }
+    ]
+  },
+  "entreprisePartner": {
+    "title": "Unsere Partner",
+    "ctaTitle": "Haben Sie einen Bedarf?",
+    "ctaTitle2": "Wir haben die",
+    "ctaHighlight": "Lösungen",
+    "ctaButton": "Kontakt aufnehmen"
+  }
+},
+
 
   "contact": {
     "floatingButton": "Kontakt",
@@ -1054,7 +1067,7 @@
 
   "sav": {
     "hero": {
-      "title": "Was sollten Sie über",
+      "title": "TECHNISCHE GEBÄUDEWARTUNG",
       "titleHighlight": "ELECIT wissen",
       "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
       "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
@@ -1168,11 +1181,10 @@
       "heading": "Unterstützte Arten von hydraulischen Bauwerken",
       "projects": [
         { "title": "Tunnel" },
-        { "title": "Staudamm" },
+        { "title": "Fleischfresser" },
         { "title": "Bohrung" },
-        { "title": "Kanal" },
-        { "title": "Pumpen" },
-        { "title": "Entwässerung" }
+        { "title": "Abfluss" },
+        { "title": "Bewässerungssystem" }
       ],
       "cta": {
         "title": "Ein",

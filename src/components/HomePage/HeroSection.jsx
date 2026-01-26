@@ -167,6 +167,25 @@ const HeroSection = ({ slides }) => {
           />
         ))}
       </div>
+<<<<<<< HEAD
+=======
+
+      {/* Animation CSS pour la flèche */}
+      <style>{`
+        @keyframes bounce-horizontal {
+          0%,
+          100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(6px);
+          }
+        }
+        .animate-bounce-horizontal {
+          animation: bounce-horizontal 1.5s ease-in-out infinite;
+        }
+      `}</style>
+>>>>>>> hope1
     </div>
   );
 };

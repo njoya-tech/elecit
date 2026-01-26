@@ -11,25 +11,67 @@ const BureauHero = () => {
   const { t } = useTranslation();
   const [showVideo, setShowVideo] = useState(false);
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.5 }
+    }
+  };
+
   return (
     <section
       className="
         relative w-full overflow-hidden
         min-h-[500px]
       "
-      style={{ height: "55vh" }}
+      style={{ height: "65vh" }}
     >
       {/* BACKGROUND IMAGE */}
-      <img
+      <motion.img
         src={HERO.bureauEtude}
         alt="Bureau d'étude et ingénierie"
         className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
       {/* DARK GRADIENT OVERLAY */}
-      <div
+      <motion.div
         className="absolute inset-0 bg-linear-to-b
        from-black/70 via-black/50 to-black/80"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
       {/* ANGLED BLACK PNG MASK */}
@@ -72,7 +114,7 @@ const BureauHero = () => {
         "
       >
         {/* TITLE */}
-        <h1
+        <motion.h1
           className="
             font-extrabold
             text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl
@@ -80,14 +122,17 @@ const BureauHero = () => {
             mb-4 sm:mb-6 mt-20
           "
           style={{ color: MY_COLORS.secondaryGreen }}
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
         >
           {t("bureau.hero.titleLine1")}
           <br />
           {t("bureau.hero.titleLine2")}
-        </h1>
+        </motion.h1>
 
         {/* DESCRIPTION */}
-        <p
+        <motion.p
           className="
             text-white
             text-sm sm:text-base md:text-lg
@@ -95,14 +140,22 @@ const BureauHero = () => {
             mb-8 sm:mb-10
             max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl
           "
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
         >
           {t("bureau.hero.descriptionLine1")}
           <br />
           {t("bureau.hero.descriptionLine2")}
-        </p>
+        </motion.p>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 p-0 lg:mt-0 ml-4 md:ml-10 lg:ml-20">
+        <motion.div
+          className="flex items-center gap-4 p-0 lg:mt-0 ml-4 md:ml-10 lg:ml-20"
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+        >
           <CTAButton onClick={() => setShowVideo(true)}>
             {t("bureau.hero.button")}
           </CTAButton>
@@ -110,13 +163,13 @@ const BureauHero = () => {
           {showVideo && (
             <div
               className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-              onClick={() => setShowVideo(false)} // Click outside closes the video
+              onClick={() => setShowVideo(false)}
             >
               {/* Video Container */}
               <div
                 className="relative w-[90%] max-w-3xl aspect-video
                  bg-black rounded-xl overflow-hidden shadow-xl"
-                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside video
+                onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
                 <button
@@ -150,7 +203,7 @@ const BureauHero = () => {
               repeat: Infinity,
             }}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from 'react-i18next';
+import { motion } from "framer-motion";
 
 const EntrepriseTeam = () => {
   const { t } = useTranslation();
@@ -35,6 +36,33 @@ const EntrepriseTeam = () => {
     setCurrentSlide(index);
   };
 
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideDownDelayed = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
   return (
    <section
   className="w-screen pt-20 lg:pt-24 pb-4 relative -mx-[50vw] left-1/2 right-1/2"
@@ -45,7 +73,13 @@ const EntrepriseTeam = () => {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 items-center">
           {/* LEFT SIDE - Text Content */}
-          <div className="flex-1 space-y-4 sm:space-y-5 md:space-y-6 w-full">
+          <motion.div
+            className="flex-1 space-y-4 sm:space-y-5 md:space-y-6 w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideDown}
+          >
             <h3
               className="text-lg sm:text-xl md:text-2xl font-bold"
               style={{ color: MY_COLORS.green }}
@@ -81,10 +115,16 @@ const EntrepriseTeam = () => {
                 {t('entreprise.entrepriseTeam.button')}
               </CTAButton>
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT SIDE - Carousel */}
-          <div className="flex-1 relative px-4 sm:px-6 md:px-8 w-full">
+          <motion.div
+            className="flex-1 relative px-4 sm:px-6 md:px-8 w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideDownDelayed}
+          >
             {/* TOP-RIGHT GEAR */}
             <div className="absolute -top-4 sm:-top-6 md:-top-8 -right-4 sm:-right-8 md:-right-16 lg:-right-20 xl:-right-25 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-52 lg:h-52 xl:w-[220px] xl:h-[220px] z-0 opacity-100">
               <img
@@ -172,19 +212,33 @@ const EntrepriseTeam = () => {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* MOBILE BUTTON - Shows only on mobile/tablet */}
-        <div className="lg:hidden mt-8 flex justify-center">
+        <motion.div
+          className="lg:hidden mt-8 flex justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeIn}
+          transition={{ delay: 0.6 }}
+        >
           <CTAButton onClick={() => alert("Video clicked!")}>
             {t('entreprise.entrepriseTeam.button')}
           </CTAButton>
-        </div>
+        </motion.div>
       </div>
 
       {/* GREEN DASHED LINE SEPARATOR */}
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 mt-12 sm:mt-16 md:mt-20 lg:mt-26 lg:pt-1">
+      <motion.div
+        className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 mt-12 sm:mt-16 md:mt-20 lg:mt-26 lg:pt-1"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeIn}
+        transition={{ delay: 0.8 }}
+      >
         <div
           className="w-full h-0.5"
           style={{
@@ -197,7 +251,7 @@ const EntrepriseTeam = () => {
             )`,
           }}
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

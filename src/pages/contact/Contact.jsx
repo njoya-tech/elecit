@@ -25,17 +25,17 @@ const Contact = () => {
         {/* CONTENT SECTIONS — CONTAINER */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
           {/* Formula Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section >
             <FormulaContact />
           </section>
 
           {/* Location Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section>
             <LocationContact />
           </section>
 
           {/* Blog Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section >
             <BlogContact  onPostClick={(postId) => {
               navigate(`/blog/${postId}`)
             }}/>

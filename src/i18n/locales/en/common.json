@@ -302,7 +302,7 @@
       "itDataProcessing": "IT & Data Processing",
       "accessControlSecurity": "Access Control & Security",
       "designOffice": "Design Office",
-      "afterSalesService": "After-Sales Service"
+      "afterSalesService": "BUILDING TECHNICAL MAINTENANCE"
     },
     "subsidiaries": {
       "foczou": "FOCZOU",
@@ -618,85 +618,95 @@
     }
   },
 
-  "entreprise": {
-    "hero": {
-      "title": "What should you know about",
-      "titleHighlight": "ELECIT",
-      "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
-      "descriptionLine1": "Because beyond the Cameroonian market, we aim to",
-      "descriptionLine2": "develop the whole of Africa through our services.",
-      "button": "Watch the video"
-    },
-
-    "entrepriseCards": {
-      "bannerTitle": "Our values",
-      "bannerSubtitle": "03 keywords",
-      "bannerSubtitle2": "define us",
-      "items": [
-        {
-          "title": "Innovation",
-          "description": "Through continuous technology monitoring and a culture of creativity, we develop innovative approaches to meet our partners' needs."
-        },
-        {
-          "title": "Transformation",
-          "description": "We support our clients in their transition towards more efficient and sustainable models through the integration of new technologies and process optimization."
-        },
-        {
-          "title": "Excellence",
-          "description": "Through high quality standards, sharp expertise and attention to detail, we guarantee results that meet the most demanding expectations."
-        }
-      ]
-    },
-    "entrepriseTeam": {
-      "title": "The team",
-      "subtitle": "These actors who unite to meet your needs",
-      "description": "We mobilize the right skills at the right time. This human and technical wealth allows us to respond with agility and precision to the most varied challenges of our clients, from consulting to implementation.",
-      "button": "Watch Video",
-      "members": [
-        { "title": "Home Automation Specialists" },
-        { "title": "Mechatronics Engineers" },
-        { "title": "Fleet Managers" },
-        { "title": "IT Engineers" },
-        { "title": "Civil Engineers" },
-        { "title": "Manufacturing Technicians" },
-        { "title": "IT Technicians" },
-        { "title": "Maintenance Agents" },
-        { "title": "Renewable Energy Engineers" },
-        { "title": "High and Low Current Technicians" }
-      ]
-    },
-    "entrepriseAcc": {
-      "title": "Frequently asked questions",
-      "contactTitle": "Get more information",
-      "contactSubtitle": "We will be happy to answer your questions.",
-      "contactButton": "Contact us",
-      "items": [
-        {
-          "question": "Where are you located and in which regions do you operate?",
-          "answer": "Our headquarters are based in Douala and Yaoundé; but we operate throughout the national territory and in certain areas of West Africa. For specific projects, we also study international interventions."
-        },
-        {
-          "question": "What are your average project timelines?",
-          "answer": "Timelines vary depending on project complexity. Generally, we deliver standard projects in 2-4 weeks."
-        },
-        {
-          "question": "How to get a personalized quote?",
-          "answer": "You can contact us via the online form or by phone. We will send you a quote within 48 hours."
-        },
-        {
-          "question": "Do you offer support after delivery?",
-          "answer": "Yes, we offer complete after-sales service including maintenance and 24/7 technical support."
-        }
-      ]
-    },
-    "entreprisePartner": {
-      "title": "Our partners",
-      "ctaTitle": "Do you have a need?",
-      "ctaTitle2": "We have the",
-      "ctaHighlight": "solutions",
-      "ctaButton": "Contact Us"
-    }
+ "entreprise": {
+  "hero": {
+    "title": "What should you know about",
+    "titleHighlight": "ELECIT",
+    "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
+    "descriptionLine1": "Because beyond the Cameroonian market, we aim to",
+    "descriptionLine2": "develop the whole of Africa through our services.",
+    "button": "Watch the video"
   },
+  "elecitCarousel": {
+    "title": "The essence of Elec",
+    "titleHighlight": "IT",
+    "carouselAriaLabel": "Image carousel",
+    "goToImage": "Go to image",
+    "paragraph1": "Since its creation in <strong>2015</strong>, ElecIT Engineering has established itself as a multidisciplinary player, capable of managing complex projects, combining technical expertise, innovation and field commitment.",
+    "paragraph2": "Driven by a constant desire to provide concrete solutions to its clients' needs, the company was built around its founder's mission: <strong>putting technology and engineering at the service of sustainable development, performance and collective well-being in Cameroon and internationally.</strong>",
+    "documentsTitle": "Documents to read:",
+    "document1": "ISO 9001 V 2015 Certification",
+    "document2": "Quality Policy"
+  },
+  "entrepriseCards": {
+    "bannerTitle": "Our values",
+    "bannerSubtitle": "03 keywords",
+    "bannerSubtitle2": "define us",
+    "items": [
+      {
+        "title": "Innovation",
+        "description": "Through continuous technology monitoring and a culture of creativity, we develop innovative approaches to meet our partners' needs."
+      },
+      {
+        "title": "Transformation",
+        "description": "We support our clients in their transition towards more efficient and sustainable models through the integration of new technologies and process optimization."
+      },
+      {
+        "title": "Excellence",
+        "description": "Through high quality standards, sharp expertise and attention to detail, we guarantee results that meet the most demanding expectations."
+      }
+    ]
+  },
+  "entrepriseTeam": {
+    "title": "The team",
+    "subtitle": "These actors who unite to meet your needs",
+    "description": "We mobilize the right skills at the right time. This human and technical wealth allows us to respond with agility and precision to the most varied challenges of our clients, from consulting to implementation.",
+    "button": "Watch Video",
+    "members": [
+      { "title": "Home Automation Specialists" },
+      { "title": "Mechatronics Engineers" },
+      { "title": "Fleet Managers" },
+      { "title": "IT Engineers" },
+      { "title": "Civil Engineers" },
+      { "title": "Manufacturing Technicians" },
+      { "title": "IT Technicians" },
+      { "title": "Maintenance Agents" },
+      { "title": "Renewable Energy Engineers" },
+      { "title": "High and Low Current Technicians" }
+    ]
+  },
+  "entrepriseAcc": {
+    "title": "Frequently asked questions",
+    "contactTitle": "Get more information",
+    "contactSubtitle": "We will be happy to answer your questions.",
+    "contactButton": "Contact us",
+    "items": [
+      {
+        "question": "Where are you located and in which regions do you operate?",
+        "answer": "Our headquarters are based in Douala and Yaoundé; but we operate throughout the national territory and in certain areas of West Africa. For specific projects, we also study international interventions."
+      },
+      {
+        "question": "What are your average project timelines?",
+        "answer": "Timelines vary depending on project complexity. Generally, we deliver standard projects in 2-4 weeks."
+      },
+      {
+        "question": "How to get a personalized quote?",
+        "answer": "You can contact us via the online form or by phone. We will send you a quote within 48 hours."
+      },
+      {
+        "question": "Do you offer support after delivery?",
+        "answer": "Yes, we offer complete after-sales service including maintenance and 24/7 technical support."
+      }
+    ]
+  },
+  "entreprisePartner": {
+    "title": "Our partners",
+    "ctaTitle": "Do you have a need?",
+    "ctaTitle2": "We have the",
+    "ctaHighlight": "solutions",
+    "ctaButton": "Contact Us"
+  }
+},
   "contact": {
   "floatingButton": "Contact Us",
   "popup": {
@@ -894,7 +904,7 @@
   
   "sav": {
     "hero": {
-      "title": "AFTER-SALES SERVICE",
+      "title": "BUILDING TECHNICAL MAINTENANCE",
       "subtitle": "We ensure customer satisfaction, guarantee equipment longevity, and strengthen client trust.",
       "button": "View content"
     },
@@ -1008,11 +1018,11 @@
       "heading": "Types of hydraulic structures supported",
       "projects": [
         { "title": "Tunnel" },
-        { "title": "Dam" },
+        { "title": "Carnivore" },
         { "title": "Drilling" },
-        { "title": "Canal" },
-        { "title": "Pumping" },
-        { "title": "Drainage" }
+        { "title": "Drain" },
+        { "title": "Irrigation system" }
+      
       ],
       "cta": {
         "title": "Have a",
