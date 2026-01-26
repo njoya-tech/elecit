@@ -4,22 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import { visualizer } from 'rollup-plugin-visualizer'  // ← FIXED THIS LINE
 
 // https://vite.dev/config/
+
 export default defineConfig({
-<<<<<<< HEAD
-  plugins: [react(),
-    tailwindcss(),
-  ],
-  base: '/',
-  build: {
-    assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[name].[hash][extname]'
-      }
-    }
-  }
-})
-=======
+
   plugins: [
     react(),
     tailwindcss(),
@@ -107,5 +94,7 @@ export default defineConfig({
     port: 4173,
     strictPort: true,
   },
+
+
 })
->>>>>>> hope1
+
