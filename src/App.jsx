@@ -43,7 +43,7 @@ function App() {
       <Suspense
         fallback={
           <div className="min-h-screen flex items-center justify-center">
-            <span className="text-gray-500 text-sm"> </span>
+            <span className="text-gray-500 text-sm"></span>
           </div>
         }
       >
