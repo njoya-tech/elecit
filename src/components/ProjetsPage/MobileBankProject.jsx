@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import rail from '../../assets/rail.svg';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../FabriMeca/FoRound.css';
-import ProjectsService from '../../services/projets/projects.service';
-import ExpertiseCarousel from './ExpertiseCarousel'
+import ExpertiseCarousel from './ExpertiseCarousel';
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
@@ -16,45 +15,11 @@ const MY_COLORS = {
 };
 
 const MobileBankProject = ({ onClose, projectData }) => {
-  const { t, i18n } = useTranslation();
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  
-
-  useEffect(() => {
-    console.log('🎯 [MobileBankProject] Montage composant');
-    console.log('🌐 [MobileBankProject] Langue:', i18n.language);
-
-    const fetchProject = async () => {
-      try {
-        setLoading(true);
-        const projectData = await ProjectsService.getProjectBySlug(i18n.language);
-        
-        console.log('📦 [MobileBankProject] Projet reçu:', projectData);
-        
-        if (projectData) {
-          setProject(projectData);
-          console.log('✅ [MobileBankProject] Projet chargé:', {
-            title: projectData.title,
-            coverImage: projectData.coverImage,
-            carouselCount: projectData.carouselImages?.length,
-            hasVideo: !!projectData.videoUrl
-          });
-     
-        } else {
-          console.warn('⚠️ [MobileBankProject] Projet non trouvé');
-        }
-      } catch (error) {
-        console.error('❌ [MobileBankProject] Erreur chargement:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProject();
-  }, [i18n.language]);
+  // ✅ CORRECTION: Utiliser directement projectData des props
+  const project = projectData;
 
   // Navigation carousel
   const nextSlide = () => {
@@ -71,16 +36,10 @@ const MobileBankProject = ({ onClose, projectData }) => {
     setCurrentSlide(index);
   };
 
-  // Affichage pendant le chargement
-  if (loading) {
-    return (
-      <div className="w-full max-w-[90%] mx-auto px-6 py-16 flex justify-center items-center min-h-screen">
-        <div className="text-2xl font-semibold" style={{ color: MY_COLORS.primaryBlue }}>
-          {t('projects.loading')}...
-        </div>
-      </div>
-    );
-  }
+  // Reset carousel quand le projet change
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [project?.id]);
 
   // Aucun projet trouvé
   if (!project) {
@@ -130,7 +89,7 @@ const MobileBankProject = ({ onClose, projectData }) => {
           </h2>
         </div>
         <div className="ml-8">
-          <img src={rail} alt="" className='w-30 h-30 lg:left-400 absolute rotating-gear' />
+          <img src={rail} alt="" className='hidden w-30 h-30 lg:left-400 absolute rotating-gear' />
         </div>
       </div>
 
@@ -229,25 +188,38 @@ const MobileBankProject = ({ onClose, projectData }) => {
 
               {/* Decorative Gear Icon */}
               <div>
-                <img src={rail} alt="" className='w-50 h-50 lg:-left-10 lg:-bottom-140 absolute z-10 rotating-gear' />
+                <img src={rail} alt="" className='hidden w-50 h-50 lg:-left-10 lg:-bottom-140 absolute z-10 rotating-gear' />
               </div>
             </div>
           )}
 
-          {/* Right: Text Content */}
-          <div className='items-start justify-center mt-5'>
-            {project.processTitle && (
-              <>
-                <h3 className="text-xl font-bold mb-4" style={{ color: MY_COLORS.black }}>
-                  {project.processTitle}
-                </h3>
-                <div 
-                  className="text-xl leading-relaxed text-gray-700 mb-10 whitespace-pre-wrap"
-                  dangerouslySetInnerHTML={{ __html: project.processUtility }}
-                />
-              </>
-            )}
-          </div>
+         {/* Right: Text Content */}
+<div className='items-start justify-center mt-5 px-6'>
+  {/* Titre de la section Process */}
+  {project.processTitle && (
+    <div className="mb-8">
+      <h3 className="text-2xl font-bold mb-6" style={{ color: MY_COLORS.black }}>
+        {t('projectNew.processTitle')}
+      </h3>
+      <p className="text-xl leading-relaxed text-gray-700 mb-6">
+        {project.processTitle}
+      </p>
+    </div>
+  )}
+
+  {/* Titre et contenu de l'utilité */}
+  {project.processUtility && (
+    <div className="mb-8">
+      <h3 className="text-2xl font-bold mb-6" style={{ color: MY_COLORS.black }}>
+        {t('projectNew.utilityTitle')}
+      </h3>
+      <div 
+        className="text-xl leading-relaxed text-gray-700"
+        dangerouslySetInnerHTML={{ __html: project.processUtility }}
+      />
+    </div>
+  )}
+</div>
         </div>
       )}
 
@@ -298,16 +270,17 @@ const MobileBankProject = ({ onClose, projectData }) => {
         </div>
       )}
 
-{/* Section Expertise - ✅ CORRIGÉ */}
-{project.expertiseText && (
-  <div className="mb-12 mx-auto"> {/* ← Ajout mx-auto pour centrage */}
-    <div className="text-xl text-center font-bold text-gray-700 mb-12 p-8  rounded-lg">
-      {project.expertiseText}  {/* ← CORRECT : utilise expertiseText, PAS clientFeedback */}
-    </div>
-  </div>
-)}
-              {/* Carousel Expertise */}
-   <ExpertiseCarousel projectId={project.id} />
+      {/* Section Expertise */}
+      {project.expertiseText && (
+        <div className="mb-12 mx-auto">
+          <div className="text-xl text-center font-bold text-gray-700 mb-12 p-8  rounded-lg">
+            {project.expertiseText}
+          </div>
+        </div>
+      )}
+      
+      {/* Carousel Expertise */}
+      <ExpertiseCarousel projectId={project.id} />
 
       {/* Bouton Projet */}
       <div className="flex justify-center items-center relative  mt-5">
@@ -321,7 +294,7 @@ const MobileBankProject = ({ onClose, projectData }) => {
 
         {/* Decorative Gear Icon */}
         <div>
-          <img src={rail} alt="" className='rotating-gear w-35 h-35 lg:-right-10 absolute z-10' />
+          <img src={rail} alt="" className='hidden rotating-gear w-35 h-35 lg:-right-10 absolute z-10' />
         </div>
       </div>
     </div>

@@ -192,8 +192,8 @@ async getAdditionalProjects(locale = 'fr', projectId) {
       }
 
       // Champs à récupérer - STRUCTURE AVEC RELATIONS
-      const fieldsQuery = 'fields=*,translations.*,cover_image.directus_files_id.*,images_caroussel.directus_files_id.*,video.directus_files_id.*';
-      const sortQuery = 'sort[]=-date_realization&sort[]=sort';
+     const fieldsQuery = 'fields=*,translations.*,miniature_image,cover_image.directus_files_id.*,images_caroussel.directus_files_id.*,video.directus_files_id.*';
+    const sortQuery = 'sort[]=-date_realization&sort[]=sort';
 
       const url = `${DIRECTUS_URL}/items/projets?${filterQuery}&${fieldsQuery}&${sortQuery}`;
       console.log('🌐 [getProjects] URL:', url);
@@ -333,22 +333,26 @@ async getAdditionalProjects(locale = 'fr', projectId) {
       hasDescription: !!translation.description_projet
     });
 
-    // 🖼️ COVER IMAGE (image principale) - STRUCTURE CORRIGÉE
-    let coverImageUrl = null;
-    if (project.cover_image && project.cover_image.length > 0) {
-      const coverFile = project.cover_image[0]?.directus_files_id;
-      const fileId = coverFile?.id || coverFile;
+    // 🖼️ MINIATURE IMAGE (pour la liste des projets)
+  let miniatureImageUrl = null;
+  if (project.miniature_image) {
+    miniatureImageUrl = `${DIRECTUS_URL}/assets/${project.miniature_image}`;
+    console.log('🖼️ [_formatProject] Miniature image:', miniatureImageUrl);
+  } else {
+    console.warn('⚠️ [_formatProject] Pas de miniature_image pour projet', project.id);
+  }
 
-      if (fileId) {
-        coverImageUrl = `${DIRECTUS_URL}/assets/${fileId}`;
-        console.log('🖼️ [_formatProject] Cover image:', coverImageUrl);
-      } else {
-        console.warn('⚠️ [_formatProject] Cover image sans fileId pour projet', project.id);
-      }
-    } else {
-      console.warn('⚠️ [_formatProject] Pas de cover_image pour projet', project.id);
+  // 🖼️ COVER IMAGE (image principale pour la page détail)
+  let coverImageUrl = null;
+  if (project.cover_image && project.cover_image.length > 0) {
+    const coverFile = project.cover_image[0]?.directus_files_id;
+    const fileId = coverFile?.id || coverFile;
+
+    if (fileId) {
+      coverImageUrl = `${DIRECTUS_URL}/assets/${fileId}`;
+      console.log('🖼️ [_formatProject] Cover image:', coverImageUrl);
     }
-
+  }
     // 🎠 CAROUSEL IMAGES
     const carouselImages = (project.images_caroussel || [])
       .map((item, idx) => {
@@ -394,39 +398,41 @@ async getAdditionalProjects(locale = 'fr', projectId) {
       'planned': 'Planifié'
     };
 
-    const formatted = {
-      id: project.id,
-      number: number,
-      
-      // Données de traduction
-      title: translation.title || 'Sans titre',
-      slug: translation.slug || '',
-      status: statusMap[translation.status_projets] || translation.status_projets || 'N/A',
-      descriptionProjet: translation.description_projet || '',
-      processTitle: translation.process_title || '',
-      processUtility: translation.process_utility || '',
-      valueDescription: translation.value_description || '',
-      clientFeedback: translation.client_feedback || '',
-      expertiseText: translation.expertise_text || '',
-      
-      // Données non traduites
-      dateRealisation: this._formatDate(project.date_realization),
-      nameClientFeedback: project.name_client_feedback || '',
-      categoryId: project.category_id || null,
-      
-      // Médias
-      coverImage: coverImageUrl,
-      carouselImages: carouselImages.map(img => img.url),
-      videoUrl: videoUrl,
-      
-      // Compatibilité avec l'ancien format (pour ProjectCard)
-      mainImage: coverImageUrl,
-      gallery: carouselImages.map(img => img.url),
-      shortDescription: this._truncateText(translation.description_projet, 150),
-      description: translation.description_projet || '',
-      responsable: project.name_client_feedback || '',
-      statut: statusMap[translation.status_projets] || translation.status_projets || 'N/A'
-    };
+
+ const formatted = {
+    id: project.id,
+    number: number,
+    
+    // Données de traduction
+    title: translation.title || 'Sans titre',
+    slug: translation.slug || '',
+    status: statusMap[translation.status_projets] || translation.status_projets || 'N/A',
+    descriptionProjet: translation.description_projet || '',
+    processTitle: translation.process_title || '',
+    processUtility: translation.process_utility || '',
+    valueDescription: translation.value_description || '',
+    clientFeedback: translation.client_feedback || '',
+    expertiseText: translation.expertise_text || '',
+    
+    // Données non traduites
+    dateRealisation: this._formatDate(project.date_realization),
+    nameClientFeedback: project.name_client_feedback || '',
+    categoryId: project.category_id || null,
+    
+    // Médias
+    miniatureImage: miniatureImageUrl,  // 🔥 NOUVEAU
+    coverImage: coverImageUrl,
+    carouselImages: carouselImages.map(img => img.url),
+    videoUrl: videoUrl,
+    
+    // Compatibilité avec l'ancien format (pour ProjectCard)
+    mainImage: miniatureImageUrl || coverImageUrl,  // 🔥 MODIFIÉ: miniature en priorité
+    gallery: carouselImages.map(img => img.url),
+    shortDescription: this._truncateText(translation.description_projet, 150),
+    description: translation.description_projet || '',
+    responsable: project.name_client_feedback || '',
+    statut: statusMap[translation.status_projets] || translation.status_projets || 'N/A'
+  };
 
     console.log('📦 [_formatProject] Projet formaté:', {
       id: formatted.id,

@@ -32,17 +32,25 @@ const MY_COLORS = {
 
 
 
-
 const ProjectCard = ({ project }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const projectImage = project.mainImage || 'https://via.placeholder.com/400x300';
   
-const navigate = useNavigate();
-
-const handleProjectClick = (project) => {
-  sessionStorage.setItem('selectedProject', JSON.stringify(project));
-  navigate(`/projets/${project.id}`);
-};
+  // ✅ CORRECTION: Une seule fonction de navigation
+  const handleProjectClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('🎯 Navigation vers projet:', project.id, project.title);
+    console.log('📦 Données projet:', project);
+    
+    // Stocker le projet
+    sessionStorage.setItem('selectedProject', JSON.stringify(project));
+    
+    // Naviguer
+    navigate(`/projets/${project.id}`);
+  };
 
   return (
     <div 
@@ -57,7 +65,7 @@ const handleProjectClick = (project) => {
         group
       "
       style={{ border: `2px solid ${MY_COLORS.secondaryGreen}` }}
-onClick={() => handleProjectClick(project)}
+      onClick={handleProjectClick}  // ← Un seul handler
     >
       {/* Badge numéro */}
       <div 
@@ -80,6 +88,10 @@ onClick={() => handleProjectClick(project)}
           src={projectImage} 
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          onError={(e) => {
+            console.error('❌ Erreur chargement image:', projectImage);
+            e.target.src = 'https://via.placeholder.com/400x300?text=Image+non+disponible';
+          }}
         />
       </div>
 
@@ -129,10 +141,7 @@ onClick={() => handleProjectClick(project)}
               e.currentTarget.style.backgroundColor = 'transparent';
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
             }}
-             onClick={(e) => {
-    e.stopPropagation(); // ← IMPORTANT : empêche le clic carte
-    handleProjectClick(project); // ← UTILISE la fonction
-  }}
+            // ✅ SUPPRIMÉ: pas de onClick ici, le clic sur la carte suffit
           >
             {t('projects.projectCard.seeMore')}
           </button>
@@ -140,7 +149,7 @@ onClick={() => handleProjectClick(project)}
       </div>
     </div>
   );
-};   
+};
 
 const ProjectModal = ({ project, onClose }) => {
   const { t } = useTranslation();

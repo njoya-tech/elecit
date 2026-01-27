@@ -114,7 +114,7 @@ const ExpertiseCarousel = ({ projectId }) => {
             >
               <div className="text-center">
                 {/* Image du projet */}
-                <div className="bg-gray-200 rounded-lg mb-4 h-64 overflow-hidden">
+                <div className="bg-gray-200 rounded-lg mb-4 h-64  overflow-hidden">
                   {project.coverImage ? (
                     <img
                       src={project.coverImage}
