@@ -737,141 +737,139 @@
     }
   },
 
- "entreprise": {
-  "hero": {
-    "title": "Que devez-vous savoir sur",
-    "titleHighlight": "ELECIT",
-    "subtitle": "1ÈRE ENTREPRISE HIGH-TECH EN AFRIQUE",
-    "descriptionLine1": "Parce qu’au-delà du marché camerounais, nous visons à",
-    "descriptionLine2": "développer toute l’Afrique à travers nos services.",
-    "button": "Regarder la vidéo"
-  },
-  "elecitCarousel": {
-    "title": "L’essence d’Elec",
-    "titleHighlight": "IT",
-    "carouselAriaLabel": "Carrousel d’images",
-    "goToImage": "Aller à l’image",
-    "paragraph1": "Depuis sa création en <strong>2015</strong>, ElecIT Engineering s’est imposée comme un acteur pluridisciplinaire, capable de gérer des projets complexes, alliant expertise technique, innovation et engagement terrain.",
-    "paragraph2": "Animée par une volonté constante d’apporter des solutions concrètes aux besoins de ses clients, l’entreprise s’est construite autour de la mission de son fondateur : <strong>mettre la technologie et l’ingénierie au service du développement durable, de la performance et du bien-être collectif au Cameroun et à l’international.</strong>",
-    "documentsTitle": "Documents à consulter :",
-    "document1": "Certification ISO 9001 V 2015",
-    "document2": "Politique Qualité"
-  },
-  "entrepriseCards": {
-    "bannerTitle": "Nos valeurs",
-    "bannerSubtitle": "03 mots-clés",
-    "bannerSubtitle2": "nous définissent",
-    "items": [
-      {
-        "title": "Innovation",
-        "description": "Grâce à une veille technologique continue et une culture de la créativité, nous développons des approches innovantes pour répondre aux besoins de nos partenaires."
-      },
-      {
-        "title": "Transformation",
-        "description": "Nous accompagnons nos clients dans leur transition vers des modèles plus efficaces et durables grâce à l’intégration de nouvelles technologies et à l’optimisation des processus."
-      },
-      {
-        "title": "Excellence",
-        "description": "Grâce à des standards de qualité élevés, une expertise pointue et une attention aux détails, nous garantissons des résultats à la hauteur des attentes les plus exigeantes."
-      }
-    ]
-  },
-  "entrepriseTeam": {
-    "title": "L’équipe",
-    "subtitle": "Ces acteurs qui s’unissent pour répondre à vos besoins",
-    "description": "Nous mobilisons les bonnes compétences au bon moment. Cette richesse humaine et technique nous permet de répondre avec agilité et précision aux défis les plus variés de nos clients, du conseil à la mise en œuvre.",
-    "button": "Regarder la vidéo",
-    "members": [
-      { "title": "Spécialistes en domotique" },
-      { "title": "Ingénieurs en mécatronique" },
-      { "title": "Gestionnaires de flotte" },
-      { "title": "Ingénieurs informatiques" },
-      { "title": "Ingénieurs civils" },
-      { "title": "Techniciens de fabrication" },
-      { "title": "Techniciens IT" },
-      { "title": "Agents de maintenance" },
-      { "title": "Ingénieurs en énergies renouvelables" },
-      { "title": "Techniciens en courants forts et faibles" }
-    ]
-  },
-  "entrepriseAcc": {
-    "title": "Foire aux questions",
-    "contactTitle": "Obtenir plus d’informations",
-    "contactSubtitle": "Nous serons ravis de répondre à vos questions.",
-    "contactButton": "Nous joindre",
-    "items": [
-      {
-        "question": "Où êtes-vous situés et dans quelles régions intervenez-vous ?",
-        "answer": "Nos sièges sont basés à Douala et Yaoundé, mais nous intervenons sur tout le territoire national et dans certaines zones d’Afrique de l’Ouest. Pour des projets spécifiques, nous étudions également des interventions internationales."
-      },
-      {
-        "question": "Quels sont vos délais moyens de réalisation ?",
-        "answer": "Les délais varient selon la complexité du projet. En général, nous livrons les projets standards en 2 à 4 semaines."
-      },
-      {
-        "question": "Comment obtenir un devis personnalisé ?",
-        "answer": "Vous pouvez nous contacter via le formulaire en ligne ou par téléphone. Nous vous enverrons un devis sous 48 heures."
-      },
-      {
-        "question": "Proposez-vous un suivi après la livraison ?",
-        "answer": "Oui, nous offrons un service après-vente complet incluant la maintenance et une assistance technique 24h/24 et 7j/7."
-      }
-    ]
-  },
-  "entreprisePartner": {
-    "title": "Nos partenaires",
-    "ctaTitle": "Vous avez un besoin ?",
-    "ctaTitle2": "Nous avons les",
-    "ctaHighlight": "solutions",
-    "ctaButton": "Nous contacter"
-  }
-}
-,
-
- "contact": {
-  "floatingButton": "Nous contacter",
-  "popup": {
-    "title": "Nous contacter",
-    "subtitle": "Nous vous répondrons dans les plus brefs délais",
-    "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8h à 18h. N'hésitez pas à nous contacter.",
-    "openWhatsApp": "Ouvrir WhatsApp",
-    "messagePlaceholder": "Écrivez votre message...",
-    "leftButton": "Retour",
-    "rightButton": "Envoyer"
-  },
-  "hero": {
-    "title": "Contactez-nous.",
-    "subtitle": "Notre équipe d'experts vous apporte une solution !",
-    "button": "Plus de contenu"
-  },
-  "form": {
-    "title": "Formulaire de contact",
-    "subtitle": "Une question, un besoin ou un projet à discuter ?",
-    "subtitle2": "Remplissez le formulaire ci-dessous",
-    "lastName": "Nom",
-    "lastNamePlaceholder": "Entrez votre nom",
-    "firstName": "Prénom",
-    "firstNamePlaceholder": "Entrez votre prénom",
-    "phone": "Téléphone",
-    "email": "Email",
-    "emailPlaceholder": "Entrez votre email",
-    "message": "Message",
-    "messagePlaceholder": "Répondez en quelques mots",
-    "submit": "Envoyer",
-    "imageAlt": "Professionnel dans un environnement industriel",
-    "success": "Merci ! Votre message a été envoyé avec succès.",
-    "error": "Une erreur est survenue. Veuillez réessayer.",
-    "sending": "Envoi en cours...",
-    "errors": {
-      "lastNameRequired": "Le nom est requis",
-      "firstNameRequired": "Le prénom est requis",
-      "phoneRequired": "Le téléphone est requis",
-      "phoneInvalid": "Numéro de téléphone invalide",
-      "emailRequired": "L'email est requis",
-      "emailInvalid": "Email invalide",
-      "messageRequired": "Le message est requis"
+  "entreprise": {
+    "hero": {
+      "title": "Que devez-vous savoir sur",
+      "titleHighlight": "ELECIT",
+      "subtitle": "1ÈRE ENTREPRISE HIGH-TECH EN AFRIQUE",
+      "descriptionLine1": "Parce qu’au-delà du marché camerounais, nous visons à",
+      "descriptionLine2": "développer toute l’Afrique à travers nos services.",
+      "button": "Regarder la vidéo"
+    },
+    "elecitCarousel": {
+      "title": "L’essence d’Elec",
+      "titleHighlight": "IT",
+      "carouselAriaLabel": "Carrousel d’images",
+      "goToImage": "Aller à l’image",
+      "paragraph1": "Depuis sa création en <strong>2015</strong>, ElecIT Engineering s’est imposée comme un acteur pluridisciplinaire, capable de gérer des projets complexes, alliant expertise technique, innovation et engagement terrain.",
+      "paragraph2": "Animée par une volonté constante d’apporter des solutions concrètes aux besoins de ses clients, l’entreprise s’est construite autour de la mission de son fondateur : <strong>mettre la technologie et l’ingénierie au service du développement durable, de la performance et du bien-être collectif au Cameroun et à l’international.</strong>",
+      "documentsTitle": "Documents à consulter :",
+      "document1": "Certification ISO 9001 V 2015",
+      "document2": "Politique Qualité"
+    },
+    "entrepriseCards": {
+      "bannerTitle": "Nos valeurs",
+      "bannerSubtitle": "03 mots-clés",
+      "bannerSubtitle2": "nous définissent",
+      "items": [
+        {
+          "title": "Innovation",
+          "description": "Grâce à une veille technologique continue et une culture de la créativité, nous développons des approches innovantes pour répondre aux besoins de nos partenaires."
+        },
+        {
+          "title": "Transformation",
+          "description": "Nous accompagnons nos clients dans leur transition vers des modèles plus efficaces et durables grâce à l’intégration de nouvelles technologies et à l’optimisation des processus."
+        },
+        {
+          "title": "Excellence",
+          "description": "Grâce à des standards de qualité élevés, une expertise pointue et une attention aux détails, nous garantissons des résultats à la hauteur des attentes les plus exigeantes."
+        }
+      ]
+    },
+    "entrepriseTeam": {
+      "title": "L’équipe",
+      "subtitle": "Ces acteurs qui s’unissent pour répondre à vos besoins",
+      "description": "Nous mobilisons les bonnes compétences au bon moment. Cette richesse humaine et technique nous permet de répondre avec agilité et précision aux défis les plus variés de nos clients, du conseil à la mise en œuvre.",
+      "button": "Regarder la vidéo",
+      "members": [
+        { "title": "Spécialistes en domotique" },
+        { "title": "Ingénieurs en mécatronique" },
+        { "title": "Gestionnaires de flotte" },
+        { "title": "Ingénieurs informatiques" },
+        { "title": "Ingénieurs civils" },
+        { "title": "Techniciens de fabrication" },
+        { "title": "Techniciens IT" },
+        { "title": "Agents de maintenance" },
+        { "title": "Ingénieurs en énergies renouvelables" },
+        { "title": "Techniciens en courants forts et faibles" }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "Foire aux questions",
+      "contactTitle": "Obtenir plus d’informations",
+      "contactSubtitle": "Nous serons ravis de répondre à vos questions.",
+      "contactButton": "Nous joindre",
+      "items": [
+        {
+          "question": "Où êtes-vous situés et dans quelles régions intervenez-vous ?",
+          "answer": "Nos sièges sont basés à Douala et Yaoundé, mais nous intervenons sur tout le territoire national et dans certaines zones d’Afrique de l’Ouest. Pour des projets spécifiques, nous étudions également des interventions internationales."
+        },
+        {
+          "question": "Quels sont vos délais moyens de réalisation ?",
+          "answer": "Les délais varient selon la complexité du projet. En général, nous livrons les projets standards en 2 à 4 semaines."
+        },
+        {
+          "question": "Comment obtenir un devis personnalisé ?",
+          "answer": "Vous pouvez nous contacter via le formulaire en ligne ou par téléphone. Nous vous enverrons un devis sous 48 heures."
+        },
+        {
+          "question": "Proposez-vous un suivi après la livraison ?",
+          "answer": "Oui, nous offrons un service après-vente complet incluant la maintenance et une assistance technique 24h/24 et 7j/7."
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "Nos partenaires",
+      "ctaTitle": "Vous avez un besoin ?",
+      "ctaTitle2": "Nous avons les",
+      "ctaHighlight": "solutions",
+      "ctaButton": "Nous contacter"
     }
   },
+  "contact": {
+    "floatingButton": "Nous contacter",
+    "popup": {
+      "title": "Nous contacter",
+      "subtitle": "Nous vous répondrons dans les plus brefs délais",
+      "availability": "Nous sommes disponibles sur WhatsApp du lundi au vendredi de 8h à 18h. N'hésitez pas à nous contacter.",
+      "openWhatsApp": "Ouvrir WhatsApp",
+      "messagePlaceholder": "Écrivez votre message...",
+      "leftButton": "Retour",
+      "rightButton": "Envoyer"
+    },
+    "hero": {
+      "title": "Contactez-nous.",
+      "subtitle": "Notre équipe d'experts vous apporte une solution !",
+      "button": "Plus de contenu"
+    },
+    "form": {
+      "title": "Formulaire de contact",
+      "subtitle": "Une question, un besoin ou un projet à discuter ?",
+      "subtitle2": "Remplissez le formulaire ci-dessous",
+      "lastName": "Nom",
+      "lastNamePlaceholder": "Entrez votre nom",
+      "firstName": "Prénom",
+      "firstNamePlaceholder": "Entrez votre prénom",
+      "phone": "Téléphone",
+      "email": "Email",
+      "emailPlaceholder": "Entrez votre email",
+      "message": "Message",
+      "messagePlaceholder": "Répondez en quelques mots",
+      "submit": "Envoyer",
+      "imageAlt": "Professionnel dans un environnement industriel",
+      "success": "Merci ! Votre message a été envoyé avec succès.",
+      "error": "Une erreur est survenue. Veuillez réessayer.",
+      "sending": "Envoi en cours...",
+      "errors": {
+        "lastNameRequired": "Le nom est requis",
+        "firstNameRequired": "Le prénom est requis",
+        "phoneRequired": "Le téléphone est requis",
+        "phoneInvalid": "Numéro de téléphone invalide",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Email invalide",
+        "messageRequired": "Le message est requis"
+      }
+    },
     "location": {
       "title": "Nos services sont accessibles dans tout le",
       "highlight1": "Cameroun",
@@ -975,8 +973,6 @@
       }
     }
   },
-
-
 
   "fabriMeca": {
     "hero": {
@@ -1171,37 +1167,37 @@
     },
     "cards": {
       "heading": "Nos prestations",
-      "description": "De l'étude de faisabilité à la livraison clé en main, nous accompagnons nos clients à chaque étape du projet, en assurant un haut niveau de technicité et de conformité réglementaire.",
+      "description": "Nous proposons un ensemble complet de prestations techniques destinées à garantir la fiabilité, la durabilité et la performance optimale de vos équipements après leur mise en service.",
       "items": [
         {
-          "title": "Études",
-          "subtitle": "& Conception",
-          "description": "Analyse des besoins et du programme architectural/ Études techniques/ Modélisation 2D/3D/ Planification, chiffrage prévisionnel et autorisations"
+          "title": "Assistance et Support ",
+          "subtitle": " Technique",
+          "description": "Réponses aux questions techniques sur l’installation et l’utilisation du produit. Support téléphonique, chat en ligne oue-mail. Assistance sur site si nécessaire."
         },
         {
-          "title": "Gestion de Projet",
-          "subtitle": "& Suivi de Chantier",
-          "description": "Planification des travaux et coordination des intervenants/ Suivi de chantier, contrôles techniques et qualité/ Respect strict des délais et du budget contractuel/ Communication transparente avec le maître d'ouvrage"
+          "title": "Maintenance et",
+          "subtitle": "Réparation",
+          "description": "Diagnostic et dépannage des pannes ou dysfonctionnements.Réparations sous garantie ou hors garantie. Remplacement de pièces défectueuses."
         },
         {
-          "title": "Réalisation",
-          "subtitle": "& Livraison",
-          "description": "Travaux de gros œuvre et second œuvre/ Intégration des lots techniques (électricité, plomberie, CVC)/ Finitions intérieures et extérieures selon cahier des charges/ Reception des travaux"
+          "title": "Gestion",
+          "subtitle": "des Garanties",
+          "description": "Application des garanties constructeur. Prolongation de garantie et contrats de maintenance. Échange ou remboursement selon les conditions de garantie."
         },
         {
-          "title": "Maintenance",
-          "subtitle": "& Rénovation",
-          "description": "Entretien préventif et curatif des bâtiments/ Rénovation et mise aux normes/ Amélioration énergétique/ Service après-vente et garantie décennale"
+          "title": "Retour",
+          "subtitle": "et Échange",
+          "description": "Gestion des retours en cas de non-conformité ou de défaut.Politique de remboursement ou de remplacement."
         },
         {
-          "title": "Conseil",
-          "subtitle": "& Expertise",
-          "description": "Audit technique et diagnostic immobilier/ Conseil en maîtrise d'ouvrage/ Assistance juridique et administrative/ Optimisation des coûts de construction"
+          "title": "Mise à Jour et Évolution",
+          "subtitle": "des Produits",
+          "description": " Téléchargement et installation de mises à jour logicielles.Améliorations et évolutions des équipements. Conseil sur l’optimisation des performances"
         },
         {
-          "title": "Solutions",
-          "subtitle": "Clé en Main",
-          "description": "Prise en charge complète du projet/ Coordination de tous les corps de métier/ Garantie unique et responsabilité globale/ Livraison dans les délais convenus"
+          "title": "Service Client et",
+          "subtitle": "Relation Clientèle",
+          "description": "Suivi personnalisé après l’achat. Gestion des réclamations et résolution des litiges.Enquêtes de satisfaction pour améliorer l’expérience client."
         }
       ]
     },

@@ -19,7 +19,7 @@ const CardInfo = () => {
   ];
 
   // Combine all cards including the image to make 6 cards
-  const allCards = [{ type: "image", src: IMAGES.IMG5 }, ...services];
+  const allCards = [{ type: "image", src: IMAGES.IMG35 }, ...services];
 
   // Animation variants
   const slideDown = {

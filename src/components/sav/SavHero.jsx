@@ -54,7 +54,7 @@ const SavHero = () => {
       <motion.img
         src={HERO.sav}
         alt="Hero Background"
-        className="absolute inset-0 w-full h-full object-cover object-center md:object-top"
+        className="absolute inset-0 w-full h-full object-cover object-center md:object-center"
         initial="hidden"
         animate="visible"
         variants={fadeIn}

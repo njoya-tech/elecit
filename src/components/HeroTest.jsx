@@ -6,7 +6,7 @@ import { MY_COLORS } from "../constants/colors";
 import { motion } from "framer-motion";
 
 // Use YOUR images
-const images = [IMAGES.IMG1, IMAGES.IMG2, IMAGES.IMG3];
+const images = [IMAGES.IMG32, IMAGES.IMG33, IMAGES.IMG34 ];
 
 const ElecITCarouselCard = () => {
   const { t } = useTranslation();
@@ -173,7 +173,7 @@ const ElecITCarouselCard = () => {
       {/* === GROUP: RIGHT CONTENT === */}
       <motion.div
         className="elecit-content-wrapper max-w-lg lg:max-w-xl flex-1 relative p-4 sm:p-6 md:p-8 z-10"
-        data-component="elecit-content"
+        data-component="elecit-content" 
         initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.6 }}

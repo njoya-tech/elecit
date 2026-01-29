@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets.js";
@@ -11,6 +12,15 @@ const SavGreenCards = () => {
   const navigate = useNavigate();
 
   const services = t("sav.greenCards.services", { returnObjects: true });
+
+  // 🎨 ICON ARRAY - One icon per service card (cards 2-6)
+  const serviceIcons = [
+    ICONS.reactivite_icon,                       // Card 2 - First service
+    ICONS.expertise_icon,                     // Card 3 - Second service  
+    ICONS.maintenance_preventive_icon,          // Card 4 - Third service
+    ICONS.rentabilite_clients_icon,                // Card 5 - Fourth service
+    ICONS.satisfaction_clients_icon,                  // Card 6 - Fifth service
+  ];
 
   // Animation variants
   const slideDown = {
@@ -210,7 +220,7 @@ duration-300 border border-gray-200 max-h-[350px] md:max-h-[300px] top-4"
                 variants={badgeVariants}
               >
                 <img
-                  src={ICONS.laptop}
+                  src={serviceIcons[0]}
                   alt=""
                   className="w-20 h-20 md:w-24 md:h-24"
                 />
@@ -255,7 +265,7 @@ shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow
                 variants={badgeVariants}
               >
                 <img
-                  src={ICONS.stockage}
+                  src={serviceIcons[1]}
                   alt=""
                   className="w-20 h-20 md:w-24 md:h-24"
                   style={{ filter: "brightness(0)" }}
@@ -304,7 +314,7 @@ shadow-lg bg-[#7FA946] hover:shadow-xl transition-shadow
                   variants={badgeVariants}
                 >
                   <img
-                    src={ICONS.badge}
+                    src={serviceIcons[index + 2]}
                     alt=""
                     className={`
                       w-20 h-20 md:w-24 md:h-24

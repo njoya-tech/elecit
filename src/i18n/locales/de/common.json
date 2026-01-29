@@ -832,95 +832,94 @@
   },
 
   "entreprise": {
-  "hero": {
-    "title": "Was sollten Sie über",
-    "titleHighlight": "ELECIT",
-    "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
-    "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
-    "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen entwickeln.",
-    "button": "Video ansehen"
+    "hero": {
+      "title": "Was sollten Sie über",
+      "titleHighlight": "ELECIT",
+      "subtitle": "AFRIKAS ERSTES HIGH-TECH-UNTERNEHMEN",
+      "descriptionLine1": "Denn über den kamerunischen Markt hinaus möchten wir",
+      "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen entwickeln.",
+      "button": "Video ansehen"
+    },
+    "elecitCarousel": {
+      "title": "Die Essenz von Elec",
+      "titleHighlight": "IT",
+      "carouselAriaLabel": "Bildkarussell",
+      "goToImage": "Zum Bild gehen",
+      "paragraph1": "Seit seiner Gründung im Jahr <strong>2015</strong> hat sich ElecIT Engineering als multidisziplinärer Akteur etabliert, der in der Lage ist, komplexe Projekte zu realisieren – mit technischer Expertise, Innovation und starkem Engagement vor Ort.",
+      "paragraph2": "Angetrieben von dem ständigen Wunsch, konkrete Lösungen für die Bedürfnisse seiner Kunden zu liefern, wurde das Unternehmen rund um die Mission seines Gründers aufgebaut: <strong>Technologie und Ingenieurwesen in den Dienst nachhaltiger Entwicklung, Leistungsfähigkeit und des kollektiven Wohlbefindens in Kamerun und international zu stellen.</strong>",
+      "documentsTitle": "Dokumente zum Lesen:",
+      "document1": "ISO 9001 V 2015 Zertifizierung",
+      "document2": "Qualitätspolitik"
+    },
+    "entrepriseCards": {
+      "bannerTitle": "Unsere Werte",
+      "bannerSubtitle": "03 Schlüsselwörter",
+      "bannerSubtitle2": "definieren uns",
+      "items": [
+        {
+          "title": "Innovation",
+          "description": "Durch kontinuierliche technologische Beobachtung und eine Kultur der Kreativität entwickeln wir innovative Ansätze, um die Bedürfnisse unserer Partner zu erfüllen."
+        },
+        {
+          "title": "Transformation",
+          "description": "Wir begleiten unsere Kunden bei ihrem Übergang zu effizienteren und nachhaltigeren Modellen durch die Integration neuer Technologien und Prozessoptimierung."
+        },
+        {
+          "title": "Exzellenz",
+          "description": "Durch hohe Qualitätsstandards, fundierte Expertise und Liebe zum Detail garantieren wir Ergebnisse, die selbst höchsten Ansprüchen gerecht werden."
+        }
+      ]
+    },
+    "entrepriseTeam": {
+      "title": "Das Team",
+      "subtitle": "Diese Akteure, die sich vereinen, um Ihre Bedürfnisse zu erfüllen",
+      "description": "Wir mobilisieren die richtigen Kompetenzen zur richtigen Zeit. Diese menschliche und technische Stärke ermöglicht es uns, flexibel und präzise auf die vielfältigen Herausforderungen unserer Kunden zu reagieren – von der Beratung bis zur Umsetzung.",
+      "button": "Video ansehen",
+      "members": [
+        { "title": "Smart-Home-Spezialisten" },
+        { "title": "Mechatronik-Ingenieure" },
+        { "title": "Flottenmanager" },
+        { "title": "IT-Ingenieure" },
+        { "title": "Bauingenieure" },
+        { "title": "Fertigungstechniker" },
+        { "title": "IT-Techniker" },
+        { "title": "Wartungstechniker" },
+        { "title": "Ingenieure für erneuerbare Energien" },
+        { "title": "Techniker für Stark- und Schwachstrom" }
+      ]
+    },
+    "entrepriseAcc": {
+      "title": "Häufig gestellte Fragen",
+      "contactTitle": "Weitere Informationen erhalten",
+      "contactSubtitle": "Wir beantworten gerne Ihre Fragen.",
+      "contactButton": "Kontaktieren Sie uns",
+      "items": [
+        {
+          "question": "Wo befinden Sie sich und in welchen Regionen sind Sie tätig?",
+          "answer": "Unsere Hauptsitze befinden sich in Douala und Yaoundé, aber wir sind im gesamten nationalen Gebiet sowie in bestimmten Regionen Westafrikas tätig. Für spezielle Projekte prüfen wir auch internationale Einsätze."
+        },
+        {
+          "question": "Wie lange dauern Ihre Projekte im Durchschnitt?",
+          "answer": "Die Dauer hängt von der Komplexität des Projekts ab. In der Regel liefern wir Standardprojekte in 2–4 Wochen."
+        },
+        {
+          "question": "Wie erhalte ich ein individuelles Angebot?",
+          "answer": "Sie können uns über das Online-Formular oder telefonisch kontaktieren. Wir senden Ihnen innerhalb von 48 Stunden ein Angebot."
+        },
+        {
+          "question": "Bieten Sie Support nach der Lieferung an?",
+          "answer": "Ja, wir bieten einen vollständigen After-Sales-Service inklusive Wartung und 24/7 technischem Support."
+        }
+      ]
+    },
+    "entreprisePartner": {
+      "title": "Unsere Partner",
+      "ctaTitle": "Haben Sie einen Bedarf?",
+      "ctaTitle2": "Wir haben die",
+      "ctaHighlight": "Lösungen",
+      "ctaButton": "Kontakt aufnehmen"
+    }
   },
-  "elecitCarousel": {
-    "title": "Die Essenz von Elec",
-    "titleHighlight": "IT",
-    "carouselAriaLabel": "Bildkarussell",
-    "goToImage": "Zum Bild gehen",
-    "paragraph1": "Seit seiner Gründung im Jahr <strong>2015</strong> hat sich ElecIT Engineering als multidisziplinärer Akteur etabliert, der in der Lage ist, komplexe Projekte zu realisieren – mit technischer Expertise, Innovation und starkem Engagement vor Ort.",
-    "paragraph2": "Angetrieben von dem ständigen Wunsch, konkrete Lösungen für die Bedürfnisse seiner Kunden zu liefern, wurde das Unternehmen rund um die Mission seines Gründers aufgebaut: <strong>Technologie und Ingenieurwesen in den Dienst nachhaltiger Entwicklung, Leistungsfähigkeit und des kollektiven Wohlbefindens in Kamerun und international zu stellen.</strong>",
-    "documentsTitle": "Dokumente zum Lesen:",
-    "document1": "ISO 9001 V 2015 Zertifizierung",
-    "document2": "Qualitätspolitik"
-  },
-  "entrepriseCards": {
-    "bannerTitle": "Unsere Werte",
-    "bannerSubtitle": "03 Schlüsselwörter",
-    "bannerSubtitle2": "definieren uns",
-    "items": [
-      {
-        "title": "Innovation",
-        "description": "Durch kontinuierliche technologische Beobachtung und eine Kultur der Kreativität entwickeln wir innovative Ansätze, um die Bedürfnisse unserer Partner zu erfüllen."
-      },
-      {
-        "title": "Transformation",
-        "description": "Wir begleiten unsere Kunden bei ihrem Übergang zu effizienteren und nachhaltigeren Modellen durch die Integration neuer Technologien und Prozessoptimierung."
-      },
-      {
-        "title": "Exzellenz",
-        "description": "Durch hohe Qualitätsstandards, fundierte Expertise und Liebe zum Detail garantieren wir Ergebnisse, die selbst höchsten Ansprüchen gerecht werden."
-      }
-    ]
-  },
-  "entrepriseTeam": {
-    "title": "Das Team",
-    "subtitle": "Diese Akteure, die sich vereinen, um Ihre Bedürfnisse zu erfüllen",
-    "description": "Wir mobilisieren die richtigen Kompetenzen zur richtigen Zeit. Diese menschliche und technische Stärke ermöglicht es uns, flexibel und präzise auf die vielfältigen Herausforderungen unserer Kunden zu reagieren – von der Beratung bis zur Umsetzung.",
-    "button": "Video ansehen",
-    "members": [
-      { "title": "Smart-Home-Spezialisten" },
-      { "title": "Mechatronik-Ingenieure" },
-      { "title": "Flottenmanager" },
-      { "title": "IT-Ingenieure" },
-      { "title": "Bauingenieure" },
-      { "title": "Fertigungstechniker" },
-      { "title": "IT-Techniker" },
-      { "title": "Wartungstechniker" },
-      { "title": "Ingenieure für erneuerbare Energien" },
-      { "title": "Techniker für Stark- und Schwachstrom" }
-    ]
-  },
-  "entrepriseAcc": {
-    "title": "Häufig gestellte Fragen",
-    "contactTitle": "Weitere Informationen erhalten",
-    "contactSubtitle": "Wir beantworten gerne Ihre Fragen.",
-    "contactButton": "Kontaktieren Sie uns",
-    "items": [
-      {
-        "question": "Wo befinden Sie sich und in welchen Regionen sind Sie tätig?",
-        "answer": "Unsere Hauptsitze befinden sich in Douala und Yaoundé, aber wir sind im gesamten nationalen Gebiet sowie in bestimmten Regionen Westafrikas tätig. Für spezielle Projekte prüfen wir auch internationale Einsätze."
-      },
-      {
-        "question": "Wie lange dauern Ihre Projekte im Durchschnitt?",
-        "answer": "Die Dauer hängt von der Komplexität des Projekts ab. In der Regel liefern wir Standardprojekte in 2–4 Wochen."
-      },
-      {
-        "question": "Wie erhalte ich ein individuelles Angebot?",
-        "answer": "Sie können uns über das Online-Formular oder telefonisch kontaktieren. Wir senden Ihnen innerhalb von 48 Stunden ein Angebot."
-      },
-      {
-        "question": "Bieten Sie Support nach der Lieferung an?",
-        "answer": "Ja, wir bieten einen vollständigen After-Sales-Service inklusive Wartung und 24/7 technischem Support."
-      }
-    ]
-  },
-  "entreprisePartner": {
-    "title": "Unsere Partner",
-    "ctaTitle": "Haben Sie einen Bedarf?",
-    "ctaTitle2": "Wir haben die",
-    "ctaHighlight": "Lösungen",
-    "ctaButton": "Kontakt aufnehmen"
-  }
-},
-
 
   "contact": {
     "floatingButton": "Kontakt",
@@ -965,110 +964,110 @@
         "emailInvalid": "Ungültige E-Mail-Adresse",
         "messageRequired": "Nachricht ist erforderlich"
       }
-      },
-      "location": {
-        "title": "Unsere Dienstleistungen sind verfügbar in",
-        "highlight1": "Kamerun",
-        "title2": ", sowie in ganz",
-        "highlight2": "Zentralafrika."
-      },
-      "blog": {
-        "title": "Bleiben Sie auf dem Laufenden mit unseren",
-        "highlight": "Neuigkeiten",
-        "title2": "in unserem Blog",
-        "readMore": "Mehr lesen",
-        "prevPage": "Vorherige Seite",
-        "nextPage": "Nächste Seite",
-        "goToPage": "Zur Seite",
-        "articles": [
-          {
-            "id": 1,
-            "title": "Warum maßgeschneiderte Fertigung ein Wendepunkt für die kamerunische Industrie ist",
-            "excerpt": "In vielen Industriesektoren Kameruns stehen Unternehmen vor einer wiederkehrenden Herausforderung..."
-          },
-          {
-            "id": 2,
-            "title": "5 Wege, wie ein Smart-Hotel Energie spart und Kunden bindet",
-            "excerpt": "In einem zunehmend wettbewerbsintensiven Hotelmarkt in Kamerun stellt sich die Frage zweifach..."
-          },
-          {
-            "id": 3,
-            "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
-            "excerpt": "Transport und Logistik stehen im Zentrum der kamerunischen Wirtschaft, doch dieser Sektor steht vor großen Herausforderungen..."
-          },
-          {
-            "id": 4,
-            "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
-            "excerpt": "Die kamerunische Landwirtschaft, Motor der nationalen Wirtschaft, steht vor einer großen Herausforderung..."
-          },
-          {
-            "id": 5,
-            "title": "Von Rohmetall zu Innovation: Wie wir nachhaltige Infrastruktur gestalten",
-            "excerpt": "Rohstoffe in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallverarbeitung..."
-          },
-          {
-            "id": 6,
-            "title": "Datenverarbeitung und Sicherheit: Schutz des digitalen Goldes Ihres Unternehmens",
-            "excerpt": "Jeden Tag erzeugen Unternehmen große Mengen sensibler Informationen..."
-          }
-        ]
-      }
     },
-    "blogPage": {
-      "hero": {
-        "title": "Einblicke in ElecIT",
-        "subtitle": "Innovation, Fachwissen & Unternehmensleben",
-        "description1": "Ein offenes Fenster zu unserer Expertise und Kultur.",
-        "description2": "Entdecken Sie unsere Projekte, Innovationen und unsere Vision moderner Ingenieurskunst.",
-        "description3": "Tauchen Sie ein in den Alltag von ElecIT, wo Technologie auf Menschen trifft."
-      },
-      "featured": {
-        "authorName": "Therese Egoutou",
-        "date": "17. Nov.",
-        "title": "Das Gebäude, das sich an Sie anpasst",
-        "excerpt": "Jedes Projekt beginnt mit einer Idee, doch erst das Design macht daraus eine echte Lösung."
-      },
-      "categories": {
-        "all": "Alle Beiträge",
-        "smartSpaces": "Intelligente Räume",
-        "workshop": "Werkstatt der Kreativität",
-        "moreThanTrack": "Mehr als Tracking",
-        "advancedSecurity": "Erweiterte Sicherheit",
-        "toolBoxMeeting": "Toolbox-Meeting",
-        "companyLife": "Unternehmensleben",
-        "more": "Mehr"
-      },
-      "cards": {
-        "views": "Aufrufe",
-        "view": "Aufruf",
-        "comments": "Kommentare",
-        "comment": "Kommentar",
-        "readMore": "Weiterlesen",
-        "previous": "Zurück",
-        "next": "Weiter"
-      },
-      "detail": {
-        "readTime": "Min. Lesezeit",
-        "share": "Beitrag teilen",
-        "cancel": "Abbrechen",
-        "publish": "Veröffentlichen",
-        "loginPrompt": "um als Mitglied zu posten",
-        "login": "Anmelden",
-        "commentPlaceholder": "Kommentar schreiben...",
-        "commentsTitle": "Kommentare",
-        "shareModal": {
-          "title": "Diesen Beitrag teilen",
-          "copyLink": "Oder Link kopieren",
-          "copy": "Kopieren",
-          "copied": "Link kopiert!",
-          "facebook": "Facebook",
-          "twitter": "Twitter",
-          "linkedin": "LinkedIn",
-          "whatsapp": "WhatsApp"
+    "location": {
+      "title": "Unsere Dienstleistungen sind verfügbar in",
+      "highlight1": "Kamerun",
+      "title2": ", sowie in ganz",
+      "highlight2": "Zentralafrika."
+    },
+    "blog": {
+      "title": "Bleiben Sie auf dem Laufenden mit unseren",
+      "highlight": "Neuigkeiten",
+      "title2": "in unserem Blog",
+      "readMore": "Mehr lesen",
+      "prevPage": "Vorherige Seite",
+      "nextPage": "Nächste Seite",
+      "goToPage": "Zur Seite",
+      "articles": [
+        {
+          "id": 1,
+          "title": "Warum maßgeschneiderte Fertigung ein Wendepunkt für die kamerunische Industrie ist",
+          "excerpt": "In vielen Industriesektoren Kameruns stehen Unternehmen vor einer wiederkehrenden Herausforderung..."
+        },
+        {
+          "id": 2,
+          "title": "5 Wege, wie ein Smart-Hotel Energie spart und Kunden bindet",
+          "excerpt": "In einem zunehmend wettbewerbsintensiven Hotelmarkt in Kamerun stellt sich die Frage zweifach..."
+        },
+        {
+          "id": 3,
+          "title": "Die Tracking-Revolution: Wenn KI Ihre Fahrzeuge überwacht",
+          "excerpt": "Transport und Logistik stehen im Zentrum der kamerunischen Wirtschaft, doch dieser Sektor steht vor großen Herausforderungen..."
+        },
+        {
+          "id": 4,
+          "title": "Intelligente Bewässerung: Technologie für nachhaltige Landwirtschaft",
+          "excerpt": "Die kamerunische Landwirtschaft, Motor der nationalen Wirtschaft, steht vor einer großen Herausforderung..."
+        },
+        {
+          "id": 5,
+          "title": "Von Rohmetall zu Innovation: Wie wir nachhaltige Infrastruktur gestalten",
+          "excerpt": "Rohstoffe in ein innovatives und funktionales Produkt zu verwandeln, ist die Kunst der modernen Metallverarbeitung..."
+        },
+        {
+          "id": 6,
+          "title": "Datenverarbeitung und Sicherheit: Schutz des digitalen Goldes Ihres Unternehmens",
+          "excerpt": "Jeden Tag erzeugen Unternehmen große Mengen sensibler Informationen..."
         }
-      }
+      ]
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "Einblicke in ElecIT",
+      "subtitle": "Innovation, Fachwissen & Unternehmensleben",
+      "description1": "Ein offenes Fenster zu unserer Expertise und Kultur.",
+      "description2": "Entdecken Sie unsere Projekte, Innovationen und unsere Vision moderner Ingenieurskunst.",
+      "description3": "Tauchen Sie ein in den Alltag von ElecIT, wo Technologie auf Menschen trifft."
     },
-  
+    "featured": {
+      "authorName": "Therese Egoutou",
+      "date": "17. Nov.",
+      "title": "Das Gebäude, das sich an Sie anpasst",
+      "excerpt": "Jedes Projekt beginnt mit einer Idee, doch erst das Design macht daraus eine echte Lösung."
+    },
+    "categories": {
+      "all": "Alle Beiträge",
+      "smartSpaces": "Intelligente Räume",
+      "workshop": "Werkstatt der Kreativität",
+      "moreThanTrack": "Mehr als Tracking",
+      "advancedSecurity": "Erweiterte Sicherheit",
+      "toolBoxMeeting": "Toolbox-Meeting",
+      "companyLife": "Unternehmensleben",
+      "more": "Mehr"
+    },
+    "cards": {
+      "views": "Aufrufe",
+      "view": "Aufruf",
+      "comments": "Kommentare",
+      "comment": "Kommentar",
+      "readMore": "Weiterlesen",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "detail": {
+      "readTime": "Min. Lesezeit",
+      "share": "Beitrag teilen",
+      "cancel": "Abbrechen",
+      "publish": "Veröffentlichen",
+      "loginPrompt": "um als Mitglied zu posten",
+      "login": "Anmelden",
+      "commentPlaceholder": "Kommentar schreiben...",
+      "commentsTitle": "Kommentare",
+      "shareModal": {
+        "title": "Diesen Beitrag teilen",
+        "copyLink": "Oder Link kopieren",
+        "copy": "Kopieren",
+        "copied": "Link kopiert!",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp"
+      }
+    }
+  },
+
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -1183,37 +1182,37 @@
 
     "cards": {
       "heading": "Unsere Leistungen",
-      "description": "Von der Machbarkeitsstudie bis zur schlüsselfertigen Übergabe begleiten wir unsere Kunden in jeder Projektphase und gewährleisten ein hohes Maß an technischer Kompetenz und gesetzlicher Konformität.",
+      "description": "Wir bieten ein umfassendes Spektrum technischer Dienstleistungen an, die darauf abzielen, die Zuverlässigkeit, Langlebigkeit und optimale Leistung Ihrer Anlagen nach der Inbetriebnahme sicherzustellen.",
       "items": [
         {
-          "title": "Studien",
-          "subtitle": "& Planung",
-          "description": "Bedarfsanalyse und architektonisches Konzept / Technische Studien / 2D/3D-Modellierung / Planung, Kostenschätzung und Genehmigungen"
+          "title": "Unterstützung und",
+          "subtitle": "Technischer Support",
+          "description": "Beantwortung technischer Fragen zur Installation und Nutzung des Produkts. Telefonischer Support, Online-Chat oder E-Mail. Vor-Ort-Unterstützung bei Bedarf."
         },
         {
-          "title": "Projektmanagement",
-          "subtitle": "& Bauüberwachung",
-          "description": "Arbeitsplanung und Koordination aller Beteiligten / Bauüberwachung, technische und qualitative Kontrollen / Strikte Einhaltung von Terminen und Budget / Transparente Kommunikation mit dem Bauherrn"
+          "title": "Wartung und",
+          "subtitle": "Reparatur",
+          "description": "Diagnose und Behebung von Störungen oder Fehlfunktionen. Reparaturen innerhalb und außerhalb der Garantie. Austausch defekter Teile."
         },
         {
-          "title": "Ausführung",
-          "subtitle": "& Übergabe",
-          "description": "Roh- und Ausbauarbeiten / Integration technischer Gewerke (Elektro, Sanitär, HLK) / Innen- und Außenarbeiten gemäß Lastenheft / Abnahme der Arbeiten"
+          "title": "Garantie-",
+          "subtitle": "Verwaltung",
+          "description": "Anwendung der Herstellergarantien. Garantieverlängerungen und Wartungsverträge. Umtausch oder Rückerstattung gemäß Garantiebedingungen."
         },
         {
-          "title": "Wartung",
-          "subtitle": "& Renovierung",
-          "description": "Vorbeugende und corrective Wartung / Renovierung und Normkonformität / Energieeffizienz-Optimierung / Kundendienst und zehnjährige Garantie"
+          "title": "Rückgabe",
+          "subtitle": "und Umtausch",
+          "description": "Abwicklung von Rücksendungen bei Nichtkonformität oder Mängeln. Rückerstattungs- oder Ersatzrichtlinien."
         },
         {
-          "title": "Beratung",
-          "subtitle": "& Expertise",
-          "description": "Technische Audits und Immobilien-Diagnosen / Bauherrenberatung / Juristische und administrative Unterstützung / Kostenoptimierung"
+          "title": "Produkt-",
+          "subtitle": "Updates und Weiterentwicklung",
+          "description": "Download und Installation von Software-Updates. Verbesserungen und Weiterentwicklungen der Geräte. Beratung zur Leistungsoptimierung."
         },
         {
-          "title": "Schlüsselfertige",
-          "subtitle": "Lösungen",
-          "description": "Komplette Projektübernahme / Koordination aller Gewerke / Eine Garantie und Gesamtverantwortung / Termingerechte Lieferung"
+          "title": "Kundenservice und",
+          "subtitle": "Kundenbeziehungen",
+          "description": "Individuelle Betreuung nach dem Kauf. Bearbeitung von Reklamationen und Streitfällen. Zufriedenheitsumfragen zur Verbesserung der Kundenerfahrung."
         }
       ]
     },

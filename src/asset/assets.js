@@ -6,7 +6,7 @@ import heroBureauEtude from "./hero/bureau_e1.png";
 import heroContact from "./hero/contact-hero.JPG";
 import heroDataProcessing from "./hero/dataprocessing-hero.jpg";
 import heroEntreprise from "./hero/entreprise-hero.JPG";
-import heroSav from "./hero/sav-hero.jpg";
+import heroSav from "./hero/BTM.png";
 import heroSecurity from "./hero/security-hero.JPG";
 import heroControl from "./hero/control_d'access.png";
 
@@ -40,23 +40,30 @@ import Developement_icon from "./icons/Developement_application.svg";
 import StorageDB_icon from "./icons/StorageDB.svg";
 import stop_car_icon from "./icons/stop_car.svg";
 import securite_icon from "./icons/Securite.svg";
-import video_icon from "./icons/video_ccrtv.svg"
+import video_icon from "./icons/video_ccrtv.svg";
 import regulatory_icon from "./icons/regulatory.svg";
-import business_intel_icon from "./icons/business_inteligent.svg"
+import business_intel_icon from "./icons/business_inteligent.svg";
 import collect_et_nettoyage_icon from "./icons/collect_et_nettoyage.svg";
-import door_icon from "./icons/optimisation_des_couts.svg"
+import door_icon from "./icons/optimisation_des_couts.svg";
+import assistance_icon from "./icons/assistance_support.svg";
+import maintenance_repair_icon from "./icons/maintenance_reparation.svg";
+import gestion_garanties_icon from "./icons/gestion_garanties.svg";
+import exchange_return_icon from "./icons/exchange_return.svg";
+import mis_a_jour_icon from "./icons/update_evolution.svg";
+import service_client_icon from "./icons/service_client.svg";
+import reactivite_icon from "./icons/Réactivité_proximité.svg";
+import expertise_icon from "./icons/Expertise_icon.svg";
+import maintenance_preventive_icon from "./icons/maintenance_preventive.svg";
+import rentabilite_clients_icon from "./icons/Rentabilite.svg";
+import satisfaction_clients_icon from "./icons/satifaction.svg";
 
 
 
 
 
 
-// ⚠️ COMMENTED OUT - Missing files - uncomment when files are added
-// import Datascience_icon from "./icons/Datascience.svg";
-// import Donnes_icon from "./icons/Donnes.svg";
-// import bulb_icon from "./icons/bulb.svg";
-// import business_inteligent_icon from "./icons/business_inteligent.svg";
-// import gestion_centralise_icon from "./icons/gestion_centralise.svg";
+
+
 
 import time_icon from "./icons/clock.svg";
 import arrow_circle_icon from "./icons/arrow_circle.svg";
@@ -100,7 +107,13 @@ import IMG27 from "./images/computer.jpg";
 import IMG28 from "./images/office_1.jpg";
 import IMG29 from "./images/office_2.jpg";
 import IMG30 from "./images/office_3.jpg";
-import IMG31 from './images/image_4.JPG'
+import IMG31 from "./images/image_4.JPG";
+import IMG32 from "./images/image_5.JPG";
+import IMG33 from "./images/image_6.JPG";
+import IMG34 from "./images/image_8.JPG";
+import IMG35 from "./images/it-expert.jpg";
+import IMG36 from "./images/caniveau.png";
+import IMG37 from "./images/image_16.jpg";
 
 //========== PARTNERS IMAGES ==========
 
@@ -134,6 +147,8 @@ export const HERO = {
   security: heroSecurity,
   control: heroControl,
 };
+
+//==========ICONS==================
 
 export const ICONS = {
   formTech: formTech,
@@ -174,12 +189,25 @@ export const ICONS = {
   business_inteligent_icon: business_inteligent_icon,
   gestion_centralise_icon: gestion_centralise_icon,
   time_icon: time_icon,
-  video_icon:video_icon,
-  business_intel_icon:business_intel_icon,
-  collect_et_nettoyage_icon:collect_et_nettoyage_icon,
-  door_icon:door_icon,
+  video_icon: video_icon,
+  business_intel_icon: business_intel_icon,
+  collect_et_nettoyage_icon: collect_et_nettoyage_icon,
+  door_icon: door_icon,
+  assistance_icon: assistance_icon,
+  maintenance_repair_icon: maintenance_repair_icon,
+  gestion_garanties_icon: gestion_garanties_icon,
+  exchange_return_icon: exchange_return_icon,
+  mis_a_jour_icon: mis_a_jour_icon,
+  service_client_icon: service_client_icon,
+  reactivite_icon: reactivite_icon,
+  expertise_icon: expertise_icon,
+  maintenance_preventive_icon: maintenance_preventive_icon,
+  rentabilite_clients_icon: rentabilite_clients_icon,
+  satisfaction_clients_icon: satisfaction_clients_icon,
   
 };
+
+//==========IMAGES==================
 
 export const IMAGES = {
   IMG1: IMG1,
@@ -212,8 +240,16 @@ export const IMAGES = {
   IMG28: IMG28,
   IMG29: IMG29,
   IMG30: IMG30,
-  IMG31:IMG31
+  IMG31: IMG31,
+  IMG32: IMG32,
+  IMG33: IMG33,
+  IMG34: IMG34,
+  IMG35: IMG35,
+  IMG36: IMG36,
+  IMG37:IMG37
 };
+
+//========== PARTNERS IMAGES ==========
 
 export const PARTNERS = {
   partner1: partner1,
