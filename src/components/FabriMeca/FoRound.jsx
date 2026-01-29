@@ -3,19 +3,18 @@ import p2 from '../../assets/p2.svg'
 import p3 from '../../assets/p3.svg'
 import rail from '../../assets/rail.svg'
 import { useTranslation } from 'react-i18next'
-import { color } from 'framer-motion'
 import { MY_COLORS } from '../../utils/colors'
-import { motion } from 'framer-motion'
-
-
+import { useNavigate } from 'react-router-dom'
+import './FoRound.css' // Nouveau 
 
 const FoRound = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate()
   
   return (
     <div className='relative w-full flex items-center justify-center'>
       {/* Image de fond */}
-         <div className='relative w-full max-w-6xl h-[350px] lg:h-[480px] md:h-[480px] sm:h-[480px]'>
+      <div className='relative w-full max-w-6xl h-[350px] lg:h-[480px] md:h-[480px] sm:h-[480px]'>
         <img src={p2} alt="fond arrondie" className='w-full' />
 
         {/* Contenu centré */}
@@ -69,42 +68,30 @@ const FoRound = () => {
               e.currentTarget.style.backgroundColor = 'transparent';
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
             }}
+            onClick={() => navigate('/contacts')}
           >
             {t('fab.buttonRound')}
           </button>
         </div>
       </div>
 
-     
-       {/* Engrenages animés */}
-       <div className=" absolute lg:bottom-70 lg:left-125 md:left-20 md:bottom-60 sm:left-20 sm:bottom-60 z-30 -left-5 bottom-50">
-                 <motion.img 
-                   src={rail} 
-                   alt="engrenage" 
-                   className="w-20 h-20"
-                   animate={{ rotate: 360 }}
-                   transition={{ 
-                     duration: 6, 
-                     ease: "linear", 
-                     repeat: Infinity 
-                   }}
-                 />
-               </div>
-        
-       <div className=" absolute lg:bottom-70 lg:left-320 z-30 md:left-140 md:bottom-50 left-80 bottom-50">
-                <motion.img 
-                  src={rail} 
-                  alt="engrenage" 
-                  className="w-70 h-45"
-                  animate={{ rotate: 360 }}
-                  transition={{ 
-                    duration: 6, 
-                    ease: "linear", 
-                    repeat: Infinity 
-                  }}
-                />
-              </div>
+      {/* Engrenages animés */}
+      <div className="absolute lg:bottom-70 lg:left-125 md:left-20 md:bottom-60 sm:left-20 sm:bottom-60 z-30 -left-5 bottom-50">
+        <img 
+          src={rail} 
+          alt="engrenage" 
+          className="w-20 h-20 lg:rotating-gear"
+        />
       </div>
+        
+      <div className="absolute lg:bottom-70 lg:left-320 z-30 md:left-140 md:bottom-50 left-80 bottom-50">
+        <img 
+          src={rail} 
+          alt="engrenage" 
+          className="w-70 h-45 lg:rotating-gear"
+        />
+      </div>
+    </div>
   );
 };
 

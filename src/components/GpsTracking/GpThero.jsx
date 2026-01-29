@@ -23,10 +23,10 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
       }}
      >
       {/* Overlay sombre */}
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
       
       {/* Contenu */}
-      <div className="relative z-10 text-center px-4 sm:px-6 w-full sm:w-[80%] md:w-[70%] lg:w-[60%]">
+      <div className="relative z-20 text-center px-4 sm:px-6 w-full sm:w-[80%] md:w-[70%] lg:w-[60%]">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-5 md:mb-6">
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t(title1)}
@@ -49,7 +49,7 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
           {t(subtitle2)}
         </p>
 
-                      <div className='flex flex-row  text-center items-center justify-center gap-2'>
+                      <div className='flex flex-row text-center items-center justify-center gap-2'>
                       
                         
                                {/* Boutons d'action */}
@@ -76,6 +76,8 @@ const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.color = MY_COLORS.secondaryGreen;
               }}
+                        onClick={() => window.open('https://www.linkedin.com/company/110107869/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D', '_blank')}
+
             >
               {t(buttonText)}
             </button>

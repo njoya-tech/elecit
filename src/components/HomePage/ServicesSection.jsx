@@ -5,7 +5,7 @@ import s3 from '../../assets/s3.jpg'
 import BM3 from '../../assets/new/BM3.png'
 import an2 from '../../assets/new/an2.jpg'
 import an3 from '../../assets/new/an3.jpg'
-
+import { useNavigate } from 'react-router-dom';
 import cercle_interomp from '../../assets/cercle_interomp.svg'
 
 import { motion } from 'framer-motion'
@@ -45,6 +45,12 @@ const ChevronRight = ({ size = 20, className = "" }) => (
         <path d="m9 18 6-6-6-6"/>
     </svg>
 );
+
+
+  const handleViewMore = (id) => {
+    navigate(`/projets/${id}`);
+  };
+
 
 // --- Composant pour le cercle discontinu animé ---
 const AnimatedCircleBorder = ({ children, isHovered }) => {
@@ -141,6 +147,14 @@ const ServiceCard = ({ service, onSeeMore, imageSrc }) => {
 // --- Composant Principal de la Section ---
 const ServicesSection = () => {
     const { t } = useTranslation();
+
+    const navigate = useNavigate()
+
+    const paths = [
+  '/solutions/it-data-processing',    // Carte 0 (an3)
+  '/solutions/bureau-etude',          // Carte 1 (an2)  
+  '/solutions/sav'                    // Carte 2 (s3)
+];
     
     // Récupération des données de traduction avec le préfixe 'serviceOffer.'
     const bannerTitle = t('serviceOffer.title');
@@ -149,9 +163,10 @@ const ServicesSection = () => {
     const bannerTitle3 = t('serviceOffer.title3');
     const services = t('serviceOffer.services', { returnObjects: true });
 
-    const handleSeeMore = (serviceTitle) => {
-        console.log(`Navigation vers le service: ${serviceTitle}`);
-    };
+const handleSeeMore = (serviceTitle, index) => {
+  console.log(`Navigation vers: ${serviceTitle} (${paths[index]})`);
+  navigate(paths[index]);
+};
 
     return (
         <section 
@@ -163,7 +178,7 @@ const ServicesSection = () => {
                 className="absolute top-0 left-0 w-full h-60"
                 style={{ backgroundColor: MY_COLORS.black }} 
             >
-                <div className="max-w-9xl mx-auto py-40 px-4 text-center h-full flex items-end justify-center">
+                <div className="max-w-9xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
                     <h2 className="text-3xl md:text-3xl lg:text-5xl w-full lg:w-[49%] font-bold px-4 md:w-140 tracking-tight">
                         <span style={{ color: MY_COLORS.white }}>{bannerTitle} </span>
                         <span style={{ color: MY_COLORS.secondaryGreen }}>{bannerHighlight} </span>
@@ -174,15 +189,16 @@ const ServicesSection = () => {
             </div>
             
             {/* Grille de services */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-70"> 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-65"> 
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-y-16 md:gap-y-0 md:gap-x-8 justify-items-center">
                     {services && services.map((service, index) => (
                         <ServiceCard
                             key={index}
                             service={service}
                             imageSrc={imageMap[index]}
-                            onSeeMore={() => handleSeeMore(service.title)}
-                        />
+                              onSeeMore={() => handleSeeMore(service.title, index)}  // ← Passe index !
+     
+                            />
                     ))}
                 </div>
             </div>

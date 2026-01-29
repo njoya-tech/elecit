@@ -1,4 +1,4 @@
-import React from "react";
+
 import Hero from "../../components/Hero/Hero.jsx";
 import NavBar from "../../components/features/NavBar.jsx";
 import ElecITCarouselCard from "../../components/HeroTest.jsx";
@@ -9,6 +9,10 @@ import EntreprisePartner from "../../components/EntrepriseCompo/EntreprisePartne
 import Footer from "../../components/features/Footer.jsx";
 
 const Entreprise = () => {
+
+
+
+
   return (
     <div className="relative w-full min-h-screen">
       {/* NAVBAR - Fixed with background */}
@@ -20,6 +24,7 @@ const Entreprise = () => {
       </div>
 
       <main className="w-full">
+       
         {/* HERO - FULL WIDTH WITH MARGINS */}
         <section
           className="pt-16 sm:pt-20 md:pt-24
@@ -57,6 +62,13 @@ const Entreprise = () => {
           <section className="mb-16 md:mb-20 lg:mb-24">
             <EntreprisePartner />
           </section>
+             
+             
+              
+     
+        
+          
+                
         </div>
 
         {/* FOOTER */}

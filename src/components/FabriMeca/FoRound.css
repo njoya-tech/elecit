@@ -1,0 +1,18 @@
+/* Animation de rotation pour les engrenages */
+@keyframes rotate-gear {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-gear {
+  animation: rotate-gear 6s linear infinite;
+}
+
+/* Pour assurer une animation fluide */
+.rotating-gear {
+  will-change: transform;
+}

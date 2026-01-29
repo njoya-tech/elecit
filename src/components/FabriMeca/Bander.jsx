@@ -144,6 +144,8 @@ const changeSlide = (direction) => {
                   e.target.style.backgroundColor = 'transparent'
                   e.target.style.color = MY_COLORS.secondaryGreen
                 }}
+                          onClick={() => window.open('https://www.linkedin.com/company/109542475/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3', '_blank')}
+
               >
                 {t('fm.buttonText')}
               </button>

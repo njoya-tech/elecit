@@ -1,4 +1,57 @@
 {
+   "projectNew": {
+    "category": "Mechanische Fertigung",
+    "title": "Konzeption und Herstellung einer mobilen Bankagentur",
+    "dateLabel": "Abschlussdatum:",
+    "date": "06/23",
+    "statusLabel": "Projektstatus:",
+    "status": "abgeschlossen",
+    "descriptionTitle": "Projektbeschreibung",
+    "description": "Konzeption und Herstellung einer mobilen Bankagentur ",
+    "descriptionHighlight": "schlüsselfertig",
+    "descriptionContinued": ", die eine verstärkte Metallstruktur, gesicherte Einrichtungen und technische Ausrüstung für Bankgeschäfte in städtischen und abgelegenen Gebieten integriert.",
+    "processTitle": "Von der Konzeption über die Fertigung bis zur Lieferung",
+    "processDescription": "Die Lösung wurde vollständig maßgeschneidert entwickelt: Fahrgestell, Struktur, Unterteilung, Sicherheit, Ergonomie und Integration von Banksystemen.",
+
+       "utilityTitle": "Nutzen",
+    "utility": {
+      "point1": "Bereitstellung von Bankdienstleistungen dort, wo feste Filialen schwierig oder teuer sind",
+      "point2": "Die Bank näher an ihre Kunden bringen und gleichzeitig ihre territoriale Präsenz stärken",
+      "point3": "Ein sicheres, zuverlässiges und komfortables Arbeitsumfeld für das Personal bieten",
+      "point4": "Inbetriebnahmezeiten und Infrastrukturkosten reduzieren",
+      "point5": "Anpassung an die Realitäten vor Ort (Straßen, Klima, Nutzungshäufigkeit)"
+    },
+    "valueTitle": "Unser Mehrwert",
+    "valueDescription": "Dieses Projekt veranschaulicht unsere Fähigkeit, komplexe mobile und mechanische Infrastrukturen zu konzipieren und herzustellen, während wir die gesamte Kette beherrschen:",
+    "value": {
+      "point1": "Ingenieurwesen und technische Planung,",
+      "point2": "mechanische und metallische Fertigung,",
+      "point3": "funktionale Integration,",
+      "point4": "Inbetriebnahme pünktlich und nach Standards."
+    },
+    "videoCaption": "Mobile Bank: Straßentest",
+
+     "youtubeButton": "Mehr Inhalte auf YouTube",
+    "testimonialTitle": "Kundenfeedback",
+    "testimonialText": "\"Die mobile Bank ist robust, funktional und perfekt an unsere Anforderungen angepasst. Sie hat den Zugang zu Bankdienstleistungen für unsere Kunden erheblich verbessert.\"",
+    "testimonialAuthor": "AFB Filialleiter",
+    "expertiseText": "Das gleiche Fachwissen wird für landwirtschaftliche Maschinen, Industrieanlagen, Schienenfahrzeuge, metallische Infrastrukturen und maßgeschneiderte technische Lösungen eingesetzt, die nach den spezifischen Bedürfnissen jedes Kunden entwickelt werden.",
+    "expertise": {
+      "engines": {
+        "title": "Herstellung und Renovierung von Schienenfahrzeugen",
+        "image1": "Schienenfahrzeug Bild"
+      },
+      "machines": {
+        "title": "Konzeption und Herstellung von Baumaschinen",
+        "image2": "Baumaschinen Bild"
+      },
+      "infrastructures": {
+        "title": "Herstellung von Metallinfrastrukturen",
+        "image3": "Metallinfrastruktur Bild"
+      }
+    },
+    "projectButton": "Haben Sie ein Projekt?"
+  },
   "nav": {
     "accueil": "Startseite",
     "entreprise": "Unternehmen",
@@ -264,6 +317,13 @@
     "titlePart1": "Was unsere Kunden über ihre ",
     "highlightWord": "Erfahrung",
     "titlePart2": " mit uns sagen"
+  },
+
+  "smartV": {
+    "title1": "Smart Home Installation",
+    "title2": "in einer Villa",
+    "subtitle": "Komplette Installation eines Smart Home Systems für Wohnhäuser.",
+    "buttonText": "Weitere Projekte"
   },
 
   "testimonials": {

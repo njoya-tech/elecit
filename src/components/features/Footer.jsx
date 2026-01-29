@@ -178,7 +178,7 @@ const handleSubmit = async (e) => {
                 {/* Réseaux sociaux */}
                 <div className="flex gap-3 sm:gap-4">
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/company/109542475/admin/dashboard/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-8 h-8 sm:w-9 sm:h-9 md:w-8 md:h-8 rounded-full flex items-center justify-center transition hover:opacity-80"
@@ -189,7 +189,7 @@ const handleSubmit = async (e) => {
                     </svg>
                   </a>
                   <a 
-                    href="https://facebook.com" 
+                    href="https://www.facebook.com/61583150369936/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-8 h-8 sm:w-9 sm:h-9 md:w-8 md:h-8  rounded-full flex items-center justify-center transition hover:opacity-80"
@@ -266,7 +266,7 @@ const handleSubmit = async (e) => {
                 <h3 className="text-white font-bold text-base sm:text-lg mb-3 sm:mb-4">{t('footer.usefulLinks.title')}</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
-                    <a href="htpps://mango.elecit.net" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
+                    <a href="https://mango.elecit.net" className="text-gray-300 hover:text-white transition text-xs sm:text-sm">
                       {t('footer.usefulLinks.mangoBoutique')}
                     </a>
                   </li>

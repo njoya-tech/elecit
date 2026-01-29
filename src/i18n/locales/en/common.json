@@ -1,4 +1,55 @@
- {
+{
+   "projectNew": {
+    "category": "Mechanical Manufacturing",
+    "title": "Design and manufacturing of a mobile banking agency",
+    "dateLabel": "Completion date:",
+    "date": "06/23",
+    "statusLabel": "Project status:",
+    "status": "completed",
+    "descriptionTitle": "Project Description",
+    "description": "Design and manufacturing of a mobile banking agency ",
+    "descriptionHighlight": "turnkey",
+    "descriptionContinued": ", integrating a reinforced metal structure, secure layouts and technical equipment adapted to banking operations in urban and remote areas.",
+    "processTitle": "From design to manufacturing to delivery",
+    "processDescription": "The solution was entirely custom-designed: chassis, structure, compartmentalization, security, ergonomics and integration of banking systems.",
+
+     "utility": {
+      "point1": "Deploy banking services where fixed branches are difficult or expensive",
+      "point2": "Bring the bank closer to its customers while strengthening its territorial presence",
+      "point3": "Provide a secure, reliable and comfortable working environment for staff",
+      "point4": "Reduce commissioning times and infrastructure costs",
+      "point5": "Adapt to field realities (roads, climate, frequency of use)"
+    },
+    "valueTitle": "Our added value",
+    "valueDescription": "This project illustrates our ability to design and manufacture complex mobile and mechanical infrastructures, while mastering the entire chain:",
+    "value": {
+      "point1": "engineering and technical design,",
+      "point2": "mechanical and metallic manufacturing,",
+      "point3": "functional integration,",
+      "point4": "commissioning on time and according to standards."
+    },
+    "videoCaption": "Mobile bank: road test",
+     "youtubeButton": "More content on youtube",
+    "testimonialTitle": "Client feedback",
+    "testimonialText": "\"The mobile bank is robust, functional and perfectly adapted to our constraints. It has considerably improved access to banking services for our customers.\"",
+    "testimonialAuthor": "AFB Branch Manager",
+    "expertiseText": "The same expertise is put at the service of agricultural machinery, industrial equipment, rolling stock, metal infrastructures and custom technical solutions, designed according to the specific needs of each customer.",
+    "expertise": {
+      "engines": {
+        "title": "Manufacturing and renovation of rolling stock",
+        "image1": "Rolling stock image"
+      },
+      "machines": {
+        "title": "Design and manufacturing of construction machinery",
+        "image2": "Construction machinery image"
+      },
+      "infrastructures": {
+        "title": "Manufacturing of metal infrastructures",
+        "image3": "Metal infrastructure image"
+      }
+    },
+    "projectButton": "Do you have a project?"
+  },
   "nav": {
     "accueil": "Home",
     "entreprise": "Company",
@@ -112,62 +163,7 @@
     "buttonText": "Have a project in mind?"
   },
   
-  "footer": {
-  "banner": {
-    "availableEverywhere": "Service available everywhere",
-    "phoneNumber": "+237 650 416 640",
-    "phoneLabel": "Phone"
-  },
-  "company": {
-    "description": "All our technical and technological potential at the service of your imagination"
-  },
-  "services": {
-    "title": "SERVICES",
-    "mechanicalFabrication": "Design, Mechanical & Metal Fabrication",
-    "smartBuilding": "Smart Buildings & Automation",
-    "gpsTracking": "GPS & Tracking (More Than Track)",
-    "itServices": "IT Services & Data Processing",
-    "designOffice": "Design Office: Engineering & Conception",
-    "afterSales": "After-sales service available 24/7"
-  },
-  "usefulLinks": {
-    "title": "USEFUL LINKS",
-    "mangoBoutique": "MANGO BOUTIQUE",
-    "foczou": "FOCZOU",
-    "moreThanTrack": "MORE THAN TRACK",
-    "matoa": "MATOA"
-  },
-  "newsletter": {
-    "title": "NEWSLETTER",
-    "description": "Future partner, job seeker, or other? Subscribe to our newsletter and don't miss our latest news",
-    "emailLabel": "Email",
-    "emailPlaceholder": "Enter your email",
-    "submitButton": "Join",
-    "submitting": "Submitting...",
-    "errors": {
-      "emptyEmail": "Please enter an email address",
-      "generic": "An error occurred. Please try again."
-    },
-    "messages": {
-      "success": "Thank you! Your subscription has been registered."
-    }
-  },
-  "copyright": {
-    "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
-    "privacyPolicy": "Privacy Policy",
-    "legalNotice": "Legal Notice"
-  },
-  "contact": {
-    "floatingButton": "Contact us",
-    "popup": {
-      "title": "Contact Us",
-      "subtitle": "We will respond as soon as possible",
-      "availability": " ",
-      "messagePlaceholder": "Write your message...",
-      "openWhatsApp": "Open WhatsApp"
-    }
-  }
-},
+
 
   "smartVilla": {
     "title1": "PROJECT:",
@@ -421,6 +417,13 @@
     "titlePart2": ""
   },
 
+  "smartV": {
+    "title1": "Smart home installation",
+    "title2": "in a villa",
+    "subtitle": "Complete installation of a residential smart home system.",
+    "buttonText": "More projects"
+  },
+
   "servicesCarousel": {
     "services": [
       {
@@ -508,58 +511,9 @@
     }
   },
 
-  "servicesCarousel": {
-    "seeMore": "See more",
-    "services": [
-      {
-        "title": "Mobile Banking",
-        "description": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions."
-      },
-      {
-        "title": "Personnel Transport Truck",
-        "description": "Technical and functional restructuring of a truck intended for personnel transportation."
-      },
-      {
-        "title": "Brick Making Machine (Brick Press)",
-        "description": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms."
-      },
-      {
-        "title": "Metal Warehouse Construction",
-        "description": "Study, design and construction of a metal warehouse intended for industrial and logistics use."
-      },
-      {
-        "title": "Home Automation Installation in a Villa",
-        "description": "Complete installation of a residential home automation system including intelligent management."
-      },
-      {
-        "title": "Home Automation Installation in a Bank",
-        "description": "Deployment of a professional home automation system for a bank, including intelligent management."
-      },
-      {
-        "title": "Manufacturing of a 3-in-1 Stepladder",
-        "description": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations."
-      },
-      {
-        "title": "Creation and Layout of the Showroom",
-        "description": "Design, layout and commissioning of a showroom dedicated to the presentation of home automation solutions."
-      },
-      {
-        "title": "Opening of the Display Store",
-        "description": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials."
-      }
-    ]
-  },
 
-  "smartBuild": {
-    "title": "Solutions Exhibition and Smart Building",
-    "buttonText": "Visit the showroom"
-  },
 
-  "blogBanner": {
-    "titlePart1": "Stay up to date with our ",
-    "highlightWord": "news",
-    "titlePart2": " by visiting our blog"
-  },
+
 
   "testimonialsBanner": {
     "titlePart1": "What our clients say about their ",
@@ -1548,56 +1502,11 @@
     "subtitleRound": "Let's build it together from today",
     "buttonRound": "Contact us"
   },
-  "jobOffers": {
-    "previous": "Previous",
-    "next": "Next",
-    "title": "All job offers",
-    "filterTitle": "Filter offers",
-    "filterPoste": "Position",
-    "filterPostePlaceholder": "Ex: Engineer, Technician...",
-    "filterLocation": "Location",
-    "filterLocationPlaceholder": "Ex: Douala, Yaoundé...",
-    "filterDateFrom": "Start date",
-    "filterDateTo": "End date",
-    "resetFilters": "Reset filters",
-    "viewButton": "View all",
-    "noResults": "No offers match your search criteria",
-    "modal": {
-      "back": "Back to offers",
-      "typePoste": "Position type:",
-      "lieuPoste": "Location:",
-      "datePublication": "Publication date:",
-      "validJusquau": "Valid until:",
-      "description": "Description",
-      "responsibilities": "Responsibilities",
-      "activities": "Activities:",
-      "profile": "Required profile",
-      "applyButton": "Apply now",
-      "formTitle": "APPLY ONLINE",
-      "name": "First name",
-      "namePlaceholder": "Enter your first name",
-      "lastName": "Last name",
-      "lastNamePlaceholder": "Enter your last name",
-      "email": "Email *",
-      "emailPlaceholder": "Enter your email",
-      "phone": "Phone *",
-      "phonePlaceholder": "Enter your phone...",
-      "sex": "Gender *",
-      "male": "Male",
-      "female": "Female",
-      "dateOfBirth": "Date of birth *",
-      "day": "Day",
-      "month": "Month",
-      "year": "Year",
-      "position": "Position *",
-      "positionPlaceholder": "Enter the position name",
-      "motivation": "Why do you think you have the best profile? *",
-      "motivationPlaceholder": "Type your message",
-      "joinCV": "Attach your CV *",
-      "addFile": "Add file",
-      "sendApplication": "Send application"
-    }
-  },
+
+
+ 
+
+
   "recruitment": {
     "titleRound": "No offers at the moment",
     "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
@@ -1671,28 +1580,12 @@
     "addFile": "Add file",
     "sendApplication": "Send application"
   }
-},
-  "recruitment": {
-    "spontaneousTitle": "Apply Spontaneously",
-"spontaneousSubtitle": "Join our team and be part of something great",
-  "titleRound": "No offers at the moment",
-  "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
-  "buttonText": "Apply here",
-  "heroTitle1": "For job seekers,",
-  "heroTitle2": "we recruit",
-  "heroSubtitle": "Join a young and talented team and contribute with your expertise to a vision focused on technological innovation, professionalism and progress.",
-  "processTitle": "Recruitment process",
-  "step1Title": "Attachments",
-  "step1Description": "We evaluate the compliance of your CV (in French and English), cover letter and diplomas.",
-  "step2Title": "1st Interview",
-  "step2Description": "A phone interview is conducted beforehand to get to know you better.",
-  "step3Title": "2nd Interview",
-  "step3Description": "An in-person interview will take place between managers and you on various topics.",
-  "step4Title": "Practical case",
-  "step4Description": "Candidates may be given a test to measure their technical skills.",
-  "step5Title": "Decision making",
-  "step5Description": "The selected candidate(s) will be called back for a job offer."
 }
+
+
+
+
+
 }
   }
 

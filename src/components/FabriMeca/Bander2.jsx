@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import fabp from '../../assets/fabp.jpg'
 import rail from '../../assets/rail.svg'
+import { useNavigate } from 'react-router-dom'
 
 // Animation flottante keyframes
 const floatingAnimation = `
@@ -31,7 +32,8 @@ const Bander2 = () => {
   const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [fadeIn, setFadeIn] = useState(true)
-
+  
+const navigate = useNavigate()
   // Les images du carrousel restent fixes (non traduites)
   const slides = [sma, st1, st2]
 
@@ -115,6 +117,7 @@ const Bander2 = () => {
                   e.target.style.backgroundColor = MY_COLORS.white
                   e.target.style.color = MY_COLORS.black
                 }}
+                onClick={() => navigate('/projets')}
               >
                 {t('smartVill.buttonText')}
               </button>

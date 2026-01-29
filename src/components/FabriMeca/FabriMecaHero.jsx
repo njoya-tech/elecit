@@ -21,10 +21,10 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
       }}
     >
       {/* Overlay sombre */}
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
       
       {/* Contenu */}
-      <div className="absolute mb-5 inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 mt-6 sm:mt-8 md:mt-10 text-center ">
+      <div className="z-20 absolute mb-5 inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 mt-6 sm:mt-8 md:mt-10 text-center ">
         <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold  ">
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t(title1)}
@@ -72,23 +72,28 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
                   <div className="flex items-center justify-center gap-4 lg:mt-4 sm:gap-6">
                     {/* Bouton Livre blanc */}
                     <div className="flex items-center gap-3">
-                      <button 
-                        className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-white text-sm sm:text-base md:font-semibold lg:font-semibold font-medium rounded-full transition-all duration-300"
-                        style={{
-                          borderColor: MY_COLORS.secondaryGreen,
-                          color: MY_COLORS.secondaryGreen
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
-                          e.currentTarget.style.color = MY_COLORS.white;
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                          e.currentTarget.style.color = MY_COLORS.secondaryGreen;
-                        }}
-                      >
-                        {t(buttonText)}
-                      </button>
+               <button 
+  className="px-8 py-3 sm:px-12 sm:py-4 border-2 text-sm sm:text-base md:font-semibold lg:font-semibold font-medium rounded-full transition-all duration-300 hover:shadow-lg"
+  style={{
+    borderColor: MY_COLORS.secondaryGreen,
+    color: MY_COLORS.secondaryGreen,
+    backgroundColor: 'transparent'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
+    e.currentTarget.style.color = MY_COLORS.white;
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = 'transparent';
+    e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+  }}
+  onClick={() => window.open('https://www.linkedin.com/company/109542475/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3', '_blank')}
+>
+  {t(buttonText)}
+</button>
+
+
+
                       
                      
                     </div>

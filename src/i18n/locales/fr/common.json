@@ -1,4 +1,57 @@
 {
+  "projectNew": {
+    "category": "Fabrication mécanique",
+    "title": "Conception et fabrication d'une agence bancaire mobile",
+    "dateLabel": "Date de réalisation:",
+    "date": "06/23",
+    "statusLabel": "Statut du projet:",
+    "status": "terminé",
+    "descriptionTitle": "Description du projet",
+    "description": "Conception et fabrication d'une agence bancaire mobile ",
+    "descriptionHighlight": "clé en main",
+    "descriptionContinued": ", intégrant une structure métallique renforcée, des aménagements sécurisés et des équipements techniques adaptés aux opérations bancaires en zones urbaines et reculées.",
+    "processTitle": "De la conception à la fabrication jusqu'à la livraison",
+    "processDescription": "La solution a été entièrement pensée sur mesure : châssis, structure, compartimentage, sécurité, ergonomie et intégration des systèmes bancaires.",
+
+     "utilityTitle": "Utilité",
+    "utility": {
+      "point1": "Déployer des services bancaires là où les agences fixes sont difficiles ou coûteuses",
+      "point2": "Rapprocher la banque de ses clients tout en renforçant sa présence territoriale",
+      "point3": "Offrir un environnement de travail sécurisé, fiable et confortable pour le personnel",
+      "point4": "Réduire les délais de mise en service et les coûts d'infrastructure",
+      "point5": "S'adapter aux réalités du terrain (routes, climat, fréquence d'utilisation)"
+    },
+    "valueTitle": "Notre valeur ajoutée",
+    "valueDescription": "Ce projet illustre notre capacité à concevoir et fabriquer des infrastructures mobiles et mécaniques complexes, en maîtrisant l'ensemble de la chaîne :",
+    "value": {
+      "point1": "ingénierie et conception technique,",
+      "point2": "fabrication mécanique et métallique,",
+      "point3": "intégration fonctionnelle,",
+      "point4": "mise en service dans les délais et selon les normes."
+    },
+    "videoCaption": "Banque mobile: test routier",
+     "youtubeButton": "Plus de contenu sur youtube",
+    "testimonialTitle": "Retour client",
+    "testimonialText": "« La banque mobile est robuste, fonctionnelle et parfaitement adaptée à nos contraintes. Elle a considérablement amélioré l'accès aux services bancaires pour nos clients. »",
+    "testimonialAuthor": "Directeur d'agence AFB",
+    "expertiseText": "La même expertise est mise au service de machines agricoles, équipements industriels, engins roulants, infrastructures métalliques et solutions techniques sur mesure, conçus selon les besoins précis de chaque client.",
+    "expertise": {
+      "engines": {
+        "title": "Fabrication et rénovation d'engins roulants",
+        "image1": "Image engin roulant"
+      },
+      "machines": {
+        "title": "Conception et fabrication de machines de chantiers",
+        "image2": "Image machine de chantier"
+      },
+      "infrastructures": {
+        "title": "Fabrication d'infrastructures métalliques",
+        "image3": "Image infrastructure métallique"
+      }
+    },
+    "projectButton": "Vous avez un projet?"
+  
+  },
   "nav": {
     "accueil": "Accueil",
     "entreprise": "L'entreprise",
@@ -18,7 +71,7 @@
       "itDataProcessing": "IT & Data Processing",
       "accessControlSecurity": "Contrôle d'accès & Sécurité",
       "designOffice": "Bureau d'étude",
-      "afterSalesService": "SAV"
+      "afterSalesService": "Building Technical Maintenance"
     },
     "subsidiaries": {
       "foczou": "FOCZOU",
@@ -36,9 +89,9 @@
     "submitProject": "Soumettre un projet",
     "slide1": {
       "title": "Bienvenue au pôle de la",
-      "highlighted": "Recherche",
-      "title2": "et de l'",
-      "highlighted2": "Excellence",
+      "highlighted": "Recherche   ",
+      "title2": "et de",
+      "highlighted2": "l'Excellence",
       "title3": "dans l'ingénierie en Afrique centrale."
     },
     "slide2": {
@@ -222,6 +275,14 @@
     "descriptionRound": "Vous avez une maison,  un hotel , un bureau ou un espace commercial, une salle de fêtes à transformer ? Parlons-en.",
     "buttonRound": "Contactez-nous"
   },
+
+   "smartV": {
+    "title1": "Installation domotique",
+    "title2": "dans une villa",
+    "subtitle": "Installation complète d'un système domotique résidentiel.",
+    "buttonText": "Plus de projets"
+  },
+
 
   "blog": {
     "seeMore": "Voir plus",

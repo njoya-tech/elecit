@@ -8,13 +8,14 @@ import { motion } from 'framer-motion'
 import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
 import fi from '../../assets/fi.svg'
 import CTAButton from "../CTA/CTAButton.jsx";
+import { useNavigate } from 'react-router-dom';
 
 
 const FormRound = () => {
 
 
     const {t} = useTranslation();
-    
+       const navigate = useNavigate()
     return (
       <div className='relative w-full flex items-center justify-center '>
       
@@ -89,6 +90,7 @@ const FormRound = () => {
                 e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.color = MY_COLORS.secondaryGreen;
               }}
+               onClick={() => navigate('/contacts')}
             >
               {t('projets.buttonRound')}
             </button>

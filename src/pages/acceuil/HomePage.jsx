@@ -1,16 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useMemo } from 'react'
 import NavBar from '../../components/features/NavBar'
 import Footer from '../../components/features/Footer'
 import BlogCarousel from '../../components/HomePage/BlogCaroussel'
 import BlogBanner from '../../components/HomePage/BlogBanner'
-
 import SmartBuilding from '../../components/HomePage/SmartBuilding'
 import HeroSection from '../../components/HomePage/HeroSection'
 import slide1_home from '../../assets/slide1_home.jpg';
 import slide2_home from '../../assets/slide2_home.jpg';
 import slide3_home from '../../assets/slide3_home.jpg';
-
 import loca1 from '../../assets/loca1.png';
 import loca2 from '../../assets/loca2.png';
 import ordi1 from '../../assets/ordi1.png';
@@ -19,14 +17,12 @@ import st1 from '../../assets/st1.png';
 import st2 from '../../assets/st2.png';
 import st3 from '../../assets/st3.png';
 import s from '../../assets/s.png'
-
 import phonegps from '../../assets/phonegps.png';
 import ServicesSection from '../../components/HomePage/ServicesSection'
 import RealBanner from '../../components/HomePage/RealBanner'
 import ServicesCarousel from '../../components/HomePage/ServicesCarousel'
 import TrackingPlatformSection from '../../components/HomePage/TrackingPlatformSection'
 import TestimonialsCarousel from '../../components/HomePage/TestimonialsCarousel'
-
 import SolutionsSection from '../../components/HomePage/SolutionsSection'
 import { useTranslation } from 'react-i18next';
 import an9 from '../../assets/new/an9.jpg'
@@ -37,62 +33,24 @@ import an7 from '../../assets/new/an7.jpg'
 import an8 from '../../assets/new/an8.jpg'
 import an11 from '../../assets/new/an11.jpg'
 import an12 from '../../assets/new/an12.jpeg'
-import an13 from '../../assets/new/an13.JPG'
-import an14 from '../../assets/new/an14.jpg'
-import an15 from '../../assets/new/an15.jpg'
-import an16 from '../../assets/new/an16.jpg'
-import an17 from '../../assets/new/an17.jpg'
-import an18 from '../../assets/new/an18.jpg'
-import an19 from '../../assets/new/an19.jpg'
-import an20 from '../../assets/new/an20.jpg'
+import {useNavigate} from 'react-router-dom'
+
 
 const HomePage = () => {
   const { t } = useTranslation();
 
-  // Récupération des traductions pour services
-  const servicesData = t('servicesCarousel.services', { returnObjects: true });
-   const serviceImages = [
-   BM3,
-   an5,
-   an8,
-   c2,
-   an10,
-   an9,
-   an7,
-   an12,
-   an11
-  ];
+  // Services pour ServicesCarousel (ces données restent locales)
+  const services = useMemo(() => {
+    const servicesData = t('servicesCarousel.services', { returnObjects: true });
+    const serviceImages = [BM3, an5, an8, c2, an10, an9, an7, an12, an11];
+    
+    return servicesData.map((service, index) => ({
+      ...service,
+      image: serviceImages[index]
+    }));
+  }, [t]);
 
- 
-
-  // Fusion traductions + images
-  const services = servicesData.map((service, index) => ({
-    ...service,
-    image: serviceImages[index]
-  }));  
-
-
-const blogData = t('blog.articles', { returnObjects: true });
-
-const blogImages = [
-  c2,
-  an15,
-  an17,
-  an18,
-  an14,
-  an19,
-  an16,
-  an20,
-  an13
-]
-
-const blog = blogData.map((blog, index) => ({
-  ...blog,
-  image: blogImages[index]
-}))
-
-
-  const heroSlides = [
+  const heroSlides = useMemo(() => [
     {
       image: slide1_home,
       subtitle: 'hero.subtitle',
@@ -120,90 +78,96 @@ const blog = blogData.map((blog, index) => ({
       highlighted2: 'hero.slide3.highlighted2',
       title4: 'hero.slide3.title4'
     }
-  ];
+  ], []);
+
+  const trackingImages = useMemo(() => ({
+    loc1: loca1,
+    loc2: loca2,
+    ordi1: ordi1,
+    phonegps: phonegps
+  }), []);
+
+  const smartBuildingImages = useMemo(() => ({
+    loc2: st1,
+    ordi1: st2,
+    phonegps: s
+  }), []);
 
   return (
-    <>
-      <div className='min-h-screen'>
-        <header className='fixed top-0 left-0 right-0 z-50'>
-          <NavBar/>
-        </header>
+    <div className='min-h-screen'>
+      {/* Header fixe */}
+      <header className='fixed top-0 left-0 right-0 z-50 bg-white shadow-sm'>
+        <NavBar/>
+      </header>
 
-        <main className='pt-46'>
-          <HeroSection slides={heroSlides} />
-          <br/>
-          <br/>
-          
-          <div>
-            <SolutionsSection />
-          </div>
-       
-          <TrackingPlatformSection 
-            title={t('trackingPlatform.title')}
-            buttonText={t('trackingPlatform.buttonText')}
-            images={{
-              loc1: loca1,
-              loc2: loca2,
-              ordi1: ordi1,
-              phonegps: phonegps
-            }}
+      <main className='pt-40'>
+    
+        <HeroSection slides={heroSlides} />
+        <br/>
+        <br/>
+        
+        <div>
+          <SolutionsSection />
+        </div>
+     
+        <TrackingPlatformSection 
+          title={t('trackingPlatform.title')}
+          buttonText={t('trackingPlatform.buttonText')}
+          images={trackingImages}
+        />
+        <br/>
+        <br/>
+        
+        <ServicesSection />
+
+        <div>
+          <RealBanner 
+            titlePart1={t('realBanner.titlePart1')}
+            highlightWord={t('realBanner.highlightWord')}
+            titlePart2={t('realBanner.titlePart2')}
           />
-          <br/>
-          <br/>
-          
-          <ServicesSection />
-
           <div>
-            <RealBanner 
-              titlePart1={t('realBanner.titlePart1')}
-              highlightWord={t('realBanner.highlightWord')}
-              titlePart2={t('realBanner.titlePart2')}
-            />
-            <div className=''>
-              <ServicesCarousel services={services} />
-            </div>
+            <ServicesCarousel services={services} />
           </div>
+        </div>
 
-          <div>
-            <SmartBuilding
-              title={t('smartBuild.title')}
-              buttonText={t('smartBuild.buttonText')}
-              images={{
-                loc2: st1,
-                ordi1: st2,
-                phonegps: s
-              }}
-            />
-          </div>
+        <div>
+          <SmartBuilding
+            title={t('smartBuild.title')}
+            buttonText={t('smartBuild.buttonText')}
+            images={smartBuildingImages}
+          />
+        </div>
 
-          <div className='mt-20'>
-            <BlogBanner 
-              titlePart1={t("blogBanner.titlePart1")}
-              highlightWord={t("blogBanner.highlightWord")}
-              titlePart2={t("blogBanner.titlePart2")}
-            />
-          </div>
+        {/* Section Blog avec données Directus */}
+        <div className='mt-20'>
+          <BlogBanner 
+            titlePart1={t("blogBanner.titlePart1")}
+            highlightWord={t("blogBanner.highlightWord")}
+            titlePart2={t("blogBanner.titlePart2")}
+          />
+        </div>
 
-          <div>
-            <BlogCarousel services={blog} />
-          </div>
+        {/* ✅ BlogCarousel charge maintenant ses propres données depuis Directus */}
+        <div>
+          <BlogCarousel />
+        </div>
 
-          <div className='mt-20'>
-            <BlogBanner 
-              titlePart1={t("testimonialsBanner.titlePart1")}
-              highlightWord={t("testimonialsBanner.highlightWord")}
-              titlePart2={t("testimonialsBanner.titlePart2")}
-            />
-          </div>
+        <div className='mt-20'>
+          <BlogBanner 
+            titlePart1={t("testimonialsBanner.titlePart1")}
+            highlightWord={t("testimonialsBanner.highlightWord")}
+            titlePart2={t("testimonialsBanner.titlePart2")}
+          />
+        </div>
 
-          <div>
-            <TestimonialsCarousel />
-          </div>
-        </main>
+        <div>
+          <TestimonialsCarousel />
+        </div>
+      </main>
 
-        <Footer/> 
-      </div>
-    </>
+      <Footer/> 
+    </div>
   )
 }
 

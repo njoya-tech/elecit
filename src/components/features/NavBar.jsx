@@ -25,9 +25,9 @@ const NavBar = () => {
   ];
 
   const subsidiariesItems = [
-    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net' },
-    { key: 'submenus.subsidiaries.mangoSmart', path: 'https://mango.elecit.net' },
-    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net' }
+    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net'},
+    { key: 'submenus.subsidiaries.mangoSmart', path: 'https://www.linkedin.com/company/110098841/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D'},
+    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net'}
   ];
 
   const navItems = [
@@ -122,7 +122,7 @@ const NavBar = () => {
                         </button>
 
                         {openDropdown === item.key && (
-                          <div className="absolute top-full left-0 mt-2 w-56 xl:w-64 bg-white rounded-md shadow-lg py-2 z-50 border">
+                          <div className="absolute top-full left-0 mt-2 w-56 xl:w-70 bg-white rounded-md shadow-lg py-2 z-50 border">
                             {item.dropdown.map(sub => (
                               <a
                                 key={sub.key}
