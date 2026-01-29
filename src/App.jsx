@@ -1,119 +1,57 @@
-
-// import HomePage from './pages/acceuil/HomePage'
-// import ProjetsPage from './pages/projets/ProjetsPage';
-// import Carriere from './pages/carriere/Carriere';
-// import SmartBuildingPage from './pages/solution/SmartBuildingPage';
-// import FabriMecaPage from './pages/solution/FabriMecaPage';
-// import GpsTracking from './pages/solution/GpsTracking';
-// // import JobOffers from './pages/job/JobOffers';
-// import Entreprise from "./pages/l'entreprise/Entreprise"
-// import Contact from './pages/contact/Contact';
-// import DataProcessing from './pages/solution/DataProcessing';
-// import ControlPage from './pages/solution/ControlPage';
-// import BureauPage from './pages/bureau\'etude/BureauPage';
-// import SavPage from "./pages/sav/SavPage"
-// import BlogPage from './pages/blog/BlogPage';
-// import JobOffersOnly from './pages/job/JobOffersOnly';
-// import BlogDetailPage from './components/Blog/BlogDetailPage.jsx';
-import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// Core pages
-const HomePage = lazy(() => import("./pages/acceuil/HomePage"));
-const ProjetsPage = lazy(() => import("./pages/projets/ProjetsPage"));
-const Carriere = lazy(() => import("./pages/carriere/Carriere"));
-const Entreprise = lazy(() => import("./pages/l'entreprise/Entreprise"));
-const Contact = lazy(() => import("./pages/contact/Contact"));
-const BlogPage = lazy(() => import("./pages/blog/BlogPage"));
-const BlogDetailPage = lazy(() =>
-  import("./components/Blog/BlogDetailPage.jsx")
-);
+import HomePage from './pages/acceuil/HomePage';
+import ProjetsPage from './pages/projets/ProjetsPage';
+import ProjetsDetail from './pages/projets/ProjetsDetail';
+import Carriere from './pages/carriere/Carriere';
+import Entreprise from "./pages/l'entreprise/Entreprise";
+import Contact from './pages/contact/Contact';
+import BlogPage from './pages/blog/BlogPage';
+import BlogDetailPage from './components/Blog/BlogDetailPage.jsx';
 
 // Solutions
-const SmartBuildingPage = lazy(() =>
-  import("./pages/solution/SmartBuildingPage")
-);
-const FabriMecaPage = lazy(() =>
-  import("./pages/solution/FabriMecaPage")
-);
-const GpsTracking = lazy(() =>
-  import("./pages/solution/GpsTracking")
-);
-const DataProcessing = lazy(() =>
-  import("./pages/solution/DataProcessing")
-);
-const ControlPage = lazy(() =>
-  import("./pages/solution/ControlPage")
-);
-const BureauPage = lazy(() =>
-  import("./pages/bureau'etude/BureauPage")
-);
-const SavPage = lazy(() => import("./pages/sav/SavPage"));
+import SmartBuildingPage from "./pages/solution/SmartBuildingPage";
+import FabriMecaPage from "./pages/solution/FabriMecaPage";
+import GpsTracking from "./pages/solution/GpsTracking";
+import DataProcessing from "./pages/solution/DataProcessing";
+import ControlPage from "./pages/solution/ControlPage";
+import BureauPage from "./pages/bureau'etude/BureauPage";
+import SavPage from "./pages/sav/SavPage";
 
 // Jobs
-const JobOffers = lazy(() => import("./pages/job/JobOffers"));
-const JobOffersOnly = lazy(() => import("./pages/job/JobOffersOnly"));
+import JobOffers from "./pages/job/JobOffers";
+import JobOffersOnly from "./pages/job/JobOffersOnly";
 
-import ProjetsDetail from './pages/projets/ProjetsDetail';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-      <Suspense
-        fallback={
-          <div className="min-h-screen flex items-center justify-center">
-            <span className="text-gray-500 text-sm"> </span>
-          </div>
-        }
-      >
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projets" element={<ProjetsPage />} />
-          <Route path="/projets/:id" element={<ProjetsDetail />} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projets" element={<ProjetsPage />} />
+        <Route path="/projets/:id" element={<ProjetsDetail />} />
         <Route path="/carriere" element={<Carriere />} />
 
-          {/* Solutions */}
-          <Route
-            path="/solutions/smart-building"
-            element={<SmartBuildingPage />}
-          />
-          <Route
-            path="/solutions/fabrication-mecanique"
-            element={<FabriMecaPage />}
-          />
-          <Route
-            path="/solutions/gps-tracking"
-            element={<GpsTracking />}
-          />
-          <Route
-            path="/solutions/it-data-processing"
-            element={<DataProcessing />}
-          />
-          <Route
-            path="/solutions/controle-acces-securite"
-            element={<ControlPage />}
-          />
-          <Route
-            path="/solutions/bureau-etude"
-            element={<BureauPage />}
-          />
-          <Route path="/solutions/sav" element={<SavPage />} />
+        {/* Solutions */}
+        <Route path="/solutions/smart-building" element={<SmartBuildingPage />} />
+        <Route path="/solutions/fabrication-mecanique" element={<FabriMecaPage />} />
+        <Route path="/solutions/gps-tracking" element={<GpsTracking />} />
+        <Route path="/solutions/it-data-processing" element={<DataProcessing />} />
+        <Route path="/solutions/controle-acces-securite" element={<ControlPage />} />
+        <Route path="/solutions/bureau-etude" element={<BureauPage />} />
+        <Route path="/solutions/sav" element={<SavPage />} />
 
-          {/* Company */}
-          <Route path="/entreprise" element={<Entreprise />} />
-          <Route path="/contacts" element={<Contact />} />
+        {/* Company */}
+        <Route path="/entreprise" element={<Entreprise />} />
+        <Route path="/contacts" element={<Contact />} />
 
-          {/* Blog */}
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:postId" element={<BlogDetailPage />} />
+        {/* Blog */}
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:postId" element={<BlogDetailPage />} />
 
-          {/* Jobs */}
-          <Route path="/carriere/job" element={<JobOffers />} />
-          <Route path="/carriere/job-only" element={<JobOffersOnly />} />
-          <Route path="/blog/:postId" element={<BlogPage />} />
+        {/* Jobs */}
+        <Route path="/carriere/job" element={<JobOffers />} />
+        <Route path="/carriere/job-only" element={<JobOffersOnly />} />
       </Routes>
-      </Suspense>
     </BrowserRouter>
   );
 }
