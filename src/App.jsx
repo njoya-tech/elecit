@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MobileBankProject from './components/ProjetsPage/MobileBankProject';
+import ProjetsDetail from './pages/projets/ProjetsDetail';
 
 // Core pages
 const HomePage = lazy(() => import("./pages/acceuil/HomePage"));
