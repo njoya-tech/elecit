@@ -51,6 +51,32 @@
     "projectButton": "Do you have a project?"
   },
 
+
+  "solution": {
+    "bannerTitle": "Smart",
+    "bannerHighlight": "solutions for",
+    "bannerTitle2": "specific needs",
+    "viewMore": "View more",
+    "items": [
+      {
+        "title": "Smart Buildings & Automation",
+        "description": "Intelligent management of all equipment in public or private buildings and energy consumption.",
+        "imagePlaceholderText": "Buildings"
+      },
+      {
+        "title": "Design, Mechanical & Metal Fabrication",
+        "description": "Fabrication of metal infrastructures, agricultural machinery, rolling equipment, new machine parts and spare parts.",
+        "imagePlaceholderText": "Fabrication"
+      },
+      {
+        "title": "GPS & Tracking (More Than Track)",
+        "description": "Precise real-time tracking of vehicle fleets and other assets. Sustainable analysis and optimization of the entire portfolio.",
+        "imagePlaceholderText": "GPS Tracking"
+      }
+    ]
+  },
+
+
   "nav": {
     "accueil": "Home",
     "entreprise": "Company",
@@ -326,6 +352,67 @@
       }
     ]
   },
+
+    "footer": {
+  "banner": {
+    "availableEverywhere": "Service available everywhere",
+    "phoneNumber": "+237 650 416 640",
+    "phoneLabel": "Phone"
+  },
+  "company": {
+    "description": "All our technical and technological potential at the service of your imagination"
+  },
+  "services": {
+    "title": "SERVICES",
+    "mechanicalFabrication": "Design, Mechanical & Metal Fabrication",
+    "smartBuilding": "Smart Buildings & Automation",
+    "gpsTracking": "GPS & Tracking (More Than Track)",
+    "itServices": "IT Services & Data Processing",
+    "designOffice": "Design Office: Engineering & Conception",
+    "afterSales": "After-sales service available 24/7"
+  },
+  "usefulLinks": {
+    "title": "USEFUL LINKS",
+    "mangoBoutique": "MANGO BOUTIQUE",
+    "foczou": "FOCZOU",
+    "moreThanTrack": "MORE THAN TRACK",
+    "matoa": "MATOA"
+  },
+  "newsletter": {
+    "title": "NEWSLETTER",
+    "description": "Future partner, job seeker, or other? Subscribe to our newsletter and don't miss our latest news",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "submitButton": "Join",
+    "submitting": "Submitting...",
+    "errors": {
+      "emptyEmail": "Please enter an email address",
+      "generic": "An error occurred. Please try again."
+    },
+    "messages": {
+      "success": "Thank you! Your subscription has been registered."
+    }
+  },
+  "copyright": {
+    "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "legalNotice": "Legal Notice"
+  },
+  "contact": {
+    "floatingButton": "Contact us",
+    "popup": {
+      "title": "Contact Us",
+      "subtitle": "We will respond as soon as possible",
+      "availability": " ",
+      "messagePlaceholder": "Write your message...",
+      "openWhatsApp": "Open WhatsApp"
+    }
+  }
+},
+
+
+
+
   "production": {
     "title": "Our production scope",
     "items": [
@@ -445,10 +532,7 @@
     ]
   },
 
-  "trackingPlatform": {
-    "title": "Tracking Platform available on Web & Smartphone",
-    "buttonText": "Watch the video"
-  },
+
 
   "serviceOffer": {
     "title": "A",

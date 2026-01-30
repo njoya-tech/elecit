@@ -12,7 +12,7 @@ const FabriMecaHero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) =>
  
   return (
     <div 
-      className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[650px]"
+      className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[500px]"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
