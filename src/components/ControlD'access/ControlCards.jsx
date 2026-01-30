@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -320,8 +321,8 @@ const ControlCards = () => {
                     <img
                       src={
                         [
-                          ICONS.badge,
-                          ICONS.stockage,
+                          ICONS.controle_icon,
+                          ICONS.camera_icon,
                           ICONS.securite_icon,
                           ICONS.decision_icon,
                         ][index]

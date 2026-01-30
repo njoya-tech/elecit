@@ -33,7 +33,7 @@ import flech_icon from "./icons/flèche incurvé.svg";
 import Gestion_IT_icon from "./icons/Gestion_IT.svg";
 import Virtualisation_icon from "./icons/virtualisation.svg";
 import Cybersecurite_icon from "./icons/Cybersecurite.svg";
-import controle_icon from "./icons/Contrôle_access.svg";
+import controle_icon from "./icons/Controle_access.svg";
 import camera_icon from "./icons/video_ccrtv.svg";
 import update_icon from "./icons/update.svg";
 import Developement_icon from "./icons/Developement_application.svg";
