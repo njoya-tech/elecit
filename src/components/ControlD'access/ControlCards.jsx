@@ -1,11 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ICONS, OBJECTS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
+ 
 const ControlCards = () => {
   const { t } = useTranslation();
 
@@ -42,12 +42,68 @@ const ControlCards = () => {
 
   const cards = t("control.cards.items", { returnObjects: true });
 
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  // All cards animate together
+  const cardVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0,
+      }
+    }
+  };
+
+  // All badges animate together after cards
+  const badgeVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.4,
+      }
+    }
+  };
+
+  // All text animates together after badges
+  const textVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.7,
+      }
+    }
+  };
+
   return (
     <div className="w-full py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20">
       {/* Section Header */}
-      <div
+      <motion.div
         className="relative w-full mb-6 sm:mb-8 overflow-hidden"
         style={{ backgroundColor: MY_COLORS.black }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
       >
         <div
           className="absolute -top-6 
@@ -69,18 +125,22 @@ const ControlCards = () => {
         >
           {t("control.cards.heading")}
         </h2>
-      </div>
+      </motion.div>
 
       {/* Subtitle */}
-      <p
+      <motion.p
         className="text-center text-sm
         sm:text-base md:text-lg lg:text-xl mb-8
          sm:mb-10 md:mb-12 lg:mb-16 px-4 
          sm:px-6 max-w-4xl mx-auto leading-relaxed"
         style={{ color: MY_COLORS.black }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
       >
         {t("control.cards.subtitle")}
-      </p>
+      </motion.p>
 
       {/* Main Grid Layout */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -95,12 +155,18 @@ const ControlCards = () => {
           ></div>
 
           {/* Left Featured Card */}
-          <div className="lg:col-span-1">
+          <motion.div
+            className="lg:col-span-1"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={cardVariants}
+          >
             <div
               className="h-full flex flex-col justify-between min-h-[400px] 
             sm:min-h-[450px] md:min-h-[500px]"
             >
-              {/* Green Card with Carousel - UPDATED PADDING */}
+              {/* Green Card with Carousel */}
               <div
                 className="rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-8 lg:p-12 
                 shadow-lg mb-4 sm:mb-5 md:mb-6 flex items-center justify-center"
@@ -137,17 +203,34 @@ const ControlCards = () => {
               </div>
 
               {/* Title Text */}
-              <h3
+              <motion.h3
                 className="text-center font-bold text-base sm:text-lg 
                 md:text-xl mb-3 sm:mb-4 px-2 sm:px-4 leading-snug"
                 style={{ color: MY_COLORS.green }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants}
               >
                 {t("control.cards.featured.title")}
-              </h3>
+              </motion.h3>
 
               {/* Black Button */}
-              <div className="relative mt-4 sm:mt-6 flex items-center justify-center gap-4 left-10">
+              <motion.div
+                className="relative mt-4 sm:mt-6 flex items-center justify-center gap-4 left-10"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants}
+              >
                 <button
+                  onClick={() => {
+                    const newWindow = window.open(
+                      "https://www.linkedin.com/company/110098841/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D",
+                      "_blank",
+                    );
+                    if (newWindow) newWindow.opener = null;
+                  }}
                   className="px-6 sm:px-8 py-2 sm:py-3 rounded-full 
     text-sm sm:text-base font-semibold transition-all duration-300
     border-2"
@@ -189,9 +272,9 @@ const ControlCards = () => {
                     repeat: Infinity,
                   }}
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Cards Grid (2x2) */}
           <div className="lg:col-span-2 relative">
@@ -214,7 +297,7 @@ const ControlCards = () => {
               ></div>
 
               {cards.map((card, index) => (
-                <div
+                <motion.div
                   key={index}
                   className={`relative pt-8 sm:pt-10 p-4 sm:p-5 md:p-8 lg:p-12 
                   rounded-lg sm:rounded-xl shadow-lg 
@@ -222,14 +305,24 @@ const ControlCards = () => {
                   border border-gray-100 z-10 ${
                     index >= 2 ? "mt-8 sm:mt-12 md:mt-16 lg:mt-20" : ""
                   }`}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={cardVariants}
                 >
-                  {/* Badge Icon - UPDATED POSITIONING */}
-                  <div className="absolute -top-8 sm:-top-10 md:-top-12 left-1/2 transform -translate-x-1/2">
+                  {/* Badge Icon */}
+                  <motion.div
+                    className="absolute -top-8 sm:-top-10 md:-top-12 left-1/2 transform -translate-x-1/2"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={badgeVariants}
+                  >
                     <img
                       src={
                         [
-                          ICONS.badge,
-                          ICONS.stockage,
+                          ICONS.controle_icon,
+                          ICONS.camera_icon,
                           ICONS.securite_icon,
                           ICONS.decision_icon,
                         ][index]
@@ -237,10 +330,16 @@ const ControlCards = () => {
                       alt={card.title}
                       className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
                     />
-                  </div>
+                  </motion.div>
 
                   {/* Card Content */}
-                  <div className="flex flex-col items-center text-center">
+                  <motion.div
+                    className="flex flex-col items-center text-center"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={textVariants}
+                  >
                     <h3
                       className="text-base sm:text-lg md:text-xl font-bold 
                       mb-2 sm:mb-3 text-center mt-4"
@@ -256,12 +355,12 @@ const ControlCards = () => {
                         </p>
                       ))}
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
 
-            {/* Decorative Helmet Icon (Desktop Only) - FIXED CLASS */}
+            {/* Decorative Helmet Icon (Desktop Only) */}
             <div
               className="hidden xl:block absolute top-1/2 
             -translate-y-1/2 z-0"

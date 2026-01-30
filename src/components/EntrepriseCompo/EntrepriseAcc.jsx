@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { Plus, Minus } from "lucide-react";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from "react-i18next";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const EntrepriseAcc = () => {
@@ -17,6 +17,42 @@ const EntrepriseAcc = () => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
 
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideDownDelayed = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const fadeInImage = {
+    hidden: { opacity: 0, y: -30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.5 }
+    }
+  };
+
+  const fadeInCTA = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut", delay: 0.7 }
+    }
+  };
+
   return (
     <section
       className="w-screen pt-20 lg:pt-24 pb-10 relative -mx-[50vw] left-1/2 right-1/2"
@@ -27,7 +63,13 @@ const EntrepriseAcc = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-0">
           {/* LEFT BLOCK - FAQ */}
-          <div className="space-y-6 md:space-y-8 relative">
+          <motion.div
+            className="space-y-6 md:space-y-8 relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideDown}
+          >
             {/* Hard Hat Icon */}
             <div className="absolute w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 -top-12 md:-top-20 -left-8 md:-left-16 lg:-left-24">
               <motion.img
@@ -110,7 +152,7 @@ const EntrepriseAcc = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT BLOCK - Contact Card */}
           <div className="relative mt-8 lg:mt-0">
@@ -138,11 +180,15 @@ const EntrepriseAcc = () => {
             </div>
 
             {/* Green Text Block - MIDDLE LAYER (z-20) */}
-            <div
+            <motion.div
               className="rounded-2xl md:rounded-3xl p-5 md:p-7 lg:p-8 relative z-20"
               style={{
                 backgroundColor: MY_COLORS.green,
               }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={slideDownDelayed}
             >
               {/* Title & Subtitle */}
               <div className="text-center">
@@ -163,15 +209,19 @@ const EntrepriseAcc = () => {
                   {t("entreprise.entrepriseAcc.contactSubtitle")}
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Image - FRONT LAYER (z-30) */}
-            <div
+            <motion.div
               className="px-2 md:px-4 -mt-10 md:-mt-14 
               lg:-mt-12 relative z-30 md:left-2 md:-top-2"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInImage}
             >
               <img
-                src={IMAGES.IMG4}
+                src={IMAGES.IMG31}
                 alt="Technicien électrique"
                 className="rounded-xl md:rounded-2xl w-full h-60
                  md:h-96 lg:h-[480px] object-cover"
@@ -181,22 +231,26 @@ const EntrepriseAcc = () => {
                   marginTop: "19px",
                 }}
               />
-            </div>
+            </motion.div>
 
             {/* CTA Section: Button + Gears */}
-            <div
+            <motion.div
               className="px-2 md:px-4 mt-6 md:mt-8 flex
              items-center justify-between ml-0 lg:ml-40"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInCTA}
             >
               {/* Left Side: Button */}
 
-              <div className="flex items-center gap-3 md:gap-4  shrink-0">
+              <div className="flex items-center gap-3 md:gap-4  shrink-0 mb-25 -ml-15">
                 <motion.img
                   src={ICONS.flech_icon}
                   alt="Arrow"
-                  className="w-10 sm:w-12 opacity-80 origin-center scale-x-[-1]" // flip horizontally
+                  className="w-10 sm:w-12 opacity-100 origin-center scale-x-[-1]"
                   animate={{
-                    rotate: [-15, 15, -15], // optional swing
+                    rotate: [-15, 15, -15],
                   }}
                   transition={{
                     duration: 2.5,
@@ -206,7 +260,7 @@ const EntrepriseAcc = () => {
                 />
 
                 <CTAButton
-                  onClick={() => alert("Video clicked!")}
+                  onClick={() => alert("Contact clicked!")}
                   className="whitespace-nowrap min-w-fit"
                 >
                   {t("entreprise.entrepriseAcc.contactButton")}
@@ -248,7 +302,7 @@ const EntrepriseAcc = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

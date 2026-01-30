@@ -50,6 +50,7 @@
     },
     "projectButton": "Do you have a project?"
   },
+
   "nav": {
     "accueil": "Home",
     "entreprise": "Company",
@@ -60,6 +61,65 @@
     "carriere": "Career",
     "contacts": "Contact"
   },
+
+  "smartBuilding": {
+  "footer": {
+  "banner": {
+    "availableEverywhere": "Service available everywhere",
+    "phoneNumber": "+237 650 416 640",
+    "phoneLabel": "Phone"
+  },
+  "company": {
+    "description": "All our technical and technological potential at the service of your imagination"
+  },
+  "services": {
+    "title": "SERVICES",
+    "mechanicalFabrication": "Design, Mechanical & Metal Fabrication",
+    "smartBuilding": "Smart Buildings & Automation",
+    "gpsTracking": "GPS & Tracking (More Than Track)",
+    "itServices": "IT Services & Data Processing",
+    "designOffice": "Design Office: Engineering & Conception",
+    "afterSales": "After-sales service available 24/7"
+  },
+  "usefulLinks": {
+    "title": "USEFUL LINKS",
+    "mangoBoutique": "MANGO BOUTIQUE",
+    "foczou": "FOCZOU",
+    "moreThanTrack": "MORE THAN TRACK",
+    "matoa": "MATOA"
+  },
+  "newsletter": {
+    "title": "NEWSLETTER",
+    "description": "Future partner, job seeker, or other? Subscribe to our newsletter and don't miss our latest news",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "submitButton": "Join",
+    "submitting": "Submitting...",
+    "errors": {
+      "emptyEmail": "Please enter an email address",
+      "generic": "An error occurred. Please try again."
+    },
+    "messages": {
+      "success": "Thank you! Your subscription has been registered."
+    }
+  },
+  "copyright": {
+    "text": "Copyright 2025 by ElecIT Engineering. All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "legalNotice": "Legal Notice"
+  },
+  "contact": {
+    "floatingButton": "Contact us",
+    "popup": {
+      "title": "Contact Us",
+      "subtitle": "We will respond as soon as possible",
+      "availability": " ",
+      "messagePlaceholder": "Write your message...",
+      "openWhatsApp": "Open WhatsApp"
+    }
+  }
+},
+
 
   "smartBuilding": {
   "footer": {
@@ -299,7 +359,7 @@
       "itDataProcessing": "IT & Data Processing",
       "accessControlSecurity": "Access Control & Security",
       "designOffice": "Design Office",
-      "afterSalesService": "After-Sales Service"
+      "afterSalesService": "BUILDING TECHNICAL MAINTENANCE"
     },
     "subsidiaries": {
       "foczou": "FOCZOU",
@@ -582,7 +642,17 @@
       "descriptionLine2": "develop the whole of Africa through our services.",
       "button": "Watch the video"
     },
-
+    "elecitCarousel": {
+      "title": "The essence of Elec",
+      "titleHighlight": "IT",
+      "carouselAriaLabel": "Image carousel",
+      "goToImage": "Go to image",
+      "paragraph1": "Since its creation in <strong>2015</strong>, ElecIT Engineering has established itself as a multidisciplinary player, capable of managing complex projects, combining technical expertise, innovation and field commitment.",
+      "paragraph2": "Driven by a constant desire to provide concrete solutions to its clients' needs, the company was built around its founder's mission: <strong>putting technology and engineering at the service of sustainable development, performance and collective well-being in Cameroon and internationally.</strong>",
+      "documentsTitle": "Documents to read:",
+      "document1": "ISO 9001 V 2015 Certification",
+      "document2": "Quality Policy"
+    },
     "entrepriseCards": {
       "bannerTitle": "Our values",
       "bannerSubtitle": "03 keywords",
@@ -682,7 +752,19 @@
       "message": "Message",
       "messagePlaceholder": "Answer in a few words",
       "submit": "Send",
-      "imageAlt": "Professional in an industrial environment"
+      "imageAlt": "Professional in an industrial environment",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Something went wrong. Please try again.",
+      "sending": "Sending...",
+      "errors": {
+        "lastNameRequired": "Last name is required",
+        "firstNameRequired": "First name is required",
+        "phoneRequired": "Phone is required",
+        "phoneInvalid": "Phone number is invalid",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Email is invalid",
+        "messageRequired": "Message is required"
+      }
     },
     "location": {
       "title": "Our services are accessible throughout",
@@ -732,6 +814,7 @@
       ]
     }
   },
+
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -833,45 +916,46 @@
       }
     ]
   },
+
   "sav": {
     "hero": {
-      "title": "AFTER-SALES SERVICE",
+      "title": "BUILDING TECHNICAL MAINTENANCE",
       "subtitle": "We ensure customer satisfaction, guarantee equipment longevity, and strengthen client trust.",
       "button": "View content"
     },
     "cards": {
       "heading": "Our Services",
-      "description": "From feasibility studies to turnkey delivery, we support our clients at every stage of the project, ensuring a high level of technical expertise and regulatory compliance.",
+      "description": "We offer a comprehensive range of technical services designed to ensure the reliability, durability, and optimal performance of your equipment after commissioning.",
       "items": [
         {
-          "title": "Studies",
-          "subtitle": "& Design",
-          "description": "Needs analysis and architectural planning / Technical studies / 2D/3D modeling / Planning, cost estimation, and permits"
+          "title": "Assistance and",
+          "subtitle": "Technical Support",
+          "description": "Answers to technical questions regarding product installation and use. Phone support, online chat, or email. On-site assistance when necessary."
         },
         {
-          "title": "Project Management",
-          "subtitle": "& Site Monitoring",
-          "description": "Work planning and coordination of stakeholders / Site supervision, technical and quality inspections / Strict adherence to deadlines and contractual budgets / Transparent communication with the project owner"
+          "title": "Maintenance and",
+          "subtitle": "Repair",
+          "description": "Diagnosis and troubleshooting of breakdowns or malfunctions. Repairs under warranty or out of warranty. Replacement of defective parts."
         },
         {
-          "title": "Execution",
-          "subtitle": "& Delivery",
-          "description": "Structural and finishing works / Integration of technical systems (electricity, plumbing, HVAC) / Interior and exterior finishes according to specifications / Final handover"
+          "title": "Warranty",
+          "subtitle": "Management",
+          "description": "Application of manufacturer warranties. Warranty extensions and maintenance contracts. Exchange or refund according to warranty conditions."
         },
         {
-          "title": "Maintenance",
-          "subtitle": "& Renovation",
-          "description": "Preventive and corrective building maintenance / Renovation and compliance upgrades / Energy efficiency improvements / After-sales service and 10-year warranty"
+          "title": "Returns",
+          "subtitle": "and Exchanges",
+          "description": "Handling of returns in case of non-compliance or defects. Refund or replacement policy."
         },
         {
-          "title": "Consulting",
-          "subtitle": "& Expertise",
-          "description": "Technical audits and property diagnostics / Project owner consulting / Legal and administrative assistance / Construction cost optimization"
+          "title": "Product Updates",
+          "subtitle": "and Upgrades",
+          "description": "Download and installation of software updates. Equipment improvements and upgrades. Advice on performance optimization."
         },
         {
-          "title": "Turnkey",
-          "subtitle": "Solutions",
-          "description": "Full project management / Coordination of all trades / Single guarantee and overall responsibility / On-time delivery"
+          "title": "Customer Service",
+          "subtitle": "and Customer Relations",
+          "description": "Personalized follow-up after purchase. Complaint management and dispute resolution. Satisfaction surveys to improve customer experience."
         }
       ]
     },
@@ -911,12 +995,12 @@
 
   "bureau": {
     "hero": {
-  "titleLine1": "BUILDING ENGINEERING",
-  "titleLine2": "& PUBLIC WORKS",
-  "descriptionLine1": "We offer a complete range of services for the construction of",
-  "descriptionLine2": "public and private buildings, as well as hydraulic structures.",
-  "button": "Advertorial"
-},
+      "titleLine1": "BUILDING ENGINEERING",
+      "titleLine2": "& PUBLIC WORKS",
+      "descriptionLine1": "We offer a complete range of services for the construction of",
+      "descriptionLine2": "public and private buildings, as well as hydraulic structures.",
+      "button": "Advertorial"
+    },
 
     "cards": {
       "heading": "Our Services",
@@ -949,11 +1033,10 @@
       "heading": "Types of hydraulic structures supported",
       "projects": [
         { "title": "Tunnel" },
-        { "title": "Dam" },
+        { "title": "Carnivore" },
         { "title": "Drilling" },
-        { "title": "Canal" },
-        { "title": "Pumping" },
-        { "title": "Drainage" }
+        { "title": "Drain" },
+        { "title": "Irrigation system" }
       ],
       "cta": {
         "title": "Have a",
@@ -1590,4 +1673,5 @@
   }
 
 
+}
 }

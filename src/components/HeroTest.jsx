@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { IMAGES, ICONS } from "../asset/assets";
 import { MY_COLORS } from "../constants/colors";
 import { motion } from "framer-motion";
 
 // Use YOUR images
-const images = [IMAGES.IMG1, IMAGES.IMG2, IMAGES.IMG3];
+const images = [IMAGES.IMG32, IMAGES.IMG33, IMAGES.IMG34 ];
 
 const ElecITCarouselCard = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
 
@@ -46,21 +48,55 @@ const ElecITCarouselCard = () => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
+  // Animation variant for slide down
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+  const slideLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+  const slideRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+
   return (
     <div
       className="relative bg-white flex flex-col
      md:flex-row items-start justify-center p-4 sm:p-6 md:p-8 py-6 
      md:py-12 top-10 w-full gap-6 sm:gap-8 
      md:gap-12 lg:gap-16"
-    >
+      
+     >
       {/* === GROUP: GREEN BLOCK + TOP GEARS === */}
-      <div
+      <motion.div
         className="elecit-green-block-wrapper relative flex-none w-full 
         max-w-[320px] sm:max-w-[420px] md:max-w-[400px] 
         lg:max-w-[440px] mx-auto md:mx-0 md:w-[400px] md:h-[500px] h-64 sm:h-80 
         lg:h-[500px]"
         data-component="elecit-green-block"
-      >
+        initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6}}
+            variants={slideLeft}
+        
+       >
         {/* Top-left gears - visible on all screens but smaller on mobile */}
         <img
           src={ICONS.Engrenage_plan}
@@ -106,7 +142,7 @@ const ElecITCarouselCard = () => {
             className="md:absolute top-3 sm:top-4 md:top-5 md:-right-6 lg:-right-10 w-full md:w-[360px] lg:w-[400px] h-40 sm:h-48 md:h-[420px] lg:h-[450px] rounded-2xl sm:rounded-[1.25rem] overflow-hidden bg-white shadow-xl sm:shadow-2xl z-20"
             tabIndex={0}
             role="region"
-            aria-label="Image carousel"
+            aria-label={t("entreprise.elecitCarousel.carouselAriaLabel")}
           >
             <img
               src={images[currentIndex]}
@@ -125,20 +161,24 @@ const ElecITCarouselCard = () => {
                       ? "bg-white w-6 sm:w-8 h-1.5 sm:h-2"
                       : "bg-white/50 w-1.5 sm:w-2 h-1.5 sm:h-2"
                   }`}
-                  aria-label={`Aller à l'image ${i + 1}`}
+                  aria-label={`${t("entreprise.elecitCarousel.goToImage")} ${i + 1}`}
                   aria-current={i === currentIndex ? "true" : "false"}
                 />
               ))}
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* === GROUP: RIGHT CONTENT === */}
-      <div
+      <motion.div
         className="elecit-content-wrapper max-w-lg lg:max-w-xl flex-1 relative p-4 sm:p-6 md:p-8 z-10"
-        data-component="elecit-content"
-      >
+        data-component="elecit-content" 
+        initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            variants={slideRight}
+       >
         {/* Helmet Icon - visible on all screens */}
         <div
           className="hidden lg:block absolute -top-6 sm:-top-10 md:-top-16 
@@ -178,42 +218,34 @@ const ElecITCarouselCard = () => {
             >
               »
             </span>
-            L'essentiel d'Elec
+            {t("entreprise.elecitCarousel.title")}
             <span
               style={{
                 color: MY_COLORS.secondaryGreen,
                 fontWeight: 700,
               }}
             >
-              IT
+              {t("entreprise.elecitCarousel.titleHighlight")}
             </span>
           </h2>
         </div>
 
         {/* Paragraph 1 */}
-        <p className="text-gray-900 mb-3 sm:mb-4 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20">
-          Depuis sa création en <span className="font-bold">2015</span>, ElecIT
-          Engineering s'est imposée comme un acteur pluridisciplinaire, capable
-          de piloter des projets complexes, alliant savoir-faire technique,
-          innovation et engagement sur le terrain.
-        </p>
+        <p 
+          className="text-gray-900 mb-3 sm:mb-4 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20"
+          dangerouslySetInnerHTML={{ __html: t("entreprise.elecitCarousel.paragraph1") }}
+        />
 
         {/* Paragraph 2 */}
-        <p className="text-gray-600 mb-4 sm:mb-6 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20">
-          Animée par une volonté constante d'apporter des réponses concrètes aux
-          besoins de ses clients, l'entreprise s'est construite autour de la
-          mission de son promoteur :{" "}
-          <span className="font-bold">
-            mettre la technologie et l'ingénierie au service du développement
-            durable, de la performance et du bien-être collectif au Cameroun et
-            à l&apos;international.
-          </span>
-        </p>
+        <p 
+          className="text-gray-600 mb-4 sm:mb-6 text-justify leading-relaxed text-xs sm:text-sm lg:text-base relative z-20"
+          dangerouslySetInnerHTML={{ __html: t("entreprise.elecitCarousel.paragraph2") }}
+        />
 
         {/* Documents à lire Section */}
         <div className="mt-6 sm:mt-8 relative z-20">
           <p className="font-bold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">
-            Documents à lire:
+            {t("entreprise.elecitCarousel.documentsTitle")}
           </p>
 
           <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-2 gap-y-1 text-xs sm:text-sm">
@@ -224,7 +256,7 @@ const ElecITCarouselCard = () => {
               className="underline font-bold hover:opacity-80 transition-opacity inline-block"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
-              Certification ISO 9001 V 2015
+              {t("entreprise.elecitCarousel.document1")}
             </a>
             <span className="text-gray-600 hidden sm:inline">&amp;</span>
             <a
@@ -234,7 +266,7 @@ const ElecITCarouselCard = () => {
               className="underline font-bold hover:opacity-80 transition-opacity inline-block"
               style={{ color: MY_COLORS.secondaryGreen }}
             >
-              Politique de qualité
+              {t("entreprise.elecitCarousel.document2")}
             </a>
           </div>
         </div>
@@ -246,7 +278,8 @@ const ElecITCarouselCard = () => {
           className="hidden lg:block absolute -bottom-12 sm:-bottom-16 md:-bottom-24 lg:-bottom-32 xl:-bottom-40 -right-4 sm:-right-6 md:-right-10 lg:-right-16 xl:-right-20 w-8 sm:w-12 md:w-16 lg:w-24 xl:w-32 opacity-60 sm:opacity-80 md:opacity-100 rotate-45 animate-spin z-0"
           style={{ animationDuration: "4s" }}
         />
-      </div>
+      </motion.div>
+
     </div>
   );
 };

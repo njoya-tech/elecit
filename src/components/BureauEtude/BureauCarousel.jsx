@@ -11,12 +11,19 @@ const BureauCarousel = () => {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const navigate = useNavigate();
 
-  const projectsData = t('bureau.carousel.projects', { returnObjects: true });
-  
+  const projectsData = t("bureau.carousel.projects", { returnObjects: true });
+
   const projects = projectsData.map((project, index) => ({
     id: index + 1,
     title: project.title,
-    image: [IMAGES.IMG1, IMAGES.IMG2, IMAGES.IMG3, IMAGES.IMG4, IMAGES.IMG5, IMAGES.IMG6][index]
+    image: [
+      IMAGES.IMG1,
+      IMAGES.IMG2,
+      IMAGES.IMG3,
+      IMAGES.IMG4,
+      IMAGES.IMG5,
+      IMAGES.IMG6,
+    ][index],
   }));
 
   // Mobile: 1 card, Tablet: 2 cards, Desktop: 3 cards per slide
@@ -34,8 +41,8 @@ const BureauCarousel = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const slidesCount = Math.ceil(projects.length / cardsPerSlide);
@@ -54,7 +61,7 @@ const BureauCarousel = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, );
+  });
 
   // Handle seamless infinite loop
   useEffect(() => {
@@ -95,8 +102,8 @@ const BureauCarousel = () => {
         relative -mx-[50vw] left-1/2 right-1/2"
         style={{
           backgroundColor: MY_COLORS.gray,
-        }} 
-       >
+        }}
+      >
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
           <h3
             className="text-2xl sm:text-3xl md:text-4xl 
@@ -104,7 +111,7 @@ const BureauCarousel = () => {
              sm:mb-10 md:mb-12 lg:mb-16 px-2"
             style={{ color: MY_COLORS.secondaryGreen }}
           >
-            {t('bureau.carousel.heading')}
+            {t("bureau.carousel.heading")}
           </h3>
 
           <div className="relative">
@@ -114,7 +121,7 @@ const BureauCarousel = () => {
               className="absolute left-0 top-1/2 -translate-y-1/2 
               -translate-x-4 sm:-translate-x-6 md:-translate-x-8 
               lg:-translate-x-16 z-20 transition-all duration-300 hover:scale-125"
-              aria-label={t('bureau.carousel.navigation.previous')}
+              aria-label={t("bureau.carousel.navigation.previous")}
             >
               <svg
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10
@@ -134,36 +141,41 @@ const BureauCarousel = () => {
 
             <div className="overflow-hidden">
               <div
-                className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
+                className={`flex ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                {Array.from({ length: extendedSlidesCount }).map((_, slideIndex) => {
-                  const actualSlideIndex = slideIndex === slidesCount ? 0 : slideIndex;
-                  
-                  return (
-                    <div
-                      key={slideIndex}
-                      className="min-w-full flex justify-center"
-                    >
-                      <div className="w-full max-w-sm md:max-w-none 
-                      md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
-                        {projects
-                          .slice(
-                            actualSlideIndex * cardsPerSlide,
-                            actualSlideIndex * cardsPerSlide + cardsPerSlide
-                          )
-                          .map((project, cardIndex) => (
-                            <ProjectCard
-                              key={`${slideIndex}-${project.id}`}
-                              project={project}
-                              index={cardIndex}
-                              isActive={slideIndex === currentSlide}
-                            />
-                          ))}
+                {Array.from({ length: extendedSlidesCount }).map(
+                  (_, slideIndex) => {
+                    const actualSlideIndex =
+                      slideIndex === slidesCount ? 0 : slideIndex;
+
+                    return (
+                      <div
+                        key={slideIndex}
+                        className="min-w-full flex justify-center"
+                      >
+                        <div
+                          className="w-full max-w-sm md:max-w-none 
+                      md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8"
+                        >
+                          {projects
+                            .slice(
+                              actualSlideIndex * cardsPerSlide,
+                              actualSlideIndex * cardsPerSlide + cardsPerSlide,
+                            )
+                            .map((project, cardIndex) => (
+                              <ProjectCard
+                                key={`${slideIndex}-${project.id}`}
+                                project={project}
+                                index={cardIndex}
+                                isActive={slideIndex === currentSlide}
+                              />
+                            ))}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  },
+                )}
               </div>
             </div>
 
@@ -171,7 +183,7 @@ const BureauCarousel = () => {
             <button
               onClick={nextSlide}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 md:translate-x-8 lg:translate-x-16 z-20 transition-all duration-300 hover:scale-125"
-              aria-label={t('bureau.carousel.navigation.next')}
+              aria-label={t("bureau.carousel.navigation.next")}
             >
               <svg
                 className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 
@@ -197,7 +209,9 @@ const BureauCarousel = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "w-2.5 h-2.5 sm:w-3 sm:h-3" : "w-2 h-2 sm:w-2.5 sm:h-2.5"
+                  currentSlide === index
+                    ? "w-2.5 h-2.5 sm:w-3 sm:h-3"
+                    : "w-2 h-2 sm:w-2.5 sm:h-2.5"
                 }`}
                 style={{
                   backgroundColor:
@@ -205,7 +219,7 @@ const BureauCarousel = () => {
                       ? MY_COLORS.secondaryGreen
                       : "#9ca3af",
                 }}
-                aria-label={`${t('bureau.carousel.navigation.goToSlide')} ${index + 1}`}
+                aria-label={`${t("bureau.carousel.navigation.goToSlide")} ${index + 1}`}
               />
             ))}
           </div>
@@ -243,29 +257,32 @@ const BureauCarousel = () => {
                xl:text-4xl font-bold leading-tight mb-8 md:mb-12"
               style={{ color: MY_COLORS.white, top: "24%" }}
             >
-              {t('bureau.carousel.cta.title')}{" "}
-              <span style={{color:MY_COLORS.secondaryGreen}}>
-                {t('bureau.carousel.cta.titleHighlight')}
+              {t("bureau.carousel.cta.title")}{" "}
+              <span style={{ color: MY_COLORS.secondaryGreen }}>
+                {t("bureau.carousel.cta.titleHighlight")}
               </span>{" "}
-              {t('bureau.carousel.cta.title2')}
+              {t("bureau.carousel.cta.title2")}
             </h3>
 
-            <p className="text-center md:text-lg lg:text-xl text-white/90 max-w-2xl mx-auto mt-15">
-              {t('bureau.carousel.cta.subtitle')}
+            <p
+              className="text-center md:text-lg lg:text-xl text-white/90
+            max-w-2xl mx-auto mt-12 mb-8 md:mb-12 relative z-20"
+            >
+              {t("bureau.carousel.cta.subtitle")}
             </p>
 
             <CTAButton
-              className="absolute top-10 md:top-2 md:w-70"
+              className="absolute top-10 md:-top-2 md:w-70"
               onClick={() => navigate("/contacts")}
             >
-              {t('bureau.carousel.cta.button')}
+              {t("bureau.carousel.cta.button")}
             </CTAButton>
           </div>
 
           <div
             className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 z-40 animate-spin"
             style={{
-              animationDuration:"4s",
+              animationDuration: "4s",
               top: "65%",
               right: "1%",
             }}
@@ -296,7 +313,7 @@ const BureauCarousel = () => {
         </div>
       </section>
 
-      <style jsx>{`
+      <style>{`
         @keyframes rotateClockwise {
           from {
             transform: rotate(0deg);
@@ -319,7 +336,7 @@ const ProjectCard = ({ project, index, isActive }) => {
        hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
       style={{
         opacity: shouldAnimate ? 1 : 0,
-        transform: shouldAnimate ? 'translateY(0)' : 'translateY(48px)',
+        transform: shouldAnimate ? "translateY(0)" : "translateY(48px)",
         transition: `all 0.7s ease-out ${index * 200}ms`,
       }}
     >

@@ -1,22 +1,20 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { MY_COLORS } from "../../constants/colors";
 import { PARTNERS, ICONS } from "../../asset/assets.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from 'react-i18next';
-import {  useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // ============================================================================
 // CONSTANTS
 // ============================================================================
-
 
 const ANIMATION_CONFIG = {
   exitDuration: 600,
   autoPlayInterval: 4000,
   staggerDelay: 120,
 };
-
-
 
 const CAROUSEL_CONFIG = {
   logosPerView: 3,
@@ -81,10 +79,6 @@ const ArrowButton = ({ direction, onClick, disabled }) => {
   const isLeft = direction === "left";
   const arrowPath = isLeft ? "M15 18l-6-6 6-6" : "M9 18l6-6-6-6";
 
-  
-
-
-  
   return (
     <button
       onClick={onClick}
@@ -157,7 +151,6 @@ const EnterprisePartners = () => {
   const [isExiting, setIsExiting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef(null);
-  const navigate = useNavigate();
 
   const partners = [
     { id: 1, logo: PARTNERS.partner1, alt: "Partner company logo 1" },
@@ -228,11 +221,27 @@ const EnterprisePartners = () => {
     performTransition(currentIndex === totalSlides - 1 ? 0 : currentIndex + 1);
   };
 
+  // Animation variant
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <>
       <style>{animationStyles}</style>
 
-      <section className="w-full bg-white p-0 m-0">
+      <motion.section
+        className="w-full bg-white p-0 m-0"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* SECTION TITLE */}
           <h2
@@ -363,7 +372,6 @@ const EnterprisePartners = () => {
                   className="relative z-20 text-center text-2xl
                    md:text-4xl lg:text-2xl xl:text-4xl font-bold 
                    leading-tight mb-8 md:mb-12 -mt-20"
-
                   style={{ color: MY_COLORS.white, top: "24%" }}
                 >
                   {t('entreprise.entreprisePartner.ctaTitle')} <br /> 
@@ -376,7 +384,7 @@ const EnterprisePartners = () => {
 
                 <CTAButton
                   className="absolute top-10 md:top-15 md:w-60"
-                  onClick={() => navigate("/contacts")}
+                  onClick={() => alert("Contact clicked!")}
                 >
                   {t('entreprise.entreprisePartner.ctaButton')}
                 </CTAButton>
@@ -387,7 +395,6 @@ const EnterprisePartners = () => {
                 md:w-32 
                 md:h-32 lg:w-40 
                 lg:h-40 z-40 animate-spin"
-
                 style={{
                   animationDuration: "4s",
                   top: "45%",
@@ -420,7 +427,7 @@ const EnterprisePartners = () => {
             </div>
           </section>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

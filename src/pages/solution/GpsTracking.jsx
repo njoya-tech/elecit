@@ -119,7 +119,7 @@ const GpsTracking = () => {
           <NavBar />
         </header>
 
-        <main className='pt-46'>
+        <main className='pt-46'> 
           <div>
             <GpThero
               title1={t('gpsT.titlehero')}

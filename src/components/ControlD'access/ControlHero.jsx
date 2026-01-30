@@ -3,7 +3,6 @@ import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../utils/colors";
 import CTAButton from "../CTA/CTAButton";
 import { useTranslation } from "react-i18next";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -11,21 +10,65 @@ const ControlHero = () => {
   const { t } = useTranslation();
   const [showVideo, setShowVideo] = useState(false);
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.5 }
+    }
+  };
+
   return (
     <section
       className="relative w-full h-[50vh] 
-    sm:h-[40vh] md:h-[35vh] lg:h-[55vh] 
+    sm:h-[40vh] md:h-[35vh] lg:h-[65vh] 
     flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
-      <img
+      <motion.img
         src={HERO.control}
         alt={t("control.hero.title")}
         className="absolute inset-0 w-full h-full object-cover"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <motion.div
+        className="absolute inset-0 bg-black/60"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+      />
 
       {/* Angled Black PNG Mask */}
       <img
@@ -50,26 +93,37 @@ const ControlHero = () => {
        md:px-12 lg:px-16 flex flex-col 
        items-center justify-center"
       >
-        <h1
+        <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl 
         lg:text-6xl xl:text-5xl
          font-extrabold mb-10 mt-30 text-white"
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
         >
           <span style={{ color: MY_COLORS.secondaryGreen }}>
             {t("control.hero.title")}
           </span>
-        </h1>
+        </motion.h1>
 
-        <p
+        <motion.p
           className="text-white text-sm
          sm:text-base md:text-lg lg:text-lg xl:text-xl 
          leading-relaxed mb-6 max-w-3xl"
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
         >
           {t("control.hero.description")}
-        </p>
+        </motion.p>
 
         {/* CTA + Arrow */}
-        <div className="flex items-center gap-4 p-0 lg:mt-0 ml-4 md:ml-10 lg:ml-20">
+        <motion.div
+          className="flex items-center gap-4 p-0 lg:mt-0 ml-4 md:ml-10 lg:ml-20"
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+        >
           <CTAButton onClick={() => setShowVideo(true)}>
             {t("entreprise.hero.button")}
           </CTAButton>
@@ -77,13 +131,13 @@ const ControlHero = () => {
           {showVideo && (
             <div
               className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-              onClick={() => setShowVideo(false)} // Click outside closes the video
+              onClick={() => setShowVideo(false)}
             >
               {/* Video Container */}
               <div
                 className="relative w-[90%] max-w-3xl aspect-video
                  bg-black rounded-xl overflow-hidden shadow-xl"
-                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside video
+                onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
                 <button
@@ -117,7 +171,7 @@ const ControlHero = () => {
               repeat: Infinity,
             }}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -9,7 +9,34 @@ import {
   fetchFeaturedPost,
   getAssetUrl,
   getTranslation,
+  toggleLike,
 } from "../../../src/services/blog.js";
+
+// Helper to check if user has liked a post (using localStorage)
+const hasUserLikedPost = (postId) => {
+  try {
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "[]");
+    return likedPosts.includes(postId);
+  } catch {
+    return false;
+  }
+};
+
+// Helper to save liked status
+const setUserLikedPost = (postId, isLiked) => {
+  try {
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "[]");
+    if (isLiked && !likedPosts.includes(postId)) {
+      likedPosts.push(postId);
+    } else if (!isLiked) {
+      const index = likedPosts.indexOf(postId);
+      if (index > -1) likedPosts.splice(index, 1);
+    }
+    localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+  } catch (error) {
+    console.error("Error saving liked post:", error);
+  }
+};
 
 const BlogCards = ({ onPostClick, initialCategory }) => {
   const { t, i18n } = useTranslation();
@@ -123,6 +150,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
           // This function looks at post.translations array and finds a match for i18n.language
           // If it finds one, it returns a new post object with title, excerpt, and content replaced
           // If no translation exists for this language, it just returns the original post unchanged
+
           const translatedPost = getTranslation(post, i18n.language);
           // ADD THIS TO SEE WHAT CAME BACK
           console.log("Original title:", post.title);
@@ -143,7 +171,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
             image: getAssetUrl(translatedPost.cover_image),
             views: translatedPost.views || 0,
             comments: translatedPost.comments_count || 0,
-            liked: false,
+            likes: translatedPost.likes || 0,
+            liked: hasUserLikedPost(translatedPost.id),
             author: {
               name: translatedPost.author?.full_name || "Unknown Author",
               avatar:
@@ -173,6 +202,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               image: getAssetUrl(translatedFeatured.cover_image),
               views: translatedFeatured.views || 0,
               comments: translatedFeatured.comments_count || 0,
+              likes: translatedFeatured.likes || 0,
+              liked: hasUserLikedPost(translatedFeatured.id),
               authorName:
                 translatedFeatured.author?.full_name || "Unknown Author",
               avatar:
@@ -191,6 +222,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               image: firstPost.image,
               views: firstPost.views,
               comments: firstPost.comments,
+              likes: firstPost.likes,
               authorName: firstPost.author.name,
               avatar: firstPost.author.avatar,
               date: firstPost.author.date,
@@ -224,6 +256,76 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
     setActiveCategory(category);
     setCurrentPage(1);
     setIsDropdownOpen(false);
+  };
+
+  const handleLikeClick = async (e, postId, currentLikes, isCurrentlyLiked) => {
+    e.stopPropagation(); // Prevent opening post detail
+
+    try {
+      // Optimistically update UI
+      const optimisticLikes = isCurrentlyLiked
+        ? currentLikes - 1
+        : currentLikes + 1;
+
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId
+            ? { ...post, likes: optimisticLikes, liked: !isCurrentlyLiked }
+            : post
+        )
+      );
+
+      // Also update featured post if it's the same post
+      if (featuredPost && featuredPost.id === postId) {
+        setFeaturedPost((prev) => ({
+          ...prev,
+          likes: optimisticLikes,
+          liked: !isCurrentlyLiked,
+        }));
+      }
+
+      // Update in backend
+      const result = await toggleLike(postId, isCurrentlyLiked);
+
+      // Save liked status to localStorage
+      setUserLikedPost(postId, result.isLiked);
+
+      // Update with actual count from backend
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId
+            ? { ...post, likes: result.likes, liked: result.isLiked }
+            : post
+        )
+      );
+
+      // Update featured post with actual count
+      if (featuredPost && featuredPost.id === postId) {
+        setFeaturedPost((prev) => ({
+          ...prev,
+          likes: result.likes,
+          liked: result.isLiked,
+        }));
+      }
+    } catch (error) {
+      console.error("Failed to toggle like:", error);
+      // Revert optimistic update on error
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId
+            ? { ...post, likes: currentLikes, liked: isCurrentlyLiked }
+            : post
+        )
+      );
+
+      if (featuredPost && featuredPost.id === postId) {
+        setFeaturedPost((prev) => ({
+          ...prev,
+          likes: currentLikes,
+          liked: isCurrentlyLiked,
+        }));
+      }
+    }
   };
 
   // Loading state
@@ -434,9 +536,21 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                           ? t("blogPage.cards.comment")
                           : t("blogPage.cards.comments")}
                       </span>
+                      <span>
+                        {featuredPost.likes || 0}{" "}
+                        {featuredPost.likes === 1 ? "Like" : "Likes"}
+                      </span>
                     </div>
                     <button
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleLikeClick(
+                          e,
+                          featuredPost.id,
+                          featuredPost.likes,
+                          featuredPost.liked
+                        );
+                      }}
                       className="text-gray-400 hover:text-red-500 transition-colors"
                     >
                       <svg
@@ -516,7 +630,10 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
+                  <div
+                    className="flex items-center justify-between pt-3 
+                  sm:pt-4 border-t border-gray-100 mt-auto"
+                  >
                     <div className="flex items-center gap-3 sm:gap-4">
                       <div className="flex items-center gap-1 text-gray-500 text-xs sm:text-sm">
                         <svg
@@ -557,9 +674,30 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                         </svg>
                         <span>{post.comments}</span>
                       </div>
+
+                      {/* ✅ ADD THIS NEW DIV FOR LIKES */}
+                      <div className="flex items-center gap-1 text-gray-500 text-xs sm:text-sm">
+                        <svg
+                          className="w-4 h-4 sm:w-5 sm:h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                          />
+                        </svg>
+                        <span>{post.likes || 0}</span>
+                      </div>
                     </div>
 
                     <button
+                      onClick={(e) =>
+                        handleLikeClick(e, post.id, post.likes, post.liked)
+                      }
                       className={`transition-colors duration-300 shrink-0 ${
                         post.liked
                           ? "text-red-500"

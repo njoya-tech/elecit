@@ -5,8 +5,10 @@ import HeroContact from "../../components/ContactCompo/HeroContact.jsx";
 import LocationContact from "../../components/ContactCompo/LocationContact.jsx";
 import FormulaContact from "../../components/ContactCompo/FormulaContact.jsx";
 import BlogContact from "../../components/ContactCompo/BlogContact.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative w-full min-h-screen">
       {/* Navbar - Fixed with proper mobile height */}
@@ -23,18 +25,20 @@ const Contact = () => {
         {/* CONTENT SECTIONS — CONTAINER */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
           {/* Formula Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section >
             <FormulaContact />
           </section>
 
           {/* Location Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
+          <section>
             <LocationContact />
           </section>
 
           {/* Blog Section */}
-          <section className="py-8 sm:py-10 md:py-12 lg:py-16">
-            <BlogContact />
+          <section >
+            <BlogContact  onPostClick={(postId) => {
+              navigate(`/blog/${postId}`)
+            }}/>
           </section>
         </div>
 

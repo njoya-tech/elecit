@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useTranslation } from "react-i18next";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors";
@@ -10,6 +10,71 @@ const SavCards = () => {
 
   const cards = t("sav.cards.items", { returnObjects: true });
 
+  // 🎨 ICON ARRAY - One icon per card (in order)
+  // Choose icons based on your service type
+  const cardIcons = [
+    ICONS.assistance_icon, // Card 1 - Technical Support/Assistance
+    ICONS.maintenance_repair_icon, // Card 2 - Maintenance & Repair
+    ICONS.gestion_garanties_icon, // Card 3 - Updates/Upgrades
+    ICONS.exchange_return_icon, // Card 4 - Warranty Management
+    ICONS.mis_a_jour_icon, // Card 5 - Customer Service
+    ICONS.service_client_icon, // Card 6 - Expert Consultation
+    
+    
+  ];
+
+  // Animation variants
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  // All cards animate together
+  const cardVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0,
+      },
+    },
+  };
+
+  // All badges animate together after cards
+  const badgeVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.4,
+      },
+    },
+  };
+
+  // All text animates together after badges
+  const textVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: 0.7,
+      },
+    },
+  };
+
   return (
     <section
       className="w-full py-16"
@@ -17,7 +82,13 @@ const SavCards = () => {
       aria-labelledby="services-heading"
     >
       {/* TOP SECTION */}
-      <div className="max-w-full sm:max-w-[1200px] mx-auto px-4 sm:px-6 mb-12">
+      <motion.div
+        className="max-w-full sm:max-w-[1200px] mx-auto px-4 sm:px-6 mb-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
+      >
         <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
           {/* Helmet Icon */}
           <div className="shrink-0">
@@ -52,89 +123,80 @@ const SavCards = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* BANNER IMAGE */}
-      <div className="max-w-full sm:max-w-[1200px] mx-auto px-4 sm:px-6 mb-16">
+      <motion.div
+        className="max-w-full sm:max-w-[1200px] mx-auto px-4 sm:px-6 mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={slideDown}
+      >
         <div
           className="w-full h-[180px] sm:h-[200px] md:h-[280px] 
         relative overflow-hidden rounded-2xl shadow-xl"
         >
           <img
-            src={IMAGES.IMG8}
+            src={IMAGES.IMG37}
             alt="Vue d'ensemble d'un chantier de construction"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* CARDS SECTION */}
-      <div className="max-w-full sm:max-w-[1200px] mx-auto px-4 sm:px-6 relative">
-        {/* Decorative Gears */}
-        <img
-          src={ICONS.Engrenage_plan}
-          alt=""
-          aria-hidden="true"
-          className="hidden lg:block absolute -right-12 bottom-2 z-0 w-32 lg:w-48 opacity-100 pointer-events-none"
-          style={{
-            animation: "spin 8s linear infinite reverse",
-            willChange: "transform",
-          }}
-        />
-        <img
-          src={ICONS.Engrenage_plan}
-          alt=""
-          aria-hidden="true"
-          className="hidden lg:block absolute right-5 -bottom-12 z-0 w-20 lg:w-24 opacity-100 pointer-events-none"
-          style={{
-            animation: "spin 8s linear infinite reverse",
-            willChange: "transform",
-          }}
-        />
-
-        {/* Cards Grid */}
-        <div className="relative -mt-10 sm:-mt-24 md:-mt-22 z-10">
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 
-    sm:gap-4 lg:gap-12 gap-y-16 sm:gap-y-20 md:gap-y-24"
-          >
-            {cards.map((card, index) => (
-              <div key={index} className="relative flex justify-center">
-                {/* Icon Badge */}
-                <div className="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 z-20">
-                  <div
-                    className="w-12 h-12 sm:w-14 sm:h-14 
-              md:w-16 md:h-16 rounded-full flex items-center 
-              justify-center shadow-lg transition-transform 
-              hover:scale-110 duration-300"
-                    style={{ backgroundColor: MY_COLORS.secondaryGreen }}
-                    aria-hidden="true"
-                  >
-                    <img
-                      src={ICONS.laptop}
-                      alt=""
-                      className="w-6 h-6 sm:w-8 
-                sm:h-8 md:w-10 
-                md:h-10 brightness-0 invert"
-                    />
-                  </div>
+      <div className="relative -mt-10 sm:-mt-24 md:-mt-22 z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-12 gap-y-16 sm:gap-y-20 md:gap-y-24">
+          {cards.map((card, index) => (
+            <div
+              key={card.title || index}
+              className="relative flex justify-center"
+            >
+              {/* Icon Badge */}
+              <motion.div
+                className="absolute -top-6 md:-top-8 left-1/2 -translate-x-1/2 z-20"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={badgeVariants}
+              >
+                <div
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110 duration-300"
+                  style={{ backgroundColor: MY_COLORS.secondaryGreen }}
+                  aria-hidden="true"
+                >
+                  <img
+                    src={cardIcons[index] || ICONS.laptop}
+                    alt={`${card.title} service icon`}
+                    className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 brightness-0 invert"
+                  />
                 </div>
+              </motion.div>
 
-                {/* Card - Reduced size */}
-                <article
-                  className="mt-4 md:mt-0 bg-white rounded-2xl shadow-2xl w-full max-w-[320px] sm:max-w-[280px] md:max-w-[300px] p-4 sm:p-5 md:p-6 pt-8 md:pt-10 text-center transition-all duration-300 hover:-translate-y-2"
-                  style={{
-                    boxShadow:
-                      "0 20px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1)", // Enhanced default shadow
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      "0 30px 60px rgba(0, 0, 0, 0.25), 0 15px 30px rgba(0, 0, 0, 0.15)"; // Stronger hover shadow
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      "0 20px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1)"; // Back to default
-                  }}
+              {/* Card */}
+              <motion.article
+                className="mt-4 md:mt-0 bg-white rounded-2xl shadow-2xl w-full max-w-[320px] sm:max-w-[280px] md:max-w-[300px] p-4 sm:p-5 md:p-6 pt-8 md:pt-10 text-center"
+                style={{
+                  boxShadow:
+                    "0 20px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1)",
+                }}
+                whileHover={{
+                  y: -8,
+                  boxShadow:
+                    "0 30px 60px rgba(0, 0, 0, 0.25), 0 15px 30px rgba(0, 0, 0, 0.15)",
+                }}
+                transition={{ duration: 0.3 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
+              >
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  variants={textVariants}
                 >
                   <header className="mb-3">
                     <h3 className="text-base sm:text-lg md:text-xl font-bold text-slate-900 mb-1">
@@ -147,10 +209,10 @@ const SavCards = () => {
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed text-center">
                     {card.description}
                   </p>
-                </article>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              </motion.article>
+            </div>
+          ))}
         </div>
       </div>
     </section>

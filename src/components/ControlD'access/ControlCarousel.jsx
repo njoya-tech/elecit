@@ -3,15 +3,17 @@ import { useTranslation } from "react-i18next";
 import { MY_COLORS } from "../../constants/colors";
 import { ICONS, IMAGES } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton";
+import { useNavigate} from "react-router-dom"
 
 const ControlCarousel = () => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   const slides = [
-    { image: IMAGES.IMG1 },
-    { image: IMAGES.IMG2 },
-    { image: IMAGES.IMG3 },
+    { image: IMAGES.IMG28 },
+    { image: IMAGES.IMG29 },
+    { image: IMAGES.IMG30 },
   ];
 
   // Auto-play carousel
@@ -141,7 +143,7 @@ const ControlCarousel = () => {
 
             <CTAButton
               className="absolute top-10 md:top-2 md:w-60"
-              onClick={() => alert("Video clicked!")}
+              onClick={() => navigate("/contacts")}
             >
               {t("control.carousel.cta.button")}
             </CTAButton>
