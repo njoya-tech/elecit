@@ -418,11 +418,16 @@ sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
 
   if (loading) {
     return (
-      <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6 flex justify-center items-center" style={{backgroundColor: MY_COLORS.white}}>
-        <div className="text-xl" style={{ color: MY_COLORS.primaryGreen }}>
-          {t('projects.loading')}...
+      <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
+        <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-20">
+            <div
+              className="animate-spin rounded-full h-12 w-12 border-b-2"
+              style={{ borderColor: MY_COLORS.secondaryGreen }}
+            ></div>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 
