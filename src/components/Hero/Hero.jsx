@@ -3,6 +3,7 @@ import { HERO, ICONS } from "../../asset/assets";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useState } from "react";
 
