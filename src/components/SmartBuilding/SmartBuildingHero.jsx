@@ -28,7 +28,7 @@ const SmartBuildingHero = ({ activeTab, setActiveTab }) => {
     <div className="relative w-full mb-20">
       {/* Hero Section */}
       <div 
-        className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[650px]"
+        className="relative w-full bg-cover bg-center sm:w-full md:w-[800px] lg:w-[1800px] translate-x-0 sm:translate-x-0 md:translate-x-15 lg:translate-x-15 h-[300px] sm:h-[400px] md:h-[600px] lg:h-[500px]"
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 18, 28, 0.7), rgba(0, 18, 28, 0.7)), url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200)',
         }}

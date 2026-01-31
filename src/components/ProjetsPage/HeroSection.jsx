@@ -13,7 +13,7 @@ const HeroSection = () => {
   
   return (
     <div 
- className="relative w-screen mx-auto  h-[300px] md:h-[600px] lg:h-[650px] flex items-center justify-center  md:w-[800px] lg:w-[1800px] "
+ className="relative w-screen mx-auto  h-[300px] md:h-[600px] lg:h-[500px] flex items-center justify-center  md:w-[800px] lg:w-[1800px] "
       style={{ backgroundColor: MY_COLORS.white }}
     >
       {/* Image de fond */}
