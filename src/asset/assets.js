@@ -57,14 +57,6 @@ import maintenance_preventive_icon from "./icons/maintenance_preventive.svg";
 import rentabilite_clients_icon from "./icons/Rentabilite.svg";
 import satisfaction_clients_icon from "./icons/satifaction.svg";
 
-
-
-
-
-
-
-
-
 import time_icon from "./icons/clock.svg";
 import arrow_circle_icon from "./icons/arrow_circle.svg";
 
@@ -76,7 +68,7 @@ import business_inteligent_icon from "./icons/business_inteligence.svg"; // Same
 import gestion_centralise_icon from "./icons/Gestion_IT.svg"; // Using IT management icon
 
 //==========IMAGES==================
-
+import IMG0 from "./images/image_1.JPG";
 import IMG1 from "./images/tunnel.jpeg";
 import IMG2 from "./images/image_2.JPG";
 import IMG3 from "./images/forage.jpeg";
@@ -114,6 +106,8 @@ import IMG34 from "./images/image_8.JPG";
 import IMG35 from "./images/it-expert.jpg";
 import IMG36 from "./images/caniveau.png";
 import IMG37 from "./images/image_16.jpg";
+import IMG38 from "./images/caniveau.png";
+import IMG39 from "./images/4490.jpg";
 
 //========== PARTNERS IMAGES ==========
 
@@ -204,12 +198,12 @@ export const ICONS = {
   maintenance_preventive_icon: maintenance_preventive_icon,
   rentabilite_clients_icon: rentabilite_clients_icon,
   satisfaction_clients_icon: satisfaction_clients_icon,
-  
 };
 
 //==========IMAGES==================
 
 export const IMAGES = {
+  IMG0: IMG0,
   IMG1: IMG1,
   IMG2: IMG2,
   IMG3: IMG3,
@@ -246,7 +240,9 @@ export const IMAGES = {
   IMG34: IMG34,
   IMG35: IMG35,
   IMG36: IMG36,
-  IMG37:IMG37
+  IMG37: IMG37,
+  IMG38: IMG38,
+  IMG39: IMG39,
 };
 
 //========== PARTNERS IMAGES ==========

@@ -1048,133 +1048,144 @@
         }
       }
     },
-    "dataProcessing": {
-      "hero": {
-        "title": "IT & DATA PROCESSING",
-        "descriptionLine1": "Because beyond the Cameroonian market, we aim to",
-        "descriptionLine2": "develop the whole of Africa through our services.",
-        "button": "Press Release"
-      },
-      "projects": {
-        "title": "Our IT Projects",
-        "subtitle": "innovation, performance and impact",
-        "description": "Each project presented reflects our commitment to innovation, rigor and customer satisfaction.",
-        "seeMore": "See more",
-        "items": [
-          {
-            "id": 1,
-            "title": "Content Management System (CMS) Software",
-            "excerpt": "We designed and developed a custom content management system (CMS)…",
-            "description": "We designed and developed a custom content management system (CMS), designed to offer simple, fast and fully customizable administration.",
-            "utility": "This solution allows the company to effectively manage its information, services and updates without depending on external technical support",
-            "clientFeedback": "The CMS designed by ElecIT Engineering simplified our content management. The tool is intuitive, fast and perfectly adapted to our needs. A real time-saver on a daily basis.",
-            "clientRole": "General Manager",
-            "date": "06/12/23",
-            "status": "completed"
-          },
-          {
-            "id": 2,
-            "title": "Customer Relationship Management (CRM) Software",
-            "excerpt": "Development of CRM software fully adapted to the company's needs...",
-            "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
-            "utility": "Improvement of customer relationship management and sales tracking",
-            "clientFeedback": "A powerful tool that transformed our customer approach.",
-            "clientRole": "Sales Director",
-            "date": "08/15/23",
-            "status": "completed"
-          },
-          {
-            "id": 3,
-            "title": "Customer Relationship Management (CRM) Software",
-            "excerpt": "Development of CRM software fully adapted to the company's needs...",
-            "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
-            "utility": "Improvement of customer relationship management and sales tracking",
-            "clientFeedback": "A powerful tool that transformed our customer approach.",
-            "clientRole": "Sales Director",
-            "date": "09/20/23",
-            "status": "in progress"
-          }
-        ],
-        "modal": {
-          "category": "IT and DATA PROCESSING",
-          "projectLabel": "Project:",
-          "dateLabel": "Completion date:",
-          "statusLabel": "Project status:",
-          "descriptionLabel": "Project description:",
-          "utilityLabel": "Purpose:",
-          "feedbackLabel": "Client feedback:",
-          "haveProject": "Have a project?",
-          "close": "Close"
-        },
-        "cta": {
-          "title": "Choose support that is",
-          "titleHighlight": "reliable, sustainable and cost-effective.",
-          "description": "\" Contact our after-sales service now to ensure the continuity and efficiency of your installations!\"",
-          "button": "Contact Us"
-        }
-      },
-      "services": {
-        "title": "IT Services",
-        "description": "We offer a complete range of IT services to support your organization's digital transformation, combining performance, security and scalability.",
-        "items": [
-          {
-            "title": "IT Infrastructure Management",
-            "description": "Setup, maintenance and supervision of IT environments (servers, networks, cloud, security, etc.)."
-          },
-          {
-            "title": "Technical Support & Assistance",
-            "description": "Helpdesk service, remote or on-site troubleshooting, preventive and corrective maintenance."
-          },
-          {
-            "title": "Cybersecurity",
-            "description": "Implementation of security policies, firewall, backup, access control, vulnerability audits."
-          },
-          {
-            "title": "Virtualization & Cloud Computing",
-            "description": "Cloud migration, deployment of virtual environments, hybrid solutions."
-          },
-          {
-            "title": "Application Development",
-            "description": "Design and deployment of custom software solutions adapted to your business processes."
-          }
-        ]
-      },
-      "advantages": {
-        "headerTitle": "Key Advantages",
-        "description": "Thanks to our expertise, we support you in your company's digital transformation and help you make better decisions with your data.",
-        "documentationButton": "Documentation",
-        "items": [
-          {
-            "title": "System Reliability",
-            "description": "Stable, high-performance IT infrastructures that are always operational"
-          },
-          {
-            "title": "Enhanced Security",
-            "description": "Complete protection of data and systems against cyber threats."
-          },
-          {
-            "title": "Time Savings",
-            "description": "Task automation and responsive technical support so you can focus on what matters."
-          },
-          {
-            "title": "Cost Optimization",
-            "description": "Reduction of expenses related to maintenance, infrastructure and data management."
-          },
-          {
-            "title": "Smarter Decisions",
-            "description": "Access to clear and structured data to guide your strategic choices."
-          },
-          {
-            "title": "Flexibility and Scalability",
-            "description": "Solutions adapted to your growth and changing needs."
-          },
-          {
-            "title": "Regulatory Compliance",
-            "description": "Compliance with standards (such as GDPR) for legal data management."
-          }
-        ]
-      }
+   "dataProcessing": {
+  "hero": {
+    "title": "IT & DATA PROCESSING",
+    "descriptionLine1": "We help businesses effectively manage their IT systems",
+    "descriptionLine2": "and get the most out of their data.",
+    "button": "Press Release"
+  },
+
+  "projects": {
+    "categories": {
+      "all": "All projects",
+      "smart": "Smart building",
+      "fabrication": "Mechanical manufacturing",
+      "genie": "Civil engineering",
+      "interne": "Internal project"
     },
+    "projectCard": {
+      "seeMore": "See more"
+    },
+    "title": "Our IT Projects",
+    "subtitle": "innovation, performance and impact",
+    "description": "Each project presented reflects our commitment to innovation, rigor and customer satisfaction.",
+    "seeMore": "See more",
+    "items": [
+      {
+        "id": 1,
+        "title": "Content Management System (CMS) Software",
+        "excerpt": "We designed and developed a custom content management system (CMS)…",
+        "description": "We designed and developed a custom content management system (CMS), designed to offer simple, fast and fully customizable administration.",
+        "utility": "This solution allows the company to effectively manage its information, services and updates without depending on external technical support",
+        "clientFeedback": "The CMS designed by ElecIT Engineering simplified our content management. The tool is intuitive, fast and perfectly adapted to our needs. A real time-saver on a daily basis.",
+        "clientRole": "General Manager",
+        "date": "06/12/23",
+        "status": "completed"
+      },
+      {
+        "id": 2,
+        "title": "Customer Relationship Management (CRM) Software",
+        "excerpt": "Development of CRM software fully adapted to the company's needs...",
+        "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
+        "utility": "Improvement of customer relationship management and sales tracking",
+        "clientFeedback": "A powerful tool that transformed our customer approach.",
+        "clientRole": "Sales Director",
+        "date": "08/15/23",
+        "status": "completed"
+      },
+      {
+        "id": 3,
+        "title": "Customer Relationship Management (CRM) Software",
+        "excerpt": "Development of CRM software fully adapted to the company's needs...",
+        "description": "Development of CRM software fully adapted to the company's needs to manage customer relationships.",
+        "utility": "Improvement of customer relationship management and sales tracking",
+        "clientFeedback": "A powerful tool that transformed our customer approach.",
+        "clientRole": "Sales Director",
+        "date": "09/20/23",
+        "status": "in progress"
+      }
+    ],
+    "modal": {
+      "category": "IT and DATA PROCESSING",
+      "projectLabel": "Project:",
+      "dateLabel": "Completion date:",
+      "statusLabel": "Project status:",
+      "descriptionLabel": "Project description:",
+      "utilityLabel": "Purpose:",
+      "feedbackLabel": "Client feedback:",
+      "haveProject": "Have a project?",
+      "close": "Close"
+    },
+    "cta": {
+      "title": "Choose support that is",
+      "titleHighlight": "reliable, sustainable and cost-effective.",
+      "description": "\" Contact our after-sales service now to ensure the continuity and efficiency of your installations!\"",
+      "button": "Contact Us"
+    }
+  },
+  "services": {
+    "title": "IT Services",
+    "description": "We offer a complete range of IT services to support your organization's digital transformation, combining performance, security and scalability.",
+    "items": [
+      {
+        "title": "IT Infrastructure Management",
+        "description": "Setup, maintenance and supervision of IT environments (servers, networks, cloud, security, etc.)."
+      },
+      {
+        "title": "Technical Support & Assistance",
+        "description": "Helpdesk service, remote or on-site troubleshooting, preventive and corrective maintenance."
+      },
+      {
+        "title": "Cybersecurity",
+        "description": "Implementation of security policies, firewall, backup, access control, vulnerability audits."
+      },
+      {
+        "title": "Virtualization & Cloud Computing",
+        "description": "Cloud migration, deployment of virtual environments, hybrid solutions."
+      },
+      {
+        "title": "Application Development",
+        "description": "Design and deployment of custom software solutions adapted to your business processes."
+      }
+    ]
+  },
+  "advantages": {
+    "headerTitle": "Key Advantages",
+    "description": "Thanks to our expertise, we support you in your company's digital transformation and help you make better decisions with your data.",
+    "documentationButton": "Documentation",
+    "items": [
+      {
+        "title": "System Reliability",
+        "description": "Stable, high-performance IT infrastructures that are always operational"
+      },
+      {
+        "title": "Enhanced Security",
+        "description": "Complete protection of data and systems against cyber threats."
+      },
+      {
+        "title": "Time Savings",
+        "description": "Task automation and responsive technical support so you can focus on what matters."
+      },
+      {
+        "title": "Cost Optimization",
+        "description": "Reduction of expenses related to maintenance, infrastructure and data management."
+      },
+      {
+        "title": "Smarter Decisions",
+        "description": "Access to clear and structured data to guide your strategic choices."
+      },
+      {
+        "title": "Flexibility and Scalability",
+        "description": "Solutions adapted to your growth and changing needs."
+      },
+      {
+        "title": "Regulatory Compliance",
+        "description": "Compliance with standards (such as GDPR) for legal data management."
+      }
+    ]
+  }
+},
     "fabriMeca": {
       "hero": {
         "title1": "Mechanical & Metallic Fabrication",

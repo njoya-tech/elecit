@@ -225,7 +225,7 @@ const BureauCards = () => {
 
           {/* Background Image */}
           <img
-            src={IMAGES.IMG1}
+            src={IMAGES.IMG0}
             alt="Chantier de construction d'un hangar"
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"

@@ -194,7 +194,7 @@ const SavGreenCards = () => {
   hover:shadow-2xl transition-shadow duration-300 "
               >
                 <img
-                  src={IMAGES.IMG5}
+                  src={IMAGES.IMG39}
                   alt="IT Services Illustration"
                   className="w-full h-[350px] md:h-[300px] object-cover object-bottom"
                 />

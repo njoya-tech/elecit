@@ -1393,132 +1393,143 @@
     }
   },
   "dataProcessing": {
-    "hero": {
-      "title": "IT & DATENVERARBEITUNG",
-      "descriptionLine1": "Denn über den kamerunischen Markt hinaus wollen wir",
-      "descriptionLine2": "ganz Afrika durch unsere Dienstleistungen entwickeln.",
-      "button": "Pressemitteilung"
+  "hero": {
+    "title": "IT & DATENVERARBEITUNG",
+    "descriptionLine1": "Wir helfen Unternehmen, ihre IT-Systeme effektiv zu verwalten",
+    "descriptionLine2": "und das Beste aus ihren Daten herauszuholen.",
+    "button": "Pressemitteilung"
+  },
+
+  "projects": {
+    "categories": {
+      "all": "Alle Projekte",
+      "smart": "Smart Building",
+      "fabrication": "Mechanische Fertigung",
+      "genie": "Tiefbau",
+      "interne": "Internes Projekt"
     },
-    "projects": {
-      "title": "Unsere IT-Projekte",
-      "subtitle": "Innovation, Leistung und Wirkung",
-      "description": "Jedes vorgestellte Projekt spiegelt unser Engagement für Innovation, Präzision und Kundenzufriedenheit wider.",
-      "seeMore": "Mehr anzeigen",
-      "items": [
-        {
-          "id": 1,
-          "title": "Content Management System (CMS) Software",
-          "excerpt": "Wir haben ein maßgeschneidertes Content Management System (CMS) entworfen und entwickelt…",
-          "description": "Wir haben ein maßgeschneidertes Content Management System (CMS) entworfen und entwickelt, das eine einfache, schnelle und vollständig anpassbare Verwaltung bietet.",
-          "utility": "Diese Lösung ermöglicht es dem Unternehmen, seine Informationen, Dienstleistungen und Updates effektiv zu verwalten, ohne von externem technischen Support abhängig zu sein",
-          "clientFeedback": "Das von ElecIT Engineering entwickelte CMS hat unsere Content-Verwaltung vereinfacht. Das Tool ist intuitiv, schnell und perfekt an unsere Bedürfnisse angepasst. Eine echte Zeitersparnis im Alltag.",
-          "clientRole": "Geschäftsführer",
-          "date": "06.12.23",
-          "status": "abgeschlossen"
-        },
-        {
-          "id": 2,
-          "title": "Customer Relationship Management (CRM) Software",
-          "excerpt": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
-          "description": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist, um Kundenbeziehungen zu verwalten.",
-          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Vertriebsverfolgung",
-          "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
-          "clientRole": "Vertriebsleiter",
-          "date": "15.08.23",
-          "status": "abgeschlossen"
-        },
-        {
-          "id": 3,
-          "title": "Customer Relationship Management (CRM) Software",
-          "excerpt": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
-          "description": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist, um Kundenbeziehungen zu verwalten.",
-          "utility": "Verbesserung des Kundenbeziehungsmanagements und der Vertriebsverfolgung",
-          "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
-          "clientRole": "Vertriebsleiter",
-          "date": "20.09.23",
-          "status": "in Bearbeitung"
-        }
-      ],
-      "modal": {
-        "category": "IT und DATENVERARBEITUNG",
-        "projectLabel": "Projekt:",
-        "dateLabel": "Abschlussdatum:",
-        "statusLabel": "Projektstatus:",
-        "descriptionLabel": "Projektbeschreibung:",
-        "utilityLabel": "Zweck:",
-        "feedbackLabel": "Kundenfeedback:",
-        "haveProject": "Haben Sie ein Projekt?",
-        "close": "Schließen"
+    "projectCard": {
+      "seeMore": "Mehr sehen"
+    },
+    "title": "Unsere IT-Projekte",
+    "subtitle": "Innovation, Leistung und Wirkung",
+    "description": "Jedes vorgestellte Projekt spiegelt unser Engagement für Innovation, Genauigkeit und Kundenzufriedenheit wider.",
+    "seeMore": "Mehr sehen",
+    "items": [
+      {
+        "id": 1,
+        "title": "Content Management System (CMS) Software",
+        "excerpt": "Wir haben ein maßgeschneidertes Content Management System (CMS) entwickelt…",
+        "description": "Wir haben ein maßgeschneidertes Content Management System (CMS) entwickelt, das eine einfache, schnelle und vollständig anpassbare Verwaltung bietet.",
+        "utility": "Diese Lösung ermöglicht es dem Unternehmen, seine Informationen, Dienste und Updates effektiv zu verwalten, ohne auf externen technischen Support angewiesen zu sein",
+        "clientFeedback": "Das von ElecIT Engineering entwickelte CMS hat unser Content Management vereinfacht. Das Tool ist intuitiv, schnell und perfekt auf unsere Bedürfnisse zugeschnitten. Eine echte Zeitersparnis im Alltag.",
+        "clientRole": "Geschäftsführer",
+        "date": "12.06.23",
+        "status": "abgeschlossen"
       },
-      "cta": {
-        "title": "Wählen Sie eine Unterstützung, die",
-        "titleHighlight": "zuverlässig, nachhaltig und wirtschaftlich ist.",
-        "description": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
-        "button": "Kontaktieren Sie uns"
+      {
+        "id": 2,
+        "title": "Customer Relationship Management (CRM) Software",
+        "excerpt": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+        "description": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist, um Kundenbeziehungen zu verwalten.",
+        "utility": "Verbesserung des Kundenbeziehungsmanagements und der Vertriebsverfolgung",
+        "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
+        "clientRole": "Vertriebsleiter",
+        "date": "15.08.23",
+        "status": "abgeschlossen"
+      },
+      {
+        "id": 3,
+        "title": "Customer Relationship Management (CRM) Software",
+        "excerpt": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist...",
+        "description": "Entwicklung einer CRM-Software, die vollständig an die Bedürfnisse des Unternehmens angepasst ist, um Kundenbeziehungen zu verwalten.",
+        "utility": "Verbesserung des Kundenbeziehungsmanagements und der Vertriebsverfolgung",
+        "clientFeedback": "Ein leistungsstarkes Tool, das unseren Kundenansatz transformiert hat.",
+        "clientRole": "Vertriebsleiter",
+        "date": "20.09.23",
+        "status": "in Bearbeitung"
       }
+    ],
+    "modal": {
+      "category": "IT und DATENVERARBEITUNG",
+      "projectLabel": "Projekt:",
+      "dateLabel": "Abschlussdatum:",
+      "statusLabel": "Projektstatus:",
+      "descriptionLabel": "Projektbeschreibung:",
+      "utilityLabel": "Zweck:",
+      "feedbackLabel": "Kundenfeedback:",
+      "haveProject": "Haben Sie ein Projekt?",
+      "close": "Schließen"
     },
-    "services": {
-      "title": "IT-Dienstleistungen",
-      "description": "Wir bieten ein umfassendes Angebot an IT-Dienstleistungen zur Unterstützung der digitalen Transformation Ihrer Organisation und kombinieren dabei Leistung, Sicherheit und Skalierbarkeit.",
-      "items": [
-        {
-          "title": "IT-Infrastrukturmanagement",
-          "description": "Einrichtung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
-        },
-        {
-          "title": "Technischer Support & Assistenz",
-          "description": "Helpdesk-Service, Remote- oder Vor-Ort-Fehlerbehebung, präventive und korrektive Wartung."
-        },
-        {
-          "title": "Cybersicherheit",
-          "description": "Implementierung von Sicherheitsrichtlinien, Firewall, Backup, Zugriffskontrolle, Schwachstellenaudits."
-        },
-        {
-          "title": "Virtualisierung & Cloud Computing",
-          "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, Hybridlösungen."
-        },
-        {
-          "title": "Anwendungsentwicklung",
-          "description": "Design und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
-        }
-      ]
-    },
-    "advantages": {
-      "headerTitle": "Hauptvorteile",
-      "description": "Dank unserer Expertise unterstützen wir Sie bei der digitalen Transformation Ihres Unternehmens und helfen Ihnen, bessere Entscheidungen mit Ihren Daten zu treffen.",
-      "documentationButton": "Dokumentation",
-      "items": [
-        {
-          "title": "Systemzuverlässigkeit",
-          "description": "Stabile, leistungsstarke IT-Infrastrukturen, die immer betriebsbereit sind"
-        },
-        {
-          "title": "Erhöhte Sicherheit",
-          "description": "Vollständiger Schutz von Daten und Systemen vor Cyber-Bedrohungen."
-        },
-        {
-          "title": "Zeitersparnis",
-          "description": "Aufgabenautomatisierung und reaktionsschneller technischer Support, damit Sie sich auf das Wesentliche konzentrieren können."
-        },
-        {
-          "title": "Kostenoptimierung",
-          "description": "Reduzierung der Ausgaben im Zusammenhang mit Wartung, Infrastruktur und Datenverwaltung."
-        },
-        {
-          "title": "Intelligentere Entscheidungen",
-          "description": "Zugang zu klaren und strukturierten Daten zur Steuerung Ihrer strategischen Entscheidungen."
-        },
-        {
-          "title": "Flexibilität und Skalierbarkeit",
-          "description": "Lösungen, die an Ihr Wachstum und sich ändernde Bedürfnisse angepasst sind."
-        },
-        {
-          "title": "Einhaltung von Vorschriften",
-          "description": "Einhaltung von Standards (wie DSGVO) für eine rechtskonforme Datenverwaltung."
-        }
-      ]
+    "cta": {
+      "title": "Wählen Sie Unterstützung, die",
+      "titleHighlight": "zuverlässig, nachhaltig und kostengünstig ist.",
+      "description": "\" Kontaktieren Sie jetzt unseren Kundendienst, um die Kontinuität und Effizienz Ihrer Installationen zu gewährleisten!\"",
+      "button": "Kontaktieren Sie uns"
     }
   },
+  "services": {
+    "title": "IT-Dienstleistungen",
+    "description": "Wir bieten ein umfassendes Angebot an IT-Dienstleistungen zur Unterstützung der digitalen Transformation Ihres Unternehmens, die Leistung, Sicherheit und Skalierbarkeit kombinieren.",
+    "items": [
+      {
+        "title": "IT-Infrastrukturmanagement",
+        "description": "Einrichtung, Wartung und Überwachung von IT-Umgebungen (Server, Netzwerke, Cloud, Sicherheit usw.)."
+      },
+      {
+        "title": "Technischer Support & Assistenz",
+        "description": "Helpdesk-Service, Fernwartung oder vor Ort, vorbeugende und korrektive Wartung."
+      },
+      {
+        "title": "Cybersicherheit",
+        "description": "Implementierung von Sicherheitsrichtlinien, Firewall, Backup, Zugriffskontrolle, Schwachstellenaudits."
+      },
+      {
+        "title": "Virtualisierung & Cloud Computing",
+        "description": "Cloud-Migration, Bereitstellung virtueller Umgebungen, hybride Lösungen."
+      },
+      {
+        "title": "Anwendungsentwicklung",
+        "description": "Design und Bereitstellung maßgeschneiderter Softwarelösungen, die an Ihre Geschäftsprozesse angepasst sind."
+      }
+    ]
+  },
+  "advantages": {
+    "headerTitle": "Hauptvorteile",
+    "description": "Dank unserer Expertise unterstützen wir Sie bei der digitalen Transformation Ihres Unternehmens und helfen Ihnen, bessere Entscheidungen mit Ihren Daten zu treffen.",
+    "documentationButton": "Dokumentation",
+    "items": [
+      {
+        "title": "Systemzuverlässigkeit",
+        "description": "Stabile, leistungsstarke IT-Infrastrukturen, die immer betriebsbereit sind"
+      },
+      {
+        "title": "Verbesserte Sicherheit",
+        "description": "Vollständiger Schutz von Daten und Systemen vor Cyber-Bedrohungen."
+      },
+      {
+        "title": "Zeitersparnis",
+        "description": "Aufgabenautomatisierung und reaktionsschneller technischer Support, damit Sie sich auf das Wesentliche konzentrieren können."
+      },
+      {
+        "title": "Kostenoptimierung",
+        "description": "Reduzierung der Ausgaben für Wartung, Infrastruktur und Datenmanagement."
+      },
+      {
+        "title": "Intelligentere Entscheidungen",
+        "description": "Zugang zu klaren und strukturierten Daten zur Steuerung Ihrer strategischen Entscheidungen."
+      },
+      {
+        "title": "Flexibilität und Skalierbarkeit",
+        "description": "Lösungen, die an Ihr Wachstum und sich ändernde Anforderungen angepasst sind."
+      },
+      {
+        "title": "Einhaltung gesetzlicher Vorschriften",
+        "description": "Einhaltung von Standards (wie DSGVO) für eine rechtskonforme Datenverwaltung."
+      }
+    ]
+  }
+},
   "controlAccess": {
     "hero": {
       "title": "Zugangskontrolle & Sicherheit",

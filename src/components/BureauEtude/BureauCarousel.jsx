@@ -18,11 +18,11 @@ const BureauCarousel = () => {
     title: project.title,
     image: [
       IMAGES.IMG1,
-      IMAGES.IMG2,
+      IMAGES.IMG38,
       IMAGES.IMG3,
       IMAGES.IMG4,
       IMAGES.IMG5,
-      IMAGES.IMG6,
+     
     ][index],
   }));
 
