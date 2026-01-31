@@ -1783,6 +1783,32 @@
         "step5Title": "Decision making",
         "step5Description": "The selected candidate(s) will be called back for a job offer."
       },
+
+            "recruitment": {
+        "titleRound": "No offers at the moment",
+        "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
+        "buttonText": "Apply here",
+        "heroTitle1": "For job seekers,",
+        "heroTitle2": "we recruit",
+        "heroSubtitle": "Join a young and talented team and contribute with your expertise to a vision focused on technological innovation, professionalism and progress.",
+        "processTitle": "Recruitment process",
+        "step1Title": "Attachments",
+        "step1Description": "We evaluate the compliance of your CV (in French and English), cover letter and diplomas.",
+        "step2Title": "1st Interview",
+        "step2Description": "A phone interview is conducted beforehand to get to know you better.",
+        "step3Title": "2nd Interview",
+        "step3Description": "An in-person interview will take place between managers and you on various topics.",
+        "step4Title": "Practical case",
+        "step4Description": "Candidates may be given a test to measure their technical skills.",
+        "step5Title": "Decision making",
+        "step5Description": "The selected candidate(s) will be called back for a job offer."
+      },
+
+
+
+
+
+
       "jobOffers": {
         "previous": "Previous",
         "next": "Next",

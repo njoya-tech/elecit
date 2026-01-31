@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next'
 
 const Carriere = () => {
   const { i18n }= useTranslation();
+  const { t } = useTranslation();
   const [jobOffersData, setJobOffersData ] = useState([]);
   const [ loading, setLoading] = useState(true)
 
@@ -70,9 +71,9 @@ const Carriere = () => {
         {/* ✅ HERO avec margins */}
         <section className="px-4 sm:px-6 md:px-8 lg:px-20">
           <RecruitmentHero
-            title1="recruitment.heroTitle1"
-            title2="recruitment.heroTitle2"
-            subtitle="recruitment.heroSubtitle"
+            title1={t("recruitment.heroTitle1")}
+            title2={t('recruitment.heroTitle2')}
+            subtitle={t("recruitment.heroSubtitle")}
             bgImage={car}
           />
         </section>

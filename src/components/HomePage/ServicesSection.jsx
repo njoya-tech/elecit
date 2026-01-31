@@ -175,7 +175,7 @@ const handleSeeMore = (serviceTitle, index) => {
         >
             {/* Bannière avec fond noir */}
             <div 
-                className="absolute top-0 left-0 w-full h-60"
+                className="absolute top-0 left-0 w-full h-70"
                 style={{ backgroundColor: MY_COLORS.black }} 
             >
                 <div className="max-w-9xl mx-auto py-30 px-4 text-center h-full flex items-end justify-center">
