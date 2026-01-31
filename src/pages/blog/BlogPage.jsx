@@ -1,16 +1,26 @@
 import React, { useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import NavBar from "../../components/features/NavBar.jsx";
 import Footer from "../../components/features/Footer.jsx";
-import BlogHero from '../../components/Blog/BlogHero.jsx';
-import BlogCards from '../../components/Blog/BlogCards.jsx';
-import BlogDetail from '../../components/Blog/BlogDetail.jsx';
+import BlogHero from "../../components/Blog/BlogHero.jsx";
+import BlogCards from "../../components/Blog/BlogCards.jsx";
+import BlogDetail from "../../components/Blog/BlogDetail.jsx";
 
 const BlogPage = () => {
-  const [selectedPost, setSelectedPost] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('Tous les postes');
+  const { postId } = useParams(); // Get postId from URL
+  const navigate = useNavigate(); // For navigation
+  const [activeCategory, setActiveCategory] = useState("Tous les postes");
 
+  // Handle when a blog card is clicked
+  const handlePostClick = (clickedPostId) => {
+    navigate(`/blog/${clickedPostId}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Handle going back to blog list
   const handleBack = (category) => {
-    setSelectedPost(null);
+    navigate("/blog");
+    window.scrollTo({ top: 0, behavior: "smooth" });
     // If category is provided, set it as active
     if (category) {
       setActiveCategory(category);
@@ -34,16 +44,13 @@ const BlogPage = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
           <section className="py-8 sm:py-10 md:py-12 lg:py-16">
             {/* CONDITIONAL RENDERING: Show BlogDetail OR BlogCards */}
-            {selectedPost ? (
-              // If selectedPost has a value, show detail page
-              <BlogDetail 
-                postId={selectedPost} 
-                onBack={handleBack}
-              />
+            {postId ? (
+              // If postId exists in URL, show detail page
+              <BlogDetail postId={postId} onBack={handleBack} />
             ) : (
-              // If selectedPost is null, show cards list
-              <BlogCards 
-                onPostClick={(postId) => setSelectedPost(postId)}
+              // If no postId in URL, show cards list
+              <BlogCards
+                onPostClick={handlePostClick}
                 initialCategory={activeCategory}
               />
             )}
@@ -57,6 +64,6 @@ const BlogPage = () => {
       </main>
     </div>
   );
-}
+};
 
-export default BlogPage
+export default BlogPage;

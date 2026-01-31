@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -8,7 +9,6 @@ import {
 } from "../../services/blog.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import { motion } from "framer-motion";
-
 
 const BlogContact = ({ onPostClick }) => {
   const { t, i18n } = useTranslation();
@@ -155,26 +155,26 @@ const BlogContact = ({ onPostClick }) => {
   }
 
   const slideDown = {
-  hidden: { opacity: 0, y: -50 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
-const cardStagger = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-      delay: i * 0.15, // Stagger cards by 0.15s each
-    }
-  })
-};
+  const cardStagger = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+        delay: i * 0.15, // Stagger cards by 0.15s each
+      },
+    }),
+  };
 
   return (
     <section
@@ -185,20 +185,20 @@ const cardStagger = {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
-  className="mb-8 sm:mb-10 md:mb-12 text-center px-2"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={slideDown}
->
-  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight sm:leading-snug">
-    {t("contact.blog.title")}{" "}
-    <span className="text-[#00729B]">
-      {t("contact.blog.highlight")}
-    </span>{" "}
-    {t("contact.blog.title2")}
-  </h2>
-</motion.div>
+          className="mb-8 sm:mb-10 md:mb-12 text-center px-2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={slideDown}
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight sm:leading-snug">
+            {t("contact.blog.title")}{" "}
+            <span className="text-[#00729B]">
+              {t("contact.blog.highlight")}
+            </span>{" "}
+            {t("contact.blog.title2")}
+          </h2>
+        </motion.div>
 
         {/* Cards wrapper */}
         <div className="relative px-4 sm:px-0">
@@ -209,17 +209,17 @@ const cardStagger = {
               animate ? "-translate-x-4 opacity-0" : "translate-x-0 opacity-100"
             }`}
           >
-           {visiblePosts.map((post, index) => (
-  <motion.article
-    key={`${post.id}-${i18n.language}`}
-    onClick={() => handlePostClick(post.id)}
-    className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8 cursor-pointer"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, amount: 0.3 }}
-    custom={index}
-    variants={cardStagger}
-  >
+            {visiblePosts.map((post, index) => (
+              <motion.article
+                key={`${post.id}-${i18n.language}`}
+                onClick={() => handlePostClick(post.id)}
+                className="relative bg-white border border-[#00729B] rounded-md shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 mt-8 cursor-pointer"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                custom={index}
+                variants={cardStagger}
+              >
                 {/* Number badge */}
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
                   <div className="h-12 w-12 rounded-full bg-[#00729B] text-white flex items-center justify-center text-lg font-bold shadow-md">
