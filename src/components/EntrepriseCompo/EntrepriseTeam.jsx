@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
@@ -8,6 +9,7 @@ import { motion } from "framer-motion";
 const EntrepriseTeam = () => {
   const { t } = useTranslation();
   const members = t('entreprise.entrepriseTeam.members', { returnObjects: true });
+   const [showVideo, setShowVideo] = useState(false);
 
   const carouselSlides = [
     { image: IMAGES.IMG21, title: members[0].title },
@@ -111,10 +113,40 @@ const EntrepriseTeam = () => {
             </ul>
 
             <div className="hidden lg:block">
-              <CTAButton onClick={() => alert("Video clicked!")}>
+              <CTAButton onClick={() => setShowVideo(true)}>
                 {t('entreprise.entrepriseTeam.button')}
               </CTAButton>
             </div>
+
+            
+          {showVideo && (
+            <div
+              className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+              onClick={() => setShowVideo(false)}
+            >
+              {/* Video Container */}
+              <div
+                className="relative w-[90%] max-w-3xl aspect-video bg-black rounded-xl overflow-hidden shadow-xl"
+                onClick={(e) => e.stopPropagation()}
+               >
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowVideo(false)}
+                  className="absolute top-2 right-2 text-white text-3xl z-10"
+                 >
+                  &times;
+                </button>
+
+                <iframe
+                  src="https://www.youtube.com/embed/z757oh3KTYM?autoplay=1"
+                  title="YouTube video"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          )}
           </motion.div>
 
           {/* RIGHT SIDE - Carousel */}
