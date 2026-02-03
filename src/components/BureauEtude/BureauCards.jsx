@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { use } from "react";
 import { useTranslation } from "react-i18next";
 import { ICONS, IMAGES } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const BureauCards = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const cards = t("bureau.cards.items", { returnObjects: true });
 
@@ -67,7 +69,7 @@ const BureauCards = () => {
       className="w-full py-8 md:py-12 lg:py-16"
       style={{ backgroundColor: MY_COLORS.white }}
       aria-labelledby="services-heading"
-    >
+     >
       {/* TOP SECTION - Helmet + Title + Description */}
       <motion.div
         className="max-w-[1200px] mx-auto lg:mr-36 px-4 sm:px-6 mb-8 md:mb-12"
@@ -117,7 +119,7 @@ const BureauCards = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={slideDown}
-      >
+       >
         <div
           className="w-full h-[180px] sm:h-[200px] md:h-[280px] relative 
         overflow-hidden rounded-xl md:rounded-2xl shadow-xl"
@@ -267,7 +269,7 @@ const BureauCards = () => {
                   e.currentTarget.style.backgroundColor = "white";
                   e.currentTarget.style.color = "#0f172a";
                 }}
-                onClick={() => alert("Navigate to projects")}
+                onClick={() => navigate("/projets")}
               >
                 {t("bureau.cards.project.button")}
               </button>

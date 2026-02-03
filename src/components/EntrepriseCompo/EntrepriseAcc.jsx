@@ -6,10 +6,13 @@ import { Plus, Minus } from "lucide-react";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const EntrepriseAcc = () => {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(0);
+
+  const navigate  = useNavigate();
 
   const faqData = t("entreprise.entrepriseAcc.items", { returnObjects: true });
 
@@ -260,7 +263,7 @@ const EntrepriseAcc = () => {
                 />
 
                 <CTAButton
-                  onClick={() => alert("Contact clicked!")}
+                  onClick={() => navigate("/contacts")}
                   className="whitespace-nowrap min-w-fit"
                 >
                   {t("entreprise.entrepriseAcc.contactButton")}

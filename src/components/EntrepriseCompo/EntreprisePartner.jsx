@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect, useRef } from "react";
 import { MY_COLORS } from "../../constants/colors";
@@ -5,6 +6,7 @@ import { PARTNERS, ICONS } from "../../asset/assets.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 // ============================================================================
 // CONSTANTS
@@ -78,6 +80,7 @@ const animationStyles = `
 const ArrowButton = ({ direction, onClick, disabled }) => {
   const isLeft = direction === "left";
   const arrowPath = isLeft ? "M15 18l-6-6 6-6" : "M9 18l6-6-6-6";
+ 
 
   return (
     <button
@@ -151,6 +154,8 @@ const EnterprisePartners = () => {
   const [isExiting, setIsExiting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const timeoutRef = useRef(null);
+   const navigate  = useNavigate();
+  
 
   const partners = [
     { id: 1, logo: PARTNERS.partner1, alt: "Partner company logo 1" },
@@ -384,7 +389,7 @@ const EnterprisePartners = () => {
 
                 <CTAButton
                   className="absolute top-10 md:top-15 md:w-60"
-                  onClick={() => alert("Contact clicked!")}
+                  onClick={() => navigate("/contacts")}
                 >
                   {t('entreprise.entreprisePartner.ctaButton')}
                 </CTAButton>
