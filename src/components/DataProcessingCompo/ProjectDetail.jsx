@@ -74,6 +74,35 @@ const ProjectDetail = () => {
           className="relative w-full flex flex-col items-center px-4 md:px-6 lg:px-4"
           style={{ paddingTop: "80px", paddingBottom: "60px" }}
         >
+
+           <button
+            onClick={() => navigate("/solutions/it-data-processing")}
+            className="flex items-center gap-2 hover:opacity-70 transition-opacity mb-6 md:mb-0 md:absolute"
+            style={{
+              top: window.innerWidth >= 768 ? "40px" : "auto",
+              left: window.innerWidth >= 768 ? "50px" : "auto",
+            }}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke={MY_COLORS.black}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 12H5" />
+              <path d="M12 19l-7-7 7-7" />
+            </svg>
+            <span
+              className="font-semibold text-sm"
+              style={{ color: MY_COLORS.black }}
+            >
+              {backButton}
+            </span>
+          </button>
           {/* Gear icon — hidden on mobile, visible on tablet/desktop */}
           <div
             className="hidden md:block absolute animate-spin"
@@ -209,34 +238,7 @@ const ProjectDetail = () => {
         {/* ═══════════════════════════════════════════════ */}
         <section className="w-full mx-auto max-w-full md:max-w-[90%] lg:max-w-[1100px] px-4 md:px-8 lg:px-12 pb-8 md:pb-10 lg:pb-12">
           {/* Back arrow - Repositioned for mobile */}
-          <button
-            onClick={() => navigate("/solutions/it-data-processing")}
-            className="flex items-center gap-2 hover:opacity-70 transition-opacity mb-6 md:mb-0 md:absolute"
-            style={{
-              top: window.innerWidth >= 768 ? "40px" : "auto",
-              left: window.innerWidth >= 768 ? "50px" : "auto",
-            }}
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke={MY_COLORS.black}
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M19 12H5" />
-              <path d="M12 19l-7-7 7-7" />
-            </svg>
-            <span
-              className="font-semibold text-sm"
-              style={{ color: MY_COLORS.black }}
-            >
-              {backButton}
-            </span>
-          </button>
+         
 
           {/* Wrapper */}
           <div className="relative">
@@ -298,12 +300,13 @@ const ProjectDetail = () => {
               <div className="w-full md:w-1/2 lg:w-[55%] min-h-[250px] md:min-h-[320px] lg:min-h-[380px]">
                 {projectId === "3" ? (
                   <video
+                  type="video/mp4"
                     src={solutionImages[projectId]}
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover"controls
                   />
                 ) : (
                   <img
