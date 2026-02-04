@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import CTAButton from "../CTA/CTAButton.jsx";
-import ProjectModal from "./ProjectModal.jsx";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const CardProject = () => {
   const { t } = useTranslation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
 
-  const visiblePosts = t("dataProcessing.projects.items", {
-    returnObjects: true,
-  });
+  // Updated to use the same data source as ProjectDetail
+  const visiblePosts = [
+    { id: "1", ...t("dataProcessing.projectDetail.projects.1", { returnObjects: true }) },
+    { id: "2", ...t("dataProcessing.projectDetail.projects.2", { returnObjects: true }) },
+    { id: "3", ...t("dataProcessing.projectDetail.projects.3", { returnObjects: true }) },
+  ];
 
   return (
     <>
@@ -47,7 +47,6 @@ const CardProject = () => {
           <h3
             style={{
               color: MY_COLORS.secondaryGreen,
-              
             }}
             className="text-white font-extrabold 
             text-[28px] sm:text-[32px] md:text-3xl 
@@ -106,18 +105,18 @@ const CardProject = () => {
                     </h3>
 
                     <p className="text-sm text-black-600 mb-4 flex-1 text-center">
-                      {post.excerpt}
+                      {post.excerpt || post.description}
                     </p>
 
+                    {/* ── Voir plus → navigates to project detail page ── */}
                     <button
                       className="mt-auto inline-flex items-center 
                   justify-center px-6 py-2 rounded-full bg-[#000000]
                    text-white text-sm font-semibold hover:bg-[#f7f7f7] shadow-md hover:text-green-700
                    transition-all duration-300"
-                      onClick={() => {
-                        setSelectedProject(post);
-                        setIsModalOpen(true);
-                      }}
+                      onClick={() =>
+                        navigate(`/solutions/it-data-processing/${post.id}`)
+                      }
                     >
                       {t("dataProcessing.projects.seeMore")}
                     </button>
@@ -128,12 +127,6 @@ const CardProject = () => {
           </div>
         </div>
       </section>
-
-      <ProjectModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        project={selectedProject}
-      />
 
       {/* ============================================ */}
       {/* CTA SECTION WITH BACKGROUND                 */}
