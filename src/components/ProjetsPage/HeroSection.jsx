@@ -6,10 +6,36 @@ import { MY_COLORS } from '../../utils/colors';
 import {motion} from 'framer-motion'
 import fi from '../../assets/fi.svg'
 
+import { getFileUrl } from '../../services/api/directus';
+
 
 const HeroSection = () => {
   const { t } = useTranslation(); 
   const [isHovered, setIsHovered] = useState(false);
+
+
+
+ const handleOpenAndDownload = async () => {
+  const fileId = '7b508958-b13a-4f90-bae2-896bf3842c77';
+  const pdfUrl = getFileUrl(fileId);
+  
+  try {
+    // Récupérer le PDF
+    const response = await fetch(pdfUrl);
+    const blob = await response.blob();
+    
+    // Créer une URL temporaire (blob://)
+    const blobUrl = window.URL.createObjectURL(blob);
+    
+    // Ouvrir dans un nouvel onglet (l'URL sera blob://...)
+    window.open(blobUrl, '_blank');
+    
+    // Optionnel : nettoyer après quelques secondes
+    setTimeout(() => window.URL.revokeObjectURL(blobUrl), 10000);
+  } catch (error) {
+    console.error('Erreur lors du chargement du PDF:', error);
+  }
+};
   
   return (
     <div 
@@ -59,7 +85,7 @@ const HeroSection = () => {
 
             <div className='flex flex-row items-center gap-2'>
                <button 
-              className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3.5 lg:px-12 lg:py-4 border-2 text-sm sm:text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-lg"
+              className="lg:translate-x-8 px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3.5 lg:px-12 lg:py-4 border-2 text-sm sm:text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-lg"
               style={{
                 borderColor: MY_COLORS.secondaryGreen,
                 color: MY_COLORS.secondaryGreen,
@@ -73,6 +99,7 @@ const HeroSection = () => {
                 e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.color = MY_COLORS.secondaryGreen;
               }}
+              onClick={handleOpenAndDownload}
             >
               {t('projet.buttonText')}
             </button>
@@ -94,7 +121,7 @@ const HeroSection = () => {
                   <img 
                     src={fi} 
                     alt="Fleche"
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain"
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain ml-7"
                   />
                 </motion.div>
 
