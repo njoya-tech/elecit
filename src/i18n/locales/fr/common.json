@@ -1429,7 +1429,7 @@
     }
   },
 
- "dataProcessing": {
+"dataProcessing": {
   "hero": {
     "title": "IT & TRAITEMENT DES DONNÉES",
     "descriptionLine1": "Nous aidons les entreprises à gérer efficacement leurs systèmes",
@@ -1452,52 +1452,6 @@
     "subtitle": "innovation, performance et impact",
     "description": "Chaque projet présenté reflète notre engagement envers l'innovation, la rigueur et la satisfaction client.",
     "seeMore": "Voir plus",
-    "items": [
-      {
-        "id": 1,
-        "title": "Logiciel de Content Management System (CMS)",
-        "excerpt": "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure…",
-        "description": "Nous avons conçu et développé un système de gestion de contenu (CMS) sur mesure, pensé pour offrir une administration simple, rapide et totalement personnalisable.",
-        "utility": "Cette solution permet à l'entreprise de gérer efficacement ses informations, ses services et ses mises à jour sans dépendre d'un support technique externe",
-        "clientFeedback": "Le CMS conçu par ElecIT Engineering nous a simplifié la gestion de nos contenus. L'outil est intuitif, rapide et parfaitement adapté à nos besoins. Un vrai gain de temps au quotidien.",
-        "clientRole": "Directeur général",
-        "date": "12/06/23",
-        "status": "terminé"
-      },
-      {
-        "id": 2,
-        "title": "Logiciel de gestion de la relation client(CRM)",
-        "excerpt": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
-        "description": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise pour gérer les relations clients.",
-        "utility": "Amélioration de la gestion de la relation client et du suivi commercial",
-        "clientFeedback": "Un outil performant qui a transformé notre approche client.",
-        "clientRole": "Directeur commercial",
-        "date": "15/08/23",
-        "status": "terminé"
-      },
-      {
-        "id": 3,
-        "title": "Logiciel de gestion de la relation client (CRM)",
-        "excerpt": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise...",
-        "description": "Développement d'un logiciel CRM entièrement adapté aux besoins de l'entreprise pour gérer les relations clients.",
-        "utility": "Amélioration de la gestion de la relation client et du suivi commercial",
-        "clientFeedback": "Un outil performant qui a transformé notre approche client.",
-        "clientRole": "Directeur commercial",
-        "date": "20/09/23",
-        "status": "en cours"
-      }
-    ],
-    "modal": {
-      "category": "IT and DATA PROCESSING",
-      "projectLabel": "Projet :",
-      "dateLabel": "Date de réalisation:",
-      "statusLabel": "Statut du projet:",
-      "descriptionLabel": "Description du projet:",
-      "utilityLabel": "Utilité:",
-      "feedbackLabel": "Retour client:",
-      "haveProject": "Vous avez un projet?",
-      "close": "Fermer"
-    },
     "cta": {
       "title": "Faites le choix d'un accompagnement",
       "titleHighlight": "fiable, durable et rentable.",
@@ -1563,6 +1517,99 @@
       {
         "title": "Conformité réglementaire",
         "description": "Respect des normes (comme le RGPD) pour une gestion des données en toute légalité."
+      }
+    ]
+  },
+  "projectDetail": {
+    "backButton": "Retour",
+    "descriptionTitle": "Description du projet",
+    "dateLabel": "Date de réalisation:",
+    "statusLabel": "Statut du projet:",
+    "resultsTitle": "Résultats",
+    "relatedProjectsTitle": "Projets IT & DATA Processing",
+    "projects": {
+      "1": {
+        "category": "IT and DATA Processing",
+        "title": "Plateforme IoT de Collecte et Centralisation de Données",
+        "excerpt": "Solution logicielle complète pour la supervision centralisée d'infrastructures critiques distribuées géographiquement.",
+        "date": "12/06/23",
+        "status": "terminé",
+        "description": "Développement d'une solution logicielle complète permettant la supervision centralisée d'infrastructures critiques distribuées géographiquement (groupes électrogènes, onduleurs, systèmes de sécurité).",
+        "challengesTitle": "Défis techniques relevés",
+        "challenges": [
+          "Interopérabilité multi-protocoles (Modbus, SNMP, HTTP/REST, MQTT) permettant la communication avec des équipements de marques et générations différentes",
+          "Architecture scalable capable de gérer simultanément des centaines d'équipements distants",
+          "Gestion de la latence réseau et des connexions intermittentes en zones à faible connectivité",
+          "Sécurisation des flux de données entre sites distants et serveur central"
+        ],
+        "solutionTitle": "Solution mise en œuvre",
+        "solutions": [
+          "Développement de connecteurs universels avec système de plugins pour chaque type d'équipement",
+          "Pipeline de prétraitement des données : validation, normalisation, enrichissement et agrégation",
+          "Implémentation d'un Data Warehouse optimisé pour le stockage historique et l'analyse prédictive",
+          "Système de cache et de file d'attente garantissant l'intégrité des données même en cas de perte de connexion"
+        ],
+        "results": "Centralisation de plusieurs équipements répartis sur plusieurs villes, réduction du temps de détection des anomalies, et automatisation complète de la collecte remplaçant les relevés manuels."
+      },
+      "2": {
+        "category": "IT and DATA Processing",
+        "title": "Parc de Dashboard Visualisation et Monitoring",
+        "excerpt": "Suite de tableaux de bord interactifs pour le pilotage en temps réel et l'analyse des performances d'infrastructures énergétiques.",
+        "date": "15/08/23",
+        "status": "terminé",
+        "description": "Développement d'une suite de tableaux de bord interactifs permettant le pilotage en temps réel et l'analyse des performances d'infrastructures énergétiques distribuées.",
+        "challengesTitle": "Besoins identifiés",
+        "challenges": [
+          "Centralisation des données clients provenant de sources multiples (email, téléphone, réseaux sociaux)",
+          "Création d'un pipeline de ventes visuel permettant de suivre chaque opportunité en temps réel",
+          "Intégration avec les outils existants de l'entreprise (ERP, messagerie, CMS)",
+          "Garantir la performance du système avec un volume croissant de données clients"
+        ],
+        "solutionTitle": "Fonctionnalités clés",
+        "solutions": [
+          "Architecture modulaire permettant l'intégration facile avec les systèmes tiers via des API RESTful",
+          "Tableau de bord interactif avec des filtres avancés pour analyser les données clients en temps réel",
+          "Automatisation des tâches répétitives (envoi d'emails, relances, rapports)",
+          "Base de données optimisée avec des index pour garantir des temps de requête rapides"
+        ],
+        "results": "Le CRM a transformé la gestion de la relation client, avec une augmentation de 45% du taux de conversion et une réduction de 30% du temps de suivi commercial."
+      },
+      "3": {
+        "category": "IT and DATA Processing",
+        "title": "Boutique E-commerce Mango Smart",
+        "excerpt": "Plateforme e-commerce spécialisée dans la distribution d'équipements électriques professionnels et grand public.",
+        "date": "06/23",
+        "status": "terminé",
+        "description": "Création d'une plateforme e-commerce spécialisée dans la distribution d'équipements électriques professionnels et grand public (courant fort et faible).",
+        "challengesTitle": "Fonctionnalités développées",
+        "challenges": [
+          "Catalogue produits structuré avec filtres techniques avancés (catégorie, marques, etc.)",
+          "Système de gestion des stocks en temps réel synchronisé avec l'inventaire physique",
+          "Module de calcul automatique des frais de livraison selon le poids et les dimensions des équipements",
+          "Interface d'administration complète pour la gestion des commandes, clients et produits"
+        ],
+        "solutionTitle": "Spécificités techniques",
+        "solutions": [
+          "Design responsive optimisé pour une navigation fluide sur mobile et desktop",
+          "Fiches produits détaillées avec spécifications techniques",
+          "Implémentation d'un système de paiement sécurisé (Mobile Money, cartes bancaires)",
+          "Système de recommandations de produits complémentaires (ex: disjoncteurs compatibles)"
+        ],
+        "results": "Plateforme performante facilitant l'accès aux équipements électriques avec une expérience utilisateur optimisée et une gestion simplifiée pour l'équipe Mango Smart."
+      }
+    },
+    "relatedProjects": [
+      {
+        "id": "3",
+        "title": "Boutique E-commerce Mango Smart"
+      },
+      {
+        "id": "2",
+        "title": "Parc de Dashboard Visualisation et Monitoring"
+      },
+      {
+        "id": "1",
+        "title": "Plateforme IoT de Collecte et Centralisation de Données"
       }
     ]
   }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { HERO, ICONS } from "../../asset/assets";
 import { MY_COLORS } from "../../constants/colors";
