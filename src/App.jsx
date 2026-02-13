@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Routes, Route, HashRouter } from "react-router-dom";
 import MobileBankProject from './components/ProjetsPage/MobileBankProject';
 import ProjetsDetail from './pages/projets/ProjetsDetail';
 
@@ -41,7 +41,7 @@ const JobOffersOnly = lazy(() => import("./pages/job/JobOffersOnly"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <Routes>
       <Suspense
         fallback={
           <div className="min-h-screen flex items-center justify-center">
@@ -95,7 +95,7 @@ function App() {
           <Route path="/carriere/job-only" element={<JobOffersOnly />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </Routes>
   );
 }
 
