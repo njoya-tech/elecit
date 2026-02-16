@@ -47,7 +47,7 @@ const JobOffersOnly = lazy(() => import("./pages/job/JobOffersOnly"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouterRouter>
       <Suspense
         fallback={
           <div className="min-h-screen flex items-center justify-center">
@@ -109,7 +109,7 @@ function App() {
           <Route path="/carriere/job-only" element={<JobOffersOnly />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouterRouter>
   );
 }
 

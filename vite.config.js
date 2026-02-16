@@ -16,7 +16,8 @@ export default defineConfig({
       filename: 'dist/stats.html',
     }),
   ],
-   base: '/', 
+base: '/elecit/',
+
   
   // Performance optimizations
   build: {
