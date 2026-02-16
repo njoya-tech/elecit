@@ -9,6 +9,7 @@ import heroEntreprise from "./hero/entreprise-hero.JPG";
 import heroSav from "./hero/BTM.png";
 import heroSecurity from "./hero/security-hero.JPG";
 import heroControl from "./hero/control_d'access.png";
+import hero_Iot from "./hero/hero_1.jpg"
 
 // ===== ICONS =====
 import formTech from "./icons/form_tech.svg";
@@ -108,6 +109,16 @@ import IMG36 from "./images/caniveau.png";
 import IMG37 from "./images/image_16.jpg";
 import IMG38 from "./images/caniveau.png";
 import IMG39 from "./images/4490.jpg";
+import IMG40 from "./images/mango_accueil.png";
+import IMG41 from "./images/Mango_Site_Parcours.mp4";
+import IMG42 from "./images/description_1.jpg";
+import IMG43 from "./images/description_2.jpg";
+import IMG44 from "./images/description_3.jpg";
+import IMG45 from "./images/description_4.jpg";
+
+import IMG46 from "./images/carousel_1.jpg";
+import IMG47 from "./images/carousel_2.jpg";
+import IMG48 from "./images/screenshot.png";
 
 //========== PARTNERS IMAGES ==========
 
@@ -140,6 +151,8 @@ export const HERO = {
   sav: heroSav,
   security: heroSecurity,
   control: heroControl,
+  hero:hero_Iot,
+  
 };
 
 //==========ICONS==================
@@ -243,6 +256,15 @@ export const IMAGES = {
   IMG37: IMG37,
   IMG38: IMG38,
   IMG39: IMG39,
+  IMG40: IMG40,
+  IMG41: IMG41,
+  IMG42: IMG42,
+  IMG43: IMG43,
+  IMG44: IMG44,
+  IMG45: IMG45,
+  IMG46: IMG46,
+  IMG47: IMG47,
+  IMG48: IMG48,
 };
 
 //========== PARTNERS IMAGES ==========

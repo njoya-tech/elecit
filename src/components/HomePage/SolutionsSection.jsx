@@ -82,7 +82,7 @@ const SolutionCard = ({ solution, onSeeMore, imageSrc }) => {
                 className="flex flex-col items-center w-full 
     bg-white rounded-2xl shadow-xl
     transition-all duration-300 transform hover:shadow-2xl
-    h-[420px]"
+    h-[410px]"
                 style={{ 
                     transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
                     paddingBottom: '2rem'

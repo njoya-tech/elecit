@@ -6,6 +6,7 @@ import ProjetsDetail from './pages/projets/ProjetsDetail';
 // Core pages
 const HomePage = lazy(() => import("./pages/acceuil/HomePage"));
 const ProjetsPage = lazy(() => import("./pages/projets/ProjetsPage"));
+const ProjetsDetail = lazy(() => import("./pages/projets/ProjetsDetail"));
 const Carriere = lazy(() => import("./pages/carriere/Carriere"));
 const Entreprise = lazy(() => import("./pages/l'entreprise/Entreprise"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
@@ -35,6 +36,11 @@ const BureauPage = lazy(() =>
 );
 const SavPage = lazy(() => import("./pages/sav/SavPage"));
 
+// IT Data Processing — Project Detail page
+const ProjectDetail = lazy(() =>
+  import("./components/DataProcessingCompo/ProjectDetail")
+);
+
 // Jobs
 const JobOffers = lazy(() => import("./pages/job/JobOffers"));
 const JobOffersOnly = lazy(() => import("./pages/job/JobOffersOnly"));
@@ -53,7 +59,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/projets" element={<ProjetsPage />} />
           <Route path="/projets/:id" element={<ProjetsDetail />} />
-        <Route path="/carriere" element={<Carriere />} />
+          <Route path="/carriere" element={<Carriere />} />
 
           {/* Solutions */}
           <Route
@@ -68,10 +74,18 @@ function App() {
             path="/solutions/gps-tracking"
             element={<GpsTracking />}
           />
+
+          {/* IT Data Processing — list page */}
           <Route
             path="/solutions/it-data-processing"
             element={<DataProcessing />}
           />
+          {/* IT Data Processing — individual project detail page */}
+          <Route
+            path="/solutions/it-data-processing/:projectId"
+            element={<ProjectDetail />}
+          />
+
           <Route
             path="/solutions/controle-acces-securite"
             element={<ControlPage />}
@@ -100,3 +114,4 @@ function App() {
 }
 
 export default App;
+
