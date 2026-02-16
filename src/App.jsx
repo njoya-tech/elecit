@@ -6,7 +6,7 @@ import ProjetsDetail from './pages/projets/ProjetsDetail';
 // Core pages
 const HomePage = lazy(() => import("./pages/acceuil/HomePage"));
 const ProjetsPage = lazy(() => import("./pages/projets/ProjetsPage"));
-const ProjetsDetail = lazy(() => import("./pages/projets/ProjetsDetail"));
+
 const Carriere = lazy(() => import("./pages/carriere/Carriere"));
 const Entreprise = lazy(() => import("./pages/l'entreprise/Entreprise"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
