@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { ICONS, IMAGES } from "../../asset/assets";
+import { ICONS, IMAGES } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from 'react-i18next';

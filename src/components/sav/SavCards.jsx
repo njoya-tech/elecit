@@ -2,7 +2,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { ICONS, IMAGES } from "../../asset/assets.js";
+import { ICONS, IMAGES } from "../../assets/assets.js";
 import { MY_COLORS } from "../../constants/colors";
 
 const SavCards = () => {

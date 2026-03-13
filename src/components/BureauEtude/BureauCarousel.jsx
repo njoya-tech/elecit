@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { IMAGES, ICONS } from "../../asset/assets";
+import { IMAGES, ICONS } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton";
 import { useNavigate } from "react-router-dom";

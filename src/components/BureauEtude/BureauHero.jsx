@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { ICONS, HERO } from "../../asset/assets";
+import { ICONS, HERO } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors";
 import CTAButton from "../CTA/CTAButton";
 import { motion } from "framer-motion";

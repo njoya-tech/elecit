@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { HERO, ICONS } from "../../asset/assets";
+import { HERO, ICONS } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors.js";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { MY_COLORS } from "../../constants/colors";
-import { PARTNERS, ICONS } from "../../asset/assets.js";
+import { PARTNERS, ICONS } from "../../assets/assets.js";
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { use } from "react";
 import { useTranslation } from "react-i18next";
-import { ICONS, IMAGES } from "../../asset/assets";
+import { ICONS, IMAGES } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";

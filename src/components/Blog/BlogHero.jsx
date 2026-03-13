@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import { ICONS, HERO } from "../../asset/assets.js";
+import { ICONS, HERO } from "../../assets/assets.js";
 import { MY_COLORS } from "../../constants/colors.js";
 import { motion } from "framer-motion";
 

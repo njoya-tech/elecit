@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { MY_COLORS } from "../../constants/colors.js";
-import { ICONS, IMAGES, HERO } from "../../asset/assets.js";
+import { ICONS, IMAGES, HERO } from "../../assets/assets.js";
 import NavBar from "../features/NavBar.jsx";
 import Footer from "../features/Footer.jsx";
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { MY_COLORS } from "../../constants/colors.js";
-import { IMAGES } from "../../asset/assets.js";
+import { IMAGES } from "../../assets/assets.js";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { useTranslation } from 'react-i18next';

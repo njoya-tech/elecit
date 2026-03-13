@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { ICONS, IMAGES } from "../../asset/assets";
+import { ICONS, IMAGES } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { Plus, Minus } from "lucide-react";
 import CTAButton from "../CTA/CTAButton.jsx";

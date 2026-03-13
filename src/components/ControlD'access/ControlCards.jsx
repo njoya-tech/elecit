@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { ICONS, OBJECTS } from "../../asset/assets";
+import { ICONS, OBJECTS } from "../../assets/assets";
 import { MY_COLORS } from "../../constants/colors";
 import { motion } from "framer-motion";
  

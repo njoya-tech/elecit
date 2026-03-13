@@ -1,5 +1,5 @@
 import React from "react";
-import { HERO, ICONS } from "../../asset/assets";
+import { HERO, ICONS } from "../../assets/assets";
 import { MY_COLORS } from "../../utils/colors";
 import CTAButton from "../CTA/CTAButton";
 import { useTranslation } from "react-i18next";
