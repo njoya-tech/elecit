@@ -5,7 +5,7 @@ import rail from '../../assets/rail.svg'
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
-import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
+import { HERO, ICONS, IMAGES } from "../../assets/assets.js";
 import fi from '../../assets/fi.svg'
 import CTAButton from "../CTA/CTAButton.jsx";
 import { useNavigate } from 'react-router-dom';
