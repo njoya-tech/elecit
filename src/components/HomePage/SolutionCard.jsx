@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
-import cercle_interomp from '../../assets/cercle_interomp.svg'
+import {cercle_interomp } from '../../assets'
 
 
 

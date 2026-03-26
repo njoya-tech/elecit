@@ -1,13 +1,11 @@
 import React from 'react'
-import p2 from '../../assets/p2.svg'
-import p3 from '../../assets/p3.svg'
-import rail from '../../assets/rail.svg'
+
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'
-import { HERO, ICONS, IMAGES } from "../../assets/assets.js";
-import fi from '../../assets/fi.svg'
-import CTAButton from "../CTA/CTAButton.jsx";
+import { p2, p3, rail, fi } from '../../assets'
+
+
 import { useNavigate } from 'react-router-dom';
 
 

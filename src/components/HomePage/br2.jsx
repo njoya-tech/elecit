@@ -1,10 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../../assets/logo.svg'
-import g1 from '../../assets/g1.svg'
-import rail from '../../assets/rail.svg'
-import phone from '../../assets/phone.svg'
+import { logo, g1, rail, phone } from '../../assets';
 
 import ContactPopup from './ContactPopup';
 

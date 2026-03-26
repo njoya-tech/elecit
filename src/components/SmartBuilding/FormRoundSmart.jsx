@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import p2 from '../../assets/p2.svg'
-import p3 from '../../assets/p3.svg'
-import rail from '../../assets/rail.svg'
+
+import {p2, p3, rail} from '../../assets'
+
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
-import { motion } from 'framer-motion'
-import { HERO, ICONS, IMAGES } from "../../asset/assets.js";
+
 import { useNavigate } from 'react-router-dom';
 
 // ✅ Animation de rotation identique à EnterprisePartners

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
-import c1 from '../../assets/c1.jpg'
-import c2 from '../../assets/c2.jpg'
-import s3 from '../../assets/s3.jpg'
-import BM3 from '../../assets/new/BM3.png'
-import an2 from '../../assets/new/an2.jpg'
-import an3 from '../../assets/new/an3.jpg'
+import { c1, c2, s3, bm3, an2, an3, cercle_interomp } from '../../assets';
 import { useNavigate } from 'react-router-dom';
-import cercle_interomp from '../../assets/cercle_interomp.svg'
 
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next';

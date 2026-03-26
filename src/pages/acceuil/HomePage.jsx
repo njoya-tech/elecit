@@ -1,40 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React, { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 import NavBar from '../../components/features/NavBar'
 import Footer from '../../components/features/Footer'
 import BlogCarousel from '../../components/HomePage/BlogCaroussel'
 import BlogBanner from '../../components/HomePage/BlogBanner'
 import SmartBuilding from '../../components/HomePage/SmartBuilding'
 import HeroSection from '../../components/HomePage/HeroSection'
-import slide1_home from '../../assets/slide1_home.jpg';
-import slide2_home from '../../assets/slide2_home.jpg';
-import slide3_home from '../../assets/slide3_home.jpg';
-import loca1 from '../../assets/loca1.png';
-import loca2 from '../../assets/loca2.png';
-import ordi1 from '../../assets/ordi1.png';
-import c2 from '../../assets/c2.jpg';
-import st1 from '../../assets/st1.png';
-import st2 from '../../assets/st2.png';
-import st3 from '../../assets/st3.png';
-import s from '../../assets/s.png'
-import phonegps from '../../assets/phonegps.png';
 import ServicesSection from '../../components/HomePage/ServicesSection'
 import RealBanner from '../../components/HomePage/RealBanner'
 import ServicesCarousel from '../../components/HomePage/ServicesCarousel'
 import TrackingPlatformSection from '../../components/HomePage/TrackingPlatformSection'
 import TestimonialsCarousel from '../../components/HomePage/TestimonialsCarousel'
 import SolutionsSection from '../../components/HomePage/SolutionsSection'
-import { useTranslation } from 'react-i18next';
-import an9 from '../../assets/new/an9.jpg'
-import an5 from '../../assets/new/an5.png'
-import BM3 from '../../assets/new/BM3.PNG'
-import an10 from '../../assets/new/an10.jpg'
-import an7 from '../../assets/new/an7.jpg'
-import an8 from '../../assets/new/an8.jpg'
-import an11 from '../../assets/new/an11.jpg'
-import an12 from '../../assets/new/an12.jpeg'
-import {useNavigate} from 'react-router-dom'
-
+import { slide1_home, slide2_home, slide3_home, loca1, loca2, ordi1, c2, st1, st2, st3, s, phonegps, an9, an5, bm3, an10, projet1, an8, an11, an12 } from '../../assets'
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -42,7 +22,7 @@ const HomePage = () => {
   // Services pour ServicesCarousel (ces données restent locales)
   const services = useMemo(() => {
     const servicesData = t('servicesCarousel.services', { returnObjects: true });
-    const serviceImages = [BM3, an5, an8, c2, an10, an9, an7, an12, an11];
+    const serviceImages = [bm3, an5, an8, c2, an10, an9, projet1, an12, an11];
     
     return servicesData.map((service, index) => ({
       ...service,

@@ -3,11 +3,11 @@ import RecruitmentHero from '../../components/Carriere/RecruitmentHero';
 import RecruitmentProcess from '../../components/Carriere/RecruitmentProcess';
 import Footer from '../../components/features/Footer'
 import NavBar from '../../components/features/NavBar';
-import LanguageSwitcher from '../../components/features/LanguageSwitcher';
-import bgImage from '../../assets/bgImage.jpg'
+
 import JobOffersList from '../../components/Carriere/jobOffersList';
 import FormRoundCar from '../../components/Carriere/FormRoundCar';
-import car from '../../assets/car.png'
+import { car } from '../../assets'
+
 import jobOffersServices from '../../services/jobOffers.services';
 import { useTranslation } from 'react-i18next'
 

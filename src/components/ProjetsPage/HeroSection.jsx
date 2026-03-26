@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import projet1 from '../../assets/projet1.JPG';
+import { projet1, fi } from '../../assets';
 import { MY_COLORS } from '../../utils/colors';
 import {motion} from 'framer-motion'
-import fi from '../../assets/fi.svg'
 
 import { getFileUrl } from '../../services/api/directus';
 

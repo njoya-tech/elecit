@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import c1 from '../../assets/c1.jpg'
-import c2 from '../../assets/c2.jpg'
-import c3 from '../../assets/c3.jpg'
-import cercle_interomp from '../../assets/cercle_interomp.svg'
+import {c1, c2, c3 , cercle_interomp } from '../../assets'
+
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion'
 

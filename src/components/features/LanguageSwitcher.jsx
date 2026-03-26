@@ -2,11 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 // CORRECTION: Utiliser ../../assets/ au lieu de ../assets/
-import en from '../../assets/en.png';
-import enn from '../../assets/enn.png'
-import fr from '../../assets/fr.png';
-import all from '../../assets/all.png';
 
+
+import { en, enn , fr , all } from '../../assets'
 const LanguageSwitcher = ({ onLanguageChange }) => {
   const { i18n } = useTranslation();
   console.log("rerender")

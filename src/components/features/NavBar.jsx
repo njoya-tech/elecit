@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom'; // Ajout pour détecter la page courante
-import logo from '../../assets/logo.svg';
+import { logo } from '../../assets';
 import { MY_COLORS } from '../../utils/colors';
 import LanguageSwitcher from './LanguageSwitcher.jsx';
 

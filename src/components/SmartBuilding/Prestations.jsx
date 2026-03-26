@@ -1,15 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion'
-import pres1 from '../../assets/pres1.svg'
-import pres2 from '../../assets/pres2.svg'
-import pres3 from '../../assets/pres3.svg'
-import pres4 from '../../assets/pres4.svg'
-import pres5 from '../../assets/pres5.svg'
-import pres6 from '../../assets/pres6.svg'
-import pres7 from '../../assets/pres7.svg'
-import rail from '../../assets/rail.svg'
-import fi from '../../assets/fi.svg'
+import { pres1, pres2, pres3, pres4, pres5, pres6, pres7, rail, fi } from '../../assets';
 import { useNavigate } from 'react-router-dom';
 
 

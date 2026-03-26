@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import comm from '../../assets/comm.png'; // Votre import d'image conservé
+import { comm } from '../../assets' // Votre import d'image conservé
 
 // ============================================================================
 // CONSTANTS & CONFIG

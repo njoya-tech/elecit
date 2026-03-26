@@ -1,12 +1,5 @@
 import React from 'react';
-import gp1 from '../../assets/gp1.svg'
-import casq from '../../assets/casq.svg'
-import gp2 from '../../assets/gp2.svg'
-import gp3  from '../../assets/gp3.svg'
-import gp5 from '../../assets/gp5.svg'
-import gp6 from '../../assets/gp6.svg'
-import g1 from '../../assets/g1.svg'
-import gv from '../../assets/gv.svg'
+import { gp1, casq, gp2, gp3, gp5, gp6, g1, gv } from '../../assets';
 
 
 import { motion } from 'framer-motion'

@@ -1,21 +1,10 @@
-import React from 'react'
-import sma from '../../assets/sma.png'
-import smart1 from '../../assets/smart1.jpg'
-import { useNavigate } from 'react-router-dom'
-import casq from '../../assets/casq.svg'
-import st1 from '../../assets/st1.png'
-import st2 from '../../assets/st2.png'
-import { MY_COLORS } from '../../utils/colors'
-import { useState , useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
+import { sma, smart1, casq, st1, st2, sm18, sm19, sm20, sm21, sm22 } from '../../assets';
+import { useNavigate } from 'react-router-dom';
+import { MY_COLORS } from '../../utils/colors';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion'
-import rail from '../../assets/rail.svg'
-import { useTranslation } from 'react-i18next'
-import sm18 from '../../assets/new/sm18.png'
-import sm19 from '../../assets/new/sm19.png'
-import sm20 from '../../assets/new/sm20.png'
-import sm21 from '../../assets/new/sm21.png'
-import sm22 from '../../assets/new/sm22.png'
+import { useTranslation } from 'react-i18next';
+import  { motion } from 'framer-motion'
 
 
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import p2 from '../../assets/p2.svg'
-import p3 from '../../assets/p3.svg'
+import { p2, p3 } from '../../assets/p2.svg'
 import rail from '../../assets/rail.svg'
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'

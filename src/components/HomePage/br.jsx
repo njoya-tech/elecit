@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import fond_sombre from '../../assets/fond_sombre.png';
-import design_x from '../../assets/design_x.png';
-import vid from '../../assets/vid.png';
-import fleche from '../../assets/fleche.png';
+import { fond_sombre, design_x, vid, fleche} from '../../assets';
+
 
 import { MY_COLORS } from '../../utils/colors';
 

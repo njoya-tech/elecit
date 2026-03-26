@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import rail from '../../assets/rail.svg';
+import { rail } from '../../assets';
 
 const JobOffersList = ({ offers }) => {
   const navigate = useNavigate();

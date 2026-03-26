@@ -86,6 +86,7 @@ base: '/',
     port: 5173,
     strictPort: true,
     open: true,
+    host: true
   },
   
   // Preview server (for testing production build)

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
-import p3 from '../../assets/p3.svg'
+import { p3 } from '../../assets';
 
 const RecruitmentHero = ({ title1, title2, subtitle, bgImage }) => {
   const { t } = useTranslation();

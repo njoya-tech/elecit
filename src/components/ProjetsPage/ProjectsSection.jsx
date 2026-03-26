@@ -1,17 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import rail from '../../assets/rail.svg';
+import { rail } from '../../assets';
 import { useTranslation } from 'react-i18next';
-import BM3 from '../../assets/new/BM3.PNG'
-import an5 from '../../assets/new/an5.png'
-import c2 from '../../assets/c2.jpg'
-import an10 from '../../assets/new/an10.jpg'
-import an7 from '../../assets/new/an7.jpg'
-import an9 from '../../assets/new/an9.jpg'
-import an12 from '../../assets/new/an12.jpeg'
-import an11 from '../../assets/new/an11.jpg'
-import an8 from '../../assets/new/an8.jpg'
+
 import ProjectsService from '../../services/projets/projects.service';
 import { useNavigate} from 'react-router-dom'
 

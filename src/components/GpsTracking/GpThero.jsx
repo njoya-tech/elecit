@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
-import p3 from '../../assets/p3.svg'
-import fi from '../../assets/fi.svg'
+import {p3, fi} from '../../assets'
 import { motion } from 'framer-motion'
 
 const GpThero = ({ title1,  subtitle, bgImage, subtitle2, buttonText }) => {

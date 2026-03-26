@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MY_COLORS } from '../../utils/colors';
 import { motion } from 'framer-motion';
-import rail from '../../assets/rail.svg';
+import { rail } from '../../assets';
 import SpontaneousApplicationsService from '../../services/spontaneous-applications.service';
 
 const JobOfferFormOnlyModal = ({ onClose }) => {

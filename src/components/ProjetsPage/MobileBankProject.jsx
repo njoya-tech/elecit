@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import rail from '../../assets/rail.svg';
+import { rail } from '../../assets';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../FabriMeca/FoRound.css';
 import ExpertiseCarousel from './ExpertiseCarousel';

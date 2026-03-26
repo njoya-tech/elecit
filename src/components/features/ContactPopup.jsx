@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import logo from '../../assets/logo.svg';
+import { logo } from '../../assets';
 
 const MY_COLORS = {
   primaryBlue: '#006F95',

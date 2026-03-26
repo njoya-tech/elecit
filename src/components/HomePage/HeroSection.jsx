@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import fond_sombre from '../../assets/fond_sombre.png';
-import design_x from '../../assets/design_x.png';
-import vid from '../../assets/vid.png';
+import {fond_sombre, design_x, vid, fi} from '../../assets';
+
 import { motion } from 'framer-motion';
 import { MY_COLORS } from '../../utils/colors';
-import fi from '../../assets/fi.svg';
+
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = ({ slides }) => {

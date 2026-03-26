@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import sma from '../../assets/sma.png'
-import smart1 from '../../assets/smart1.jpg'
-import eng from '../../assets/eng.jpg'
-import casq from '../../assets/casq.svg'
-import st1 from '../../assets/st1.png'
-import st2 from '../../assets/st2.png'
 import { MY_COLORS } from '../../utils/colors'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import rail from '../../assets/rail.svg'
-import fab3 from '../../assets/new/fab3.png'
-import fab4 from '../../assets/new/fab4.png'
-import fab5 from '../../assets/new/fab5.png'
-import fab6 from '../../assets/new/fab6.png'
-import fab7 from '../../assets/new/fab7.png'
+import { sma, smart1, eng, casq, st1, st2, rail, fab3, fab4, fab5, fab6, fab7 } from '../../assets'
 
 
 // Animation flottante keyframes

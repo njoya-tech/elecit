@@ -1,27 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import sm1 from '../../assets/new/sm1.jpeg'
-import sm2 from '../../assets/new/sm2.jpg'
-import sm3 from '../../assets/new/sm3.jpg'
-import sm4 from '../../assets/new/sm4.jpg'
-import sm5 from '../../assets/new/sm5.jpg'
-import sm6 from '../../assets/new/sm6.jpg'
-import sm7 from '../../assets/new/sm7.jpg'
-import sm8 from '../../assets/new/sm8.jpg'
-import sm9 from '../../assets/new/sm9.jpg'
-import sm10 from '../../assets/new/sm10.jpg'
-import sm11 from '../../assets/new/sm11.jpg'
-import sm12 from '../../assets/new/sm12.jpg'
-import sm13 from '../../assets/new/sm13.jpg'
-import sm14 from '../../assets/new/sm14.jpg'
-import sm15 from '../../assets/new/sm15.jpg'
-import sm16 from '../../assets/new/sm16.jpg'
-import sm17 from '../../assets/new/sm17.jpg'
-import { useNavigate } from 'react-router-dom';
-
-import an15 from '../../assets/new/an15.jpg'
+import React, { useState, useEffect } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+import { sm1, sm2, sm3, sm4, sm5, sm6, sm7, sm8, sm9, sm10, sm11, sm12, sm13, sm14, sm15, sm16, sm17, an15 } from '../../assets'
 
 const MY_COLORS = {
   primaryBlue: '#006F95',
