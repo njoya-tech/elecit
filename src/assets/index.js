@@ -3,7 +3,7 @@
 // =============================================
 
 // --- Série AN ---
-import an2 from './new/an2.jpg';
+import an2 from './new/an2.webp';
 import an3 from './new/an3.webp';
 import an4 from './new/an4.jpg';
 import an5 from './new/an5.png';
@@ -18,8 +18,8 @@ import an14 from './new/an14.webp';
 import an15 from './new/an15.webp';
 import an16 from './new/an16.webp';
 import an17 from './new/an17.jpg';
-import an18 from './new/an18.jpg';
-import an19 from './new/an19.jpg';
+import an18 from './new/an18.webp';
+import an19 from './new/an19.webp';
 import an20 from './new/an20.jpg';
 
 // --- Série BM ---
@@ -75,13 +75,13 @@ import sm22 from './new/sm22.png';
 
 // --- Série T ---
 import t1 from './new/t1.jpg';
-import t3 from './new/t3.png';
-import t4 from './new/t4.png';
-import t5 from './new/t5.png';
-import t6 from './new/t6.png';
-import t7 from './new/t7.png';
+import t3 from './new/t3.webp';
+import t4 from './new/t4.webp';
+import t5 from './new/t5.webp';
+import t6 from './new/t6.webp';
+import t7 from './new/t7.webp';
 import t8 from './new/t8.jpg';
-import t9 from './new/t9.jpg';
+import t9 from './new/t9.webp';
 
 
 // =============================================
