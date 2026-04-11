@@ -9,8 +9,8 @@ const JobOfferModal = ({ offer, onClose }) => {
   const { t } = useTranslation();
   
   const [formData, setFormData] = useState({
-    firstName: '',  // Prénom (était "name")
-    lastName: '',   // Nom de famille
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     sex: '',
@@ -22,11 +22,10 @@ const JobOfferModal = ({ offer, onClose }) => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null | 'success' | 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
 
-  // Scroll vers le haut lors de l'ouverture
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -38,7 +37,6 @@ const JobOfferModal = ({ offer, onClose }) => {
       [name]: type === 'file' ? files[0] : value,
     }));
     
-    // Réinitialiser les erreurs lors de la modification
     if (validationErrors.length > 0) {
       setValidationErrors([]);
     }
@@ -47,7 +45,6 @@ const JobOfferModal = ({ offer, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Réinitialiser les états
     setSubmitStatus(null);
     setErrorMessage('');
     setValidationErrors([]);
@@ -60,10 +57,10 @@ const JobOfferModal = ({ offer, onClose }) => {
       return;
     }
 
-    // 2. Vérifier si déjà postulé (optionnel)
+    // 2. Vérifier si déjà postulé
     const alreadyApplied = await JobApplicationsService.hasAlreadyApplied(
       formData.email,
-      offer.id
+      offer.id,
     );
 
     if (alreadyApplied) {
@@ -76,12 +73,15 @@ const JobOfferModal = ({ offer, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      const result = await JobApplicationsService.submitApplication(formData, offer.id);
+      // ✅ Fix: offer.title au lieu de currentJob.title (qui n'existe pas)
+      const result = await JobApplicationsService.submitApplication(
+        { ...formData, jobTitle: offer.title },
+        offer.id,
+      );
 
       if (result.success) {
         setSubmitStatus('success');
         
-        // Réinitialiser le formulaire après 3 secondes
         setTimeout(() => {
           setFormData({
             firstName: '',
@@ -373,12 +373,13 @@ const JobOfferModal = ({ offer, onClose }) => {
 
                 {/* Date de naissance */}
                 <div>
-  <label className="block text-sm font-medium mb-2 text-gray-700">
-    {t('jobOffers.modal.dateOfBirth')}
-    <span className="text-xs text-gray-500 ml-2 font-normal">
-      (ex: 15 / 03 / 1990)
-    </span>
-  </label> <div className="grid grid-cols-3 gap-3">
+                  <label className="block text-sm font-medium mb-2 text-gray-700">
+                    {t('jobOffers.modal.dateOfBirth')}
+                    <span className="text-xs text-gray-500 ml-2 font-normal">
+                      (ex: 15 / 03 / 1990)
+                    </span>
+                  </label>
+                  <div className="grid grid-cols-3 gap-3">
                     <input 
                       type="text" 
                       name="day" 

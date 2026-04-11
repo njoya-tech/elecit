@@ -3,7 +3,6 @@ import { BrowserRouter , Route, HashRouter, Routes } from "react-router-dom";
 import MobileBankProject from './components/ProjetsPage/MobileBankProject';
 import ProjetsDetail from './pages/projets/ProjetsDetail';
 
-// Core pages
 const HomePage = lazy(() => import("./pages/acceuil/HomePage"));
 const ProjetsPage = lazy(() => import("./pages/projets/ProjetsPage"));
 
@@ -105,6 +104,7 @@ function App() {
           <Route path="/blog/:postId" element={<BlogPage />} />
           <Route path="/carriere/job" element={<JobOffers />} />
           <Route path="/carriere/job-only" element={<JobOffersOnly />} />
+          {/* <ChatBotPopup />  */}
         </Routes>
       </Suspense>
     </BrowserRouter>

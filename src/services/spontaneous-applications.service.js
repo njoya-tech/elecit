@@ -54,18 +54,20 @@ class SpontaneousApplicationsService {
         status: 'published',
         application_status: 'pending',
         application_date: new Date().toISOString(),
-        is_spontaneous: true // ⚠️ Flag pour distinguer les candidatures spontanées
+        is_spontaneous: true
       };
 
       console.log('📦 Payload final:', payload);
 
       // 4. Envoyer la candidature à Directus
       const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/job_applications`;
-      
+      const token = import.meta.env.VITE_DIRECTUS_TOKEN; // ✅ Fix: token ajouté
+
       const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`, // ✅ Fix: manquait ici
         },
         body: JSON.stringify(payload)
       });
@@ -107,14 +109,20 @@ class SpontaneousApplicationsService {
       formData.append('file', file);
 
       const url = `${import.meta.env.VITE_DIRECTUS_URL}/files`;
+      const token = import.meta.env.VITE_DIRECTUS_TOKEN;
       
       const response = await fetch(url, {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`, // ✅ Fix: manquait ici
+          // ⚠️ Ne pas mettre Content-Type, FormData le gère seul
+        },
         body: formData
       });
 
       if (!response.ok) {
-        console.error('❌ Erreur upload CV:', response.status);
+        const errorBody = await response.json().catch(() => ({}));
+        console.error('❌ Erreur upload CV:', response.status, errorBody);
         return null;
       }
 
@@ -243,7 +251,7 @@ class SpontaneousApplicationsService {
       errors.push('Année de naissance invalide (vous devez avoir au moins 16 ans)');
     }
 
-    // Validation poste souhaité (⚠️ REQUIS pour candidature spontanée)
+    // Validation poste souhaité
     if (!formData.position || formData.position.trim().length < 3) {
       errors.push('Veuillez préciser le poste souhaité (minimum 3 caractères)');
     }

@@ -1,6 +1,6 @@
 import React from 'react'
-import { p2, p3 } from '../../assets/p2.svg'
-import rail from '../../assets/rail.svg'
+import { p2, p3, rail } from '../../assets'
+
 import { useTranslation } from 'react-i18next'
 import { MY_COLORS } from '../../utils/colors'
 import { motion } from 'framer-motion'

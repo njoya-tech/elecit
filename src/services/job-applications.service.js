@@ -32,7 +32,7 @@ class JobApplicationsService {
       // 3. Créer l'objet de candidature
       const payload = {
         // Informations personnelles
-        first_name: applicationData.firstName || applicationData.name, // Support ancien format
+        first_name: applicationData.firstName || applicationData.name,
         last_name: applicationData.lastName,
         email: applicationData.email,
         phone: applicationData.phone,
@@ -40,7 +40,8 @@ class JobApplicationsService {
         birth_date: birthDate,
         
         // Relation avec l'offre d'emploi
-        job_offer: jobOfferId, // Relation M2O vers job_offers
+        job_offer: jobOfferId,
+         job_offer_title: applicationData.jobTitle,
         
         // Motivation
         motivation: applicationData.motivation,
@@ -49,20 +50,23 @@ class JobApplicationsService {
         cv_file: cvFileId,
         
         // Métadonnées
-        status: 'published', // Directus system status
-        application_status: 'pending', // pending, reviewed, accepted, rejected
-        application_date: new Date().toISOString()
+        status: 'published',
+        application_status: 'pending',
+        application_date: new Date().toISOString(),
+        is_spontaneous: false // ✅ Explicitement false pour les candidatures liées
       };
 
       console.log('📦 Payload final:', payload);
 
       // 4. Envoyer la candidature à Directus
       const url = `${import.meta.env.VITE_DIRECTUS_URL}/items/job_applications`;
+      const token = import.meta.env.VITE_DIRECTUS_TOKEN; // ✅ Fix: token ajouté
       
       const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`, // ✅ Fix: manquait ici
         },
         body: JSON.stringify(payload)
       });
@@ -104,14 +108,20 @@ class JobApplicationsService {
       formData.append('file', file);
 
       const url = `${import.meta.env.VITE_DIRECTUS_URL}/files`;
+      const token = import.meta.env.VITE_DIRECTUS_TOKEN;
       
       const response = await fetch(url, {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`, // ✅ Fix: manquait ici
+          // ⚠️ Ne pas mettre Content-Type, FormData le gère seul
+        },
         body: formData
       });
 
       if (!response.ok) {
-        console.error('❌ Erreur upload CV:', response.status);
+        const errorBody = await response.json().catch(() => ({}));
+        console.error('❌ Erreur upload CV:', response.status, errorBody);
         return null;
       }
 
@@ -133,7 +143,6 @@ class JobApplicationsService {
   _formatBirthDate(day, month, year) {
     if (!day || !month || !year) return null;
     
-    // Formater en YYYY-MM-DD pour Directus
     const paddedDay = day.toString().padStart(2, '0');
     const paddedMonth = month.toString().padStart(2, '0');
     
@@ -194,7 +203,6 @@ class JobApplicationsService {
   validateFormData(formData) {
     const errors = [];
 
-    // Validation nom et prénom
     if (!formData.firstName && !formData.name) {
       errors.push('Le prénom est requis');
     } else if ((formData.firstName || formData.name).trim().length < 2) {
@@ -205,24 +213,20 @@ class JobApplicationsService {
       errors.push('Le nom de famille doit contenir au moins 2 caractères');
     }
 
-    // Validation email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || !emailRegex.test(formData.email)) {
       errors.push('Email invalide');
     }
 
-    // Validation téléphone
-    const phoneRegex = /^[\d\s\+\-\(\)]{8,}$/; // Minimum 8 chiffres (format international flexible)
+    const phoneRegex = /^[\d\s\+\-\(\)]{8,}$/;
     if (!formData.phone || !phoneRegex.test(formData.phone)) {
       errors.push('Numéro de téléphone invalide (minimum 8 chiffres)');
     }
 
-    // Validation sexe
     if (!formData.sex || !['Masculin', 'Féminin'].includes(formData.sex)) {
       errors.push('Veuillez sélectionner votre sexe');
     }
 
-    // Validation date de naissance
     const day = parseInt(formData.day);
     const month = parseInt(formData.month);
     const year = parseInt(formData.year);
@@ -237,17 +241,15 @@ class JobApplicationsService {
       errors.push('Année de naissance invalide (vous devez avoir au moins 16 ans)');
     }
 
-    // Validation motivation
     if (!formData.motivation || formData.motivation.trim().length < 50) {
       errors.push('La lettre de motivation doit contenir au moins 50 caractères');
     }
 
-    // Validation CV
     if (!formData.cvFile) {
       errors.push('Veuillez joindre votre CV');
     } else {
       const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-      const maxSize = 5 * 1024 * 1024; // 5 MB
+      const maxSize = 5 * 1024 * 1024;
 
       if (!allowedTypes.includes(formData.cvFile.type)) {
         errors.push('Le CV doit être au format PDF ou Word');

@@ -375,7 +375,8 @@ const handleSubmit = async (e) => {
         />
       </div>
 
-      <ContactPopup></ContactPopup>                        
+      <ContactPopup></ContactPopup>       
+                       
     </footer>
   );
 };
