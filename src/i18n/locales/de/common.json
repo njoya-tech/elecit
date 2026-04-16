@@ -214,6 +214,19 @@
     ]
   },
 
+  
+  "catalogue": {
+    "title": "Unser Katalog",
+    "download": "Katalog herunterladen",
+    "open": "Katalog öffnen",
+    "loading": "Katalog wird geladen…",
+    "empty": "Derzeit kein Katalog verfügbar.",
+    "error": "Katalog konnte nicht geladen werden.",
+    "unavailable": "Ihr Browser kann dieses PDF nicht anzeigen.",
+    "back": "Zurück"
+  },
+
+
   "realBanner": {
     "titlePart1": "Realisierungen, die Ihre",
     "highlightWord": "Erwartungen",

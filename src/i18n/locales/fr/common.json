@@ -52,6 +52,16 @@
     "projectButton": "Vous avez un projet?"
   
   },
+   "catalogue": {
+    "title": "Notre Catalogue",
+    "download": "Télécharger le catalogue",
+    "open": "Ouvrir le catalogue",
+    "loading": "Chargement du catalogue…",
+    "empty": "Aucun catalogue disponible pour le moment.",
+    "error": "Impossible de charger le catalogue.",
+    "unavailable": "Votre navigateur ne peut pas afficher ce PDF.",
+    "back": "Retour"
+  },
   "nav": {
     "accueil": "Accueil",
     "entreprise": "Entreprise",
@@ -60,7 +70,8 @@
     "filiales": "Filiales",
     "blog": "Blog",
     "carriere": "Carrière",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "catalogue": "catalogue"
   },
 
   "submenus": {

@@ -75,6 +75,19 @@
     ]
   },
 
+  
+  "catalogue": {
+    "title": "Our Catalogue",
+    "download": "Download catalogue",
+    "open": "Open catalogue",
+    "loading": "Loading catalogue…",
+    "empty": "No catalogue available at the moment.",
+    "error": "Unable to load the catalogue.",
+    "unavailable": "Your browser cannot display this PDF.",
+    "back": "Back"
+  },
+
+
   "nav": {
     "accueil": "Home",
     "entreprise": "Company",

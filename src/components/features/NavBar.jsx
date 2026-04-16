@@ -38,7 +38,8 @@ const NavBar = () => {
     { key: 'nav.filiales', path: '/filiales', dropdown: subsidiariesItems },
     { key: 'nav.blog', path: '/blog' },
     { key: 'nav.carriere', path: '/carriere' },
-    { key: 'nav.contacts', path: '/contacts' }
+    { key: 'nav.contacts', path: '/contacts' },
+    { key: 'nav.catalogue', path: '/catalogue'}
   ];
 
   // Fonction pour vérifier si un lien est actif
