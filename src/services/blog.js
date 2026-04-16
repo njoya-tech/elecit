@@ -363,16 +363,19 @@ export const fetchComments = async (blogPostId) => {
         filter: {
           _and: [
             { blog_post: { _eq: blogPostId } },
-            { status: { _eq: "published" } },
+            { status: { _eq: "publish" } },
           ],
         },
         sort: ["-created_at"],
       })
     );
 
+    console.log("🔍 Comments fetched:", comments); // ADD THIS
+    console.log("🔍 BlogPostId used:", blogPostId); // ADD THIS
+    console.log("📋 All statuses:", comments.map(c => ({ id: c.id, status: c.status })));
     return comments;
   } catch (error) {
-    console.error("Error fetching comments:", error);
+    console.error("❌ Error fetching comments:", error); // ADD THIS
     return [];
   }
 };
