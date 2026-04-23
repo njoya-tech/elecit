@@ -19,7 +19,7 @@ const Contact = () => {
       <main className="w-full">
         {/* HERO — FULL WIDTH WITH MARGINS */}
         <section className="pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 md:px-8 lg:px-20">
-          <HeroContact height="60vh sm:65vh md:70vh lg:75vh" />
+          <HeroContact className="" height="60vh sm:65vh md:70vh lg:75vh" />
         </section>
 
         {/* CONTENT SECTIONS — CONTAINER */}
