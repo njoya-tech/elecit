@@ -69,7 +69,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
       "Tool box meeting": t("blogPage.categories.toolBoxMeeting"),
       "Vie d'entreprise": t("blogPage.categories.companyLife"),
     }),
-    [t]
+    [t],
   );
 
   // Internal categories (stay the same for logic)
@@ -87,7 +87,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
   ];
 
   const [activeCategory, setActiveCategory] = useState(
-    initialCategory || "Tous les postes"
+    initialCategory || "Tous les postes",
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -157,7 +157,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
           console.log("Translated title:", translatedPost.title);
           console.log(
             "Are they different?",
-            post.title !== translatedPost.title
+            post.title !== translatedPost.title,
           );
 
           // Step 2: Now build our display object using the translated post
@@ -271,8 +271,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
         prevPosts.map((post) =>
           post.id === postId
             ? { ...post, likes: optimisticLikes, liked: !isCurrentlyLiked }
-            : post
-        )
+            : post,
+        ),
       );
 
       // Also update featured post if it's the same post
@@ -295,8 +295,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
         prevPosts.map((post) =>
           post.id === postId
             ? { ...post, likes: result.likes, liked: result.isLiked }
-            : post
-        )
+            : post,
+        ),
       );
 
       // Update featured post with actual count
@@ -314,8 +314,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
         prevPosts.map((post) =>
           post.id === postId
             ? { ...post, likes: currentLikes, liked: isCurrentlyLiked }
-            : post
-        )
+            : post,
+        ),
       );
 
       if (featuredPost && featuredPost.id === postId) {
@@ -384,7 +384,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
       <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* BLOCK 1: Category Navigation */}
         <div className="relative mb-8 sm:mb-10 md:mb-12">
-          <nav className="flex items-center justify-start lg:justify-center gap-4 md:gap-6 lg:gap-8 pb-3 overflow-x-auto lg:overflow-x-visible scrollbar-thin scrollbar-thumb-gray-300 lg:scrollbar-hide px-3 lg:px-0">
+          <nav className="flex items-center justify-start lg:justify-center gap-4 md:gap-6 lg:gap-8 pb-3 overflow-x-auto 
+          lg:overflow-x-visible scrollbar-thin scrollbar-thumb-gray-300 lg:scrollbar-hide px-3 lg:px-0">
             {/* Main Categories */}
             {mainCategoriesKeys.map((categoryKey) => (
               <button
@@ -410,7 +411,8 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
             <div className="relative -shrink-0" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-lg font-bold px-3 py-2 hover:text-gray-600 transition-colors whitespace-nowrap"
+                className="flex items-center gap-1.5 sm:gap-2 text-sm sm:text-base md:text-lg font-bold px-3 py-2
+                 hover:text-gray-600 transition-colors whitespace-nowrap"
                 style={{ color: MY_COLORS.secondaryGreen }}
               >
                 <span>{t("blogPage.categories.more")}</span>
@@ -441,7 +443,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                       className={`w-full text-left px-4 py-2.5 text-sm font-medium transition-colors ${
                         activeCategory === categoryKey
                           ? "bg-green-50"
-                          : "hover:bg-gray-50"
+                          : "bg-white hover:bg-gray-100"
                       }`}
                       style={{
                         color:
@@ -548,7 +550,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
                           e,
                           featuredPost.id,
                           featuredPost.likes,
-                          featuredPost.liked
+                          featuredPost.liked,
                         );
                       }}
                       className="text-gray-400 hover:text-red-500 transition-colors"
@@ -777,7 +779,7 @@ const BlogCards = ({ onPostClick, initialCategory }) => {
               {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                 const pageNum = Math.max(
                   2,
-                  Math.min(totalPages - 1, currentPage + (i - 2))
+                  Math.min(totalPages - 1, currentPage + (i - 2)),
                 );
                 return pageNum;
               })

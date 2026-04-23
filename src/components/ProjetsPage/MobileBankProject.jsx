@@ -82,7 +82,7 @@ const MobileBankProject = ({ onClose, projectData }) => {
       <div className="flex text-center items-center justify-center mb-8 relative">
         <div>
           <h1 className="text-2xl font-bold mb-6">
-            {t('projectNew.category')}
+        
           </h1>
           <h2 className="text-3xl font-bold mb-8">
             {project.title}

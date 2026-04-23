@@ -101,8 +101,10 @@ const HeroContact = () => {
           {t("contact.hero.subtitle")}
         </motion.h2>
 
-        <motion.div
-          className="flex items-center gap-4 lg:mt-10 ml-30"
+<div className="items-center justify-center mr-10 md:mr-0 lg:mr-20">
+
+    <motion.div
+          className="flex items-center gap-4 lg:mt-10 "
           initial="hidden"
           animate="visible"
           variants={scaleIn}
@@ -144,6 +146,9 @@ const HeroContact = () => {
             }}
           />
         </motion.div>
+
+</div>
+      
       </div>
     </section>
   );

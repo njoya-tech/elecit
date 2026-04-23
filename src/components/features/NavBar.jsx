@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom'; // Ajout pour détecter la page courante
+import { useLocation, Link } from 'react-router-dom';
 import { logo } from '../../assets';
 import { MY_COLORS } from '../../utils/colors';
 import LanguageSwitcher from './LanguageSwitcher.jsx';
@@ -12,7 +12,7 @@ const NavBar = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileDropdowns, setMobileDropdowns] = useState({});
   const dropdownRef = useRef(null);
-  const location = useLocation(); // Hook pour obtenir l'URL courante
+  const location = useLocation();
 
   const solutionsItems = [
     { key: 'submenus.solutions.smartBuilding', path: '/solutions/smart-building' },
@@ -25,9 +25,9 @@ const NavBar = () => {
   ];
 
   const subsidiariesItems = [
-    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net'},
-    { key: 'submenus.subsidiaries.mangoSmart', path: 'https://www.linkedin.com/company/110098841/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D'},
-    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net'}
+    { key: 'submenus.subsidiaries.foczou', path: 'https://foczou.elecit.net', external: true },
+    { key: 'submenus.subsidiaries.mangoSmart', path: 'https://www.linkedin.com/company/110098841/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BhAVhkhC6QtqbEDkj4wBM1g%3D%3D', external: true },
+    { key: 'submenus.subsidiaries.moreThanTrack', path: 'https://automotive.elecit.net', external: true }
   ];
 
   const navItems = [
@@ -41,12 +41,8 @@ const NavBar = () => {
     { key: 'nav.contacts', path: '/contacts' }
   ];
 
-  // Fonction pour vérifier si un lien est actif
-  const isActiveLink = (path) => {
-    return location.pathname === path;
-  };
+  const isActiveLink = (path) => location.pathname === path;
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -54,7 +50,6 @@ const NavBar = () => {
         setHoveredIndex(null);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -64,6 +59,52 @@ const NavBar = () => {
       ...prev,
       [key]: !prev[key]
     }));
+  };
+
+  const renderDropdownItem = (sub, isMobile = false) => {
+    if (sub.external) {
+      return (
+        <a
+          key={sub.key}
+          href={sub.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={
+            isMobile
+              ? "block px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-white"
+              : "block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 font-montserrat"
+          }
+          onMouseEnter={(e) => (e.target.style.color = MY_COLORS.green)}
+          onMouseLeave={(e) => (e.target.style.color = MY_COLORS.black)}
+          onClick={() => isMobile && setIsMenuOpen(false)}
+        >
+          {t(sub.key)}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        key={sub.key}
+        to={sub.path}
+        className={
+          isMobile
+            ? "block px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-white"
+            : "block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 font-montserrat"
+        }
+        style={{
+          color: isActiveLink(sub.path) ? MY_COLORS.green : 'inherit'
+        }}
+        onMouseEnter={(e) => (e.target.style.color = MY_COLORS.green)}
+        onMouseLeave={(e) => (e.target.style.color = MY_COLORS.black)}
+        onClick={() => {
+          setOpenDropdown(null);
+          if (isMobile) setIsMenuOpen(false);
+        }}
+      >
+        {t(sub.key)}
+      </Link>
+    );
   };
 
   return (
@@ -76,21 +117,22 @@ const NavBar = () => {
 
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img 
-                src={logo} 
-                alt="ElecIT Engineering Logo" 
-                className="h-12 w-auto sm:h-16 md:h-20" 
-              />
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="ElecIT Engineering Logo"
+                  className="h-12 w-auto sm:h-16 md:h-20"
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1 ml-6 xl:ml-10">
               <div className="flex items-center gap-3 xl:gap-6" ref={dropdownRef}>
-                
+
                 {navItems.map((item, index) => (
                   <div key={item.key} className="relative">
-                    
-                    {/* Items with dropdown */}
+
                     {item.dropdown ? (
                       <div
                         onMouseEnter={() => {
@@ -105,8 +147,8 @@ const NavBar = () => {
                         <button
                           className="font-semibold text-xs lg:text-sm xl:text-base font-montserrat flex items-center gap-1"
                           style={{
-                            color: (hoveredIndex === index || openDropdown === item.key || isActiveLink(item.path)) 
-                              ? MY_COLORS.green 
+                            color: (hoveredIndex === index || openDropdown === item.key || isActiveLink(item.path))
+                              ? MY_COLORS.green
                               : MY_COLORS.black
                           }}
                         >
@@ -123,34 +165,24 @@ const NavBar = () => {
 
                         {openDropdown === item.key && (
                           <div className="absolute top-full left-0 mt-2 w-56 xl:w-70 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-950">
-                            {item.dropdown.map(sub => (
-                              <a
-                                key={sub.key}
-                                href={sub.path}
-                                className="block px-4 py-2 text-xs xl:text-sm text-gray-700 hover:bg-gray-50 font-montserrat"
-                                onMouseEnter={(e) => e.target.style.color = MY_COLORS.green}
-                                onMouseLeave={(e) => e.target.style.color = MY_COLORS.black}
-                              >
-                                {t(sub.key)}
-                              </a>
-                            ))}
+                            {item.dropdown.map(sub => renderDropdownItem(sub, false))}
                           </div>
                         )}
                       </div>
                     ) : (
-                      <a
-                        href={item.path}
+                      <Link
+                        to={item.path}
                         className="font-semibold text-xs lg:text-sm xl:text-base font-montserrat"
                         style={{
-                          color: (hoveredIndex === index || isActiveLink(item.path)) 
-                            ? MY_COLORS.green 
+                          color: (hoveredIndex === index || isActiveLink(item.path))
+                            ? MY_COLORS.green
                             : MY_COLORS.black
                         }}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                       >
                         {t(item.key)}
-                      </a>
+                      </Link>
                     )}
 
                   </div>
@@ -205,25 +237,13 @@ const NavBar = () => {
 
                       {mobileDropdowns[item.key] && (
                         <div className="pl-4 bg-gray-50 rounded-md mt-1 py-1 space-y-1">
-                          {item.dropdown.map(sub => (
-                            <a
-                              key={sub.key}
-                              href={sub.path}
-                              className="block px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-white"
-                              style={{
-                                color: isActiveLink(sub.path) ? MY_COLORS.green : 'inherit'
-                              }}
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {t(sub.key)}
-                            </a>
-                          ))}
+                          {item.dropdown.map(sub => renderDropdownItem(sub, true))}
                         </div>
                       )}
                     </>
                   ) : (
-                    <a
-                      href={item.path}
+                    <Link
+                      to={item.path}
                       className="block px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-50"
                       style={{
                         color: isActiveLink(item.path) ? MY_COLORS.green : 'inherit'
@@ -231,7 +251,7 @@ const NavBar = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {t(item.key)}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}

@@ -3,132 +3,160 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { projet1, fi } from '../../assets';
 import { MY_COLORS } from '../../utils/colors';
-import {motion} from 'framer-motion'
-
+import { motion } from 'framer-motion';
 import { getFileUrl } from '../../services/api/directus';
 
-
 const HeroSection = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
 
+  const slideDown = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
 
- const handleOpenAndDownload = async () => {
-  const fileId = '7b508958-b13a-4f90-bae2-896bf3842c77';
-  const pdfUrl = getFileUrl(fileId);
-  
-  try {
-    // Récupérer le PDF
-    const response = await fetch(pdfUrl);
-    const blob = await response.blob();
-    
-    // Créer une URL temporaire (blob://)
-    const blobUrl = window.URL.createObjectURL(blob);
-    
-    // Ouvrir dans un nouvel onglet (l'URL sera blob://...)
-    window.open(blobUrl, '_blank');
-    
-    // Optionnel : nettoyer après quelques secondes
-    setTimeout(() => window.URL.revokeObjectURL(blobUrl), 10000);
-  } catch (error) {
-    console.error('Erreur lors du chargement du PDF:', error);
-  }
-};
-  
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.3 }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.5 }
+    }
+  };
+
+  const handleOpenAndDownload = async () => {
+    const fileId = '7b508958-b13a-4f90-bae2-896bf3842c77';
+    const pdfUrl = getFileUrl(fileId);
+
+    try {
+      const response = await fetch(pdfUrl);
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      window.open(blobUrl, '_blank');
+      setTimeout(() => window.URL.revokeObjectURL(blobUrl), 10000);
+    } catch (error) {
+      console.error('Erreur lors du chargement du PDF:', error);
+    }
+  };
+
   return (
-    <div 
- className="relative w-screen mx-auto  h-[300px] md:h-[600px] lg:h-[500px] flex items-center justify-center  md:w-[800px] lg:w-[1800px] "
-      style={{ backgroundColor: MY_COLORS.white }}
+    <section
+      className="relative w-full overflow-hidden min-h-[500px]"
+      style={{ height: "65vh" }}
     >
-      {/* Image de fond */}
-      <div 
+      {/* Background Image */}
+      <motion.div
         className="absolute inset-0 w-full h-full"
-        style={{ 
+        style={{
           backgroundImage: `url(${projet1})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
 
-      {/* Overlay sombre pour améliorer la lisibilité du texte */}
-      <div 
-        className="absolute inset-0 w-full h-full bg-black"
-        style={{ opacity: 0.6 }}
+      {/* Dark Gradient Overlay */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
       />
-     
-      {/* Contenu principal */}
-      <div className="relative z-10 w-full h-full flex items-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-7xl mx-auto">
-          {/* Titre */}
-          <div className="mb-4 sm:mb-6">
-            <h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight"
-              style={{ color: MY_COLORS.secondaryGreen }}
-            >
-              {t('projet.title')}
-            </h1>
-          </div>
-         
-          {/* Sous-titre */}
-          <div className="mb-8 sm:mb-10 md:mb-12">
-            <p className="text-white text-center text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
-              {t('projet.subtitle')}
-            </p>
-          </div>
-         
-          {/* Boutons d'action */}
-          <div className="flex items-center justify-center">
-           
 
-            <div className='flex flex-row items-center gap-2'>
-               <button 
-              className="lg:translate-x-8 px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3.5 lg:px-12 lg:py-4 border-2 text-sm sm:text-base md:text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-lg"
-              style={{
-                borderColor: MY_COLORS.secondaryGreen,
-                color: MY_COLORS.secondaryGreen,
-                backgroundColor: 'transparent'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
-                e.currentTarget.style.color = MY_COLORS.white;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = MY_COLORS.secondaryGreen;
-              }}
-              onClick={handleOpenAndDownload}
-            >
-              {t('projet.buttonText')}
-            </button>
-    
+      {/* Centered Text Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 lg:px-16 text-center z-20">
 
+        {/* Titre */}
+        <motion.h1
+          className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl leading-tight mb-3 sm:mb-4 md:mb-6 mt-20"
+          style={{ color: MY_COLORS.secondaryGreen }}
+          initial="hidden"
+          animate="visible"
+          variants={slideDown}
+        >
+          {t('projet.title')}
+        </motion.h1>
 
-                <motion.div 
-                  className="flex-shrink-0"
-                  animate={{
-                    x: [0, -12, 0], // Position normale → Gauche → Position normale
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 0.3
-                  }}
-                >
-                  <img 
-                    src={fi} 
-                    alt="Fleche"
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-15 xl:h-15 object-contain ml-7"
-                  />
-                </motion.div>
+        {/* Sous-titre */}
+        <motion.p
+          className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-wide font-medium leading-relaxed mb-4 sm:mb-6 px-4 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
+        >
+          {t('projet.subtitle')}
+        </motion.p>
 
-            </div>
-          </div>
-        </div>
+        {/* Bouton + Flèche */}
+        <motion.div
+          className="flex items-center gap-4 lg:mt-10"
+          initial="hidden"
+          animate="visible"
+          variants={scaleIn}
+        >
+          <button
+            className="relative z-20 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 rounded-full border-2 transition-all duration-300 font-semibold text-sm sm:text-base md:text-lg hover:scale-105 active:scale-95 mt-6 whitespace-nowrap lg:mt-0"
+            style={{
+              borderColor: MY_COLORS.secondaryGreen,
+              color: MY_COLORS.secondaryGreen,
+              backgroundColor: 'transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = MY_COLORS.secondaryGreen;
+              e.currentTarget.style.color = MY_COLORS.white;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = MY_COLORS.secondaryGreen;
+            }}
+            onClick={handleOpenAndDownload}
+          >
+            {t('projet.buttonText')}
+          </button>
+
+          <motion.img
+            src={fi}
+            alt="Fleche"
+            className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 object-contain brightness-0 invert"
+            animate={{
+              x: [0, -12, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatDelay: 0.3
+            }}
+          />
+        </motion.div>
+
       </div>
-    </div>
+    </section>
   );
 };
 
