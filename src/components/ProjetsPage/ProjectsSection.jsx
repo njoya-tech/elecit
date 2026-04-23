@@ -5,7 +5,7 @@ import { rail } from '../../assets';
 import { useTranslation } from 'react-i18next';
 
 import ProjectsService from '../../services/projets/projects.service';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const MY_COLORS = {
@@ -28,24 +28,24 @@ const ProjectCard = ({ project }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const projectImage = project.mainImage || 'https://via.placeholder.com/400x300';
-  
+
   // ✅ CORRECTION: Une seule fonction de navigation
   const handleProjectClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    
+
     console.log('🎯 Navigation vers projet:', project.id, project.title);
     console.log('📦 Données projet:', project);
-    
+
     // Stocker le projet
     sessionStorage.setItem('selectedProject', JSON.stringify(project));
-    
+
     // Naviguer
     navigate(`/projets/${project.id}`);
   };
 
   return (
-    <div 
+    <div
       className="
         relative bg-white rounded-lg 
         w-full
@@ -60,7 +60,7 @@ const ProjectCard = ({ project }) => {
       onClick={handleProjectClick}  // ← Un seul handler
     >
       {/* Badge numéro */}
-      <div 
+      <div
         className="
           absolute -top-4 sm:-top-5 md:-top-6 
           left-1/2 transform -translate-x-1/2 
@@ -76,8 +76,8 @@ const ProjectCard = ({ project }) => {
 
       {/* Image */}
       <div className="h-40 xs:h-44 sm:h-48 md:h-52 lg:h-56 overflow-hidden rounded-t-lg">
-        <img 
-          src={projectImage} 
+        <img
+          src={projectImage}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
           onError={(e) => {
@@ -89,13 +89,13 @@ const ProjectCard = ({ project }) => {
 
       {/* Contenu */}
       <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow">
-        <h3 
+        <h3
           className="
             text-lg xs:text-xl sm:text-xl md:text-2xl 
             font-bold mb-2 sm:mb-3 
             text-center 
             line-clamp-2
-          " 
+          "
           style={{ color: MY_COLORS.darkBlue }}
         >
           {project.title}
@@ -112,7 +112,7 @@ const ProjectCard = ({ project }) => {
 
         {/* Bouton Voir plus */}
         <div className="mt-auto pt-4 sm:pt-5 md:pt-6 flex justify-center">
-          <button 
+          <button
             className="
               px-6 sm:px-7 md:px-8 
               py-2 sm:py-2.5 md:py-3
@@ -133,7 +133,7 @@ const ProjectCard = ({ project }) => {
               e.currentTarget.style.backgroundColor = 'transparent';
               e.currentTarget.style.color = MY_COLORS.secondaryGreen;
             }}
-            // ✅ SUPPRIMÉ: pas de onClick ici, le clic sur la carte suffit
+          // ✅ SUPPRIMÉ: pas de onClick ici, le clic sur la carte suffit
           >
             {t('projects.projectCard.seeMore')}
           </button>
@@ -146,9 +146,9 @@ const ProjectCard = ({ project }) => {
 const ProjectModal = ({ project, onClose }) => {
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  const carouselImages = project.gallery && project.gallery.length > 0 
-    ? project.gallery 
+
+  const carouselImages = project.gallery && project.gallery.length > 0
+    ? project.gallery
     : ['https://via.placeholder.com/800x600'];
 
   const nextImage = () => {
@@ -160,11 +160,11 @@ const ProjectModal = ({ project, onClose }) => {
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-transparent bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4"
       onClick={onClose}
     >
-      <div 
+      <div
         className="
           bg-white rounded-lg 
           w-full max-w-6xl 
@@ -181,29 +181,29 @@ const ProjectModal = ({ project, onClose }) => {
             <div className="flex flex-col lg:flex-row lg:items-start gap-4">
               {/* Titre et icône animée */}
               <div className="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-4 relative">
-                <h2 
-                  className="text-xl sm:text-2xl md:text-3xl font-bold" 
+                <h2
+                  className="text-xl sm:text-2xl md:text-3xl font-bold"
                   style={{ color: MY_COLORS.darkBlue }}
                 >
                   {t('projects.projectModal.mechanicalFabrication')}
                 </h2>
-                
+
                 {/* Engrenages animés - cachés sur mobile */}
                 <div className="hidden md:block">
-                  <motion.img 
-                    src={rail} 
-                    alt="engrenage" 
+                  <motion.img
+                    src={rail}
+                    alt="engrenage"
                     className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 absolute -top-2 md:-top-4 left-full ml-2"
                     animate={{ rotate: 360 }}
-                    transition={{ 
-                      duration: 6, 
-                      ease: "linear", 
-                      repeat: Infinity 
+                    transition={{
+                      duration: 6,
+                      ease: "linear",
+                      repeat: Infinity
                     }}
                   />
                 </div>
               </div>
-              
+
               {/* Informations du projet */}
               <div className="flex-1 lg:pl-6 xl:pl-8">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
@@ -227,12 +227,12 @@ const ProjectModal = ({ project, onClose }) => {
             {/* Colonne gauche - Carrousel */}
             <div>
               <div className="relative group">
-                <img 
+                <img
                   src={carouselImages[currentImageIndex]}
                   alt={`${project.title} - Image ${currentImageIndex + 1}`}
                   className="w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 object-cover rounded-lg"
                 />
-                
+
                 {/* Boutons navigation carrousel */}
                 {carouselImages.length > 1 && (
                   <>
@@ -269,7 +269,7 @@ const ProjectModal = ({ project, onClose }) => {
                   </>
                 )}
               </div>
-              
+
               {/* Indicateurs carrousel */}
               {carouselImages.length > 1 && (
                 <div className="flex justify-center gap-2 mt-3 sm:mt-4">
@@ -279,8 +279,8 @@ const ProjectModal = ({ project, onClose }) => {
                       onClick={() => setCurrentImageIndex(index)}
                       className="w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300"
                       style={{
-                        backgroundColor: index === currentImageIndex 
-                          ? MY_COLORS.primaryGreen 
+                        backgroundColor: index === currentImageIndex
+                          ? MY_COLORS.primaryGreen
                           : MY_COLORS.lightGray
                       }}
                       aria-label={`Image ${index + 1}`}
@@ -293,8 +293,8 @@ const ProjectModal = ({ project, onClose }) => {
             {/* Colonne droite - Informations */}
             <div className="space-y-4 sm:space-y-5 md:space-y-6">
               <div>
-                <h4 
-                  className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3" 
+                <h4
+                  className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3"
                   style={{ color: MY_COLORS.darkBlue }}
                 >
                   {t('projects.projectModal.projectDescription')}
@@ -305,8 +305,8 @@ const ProjectModal = ({ project, onClose }) => {
               </div>
 
               <div>
-                <h4 
-                  className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3" 
+                <h4
+                  className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3"
                   style={{ color: MY_COLORS.darkBlue }}
                 >
                   {t('projects.projectModal.utility')}
@@ -317,8 +317,8 @@ const ProjectModal = ({ project, onClose }) => {
               </div>
 
               <div>
-                <h4 
-                  className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3" 
+                <h4
+                  className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3"
                   style={{ color: MY_COLORS.darkBlue }}
                 >
                   {t('projects.projectModal.clientFeedback')}
@@ -343,7 +343,7 @@ const ProjectModal = ({ project, onClose }) => {
             >
               {t('projects.projectModal.haveProject')}
             </button>
-            
+
             <button
               onClick={onClose}
               className="px-8 py-3 font-semibold transition-all duration-300"
@@ -367,11 +367,11 @@ const ProjectsSection = () => {
   const [categories, setCategories] = useState([]);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-useEffect(() => {
-  console.log('🎯 VITE_DIRECTUS_URL:', import.meta.env.VITE_DIRECTUS_URL);
-  console.log('🎯 Projets chargés:', projects);
-  console.log('🎯 Premier projet mainImage:', projects[0]?.mainImage);
-}, [projects]);
+  useEffect(() => {
+    console.log('🎯 VITE_DIRECTUS_URL:', import.meta.env.VITE_DIRECTUS_URL);
+    console.log('🎯 Projets chargés:', projects);
+    console.log('🎯 Premier projet mainImage:', projects[0]?.mainImage);
+  }, [projects]);
   // Charger les catégories et projets depuis Directus
   useEffect(() => {
     const fetchData = async () => {
@@ -382,11 +382,11 @@ useEffect(() => {
           ProjectsService.getProjects(i18n.language)
         ]);
 
-// ✅ CORRECTION
-sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
- setCategories([
-          { 
-            id: 'all', 
+        // ✅ CORRECTION
+        sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
+        setCategories([
+          {
+            id: 'all',
             label: t('p.all1') // 🔥 Traduction dynamique
           },
           ...categoriesData
@@ -404,13 +404,13 @@ sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
   }, [i18n.language, t]);
 
   // Filtrer les projets par catégorie
-  const filteredProjects = activeCategory === 'all' 
+  const filteredProjects = activeCategory === 'all'
     ? projects
     : projects.filter(p => p.categoryId === activeCategory);
 
   if (loading) {
     return (
-      <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6 flex justify-center items-center" style={{backgroundColor: MY_COLORS.white}}>
+      <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6 flex justify-center items-center" style={{ backgroundColor: MY_COLORS.white }}>
         <div className="text-xl" style={{ color: MY_COLORS.primaryGreen }}>
           {t('projects.loading')}...
         </div>
@@ -419,7 +419,7 @@ sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
   }
 
   return (
-    <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6" style={{backgroundColor: MY_COLORS.white}}>
+    <div className="w-full py-8 sm:py-12 md:py-16 px-3 sm:px-4 md:px-6" style={{ backgroundColor: MY_COLORS.white }}>
       <div className="max-w-7xl mx-auto">
         {/* Tabs de catégories */}
         <div className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4 mb-8 sm:mb-12 md:mb-16">
@@ -429,14 +429,14 @@ sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
               onClick={() => setActiveCategory(category.id)}
               className="px-3 xs:px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs xs:text-sm sm:text-base font-semibold transition-all duration-300 relative whitespace-nowrap hover:scale-105"
               style={{
-                color: activeCategory === category.id 
-                  ? MY_COLORS.secondaryGreen 
+                color: activeCategory === category.id
+                  ? MY_COLORS.secondaryGreen
                   : MY_COLORS.gray
               }}
             >
               {category.label}
               {activeCategory === category.id && (
-                <div 
+                <div
                   className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1"
                   style={{ backgroundColor: MY_COLORS.secondaryGreen }}
                 />
@@ -455,28 +455,28 @@ sessionStorage.setItem('projectsData', JSON.stringify(projectsData));
           mt-8 sm:mt-10 md:mt-12
         ">
           {filteredProjects.map((project) => (
-            <ProjectCard 
-              key={project.id} 
+            <ProjectCard
+              key={project.id}
               project={project}
-       
+
             />
           ))}
         </div>
       </div>
 
       {/* Modal */}
-{selectedProject && (
-  <>
-    {/* Stocker le projet avant navigation */}
-    {sessionStorage.setItem('selectedProject', JSON.stringify(selectedProject))}
-    {/* Naviguer vers la page détail */}
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `window.location.href = '/projets/${selectedProject.id}';`
-      }}
-    />
-  </>
-)}
+      {selectedProject && (
+        <>
+          {/* Stocker le projet avant navigation */}
+          {sessionStorage.setItem('selectedProject', JSON.stringify(selectedProject))}
+          {/* Naviguer vers la page détail */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.location.href = '/projets/${selectedProject.id}';`
+            }}
+          />
+        </>
+      )}
     </div>
   );
 };

@@ -12,7 +12,6 @@
     "descriptionContinued": ", integrating a reinforced metal structure, secure layouts and technical equipment adapted to banking operations in urban and remote areas.",
     "processTitle": "From design to manufacturing to delivery",
     "processDescription": "The solution was entirely custom-designed: chassis, structure, compartmentalization, security, ergonomics and integration of banking systems.",
-
     "utility": {
       "point1": "Deploy banking services where fixed branches are difficult or expensive",
       "point2": "Bring the bank closer to its customers while strengthening its territorial presence",
@@ -50,7 +49,6 @@
     },
     "projectButton": "Do you have a project?"
   },
-
   "solution": {
     "bannerTitle": "Smart",
     "bannerHighlight": "solutions for",
@@ -74,7 +72,16 @@
       }
     ]
   },
-
+  "catalogue": {
+    "title": "Our Catalogue",
+    "download": "Download catalogue",
+    "open": "Open catalogue",
+    "loading": "Loading catalogue…",
+    "empty": "No catalogue available at the moment.",
+    "error": "Unable to load the catalogue.",
+    "unavailable": "Your browser cannot display this PDF.",
+    "back": "Back"
+  },
   "nav": {
     "accueil": "Home",
     "entreprise": "Company",
@@ -85,12 +92,11 @@
     "carriere": "Career",
     "contacts": "Contact"
   },
-
   "smartBuilding": {
     "footer": {
       "banner": {
         "availableEverywhere": "Service available everywhere",
-        "phoneNumber": "+237 650 416 640",
+        "phoneNumber": "+237 650 263 982",
         "phoneLabel": "Phone"
       },
       "company": {
@@ -143,7 +149,6 @@
         }
       }
     },
-
     "smartBuilding": {
       "title": "SMART BUILDING",
       "subtitle": "Custom solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy efficiency and connectivity combined in intelligent architecture.",
@@ -186,7 +191,6 @@
       "featureDescription": "The Smart Events solution brings intelligent and automated event management through centralized control of lighting, sound, video and scenographic effects. It enables the creation of dynamic and personalized atmospheres adapted to each type of event.",
       "buttonText": "Have a project in mind?"
     },
-
     "smartVilla": {
       "title1": "PROJECT:",
       "title2": "VILLA 2 YASSA",
@@ -369,7 +373,6 @@
       }
     }
   },
-
   "production": {
     "title": "Our production scope",
     "items": [
@@ -394,7 +397,6 @@
     "subtitleRound": "Our team is ready to listen to bring your ideas to life and offer personalized support.",
     "buttonRound": "Contact us"
   },
-
   "submenus": {
     "solutions": {
       "smartBuilding": "Smart Building",
@@ -411,9 +413,7 @@
       "moreThanTrack": "MORE THAN TRACK"
     }
   },
-
   "seeMore": "Learn more",
-
   "hero": {
     "subtitle": "AFRICA 1ST HIGH TECH COMPANY",
     "submitProject": "Submit a project",
@@ -464,7 +464,6 @@
       "title4": "A tailor-made approach, mindful of your well-being and respectful of its professional commitments"
     }
   },
-
   "solution": {
     "bannerTitle": "Smart",
     "bannerHighlight": "solutions for",
@@ -488,7 +487,6 @@
       }
     ]
   },
-
   "smartBuilding": {
     "title": "SMART BUILDING",
     "subtitle": "Custom solutions for homes, offices, hotels and commercial spaces. Comfort, security, energy efficiency and connectivity combined in intelligent architecture.",
@@ -531,7 +529,6 @@
     "featureDescription": "The Smart Events solution brings intelligent and automated event management through centralized control of lighting, sound, video and scenographic effects. It enables the creation of dynamic and personalized atmospheres adapted to each type of event.",
     "buttonText": "Have a project in mind?"
   },
-
   "smartVilla": {
     "title1": "PROJECT:",
     "title2": "VILLA 2 YASSA",
@@ -606,12 +603,10 @@
       }
     }
   },
-
   "trackingPlatform": {
     "title": "Tracking Platform available on Web & Smartphone",
     "buttonText": "Watch the video"
   },
-
   "serviceOffer": {
     "title": "A",
     "titleHighlight": "diversified service",
@@ -638,14 +633,12 @@
     "highlightWord": "expectations",
     "titlePart2": ""
   },
-
   "smartV": {
     "title1": "Smart home installation",
     "title2": "in a villa",
     "subtitle": "Complete installation of a residential smart home system.",
     "buttonText": "More projects"
   },
-
   "servicesCarousel": {
     "services": [
       {
@@ -674,7 +667,6 @@
       }
     ]
   },
-
   "smartBuild": {
     "title": "Solutions Exhibition and Smart Building",
     "buttonText": "Visit the showroom"
@@ -684,7 +676,6 @@
     "highlightWord": "news",
     "titlePart2": " by visiting our blog"
   },
-
   "blog": {
     "preview": {
       "banner": {
@@ -732,13 +723,11 @@
       "titlePart2": ""
     }
   },
-
   "testimonialsBanner": {
     "titlePart1": "What our clients say about their ",
     "highlightWord": "experience",
     "titlePart2": " with us"
   },
-
   "testimonials": {
     "items": [
       {
@@ -790,7 +779,6 @@
       "goToTestimonial": "Go to testimonial"
     }
   },
-
   "entreprise": {
     "hero": {
       "title": "What should you know about",
@@ -836,16 +824,36 @@
       "description": "We mobilize the right skills at the right time. This human and technical wealth allows us to respond with agility and precision to the most varied challenges of our clients, from consulting to implementation.",
       "button": "Watch Video",
       "members": [
-        { "title": "Home Automation Specialists" },
-        { "title": "Mechatronics Engineers" },
-        { "title": "Fleet Managers" },
-        { "title": "IT Engineers" },
-        { "title": "Civil Engineers" },
-        { "title": "Manufacturing Technicians" },
-        { "title": "IT Technicians" },
-        { "title": "Maintenance Agents" },
-        { "title": "Renewable Energy Engineers" },
-        { "title": "High and Low Current Technicians" }
+        {
+          "title": "Home Automation Specialists"
+        },
+        {
+          "title": "Mechatronics Engineers"
+        },
+        {
+          "title": "Fleet Managers"
+        },
+        {
+          "title": "IT Engineers"
+        },
+        {
+          "title": "Civil Engineers"
+        },
+        {
+          "title": "Manufacturing Technicians"
+        },
+        {
+          "title": "IT Technicians"
+        },
+        {
+          "title": "Maintenance Agents"
+        },
+        {
+          "title": "Renewable Energy Engineers"
+        },
+        {
+          "title": "High and Low Current Technicians"
+        }
       ]
     },
     "entrepriseAcc": {
@@ -972,7 +980,6 @@
       ]
     }
   },
-
   "blogPage": {
     "hero": {
       "title": "Inside ElecIT",
@@ -1074,7 +1081,6 @@
       }
     ]
   },
-
   "sav": {
     "hero": {
       "title": "BUILDING TECHNICAL MAINTENANCE",
@@ -1150,7 +1156,6 @@
       }
     }
   },
-
   "bureau": {
     "hero": {
       "titleLine1": "BUILDING ENGINEERING",
@@ -1159,7 +1164,6 @@
       "descriptionLine2": "public and private buildings, as well as hydraulic structures.",
       "button": "Advertorial"
     },
-
     "cards": {
       "heading": "Our Services",
       "description": "From feasibility study to turnkey delivery, we support our clients at every stage of the project, ensuring a high level of technical expertise and regulatory compliance.",
@@ -1190,11 +1194,21 @@
     "carousel": {
       "heading": "Types of hydraulic structures supported",
       "projects": [
-        { "title": "Tunnel" },
-        { "title": "Carnivore" },
-        { "title": "Drilling" },
-        { "title": "Drain" },
-        { "title": "Irrigation system" }
+        {
+          "title": "Tunnel"
+        },
+        {
+          "title": "Carnivore"
+        },
+        {
+          "title": "Drilling"
+        },
+        {
+          "title": "Drain"
+        },
+        {
+          "title": "Irrigation system"
+        }
       ],
       "cta": {
         "title": "Have a",
@@ -1278,7 +1292,6 @@
       "descriptionLine2": "and make the most of their data.",
       "button": "Press Release"
     },
-
     "projects": {
       "categories": {
         "all": "All projects",
@@ -1533,7 +1546,6 @@
     "subtitle": "Itinerant banking agency, fully equipped and fitted in a metal structure mounted on a tractor.",
     "buttonText": "More projects"
   },
-
   "gpsT": {
     "titlehero": "GPS & TRACKING",
     "descriptionhero": "Modern, scalable tracking solutions tailored to the needs of individuals, businesses and institutions, both nationally and internationally (within the CEMAC area).",
@@ -1586,7 +1598,6 @@
       }
     }
   },
-
   "whyChooseUs": {
     "title": "Why choose us?",
     "subtitle": "Our tracking solutions offer concrete benefits in visibility, security and operations optimization, for better real-time control of your resources.",
@@ -1600,7 +1611,6 @@
   "p": {
     "all1": "All projects"
   },
-
   "projects": {
     "categories": {
       "all": "All projects",
@@ -1623,7 +1633,6 @@
       "haveProject": "Do you have a project?",
       "close": "Close"
     },
-
     "whyChooseUs": {
       "title": "Why choose us?",
       "subtitle": "Our tracking solutions offer concrete benefits in visibility, security and operations optimization, for better real-time control of your resources.",
@@ -1634,14 +1643,28 @@
       "feature5": "Maintenance, servicing and after-sales intervention offered in Douala and Yaoundé.",
       "feature6": "Up to 1 year warranty on equipment."
     },
-
     "projects": {
       "categories": [
-        { "id": "all", "label": "All projects" },
-        { "id": "smart", "label": "Smart building" },
-        { "id": "fabrication", "label": "Mechanical manufacturing" },
-        { "id": "genie", "label": "Civil engineering" },
-        { "id": "interne", "label": "Internal project" }
+        {
+          "id": "all",
+          "label": "All projects"
+        },
+        {
+          "id": "smart",
+          "label": "Smart building"
+        },
+        {
+          "id": "fabrication",
+          "label": "Mechanical manufacturing"
+        },
+        {
+          "id": "genie",
+          "label": "Civil engineering"
+        },
+        {
+          "id": "interne",
+          "label": "Internal project"
+        }
       ],
       "projectCard": {
         "seeMore": "See more"
@@ -1663,7 +1686,6 @@
           "number": "1",
           "title": "Mobile Bank",
           "category": "Mechanical manufacturing",
-
           "shortDescription": "Design, development and deployment of a mobile banking platform allowing users to perform financial transactions.",
           "dateRealisation": "12/06/23",
           "statut": "completed",
@@ -1677,7 +1699,6 @@
           "number": "2",
           "title": "Personnel Transport Truck",
           "category": "Mechanical manufacturing",
-
           "shortDescription": "Technical and functional restructuring of a truck for personnel transportation.",
           "dateRealisation": "15/08/23",
           "statut": "completed",
@@ -1691,7 +1712,6 @@
           "number": "3",
           "title": "Brick Making Machine (Brick Press)",
           "category": "Mechanical manufacturing",
-
           "shortDescription": "Design and manufacture of an industrial brick production machine, incorporating robust mechanisms.",
           "dateRealisation": "20/09/23",
           "statut": "in progress",
@@ -1705,7 +1725,6 @@
           "number": "4",
           "title": "Metal Warehouse Construction",
           "category": "Civil engineering",
-
           "shortDescription": "Study, design and construction of a metal warehouse for industrial and logistics use.",
           "dateRealisation": "05/10/23",
           "statut": "completed",
@@ -1719,7 +1738,6 @@
           "number": "5",
           "title": "Home Automation Installation in a Villa",
           "category": "Smart building",
-
           "shortDescription": "Complete installation of a residential home automation system including intelligent management.",
           "dateRealisation": "12/11/23",
           "statut": "in progress",
@@ -1733,7 +1751,6 @@
           "number": "6",
           "title": "Home Automation Installation in a Bank",
           "category": "Smart building",
-
           "shortDescription": "Deployment of a professional home automation system for a bank, including intelligent management.",
           "dateRealisation": "18/12/23",
           "statut": "completed",
@@ -1747,7 +1764,6 @@
           "number": "7",
           "title": "Manufacturing of a 3-in-1 Stepladder",
           "category": "Mechanical manufacturing",
-
           "shortDescription": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
           "dateRealisation": "18/12/23",
           "statut": "completed",
@@ -1761,7 +1777,6 @@
           "number": "8",
           "title": "Creation and Layout of the Showroom",
           "category": "Internal project",
-
           "shortDescription": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
           "dateRealisation": "18/12/23",
           "statut": "completed",
@@ -1775,7 +1790,6 @@
           "number": "9",
           "title": "Opening of the Display Store",
           "category": "Internal project",
-
           "shortDescription": "Design and manufacture of a multifunctional 3-in-1 stepladder, capable of adapting to multiple usage configurations.",
           "dateRealisation": "18/12/23",
           "statut": "completed",
@@ -1789,7 +1803,6 @@
           "number": "8",
           "title": "Creation and Layout of the Showroom",
           "category": "Internal project",
-
           "shortDescription": "Design, layout and commissioning of a showroom dedicated to presenting home automation solutions.",
           "dateRealisation": "18/12/23",
           "statut": "completed",
@@ -1803,7 +1816,6 @@
           "number": "9",
           "title": "Opening of the Display Store",
           "category": "Internal project",
-
           "shortDescription": "Creation and layout of a display store dedicated to the sale of electrical equipment, networks and other materials.",
           "dateRealisation": "18/12/23",
           "statut": "completed",
@@ -1829,7 +1841,6 @@
       "subtitleRound": "Let's build it together from today",
       "buttonRound": "Contact us"
     },
-
     "recruitment": {
       "titleRound": "No offers at the moment",
       "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
@@ -1849,7 +1860,6 @@
       "step5Title": "Decision making",
       "step5Description": "The selected candidate(s) will be called back for a job offer."
     },
-
     "recruitment": {
       "titleRound": "No offers at the moment",
       "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
@@ -1869,7 +1879,6 @@
       "step5Title": "Decision making",
       "step5Description": "The selected candidate(s) will be called back for a job offer."
     },
-
     "jobOffers": {
       "previous": "Previous",
       "next": "Next",
@@ -1940,7 +1949,6 @@
       "subtitleRound": "Let's build it together from today",
       "buttonRound": "Contact us"
     },
-
     "recruitment": {
       "titleRound": "No offers at the moment",
       "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
@@ -1960,7 +1968,6 @@
       "step5Title": "Decision making",
       "step5Description": "The selected candidate(s) will be called back for a job offer."
     },
-
     "recruitment": {
       "titleRound": "No offers at the moment",
       "subtitleRound": "You want to join ElecIT Engineering but no current offer matches your profile",
@@ -1980,7 +1987,6 @@
       "step5Title": "Decision making",
       "step5Description": "The selected candidate(s) will be called back for a job offer."
     },
-
     "jobOffers": {
       "previous": "Previous",
       "next": "Next",
