@@ -1,75 +1,112 @@
-import { Document, Page, pdfjs } from "react-pdf";
-import { useState } from "react";
+// PdfViewer.jsx — PDF.js standalone, aucune dépendance externe à installer
+import React, { useEffect, useRef, useState } from "react";
 
-// IMPORTANT pour que ça marche
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+const PDF_JS_VERSION = "3.11.174";
+const PDFJS_CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDF_JS_VERSION}/pdf.min.js`;
+const WORKER_CDN = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDF_JS_VERSION}/pdf.worker.min.js`;
 
-const PdfViewer = ({ url }) => {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [scale, setScale] = useState(1.2);
+const loadPdfJs = () =>
+  new Promise((resolve, reject) => {
+    if (window.pdfjsLib) return resolve(window.pdfjsLib);
+    const script = document.createElement("script");
+    script.src = PDFJS_CDN;
+    script.onload = () => {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER_CDN;
+      resolve(window.pdfjsLib);
+    };
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
+export const PdfViewer = ({ url, title, fallbackLabel, fallbackUrl }) => {
+  const containerRef = useRef(null);
+  const [status, setStatus] = useState("idle"); // idle | loading | error
+  const [totalPages, setTotalPages] = useState(0);
+  const renderTasksRef = useRef([]);
+
+  useEffect(() => {
+    if (!url) return;
+    let cancelled = false;
+
+    const render = async () => {
+      setStatus("loading");
+      try {
+        const pdfjsLib = await loadPdfJs();
+        const pdf = await pdfjsLib.getDocument(url).promise;
+        if (cancelled) return;
+
+        setTotalPages(pdf.numPages);
+        setStatus("idle");
+
+        const container = containerRef.current;
+        container.innerHTML = "";
+
+        for (let i = 1; i <= pdf.numPages; i++) {
+          if (cancelled) break;
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: 1.5 });
+
+          const canvas = document.createElement("canvas");
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          canvas.style.cssText =
+            "display:block;width:100%;margin-bottom:8px;border-radius:4px;";
+
+          container.appendChild(canvas);
+
+          const task = page.render({
+            canvasContext: canvas.getContext("2d"),
+            viewport,
+          });
+          renderTasksRef.current.push(task);
+          await task.promise;
+        }
+      } catch (err) {
+        if (!cancelled) setStatus("error");
+      }
+    };
+
+    render();
+    return () => {
+      cancelled = true;
+      renderTasksRef.current.forEach((t) => t.cancel?.());
+      renderTasksRef.current = [];
+    };
+  }, [url]);
+
+  if (status === "error") {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[300px] gap-4 text-gray-500">
+        <p className="text-sm">{fallbackLabel}</p>
+        <a href=""
+          href={fallbackUrl}
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2 bg-[#006F95] hover:bg-[#005a7a] text-white text-sm font-semibold rounded-lg transition-colors"
+        >
+          {fallbackLabel}
+        </a>
+      </div>
+    );
+  }
 
   return (
-    <div className="w-full flex flex-col gap-4">
-      
-      {/* Toolbar */}
-      <div className="flex items-center justify-between bg-white shadow-sm border rounded-lg px-4 py-2">
-        
-        <div className="flex items-center gap-2">
-          <button
-            disabled={pageNumber <= 1}
-            onClick={() => setPageNumber(p => p - 1)}
-            className="px-3 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200"
-          >
-            ◀
-          </button>
-
-          <span className="text-sm">
-            {pageNumber} / {numPages}
-          </span>
-
-          <button
-            disabled={pageNumber >= numPages}
-            onClick={() => setPageNumber(p => p + 1)}
-            className="px-3 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200"
-          >
-            ▶
-          </button>
+    <div
+      className="w-full rounded-xl overflow-auto border border-gray-200 bg-gray-50 shadow-sm px-4 py-4"
+      style={{ height: "75vh", minHeight: 480 }}
+    >
+      {status === "loading" && (
+        <div className="flex items-center justify-center h-full text-gray-400 text-sm">
+          Chargement du PDF…
         </div>
-
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setScale(s => s - 0.2)}
-            className="px-2 py-1 bg-gray-100 rounded"
-          >
-            -
-          </button>
-          <button
-            onClick={() => setScale(s => s + 0.2)}
-            className="px-2 py-1 bg-gray-100 rounded"
-          >
-            +
-          </button>
-        </div>
-      </div>
-
-      {/* Viewer */}
-      <div className="flex justify-center bg-gray-50 p-4 rounded-xl border">
-        <Document
-          file={url}
-          onLoadSuccess={onDocumentLoadSuccess}
-          loading={<p className="text-gray-500">Chargement du PDF...</p>}
-          error={<p className="text-red-500">Erreur de chargement</p>}
-        >
-          <Page pageNumber={pageNumber} scale={scale} />
-        </Document>
-      </div>
+      )}
+      <div ref={containerRef} />
+      {totalPages > 0 && (
+        <p className="text-center text-xs text-gray-400 mt-2">
+          {totalPages} page{totalPages > 1 ? "s" : ""}
+        </p>
+      )}
     </div>
   );
 };
-
-export default PdfViewer;
