@@ -26,4 +26,20 @@ export const CatalogueService = {
       throw error;
     }
   },
+
+  // keyword ex: "EN" pour le fichier anglais
+  async getCatalogueByLang(keyword) {
+    const files = await this.getCatalogue();
+    if (!keyword) return files;
+    const lower = keyword.toLowerCase();
+    return files.filter((f) => f.title.toLowerCase().includes(lower));
+  },
+
+  // le fichier FR = celui qui ne contient PAS "en" dans le titre
+  async getCatalogueExcluding(keyword) {
+    const files = await this.getCatalogue();
+    if (!keyword) return files;
+    const lower = keyword.toLowerCase();
+    return files.filter((f) => !f.title.toLowerCase().includes(lower));
+  },
 };

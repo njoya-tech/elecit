@@ -108,6 +108,8 @@ function App() {
           <Route path="/carriere/job-only" element={<JobOffersOnly />} />
 
           < Route path="/catalogue" element={<CataloguePage/>}/>
+
+        <Route path="/catalogue-en" element={<CataloguePage keyword="EN" />} />
           {/* <ChatBotPopup />  */}
         </Routes>
       </Suspense>

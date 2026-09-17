@@ -21,7 +21,8 @@ const NavBar = () => {
     { key: 'submenus.solutions.itDataProcessing', path: '/solutions/it-data-processing' },
     { key: 'submenus.solutions.accessControlSecurity', path: '/solutions/controle-acces-securite' },
     { key: 'submenus.solutions.designOffice', path: '/solutions/bureau-etude' },
-    { key: 'submenus.solutions.afterSalesService', path: '/solutions/sav' }
+    { key: 'submenus.solutions.afterSalesService', path: '/solutions/sav' },
+  
   ];
 
   const subsidiariesItems = [
@@ -39,7 +40,8 @@ const NavBar = () => {
     { key: 'nav.blog', path: '/blog' },
     { key: 'nav.carriere', path: '/carriere' },
     { key: 'nav.contacts', path: '/contacts' },
-    { key: 'nav.catalogue', path: '/catalogue'}
+    { key: 'nav.catalogue', path: '/catalogue'},
+      { key: 'nav.catalogueEn', path: '/catalogue-en' },
   ];
 
   const isActiveLink = (path) => location.pathname === path;

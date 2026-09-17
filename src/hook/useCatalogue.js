@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CatalogueService } from '../services/catalogue/catalogue'
 
-const useCatalogue = () => {
+const useCatalogue = (keyword) => {
   const [catalogue, setCatalogue] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,7 +13,9 @@ const useCatalogue = () => {
       try {
         setIsLoading(true);
         setError(null);
-        const data = await CatalogueService.getCatalogue();
+        const data = keyword
+          ? await CatalogueService.getCatalogueByLang(keyword)
+          : await CatalogueService.getCatalogueExcluding("en");
         if (!cancelled) setCatalogue(data[0] ?? null);
       } catch (err) {
         if (!cancelled) setError("Impossible de charger le catalogue.");
@@ -25,7 +27,7 @@ const useCatalogue = () => {
 
     fetchData();
     return () => { cancelled = true; };
-  }, []);
+  }, [keyword]);
 
   return { catalogue, isLoading, error };
 };

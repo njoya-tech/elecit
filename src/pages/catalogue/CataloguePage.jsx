@@ -319,10 +319,10 @@ const PdfViewer = ({ url, title, fallbackLabel, fallbackUrl }) => (
   </div>
 );
 
-const CataloguePage = () => {
+const CataloguePage = ({ keyword }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { catalogue, isLoading, error } = useCatalogue();
+  const { catalogue, isLoading, error } = useCatalogue(keyword);
 
   if (isLoading) {
     return (
